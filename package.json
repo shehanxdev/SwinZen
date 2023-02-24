@@ -43,7 +43,7 @@
   },
   "engines": {
     "npm": "please-use-yarn",
-    "yarn": ">= 1.22.19"
+    "yarn": ">= 1.19.1"
   },
   "lint-staged": {
     "**/*.ts?(x)": [
