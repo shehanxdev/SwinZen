@@ -41,6 +41,10 @@
   "jest": {
     "preset": "react-native"
   },
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.22.19"
+  },
   "lint-staged": {
     "**/*.ts?(x)": [
       "eslint --fix",
