@@ -1,4 +1,8 @@
 module.exports = {
   root: true,
-  extends: '@react-native-community',
+  ignorePatterns: ['!**/*', 'public', '.cache', 'node_modules'],
+  extends: ['airbnb-typescript'],
+  parserOptions: {
+    project: './tsconfig.json',
+  },
 };
