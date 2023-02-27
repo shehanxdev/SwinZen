@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { enableScreens } from 'react-native-screens';
 
 import { NavigationContainer, NavigationState } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -11,8 +10,6 @@ import { useDispatch } from './../stores';
 import { AuthStack } from './AuthRoutes';
 
 const Stack = createStackNavigator();
-
-enableScreens();
 
 export function Routes() {
   const routeNameRef = React.useRef();
@@ -45,7 +42,7 @@ export function Routes() {
       onReady={() => {
         routeNameRef.current = NavigationService.navigationRef.current.getCurrentRoute().name;
       }}
-      fallback={<Text>Loading...</Text>}
+      fallback={<Text>Loading...</Text>} //TODO:: update to an actual loading indicator
       onStateChange={onStateChange}>
       <Stack.Navigator
         initialRouteName={Route.AuthStack}
