@@ -1,10 +1,14 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
+
+import { tw } from './../../../config';
 
 export function SignupScreen() {
   return (
     <>
-      <Text>Signup screen</Text>
+      <View style={tw`m-auto`}>
+        <Text>Signup screen</Text>
+      </View>
     </>
   );
 }
