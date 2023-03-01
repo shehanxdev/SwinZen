@@ -12,7 +12,11 @@
         "root": ["./src"],
         "extensions": [".ios.ts", ".android.ts", ".ts", ".ios.tsx", ".android.tsx", ".tsx", ".jsx", ".js", ".json"],
         "alias": {
-          "@config": "./src/config"
+          "@config": "./src/config/index",
+          "@routes": "./src/routes/index",
+          "@constants": "./src/constants/index",
+          "@services": "./src/services/index",
+          "@stores": "./src/stores/index"
         }
       }
     ]

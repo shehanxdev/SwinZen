@@ -18,7 +18,12 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@config/*": ["./src/config/*"],
+      "*": ["src/*"],
+      "@config": ["src/config/index"],
+      "@routes": ["src/routes/index"],
+      "@constants": ["src/constants/index"],
+      "@services": ["src/services/index"],
+      "@stores": ["src/stores/index"],
     }
   },
   "exclude": ["node_modules", "tmp"]
