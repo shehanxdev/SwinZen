@@ -2,9 +2,9 @@ import React from 'react';
 import { View } from 'react-native';
 import { Button } from 'react-native-paper';
 
-import { Route } from '../../../constants';
-import { tw } from './../../../config';
-import { NavigationService } from './../../../services';
+import { tw } from '@config';
+import { Route } from '@constants';
+import { NavigationService } from '@services';
 
 export function LoginScreen() {
   return (
