@@ -1,8 +1,11 @@
-// Todo: Add related configurations when create ui components
+import { Color } from '@constants';
+
 module.exports = {
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      colors: Color,
+    },
   },
   plugins: [],
 };
