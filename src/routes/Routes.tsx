@@ -1,12 +1,12 @@
+import { NavigationContainer, NavigationState } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import { Text } from 'react-native';
 
-import { NavigationContainer, NavigationState } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { Route } from '@sz/constants';
+import { NavigationService } from '@sz/services';
+import { useDispatch } from '@sz/stores';
 
-import { Route } from './../constants';
-import { NavigationService } from './../services';
-import { useDispatch } from './../stores';
 import { AuthStack } from './AuthRoutes';
 
 const Stack = createStackNavigator();

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-import { tw } from '@config';
+import { tw } from '@sz/config';
 
 export function SignupScreen() {
   return (
