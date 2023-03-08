@@ -11,7 +11,7 @@ import { AuthStack } from './AuthRoutes';
 
 const Stack = createStackNavigator();
 
-export function Routes() {
+export const Routes = () => {
   const routeNameRef = React.useRef();
   const setCurrentRoute = useDispatch().appStore.setCurrentRoute;
 
@@ -53,4 +53,4 @@ export function Routes() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};

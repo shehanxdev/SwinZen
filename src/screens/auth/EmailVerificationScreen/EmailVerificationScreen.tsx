@@ -1,12 +1,20 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
+import { Button } from 'react-native-paper';
 
-export function EmailVerificationScreen() {
+import { tw } from '@config';
+import { Route } from '@constants';
+import { NavigationService } from '@services';
+
+export const EmailVerificationScreen = () => {
   return (
-    <>
-      <Text>EmailVerificationScreen screen</Text>
-    </>
+    <View style={tw`m-auto`}>
+      <Text style={tw`m-10`}>Verify Email</Text>
+      <Button mode="contained" onPress={() => NavigationService.navigate(Route.Signup)}>
+        Back to Signup
+      </Button>
+    </View>
   );
-}
+};
 
 export default EmailVerificationScreen;

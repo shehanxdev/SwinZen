@@ -1,16 +1,29 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import { Button } from 'react-native-paper';
 
 import { tw } from '@config';
+import { Route } from '@constants';
+import { NavigationService } from '@services';
 
-export function SignupScreen() {
+export const SignupScreen = () => {
   return (
-    <>
-      <View style={tw`m-auto`}>
-        <Text>Signup screen</Text>
-      </View>
-    </>
+    <View style={tw`m-auto`}>
+      <Text style={tw`m-20`}>Sign Up</Text>
+      <Button style={tw`m-5`} mode="contained" onPress={() => NavigationService.navigate(Route.EmailVerification)}>
+        Verify Email
+      </Button>
+      <Button style={tw`m-5`} mode="contained" onPress={() => NavigationService.navigate(Route.PrivacyPolicy)}>
+        Privacy Policy
+      </Button>
+      <Button style={tw`m-5`} mode="contained" onPress={() => NavigationService.navigate(Route.TermsOfUse)}>
+        Terms Of Use
+      </Button>
+      <Button style={tw`m-10`} mode="contained" onPress={() => NavigationService.navigate(Route.Login)}>
+        Back to Login
+      </Button>
+    </View>
   );
-}
+};
 
 export default SignupScreen;

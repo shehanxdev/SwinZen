@@ -6,15 +6,15 @@ import { tw } from '@config';
 import { Route } from '@constants';
 import { NavigationService } from '@services';
 
-export const LoginScreen = () => {
+export const TermsOfUseScreen = () => {
   return (
     <View style={tw`m-auto`}>
-      <Text style={tw`m-10`}>Login</Text>
+      <Text style={tw`m-10`}>Terms Of Use</Text>
       <Button mode="contained" onPress={() => NavigationService.navigate(Route.Signup)}>
-        Sign Up
+        Back to Signup
       </Button>
     </View>
   );
 };
 
-export default LoginScreen;
+export default TermsOfUseScreen;
