@@ -25,6 +25,7 @@
       "@sz/screens": ["src/screens/index"],
       "@sz/services": ["src/services/index"],
       "@sz/stores": ["src/stores/index"],
+      "@sz/utils": ["src/utils/index"],
     }
   },
   "exclude": ["node_modules", "tmp"]
