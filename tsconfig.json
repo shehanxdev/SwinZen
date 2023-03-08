@@ -19,11 +19,12 @@
     "baseUrl": ".",
     "paths": {
       "*": ["src/*"],
-      "@config": ["src/config/index"],
-      "@routes": ["src/routes/index"],
-      "@constants": ["src/constants/index"],
-      "@services": ["src/services/index"],
-      "@stores": ["src/stores/index"],
+      "@sz/config": ["src/config/index"],
+      "@sz/routes": ["src/routes/index"],
+      "@sz/constants": ["src/constants/index"],
+      "@sz/screens": ["src/screens/index"],
+      "@sz/services": ["src/services/index"],
+      "@sz/stores": ["src/stores/index"],
     }
   },
   "exclude": ["node_modules", "tmp"]

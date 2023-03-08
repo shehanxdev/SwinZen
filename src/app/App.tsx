@@ -1,8 +1,8 @@
 import React from 'react';
 import { StatusBar, View } from 'react-native';
 
-import { tw } from '@config';
-import { Routes } from '@routes';
+import { tw } from '@sz/config';
+import { Routes } from '@sz/routes';
 
 export function App() {
   return (

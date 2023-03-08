@@ -1,7 +1,8 @@
 import { createModel } from '@rematch/core';
 
+import { Route } from '@sz/constants';
+
 import { RootModel } from '.';
-import { Route } from './../../constants';
 
 interface AppState {
   currentRoute?: Route;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Route } from './../../constants';
+import { Route } from '@sz/constants';
 
 export class NavigationService {
   public static navigationRef: any = React.createRef();
