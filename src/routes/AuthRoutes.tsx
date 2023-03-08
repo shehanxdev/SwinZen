@@ -1,9 +1,8 @@
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import { Route } from './../constants';
-import { EmailVerificationScreen, LoginScreen, SignupScreen } from './../screens';
+import { Route } from '@sz/constants';
+import { EmailVerificationScreen, LoginScreen, SignupScreen } from '@sz/screens';
 
 export type AuthStackParamList = {
   [Route.Login]: {

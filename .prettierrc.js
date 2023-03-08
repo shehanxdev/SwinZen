@@ -5,7 +5,7 @@ module.exports = {
   singleQuote: true,
   trailingComma: 'all',
   printWidth: 120,
-  importOrder: ['^@(.*)$', '^[./]'],
+  importOrder: ['^@sz/(.*)$', '^[./]'],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
 };

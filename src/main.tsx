@@ -4,8 +4,9 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 import { useDeviceContext } from 'twrnc';
 
-import { paperTheme, tw } from '@config';
-import { initializeStore, store } from '@stores';
+import { tw } from '@sz/config';
+import { paperTheme } from '@sz/config';
+import { initializeStore, store } from '@sz/stores';
 
 import App from './app/App';
 
