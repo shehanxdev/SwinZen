@@ -10,7 +10,7 @@ export type AuthStackParamList = {
   [Route.Login]: {
     // Can be used for future props
   };
-  [Route.Signup]: {
+  [Route.SignupStack]: {
     // Can be used for future props
   };
 };
@@ -23,11 +23,11 @@ export const AuthStack = () => {
       screenOptions={{
         headerShown: false,
         contentStyle: {
-          backgroundColor: '#1A5C23',
+          backgroundColor: 'green',
         },
       }}>
       <Stack.Screen name={Route.Login} component={LoginScreen} />
-      <Stack.Screen name={Route.Signup} component={SignupStack} />
+      <Stack.Screen name={Route.SignupStack} component={SignupStack} />
     </Stack.Navigator>
   );
 };

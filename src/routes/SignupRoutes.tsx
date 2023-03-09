@@ -1,11 +1,10 @@
-import React from 'react';
-
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from 'react';
 
 import { Route } from './../constants';
 import { EmailVerificationScreen, PrivacyPolicyScreen, SignupScreen, TermsOfUseScreen } from './../screens';
 
-export type AuthStackParamList = {
+export type SignupStackParamList = {
   [Route.Signup]: {
     // Can be used for future props
   };
@@ -20,7 +19,7 @@ export type AuthStackParamList = {
   };
 };
 
-const Stack = createNativeStackNavigator<AuthStackParamList>();
+const Stack = createNativeStackNavigator<SignupStackParamList>();
 
 export const SignupStack = () => {
   return (
@@ -28,7 +27,7 @@ export const SignupStack = () => {
       screenOptions={{
         headerShown: false,
         contentStyle: {
-          backgroundColor: '#1A5C23',
+          backgroundColor: 'green',
         },
       }}>
       <Stack.Screen name={Route.Signup} component={SignupScreen} />
