@@ -36,20 +36,52 @@ export class NavigationService {
       case Route.Signup:
         navRoute = Route.AuthStack;
         navParams = {
-          screen: Route.Signup,
+          screen: Route.SignupStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.Signup,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
-      case Route.EmailVertification:
+      case Route.EmailVerification:
         navRoute = Route.AuthStack;
         navParams = {
-          screen: Route.EmailVertification,
+          screen: Route.SignupStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.EmailVerification,
+            params: {
+              screen: route,
+              params: params,
+            },
+          },
+        };
+        break;
+      case Route.PrivacyPolicy:
+        navRoute = Route.AuthStack;
+        navParams = {
+          screen: Route.SignupStack,
+          params: {
+            screen: Route.PrivacyPolicy,
+            params: {
+              screen: route,
+              params: params,
+            },
+          },
+        };
+        break;
+      case Route.TermsOfUse:
+        navRoute = Route.AuthStack;
+        navParams = {
+          screen: Route.SignupStack,
+          params: {
+            screen: Route.TermsOfUse,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;

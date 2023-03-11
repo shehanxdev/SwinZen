@@ -2,16 +2,15 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
 import { Route } from '@sz/constants';
-import { EmailVerificationScreen, LoginScreen, SignupScreen } from '@sz/screens';
+import { LoginScreen } from '@sz/screens';
+
+import { SignupStack } from './SignupRoutes';
 
 export type AuthStackParamList = {
   [Route.Login]: {
     // Can be used for future props
   };
-  [Route.Signup]: {
-    // Can be used for future props
-  };
-  [Route.EmailVertification]: {
+  [Route.SignupStack]: {
     // Can be used for future props
   };
 };
@@ -20,14 +19,15 @@ const Stack = createNativeStackNavigator<AuthStackParamList>();
 
 export function AuthStack() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name={Route.Login} component={LoginScreen} options={{ title: 'Login' }} />
-      <Stack.Screen name={Route.Signup} component={SignupScreen} options={{ title: 'Sign Up' }} />
-      <Stack.Screen
-        name={Route.EmailVertification}
-        component={EmailVerificationScreen}
-        options={{ title: 'Email Verification' }}
-      />
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        contentStyle: {
+          backgroundColor: 'green',
+        },
+      }}>
+      <Stack.Screen name={Route.Login} component={LoginScreen} />
+      <Stack.Screen name={Route.SignupStack} component={SignupStack} />
     </Stack.Navigator>
   );
 }
