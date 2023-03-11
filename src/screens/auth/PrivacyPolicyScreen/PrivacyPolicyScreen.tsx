@@ -6,7 +6,7 @@ import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
-export const PrivacyPolicyScreen = () => {
+export function PrivacyPolicyScreen() {
   return (
     <View style={tw`m-auto`}>
       <Text style={tw`m-10`}>Privacy Policy</Text>
@@ -15,6 +15,6 @@ export const PrivacyPolicyScreen = () => {
       </Button>
     </View>
   );
-};
+}
 
 export default PrivacyPolicyScreen;

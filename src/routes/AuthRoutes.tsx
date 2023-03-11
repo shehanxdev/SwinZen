@@ -17,7 +17,7 @@ export type AuthStackParamList = {
 
 const Stack = createNativeStackNavigator<AuthStackParamList>();
 
-export const AuthStack = () => {
+export function AuthStack() {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -30,4 +30,4 @@ export const AuthStack = () => {
       <Stack.Screen name={Route.SignupStack} component={SignupStack} />
     </Stack.Navigator>
   );
-};
+}

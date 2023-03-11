@@ -6,7 +6,7 @@ import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
-export const LoginScreen = () => {
+export function LoginScreen() {
   return (
     <View style={tw`m-auto`}>
       <Text style={tw`m-10`}>Login</Text>
@@ -15,6 +15,6 @@ export const LoginScreen = () => {
       </Button>
     </View>
   );
-};
+}
 
 export default LoginScreen;

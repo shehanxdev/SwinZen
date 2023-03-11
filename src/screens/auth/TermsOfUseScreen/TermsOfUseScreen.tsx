@@ -6,7 +6,7 @@ import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
-export const TermsOfUseScreen = () => {
+export function TermsOfUseScreen() {
   return (
     <View style={tw`m-auto`}>
       <Text style={tw`m-10`}>Terms Of Use</Text>
@@ -15,6 +15,6 @@ export const TermsOfUseScreen = () => {
       </Button>
     </View>
   );
-};
+}
 
 export default TermsOfUseScreen;

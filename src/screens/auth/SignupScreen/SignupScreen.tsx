@@ -6,7 +6,7 @@ import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
-export const SignupScreen = () => {
+export function SignupScreen() {
   return (
     <View style={tw`m-auto`}>
       <Text style={tw`m-20`}>Sign Up</Text>
@@ -24,6 +24,6 @@ export const SignupScreen = () => {
       </Button>
     </View>
   );
-};
+}
 
 export default SignupScreen;

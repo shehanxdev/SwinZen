@@ -21,7 +21,7 @@ export type SignupStackParamList = {
 
 const Stack = createNativeStackNavigator<SignupStackParamList>();
 
-export const SignupStack = () => {
+export function SignupStack() {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -36,4 +36,4 @@ export const SignupStack = () => {
       <Stack.Screen name={Route.TermsOfUse} component={TermsOfUseScreen} />
     </Stack.Navigator>
   );
-};
+}

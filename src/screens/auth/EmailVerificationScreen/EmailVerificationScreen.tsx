@@ -6,7 +6,7 @@ import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
-export const EmailVerificationScreen = () => {
+export function EmailVerificationScreen() {
   return (
     <View style={tw`m-auto`}>
       <Text style={tw`m-10`}>Verify Email</Text>
@@ -15,6 +15,6 @@ export const EmailVerificationScreen = () => {
       </Button>
     </View>
   );
-};
+}
 
 export default EmailVerificationScreen;
