@@ -7,6 +7,7 @@ module.exports = {
     'prettier/prettier': ['error'],
     'react/jsx-filename-extension': 'off',
     '@typescript-eslint/no-shadow': 'off',
+    '@typescript-eslint/lines-between-class-members': 'off'
   },
   parserOptions: {
     project: './tsconfig.json',
