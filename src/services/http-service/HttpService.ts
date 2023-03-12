@@ -1,7 +1,7 @@
 import { ApiResponse, ApisauceInstance, create } from 'apisauce';
 
-import { DnsUrlKey } from '@sz/constants';
 import { store } from '@sz/stores';
+import { getConfig } from '@sz/utils';
 
 import { APIError } from './APIError';
 
@@ -18,12 +18,10 @@ export class HttpService {
   // used to put requests on hold when tokens are being refreshed
   private waitingList: Array<() => void> = [];
 
-  private dnsUrlMap: Partial<Record<DnsUrlKey, string>>;
   private auth0RefreshTokenDnsUrl: string;
   private auth0ClientId: string;
 
-  constructor(dnsUrlMap: Partial<Record<DnsUrlKey, string>>, auth0RefreshTokenDnsUrl: string, auth0ClientId: string) {
-    this.dnsUrlMap = dnsUrlMap;
+  constructor(auth0RefreshTokenDnsUrl: string, auth0ClientId: string) {
     this.auth0RefreshTokenDnsUrl = auth0RefreshTokenDnsUrl;
     this.auth0ClientId = auth0ClientId;
     this.initializeApiSauce();
@@ -127,17 +125,16 @@ export class HttpService {
 
   private fetch = async <T, U = T>(
     method: HttpVerbs,
-    dnsUrlKey: DnsUrlKey,
     path: string,
     params: unknown,
     data: unknown,
     anonymous: boolean,
     headers: any,
   ) => {
-    const dnsUrl = this.dnsUrlMap[dnsUrlKey];
+    const baseUrl = getConfig('BASE_URL');
 
-    if (!dnsUrl) {
-      throw new APIError('INTERNAL_ERROR', `DnsUrl is not available for ${dnsUrlKey}`);
+    if (!baseUrl) {
+      throw new APIError('INTERNAL_ERROR', `DnsUrl is not available for ${baseUrl}`);
     }
 
     let response: ApiResponse<T, U>;
@@ -145,7 +142,7 @@ export class HttpService {
     if (anonymous) {
       response = await this.apiSauceWithoutAuth.any<T, U>({
         method,
-        baseURL: dnsUrl,
+        baseURL: getConfig('BASE_URL'),
         url: path,
         params,
         data,
@@ -169,7 +166,7 @@ export class HttpService {
       // make the request
       response = await this.apiSauce.any<T, U>({
         method,
-        baseURL: dnsUrl,
+        baseURL: baseUrl,
         url: path,
         params,
         data,
@@ -197,7 +194,7 @@ export class HttpService {
 
         response = await this.apiSauce.any<T, U>({
           method,
-          baseURL: dnsUrl,
+          baseURL: baseUrl,
           url: path,
           params,
           data,
@@ -214,36 +211,36 @@ export class HttpService {
     return response.data;
   };
 
-  public get = async <T, U = T>(dnsUrlKey: DnsUrlKey, path: string, query?: {}) => {
-    return this.fetch<T, U>('GET', dnsUrlKey, path, query, undefined, false, undefined);
+  public get = async <T, U = T>(path: string, query?: {}) => {
+    return this.fetch<T, U>('GET', path, query, undefined, false, undefined);
   };
 
-  public post = async <T, U = T>(dnsUrlKey: DnsUrlKey, path: string, data?: unknown, query?: {}) => {
-    return this.fetch<T, U>('POST', dnsUrlKey, path, query, data, false, undefined);
+  public post = async <T, U = T>(path: string, data?: unknown, query?: {}) => {
+    return this.fetch<T, U>('POST', path, query, data, false, undefined);
   };
 
-  public put = async <T, U = T>(dnsUrlKey: DnsUrlKey, path: string, data?: unknown, query?: {}) => {
-    return this.fetch<T, U>('PUT', dnsUrlKey, path, query, data, false, undefined);
+  public put = async <T, U = T>(path: string, data?: unknown, query?: {}) => {
+    return this.fetch<T, U>('PUT', path, query, data, false, undefined);
   };
 
-  public patch = async <T, U = T>(dnsUrlKey: DnsUrlKey, path: string, data?: unknown, query?: {}) => {
-    return this.fetch<T, U>('PATCH', dnsUrlKey, path, query, data, false, undefined);
+  public patch = async <T, U = T>(path: string, data?: unknown, query?: {}) => {
+    return this.fetch<T, U>('PATCH', path, query, data, false, undefined);
   };
 
-  public delete = async <T, U = T>(dnsUrlKey: DnsUrlKey, path: string, query?: {}) => {
-    return this.fetch<T, U>('DELETE', dnsUrlKey, path, query, undefined, false, undefined);
+  public delete = async <T, U = T>(path: string, query?: {}) => {
+    return this.fetch<T, U>('DELETE', path, query, undefined, false, undefined);
   };
 
-  public getAnonymous = async <T, U = T>(dnsUrlKey: DnsUrlKey, path: string, query?: {}) => {
-    return this.fetch<T, U>('GET', dnsUrlKey, path, query, undefined, true, undefined);
+  public getAnonymous = async <T, U = T>(path: string, query?: {}) => {
+    return this.fetch<T, U>('GET', path, query, undefined, true, undefined);
   };
 
-  public postAnonymous = async <T, U = T>(dnsUrlKey: DnsUrlKey, path: string, data?: unknown, query?: {}) => {
-    return this.fetch<T, U>('POST', dnsUrlKey, path, query, data, true, undefined);
+  public postAnonymous = async <T, U = T>(path: string, data?: unknown, query?: {}) => {
+    return this.fetch<T, U>('POST', path, query, data, true, undefined);
   };
 
-  public getWithCustomHeaders = async <T, U = T>(dnsUrlKey: DnsUrlKey, path: string, query?: {}, headers?: {}) => {
-    return this.fetch<T, U>('GET', dnsUrlKey, path, query, undefined, false, headers);
+  public getWithCustomHeaders = async <T, U = T>(path: string, query?: {}, headers?: {}) => {
+    return this.fetch<T, U>('GET', path, query, undefined, false, headers);
   };
 
   public getApiSauceInstance = () => {
