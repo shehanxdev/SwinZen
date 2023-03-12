@@ -15,6 +15,7 @@
           "@sz/config": "./src/config/index",
           "@sz/routes": "./src/routes/index",
           "@sz/constants": "./src/constants/index",
+          "@sz/hooks": "./src/hooks/index",
           "@sz/screens": "./src/screens/index",
           "@sz/services": "./src/services/index",
           "@sz/stores": "./src/stores/index",
