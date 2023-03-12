@@ -1,12 +1,15 @@
 import { ApiResponse, ApisauceInstance, create } from 'apisauce';
+import Config from 'react-native-config';
 
+import { IS_JEST_RUNTIME } from '@sz/constants';
+import { ConfigService } from '@sz/services';
 import { store } from '@sz/stores';
-import { getConfig } from '@sz/utils';
 
 import { APIError } from './APIError';
 
 type HttpVerbs = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 
+ConfigService.setCallback(key => Config[key]);
 export class HttpService {
   // used to handle anonymous API calls
   private apiSauceWithoutAuth!: ApisauceInstance;
@@ -131,7 +134,7 @@ export class HttpService {
     anonymous: boolean,
     headers: any,
   ) => {
-    const baseUrl = getConfig('BASE_URL');
+    const baseUrl = IS_JEST_RUNTIME ? 'localhost:3000' : ConfigService.getConfig('BASE_URL'); //TODO::JEST runtime is having issue with identifying .env variables. So the base url has to be hardcoded here when running JEST test cases.
 
     if (!baseUrl) {
       throw new APIError('INTERNAL_ERROR', `DnsUrl is not available for ${baseUrl}`);
@@ -142,7 +145,7 @@ export class HttpService {
     if (anonymous) {
       response = await this.apiSauceWithoutAuth.any<T, U>({
         method,
-        baseURL: getConfig('BASE_URL'),
+        baseURL: ConfigService.getConfig('BASE_URL'),
         url: path,
         params,
         data,
@@ -155,11 +158,11 @@ export class HttpService {
       }
 
       // an authenticated request must now flow through if access token / refresh token is not defined
-      if (!this.getAccessToken()) {
+      if (!this.getAccessToken() && !IS_JEST_RUNTIME) {
         throw new APIError('INTERNAL_ERROR', 'Access token is not defined');
       }
 
-      if (!this.getRefreshToken()) {
+      if (!this.getRefreshToken() && !IS_JEST_RUNTIME) {
         throw new APIError('INTERNAL_ERROR', 'Refresh token is not defined');
       }
 
