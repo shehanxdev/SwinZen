@@ -1,6 +1,9 @@
 export enum Route {
   AuthStack = 'auth-stack',
+  SignupStack = 'signup-stack',
   Login = 'login',
   Signup = 'sign-up',
-  EmailVertification = 'email-verification',
+  EmailVerification = 'email-verification',
+  PrivacyPolicy = 'privacy-policy',
+  TermsOfUse = 'terms-of-use',
 }
