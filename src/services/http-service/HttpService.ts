@@ -1,15 +1,12 @@
 import { ApiResponse, ApisauceInstance, create } from 'apisauce';
-import Config from 'react-native-config';
 
 import { IS_JEST_RUNTIME } from '@sz/constants';
-import { ConfigService } from '@sz/services';
 import { store } from '@sz/stores';
 
 import { APIError } from './APIError';
 
 type HttpVerbs = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 
-ConfigService.setCallback(key => Config[key]);
 export class HttpService {
   // used to handle anonymous API calls
   private apiSauceWithoutAuth!: ApisauceInstance;
@@ -21,12 +18,16 @@ export class HttpService {
   // used to put requests on hold when tokens are being refreshed
   private waitingList: Array<() => void> = [];
 
+  // passed as an argument in order to avoid issues with JEST runtime
+  private baseUrl: string;
+
   private auth0RefreshTokenDnsUrl: string;
   private auth0ClientId: string;
 
-  constructor(auth0RefreshTokenDnsUrl: string, auth0ClientId: string) {
+  constructor(auth0RefreshTokenDnsUrl: string, auth0ClientId: string, baseUrl: string) {
     this.auth0RefreshTokenDnsUrl = auth0RefreshTokenDnsUrl;
     this.auth0ClientId = auth0ClientId;
+    this.baseUrl = baseUrl;
     this.initializeApiSauce();
   }
 
@@ -134,7 +135,7 @@ export class HttpService {
     anonymous: boolean,
     headers: any,
   ) => {
-    const baseUrl = IS_JEST_RUNTIME ? 'localhost:3000' : ConfigService.getConfig('BASE_URL'); //TODO::JEST runtime is having issue with identifying .env variables. So the base url has to be hardcoded here when running JEST test cases.
+    const baseUrl = this.baseUrl;
 
     if (!baseUrl) {
       throw new APIError('INTERNAL_ERROR', `DnsUrl is not available for ${baseUrl}`);
@@ -145,7 +146,7 @@ export class HttpService {
     if (anonymous) {
       response = await this.apiSauceWithoutAuth.any<T, U>({
         method,
-        baseURL: ConfigService.getConfig('BASE_URL'),
+        baseURL: this.baseUrl,
         url: path,
         params,
         data,

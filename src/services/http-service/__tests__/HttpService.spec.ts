@@ -3,7 +3,8 @@ import MockAdapter from 'axios-mock-adapter';
 
 import { HttpService } from '../HttpService';
 
-const auth0RefreshTokenDnsUrl = 'http://localhost:3000';
+const baseUrl = 'http://localhost:3000'; //TODO::update
+const auth0RefreshTokenDnsUrl = 'http://localhost:3000'; //TODO::update
 const auth0ClientId = 'NO_CLIENT_ID';
 
 interface HttpServiceWithPrivates extends Omit<HttpService, 'apiSauce' | 'apiSauceWithoutAuth'> {
@@ -12,7 +13,7 @@ interface HttpServiceWithPrivates extends Omit<HttpService, 'apiSauce' | 'apiSau
 }
 
 const getHttpService = () => {
-  return new HttpService(auth0RefreshTokenDnsUrl, auth0ClientId) as unknown as HttpServiceWithPrivates;
+  return new HttpService(auth0RefreshTokenDnsUrl, auth0ClientId, baseUrl) as unknown as HttpServiceWithPrivates;
 };
 
 describe('HTTP Service', () => {
