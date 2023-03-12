@@ -18,13 +18,13 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "*": ["src/*"],
       "@sz/config": ["src/config/index"],
       "@sz/routes": ["src/routes/index"],
       "@sz/constants": ["src/constants/index"],
       "@sz/screens": ["src/screens/index"],
       "@sz/services": ["src/services/index"],
       "@sz/stores": ["src/stores/index"],
+      "@sz/utils": ["src/utils/index"],
     }
   },
   "exclude": ["node_modules", "tmp"]
