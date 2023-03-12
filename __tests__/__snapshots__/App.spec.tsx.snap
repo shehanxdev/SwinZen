@@ -279,10 +279,10 @@ exports[`App Component renders correctly 1`] = `
                                       color="rgb(0, 122, 255)"
                                       direction="ltr"
                                       disableBackButtonMenu={false}
-                                      hidden={false}
+                                      hidden={true}
                                       hideBackButton={false}
                                       largeTitleHideShadow={false}
-                                      title="Login"
+                                      title="login"
                                       titleColor="rgb(28, 28, 30)"
                                       topInsetEnabled={false}
                                       translucent={false}
@@ -306,7 +306,9 @@ exports[`App Component renders correctly 1`] = `
                                             {
                                               "backgroundColor": "rgb(242, 242, 242)",
                                             },
-                                            undefined,
+                                            {
+                                              "backgroundColor": "green",
+                                            },
                                           ]
                                         }
                                       >
@@ -320,6 +322,18 @@ exports[`App Component renders correctly 1`] = `
                                             }
                                           }
                                         >
+                                          <Text
+                                            style={
+                                              {
+                                                "marginBottom": 40,
+                                                "marginLeft": 40,
+                                                "marginRight": 40,
+                                                "marginTop": 40,
+                                              }
+                                            }
+                                          >
+                                            Login
+                                          </Text>
                                           <View
                                             collapsable={false}
                                             style={
@@ -477,7 +491,7 @@ exports[`App Component renders correctly 1`] = `
                                                       }
                                                       testID="button-text"
                                                     >
-                                                      Navigate to sign up
+                                                      Sign Up
                                                     </Text>
                                                   </View>
                                                 </View>
