@@ -15,11 +15,7 @@ ConfigService.setCallback(key => Config[key]);
 
 initializeStore();
 
-const httpService = new HttpService(
-  ConfigService.getConfig('AUTH0_API_BASE_URL'),
-  ConfigService.getConfig('AUTH0_CLIENT_ID'),
-  ConfigService.getConfig('BASE_URL'),
-);
+const httpService = new HttpService(ConfigService.getConfig('BASE_URL'));
 
 HttpServiceInstance.setHttpServiceInstance(httpService);
 

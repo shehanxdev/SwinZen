@@ -7,6 +7,16 @@ import { APIError } from './APIError';
 
 type HttpVerbs = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 
+//TODO::remove this after we have a proper way to get refresh/access tokens
+const dummyTokenResponse = () => {
+  return new Promise(resolve => {
+    resolve({
+      ok: true,
+      data: 'dummy token data',
+    });
+  });
+};
+
 export class HttpService {
   // used to handle anonymous API calls
   private apiSauceWithoutAuth!: ApisauceInstance;
@@ -21,12 +31,7 @@ export class HttpService {
   // passed as an argument in order to avoid issues with JEST runtime
   private baseUrl: string;
 
-  private auth0RefreshTokenDnsUrl: string;
-  private auth0ClientId: string;
-
-  constructor(auth0RefreshTokenDnsUrl: string, auth0ClientId: string, baseUrl: string) {
-    this.auth0RefreshTokenDnsUrl = auth0RefreshTokenDnsUrl;
-    this.auth0ClientId = auth0ClientId;
+  constructor(baseUrl: string) {
     this.baseUrl = baseUrl;
     this.initializeApiSauce();
   }
@@ -87,33 +92,9 @@ export class HttpService {
       throw new APIError('INTERNAL_ERROR', 'Refresh token is not available!');
     }
 
-    type RefreshTokenResponse = {
-      refresh_token?: string;
-      id_token?: string;
-      access_token: string;
-      scope: unknown;
-      expires_in: number;
-      token_type: 'Bearer';
-    };
+    const response = (await dummyTokenResponse()) as any; //TODO::replace with the actual get tokens API call once those APIs are ready
 
-    type RefreshTokenErrorResponse = {
-      error: string;
-      error_description: string;
-    };
-
-    const requestBody = {
-      grant_type: 'refresh_token',
-      refresh_token: currentRefreshToken,
-      client_id: this.auth0ClientId,
-    };
-
-    const response = await this.apiSauceWithoutAuth.post<RefreshTokenResponse, RefreshTokenErrorResponse>(
-      '/oauth/token',
-      requestBody,
-      { baseURL: this.auth0RefreshTokenDnsUrl },
-    );
-
-    if (!response.ok) {
+    if (!response!.ok) {
       throw new APIError(response.problem, response.data);
     }
 
