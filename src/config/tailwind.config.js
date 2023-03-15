@@ -1,4 +1,4 @@
-import { Color } from '@sz/constants';
+import { Color, Spacing } from '@sz/constants';
 
 module.exports = {
   content: [],
@@ -17,6 +17,7 @@ module.exports = {
       SourceSansProSemiBold: ['SourceSansPro-SemiBold.ttf'],
       SourceSansProSemiBoldItalic: ['SourceSansPro-SemiBoldItalic.ttf'],
     },
+    spacing: Spacing,
     extend: {
       colors: Color,
     },
