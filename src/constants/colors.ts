@@ -1,65 +1,79 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 /* eslint-disable @typescript-eslint/no-redeclare */
 
-//TODO::update accordingly
-
+//NOTE:: Since an enum member cannot have a numeric name prefixed with "Sz"
 enum Primary {
-  Main = `#302F33`,
-  Dark = `#18181A`,
-  Medium = `#6B6A70`,
-  Light = `#D4D3D6`,
+  Sz900 = `#070707`,
+  Sz800 = `#0C1E0F`,
+  Sz700 = `#16501D`,
+  Sz600 = `#28642A`,
+  Sz500 = `#45734A`,
+  Sz400 = `#69AA67`,
+  Sz300 = `#8DBE8B`,
+  Sz200 = `#C0DBBF`,
+  Sz100 = `#F0F7F0`, //NOTE::figma contain two different colors(#F0F7F0, #C0DBBF) with the border. #C0DBBF neeeds to be removed since it does not consider within the colors
+}
+
+enum Neutral {
+  Sz900 = `#212529`,
+  Sz800 = `#343A40`,
+  Sz700 = `#495057`,
+  Sz600 = `#6C757D`,
+  Sz500 = `#ADB5BD`,
+  Sz400 = `#CED4DA`,
+  Sz300 = `#DEE2E6`,
+  Sz200 = `#E9ECEF`,
+  Sz100 = `#F8F9FA`,
+  Black = `#000000`,
+  White = `#FFFFFF`,
 }
 
 enum Secondary {
-  Main = `#5D00CB`,
-  Dark = `#40008F`,
-  Medium = `#8742DB`,
-  Light = `#DAC4F5`,
+  Sz900 = `#F65815`,
+  Sz800 = `#F87944`,
+  Sz700 = `#F99469`,
+  Sz600 = `#FAA17C`,
+  Sz500 = `#FBBCA1`,
+  Sz400 = `#FDD7C7`,
+  Sz300 = `#FDE4D9`,
+  Sz200 = `#FFF2ED`,
+  Sz100 = `#FFE3B0`,
 }
 
+/* Currently this is available within the design system as a Secondary value. Since two different colorls cannot exist in there, this has to be added to the design system */
 enum Tertiary {
-  Main = `#FFCB4A`,
-  Dark = `#B38F34`,
-  Medium = `#FFDB80`,
-  Light = `#FFEAB7`,
+  Sz900 = `#A2FD2F`,
+  Sz800 = `#B5FD59`,
+  Sz700 = `#C4FE7A`,
+  Sz600 = `#CBFE8A`,
+  Sz500 = `#DAFEAC`,
+  Sz400 = `#E9FFCD`,
+  Sz300 = `#F0FEDE`,
+  Sz200 = `#F8FFEF`,
+  Sz100 = `#DAFEAC`,
 }
 
-enum Text {
-  Primary = `#18181A`,
-  Secondary = `#6B6A70`,
-  Tertiary = `#A9A8AD`,
-  Reversed = `#FFFFFF`,
-}
-
-enum Error {
-  Main = `#FA4D56`,
-  Dark = `#A2191F`,
-  Light = `#FFF1F1`,
-}
-
-enum Success {
-  Main = `#42BE65`,
-  Dark = `#24A148`,
-  Light = `#DEFBE6`,
-}
-
-enum Warning {
-  Main = '#E87D1A',
-  Dark = `#B66419`,
-  Light = `#FFF9C4`,
+enum Transparency {
+  Sz100 = `#212529`,
+  Sz80 = `#212529cc`,
+  Sz64 = `#212529a3`,
+  Sz56 = `#2125298f`,
+  Sz40 = `#21252966`,
+  Sz24 = `#2125293d`,
+  Sz16 = `#21252929`,
+  Sz8 = `#21252914`,
+  Sz4 = `#2125290a`,
 }
 
 const SwingZenThemePalette = {
   Primary,
+  Neutral,
   Secondary,
   Tertiary,
-  Text,
-  Error,
-  Success,
-  Warning,
+  Transparency,
 };
 
-export type Color = Primary | Secondary | Tertiary | Text | Error | Success | Warning;
+export type Color = Primary | Neutral | Secondary | Tertiary | Transparency;
 
 export const Color = {
   ...SwingZenThemePalette,
