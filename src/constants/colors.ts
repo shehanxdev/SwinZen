@@ -23,7 +23,7 @@ enum Neutral {
   Sz400 = `#CED4DA`,
   Sz300 = `#DEE2E6`,
   Sz200 = `#E9ECEF`,
-  Sz100 = `#F8F9FA`,
+  Sz100 = `#F8F9FA`, //NOTE::figma contain two different colors(#F8F9FA, #DEE2E6) with the border. #DEE2E6 neeeds to be removed since it does not consider within the colors
   Black = `#000000`,
   White = `#FFFFFF`,
 }
@@ -37,10 +37,10 @@ enum Secondary {
   Sz400 = `#FDD7C7`,
   Sz300 = `#FDE4D9`,
   Sz200 = `#FFF2ED`,
-  Sz100 = `#FFE3B0`,
+  Sz100 = `#FFE3B0`, //NOTE::figma contain two different colors(##FFE3B0, #FFF9F6) with the border. #FFF9F6 neeeds to be removed since it does not consider within the colors
 }
 
-/* Currently this is available within the design system as a Secondary value. Since two different colorls cannot exist in there, this has to be added to the design system */
+/* Currently this is available within the design system as a Secondary value. Since two different colors cannot exist in there, this has to be added to the design system */
 enum Tertiary {
   Sz900 = `#A2FD2F`,
   Sz800 = `#B5FD59`,
@@ -50,7 +50,7 @@ enum Tertiary {
   Sz400 = `#E9FFCD`,
   Sz300 = `#F0FEDE`,
   Sz200 = `#F8FFEF`,
-  Sz100 = `#DAFEAC`,
+  Sz100 = `#DAFEAC`, //NOTE::figma contain two different colors(#DAFEAC, #FBFFF7) with the border. #FBFFF7 neeeds to be removed since it does not consider within the colors
 }
 
 enum Transparency {
