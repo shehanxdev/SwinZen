@@ -1,10 +1,34 @@
-import { DefaultTheme } from 'react-native-paper';
-import { MD3Theme } from 'react-native-paper/src/types';
+import { MD2LightTheme as DefaultTheme, configureFonts } from 'react-native-paper';
+import { Fonts } from 'react-native-paper/src/types';
 
-// Todo: Add colors and fonts and other related configurations when create ui components
-export const paperTheme: MD3Theme = {
+import config from './share.config';
+
+/*
+ NOTE:: This is not mandatory since most of the texts including React Native Paper components will be handled by the typograghy component. 
+*/
+const fontConfig: Fonts = {
+  regular: {
+    fontFamily: config.fontFamily.SourceSansProRegular,
+    fontWeight: 'normal',
+  },
+  medium: {
+    fontFamily: config.fontFamily.SourceSansProRegular,
+    fontWeight: 'normal',
+  },
+  light: {
+    fontFamily: config.fontFamily.SourceSansProRegular,
+    fontWeight: 'normal',
+  },
+  thin: {
+    fontFamily: config.fontFamily.SourceSansProRegular,
+    fontWeight: 'normal',
+  },
+};
+
+export const paperTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
   },
+  fonts: configureFonts({ config: { android: fontConfig, ios: fontConfig, default: fontConfig }, isV3: false }),
 };
