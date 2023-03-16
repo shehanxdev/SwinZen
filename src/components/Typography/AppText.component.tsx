@@ -1,0 +1,43 @@
+import React, { PropsWithChildren } from 'react';
+import { Text as RNText } from 'react-native';
+
+import { tw } from '@sz/config';
+import { Color, TextAlignment } from '@sz/constants';
+
+import { AppTextStyles, getAppTextStyles } from './AppTextConfig';
+import { AppTextProps } from './AppTextTypes';
+
+export function Text({
+  color = Color.Neutral.Sz100,
+  variant,
+  textAlign = TextAlignment.Auto,
+  numberOfLines,
+  underline,
+  testID,
+  children,
+}: PropsWithChildren<AppTextProps>) {
+  const variantStyle = AppTextStyles[variant];
+
+  let textStyles = getAppTextStyles(variant) + ` text-${textAlign}`;
+
+  if (underline) {
+    textStyles += ' underline';
+  }
+
+  const lineHeight: number = Number.parseFloat(variantStyle.lineHeight.toString().replace('px', ''));
+
+  return (
+    <RNText
+      style={[
+        {
+          color,
+          lineHeight: lineHeight,
+        },
+        tw`${textStyles}`,
+      ]}
+      testID={testID}
+      numberOfLines={numberOfLines}>
+      {children}
+    </RNText>
+  );
+}

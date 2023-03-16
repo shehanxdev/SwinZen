@@ -6,6 +6,7 @@ module.exports = {
   moduleFileExtensions: ['ts', 'js', 'html', 'tsx', 'jsx'],
   setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js'],
   moduleNameMapper: {
+    '^@sz/components(.*)$': '<rootDir>/src/components$1',
     '^@sz/config(.*)$': '<rootDir>/src/config$1',
     '^@sz/constants(.*)$': '<rootDir>/src/constants$1',
     '^@sz/hooks(.*)$': '<rootDir>/src/hooks$1',

@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppText Component should render correctly should render prop set [object Object] 1`] = `
+<Text
+  numberOfLines={1}
+  style={
+    [
+      {
+        "color": "#E9ECEF",
+        "lineHeight": 72,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 60,
+        "textAlign": "auto",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
+exports[`AppText Component should render correctly should render prop set [object Object] 2`] = `
+<Text
+  numberOfLines={2}
+  style={
+    [
+      {
+        "color": "#28642A",
+        "lineHeight": 72,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 60,
+        "textAlign": "left",
+        "textDecorationLine": "underline",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
+exports[`AppText Component should render correctly should render prop set [object Object] 3`] = `
+<Text
+  numberOfLines={2}
+  style={
+    [
+      {
+        "color": "#28642A",
+        "lineHeight": 72,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 60,
+        "textAlign": "left",
+        "textDecorationLine": "underline",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
+exports[`AppText Component should render correctly should render prop set [object Object] 4`] = `
+<Text
+  numberOfLines={1}
+  style={
+    [
+      {
+        "color": "#CBFE8A",
+        "lineHeight": 28,
+      },
+      {
+        "fontFamily": "SourceSansPro-SemiBold",
+        "fontSize": 21,
+        "textAlign": "center",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
