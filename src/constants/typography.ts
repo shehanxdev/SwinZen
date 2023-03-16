@@ -31,7 +31,3 @@ export enum TextAlignment {
   Center = 'center',
   Justify = 'justify',
 }
-
-export enum LetterSpacing {
-  Default = 'default',
-}
