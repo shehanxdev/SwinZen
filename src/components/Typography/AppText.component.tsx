@@ -18,11 +18,13 @@ export function Text({
 }: PropsWithChildren<AppTextProps>) {
   const variantStyle = AppTextStyles[variant];
 
-  let textStyles = getAppTextStyles(variant) + ` text-${textAlign}`;
+  let textStyles = getAppTextStyles(variant);
 
   if (underline) {
     textStyles += ' underline';
   }
+
+  textStyles += ` text-${textAlign}`;
 
   const lineHeight: number = Number.parseFloat(variantStyle.lineHeight.toString().replace('px', ''));
 

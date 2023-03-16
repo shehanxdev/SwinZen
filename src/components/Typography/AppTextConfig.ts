@@ -98,6 +98,7 @@ export function getAppTextStyles(variant: TextVariant) {
   const variantStyle = AppTextStyles[variant];
 
   let textStyles = `text-${variantStyle.fontSize}`;
+
   switch (variant) {
     case TextVariant.SubTitle2SemiBold:
     case TextVariant.Body1SemiBold:
