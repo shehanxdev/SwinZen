@@ -1,2 +1,2 @@
 export * from './AppText.component';
-export * from './AppTextTypes';
+export * from './AppText.types';
