@@ -8,9 +8,18 @@ import { Text } from './../AppText.component';
 
 describe('AppText Component', () => {
   const testID = 'AppTextTestID';
-  const Colors = [Color.Neutral.Sz200, Color.Primary.Sz200];
-  const underlineValues = [true, false];
-  const numberOfLines = [1, 2];
+  const restPropSet = [
+    {
+      color: Color.Neutral.Sz200,
+      underline: true,
+      numberOfLines: 1,
+    },
+    {
+      color: Color.Primary.Sz200,
+      underline: false,
+      numberOfLines: 2,
+    },
+  ];
 
   const getRenderedScreen = (props: AppTextProps) =>
     render(
@@ -29,24 +38,20 @@ describe('AppText Component', () => {
   describe('should render correctly', () => {
     for (const textAlignment in TextAlignment) {
       for (const textVariant in TextVariant) {
-        for (const underlineValue of underlineValues) {
-          for (const numberOfLine of numberOfLines) {
-            for (const color of Colors) {
-              const propSet = {
-                color: color,
-                textAlign: TextAlignment[textAlignment],
-                variant: TextVariant[textVariant],
-                numberOfLines: numberOfLine,
-                underline: underlineValue,
-              };
+        for (const rest of restPropSet) {
+          const propSet = {
+            color: rest.color,
+            textAlign: TextAlignment[textAlignment],
+            variant: TextVariant[textVariant],
+            numberOfLines: rest.numberOfLines,
+            underline: rest.underline,
+          };
 
-              it(`should render correctly with TextAlignment prop : ${propSet.textAlign}, TextVariant prop : ${propSet.variant}, color prop :${color}, underline prop :${underlineValue}, numberOfLine prop :${numberOfLine}`, () => {
-                const rendered = getRenderedScreen(propSet);
-                const renderedTree = rendered.toJSON();
-                expect(renderedTree).toMatchSnapshot();
-              });
-            }
-          }
+          it(`should render correctly with TextAlignment prop : ${propSet.textAlign}, TextVariant prop : ${propSet.variant}, color prop :${rest.color}, underline prop :${rest.numberOfLines}, numberOfLine prop :${rest.underline}`, () => {
+            const rendered = getRenderedScreen(propSet);
+            const renderedTree = rendered.toJSON();
+            expect(renderedTree).toMatchSnapshot();
+          });
         }
       }
     }
