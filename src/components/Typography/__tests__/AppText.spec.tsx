@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
-import { AppTextProps } from '../AppText.types';
+import { AppTextProps } from '../AppTextTypes';
 import { Text } from './../AppText.component';
 
 describe('AppText Component', () => {

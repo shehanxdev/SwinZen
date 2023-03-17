@@ -4,8 +4,8 @@ import { Text as RNText } from 'react-native';
 import { tw } from '@sz/config';
 import { Color, TextAlignment } from '@sz/constants';
 
-import { AppTextStyles, getAppTextStyles } from './AppText.config';
-import { AppTextProps } from './AppText.types';
+import { AppTextStyles, getAppTextStyles } from './AppTextConfig';
+import { AppTextProps } from './AppTextTypes';
 
 export function Text({
   color = Color.Neutral.Sz100,
