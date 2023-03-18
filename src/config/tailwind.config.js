@@ -17,6 +17,9 @@ module.exports = {
       SourceSansProSemiBold: ['SourceSansPro-SemiBold'],
       SourceSansProSemiBoldItalic: ['SourceSansPro-SemiBoldItalic'],
     },
+    borderWidth: {
+      '1': '1px'
+    },
     spacing: Spacing,
     extend: {
       colors: Color,
