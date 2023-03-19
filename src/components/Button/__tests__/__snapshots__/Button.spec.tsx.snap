@@ -59,7 +59,6 @@ exports[`Button Component should render correctly should render correctly with [
             "borderWidth": 1,
             "elevation": 0,
             "flex": undefined,
-            "height": 48,
             "justifyContent": "center",
             "minWidth": "auto",
             "shadowColor": "#000",
@@ -126,7 +125,9 @@ exports[`Button Component should render correctly should render correctly with [
                   "flexDirection": "row",
                   "justifyContent": "center",
                 },
-                undefined,
+                {
+                  "height": 48,
+                },
               ]
             }
           >
@@ -263,7 +264,6 @@ exports[`Button Component should render correctly should render correctly with [
             "borderWidth": 1,
             "elevation": 0,
             "flex": undefined,
-            "height": 48,
             "justifyContent": "center",
             "minWidth": "auto",
             "shadowColor": "#000",
@@ -330,7 +330,9 @@ exports[`Button Component should render correctly should render correctly with [
                   "flexDirection": "row",
                   "justifyContent": "center",
                 },
-                undefined,
+                {
+                  "height": 48,
+                },
               ]
             }
           >
@@ -467,7 +469,6 @@ exports[`Button Component should render correctly should render correctly with [
             "borderWidth": 1,
             "elevation": 0,
             "flex": undefined,
-            "height": 48,
             "justifyContent": "center",
             "minWidth": "auto",
             "shadowColor": "#000",
@@ -534,7 +535,9 @@ exports[`Button Component should render correctly should render correctly with [
                   "flexDirection": "row",
                   "justifyContent": "center",
                 },
-                undefined,
+                {
+                  "height": 48,
+                },
               ]
             }
           >
