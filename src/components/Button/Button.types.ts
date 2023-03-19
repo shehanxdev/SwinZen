@@ -12,7 +12,7 @@ export type WithRNPaperButtonProps = Pick<
 
 export interface ButtonProps extends WithRNPaperButtonProps {
   backgroundColor?: Color;
-  ActiveStateBackgroundColor?: Color;
+  activeStateBackgroundColor?: Color;
   title: string;
   textColor?: Color;
   disabledBackgroundColor?: Color;

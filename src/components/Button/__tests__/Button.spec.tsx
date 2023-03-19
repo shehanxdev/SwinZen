@@ -11,12 +11,12 @@ describe('Button Component', () => {
   const otherPropSet = [
     {
       backgroundColor: Color.Primary.Sz300,
-      ActiveStateBackgroundColor: Color.Secondary.Sz100,
+      activeStateBackgroundColor: Color.Secondary.Sz100,
       textColor: Color.Transparency.Sz24,
     },
     {
       backgroundColor: Color.Neutral.White,
-      ActiveStateBackgroundColor: Color.Neutral.Sz100,
+      activeStateBackgroundColor: Color.Neutral.Sz100,
       textColor: Color.Neutral.Sz300,
       disabledBackgroundColor: Color.Neutral.Sz100,
       disabledTextColor: Color.Neutral.Sz100,
@@ -26,7 +26,7 @@ describe('Button Component', () => {
     },
     {
       backgroundColor: Color.Tertiary.Sz700,
-      ActiveStateBackgroundColor: Color.Secondary.Sz100,
+      activeStateBackgroundColor: Color.Secondary.Sz100,
       fullWidth: true,
     },
   ];

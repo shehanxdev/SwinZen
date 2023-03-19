@@ -11,7 +11,7 @@ import { ButtonProps } from './Button.types';
 
 export function Button({
   backgroundColor = Color.Primary.Sz400,
-  ActiveStateBackgroundColor = Color.Primary.Sz600,
+  activeStateBackgroundColor = Color.Primary.Sz600,
   onPress,
   onLongPress,
   textColor = Color.Neutral.Sz100,
@@ -32,7 +32,7 @@ export function Button({
       disabled && disabledBackgroundColor
         ? disabledBackgroundColor
         : isButtonClicked
-        ? ActiveStateBackgroundColor
+        ? activeStateBackgroundColor
         : backgroundColor;
 
     return buttonBackgroundColor;
