@@ -63,6 +63,7 @@ enum Transparency {
   Sz16 = `#21252929`,
   Sz8 = `#21252914`,
   Sz4 = `#2125290a`,
+  full = `#ffffff00`, //NOTE:: This is full transpapernt color. Not available under the design system.
 }
 
 const SwingZenThemePalette = {
