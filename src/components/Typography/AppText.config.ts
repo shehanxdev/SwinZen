@@ -94,10 +94,38 @@ export const AppTextStyles: Record<TextVariant, React.CSSProperties> = {
   },
 };
 
+/*
+ * return tailwind class related to the font weight
+ * https://tailwindcss.com/docs/font-weight
+ * Note that each font type must have same font weight. For a example semibold means font weight of 600. But our design system contains same font types with different font weights
+ */
+function mapFontWeights(fontWeight: any) {
+  switch (fontWeight) {
+    case 100:
+      return 'font-thin';
+    case 200:
+      return 'font-extralight';
+    case 300:
+      return 'font-light';
+    case 400:
+      return 'font-normal';
+    case 500:
+      return 'font-medium';
+    case 600:
+      return 'font-semibold';
+    case 700:
+      return 'font-bold';
+    case 800:
+      return 'font-extrabold';
+    case 900:
+      return 'font-black';
+  }
+}
+
 export function getAppTextStyles(variant: TextVariant) {
   const variantStyle = AppTextStyles[variant];
 
-  let textStyles = `text-${variantStyle.fontSize}`;
+  let textStyles = `text-${variantStyle.fontSize} ${mapFontWeights(variantStyle.fontWeight)}`;
 
   switch (variant) {
     case TextVariant.SubTitle2SemiBold:
