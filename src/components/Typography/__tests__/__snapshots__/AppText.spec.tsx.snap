@@ -376,6 +376,53 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : auto, TextVariant prop : Links, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
+<Text
+  numberOfLines={2}
+  style={
+    [
+      {
+        "color": "#C0DBBF",
+        "lineHeight": 20,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "textAlign": "auto",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : auto, TextVariant prop : Links, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
+<Text
+  numberOfLines={1}
+  style={
+    [
+      {
+        "color": "#E9ECEF",
+        "lineHeight": 20,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "textAlign": "auto",
+        "textDecorationLine": "underline",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
 exports[`AppText Component should render correctly should render correctly with TextAlignment prop : auto, TextVariant prop : SubTitle1, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
 <Text
   numberOfLines={2}
@@ -929,6 +976,53 @@ exports[`AppText Component should render correctly should render correctly with 
         "fontFamily": "SourceSansPro-Regular",
         "fontSize": 15,
         "fontWeight": "600",
+        "textAlign": "center",
+        "textDecorationLine": "underline",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : center, TextVariant prop : Links, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
+<Text
+  numberOfLines={2}
+  style={
+    [
+      {
+        "color": "#C0DBBF",
+        "lineHeight": 20,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "textAlign": "center",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : center, TextVariant prop : Links, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
+<Text
+  numberOfLines={1}
+  style={
+    [
+      {
+        "color": "#E9ECEF",
+        "lineHeight": 20,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 16,
+        "fontWeight": "bold",
         "textAlign": "center",
         "textDecorationLine": "underline",
       },
@@ -1504,6 +1598,53 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : justify, TextVariant prop : Links, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
+<Text
+  numberOfLines={2}
+  style={
+    [
+      {
+        "color": "#C0DBBF",
+        "lineHeight": 20,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "textAlign": "justify",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : justify, TextVariant prop : Links, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
+<Text
+  numberOfLines={1}
+  style={
+    [
+      {
+        "color": "#E9ECEF",
+        "lineHeight": 20,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "textAlign": "justify",
+        "textDecorationLine": "underline",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
 exports[`AppText Component should render correctly should render correctly with TextAlignment prop : justify, TextVariant prop : SubTitle1, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
 <Text
   numberOfLines={2}
@@ -2068,6 +2209,53 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : left, TextVariant prop : Links, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
+<Text
+  numberOfLines={2}
+  style={
+    [
+      {
+        "color": "#C0DBBF",
+        "lineHeight": 20,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "textAlign": "left",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : left, TextVariant prop : Links, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
+<Text
+  numberOfLines={1}
+  style={
+    [
+      {
+        "color": "#E9ECEF",
+        "lineHeight": 20,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "textAlign": "left",
+        "textDecorationLine": "underline",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
 exports[`AppText Component should render correctly should render correctly with TextAlignment prop : left, TextVariant prop : SubTitle1, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
 <Text
   numberOfLines={2}
@@ -2621,6 +2809,53 @@ exports[`AppText Component should render correctly should render correctly with 
         "fontFamily": "SourceSansPro-Regular",
         "fontSize": 15,
         "fontWeight": "600",
+        "textAlign": "right",
+        "textDecorationLine": "underline",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : right, TextVariant prop : Links, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
+<Text
+  numberOfLines={2}
+  style={
+    [
+      {
+        "color": "#C0DBBF",
+        "lineHeight": 20,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "textAlign": "right",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : right, TextVariant prop : Links, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
+<Text
+  numberOfLines={1}
+  style={
+    [
+      {
+        "color": "#E9ECEF",
+        "lineHeight": 20,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 16,
+        "fontWeight": "bold",
         "textAlign": "right",
         "textDecorationLine": "underline",
       },
