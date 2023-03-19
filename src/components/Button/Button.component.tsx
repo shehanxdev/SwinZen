@@ -51,7 +51,7 @@ export function Button({
         uppercase={uppercase}
         disabled={disabled}
         onPress={onPress}
-        style={tw`bg-[${buttonBackgroundColor}] rounded-2.5 justify-center shadow-none border-1 border-[${buttonBorderColor}] ${
+        style={tw`bg-[${buttonBackgroundColor}] rounded-2.5 justify-center shadow-none border border-[${buttonBorderColor}] ${
           fullWidth ? 'w-full' : undefined
         }`}
         contentStyle={tw`h-12`}
