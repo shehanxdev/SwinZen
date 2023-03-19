@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
-import { View } from 'react-native';
+import React, { forwardRef, useMemo } from 'react';
+import { TextInput as RNTextInput, View } from 'react-native';
 import { TextInput } from 'react-native-paper';
 
 import { tw } from '@sz/config';
@@ -8,38 +8,40 @@ import { Color, TextVariant } from '@sz/constants';
 import { Text } from '../Typography';
 import { TextInputProps } from './TextField.types';
 
-//TODO::add forward ref
-export function TextField({
-  backgroundColor = Color.Primary.Sz500, //Figma uses a different color which not defined in the design system
-  defaultValue,
-  value,
-  disabled = true,
-  label,
-  helperText,
-  helperTextColor = Color.Neutral.Sz200,
-  leftIcon,
-  labelColor = Color.Neutral.Sz200,
-  onChangeText,
-  onBlur,
-  onFocus,
-  rightIcon = null,
-  secureTextEntry,
-  testID,
-  textColor = Color.Secondary.Sz200,
-  blurOnSubmit,
-  onSubmitEditing,
-  onEndEditing,
-  maxLength,
-  keyboardType,
-  placeholder,
-  autoCapitalize,
-  textContentType,
-  autoComplete,
-  onRightIconPress,
-  autoCorrect,
-  multiline,
-  numberOfLines,
-}: TextInputProps) {
+export const TextField = forwardRef<RNTextInput, TextInputProps>(function AppTextField(
+  {
+    backgroundColor = Color.Primary.Sz500, //Figma uses a different color which not defined in the design system
+    defaultValue,
+    value,
+    disabled = false,
+    label,
+    helperText,
+    helperTextColor = Color.Neutral.Sz200,
+    leftIcon,
+    labelColor = Color.Neutral.Sz200,
+    onChangeText,
+    onBlur,
+    onFocus,
+    rightIcon = null,
+    secureTextEntry,
+    testID,
+    textColor = Color.Secondary.Sz200,
+    blurOnSubmit,
+    onSubmitEditing,
+    onEndEditing,
+    maxLength,
+    keyboardType,
+    placeholder,
+    autoCapitalize,
+    textContentType,
+    autoComplete,
+    onRightIconPress,
+    autoCorrect,
+    multiline,
+    numberOfLines,
+  }: TextInputProps,
+  ref,
+) {
   const labelText = useMemo(
     () => (
       <Text variant={TextVariant.Body2SemiBold} color={labelColor}>
@@ -63,6 +65,7 @@ export function TextField({
       {labelText}
       <TextInput
         style={tw`h-12.5`}
+        ref={ref}
         mode="outlined"
         secureTextEntry={secureTextEntry}
         defaultValue={defaultValue}
@@ -93,7 +96,7 @@ export function TextField({
         keyboardType={keyboardType}
         blurOnSubmit={blurOnSubmit}
         testID={testID}
-        outlineColor={'transparent'} //TODO::replace with the colors
+        outlineColor={Color.Transparency.full}
         activeOutlineColor={Color.Neutral.Sz500} //Figma does not specify this value. Without this it's hard to identify whether the text being focused or not.
         autoCorrect={autoCorrect}
         multiline={multiline}
@@ -107,4 +110,4 @@ export function TextField({
       {HelperText}
     </View>
   );
-}
+});
