@@ -27,7 +27,7 @@ describe('TextField Component', () => {
       mockOnChangeFunction();
       value = v;
     },
-    textColor: Color.Neutral.Sz200, //TODO::move these colors to constant
+    textColor: Color.Neutral.Sz200,
     disabledColor: Color.Neutral.Sz100,
     labelColor: Color.Tertiary.Sz200,
     helperTextColor: Color.Tertiary.Sz300,
