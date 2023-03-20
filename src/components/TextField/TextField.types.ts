@@ -27,11 +27,10 @@ type WithRNTextInputProps = Pick<
   | 'autoComplete'
   | 'testID'
   | 'autoCorrect'
-  | 'numberOfLines' //NOTE::this only works with android TODO::dev check
+  | 'numberOfLines'
   | 'multiline'
 >;
 
-//TODO::handle scroll on focus
 export interface TextInputProps extends WithRNTextInputProps {
   helperText?: string;
   leftIcon?: React.ReactNode;
@@ -40,6 +39,7 @@ export interface TextInputProps extends WithRNTextInputProps {
   disabledColor?: Color;
   labelColor?: Color;
   helperTextColor?: Color;
+  error?: boolean;
   backgroundColor?: Color;
   onRightIconPress?: () => void;
 }

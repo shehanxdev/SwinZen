@@ -8,9 +8,10 @@ import { Color, TextVariant } from '@sz/constants';
 import { Text } from '../Typography';
 import { TextInputProps } from './TextField.types';
 
+//TODO::handle scroll on focus
 export const TextField = forwardRef<RNTextInput, TextInputProps>(function AppTextField(
   {
-    backgroundColor = Color.Primary.Sz500, //Figma uses a different color which not defined in the design system
+    backgroundColor = Color.Primary.Sz500, //Figma uses a different color which not defined within the design system
     defaultValue,
     value,
     disabled = false,
@@ -32,6 +33,7 @@ export const TextField = forwardRef<RNTextInput, TextInputProps>(function AppTex
     onEndEditing,
     maxLength,
     keyboardType,
+    error,
     placeholder,
     autoCapitalize,
     textContentType,
@@ -49,16 +51,16 @@ export const TextField = forwardRef<RNTextInput, TextInputProps>(function AppTex
         {label}
       </Text>
     ),
-    [labelColor, label],
+    [labelColor, label, error],
   );
 
   const helperTextComponent = useMemo(
     () => (
-      <Text variant={TextVariant.Labels} color={helperTextColor}>
+      <Text variant={TextVariant.Labels} color={error ? Color.Error.SzMain : helperTextColor}>
         {helperText}
       </Text>
     ),
-    [helperText, helperTextColor],
+    [helperText, helperTextColor, error],
   );
 
   /* Design system updates the color of the left icon when the text input gets disabled. So rather than handling the color change within the place TextField being used,
@@ -92,7 +94,6 @@ export const TextField = forwardRef<RNTextInput, TextInputProps>(function AppTex
         onChangeText={onChangeText}
         onBlur={onBlur}
         onFocus={onFocus}
-        //TODO::on focus
         placeholder={placeholder}
         theme={{
           colors: {
@@ -102,8 +103,10 @@ export const TextField = forwardRef<RNTextInput, TextInputProps>(function AppTex
             background: backgroundColor,
             disabled: Color.Neutral.Sz700,
           },
-          fonts: {}, //TODO::handle fonts
           roundness: 10,
+          fonts: {
+            regular: tw`text-[16px] font-normal`,
+          },
         }}
         autoCapitalize={autoCapitalize}
         onEndEditing={onEndEditing}
@@ -112,8 +115,8 @@ export const TextField = forwardRef<RNTextInput, TextInputProps>(function AppTex
         keyboardType={keyboardType}
         blurOnSubmit={blurOnSubmit}
         testID={testID}
-        outlineColor={Color.Transparency.full}
-        activeOutlineColor={Color.Neutral.Sz500} //Figma does not specify this value. Without this it's hard to identify whether the text being focused or not.
+        outlineColor={error ? Color.Error.SzMain : Color.Transparency.full}
+        activeOutlineColor={error ? Color.Error.SzMain : Color.Neutral.Sz500}
         autoCorrect={autoCorrect}
         multiline={multiline}
         numberOfLines={numberOfLines}

@@ -66,15 +66,20 @@ enum Transparency {
   full = `#ffffff00`, //NOTE:: This is full transpapernt color. Not available under the design system.
 }
 
+enum Error {
+  SzMain = `#E35F5F`, //Not defined within the design system but being used within the screens :(
+}
+
 const SwingZenThemePalette = {
   Primary,
   Neutral,
   Secondary,
   Tertiary,
   Transparency,
+  Error,
 };
 
-export type Color = Primary | Neutral | Secondary | Tertiary | Transparency;
+export type Color = Primary | Neutral | Secondary | Tertiary | Transparency | Error;
 
 export const Color = {
   ...SwingZenThemePalette,

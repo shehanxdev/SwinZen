@@ -12,15 +12,15 @@ const fontConfig: Fonts = {
     fontWeight: 'normal',
   },
   medium: {
-    fontFamily: config.fontFamily.SourceSansProRegular,
+    fontFamily: config.fontFamily.SourceSansProMedium,
     fontWeight: 'normal',
   },
   light: {
-    fontFamily: config.fontFamily.SourceSansProRegular,
+    fontFamily: config.fontFamily.SourceSansProLight,
     fontWeight: 'normal',
   },
   thin: {
-    fontFamily: config.fontFamily.SourceSansProRegular,
+    fontFamily: config.fontFamily.SourceSansProThin,
     fontWeight: 'normal',
   },
 };
