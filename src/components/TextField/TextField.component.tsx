@@ -64,7 +64,7 @@ export const TextField = forwardRef<RNTextInput, TextInputProps>(function AppTex
     <View>
       {labelText}
       <TextInput
-        style={tw`h-12.5`}
+        style={tw`h-12.5 p-0 m-0`}
         ref={ref}
         mode="outlined"
         secureTextEntry={secureTextEntry}
@@ -103,9 +103,11 @@ export const TextField = forwardRef<RNTextInput, TextInputProps>(function AppTex
         numberOfLines={numberOfLines}
         left={
           //TODO::handle icons colors when disable
-          leftIcon && <TextInput.Icon name={() => leftIcon} style={{}} />
+          leftIcon && <TextInput.Icon name={() => leftIcon} style={{ marginTop: '50%' }} />
         }
-        right={rightIcon && <TextInput.Icon name={() => rightIcon} onPress={onRightIconPress} style={{}} />}
+        right={
+          rightIcon && <TextInput.Icon name={() => rightIcon} onPress={onRightIconPress} style={{ marginTop: '50%' }} />
+        }
       />
       {HelperText}
     </View>
