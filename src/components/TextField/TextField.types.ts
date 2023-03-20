@@ -37,6 +37,7 @@ export interface TextInputProps extends WithRNTextInputProps {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   textColor?: Color;
+  disabledColor?: Color;
   labelColor?: Color;
   helperTextColor?: Color;
   backgroundColor?: Color;

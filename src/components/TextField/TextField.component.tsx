@@ -1,4 +1,4 @@
-import React, { forwardRef, useMemo } from 'react';
+import React, { cloneElement, forwardRef, useMemo } from 'react';
 import { TextInput as RNTextInput, View } from 'react-native';
 import { TextInput } from 'react-native-paper';
 
@@ -26,6 +26,7 @@ export const TextField = forwardRef<RNTextInput, TextInputProps>(function AppTex
     secureTextEntry,
     testID,
     textColor = Color.Secondary.Sz200,
+    disabledColor = Color.Neutral.Sz700,
     blurOnSubmit,
     onSubmitEditing,
     onEndEditing,
@@ -42,7 +43,7 @@ export const TextField = forwardRef<RNTextInput, TextInputProps>(function AppTex
   }: TextInputProps,
   ref,
 ) {
-  const labelText = useMemo(
+  const labelTextComponent = useMemo(
     () => (
       <Text variant={TextVariant.Body2SemiBold} color={labelColor}>
         {label}
@@ -51,7 +52,7 @@ export const TextField = forwardRef<RNTextInput, TextInputProps>(function AppTex
     [labelColor, label],
   );
 
-  const HelperText = useMemo(
+  const helperTextComponent = useMemo(
     () => (
       <Text variant={TextVariant.Labels} color={helperTextColor}>
         {helperText}
@@ -60,9 +61,24 @@ export const TextField = forwardRef<RNTextInput, TextInputProps>(function AppTex
     [helperText, helperTextColor],
   );
 
+  /* Design system updates the color of the left icon when the text input gets disabled. So rather than handling the color change within the place TextField being used,
+   * create a new React element using original element using React.cloneElement using below two functions.
+   */
+  const leftIconComponent = useMemo(() => {
+    return cloneElement(leftIcon as any, {
+      ...(disabled && { color: disabledColor }),
+    });
+  }, [leftIcon, disabled]);
+
+  const rightIconComponent = useMemo(() => {
+    return cloneElement(leftIcon as any, {
+      ...(disabled && { color: disabledColor }),
+    });
+  }, [rightIcon, disabled]);
+
   return (
     <View>
-      {labelText}
+      {labelTextComponent}
       <TextInput
         style={tw`h-12.5 p-0 m-0`}
         ref={ref}
@@ -101,15 +117,14 @@ export const TextField = forwardRef<RNTextInput, TextInputProps>(function AppTex
         autoCorrect={autoCorrect}
         multiline={multiline}
         numberOfLines={numberOfLines}
-        left={
-          //TODO::handle icons colors when disable
-          leftIcon && <TextInput.Icon name={() => leftIcon} style={{ marginTop: '50%' }} />
-        }
+        left={leftIcon && <TextInput.Icon name={() => leftIconComponent} style={{ marginTop: '50%' }} />}
         right={
-          rightIcon && <TextInput.Icon name={() => rightIcon} onPress={onRightIconPress} style={{ marginTop: '50%' }} />
+          rightIcon && (
+            <TextInput.Icon name={() => rightIconComponent} onPress={onRightIconPress} style={{ marginTop: '50%' }} />
+          )
         }
       />
-      {HelperText}
+      {helperTextComponent}
     </View>
   );
 });
