@@ -31,7 +31,7 @@ type WithRNTextInputProps = Pick<
   | 'multiline'
 >;
 
-export interface TextInputProps extends WithRNTextInputProps {
+export interface TextFieldProps extends WithRNTextInputProps {
   helperText?: string;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AccountLockSvg } from '@sz/assets';
+import { AccountLockSvg, PasswordRevealEyeSvg } from '@sz/assets';
 import { Color } from '@sz/constants';
 
 export interface SvgIconProps {
@@ -12,4 +12,8 @@ export interface SvgIconProps {
 
 export function AccountLockIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
   return <AccountLockSvg width={width} height={height} fill={color} />;
+}
+
+export function PasswordRevealIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
+  return <PasswordRevealEyeSvg width={width} height={height} fill={color} />;
 }

@@ -6,10 +6,10 @@ import { tw } from '@sz/config';
 import { Color, TextVariant } from '@sz/constants';
 
 import { Text } from '../Typography';
-import { TextInputProps } from './TextField.types';
+import { TextFieldProps } from './TextField.types';
 
 //TODO::handle scroll on focus
-export const TextField = forwardRef<RNTextInput, TextInputProps>(function AppTextField(
+export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTextField(
   {
     backgroundColor = Color.Primary.Sz500, //Figma uses a different color which not defined within the design system
     defaultValue,
@@ -42,7 +42,7 @@ export const TextField = forwardRef<RNTextInput, TextInputProps>(function AppTex
     autoCorrect,
     multiline,
     numberOfLines,
-  }: TextInputProps,
+  }: TextFieldProps,
   ref,
 ) {
   const labelTextComponent = useMemo(
@@ -67,15 +67,21 @@ export const TextField = forwardRef<RNTextInput, TextInputProps>(function AppTex
    * create a new React element using original element using React.cloneElement using below two functions.
    */
   const leftIconComponent = useMemo(() => {
-    return cloneElement(leftIcon as any, {
-      ...(disabled && { color: disabledColor }),
-    });
+    return (
+      leftIcon &&
+      cloneElement(leftIcon as any, {
+        ...(disabled && { color: disabledColor }),
+      })
+    );
   }, [leftIcon, disabled]);
 
   const rightIconComponent = useMemo(() => {
-    return cloneElement(leftIcon as any, {
-      ...(disabled && { color: disabledColor }),
-    });
+    return (
+      rightIcon &&
+      cloneElement(rightIcon as any, {
+        ...(disabled && { color: disabledColor }),
+      })
+    );
   }, [rightIcon, disabled]);
 
   return (
