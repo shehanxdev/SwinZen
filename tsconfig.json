@@ -18,6 +18,7 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
+      "@sz/components": ["src/components/index"],
       "@sz/config": ["src/config/index"],
       "@sz/routes": ["src/routes/index"],
       "@sz/constants": ["src/constants/index"],
