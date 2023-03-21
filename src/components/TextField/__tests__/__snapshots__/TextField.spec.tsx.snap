@@ -44,7 +44,7 @@ exports[`TextField Component should render correctly 1`] = `
             "top": 6,
           },
           {
-            "backgroundColor": "#45734A",
+            "backgroundColor": "#283E36",
             "borderColor": "#ffffff00",
             "borderRadius": 10,
             "borderWidth": 1,
@@ -76,7 +76,7 @@ exports[`TextField Component should render correctly 1`] = `
           onChangeText={[Function]}
           onFocus={[Function]}
           placeholderTextColor="#ADB5BD"
-          selectionColor="#ADB5BD"
+          selectionColor="#6C757D"
           style={
             [
               {
@@ -93,7 +93,7 @@ exports[`TextField Component should render correctly 1`] = `
                 "paddingTop": 17,
               },
               {
-                "color": "#FFF2ED",
+                "color": "#ADB5BD",
                 "fontFamily": "System",
                 "fontSize": 16,
                 "fontVariant": undefined,

@@ -11,7 +11,7 @@ import { TextFieldProps } from './TextField.types';
 //TODO::handle scroll on focus
 export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTextField(
   {
-    backgroundColor = Color.Primary.Sz500, //Figma uses a different color which not defined within the design system
+    backgroundColor = Color.Neutral.Sz1000,
     defaultValue,
     value,
     disabled = false,
@@ -26,10 +26,12 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
     rightIcon = null,
     secureTextEntry,
     testID,
-    textColor = Color.Secondary.Sz200,
+    textColor = Color.Neutral.Sz500,
     disabledColor = Color.Neutral.Sz700,
     blurOnSubmit,
     onSubmitEditing,
+    activeOutlineColor = Color.Neutral.Sz600,
+    outlineColor = Color.Transparency.full,
     onEndEditing,
     maxLength,
     keyboardType,
@@ -105,7 +107,7 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
           colors: {
             primary: Color.Primary.Sz800,
             placeholder: Color.Neutral.Sz500, //Figma does not specify this value. Update accordinly
-            text: textColor,
+            text: disabled ? Color.Neutral.Sz700 : textColor,
             background: backgroundColor,
             disabled: Color.Neutral.Sz700,
           },
@@ -121,8 +123,8 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
         keyboardType={keyboardType}
         blurOnSubmit={blurOnSubmit}
         testID={testID}
-        outlineColor={error ? Color.Error.SzMain : Color.Transparency.full}
-        activeOutlineColor={error ? Color.Error.SzMain : Color.Neutral.Sz500}
+        outlineColor={error ? Color.Error.SzMain : outlineColor}
+        activeOutlineColor={error ? Color.Error.SzMain : activeOutlineColor}
         autoCorrect={autoCorrect}
         multiline={multiline}
         numberOfLines={numberOfLines}

@@ -15,6 +15,7 @@ enum Primary {
 }
 
 enum Neutral {
+  Sz1000 = `#283E36`, //NOTE::not available within the design system colors
   Sz900 = `#212529`,
   Sz800 = `#343A40`,
   Sz700 = `#495057`,

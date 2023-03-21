@@ -41,5 +41,7 @@ export interface TextFieldProps extends WithRNTextInputProps {
   helperTextColor?: Color;
   error?: boolean;
   backgroundColor?: Color;
+  outlineColor?: Color;
+  activeOutlineColor?: Color;
   onRightIconPress?: () => void;
 }
