@@ -22,6 +22,9 @@ export enum TextVariant {
 
   // Labels
   Labels = 'Labels',
+
+  // Links
+  Links = 'Links',
 }
 
 export enum TextAlignment {
