@@ -189,7 +189,7 @@ exports[`Button Component should render correctly should render correctly with [
                       "fontFamily": "SourceSansPro-SemiBold",
                       "fontSize": 16,
                       "fontWeight": "600",
-                      "textAlign": "auto",
+                      "textAlign": "center",
                     },
                   ]
                 }
@@ -394,7 +394,7 @@ exports[`Button Component should render correctly should render correctly with [
                       "fontFamily": "SourceSansPro-SemiBold",
                       "fontSize": 16,
                       "fontWeight": "600",
-                      "textAlign": "auto",
+                      "textAlign": "center",
                     },
                   ]
                 }
@@ -599,7 +599,7 @@ exports[`Button Component should render correctly should render correctly with [
                       "fontFamily": "SourceSansPro-SemiBold",
                       "fontSize": 16,
                       "fontWeight": "600",
-                      "textAlign": "auto",
+                      "textAlign": "center",
                     },
                   ]
                 }

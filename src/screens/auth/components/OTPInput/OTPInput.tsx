@@ -10,7 +10,7 @@ const CELL_COUNT = 5;
 
 export interface OTPInputProps {
   testID?: string;
-  onChangeValue?: (text: string) => void;
+  onChangeValue: (text: string) => void;
 }
 
 export function OTPInput({ testID, onChangeValue }: OTPInputProps) {

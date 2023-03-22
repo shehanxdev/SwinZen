@@ -42,7 +42,7 @@ exports[`OTPInput Component should render correctly 1`] = `
             "fontFamily": "SourceSansPro-SemiBold",
             "fontSize": 21,
             "fontWeight": "600",
-            "textAlign": "auto",
+            "textAlign": "center",
           },
         ]
       }
@@ -87,7 +87,7 @@ exports[`OTPInput Component should render correctly 1`] = `
             "fontFamily": "SourceSansPro-SemiBold",
             "fontSize": 21,
             "fontWeight": "600",
-            "textAlign": "auto",
+            "textAlign": "center",
           },
         ]
       }
@@ -132,7 +132,7 @@ exports[`OTPInput Component should render correctly 1`] = `
             "fontFamily": "SourceSansPro-SemiBold",
             "fontSize": 21,
             "fontWeight": "600",
-            "textAlign": "auto",
+            "textAlign": "center",
           },
         ]
       }
@@ -177,7 +177,7 @@ exports[`OTPInput Component should render correctly 1`] = `
             "fontFamily": "SourceSansPro-SemiBold",
             "fontSize": 21,
             "fontWeight": "600",
-            "textAlign": "auto",
+            "textAlign": "center",
           },
         ]
       }
@@ -222,7 +222,7 @@ exports[`OTPInput Component should render correctly 1`] = `
             "fontFamily": "SourceSansPro-SemiBold",
             "fontSize": 21,
             "fontWeight": "600",
-            "textAlign": "auto",
+            "textAlign": "center",
           },
         ]
       }
