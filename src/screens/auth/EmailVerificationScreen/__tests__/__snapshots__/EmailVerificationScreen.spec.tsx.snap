@@ -583,60 +583,24 @@ exports[`EmailVerification Screen should render correctly 1`] = `
         }
       }
     >
-      <View
-        accessibilityState={
-          {
-            "busy": undefined,
-            "checked": undefined,
-            "disabled": undefined,
-            "expanded": undefined,
-            "selected": undefined,
-          }
-        }
-        accessibilityValue={
-          {
-            "max": undefined,
-            "min": undefined,
-            "now": undefined,
-            "text": undefined,
-          }
-        }
-        accessible={true}
-        collapsable={false}
-        focusable={false}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
+      <Text
         style={
-          {
-            "opacity": 1,
-          }
+          [
+            {
+              "color": "#69AA67",
+              "lineHeight": 20,
+            },
+            {
+              "fontFamily": "SourceSansPro-Regular",
+              "fontSize": 16,
+              "fontWeight": "bold",
+              "textAlign": "center",
+            },
+          ]
         }
       >
-        <Text
-          style={
-            [
-              {
-                "color": "#69AA67",
-                "lineHeight": 20,
-              },
-              {
-                "fontFamily": "SourceSansPro-Regular",
-                "fontSize": 16,
-                "fontWeight": "bold",
-                "textAlign": "center",
-                "textDecorationLine": "underline",
-              },
-            ]
-          }
-        >
-          Resend the code
-        </Text>
-      </View>
+        Resend the code
+      </Text>
     </View>
   </View>
   <View
@@ -664,115 +628,43 @@ exports[`EmailVerification Screen should render correctly 1`] = `
       }
     >
       By continuing, you agree to our 
-      <View
-        accessibilityState={
-          {
-            "busy": undefined,
-            "checked": undefined,
-            "disabled": undefined,
-            "expanded": undefined,
-            "selected": undefined,
-          }
-        }
-        accessibilityValue={
-          {
-            "max": undefined,
-            "min": undefined,
-            "now": undefined,
-            "text": undefined,
-          }
-        }
-        accessible={true}
-        collapsable={false}
-        focusable={false}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
+      <Text
         style={
-          {
-            "opacity": 1,
-          }
+          [
+            {
+              "color": "#69AA67",
+              "lineHeight": 20,
+            },
+            {
+              "fontFamily": "SourceSansPro-Regular",
+              "fontSize": 16,
+              "fontWeight": "bold",
+              "textAlign": "center",
+            },
+          ]
         }
       >
-        <Text
-          style={
-            [
-              {
-                "color": "#69AA67",
-                "lineHeight": 20,
-              },
-              {
-                "fontFamily": "SourceSansPro-Regular",
-                "fontSize": 16,
-                "fontWeight": "bold",
-                "textAlign": "center",
-                "textDecorationLine": "underline",
-              },
-            ]
-          }
-        >
-          Privacy Policy
-        </Text>
-      </View>
+        Privacy Policy
+      </Text>
        and our 
-      <View
-        accessibilityState={
-          {
-            "busy": undefined,
-            "checked": undefined,
-            "disabled": undefined,
-            "expanded": undefined,
-            "selected": undefined,
-          }
-        }
-        accessibilityValue={
-          {
-            "max": undefined,
-            "min": undefined,
-            "now": undefined,
-            "text": undefined,
-          }
-        }
-        accessible={true}
-        collapsable={false}
-        focusable={false}
-        onClick={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
+      <Text
         style={
-          {
-            "opacity": 1,
-          }
+          [
+            {
+              "color": "#69AA67",
+              "lineHeight": 20,
+            },
+            {
+              "fontFamily": "SourceSansPro-Regular",
+              "fontSize": 16,
+              "fontWeight": "bold",
+              "textAlign": "center",
+            },
+          ]
         }
       >
-        <Text
-          style={
-            [
-              {
-                "color": "#69AA67",
-                "lineHeight": 20,
-              },
-              {
-                "fontFamily": "SourceSansPro-Regular",
-                "fontSize": 16,
-                "fontWeight": "bold",
-                "textAlign": "center",
-                "textDecorationLine": "underline",
-              },
-            ]
-          }
-        >
-          Terms of Use
-        </Text>
-      </View>
+        Terms of Use
+      </Text>
     </Text>
   </View>
 </View>

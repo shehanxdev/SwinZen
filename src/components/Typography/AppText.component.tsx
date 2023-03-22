@@ -15,6 +15,7 @@ export function Text({
   underline,
   testID,
   children,
+  onPress,
 }: PropsWithChildren<AppTextProps>) {
   const variantStyle = AppTextStyles[variant];
 
@@ -37,6 +38,7 @@ export function Text({
         },
         tw`${textStyles}`,
       ]}
+      onPress={onPress}
       testID={testID}
       numberOfLines={numberOfLines}>
       {children}

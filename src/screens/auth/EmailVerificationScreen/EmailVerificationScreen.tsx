@@ -43,7 +43,7 @@ export function EmailVerificationScreen() {
           <Link text={'Resend the code'} />
         </View>
       </View>
-      <View style={tw`items-center mb-5`}>
+      <View style={tw`items-center mb-5 items-center`}>
         <Text variant={TextVariant.Body2Regular}>
           By continuing, you agree to our <Link text={'Privacy Policy'} /> and our <Link text="Terms of Use" />
           {/* TODO::handle link on press redirects */}
@@ -52,5 +52,3 @@ export function EmailVerificationScreen() {
     </View>
   );
 }
-
-export default EmailVerificationScreen; //TODO::remove
