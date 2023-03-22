@@ -1,8 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
-import { withGradientBackground } from '@sz/utils';
-
 import { Route } from './../constants';
 import { ForgetPasswordScreen, ResetPasswordEmailVerificationScreen, ResetPasswordScreen } from './../screens';
 import { LoginScreen } from './../screens';
@@ -32,10 +30,7 @@ export function LoginStack() {
       }}>
       <Stack.Screen name={Route.Login} component={LoginScreen} />
       <Stack.Screen name={Route.ForgetPassword} component={ForgetPasswordScreen} />
-      <Stack.Screen
-        name={Route.ResetPasswordEmailVerification}
-        component={withGradientBackground({ BaseScreen: ResetPasswordEmailVerificationScreen })}
-      />
+      <Stack.Screen name={Route.ResetPasswordEmailVerification} component={ResetPasswordEmailVerificationScreen} />
       <Stack.Screen name={Route.ResetPassword} component={ResetPasswordScreen} />
     </Stack.Navigator>
   );
