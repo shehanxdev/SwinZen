@@ -13,7 +13,7 @@ interface GradientBackgroundHOCProps extends Partial<LinearGradientProps> {
  */
 export function withGradientBackground({
   BaseScreen,
-  colors = ['#113F17', '#070807'], //TODO:: update, NOT available within the design system
+  colors = ['#113F17', '#070807'], //TODO:: update, these colours are NOT available within the design system
   ...otherlinearGradientProps
 }: GradientBackgroundHOCProps) {
   return function ScreenWithGradientBackground(props?: object) {
