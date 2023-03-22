@@ -1,1 +1,1 @@
-export * from './linear-gradient-wrapper';
+export * from './withGradientBackground';

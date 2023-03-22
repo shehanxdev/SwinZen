@@ -7,6 +7,7 @@ import { tw } from '@sz/config';
 interface GradientBackgroundHOCProps extends Partial<LinearGradientProps> {
   BaseScreen: (props?: object) => JSX.Element;
 }
+
 /**
  * HOC to Wrap a provided screen with a linear gradient background.
  */
