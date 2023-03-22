@@ -10,7 +10,10 @@ export function SignupScreen() {
   return (
     <View style={tw`m-auto`}>
       <Text style={tw`m-20`}>Sign Up</Text>
-      <Button style={tw`m-5`} mode="contained" onPress={() => NavigationService.navigate(Route.EmailVerification)}>
+      <Button
+        style={tw`m-5`}
+        mode="contained"
+        onPress={() => NavigationService.navigate(Route.RegisterEmailVerification)}>
         Verify Email
       </Button>
       <Button style={tw`m-5`} mode="contained" onPress={() => NavigationService.navigate(Route.PrivacyPolicy)}>

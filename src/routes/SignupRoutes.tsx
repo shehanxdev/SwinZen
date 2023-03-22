@@ -10,7 +10,7 @@ export type SignupStackParamList = {
   [Route.Signup]: {
     // Can be used for future props
   };
-  [Route.EmailVerification]: {
+  [Route.RegisterEmailVerification]: {
     // Can be used for future props
   };
   [Route.PrivacyPolicy]: {
@@ -31,7 +31,7 @@ export function SignupStack() {
       }}>
       <Stack.Screen name={Route.Signup} component={SignupScreen} />
       <Stack.Screen
-        name={Route.EmailVerification}
+        name={Route.RegisterEmailVerification}
         component={withGradientBackground({ BaseScreen: RegisterEmailVerificationScreen })}
       />
       <Stack.Screen name={Route.PrivacyPolicy} component={PrivacyPolicyScreen} />
