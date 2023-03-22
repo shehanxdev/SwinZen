@@ -15,6 +15,7 @@ export function Text({
   underline,
   testID,
   children,
+  onPress,
 }: PropsWithChildren<AppTextProps>) {
   const variantStyle = AppTextStyles[variant];
 
@@ -38,6 +39,7 @@ export function Text({
         tw`${textStyles}`,
       ]}
       testID={testID}
+      onPress={onPress}
       numberOfLines={numberOfLines}>
       {children}
     </RNText>

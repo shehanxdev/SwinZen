@@ -17,12 +17,12 @@ export function PrivacyPolicyScreen() {
         <View style={tw`mx-10 mb-5`}>
           <Text variant={TextVariant.SubTitle1}>Privacy Policy</Text>
         </View>
-        <ScrollView style={tw`mx-10`}>
+        <ScrollView style={tw`mx-10`} showsVerticalScrollIndicator={false}>
           <Text variant={TextVariant.Body2Regular}>
             {`Introduction
-            \n(“Sports Zoom LLC” or “We” or “Us”) respect your privacy and are committed to protecting it through our compliance with this policy. \nThis policy describes the types of information we may collect from you or that you may provide when you visit the website (`}
+            \n(“Sports Zoom LLC” or “We” or “Us”) respect your privacy and are committed to protecting it through our compliance with this policy. \nThis policy describes the types of information we may collect from you or that you may provide when you visit the website ( `}
             <Link text="SwingZen Website" onPress={() => Linking.openURL('https://swingzen.com')} />
-            {`) and our practices for collecting, using, maintaining, protecting, and disclosing that information.
+            {` ) and our practices for collecting, using, maintaining, protecting, and disclosing that information.
             \nThis policy applies to information we collect: \nOn this Website. In email, text, and other electronic messages between you and this Website. Through mobile and desktop applications you download from this Website, which provide dedicated non-browser-based interaction between you and this Website. \nWhen you interact with our advertising and applications on third-party websites and services, if those applications or advertising include links to this policy. \nIt does not apply to information collected by: \nus offline or through any other means, including on any other website operated by Sports Zoom LLC or any third party including our affiliates and subsidiaries; or \nany third party including our affiliates and subsidiaries, including through any application or content including advertising that may link to or be accessible from or on the Website.
             \nPlease read this policy carefully to understand our policies and practices regarding your information and how we will treat it. If you do not agree with our policies and practices, your choice is not to use our Website. By accessing or using this Website, you agree to this privacy policy. This policy may change from time to time. Your continued use of this Website after we make changes is deemed to be acceptance of those changes, so please check the policy periodically for updates.
             \n \nChildren Under the Age of 13

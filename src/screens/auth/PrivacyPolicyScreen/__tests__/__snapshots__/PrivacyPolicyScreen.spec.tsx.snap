@@ -105,6 +105,7 @@ exports[`PrivacyPolicyScreen Screen should render PrivacyPolicyScreen correctly 
         </Text>
       </View>
       <RCTScrollView
+        showsVerticalScrollIndicator={false}
         style={
           {
             "marginLeft": 40,
@@ -132,62 +133,27 @@ exports[`PrivacyPolicyScreen Screen should render PrivacyPolicyScreen correctly 
             Introduction
             
 (“Sports Zoom LLC” or “We” or “Us”) respect your privacy and are committed to protecting it through our compliance with this policy. 
-This policy describes the types of information we may collect from you or that you may provide when you visit the website (
-            <View
-              accessibilityState={
-                {
-                  "busy": undefined,
-                  "checked": undefined,
-                  "disabled": undefined,
-                  "expanded": undefined,
-                  "selected": undefined,
-                }
-              }
-              accessibilityValue={
-                {
-                  "max": undefined,
-                  "min": undefined,
-                  "now": undefined,
-                  "text": undefined,
-                }
-              }
-              accessible={true}
-              collapsable={false}
-              focusable={true}
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
+This policy describes the types of information we may collect from you or that you may provide when you visit the website ( 
+            <Text
+              onPress={[Function]}
               style={
-                {
-                  "opacity": 1,
-                }
+                [
+                  {
+                    "color": "#69AA67",
+                    "lineHeight": 20,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
               }
             >
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#69AA67",
-                      "lineHeight": 20,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 16,
-                      "fontWeight": "bold",
-                      "textAlign": "auto",
-                      "textDecorationLine": "underline",
-                    },
-                  ]
-                }
-              >
-                SwingZen Website
-              </Text>
-            </View>
-            ) and our practices for collecting, using, maintaining, protecting, and disclosing that information.
+              SwingZen Website
+            </Text>
+             ) and our practices for collecting, using, maintaining, protecting, and disclosing that information.
             
 This policy applies to information we collect: 
 On this Website. In email, text, and other electronic messages between you and this Website. Through mobile and desktop applications you download from this Website, which provide dedicated non-browser-based interaction between you and this Website. 
@@ -333,60 +299,26 @@ It is our policy to post any changes we make to our privacy policy on this page 
 Contact Information 
             
 To ask questions or comment about this privacy policy and our privacy practices, contact us at: 
-            <View
-              accessibilityState={
-                {
-                  "busy": undefined,
-                  "checked": undefined,
-                  "disabled": undefined,
-                  "expanded": undefined,
-                  "selected": undefined,
-                }
-              }
-              accessibilityValue={
-                {
-                  "max": undefined,
-                  "min": undefined,
-                  "now": undefined,
-                  "text": undefined,
-                }
-              }
-              accessible={true}
-              collapsable={false}
-              focusable={true}
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
+            <Text
+              onPress={[Function]}
               style={
-                {
-                  "opacity": 1,
-                }
+                [
+                  {
+                    "color": "#69AA67",
+                    "lineHeight": 20,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                    "textDecorationLine": "underline",
+                  },
+                ]
               }
             >
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#69AA67",
-                      "lineHeight": 20,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 16,
-                      "fontWeight": "bold",
-                      "textAlign": "auto",
-                      "textDecorationLine": "underline",
-                    },
-                  ]
-                }
-              >
-                info@swingzen.com
-              </Text>
-            </View>
+              info@swingzen.com
+            </Text>
              or Sports Zoom LLC 423 S Margin St Franklin TN 37064.
             
 
