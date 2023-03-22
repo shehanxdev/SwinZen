@@ -4,7 +4,7 @@ import React from 'react';
 import { withGradientBackground } from '@sz/utils';
 
 import { Route } from './../constants';
-import { EmailVerificationScreen, PrivacyPolicyScreen, SignupScreen, TermsOfUseScreen } from './../screens';
+import { PrivacyPolicyScreen, RegisterEmailVerificationScreen, SignupScreen, TermsOfUseScreen } from './../screens';
 
 export type SignupStackParamList = {
   [Route.Signup]: {
@@ -32,7 +32,7 @@ export function SignupStack() {
       <Stack.Screen name={Route.Signup} component={SignupScreen} />
       <Stack.Screen
         name={Route.EmailVerification}
-        component={withGradientBackground({ BaseScreen: EmailVerificationScreen })}
+        component={withGradientBackground({ BaseScreen: RegisterEmailVerificationScreen })}
       />
       <Stack.Screen name={Route.PrivacyPolicy} component={PrivacyPolicyScreen} />
       <Stack.Screen name={Route.TermsOfUse} component={TermsOfUseScreen} />

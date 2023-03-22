@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react-native';
 import * as React from 'react';
 
-import { EmailVerificationScreen } from '../EmailVerificationScreen';
+import { RegisterEmailVerificationScreen } from '../RegisterEmailVerificationScreen';
 
-describe('EmailVerification Screen', () => {
-  const testID = 'EmailVerificationScreenContainerTestID';
-  const getRenderedScreen = () => render(<EmailVerificationScreen />);
+describe('Register Email Verification Screen', () => {
+  const testID = 'RegisterEmailVerificationScreenContainerTestID';
+  const getRenderedScreen = () => render(<RegisterEmailVerificationScreen />);
 
   it(`should render correctly`, () => {
     const rendered = getRenderedScreen();

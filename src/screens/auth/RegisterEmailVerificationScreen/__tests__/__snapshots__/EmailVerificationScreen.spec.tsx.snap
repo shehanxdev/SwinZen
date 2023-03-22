@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EmailVerification Screen should render correctly 1`] = `
+exports[`Register Email Verification Screen should render correctly 1`] = `
 <View
   style={
     {
@@ -10,7 +10,7 @@ exports[`EmailVerification Screen should render correctly 1`] = `
       "justifyContent": "space-between",
     }
   }
-  testID="EmailVerificationScreenContainerTestID"
+  testID="RegisterEmailVerificationScreenContainerTestID"
 >
   <View
     style={

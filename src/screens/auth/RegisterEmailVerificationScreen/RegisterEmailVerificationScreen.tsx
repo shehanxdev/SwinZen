@@ -8,9 +8,9 @@ import { NavigationService } from '@sz/services';
 
 import { OTPInput } from '../components';
 
-export function EmailVerificationScreen() {
+export function RegisterEmailVerificationScreen() {
   return (
-    <View style={tw`flex-1 justify-between`} testID="EmailVerificationScreenContainerTestID">
+    <View style={tw`flex-1 justify-between`} testID="RegisterEmailVerificationScreenContainerTestID">
       <View style={tw`mt-20 mx-5`}>
         <View style={tw`items-center`}>
           {/*TODO::remove this image and replace with SVG once the svg configurations get merged*/}
