@@ -1,29 +1,41 @@
 import React from 'react';
-import { Image, Linking, ScrollView, View } from 'react-native';
+import { Image, ImageBackground, Linking, Platform, ScrollView, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { TextVariant } from '@sz/constants';
 
 import { IMAGES } from '../../../assets/images';
-import { GradientBackground } from '../components';
+
+// import { GradientBackground } from '../components';
 
 export function PrivacyPolicyScreen() {
+  /*TODO:: Remove this and add into constant file*/
+  const isIOS = Platform.OS === 'ios';
+
   return (
-    <GradientBackground testID="PrivacyPolicyScreenTestID">
-      <View style={tw`flex-1`}>
-        {/*TODO:: Remove this image and replace with SVG later*/}
-        <Image source={IMAGES.footerLogo} style={tw`m-5`} />
-        <View style={tw`mx-10 mb-5`}>
-          <Text variant={TextVariant.SubTitle1}>Privacy Policy</Text>
-        </View>
-        <ScrollView style={tw`mx-10`} showsVerticalScrollIndicator={false}>
-          <Text variant={TextVariant.Body2Regular}>
-            {`Introduction
+    <View testID="PrivacyPolicyScreenTestID" style={tw`flex-1`}>
+      <ImageBackground style={tw`flex-1`} source={IMAGES.gradientBg}>
+        <SafeAreaView>
+          {/*TODO:: Remove this images and replace with SVG later*/}
+          <View style={tw`flex-row items-center justify-between my-5`}>
+            <Image source={IMAGES.footerLogo} style={tw`m-2`} />
+            <View style={tw`mr-10`}>
+              <Text variant={TextVariant.SubTitle2SemiBold}>Privacy Policy</Text>
+            </View>
+            <Image source={IMAGES.category} style={tw`m-2`} />
+          </View>
+          <View style={tw`relative bg-white opacity-15 mx-3 mb-10 rounded-xl border border-neutral-700 h-5/6`} />
+          <View style={tw`absolute ${isIOS ? 'mt-40' : 'mt-25'} mx-3 h-4.8/6`}>
+            <ScrollView style={tw`mx-5 z-1`} showsVerticalScrollIndicator={false}>
+              <Text variant={TextVariant.Body2Regular}>
+                {`Introduction
             \n(“Sports Zoom LLC” or “We” or “Us”) respect your privacy and are committed to protecting it through our compliance with this policy. \nThis policy describes the types of information we may collect from you or that you may provide when you visit the website ( `}
-            <Link text="SwingZen Website" onPress={() => Linking.openURL('https://swingzen.com')} />
-            {` ) and our practices for collecting, using, maintaining, protecting, and disclosing that information.
-            \nThis policy applies to information we collect: \nOn this Website. In email, text, and other electronic messages between you and this Website. Through mobile and desktop applications you download from this Website, which provide dedicated non-browser-based interaction between you and this Website. \nWhen you interact with our advertising and applications on third-party websites and services, if those applications or advertising include links to this policy. \nIt does not apply to information collected by: \nus offline or through any other means, including on any other website operated by Sports Zoom LLC or any third party including our affiliates and subsidiaries; or \nany third party including our affiliates and subsidiaries, including through any application or content including advertising that may link to or be accessible from or on the Website.
+                <Link text="SwingZen Website" onPress={() => Linking.openURL('https://swingzen.com')} />
+                {` ) and our practices for collecting, using, maintaining, protecting, and disclosing that information.
+            \nThis policy applies to information we collect: \nOn this Website. In email, text, and other electronic messages between you and this Website. Through mobile and desktop applications you download from this Website, which provide dedicated non-browser-based interaction between you and this Website. \nWhen you interact with our advertising and applications on third-party websites and services, if those applications or advertising include links to this policy.
+            \nIt does not apply to information collected by: \nus offline or through any other means, including on any other website operated by Sports Zoom LLC or any third party including our affiliates and subsidiaries; or \nany third party including our affiliates and subsidiaries, including through any application or content including advertising that may link to or be accessible from or on the Website.
             \nPlease read this policy carefully to understand our policies and practices regarding your information and how we will treat it. If you do not agree with our policies and practices, your choice is not to use our Website. By accessing or using this Website, you agree to this privacy policy. This policy may change from time to time. Your continued use of this Website after we make changes is deemed to be acceptance of those changes, so please check the policy periodically for updates.
             \n \nChildren Under the Age of 13
             \nOur Website is not intended for children under 13 years of age. No one under age 13 may provide any [personal] information to or on the Website. We do not knowingly collect personal information from children under 13. If you are under 13, do not use or provide any information on this Website or on or through any of its features/register on the Website, make any purchases through the Website, use any of the interactive or public comment features of this Website or provide any information about yourself to us, including your name, address, telephone number, email address, or any screen name or user name you may use. If we learn we have collected or received personal information from a child under 13 without verification of parental consent, we will delete that information. If you believe we might have any information from or about a child under 13, please contact us at.
@@ -78,13 +90,15 @@ export function PrivacyPolicyScreen() {
             \nIt is our policy to post any changes we make to our privacy policy on this page with a notice that the privacy policy has been updated on the Website home page. If we make material changes to how we treat our users’ personal information, we will notify you by email to the primary email address specified in your account and/or through a notice on the Website home page. The date the privacy policy was last revised is identified at the top of the page. You are responsible for ensuring we have an up-to-date active and deliverable email address for you, and for periodically visiting our Website and this privacy policy to check for any changes. 
             \n \nContact Information 
             \nTo ask questions or comment about this privacy policy and our privacy practices, contact us at: `}
-            <Link text="info@swingzen.com" underline onPress={() => Linking.openURL(`mailto:info@swingzen.com`)} />
-            {` or Sports Zoom LLC 423 S Margin St Franklin TN 37064.
+                <Link text="info@swingzen.com" underline onPress={() => Linking.openURL(`mailto:info@swingzen.com`)} />
+                {` or Sports Zoom LLC 423 S Margin St Franklin TN 37064.
             \n`}
-          </Text>
-        </ScrollView>
-      </View>
-    </GradientBackground>
+              </Text>
+            </ScrollView>
+          </View>
+        </SafeAreaView>
+      </ImageBackground>
+    </View>
   );
 }
 

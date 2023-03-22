@@ -1,163 +1,210 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PrivacyPolicyScreen Screen should render PrivacyPolicyScreen correctly 1`] = `
-<BVLinearGradient
-  colors={
-    [
-      4279917603,
-      4278984207,
-      4278650631,
-    ]
-  }
-  endPoint={
-    {
-      "x": 0.5,
-      "y": 1,
-    }
-  }
-  locations={null}
-  startPoint={
-    {
-      "x": 0.5,
-      "y": 0,
-    }
-  }
+<View
   style={
     {
       "flexBasis": "0%",
       "flexGrow": 1,
       "flexShrink": 1,
-      "position": "relative",
     }
   }
   testID="PrivacyPolicyScreenTestID"
 >
-  <Image
-    resizeMode="repeat"
-    source={
-      {
-        "testUri": "../../../src/assets/images/GrassBg.jpeg",
-      }
-    }
+  <View
+    accessibilityIgnoresInvertColors={true}
     style={
       {
-        "opacity": 0.1,
-      }
-    }
-  />
-  <RCTSafeAreaView
-    style={
-      {
-        "position": "absolute",
+        "flexBasis": "0%",
+        "flexGrow": 1,
+        "flexShrink": 1,
       }
     }
   >
-    <View
-      style={
+    <Image
+      source={
         {
-          "flexBasis": "0%",
-          "flexGrow": 1,
-          "flexShrink": 1,
+          "testUri": "../../../src/assets/images/GradientBg.png",
         }
       }
-    >
-      <Image
-        source={
+      style={
+        [
           {
-            "testUri": "../../../src/assets/images/FooterLogo.png",
-          }
-        }
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          {
+            "height": undefined,
+            "width": undefined,
+          },
+          undefined,
+        ]
+      }
+    />
+    <RNCSafeAreaView
+      edges={
+        [
+          "bottom",
+          "left",
+          "right",
+          "top",
+        ]
+      }
+    >
+      <View
         style={
           {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
             "marginBottom": 20,
-            "marginLeft": 20,
-            "marginRight": 20,
             "marginTop": 20,
+          }
+        }
+      >
+        <Image
+          source={
+            {
+              "testUri": "../../../src/assets/images/FooterLogo.png",
+            }
+          }
+          style={
+            {
+              "marginBottom": 8,
+              "marginLeft": 8,
+              "marginRight": 8,
+              "marginTop": 8,
+            }
+          }
+        />
+        <View
+          style={
+            {
+              "marginRight": 40,
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#F8F9FA",
+                  "lineHeight": 28,
+                },
+                {
+                  "fontFamily": "SourceSansPro-SemiBold",
+                  "fontSize": 21,
+                  "fontWeight": "600",
+                  "textAlign": "auto",
+                },
+              ]
+            }
+          >
+            Privacy Policy
+          </Text>
+        </View>
+        <Image
+          source={
+            {
+              "testUri": "../../../src/assets/images/Category.png",
+            }
+          }
+          style={
+            {
+              "marginBottom": 8,
+              "marginLeft": 8,
+              "marginRight": 8,
+              "marginTop": 8,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          {
+            "backgroundColor": "#fff",
+            "borderColor": "#404040",
+            "borderRadius": 12,
+            "borderWidth": 1,
+            "height": "83.333333%",
+            "marginBottom": 40,
+            "marginLeft": 12,
+            "marginRight": 12,
+            "opacity": 0.15,
+            "position": "relative",
           }
         }
       />
       <View
         style={
           {
-            "marginBottom": 20,
-            "marginLeft": 40,
-            "marginRight": 40,
+            "height": "80%",
+            "marginLeft": 12,
+            "marginRight": 12,
+            "marginTop": 160,
+            "position": "absolute",
           }
         }
       >
-        <Text
+        <RCTScrollView
+          showsVerticalScrollIndicator={false}
           style={
-            [
-              {
-                "color": "#F8F9FA",
-                "lineHeight": 40,
-              },
-              {
-                "fontFamily": "SourceSansPro-Regular",
-                "fontSize": 28,
-                "fontWeight": "600",
-                "textAlign": "auto",
-              },
-            ]
+            {
+              "marginLeft": 20,
+              "marginRight": 20,
+              "zIndex": 1,
+            }
           }
         >
-          Privacy Policy
-        </Text>
-      </View>
-      <RCTScrollView
-        showsVerticalScrollIndicator={false}
-        style={
-          {
-            "marginLeft": 40,
-            "marginRight": 40,
-          }
-        }
-      >
-        <View>
-          <Text
-            style={
-              [
-                {
-                  "color": "#F8F9FA",
-                  "lineHeight": 24,
-                },
-                {
-                  "fontFamily": "SourceSansPro-Regular",
-                  "fontSize": 16,
-                  "fontWeight": "normal",
-                  "textAlign": "auto",
-                },
-              ]
-            }
-          >
-            Introduction
-            
-(“Sports Zoom LLC” or “We” or “Us”) respect your privacy and are committed to protecting it through our compliance with this policy. 
-This policy describes the types of information we may collect from you or that you may provide when you visit the website ( 
+          <View>
             <Text
-              onPress={[Function]}
               style={
                 [
                   {
-                    "color": "#69AA67",
-                    "lineHeight": 20,
+                    "color": "#F8F9FA",
+                    "lineHeight": 24,
                   },
                   {
                     "fontFamily": "SourceSansPro-Regular",
                     "fontSize": 16,
-                    "fontWeight": "bold",
+                    "fontWeight": "normal",
                     "textAlign": "auto",
                   },
                 ]
               }
             >
-              SwingZen Website
-            </Text>
-             ) and our practices for collecting, using, maintaining, protecting, and disclosing that information.
+              Introduction
+            
+(“Sports Zoom LLC” or “We” or “Us”) respect your privacy and are committed to protecting it through our compliance with this policy. 
+This policy describes the types of information we may collect from you or that you may provide when you visit the website ( 
+              <Text
+                onPress={[Function]}
+                style={
+                  [
+                    {
+                      "color": "#69AA67",
+                      "lineHeight": 20,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 16,
+                      "fontWeight": "bold",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                SwingZen Website
+              </Text>
+               ) and our practices for collecting, using, maintaining, protecting, and disclosing that information.
             
 This policy applies to information we collect: 
 On this Website. In email, text, and other electronic messages between you and this Website. Through mobile and desktop applications you download from this Website, which provide dedicated non-browser-based interaction between you and this Website. 
-When you interact with our advertising and applications on third-party websites and services, if those applications or advertising include links to this policy. 
+When you interact with our advertising and applications on third-party websites and services, if those applications or advertising include links to this policy.
+            
 It does not apply to information collected by: 
 us offline or through any other means, including on any other website operated by Sports Zoom LLC or any third party including our affiliates and subsidiaries; or 
 any third party including our affiliates and subsidiaries, including through any application or content including advertising that may link to or be accessible from or on the Website.
@@ -299,33 +346,34 @@ It is our policy to post any changes we make to our privacy policy on this page 
 Contact Information 
             
 To ask questions or comment about this privacy policy and our privacy practices, contact us at: 
-            <Text
-              onPress={[Function]}
-              style={
-                [
-                  {
-                    "color": "#69AA67",
-                    "lineHeight": 20,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-Regular",
-                    "fontSize": 16,
-                    "fontWeight": "bold",
-                    "textAlign": "auto",
-                    "textDecorationLine": "underline",
-                  },
-                ]
-              }
-            >
-              info@swingzen.com
-            </Text>
-             or Sports Zoom LLC 423 S Margin St Franklin TN 37064.
+              <Text
+                onPress={[Function]}
+                style={
+                  [
+                    {
+                      "color": "#69AA67",
+                      "lineHeight": 20,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 16,
+                      "fontWeight": "bold",
+                      "textAlign": "auto",
+                      "textDecorationLine": "underline",
+                    },
+                  ]
+                }
+              >
+                info@swingzen.com
+              </Text>
+               or Sports Zoom LLC 423 S Margin St Franklin TN 37064.
             
 
-          </Text>
-        </View>
-      </RCTScrollView>
-    </View>
-  </RCTSafeAreaView>
-</BVLinearGradient>
+            </Text>
+          </View>
+        </RCTScrollView>
+      </View>
+    </RNCSafeAreaView>
+  </View>
+</View>
 `;

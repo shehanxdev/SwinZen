@@ -1,4 +1,5 @@
 export const IMAGES = {
-  grassBg: require('./GrassBg.jpeg'),
+  gradientBg: require('./GradientBg.png'),
   footerLogo: require('./FooterLogo.png'),
+  category: require('./Category.png'),
 };
