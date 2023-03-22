@@ -10,15 +10,18 @@ exports[`Button Component should render correctly should render correctly with [
 >
   <View
     collapsable={false}
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
     style={
       {
-        "alignSelf": undefined,
-        "bottom": undefined,
-        "end": undefined,
-        "flex": undefined,
-        "left": undefined,
-        "position": undefined,
-        "right": undefined,
+        "backgroundColor": "#8DBE8B",
+        "borderColor": "#ffffff00",
+        "borderRadius": 10,
+        "borderStyle": "solid",
+        "borderWidth": 1,
+        "elevation": 0,
+        "justifyContent": "center",
+        "minWidth": "auto",
         "shadowColor": "#000",
         "shadowOffset": {
           "height": 0,
@@ -26,179 +29,117 @@ exports[`Button Component should render correctly should render correctly with [
         },
         "shadowOpacity": 0,
         "shadowRadius": 0,
-        "start": undefined,
-        "top": undefined,
+        "width": "100%",
       }
     }
-    testID="ButtonTestID-container-outer-layer"
   >
     <View
-      collapsable={false}
-      style={
+      accessibilityRole="button"
+      accessibilityState={
         {
-          "flex": undefined,
-          "shadowColor": "#000",
-          "shadowOffset": {
-            "height": 0,
-            "width": 0,
-          },
-          "shadowOpacity": 0,
-          "shadowRadius": 0,
+          "disabled": false,
         }
       }
-      testID="ButtonTestID-container-inner-layer"
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        [
+          {
+            "overflow": "hidden",
+          },
+          {
+            "borderRadius": 10,
+          },
+        ]
+      }
+      testID="ButtonTestID"
     >
       <View
-        collapsable={false}
         style={
-          {
-            "backgroundColor": "#8DBE8B",
-            "borderColor": "#ffffff00",
-            "borderRadius": 10,
-            "borderStyle": "solid",
-            "borderWidth": 1,
-            "elevation": 0,
-            "flex": undefined,
-            "justifyContent": "center",
-            "minWidth": "auto",
-            "shadowColor": "#000",
-            "shadowOffset": {
-              "height": 0,
-              "width": 0,
+          [
+            {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
             },
-            "shadowOpacity": 0,
-            "shadowRadius": 0,
-            "width": "100%",
-          }
+            {
+              "height": 48,
+            },
+          ]
         }
-        testID="ButtonTestID-container"
       >
-        <View
-          accessibilityRole="button"
-          accessibilityState={
-            {
-              "busy": undefined,
-              "checked": undefined,
-              "disabled": false,
-              "expanded": undefined,
-              "selected": undefined,
-            }
-          }
-          accessibilityValue={
-            {
-              "max": undefined,
-              "min": undefined,
-              "now": undefined,
-              "text": undefined,
-            }
-          }
-          accessible={true}
-          collapsable={false}
-          focusable={true}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
+        <Text
+          numberOfLines={1}
+          selectable={false}
           style={
             [
               {
-                "overflow": "hidden",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
               },
-              false,
               {
-                "borderRadius": 10,
+                "textAlign": "left",
               },
+              [
+                {
+                  "letterSpacing": 1,
+                  "marginHorizontal": 16,
+                  "marginVertical": 9,
+                  "textAlign": "center",
+                },
+                {
+                  "marginHorizontal": 8,
+                },
+                false,
+                {
+                  "color": "#6200ee",
+                  "fontFamily": "System",
+                  "fontWeight": "500",
+                },
+                {
+                  "fontFamily": "System",
+                  "fontWeight": "500",
+                },
+                undefined,
+              ],
             ]
           }
-          testID="ButtonTestID"
         >
-          <View
+          <Text
             style={
               [
                 {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "center",
+                  "color": "#2125293d",
+                  "lineHeight": 24,
                 },
                 {
-                  "height": 48,
+                  "fontFamily": "SourceSansPro-SemiBold",
+                  "fontSize": 16,
+                  "fontWeight": "600",
+                  "textAlign": "center",
                 },
               ]
             }
           >
-            <Text
-              numberOfLines={1}
-              selectable={false}
-              style={
-                [
-                  {
-                    "fontFamily": "System",
-                    "fontSize": 14,
-                    "fontWeight": "500",
-                    "letterSpacing": 0.1,
-                    "lineHeight": 20,
-                  },
-                  {
-                    "textAlign": "left",
-                  },
-                  {
-                    "color": "rgba(28, 27, 31, 1)",
-                    "writingDirection": "ltr",
-                  },
-                  [
-                    {
-                      "marginHorizontal": 16,
-                      "marginVertical": 9,
-                      "textAlign": "center",
-                    },
-                    false,
-                    {
-                      "marginHorizontal": 12,
-                    },
-                    {
-                      "marginHorizontal": 8,
-                    },
-                    false,
-                    {
-                      "color": "rgba(103, 80, 164, 1)",
-                      "fontFamily": "System",
-                      "fontSize": 14,
-                      "fontWeight": "500",
-                      "letterSpacing": 0.1,
-                      "lineHeight": 20,
-                    },
-                    undefined,
-                  ],
-                ]
-              }
-              testID="ButtonTestID-text"
-            >
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#2125293d",
-                      "lineHeight": 24,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-SemiBold",
-                      "fontSize": 16,
-                      "fontWeight": "600",
-                      "textAlign": "center",
-                    },
-                  ]
-                }
-              >
-                dummy text
-              </Text>
-            </Text>
-          </View>
-        </View>
+            dummy text
+          </Text>
+        </Text>
       </View>
     </View>
   </View>
@@ -215,15 +156,18 @@ exports[`Button Component should render correctly should render correctly with [
 >
   <View
     collapsable={false}
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
     style={
       {
-        "alignSelf": undefined,
-        "bottom": undefined,
-        "end": undefined,
-        "flex": undefined,
-        "left": undefined,
-        "position": undefined,
-        "right": undefined,
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "#F8F9FA",
+        "borderRadius": 10,
+        "borderStyle": "solid",
+        "borderWidth": 1,
+        "elevation": 0,
+        "justifyContent": "center",
+        "minWidth": "auto",
         "shadowColor": "#000",
         "shadowOffset": {
           "height": 0,
@@ -231,179 +175,117 @@ exports[`Button Component should render correctly should render correctly with [
         },
         "shadowOpacity": 0,
         "shadowRadius": 0,
-        "start": undefined,
-        "top": undefined,
+        "width": "100%",
       }
     }
-    testID="ButtonTestID-container-outer-layer"
   >
     <View
-      collapsable={false}
-      style={
+      accessibilityRole="button"
+      accessibilityState={
         {
-          "flex": undefined,
-          "shadowColor": "#000",
-          "shadowOffset": {
-            "height": 0,
-            "width": 0,
-          },
-          "shadowOpacity": 0,
-          "shadowRadius": 0,
+          "disabled": false,
         }
       }
-      testID="ButtonTestID-container-inner-layer"
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        [
+          {
+            "overflow": "hidden",
+          },
+          {
+            "borderRadius": 10,
+          },
+        ]
+      }
+      testID="ButtonTestID"
     >
       <View
-        collapsable={false}
         style={
-          {
-            "backgroundColor": "#FFFFFF",
-            "borderColor": "#F8F9FA",
-            "borderRadius": 10,
-            "borderStyle": "solid",
-            "borderWidth": 1,
-            "elevation": 0,
-            "flex": undefined,
-            "justifyContent": "center",
-            "minWidth": "auto",
-            "shadowColor": "#000",
-            "shadowOffset": {
-              "height": 0,
-              "width": 0,
+          [
+            {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
             },
-            "shadowOpacity": 0,
-            "shadowRadius": 0,
-            "width": "100%",
-          }
+            {
+              "height": 48,
+            },
+          ]
         }
-        testID="ButtonTestID-container"
       >
-        <View
-          accessibilityRole="button"
-          accessibilityState={
-            {
-              "busy": undefined,
-              "checked": undefined,
-              "disabled": false,
-              "expanded": undefined,
-              "selected": undefined,
-            }
-          }
-          accessibilityValue={
-            {
-              "max": undefined,
-              "min": undefined,
-              "now": undefined,
-              "text": undefined,
-            }
-          }
-          accessible={true}
-          collapsable={false}
-          focusable={true}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
+        <Text
+          numberOfLines={1}
+          selectable={false}
           style={
             [
               {
-                "overflow": "hidden",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
               },
-              false,
               {
-                "borderRadius": 10,
+                "textAlign": "left",
               },
+              [
+                {
+                  "letterSpacing": 1,
+                  "marginHorizontal": 16,
+                  "marginVertical": 9,
+                  "textAlign": "center",
+                },
+                {
+                  "marginHorizontal": 8,
+                },
+                false,
+                {
+                  "color": "#6200ee",
+                  "fontFamily": "System",
+                  "fontWeight": "500",
+                },
+                {
+                  "fontFamily": "System",
+                  "fontWeight": "500",
+                },
+                undefined,
+              ],
             ]
           }
-          testID="ButtonTestID"
         >
-          <View
+          <Text
             style={
               [
                 {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "center",
+                  "color": "#DEE2E6",
+                  "lineHeight": 24,
                 },
                 {
-                  "height": 48,
+                  "fontFamily": "SourceSansPro-SemiBold",
+                  "fontSize": 16,
+                  "fontWeight": "600",
+                  "textAlign": "center",
                 },
               ]
             }
           >
-            <Text
-              numberOfLines={1}
-              selectable={false}
-              style={
-                [
-                  {
-                    "fontFamily": "System",
-                    "fontSize": 14,
-                    "fontWeight": "500",
-                    "letterSpacing": 0.1,
-                    "lineHeight": 20,
-                  },
-                  {
-                    "textAlign": "left",
-                  },
-                  {
-                    "color": "rgba(28, 27, 31, 1)",
-                    "writingDirection": "ltr",
-                  },
-                  [
-                    {
-                      "marginHorizontal": 16,
-                      "marginVertical": 9,
-                      "textAlign": "center",
-                    },
-                    false,
-                    {
-                      "marginHorizontal": 12,
-                    },
-                    {
-                      "marginHorizontal": 8,
-                    },
-                    false,
-                    {
-                      "color": "rgba(103, 80, 164, 1)",
-                      "fontFamily": "System",
-                      "fontSize": 14,
-                      "fontWeight": "500",
-                      "letterSpacing": 0.1,
-                      "lineHeight": 20,
-                    },
-                    undefined,
-                  ],
-                ]
-              }
-              testID="ButtonTestID-text"
-            >
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#DEE2E6",
-                      "lineHeight": 24,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-SemiBold",
-                      "fontSize": 16,
-                      "fontWeight": "600",
-                      "textAlign": "center",
-                    },
-                  ]
-                }
-              >
-                dummy text
-              </Text>
-            </Text>
-          </View>
-        </View>
+            dummy text
+          </Text>
+        </Text>
       </View>
     </View>
   </View>
@@ -420,15 +302,18 @@ exports[`Button Component should render correctly should render correctly with [
 >
   <View
     collapsable={false}
+    onTouchEnd={[Function]}
+    onTouchStart={[Function]}
     style={
       {
-        "alignSelf": undefined,
-        "bottom": undefined,
-        "end": undefined,
-        "flex": undefined,
-        "left": undefined,
-        "position": undefined,
-        "right": undefined,
+        "backgroundColor": "#C4FE7A",
+        "borderColor": "#ffffff00",
+        "borderRadius": 10,
+        "borderStyle": "solid",
+        "borderWidth": 1,
+        "elevation": 0,
+        "justifyContent": "center",
+        "minWidth": "auto",
         "shadowColor": "#000",
         "shadowOffset": {
           "height": 0,
@@ -436,179 +321,117 @@ exports[`Button Component should render correctly should render correctly with [
         },
         "shadowOpacity": 0,
         "shadowRadius": 0,
-        "start": undefined,
-        "top": undefined,
+        "width": "100%",
       }
     }
-    testID="ButtonTestID-container-outer-layer"
   >
     <View
-      collapsable={false}
-      style={
+      accessibilityRole="button"
+      accessibilityState={
         {
-          "flex": undefined,
-          "shadowColor": "#000",
-          "shadowOffset": {
-            "height": 0,
-            "width": 0,
-          },
-          "shadowOpacity": 0,
-          "shadowRadius": 0,
+          "disabled": false,
         }
       }
-      testID="ButtonTestID-container-inner-layer"
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        [
+          {
+            "overflow": "hidden",
+          },
+          {
+            "borderRadius": 10,
+          },
+        ]
+      }
+      testID="ButtonTestID"
     >
       <View
-        collapsable={false}
         style={
-          {
-            "backgroundColor": "#C4FE7A",
-            "borderColor": "#ffffff00",
-            "borderRadius": 10,
-            "borderStyle": "solid",
-            "borderWidth": 1,
-            "elevation": 0,
-            "flex": undefined,
-            "justifyContent": "center",
-            "minWidth": "auto",
-            "shadowColor": "#000",
-            "shadowOffset": {
-              "height": 0,
-              "width": 0,
+          [
+            {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
             },
-            "shadowOpacity": 0,
-            "shadowRadius": 0,
-            "width": "100%",
-          }
+            {
+              "height": 48,
+            },
+          ]
         }
-        testID="ButtonTestID-container"
       >
-        <View
-          accessibilityRole="button"
-          accessibilityState={
-            {
-              "busy": undefined,
-              "checked": undefined,
-              "disabled": false,
-              "expanded": undefined,
-              "selected": undefined,
-            }
-          }
-          accessibilityValue={
-            {
-              "max": undefined,
-              "min": undefined,
-              "now": undefined,
-              "text": undefined,
-            }
-          }
-          accessible={true}
-          collapsable={false}
-          focusable={true}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
+        <Text
+          numberOfLines={1}
+          selectable={false}
           style={
             [
               {
-                "overflow": "hidden",
+                "color": "#000000",
+                "fontFamily": "System",
+                "fontWeight": "400",
               },
-              false,
               {
-                "borderRadius": 10,
+                "textAlign": "left",
               },
+              [
+                {
+                  "letterSpacing": 1,
+                  "marginHorizontal": 16,
+                  "marginVertical": 9,
+                  "textAlign": "center",
+                },
+                {
+                  "marginHorizontal": 8,
+                },
+                false,
+                {
+                  "color": "#6200ee",
+                  "fontFamily": "System",
+                  "fontWeight": "500",
+                },
+                {
+                  "fontFamily": "System",
+                  "fontWeight": "500",
+                },
+                undefined,
+              ],
             ]
           }
-          testID="ButtonTestID"
         >
-          <View
+          <Text
             style={
               [
                 {
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "justifyContent": "center",
+                  "color": "#F8F9FA",
+                  "lineHeight": 24,
                 },
                 {
-                  "height": 48,
+                  "fontFamily": "SourceSansPro-SemiBold",
+                  "fontSize": 16,
+                  "fontWeight": "600",
+                  "textAlign": "center",
                 },
               ]
             }
           >
-            <Text
-              numberOfLines={1}
-              selectable={false}
-              style={
-                [
-                  {
-                    "fontFamily": "System",
-                    "fontSize": 14,
-                    "fontWeight": "500",
-                    "letterSpacing": 0.1,
-                    "lineHeight": 20,
-                  },
-                  {
-                    "textAlign": "left",
-                  },
-                  {
-                    "color": "rgba(28, 27, 31, 1)",
-                    "writingDirection": "ltr",
-                  },
-                  [
-                    {
-                      "marginHorizontal": 16,
-                      "marginVertical": 9,
-                      "textAlign": "center",
-                    },
-                    false,
-                    {
-                      "marginHorizontal": 12,
-                    },
-                    {
-                      "marginHorizontal": 8,
-                    },
-                    false,
-                    {
-                      "color": "rgba(103, 80, 164, 1)",
-                      "fontFamily": "System",
-                      "fontSize": 14,
-                      "fontWeight": "500",
-                      "letterSpacing": 0.1,
-                      "lineHeight": 20,
-                    },
-                    undefined,
-                  ],
-                ]
-              }
-              testID="ButtonTestID-text"
-            >
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#F8F9FA",
-                      "lineHeight": 24,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-SemiBold",
-                      "fontSize": 16,
-                      "fontWeight": "600",
-                      "textAlign": "center",
-                    },
-                  ]
-                }
-              >
-                dummy text
-              </Text>
-            </Text>
-          </View>
-        </View>
+            dummy text
+          </Text>
+        </Text>
       </View>
     </View>
   </View>

@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextField Component should render correctly 1`] = `
+<View>
+  <Text
+    style={
+      [
+        {
+          "color": "#E9ECEF",
+          "lineHeight": 24,
+        },
+        {
+          "fontFamily": "SourceSansPro-SemiBold",
+          "fontSize": 16,
+          "fontWeight": "600",
+          "textAlign": "center",
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      {
+        "marginBottom": 0,
+        "marginLeft": 0,
+        "marginRight": 0,
+        "marginTop": 0,
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "paddingTop": 0,
+      }
+    }
+  >
+    <View
+      pointerEvents="none"
+      style={
+        [
+          {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 6,
+          },
+          {
+            "backgroundColor": "#283E36",
+            "borderColor": "#ffffff00",
+            "borderRadius": 10,
+            "borderWidth": 1,
+          },
+        ]
+      }
+      testID="text-input-outline"
+    />
+    <View>
+      <View
+        style={
+          [
+            {
+              "paddingBottom": 0,
+            },
+            {
+              "minHeight": 50,
+              "paddingTop": 8,
+            },
+          ]
+        }
+      >
+        <TextInput
+          defaultValue="Default value"
+          editable={true}
+          maxFontSizeMultiplier={1.5}
+          multiline={false}
+          onBlur={[Function]}
+          onChangeText={[Function]}
+          onFocus={[Function]}
+          placeholderTextColor="#ADB5BD"
+          selectionColor="#6C757D"
+          style={
+            [
+              {
+                "flexGrow": 1,
+                "margin": 0,
+                "paddingHorizontal": 14,
+                "zIndex": 1,
+              },
+              {
+                "height": 50,
+              },
+              {
+                "paddingBottom": 17,
+                "paddingTop": 17,
+              },
+              {
+                "color": "#ADB5BD",
+                "fontFamily": "System",
+                "fontSize": 16,
+                "fontVariant": undefined,
+                "fontWeight": undefined,
+                "textAlign": "left",
+                "textAlignVertical": "center",
+              },
+              false,
+              [
+                {},
+              ],
+            ]
+          }
+          testID="TEST_ID"
+          underlineColorAndroid="transparent"
+          value="Default value"
+        />
+      </View>
+    </View>
+  </View>
+  <Text
+    style={
+      [
+        {
+          "color": "#E9ECEF",
+          "lineHeight": 24,
+        },
+        {
+          "fontFamily": "SourceSansPro-Regular",
+          "fontSize": 15,
+          "fontWeight": "600",
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    Helper text
+  </Text>
+</View>
+`;

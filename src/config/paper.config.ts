@@ -1,4 +1,4 @@
-import { MD2LightTheme as DefaultTheme, configureFonts } from 'react-native-paper';
+import { DefaultTheme, configureFonts } from 'react-native-paper';
 import { Fonts } from 'react-native-paper/src/types';
 
 import config from './share.config';
@@ -12,15 +12,15 @@ const fontConfig: Fonts = {
     fontWeight: 'normal',
   },
   medium: {
-    fontFamily: config.fontFamily.SourceSansProRegular,
+    fontFamily: config.fontFamily.SourceSansProMedium,
     fontWeight: 'normal',
   },
   light: {
-    fontFamily: config.fontFamily.SourceSansProRegular,
+    fontFamily: config.fontFamily.SourceSansProLight,
     fontWeight: 'normal',
   },
   thin: {
-    fontFamily: config.fontFamily.SourceSansProRegular,
+    fontFamily: config.fontFamily.SourceSansProThin,
     fontWeight: 'normal',
   },
 };
@@ -30,5 +30,5 @@ export const paperTheme = {
   colors: {
     ...DefaultTheme.colors,
   },
-  fonts: configureFonts({ config: { android: fontConfig, ios: fontConfig, default: fontConfig }, isV3: false }),
+  fonts: configureFonts({ android: fontConfig, ios: fontConfig, default: fontConfig }),
 };
