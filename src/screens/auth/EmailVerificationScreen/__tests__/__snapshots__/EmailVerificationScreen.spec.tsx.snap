@@ -339,7 +339,7 @@ exports[`EmailVerification Screen should render correctly 1`] = `
         autoCapitalize="characters"
         autoCorrect={false}
         blurOnSubmit={false}
-        caretHidden={true}
+        caretHidden={false}
         clearButtonMode="never"
         disableFullscreenUI={true}
         keyboardType="number-pad"
@@ -608,6 +608,8 @@ exports[`EmailVerification Screen should render correctly 1`] = `
       {
         "alignItems": "center",
         "marginBottom": 20,
+        "marginLeft": 20,
+        "marginRight": 20,
       }
     }
   >
@@ -627,8 +629,10 @@ exports[`EmailVerification Screen should render correctly 1`] = `
         ]
       }
     >
-      By continuing, you agree to our 
+      By continuing, you agree to our
+       
       <Text
+        onPress={[Function]}
         style={
           [
             {
@@ -646,8 +650,11 @@ exports[`EmailVerification Screen should render correctly 1`] = `
       >
         Privacy Policy
       </Text>
-       and our 
+       
+      and our
+       
       <Text
+        onPress={[Function]}
         style={
           [
             {

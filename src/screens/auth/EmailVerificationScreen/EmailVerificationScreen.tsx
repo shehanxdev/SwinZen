@@ -3,7 +3,8 @@ import { Image, View } from 'react-native';
 
 import { Button, Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { TextVariant } from '@sz/constants';
+import { Route, TextVariant } from '@sz/constants';
+import { NavigationService } from '@sz/services';
 
 import { OTPInput } from '../components';
 
@@ -34,7 +35,7 @@ export function EmailVerificationScreen() {
         <View style={tw`mt-30 mb-3`}>
           <Button
             onPress={() => {
-              //TODO::handle navigation
+              //TODO::implement with the API integration
             }}
             title={'Verify'}
           />
@@ -43,10 +44,22 @@ export function EmailVerificationScreen() {
           <Link text={'Resend the code'} />
         </View>
       </View>
-      <View style={tw`items-center mb-5 items-center`}>
+      <View style={tw`items-center mb-5 items-center mx-5`}>
         <Text variant={TextVariant.Body2Regular}>
-          By continuing, you agree to our <Link text={'Privacy Policy'} /> and our <Link text="Terms of Use" />
-          {/* TODO::handle link on press redirects */}
+          By continuing, you agree to our{' '}
+          <Link
+            text={'Privacy Policy'}
+            onPress={() => {
+              NavigationService.navigate(Route.PrivacyPolicy);
+            }}
+          />{' '}
+          and our{' '}
+          <Link
+            text="Terms of Use"
+            onPress={() => {
+              NavigationService.navigate(Route.TermsOfUse);
+            }}
+          />
         </Text>
       </View>
     </View>

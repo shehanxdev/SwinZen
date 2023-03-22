@@ -38,6 +38,7 @@ export function OTPInput({ testID, onChangeValue }: OTPInputProps) {
   return (
     <CodeField
       ref={codeFieldRef}
+      caretHidden={false}
       {...props}
       value={value}
       onChangeText={value => {
