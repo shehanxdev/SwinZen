@@ -1,9 +1,19 @@
 import React from 'react';
-import { Image, ImageBackground, Linking, NativeModules, SafeAreaView, ScrollView, View } from 'react-native';
+import {
+  Image,
+  ImageBackground,
+  Linking,
+  NativeModules,
+  SafeAreaView,
+  ScrollView,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 import { Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { TextVariant } from '@sz/constants';
+import { NavigationService } from '@sz/services';
 
 import { IMAGES } from '../../../assets/images';
 
@@ -17,7 +27,9 @@ export function PrivacyPolicyScreen() {
         <SafeAreaView>
           {/*TODO:: Remove this images and replace with SVG later*/}
           <View style={tw`flex-row items-center justify-between my-5`}>
-            <Image source={IMAGES.leftArrow} style={tw`m-2`} />
+            <TouchableOpacity onPress={() => NavigationService.goBack()}>
+              <Image source={IMAGES.leftArrow} style={tw`m-2`} />
+            </TouchableOpacity>
             <View style={tw`mr-7`}>
               <Text variant={TextVariant.SubTitle2SemiBold}>Privacy policy</Text>
             </View>
