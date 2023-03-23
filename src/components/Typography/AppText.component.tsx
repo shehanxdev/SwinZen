@@ -10,11 +10,12 @@ import { AppTextProps } from './AppText.types';
 export function Text({
   color = Color.Neutral.Sz100,
   variant,
-  textAlign = TextAlignment.Auto,
+  textAlign = TextAlignment.Center,
   numberOfLines,
   underline,
   testID,
   children,
+  onPress,
 }: PropsWithChildren<AppTextProps>) {
   const variantStyle = AppTextStyles[variant];
 
@@ -37,6 +38,7 @@ export function Text({
         },
         tw`${textStyles}`,
       ]}
+      onPress={onPress}
       testID={testID}
       numberOfLines={numberOfLines}>
       {children}

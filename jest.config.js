@@ -16,6 +16,7 @@ module.exports = {
     '^@sz/services(.*)$': '<rootDir>/src/services$1',
     '^@sz/stores(.*)$': '<rootDir>/src/stores$1',
     '^@sz/utils(.*)$': '<rootDir>/src/utils$1',
+    '\\.svg': '<rootDir>/__mocks__/svgMock.js',
   },
   transform: {
     '/node_modules/.+\\.(js|ts|tsx)$': './react-native-jest-preprocessor.js',
