@@ -146,7 +146,7 @@ export function SignupScreen() {
             <Button onPress={() => handleSubmit(onRegister)} title={'Register'} />
           </View>
           <Text variant={TextVariant.Body2Regular}>
-            Already have an account?
+            Already Have An Account?
             <Link
               text=" Sign in"
               onPress={() => {
