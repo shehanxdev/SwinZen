@@ -56,10 +56,10 @@ export function Button({
         }`}
         contentStyle={tw`h-12`}
         testID={testID}
-        onPressIn={() => {
+        onTouchStart={() => {
           setIsButtonClicked(true);
         }}
-        onPressOut={() => {
+        onTouchEnd={() => {
           setIsButtonClicked(false);
         }}
         onLongPress={onLongPress}>
