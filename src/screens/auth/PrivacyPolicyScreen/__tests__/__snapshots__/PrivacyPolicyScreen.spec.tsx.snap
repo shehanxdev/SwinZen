@@ -140,7 +140,6 @@ exports[`PrivacyPolicyScreen Screen should render PrivacyPolicyScreen correctly 
         }
       >
         <RCTScrollView
-          showsVerticalScrollIndicator={false}
           style={
             {
               "marginLeft": 20,

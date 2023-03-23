@@ -25,7 +25,7 @@ export function PrivacyPolicyScreen() {
           </View>
           <View style={tw`relative bg-white opacity-15 mx-3 mb-10 rounded-xl border border-neutral-700 h-5/6`} />
           <View style={tw`absolute mt-[${customMargin}px] mx-3 h-4.6/6`}>
-            <ScrollView style={tw`mx-5 z-1`} showsVerticalScrollIndicator={false}>
+            <ScrollView style={tw`mx-5 z-1`}>
               <Text variant={TextVariant.Body2Regular}>
                 {`Introduction
             \n(“Sports Zoom LLC” or “We” or “Us”) respect your privacy and are committed to protecting it through our compliance with this policy. \nThis policy describes the types of information we may collect from you or that you may provide when you visit the website ( `}
