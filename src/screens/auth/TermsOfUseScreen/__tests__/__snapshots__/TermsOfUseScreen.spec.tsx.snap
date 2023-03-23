@@ -56,25 +56,60 @@ exports[`TermsOfUseScreen Screen should render TermsOfUseScreen correctly 1`] = 
           }
         }
       >
-        <Image
-          source={
+        <View
+          accessibilityState={
             {
-              "testUri": "../../../src/assets/images/FooterLogo.png",
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
             }
           }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             {
-              "marginBottom": 8,
-              "marginLeft": 8,
-              "marginRight": 8,
-              "marginTop": 8,
+              "opacity": 1,
             }
           }
-        />
+        >
+          <Image
+            source={
+              {
+                "testUri": "../../../src/assets/images/LeftArrow.png",
+              }
+            }
+            style={
+              {
+                "marginBottom": 8,
+                "marginLeft": 8,
+                "marginRight": 8,
+                "marginTop": 8,
+              }
+            }
+          />
+        </View>
         <View
           style={
             {
-              "marginRight": 40,
+              "marginRight": 28,
             }
           }
         >
@@ -97,21 +132,7 @@ exports[`TermsOfUseScreen Screen should render TermsOfUseScreen correctly 1`] = 
             Terms of Use
           </Text>
         </View>
-        <Image
-          source={
-            {
-              "testUri": "../../../src/assets/images/Category.png",
-            }
-          }
-          style={
-            {
-              "marginBottom": 8,
-              "marginLeft": 8,
-              "marginRight": 8,
-              "marginTop": 8,
-            }
-          }
-        />
+        <View />
       </View>
       <View
         style={
