@@ -56,21 +56,56 @@ exports[`PrivacyPolicyScreen Screen should render PrivacyPolicyScreen correctly 
           }
         }
       >
-        <Image
-          source={
+        <View
+          accessibilityState={
             {
-              "testUri": "../../../src/assets/images/LeftArrow.png",
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
             }
           }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             {
-              "marginBottom": 8,
-              "marginLeft": 8,
-              "marginRight": 8,
-              "marginTop": 8,
+              "opacity": 1,
             }
           }
-        />
+        >
+          <Image
+            source={
+              {
+                "testUri": "../../../src/assets/images/LeftArrow.png",
+              }
+            }
+            style={
+              {
+                "marginBottom": 8,
+                "marginLeft": 8,
+                "marginRight": 8,
+                "marginTop": 8,
+              }
+            }
+          />
+        </View>
         <View
           style={
             {
