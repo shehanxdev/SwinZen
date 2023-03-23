@@ -1,8 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
-import { Route } from './../constants';
-import { PrivacyPolicyScreen, RegisterEmailVerificationScreen, SignupScreen, TermsOfUseScreen } from './../screens';
+import { Route } from '@sz/constants';
+import { PrivacyPolicyScreen, RegisterEmailVerificationScreen, SignupScreen, TermsOfUseScreen } from '@sz/screens';
 
 export type SignupStackParamList = {
   [Route.Signup]: {

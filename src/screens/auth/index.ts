@@ -1,5 +1,5 @@
 export * from './LoginScreen';
-export * from './SignupScreen';
-export * from './RegisterEmailVerificationScreen';
 export * from './PrivacyPolicyScreen';
+export * from './RegisterEmailVerificationScreen';
+export * from './SignupScreen';
 export * from './TermsOfUseScreen';

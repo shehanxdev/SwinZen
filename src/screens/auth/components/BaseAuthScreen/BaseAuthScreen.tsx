@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, ScrollView } from 'react-native';
+import { KeyboardAvoidingView, Platform, SafeAreaView, ScrollView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { LinearGradientProps } from 'react-native-linear-gradient';
 
@@ -17,9 +17,11 @@ export function BaseAuthScreen({
   return (
     <LinearGradient {...otherlinearGradientProps} colors={colors} style={tw`h-full`}>
       <SafeAreaView style={tw`flex-1`}>
-        <ScrollView contentContainerStyle={tw`grow`} keyboardShouldPersistTaps="handled">
-          {children}
-        </ScrollView>
+        <KeyboardAvoidingView style={tw`flex-1`} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+          <ScrollView contentContainerStyle={tw`grow`} keyboardShouldPersistTaps="handled">
+            {children}
+          </ScrollView>
+        </KeyboardAvoidingView>
       </SafeAreaView>
     </LinearGradient>
   );
