@@ -38,13 +38,13 @@ describe('Button Component', () => {
     jest.clearAllMocks();
   });
 
-  const getRenderedScreen = (props?: Partial<ButtonProps>) =>
+  const getRenderedButtonComponent = (props?: Partial<ButtonProps>) =>
     render(<Button {...props} onPress={mockOnPressFunction} testID={testID} title={dummyText} />);
 
   describe('should render correctly', () => {
     for (const otherProp of otherPropSet) {
       it(`should render correctly with ${otherProp}`, () => {
-        const rendered = getRenderedScreen({ ...otherProp });
+        const rendered = getRenderedButtonComponent({ ...otherProp });
         const renderedTree = rendered.toJSON();
         expect(renderedTree).toMatchSnapshot();
       });
@@ -52,42 +52,42 @@ describe('Button Component', () => {
   });
 
   it('should find the button via testID', () => {
-    const { getByTestId } = getRenderedScreen();
+    const { getByTestId } = getRenderedButtonComponent();
     const foundButton = getByTestId(testID);
 
     expect(foundButton).toBeTruthy();
   });
 
   it(`should show relevant text inside the button`, () => {
-    const { getByText } = getRenderedScreen();
+    const { getByText } = getRenderedButtonComponent();
     const foundTextElement = getByText(dummyText);
 
     expect(foundTextElement.props.children).toEqual(dummyText);
   });
 
   it('should not call on press function, if the button IS IN disable state', () => {
-    const { getByTestId } = getRenderedScreen({ disabled: true });
+    const { getByTestId } = getRenderedButtonComponent({ disabled: true });
 
     fireEvent.press(getByTestId(testID));
     expect(mockOnPressFunction).not.toHaveBeenCalled();
   });
 
   it('should call on press function, if the button IS NOT in disable state', () => {
-    const { getByTestId } = getRenderedScreen({ disabled: false });
+    const { getByTestId } = getRenderedButtonComponent({ disabled: false });
 
     fireEvent.press(getByTestId(testID));
     expect(mockOnPressFunction).toHaveBeenCalled();
   });
 
   it('should not call on long press function, if the button IS IN disable state', () => {
-    const { getByTestId } = getRenderedScreen({ disabled: true, onLongPress: mockOnLongPressFunction });
+    const { getByTestId } = getRenderedButtonComponent({ disabled: true, onLongPress: mockOnLongPressFunction });
 
     fireEvent.press(getByTestId(testID));
     expect(mockOnPressFunction).not.toHaveBeenCalled();
   });
 
   it('should call on long press function, if the button IS NOT in disable state', () => {
-    const { getByTestId } = getRenderedScreen({ disabled: false, onLongPress: mockOnLongPressFunction });
+    const { getByTestId } = getRenderedButtonComponent({ disabled: false, onLongPress: mockOnLongPressFunction });
 
     fireEvent.press(getByTestId(testID));
     expect(mockOnPressFunction).toHaveBeenCalled();

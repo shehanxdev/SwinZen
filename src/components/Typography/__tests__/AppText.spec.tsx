@@ -21,7 +21,7 @@ describe('AppText Component', () => {
     },
   ];
 
-  const getRenderedScreen = (props: AppTextProps) =>
+  const getRenderedTextComponent = (props: AppTextProps) =>
     render(
       <Text {...props} testID={testID}>
         Dummy Text
@@ -29,7 +29,7 @@ describe('AppText Component', () => {
     );
 
   it('should find the component via testID', () => {
-    const { getByTestId } = getRenderedScreen({ variant: TextVariant.Heading1 });
+    const { getByTestId } = getRenderedTextComponent({ variant: TextVariant.Heading1 });
     const textComponent = getByTestId(testID);
 
     expect(textComponent).toBeTruthy();
@@ -48,7 +48,7 @@ describe('AppText Component', () => {
           };
 
           it(`should render correctly with TextAlignment prop : ${propSet.textAlign}, TextVariant prop : ${propSet.variant}, color prop :${rest.color}, underline prop :${rest.numberOfLines}, numberOfLine prop :${rest.underline}`, () => {
-            const rendered = getRenderedScreen(propSet);
+            const rendered = getRenderedTextComponent(propSet);
             const renderedTree = rendered.toJSON();
             expect(renderedTree).toMatchSnapshot();
           });

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Text } from '@sz/components';
 import { Color, TextVariant } from '@sz/constants';
 
+import { Text } from './../Typography';
 import { LinkProps } from './Link.types';
 
 export function Link({ onPress, testID, text, textColor = Color.Primary.Sz400, underline = false }: LinkProps) {
