@@ -56,12 +56,9 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
           }
         }
       >
-        <Image
-          source={
-            {
-              "testUri": "../../../src/assets/logo/swingzen-logo.png",
-            }
-          }
+        <SvgMock
+          height={55}
+          width={108}
         />
       </View>
       <View
