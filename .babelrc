@@ -12,6 +12,7 @@
         "root": ["./src"],
         "extensions": [".ios.ts", ".android.ts", ".ts", ".ios.tsx", ".android.tsx", ".tsx", ".jsx", ".js", ".json"],
         "alias": {
+          "@sz/assets": "./src/assets/index",
           "@sz/components": "./src/components/index",
           "@sz/config": "./src/config/index",
           "@sz/routes": "./src/routes/index",
