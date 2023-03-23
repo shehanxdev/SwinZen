@@ -1,8 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
-import { withBaseScreen } from '@sz/utils';
-
 import { Route } from './../constants';
 import { PrivacyPolicyScreen, RegisterEmailVerificationScreen, SignupScreen, TermsOfUseScreen } from './../screens';
 
@@ -30,10 +28,7 @@ export function SignupStack() {
         headerShown: false,
       }}>
       <Stack.Screen name={Route.Signup} component={SignupScreen} />
-      <Stack.Screen
-        name={Route.EmailVerification}
-        component={withBaseScreen({ BaseScreen: RegisterEmailVerificationScreen })}
-      />
+      <Stack.Screen name={Route.EmailVerification} component={RegisterEmailVerificationScreen} />
       <Stack.Screen name={Route.PrivacyPolicy} component={PrivacyPolicyScreen} />
       <Stack.Screen name={Route.TermsOfUse} component={TermsOfUseScreen} />
     </Stack.Navigator>
