@@ -6,4 +6,5 @@ export enum Route {
   EmailVerification = 'email-verification',
   PrivacyPolicy = 'privacy-policy',
   TermsOfUse = 'terms-of-use',
+  ForgotPassword = 'forgot-password',
 }

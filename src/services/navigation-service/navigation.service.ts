@@ -85,6 +85,16 @@ export class NavigationService {
           },
         };
         break;
+      case Route.ForgotPassword:
+        navRoute = Route.AuthStack;
+        navParams = {
+          screen: Route.ForgotPassword,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
     }
 
     return { route: navRoute, params: navParams };

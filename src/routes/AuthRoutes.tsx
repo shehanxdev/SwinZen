@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
 import { Route } from '@sz/constants';
-import { LoginScreen } from '@sz/screens';
+import { ForgotPasswordScreen, LoginScreen } from '@sz/screens';
 
 import { SignupStack } from './SignupRoutes';
 
@@ -11,6 +11,9 @@ export type AuthStackParamList = {
     // Can be used for future props
   };
   [Route.SignupStack]: {
+    // Can be used for future props
+  };
+  [Route.ForgotPassword]: {
     // Can be used for future props
   };
 };
@@ -28,6 +31,7 @@ export function AuthStack() {
       }}>
       <Stack.Screen name={Route.Login} component={LoginScreen} />
       <Stack.Screen name={Route.SignupStack} component={SignupStack} />
+      <Stack.Screen name={Route.ForgotPassword} component={ForgotPasswordScreen} />
     </Stack.Navigator>
   );
 }

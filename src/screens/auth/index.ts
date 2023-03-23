@@ -3,3 +3,4 @@ export * from './SignupScreen';
 export * from './EmailVerificationScreen';
 export * from './PrivacyPolicyScreen';
 export * from './TermsOfUseScreen';
+export * from './ForgotPasswordScreen';
