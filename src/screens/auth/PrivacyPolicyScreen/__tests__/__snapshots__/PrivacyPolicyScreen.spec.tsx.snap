@@ -44,16 +44,7 @@ exports[`PrivacyPolicyScreen Screen should render PrivacyPolicyScreen correctly 
         ]
       }
     />
-    <RNCSafeAreaView
-      edges={
-        [
-          "bottom",
-          "left",
-          "right",
-          "top",
-        ]
-      }
-    >
+    <RCTSafeAreaView>
       <View
         style={
           {
@@ -141,10 +132,9 @@ exports[`PrivacyPolicyScreen Screen should render PrivacyPolicyScreen correctly 
       <View
         style={
           {
-            "height": "80%",
+            "height": "76.66666666666666%",
             "marginLeft": 12,
             "marginRight": 12,
-            "marginTop": 160,
             "position": "absolute",
           }
         }
@@ -373,7 +363,7 @@ To ask questions or comment about this privacy policy and our privacy practices,
           </View>
         </RCTScrollView>
       </View>
-    </RNCSafeAreaView>
+    </RCTSafeAreaView>
   </View>
 </View>
 `;

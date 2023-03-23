@@ -1,6 +1,5 @@
 import React from 'react';
-import { Image, ImageBackground, Linking, Platform, ScrollView, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Image, ImageBackground, Linking, NativeModules, SafeAreaView, ScrollView, View } from 'react-native';
 
 import { Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
@@ -8,11 +7,9 @@ import { TextVariant } from '@sz/constants';
 
 import { IMAGES } from '../../../assets/images';
 
-// import { GradientBackground } from '../components';
-
 export function PrivacyPolicyScreen() {
-  /*TODO:: Remove this and add into constant file*/
-  const isIOS = Platform.OS === 'ios';
+  const { StatusBarManager } = NativeModules;
+  const customMargin = StatusBarManager.HEIGHT + 105; // providing top margin for absolute content
 
   return (
     <View testID="PrivacyPolicyScreenTestID" style={tw`flex-1`}>
@@ -27,7 +24,7 @@ export function PrivacyPolicyScreen() {
             <Image source={IMAGES.category} style={tw`m-2`} />
           </View>
           <View style={tw`relative bg-white opacity-15 mx-3 mb-10 rounded-xl border border-neutral-700 h-5/6`} />
-          <View style={tw`absolute ${isIOS ? 'mt-40' : 'mt-25'} mx-3 h-4.8/6`}>
+          <View style={tw`absolute mt-[${customMargin}px] mx-3 h-4.6/6`}>
             <ScrollView style={tw`mx-5 z-1`} showsVerticalScrollIndicator={false}>
               <Text variant={TextVariant.Body2Regular}>
                 {`Introduction
