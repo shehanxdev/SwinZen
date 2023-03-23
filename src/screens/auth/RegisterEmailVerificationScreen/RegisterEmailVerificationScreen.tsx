@@ -1,7 +1,7 @@
 import React from 'react';
-import { Image, View } from 'react-native';
+import { View } from 'react-native';
 
-import { Button, Link, Text } from '@sz/components';
+import { Button, Link, SwingZenLogoIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Route, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
@@ -15,8 +15,7 @@ export function RegisterEmailVerificationScreen() {
       <View style={tw`flex-1 justify-between`} testID="RegisterEmailVerificationScreenContainerTestID">
         <View style={tw`mt-20 mx-5`}>
           <View style={tw`items-center`}>
-            {/*TODO::remove this image and replace with SVG once the svg configurations get merged*/}
-            <Image source={require('./../../../assets/logo/swingzen-logo.png')} />
+            <SwingZenLogoIcon />
           </View>
           <View style={tw`items-center`}>
             <View style={tw`mt-3 mb-22.5`}>
