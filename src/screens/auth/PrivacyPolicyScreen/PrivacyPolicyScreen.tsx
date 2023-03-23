@@ -17,11 +17,11 @@ export function PrivacyPolicyScreen() {
         <SafeAreaView>
           {/*TODO:: Remove this images and replace with SVG later*/}
           <View style={tw`flex-row items-center justify-between my-5`}>
-            <Image source={IMAGES.footerLogo} style={tw`m-2`} />
-            <View style={tw`mr-10`}>
-              <Text variant={TextVariant.SubTitle2SemiBold}>Privacy Policy</Text>
+            <Image source={IMAGES.leftArrow} style={tw`m-2`} />
+            <View style={tw`mr-7`}>
+              <Text variant={TextVariant.SubTitle2SemiBold}>Privacy policy</Text>
             </View>
-            <Image source={IMAGES.category} style={tw`m-2`} />
+            <View />
           </View>
           <View style={tw`relative bg-white opacity-15 mx-3 mb-10 rounded-xl border border-neutral-700 h-5/6`} />
           <View style={tw`absolute mt-[${customMargin}px] mx-3 h-4.6/6`}>
