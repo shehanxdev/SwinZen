@@ -340,6 +340,8 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
         onChangeText={[Function]}
         onFocus={[Function]}
         onPressOut={[Function]}
+        onSubmitEditing={[Function]}
+        returnKeyType="done"
         spellCheck={false}
         style={
           {

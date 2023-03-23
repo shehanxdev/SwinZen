@@ -11,7 +11,6 @@ interface WithBaseScreenProps extends Partial<LinearGradientProps> {
 
 /**
  * HOC to Wrap a provided screen with a linear gradient background, and other required components
- * TODO::modify this to add image with a gradient effect if needed
  */
 export function withBaseScreen({
   BaseScreen,

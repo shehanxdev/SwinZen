@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
+import { Keyboard } from 'react-native';
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field';
 
 import { Text } from '@sz/components';
@@ -52,6 +53,8 @@ export function OTPInput({ testID, onChangeValue }: OTPInputProps) {
       testID={testID}
       rootStyle={tw`h-18`}
       keyboardType="number-pad"
+      returnKeyType={'done'}
+      onSubmitEditing={() => Keyboard.dismiss()} //TODO::Remove this or replace with submit handler if not required since keyboard closes automatically after all the digits get filled.
       textContentType="oneTimeCode"
       renderCell={({ index, symbol, isFocused }) => (
         <View
