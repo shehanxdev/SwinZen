@@ -2,6 +2,8 @@ import { NavigationContainer, NavigationState } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import { Text } from 'react-native';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import SplashScreen from 'react-native-splash-screen';
 
 import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
@@ -40,6 +42,7 @@ export function Routes() {
     <NavigationContainer
       ref={NavigationService.navigationRef}
       onReady={() => {
+        SplashScreen.hide();
         routeNameRef.current = NavigationService.navigationRef.current.getCurrentRoute().name;
       }}
       fallback={<Text>Loading...</Text>} //TODO:: update to an actual loading indicator
