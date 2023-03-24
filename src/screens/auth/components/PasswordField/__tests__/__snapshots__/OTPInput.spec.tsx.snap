@@ -22,7 +22,6 @@ exports[`PasswordField Component should render correctly 1`] = `
       }
     >
       PasswordFieldLabel
-      wf
     </Text>
     <View
       style={
