@@ -13,7 +13,7 @@ export function ResetPasswordEmailVerificationScreen() {
   return (
     <BaseAuthScreen>
       <View style={tw`flex-1 justify-between`} testID="ResetPasswordEmailVerificationScreenContainerTestID">
-        <View style={tw`mt-[267px] mx-5`}>
+        <View style={tw`mx-5 flex-1 justify-center content-center`}>
           <View style={tw`items-center`}>
             <View style={tw`mt-3 mb-5`}>
               <Text variant={TextVariant.SubTitle2SemiBold}>Email verification</Text>
