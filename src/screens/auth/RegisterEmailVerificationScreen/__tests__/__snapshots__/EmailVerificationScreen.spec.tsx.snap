@@ -1,0 +1,678 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register Email Verification Screen should render correctly 1`] = `
+<BVLinearGradient
+  colors={
+    [
+      4279320343,
+      4278650887,
+    ]
+  }
+  endPoint={
+    {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    {
+      "height": "100%",
+    }
+  }
+>
+  <RCTSafeAreaView
+    style={
+      {
+        "flexBasis": "0%",
+        "flexGrow": 1,
+        "flexShrink": 1,
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "paddingBottom": 0,
+          },
+        ]
+      }
+    >
+      <RCTScrollView
+        contentContainerStyle={
+          {
+            "flexGrow": 1,
+          }
+        }
+        keyboardShouldPersistTaps="handled"
+      >
+        <View>
+          <View
+            style={
+              {
+                "flexBasis": "0%",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "justifyContent": "space-between",
+              }
+            }
+            testID="RegisterEmailVerificationScreenContainerTestID"
+          >
+            <View
+              style={
+                {
+                  "marginLeft": 20,
+                  "marginRight": 20,
+                  "marginTop": 80,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                  }
+                }
+              >
+                <SvgMock
+                  height={55}
+                  width={108}
+                />
+              </View>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "marginBottom": 90,
+                      "marginTop": 12,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 28,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-SemiBold",
+                          "fontSize": 21,
+                          "fontWeight": "600",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    Email verification
+                  </Text>
+                </View>
+                <View
+                  style={
+                    {
+                      "marginBottom": 24,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    Enter the code received in your email address s**t**z@gmail.com
+                  </Text>
+                </View>
+              </View>
+              <View
+                style={
+                  [
+                    {
+                      "flexDirection": "row",
+                      "justifyContent": "space-between",
+                    },
+                    {
+                      "height": 72,
+                    },
+                  ]
+                }
+              >
+                <View
+                  onLayout={[Function]}
+                  style={
+                    [
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#283E36",
+                        "borderRadius": 10,
+                        "borderWidth": 0,
+                        "height": "100%",
+                        "justifyContent": "center",
+                        "width": 58,
+                      },
+                    ]
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 28,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-SemiBold",
+                          "fontSize": 21,
+                          "fontWeight": "600",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  />
+                  <View
+                    style={
+                      {
+                        "backgroundColor": "#6C757D",
+                        "bottom": 17,
+                        "height": 1,
+                        "position": "absolute",
+                        "width": 20,
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  onLayout={[Function]}
+                  style={
+                    [
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#283E36",
+                        "borderRadius": 10,
+                        "borderWidth": 0,
+                        "height": "100%",
+                        "justifyContent": "center",
+                        "width": 58,
+                      },
+                    ]
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 28,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-SemiBold",
+                          "fontSize": 21,
+                          "fontWeight": "600",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  />
+                  <View
+                    style={
+                      {
+                        "backgroundColor": "#6C757D",
+                        "bottom": 17,
+                        "height": 1,
+                        "position": "absolute",
+                        "width": 20,
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  onLayout={[Function]}
+                  style={
+                    [
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#283E36",
+                        "borderRadius": 10,
+                        "borderWidth": 0,
+                        "height": "100%",
+                        "justifyContent": "center",
+                        "width": 58,
+                      },
+                    ]
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 28,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-SemiBold",
+                          "fontSize": 21,
+                          "fontWeight": "600",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  />
+                  <View
+                    style={
+                      {
+                        "backgroundColor": "#6C757D",
+                        "bottom": 17,
+                        "height": 1,
+                        "position": "absolute",
+                        "width": 20,
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  onLayout={[Function]}
+                  style={
+                    [
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#283E36",
+                        "borderRadius": 10,
+                        "borderWidth": 0,
+                        "height": "100%",
+                        "justifyContent": "center",
+                        "width": 58,
+                      },
+                    ]
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 28,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-SemiBold",
+                          "fontSize": 21,
+                          "fontWeight": "600",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  />
+                  <View
+                    style={
+                      {
+                        "backgroundColor": "#6C757D",
+                        "bottom": 17,
+                        "height": 1,
+                        "position": "absolute",
+                        "width": 20,
+                      }
+                    }
+                  />
+                </View>
+                <View
+                  onLayout={[Function]}
+                  style={
+                    [
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#283E36",
+                        "borderRadius": 10,
+                        "borderWidth": 0,
+                        "height": "100%",
+                        "justifyContent": "center",
+                        "width": 58,
+                      },
+                    ]
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 28,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-SemiBold",
+                          "fontSize": 21,
+                          "fontWeight": "600",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  />
+                  <View
+                    style={
+                      {
+                        "backgroundColor": "#6C757D",
+                        "bottom": 17,
+                        "height": 1,
+                        "position": "absolute",
+                        "width": 20,
+                      }
+                    }
+                  />
+                </View>
+                <TextInput
+                  autoCapitalize="characters"
+                  autoCorrect={false}
+                  blurOnSubmit={false}
+                  caretHidden={false}
+                  clearButtonMode="never"
+                  disableFullscreenUI={true}
+                  keyboardType="number-pad"
+                  maxLength={5}
+                  onBlur={[Function]}
+                  onChangeText={[Function]}
+                  onFocus={[Function]}
+                  onPressOut={[Function]}
+                  onSubmitEditing={[Function]}
+                  returnKeyType="done"
+                  spellCheck={false}
+                  style={
+                    {
+                      "bottom": 0,
+                      "fontSize": 1,
+                      "left": 0,
+                      "opacity": 0.01,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                  textContentType="oneTimeCode"
+                  underlineColorAndroid="transparent"
+                  value=""
+                />
+              </View>
+              <View
+                style={
+                  {
+                    "marginBottom": 12,
+                    "marginTop": 120,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <View
+                    collapsable={false}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                    style={
+                      {
+                        "backgroundColor": "#69AA67",
+                        "borderColor": "#ffffff00",
+                        "borderRadius": 10,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "elevation": 0,
+                        "justifyContent": "center",
+                        "minWidth": "auto",
+                        "shadowColor": "#000",
+                        "shadowOffset": {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <View
+                      accessibilityRole="button"
+                      accessibilityState={
+                        {
+                          "disabled": false,
+                        }
+                      }
+                      accessibilityValue={
+                        {
+                          "max": undefined,
+                          "min": undefined,
+                          "now": undefined,
+                          "text": undefined,
+                        }
+                      }
+                      accessible={true}
+                      focusable={true}
+                      onClick={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        [
+                          {
+                            "overflow": "hidden",
+                          },
+                          {
+                            "borderRadius": 10,
+                          },
+                        ]
+                      }
+                    >
+                      <View
+                        style={
+                          [
+                            {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "justifyContent": "center",
+                            },
+                            {
+                              "height": 48,
+                            },
+                          ]
+                        }
+                      >
+                        <Text
+                          numberOfLines={1}
+                          selectable={false}
+                          style={
+                            [
+                              {
+                                "color": "#000000",
+                                "fontFamily": "System",
+                                "fontWeight": "400",
+                              },
+                              {
+                                "textAlign": "left",
+                              },
+                              [
+                                {
+                                  "letterSpacing": 1,
+                                  "marginHorizontal": 16,
+                                  "marginVertical": 9,
+                                  "textAlign": "center",
+                                },
+                                {
+                                  "marginHorizontal": 8,
+                                },
+                                false,
+                                {
+                                  "color": "#6200ee",
+                                  "fontFamily": "System",
+                                  "fontWeight": "500",
+                                },
+                                {
+                                  "fontFamily": "System",
+                                  "fontWeight": "500",
+                                },
+                                undefined,
+                              ],
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "color": "#F8F9FA",
+                                  "lineHeight": 24,
+                                },
+                                {
+                                  "fontFamily": "SourceSansPro-SemiBold",
+                                  "fontSize": 16,
+                                  "fontWeight": "600",
+                                  "textAlign": "center",
+                                },
+                              ]
+                            }
+                          >
+                            Verify
+                          </Text>
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                  }
+                }
+              >
+                <Text
+                  onPress={[Function]}
+                  style={
+                    [
+                      {
+                        "color": "#69AA67",
+                        "lineHeight": 20,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
+                  }
+                >
+                  Resend the code
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                  "marginBottom": 20,
+                  "marginLeft": 20,
+                  "marginRight": 20,
+                  "marginTop": 60,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#F8F9FA",
+                      "lineHeight": 24,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "textAlign": "center",
+                    },
+                  ]
+                }
+              >
+                By continuing, you agree to our
+                 
+                <Text
+                  onPress={[Function]}
+                  style={
+                    [
+                      {
+                        "color": "#69AA67",
+                        "lineHeight": 20,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
+                  }
+                >
+                  Privacy Policy
+                </Text>
+                 
+                and our
+                 
+                <Text
+                  onPress={[Function]}
+                  style={
+                    [
+                      {
+                        "color": "#69AA67",
+                        "lineHeight": 20,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
+                  }
+                >
+                  Terms of Use
+                </Text>
+              </Text>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+  </RCTSafeAreaView>
+</BVLinearGradient>
+`;

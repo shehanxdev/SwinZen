@@ -1,8 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
-import { Route } from './../constants';
-import { EmailVerificationScreen, PrivacyPolicyScreen, SignupScreen, TermsOfUseScreen } from './../screens';
+import { Route } from '@sz/constants';
+import { PrivacyPolicyScreen, RegisterEmailVerificationScreen, SignupScreen, TermsOfUseScreen } from '@sz/screens';
 
 export type SignupStackParamList = {
   [Route.Signup]: {
@@ -26,12 +26,9 @@ export function SignupStack() {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        contentStyle: {
-          backgroundColor: 'green',
-        },
       }}>
       <Stack.Screen name={Route.Signup} component={SignupScreen} />
-      <Stack.Screen name={Route.EmailVerification} component={EmailVerificationScreen} />
+      <Stack.Screen name={Route.EmailVerification} component={RegisterEmailVerificationScreen} />
       <Stack.Screen name={Route.PrivacyPolicy} component={PrivacyPolicyScreen} />
       <Stack.Screen name={Route.TermsOfUse} component={TermsOfUseScreen} />
     </Stack.Navigator>

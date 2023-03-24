@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import * as yup from 'yup';
 
-export const schema = yup
+export const signupValidationSchema = yup
   .object()
   .shape({
     username: yup

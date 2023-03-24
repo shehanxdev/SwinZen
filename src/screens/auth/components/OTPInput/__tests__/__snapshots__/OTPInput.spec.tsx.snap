@@ -1,0 +1,270 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OTPInput Component should render correctly 1`] = `
+<View
+  style={
+    [
+      {
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      },
+      {
+        "height": 72,
+      },
+    ]
+  }
+>
+  <View
+    onLayout={[Function]}
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": "#283E36",
+          "borderRadius": 10,
+          "borderWidth": 0,
+          "height": "100%",
+          "justifyContent": "center",
+          "width": 58,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F8F9FA",
+            "lineHeight": 28,
+          },
+          {
+            "fontFamily": "SourceSansPro-SemiBold",
+            "fontSize": 21,
+            "fontWeight": "600",
+            "textAlign": "center",
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        {
+          "backgroundColor": "#6C757D",
+          "bottom": 17,
+          "height": 1,
+          "position": "absolute",
+          "width": 20,
+        }
+      }
+    />
+  </View>
+  <View
+    onLayout={[Function]}
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": "#283E36",
+          "borderRadius": 10,
+          "borderWidth": 0,
+          "height": "100%",
+          "justifyContent": "center",
+          "width": 58,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F8F9FA",
+            "lineHeight": 28,
+          },
+          {
+            "fontFamily": "SourceSansPro-SemiBold",
+            "fontSize": 21,
+            "fontWeight": "600",
+            "textAlign": "center",
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        {
+          "backgroundColor": "#6C757D",
+          "bottom": 17,
+          "height": 1,
+          "position": "absolute",
+          "width": 20,
+        }
+      }
+    />
+  </View>
+  <View
+    onLayout={[Function]}
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": "#283E36",
+          "borderRadius": 10,
+          "borderWidth": 0,
+          "height": "100%",
+          "justifyContent": "center",
+          "width": 58,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F8F9FA",
+            "lineHeight": 28,
+          },
+          {
+            "fontFamily": "SourceSansPro-SemiBold",
+            "fontSize": 21,
+            "fontWeight": "600",
+            "textAlign": "center",
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        {
+          "backgroundColor": "#6C757D",
+          "bottom": 17,
+          "height": 1,
+          "position": "absolute",
+          "width": 20,
+        }
+      }
+    />
+  </View>
+  <View
+    onLayout={[Function]}
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": "#283E36",
+          "borderRadius": 10,
+          "borderWidth": 0,
+          "height": "100%",
+          "justifyContent": "center",
+          "width": 58,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F8F9FA",
+            "lineHeight": 28,
+          },
+          {
+            "fontFamily": "SourceSansPro-SemiBold",
+            "fontSize": 21,
+            "fontWeight": "600",
+            "textAlign": "center",
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        {
+          "backgroundColor": "#6C757D",
+          "bottom": 17,
+          "height": 1,
+          "position": "absolute",
+          "width": 20,
+        }
+      }
+    />
+  </View>
+  <View
+    onLayout={[Function]}
+    style={
+      [
+        {
+          "alignItems": "center",
+          "backgroundColor": "#283E36",
+          "borderRadius": 10,
+          "borderWidth": 0,
+          "height": "100%",
+          "justifyContent": "center",
+          "width": 58,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F8F9FA",
+            "lineHeight": 28,
+          },
+          {
+            "fontFamily": "SourceSansPro-SemiBold",
+            "fontSize": 21,
+            "fontWeight": "600",
+            "textAlign": "center",
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        {
+          "backgroundColor": "#6C757D",
+          "bottom": 17,
+          "height": 1,
+          "position": "absolute",
+          "width": 20,
+        }
+      }
+    />
+  </View>
+  <TextInput
+    autoCapitalize="characters"
+    autoCorrect={false}
+    blurOnSubmit={false}
+    caretHidden={false}
+    clearButtonMode="never"
+    disableFullscreenUI={true}
+    keyboardType="number-pad"
+    maxLength={5}
+    onBlur={[Function]}
+    onChangeText={[Function]}
+    onFocus={[Function]}
+    onPressOut={[Function]}
+    onSubmitEditing={[Function]}
+    returnKeyType="done"
+    spellCheck={false}
+    style={
+      {
+        "bottom": 0,
+        "fontSize": 1,
+        "left": 0,
+        "opacity": 0.01,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+    testID="OTPInputTestID"
+    textContentType="oneTimeCode"
+    underlineColorAndroid="transparent"
+    value=""
+  />
+</View>
+`;

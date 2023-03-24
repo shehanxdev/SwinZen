@@ -3,7 +3,7 @@ import { TextInput as RNTextInput, View } from 'react-native';
 import { TextInput } from 'react-native-paper';
 
 import { tw } from '@sz/config';
-import { Color, TextVariant } from '@sz/constants';
+import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
 import { Text } from '../Typography';
 import { TextFieldProps } from './TextField.types';
@@ -49,7 +49,7 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
 ) {
   const labelTextComponent = useMemo(
     () => (
-      <Text variant={TextVariant.Body2SemiBold} color={labelColor}>
+      <Text variant={TextVariant.Body2SemiBold} color={labelColor} textAlign={TextAlignment.Auto}>
         {label}
       </Text>
     ),
@@ -58,7 +58,10 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
 
   const helperTextComponent = useMemo(
     () => (
-      <Text variant={TextVariant.Labels} color={error ? Color.Error.SzMain : helperTextColor}>
+      <Text
+        variant={TextVariant.Labels}
+        color={error ? Color.Error.SzMain : helperTextColor}
+        textAlign={TextAlignment.Auto}>
         {helperText}
       </Text>
     ),

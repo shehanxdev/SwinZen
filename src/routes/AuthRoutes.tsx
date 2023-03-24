@@ -25,9 +25,6 @@ export function AuthStack() {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        contentStyle: {
-          backgroundColor: 'green',
-        },
       }}>
       <Stack.Screen name={Route.Login} component={LoginScreen} />
       <Stack.Screen name={Route.SignupStack} component={SignupStack} />
