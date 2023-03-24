@@ -7,11 +7,11 @@ import { Route, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
 import { OTPInput } from '../components';
-import { GradientBackground } from '../components/GradientBackground';
+import { BaseAuthScreen } from '../components/BaseAuthScreen';
 
 export function ResetPasswordEmailVerificationScreen() {
   return (
-    <GradientBackground>
+    <BaseAuthScreen>
       <View style={tw`flex-1 justify-between`} testID="ResetPasswordEmailVerificationScreenContainerTestID">
         <View style={tw`mt-[267px] mx-5`}>
           <View style={tw`items-center`}>
@@ -43,6 +43,6 @@ export function ResetPasswordEmailVerificationScreen() {
           <Link text={'Resend the code'} />
         </View>
       </View>
-    </GradientBackground>
+    </BaseAuthScreen>
   );
 }

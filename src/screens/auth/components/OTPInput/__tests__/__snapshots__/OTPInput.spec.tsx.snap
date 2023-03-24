@@ -20,13 +20,12 @@ exports[`OTPInput Component should render correctly 1`] = `
       [
         {
           "alignItems": "center",
+          "backgroundColor": "#283E36",
           "borderRadius": 10,
+          "borderWidth": 0,
           "height": "100%",
           "justifyContent": "center",
           "width": 58,
-        },
-        {
-          "backgroundColor": "#283E36",
         },
       ]
     }
@@ -65,13 +64,12 @@ exports[`OTPInput Component should render correctly 1`] = `
       [
         {
           "alignItems": "center",
+          "backgroundColor": "#283E36",
           "borderRadius": 10,
+          "borderWidth": 0,
           "height": "100%",
           "justifyContent": "center",
           "width": 58,
-        },
-        {
-          "backgroundColor": "#283E36",
         },
       ]
     }
@@ -110,13 +108,12 @@ exports[`OTPInput Component should render correctly 1`] = `
       [
         {
           "alignItems": "center",
+          "backgroundColor": "#283E36",
           "borderRadius": 10,
+          "borderWidth": 0,
           "height": "100%",
           "justifyContent": "center",
           "width": 58,
-        },
-        {
-          "backgroundColor": "#283E36",
         },
       ]
     }
@@ -155,13 +152,12 @@ exports[`OTPInput Component should render correctly 1`] = `
       [
         {
           "alignItems": "center",
+          "backgroundColor": "#283E36",
           "borderRadius": 10,
+          "borderWidth": 0,
           "height": "100%",
           "justifyContent": "center",
           "width": 58,
-        },
-        {
-          "backgroundColor": "#283E36",
         },
       ]
     }
@@ -200,13 +196,12 @@ exports[`OTPInput Component should render correctly 1`] = `
       [
         {
           "alignItems": "center",
+          "backgroundColor": "#283E36",
           "borderRadius": 10,
+          "borderWidth": 0,
           "height": "100%",
           "justifyContent": "center",
           "width": 58,
-        },
-        {
-          "backgroundColor": "#283E36",
         },
       ]
     }
@@ -252,6 +247,8 @@ exports[`OTPInput Component should render correctly 1`] = `
     onChangeText={[Function]}
     onFocus={[Function]}
     onPressOut={[Function]}
+    onSubmitEditing={[Function]}
+    returnKeyType="done"
     spellCheck={false}
     style={
       {

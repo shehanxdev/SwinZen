@@ -6,12 +6,11 @@ import { tw } from '@sz/config';
 import { Route, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
-import { OTPInput } from '../components';
-import { GradientBackground } from '../components/GradientBackground';
+import { BaseAuthScreen, OTPInput } from '../components';
 
 export function RegisterEmailVerificationScreen() {
   return (
-    <GradientBackground>
+    <BaseAuthScreen>
       <View style={tw`flex-1 justify-between`} testID="RegisterEmailVerificationScreenContainerTestID">
         <View style={tw`mt-20 mx-5`}>
           <View style={tw`items-center`}>
@@ -42,10 +41,15 @@ export function RegisterEmailVerificationScreen() {
             />
           </View>
           <View style={tw`items-center`}>
-            <Link text={'Resend the code'} />
+            <Link
+              text={'Resend the code'}
+              onPress={() => {
+                //TODO::implement with the API integration
+              }}
+            />
           </View>
         </View>
-        <View style={tw`items-center mb-5 items-center mx-5`}>
+        <View style={tw`items-center mb-5 items-center mx-5 mt-15`}>
           <Text variant={TextVariant.Body2Regular}>
             By continuing, you agree to our{' '}
             <Link
@@ -64,6 +68,6 @@ export function RegisterEmailVerificationScreen() {
           </Text>
         </View>
       </View>
-    </GradientBackground>
+    </BaseAuthScreen>
   );
 }
