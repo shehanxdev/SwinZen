@@ -17,7 +17,9 @@ exports[`TextField Component should render correctly 1`] = `
         },
       ]
     }
-  />
+  >
+    wf
+  </Text>
   <View
     style={
       {
