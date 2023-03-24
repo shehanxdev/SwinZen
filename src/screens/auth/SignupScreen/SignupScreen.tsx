@@ -21,7 +21,7 @@ import {
 import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
-import { schema } from '@sz/utils';
+import { signupValidationSchema } from '@sz/utils';
 
 import { GradientBackground } from '../components/GradientBackground';
 
@@ -29,11 +29,7 @@ export function SignupScreen() {
   const [securePw, setSecurePw] = useState(true);
   const [secureConfirmPw, setSecureConfirmPw] = useState(true);
 
-  const {
-    control,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({ mode: 'onChange', resolver: yupResolver(schema) });
+  const { control, handleSubmit } = useForm({ mode: 'onChange', resolver: yupResolver(signupValidationSchema) });
 
   const onRegister = () => {
     console.log('User Register Pressed'); // TODO:: integrate APIs into user interface
@@ -57,39 +53,39 @@ export function SignupScreen() {
           <Controller
             control={control}
             name="username"
-            render={({ field: { value, onChange, onBlur } }) => (
+            render={({ field: { value, onChange, onBlur }, fieldState: { error } }) => (
               <TextField
                 label="Your Name"
                 leftIcon={<ProfileIcon />}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
-                helperText={errors.username?.message ? errors.username.message.toString() : ''}
+                helperText={error?.message ? error.message.toString() : ''}
                 helperTextColor={Color.Error.SzMain}
-                error={!_.isEmpty(errors.username)}
+                error={!_.isEmpty(error)}
               />
             )}
           />
           <Controller
             control={control}
             name="email"
-            render={({ field: { value, onChange, onBlur } }) => (
+            render={({ field: { value, onChange, onBlur }, fieldState: { error } }) => (
               <TextField
                 label="Your Email"
                 leftIcon={<MailIcon />}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
-                helperText={errors.email?.message ? errors.email.message.toString() : ''}
+                helperText={error?.message ? error.message.toString() : ''}
                 helperTextColor={Color.Error.SzMain}
-                error={!_.isEmpty(errors.email)}
+                error={!_.isEmpty(error)}
               />
             )}
           />
           <Controller
             control={control}
             name="password"
-            render={({ field: { value, onChange, onBlur } }) => (
+            render={({ field: { value, onChange, onBlur }, fieldState: { error } }) => (
               <TextField
                 secureTextEntry={securePw}
                 onRightIconPress={() => setSecurePw(!securePw)}
@@ -99,16 +95,16 @@ export function SignupScreen() {
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
-                helperText={errors.password?.message ? errors.password.message.toString() : ''}
+                helperText={error?.message ? error.message.toString() : ''}
                 helperTextColor={Color.Error.SzMain}
-                error={!_.isEmpty(errors.password)}
+                error={!_.isEmpty(error)}
               />
             )}
           />
           <Controller
             control={control}
             name="confirmPassword"
-            render={({ field: { value, onChange, onBlur } }) => (
+            render={({ field: { value, onChange, onBlur }, fieldState: { error } }) => (
               <TextField
                 secureTextEntry={secureConfirmPw}
                 onRightIconPress={() => setSecureConfirmPw(!secureConfirmPw)}
@@ -118,25 +114,25 @@ export function SignupScreen() {
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
-                helperText={errors.confirmPassword?.message ? errors.confirmPassword.message.toString() : ''}
+                helperText={error?.message ? error.message.toString() : ''}
                 helperTextColor={Color.Error.SzMain}
-                error={!_.isEmpty(errors.confirmPassword)}
+                error={!_.isEmpty(error)}
               />
             )}
           />
           <Controller
             control={control}
             name="promoCode"
-            render={({ field: { value, onChange, onBlur } }) => (
+            render={({ field: { value, onChange, onBlur }, fieldState: { error } }) => (
               <TextField
                 label="Your Promotion Code"
                 leftIcon={<SecurityIcon />}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
-                helperText={errors.promoCode?.message ? errors.promoCode.message.toString() : ''}
+                helperText={error?.message ? error.message.toString() : ''}
                 helperTextColor={Color.Error.SzMain}
-                error={!_.isEmpty(errors.promoCode)}
+                error={!_.isEmpty(error)}
               />
             )}
           />
