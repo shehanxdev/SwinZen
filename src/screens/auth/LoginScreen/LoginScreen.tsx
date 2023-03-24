@@ -1,39 +1,35 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { yupResolver } from '@hookform/resolvers/yup';
 import _ from 'lodash';
-import React, { useState } from 'react';
+import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { Image, View } from 'react-native';
+import { View } from 'react-native';
 
-import { IMAGES } from '@sz/assets';
-import { AccountLockIcon, Button, Link, MailIcon, PasswordRevealIcon, Text, TextField } from '@sz/components';
+import { Button, Link, MailIcon, SwingZenLogoIcon, Text, TextField } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
-import { schema } from '@sz/utils';
+import { signupValidationSchema } from '@sz/utils';
 
-import { GradientBackground } from '../components/GradientBackground';
+import { BaseAuthScreen, PasswordField } from '../components';
 
 export function LoginScreen() {
-  const [securePw, setSecurePw] = useState(true);
-
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({ mode: 'onChange', resolver: yupResolver(schema) });
+  } = useForm({ mode: 'onChange', resolver: yupResolver(signupValidationSchema) });
 
   const onRegister = () => {
     console.log('User Register Pressed'); // TODO:: integrate APIs into user interface
   };
 
   return (
-    <GradientBackground testID="LoginScreenTestID">
+    <BaseAuthScreen testID="LoginScreenTestID">
       <View style={tw`flex-1 justify-between`}>
         <View style={tw`flex mt-20 mx-5`}>
           <View style={tw`items-center`}>
-            {/*TODO:: remove this images and replace with SVG later*/}
-            <Image source={IMAGES.footerLogo} />
+            <SwingZenLogoIcon />
           </View>
           <View style={tw`items-center`}>
             <View style={tw`mt-3 mb-20`}>
@@ -58,13 +54,7 @@ export function LoginScreen() {
               />
             )}
           />
-          <TextField
-            secureTextEntry={securePw}
-            onRightIconPress={() => setSecurePw(!securePw)}
-            label="Your Password"
-            leftIcon={<AccountLockIcon />}
-            rightIcon={<PasswordRevealIcon />}
-          />
+          <PasswordField name="loginPassword" label="Your Password" />
           <View style={tw`items-end`}>
             <Link
               text="Forgot password?"
@@ -89,6 +79,6 @@ export function LoginScreen() {
           </Text>
         </View>
       </View>
-    </GradientBackground>
+    </BaseAuthScreen>
   );
 }
