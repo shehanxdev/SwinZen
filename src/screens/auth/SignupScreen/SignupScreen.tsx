@@ -1,23 +1,48 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { yupResolver } from '@hookform/resolvers/yup';
-import _ from 'lodash';
 import React from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { View } from 'react-native';
 
-import { Button, Link, MailIcon, ProfileIcon, SecurityIcon, SwingZenLogoIcon, Text, TextField } from '@sz/components';
+import {
+  AccountLockIcon,
+  Button,
+  Link,
+  MailIcon,
+  PasswordField,
+  ProfileIcon,
+  SecurityIcon,
+  SwingZenLogoIcon,
+  Text,
+  TextField,
+} from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
+import { SignupFormValues } from '@sz/models';
 import { NavigationService } from '@sz/services';
 import { signupValidationSchema } from '@sz/utils';
 
-import { BaseAuthScreen, PasswordField } from '../components';
+import { BaseAuthScreen } from '../components';
 
 export function SignupScreen() {
-  const { control, handleSubmit } = useForm({ mode: 'onChange', resolver: yupResolver(signupValidationSchema) });
+  const {
+    control,
+    handleSubmit,
+    setFocus,
+    formState: { isSubmitted, errors },
+  } = useForm<SignupFormValues>({ mode: 'onChange', resolver: yupResolver(signupValidationSchema) });
 
-  const onRegister = () => {
-    console.log('User Register Pressed'); // TODO:: integrate APIs into user interface
+  const onSignUpFormInvalid: SubmitErrorHandler<SignupFormValues> = () => {
+    console.log(errors);
+    //TODO:: handle error
+  };
+
+  const onSignUpFormValid: SubmitHandler<SignupFormValues> = async formInput => {
+    // TODO: API Integration
+    try {
+      console.log('formInput', formInput);
+    } catch (error: any) {
+      console.log('error', error);
+    }
   };
 
   return (
@@ -36,63 +61,107 @@ export function SignupScreen() {
         <View style={tw`flex-1 mx-5`}>
           <Controller
             control={control}
-            name="username"
-            render={({ field: { value, onChange, onBlur }, fieldState: { error } }) => (
+            name="name"
+            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <TextField
+                ref={ref}
                 label="Your Name"
                 leftIcon={<ProfileIcon />}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
-                helperText={error?.message ? error.message.toString() : ''}
+                helperText={(isTouched || isSubmitted) && error?.message}
                 helperTextColor={Color.Error.SzMain}
-                error={!_.isEmpty(error)}
+                error={(isTouched || isSubmitted) && error !== undefined}
+                returnKeyType={'next'}
+                onSubmitEditing={() => setFocus('username')}
               />
             )}
           />
           <Controller
             control={control}
-            name="email"
-            render={({ field: { value, onChange, onBlur }, fieldState: { error } }) => (
+            name="username"
+            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <TextField
+                ref={ref}
                 label="Your Email"
                 leftIcon={<MailIcon />}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
-                helperText={error?.message ? error.message.toString() : ''}
+                helperText={(isTouched || isSubmitted) && error?.message}
                 helperTextColor={Color.Error.SzMain}
-                error={!_.isEmpty(error)}
+                error={(isTouched || isSubmitted) && error !== undefined}
+                returnKeyType={'next'}
+                onSubmitEditing={() => setFocus('password')}
               />
             )}
           />
-          <PasswordField name="password" label="Your Password" />
-          <PasswordField name="confirmPassword" label="Please Confirm Your Password" />
+          <Controller
+            control={control}
+            name="password"
+            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
+              <PasswordField
+                ref={ref}
+                label="Your Password"
+                leftIcon={<AccountLockIcon />}
+                value={value}
+                onChangeText={onChange}
+                onBlur={onBlur}
+                helperText={(isTouched || isSubmitted) && error?.message}
+                helperTextColor={Color.Error.SzMain}
+                error={(isTouched || isSubmitted) && error !== undefined}
+                returnKeyType={'next'}
+                onSubmitEditing={() => setFocus('confirmPassword')}
+              />
+            )}
+          />
+          <Controller
+            control={control}
+            name="confirmPassword"
+            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
+              <PasswordField
+                ref={ref}
+                label="Your Password"
+                leftIcon={<AccountLockIcon />}
+                value={value}
+                onChangeText={onChange}
+                onBlur={onBlur}
+                helperText={(isTouched || isSubmitted) && error?.message}
+                helperTextColor={Color.Error.SzMain}
+                error={(isTouched || isSubmitted) && error !== undefined}
+                returnKeyType={'next'}
+                onSubmitEditing={() => setFocus('promoCode')}
+              />
+            )}
+          />
           <Controller
             control={control}
             name="promoCode"
-            render={({ field: { value, onChange, onBlur }, fieldState: { error } }) => (
+            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <TextField
+                ref={ref}
                 label="Your Promotion Code"
                 leftIcon={<SecurityIcon />}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
-                helperText={error?.message ? error.message.toString() : ''}
+                helperText={(isTouched || isSubmitted) && error?.message}
                 helperTextColor={Color.Error.SzMain}
-                error={!_.isEmpty(error)}
+                error={(isTouched || isSubmitted) && error !== undefined}
+                returnKeyType={'done'}
               />
             )}
           />
         </View>
         <View style={tw`items-center mt-10 mb-5 mx-5`}>
           <View style={tw`mb-2`}>
-            <Button onPress={() => handleSubmit(onRegister)} title={'Register'} />
+            <Button onPress={handleSubmit(onSignUpFormValid, onSignUpFormInvalid)} title={'Register'} />
           </View>
           <Text variant={TextVariant.Body2Regular}>
-            Already Have An Account?
+            {'Already Have An Account? '}
             <Link
-              text=" Sign in"
+              text="Sign in"
               onPress={() => {
                 NavigationService.navigate(Route.Login);
               }}

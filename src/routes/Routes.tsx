@@ -2,7 +2,6 @@ import { NavigationContainer, NavigationState } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import { Text } from 'react-native';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import SplashScreen from 'react-native-splash-screen';
 
 import { Route } from '@sz/constants';

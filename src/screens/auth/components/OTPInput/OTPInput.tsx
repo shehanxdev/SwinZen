@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
 import { Keyboard } from 'react-native';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field';
 
 import { Text } from '@sz/components';

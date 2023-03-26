@@ -1,16 +1,16 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import * as yup from 'yup';
 
+import { ValidPasswordRegex } from '@sz/constants';
+
 export const signupValidationSchema = yup
-  .object()
-  .shape({
-    username: yup
+  .object({
+    name: yup
       .string()
       .trim()
       .required('Please enter First Name')
       .min(2, 'Username must be at least 2 letters long')
       .max(10, 'Username must not be 10 letters long'),
-    email: yup
+    username: yup
       .string()
       .required('Please enter Email ID')
       .email('Invalid Email')
@@ -21,7 +21,7 @@ export const signupValidationSchema = yup
       .min(8, 'Username must be at least 8 letters long')
       .max(20, 'Username must not be 20 letters long')
       .matches(
-        /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/,
+        ValidPasswordRegex,
         'Password must contain at least one Uppercase letter, Lowercase letter, Numeric character and Special character',
       ),
     confirmPassword: yup
@@ -30,4 +30,4 @@ export const signupValidationSchema = yup
       .oneOf([yup.ref('password')], 'Your passwords do not match'),
     promoCode: yup.string(),
   })
-  .required('Please enter your details');
+  .required();

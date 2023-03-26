@@ -29,6 +29,8 @@ type WithRNTextInputProps = Pick<
   | 'autoCorrect'
   | 'numberOfLines'
   | 'multiline'
+  | 'returnKeyType'
+  | 'returnKeyLabel'
 >;
 
 export interface TextFieldProps extends WithRNTextInputProps {

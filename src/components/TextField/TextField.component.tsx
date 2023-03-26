@@ -44,6 +44,8 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
     autoCorrect,
     multiline,
     numberOfLines,
+    returnKeyType,
+    returnKeyLabel,
   }: TextFieldProps,
   ref,
 ) {
@@ -137,6 +139,8 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
             <TextInput.Icon name={() => rightIconComponent} onPress={onRightIconPress} style={{ marginTop: '50%' }} />
           )
         }
+        returnKeyType={returnKeyType}
+        returnKeyLabel={returnKeyLabel}
       />
       {helperTextComponent}
     </View>
