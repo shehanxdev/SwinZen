@@ -13,7 +13,7 @@ exports[`TextField Component should render correctly 1`] = `
           "fontFamily": "SourceSansPro-SemiBold",
           "fontSize": 16,
           "fontWeight": "600",
-          "textAlign": "center",
+          "textAlign": "auto",
         },
       ]
     }
@@ -125,7 +125,7 @@ exports[`TextField Component should render correctly 1`] = `
           "fontFamily": "SourceSansPro-Regular",
           "fontSize": 15,
           "fontWeight": "600",
-          "textAlign": "center",
+          "textAlign": "auto",
         },
       ]
     }
