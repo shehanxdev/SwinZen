@@ -1,14 +1,13 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# Run linters and unit tests
 npx lint-staged && yarn run test
 
-#Lists the files that have been changed and 
-#filters the ones with the .snap extension.
+# Snapshots created during the pre commit stage aren't moving into the staging area automatically
+# Following script is to move those snapshot files into the staging area
 SNAP_FILES=$(git diff --name-only --cached | grep '\.snap$')
 
-#If there are .snap files, the script loops through them and 
-#runs git add to push them to the staging area.
 if [ -n "$SNAP_FILES" ]; then
   for FILE in $SNAP_FILES; do
    git add "$FILE"
