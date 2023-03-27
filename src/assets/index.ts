@@ -3,4 +3,5 @@ export { default as PasswordRevealEyeSvg } from './icons/account/password-reveal
 export { default as MailIconSvg } from './icons/account/mail_icon.svg';
 export { default as ProfileIconSvg } from './icons/account/profile_icon.svg';
 export { default as SecurityIconSvg } from './icons/account/security_icon.svg';
+export { default as BackIconSvg } from './icons/account//back-icon.svg';
 export { default as SwingZenLogo } from './logo/swingzen-logo.svg';

@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
   AccountLockSvg,
+  BackIconSvg,
   MailIconSvg,
   PasswordRevealEyeSvg,
   ProfileIconSvg,
@@ -39,4 +40,8 @@ export function SecurityIcon({ color = Color.Neutral.Sz500, width = 20, height =
 
 export function SwingZenLogoIcon({ color, width = 108, height = 55 }: SvgIconProps) {
   return <SwingZenLogo width={width} height={height} fill={color} />;
+}
+
+export function BackIcon({ color, width = 12, height = 20 }: SvgIconProps) {
+  return <BackIconSvg width={width} height={height} fill={color} />;
 }
