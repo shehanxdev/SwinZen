@@ -8,6 +8,6 @@ export enum Route {
   PrivacyPolicy = 'privacy-policy',
   TermsOfUse = 'terms-of-use',
   ResetPasswordEmailVerification = 'reset-password-email-verification',
-  ForgetPassword = 'forget-password',
+  ForgotPassword = 'forgot-password',
   ResetPassword = 'reset-password',
 }

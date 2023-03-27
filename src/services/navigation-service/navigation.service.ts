@@ -36,12 +36,12 @@ export class NavigationService {
           },
         };
         break;
-      case Route.ForgetPassword:
+      case Route.ForgotPassword:
         navRoute = Route.AuthStack;
         navParams = {
           screen: Route.LoginStack,
           params: {
-            screen: Route.ForgetPassword,
+            screen: Route.ForgotPassword,
             params: {
               screen: route,
               params: params,

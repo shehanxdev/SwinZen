@@ -20,4 +20,5 @@ export interface ButtonProps extends WithRNPaperButtonProps {
   borderColor?: Color;
   disabledBorderColor?: Color;
   fullWidth?: boolean;
+  loading?: boolean;
 }

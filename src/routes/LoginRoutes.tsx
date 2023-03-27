@@ -2,14 +2,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
 import { Route } from './../constants';
-import { ForgetPasswordScreen, ResetPasswordEmailVerificationScreen, ResetPasswordScreen } from './../screens';
+import { ForgotPasswordScreen, ResetPasswordEmailVerificationScreen, ResetPasswordScreen } from './../screens';
 import { LoginScreen } from './../screens';
 
 export type LoginStackParamList = {
   [Route.Login]: {
     // Can be used for future props
   };
-  [Route.ForgetPassword]: {
+  [Route.ForgotPassword]: {
     // Can be used for future props
   };
   [Route.ResetPasswordEmailVerification]: {
@@ -29,7 +29,7 @@ export function LoginStack() {
         headerShown: false,
       }}>
       <Stack.Screen name={Route.Login} component={LoginScreen} />
-      <Stack.Screen name={Route.ForgetPassword} component={ForgetPasswordScreen} />
+      <Stack.Screen name={Route.ForgotPassword} component={ForgotPasswordScreen} />
       <Stack.Screen name={Route.ResetPasswordEmailVerification} component={ResetPasswordEmailVerificationScreen} />
       <Stack.Screen name={Route.ResetPassword} component={ResetPasswordScreen} />
     </Stack.Navigator>
