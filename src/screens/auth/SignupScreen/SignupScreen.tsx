@@ -122,7 +122,7 @@ export function SignupScreen() {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <PasswordField
                 ref={ref}
-                label="Your Password"
+                label="Please Confirm Your Password"
                 leftIcon={<AccountLockIcon />}
                 value={value}
                 onChangeText={onChange}
@@ -141,7 +141,7 @@ export function SignupScreen() {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <TextField
                 ref={ref}
-                label="Your Promotion Code"
+                label="Your Promotion Code (If Applicable)"
                 leftIcon={<SecurityIcon />}
                 value={value}
                 onChangeText={onChange}
