@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
 import { Keyboard } from 'react-native';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field';
 
 import { Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextVariant } from '@sz/constants';
 
-const CELL_COUNT = 5;
+const CELL_COUNT = 6;
 
 export interface OTPInputProps {
   testID?: string;
@@ -52,7 +51,7 @@ export function OTPInput({ testID, onChangeValue }: OTPInputProps) {
       }}
       cellCount={CELL_COUNT}
       testID={testID}
-      rootStyle={tw`h-18`}
+      rootStyle={tw`h-17.25 self-center`}
       keyboardType="number-pad"
       returnKeyType={'done'}
       onSubmitEditing={() => Keyboard.dismiss()} //TODO::Remove this or replace with submit handler if not required since keyboard closes automatically after all the digits get filled.
@@ -61,13 +60,11 @@ export function OTPInput({ testID, onChangeValue }: OTPInputProps) {
         <View
           onLayout={getCellOnLayoutHandler(index)}
           key={index}
-          style={[
-            tw`h-full rounded-2.5 w-14.5 justify-center items-center bg-[${Color.Neutral.Sz1000}] ${
-              isFocused ? `border border-[${Color.Neutral.Sz600}]` : 'border-0'
-            }`,
-          ]}>
+          style={tw`h-full rounded-2.5 w-13 justify-center items-center bg-[${Color.Neutral.Sz1000}] ${
+            isFocused ? `border border-[${Color.Neutral.Sz600}]` : 'border-0'
+          } ${index !== 0 ? 'ml-2.5' : 'ml-0'}`}>
           <Text variant={TextVariant.SubTitle2SemiBold}>{symbol || (isFocused ? <Cursor /> : null)}</Text>
-          {!symbol && <View style={tw`absolute w-5 h-px bg-[${Color.Neutral.Sz600}] bottom-[17px]`} />}
+          {!symbol && <View style={tw`absolute w-7 h-px bg-[${Color.Neutral.Sz600}] bottom-3.5`} />}
         </View>
       )}
     />

@@ -26,10 +26,52 @@ export class NavigationService {
       case Route.Login:
         navRoute = Route.AuthStack;
         navParams = {
-          screen: Route.Login,
+          screen: Route.LoginStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.Login,
+            params: {
+              screen: route,
+              params: params,
+            },
+          },
+        };
+        break;
+      case Route.ForgetPassword:
+        navRoute = Route.AuthStack;
+        navParams = {
+          screen: Route.LoginStack,
+          params: {
+            screen: Route.ForgetPassword,
+            params: {
+              screen: route,
+              params: params,
+            },
+          },
+        };
+        break;
+      case Route.ResetPassword:
+        navRoute = Route.AuthStack;
+        navParams = {
+          screen: Route.LoginStack,
+          params: {
+            screen: Route.ResetPassword,
+            params: {
+              screen: route,
+              params: params,
+            },
+          },
+        };
+        break;
+      case Route.ResetPasswordEmailVerification:
+        navRoute = Route.AuthStack;
+        navParams = {
+          screen: Route.LoginStack,
+          params: {
+            screen: Route.ResetPasswordEmailVerification,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
@@ -46,12 +88,12 @@ export class NavigationService {
           },
         };
         break;
-      case Route.EmailVerification:
+      case Route.RegisterEmailVerification:
         navRoute = Route.AuthStack;
         navParams = {
           screen: Route.SignupStack,
           params: {
-            screen: Route.EmailVerification,
+            screen: Route.RegisterEmailVerification,
             params: {
               screen: route,
               params: params,
@@ -82,16 +124,6 @@ export class NavigationService {
               screen: route,
               params: params,
             },
-          },
-        };
-        break;
-      case Route.ForgotPassword:
-        navRoute = Route.AuthStack;
-        navParams = {
-          screen: Route.ForgotPassword,
-          params: {
-            screen: route,
-            params: params,
           },
         };
         break;

@@ -5,13 +5,22 @@ import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { View } from 'react-native';
 
-import { Button, Link, MailIcon, SwingZenLogoIcon, Text, TextField } from '@sz/components';
+import {
+  AccountLockIcon,
+  Button,
+  Link,
+  MailIcon,
+  PasswordField,
+  SwingZenLogoIcon,
+  Text,
+  TextField,
+} from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 import { signupValidationSchema } from '@sz/utils';
 
-import { BaseAuthScreen, PasswordField } from '../components';
+import { BaseAuthScreen } from '../components';
 
 export function LoginScreen() {
   const {
@@ -54,12 +63,31 @@ export function LoginScreen() {
               />
             )}
           />
-          <PasswordField name="loginPassword" label="Your Password" />
+          {/* <PasswordField name="loginPassword" label="Your Password" /> */}
+          <Controller
+            control={control}
+            name="password"
+            render={({ field: { value, onChange, onBlur, ref }, fieldState: {} }) => (
+              <PasswordField
+                ref={ref}
+                label="Your Password"
+                leftIcon={<AccountLockIcon />}
+                value={value}
+                onChangeText={onChange}
+                onBlur={onBlur}
+                // helperText={(isTouched || isSubmitted) && error?.message}
+                helperTextColor={Color.Error.SzMain}
+                // error={(isTouched || isSubmitted) && error !== undefined}
+                returnKeyType={'next'}
+                // onSubmitEditing={() => setFocus('confirmPassword')}
+              />
+            )}
+          />
           <View style={tw`items-end`}>
             <Link
               text="Forgot password?"
               onPress={() => {
-                NavigationService.navigate(Route.ForgotPassword);
+                //TODO::handle navigation
               }}
             />
           </View>

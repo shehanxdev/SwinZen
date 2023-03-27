@@ -6,15 +6,13 @@ import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
-export function ForgotPasswordScreen() {
+export function ResetPasswordScreen() {
   return (
     <View style={tw`m-auto`}>
-      <Text style={tw`m-10`}>Forgot Password</Text>
-      <Button mode="contained" onPress={() => NavigationService.navigate(Route.Login)}>
-        Back to Login
+      <Text style={tw`m-10`}>Reset Password Screen</Text>
+      <Button mode="contained" onPress={() => NavigationService.navigate(Route.Signup)}>
+        Back to Signup
       </Button>
     </View>
   );
 }
-
-export default ForgotPasswordScreen;
