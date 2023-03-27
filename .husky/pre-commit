@@ -2,3 +2,15 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 npx lint-staged && yarn run test
+
+#Lists the files that have been changed and 
+#filters the ones with the .snap extension.
+SNAP_FILES=$(git diff --name-only --cached | grep '\.snap$')
+
+#If there are .snap files, the script loops through them and 
+#runs git add to push them to the staging area.
+if [ -n "$SNAP_FILES" ]; then
+  for FILE in $SNAP_FILES; do
+   git add "$FILE"
+  done
+fi
