@@ -17,10 +17,12 @@ jest.mock('@react-navigation/native', () => {
   };
 });
 
-jest.mock('react-native-reanimated', () => {
-  const Reanimated = require('react-native-reanimated/mock');
-  Reanimated.default.call = () => {};
-  return Reanimated;
-});
+// NOTE: commenting this out because it causes crash on Testflight release
+
+// jest.mock('react-native-reanimated', () => {
+//   const Reanimated = require('react-native-reanimated/mock');
+//   Reanimated.default.call = () => {};
+//   return Reanimated;
+// });
 
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
