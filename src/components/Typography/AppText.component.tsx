@@ -10,7 +10,7 @@ import { AppTextProps } from './AppText.types';
 export function Text({
   color = Color.Neutral.Sz100,
   variant,
-  textAlign = TextAlignment.Auto,
+  textAlign = TextAlignment.Center,
   numberOfLines,
   underline,
   testID,
@@ -38,6 +38,7 @@ export function Text({
         },
         tw`${textStyles}`,
       ]}
+      onPress={onPress}
       testID={testID}
       onPress={onPress}
       numberOfLines={numberOfLines}>

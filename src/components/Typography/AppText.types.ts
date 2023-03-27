@@ -1,4 +1,4 @@
-import { Text } from 'react-native';
+import { GestureResponderEvent, Text } from 'react-native';
 
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
@@ -11,4 +11,5 @@ export interface AppTextProps extends WithRNTextProps {
   textAlign?: TextAlignment;
   variant: TextVariant;
   underline?: boolean;
+  onPress?: (event: GestureResponderEvent) => void; //need this prop to work with links
 }
