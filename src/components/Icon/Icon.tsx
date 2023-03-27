@@ -4,6 +4,7 @@ import {
   AccountLockSvg,
   BackIconSvg,
   MailIconSvg,
+  PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
   ProfileIconSvg,
   SecurityIconSvg,
@@ -22,12 +23,20 @@ export function AccountLockIcon({ color = Color.Neutral.Sz500, width = 20, heigh
   return <AccountLockSvg width={width} height={height} fill={color} />;
 }
 
-export function PasswordRevealIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
-  return <PasswordRevealEyeSvg width={width} height={height} fill={color} />;
+export function BackIcon({ color, width = 12, height = 20 }: SvgIconProps) {
+  return <BackIconSvg width={width} height={height} fill={color} />;
 }
 
 export function MailIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
   return <MailIconSvg width={width} height={height} fill={color} />;
+}
+
+export function PasswordHideIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
+  return <PasswordHideEyeSvg width={width} height={height} fill={color} />;
+}
+
+export function PasswordRevealIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
+  return <PasswordRevealEyeSvg width={width} height={height} fill={color} />;
 }
 
 export function ProfileIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {

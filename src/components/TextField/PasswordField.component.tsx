@@ -3,7 +3,7 @@ import { TextInput as RNTextInput } from 'react-native';
 
 import { Color } from '@sz/constants';
 
-import { PasswordRevealIcon, SvgIconProps } from '../Icon';
+import { PasswordHideIcon, PasswordRevealIcon, SvgIconProps } from '../Icon';
 import { TextField } from './TextField.component';
 import { TextFieldProps } from './TextField.types';
 
@@ -25,7 +25,7 @@ export const PasswordField = forwardRef<RNTextInput, PasswordFieldProps>(functio
     <TextField
       ref={ref}
       onRightIconPress={() => setEnablePasswordIcon(!enablePasswordIcon)}
-      rightIcon={enablePasswordIcon ? <PasswordRevealIcon {...iconProps} /> : <PasswordRevealIcon {...iconProps} />}
+      rightIcon={enablePasswordIcon ? <PasswordRevealIcon {...iconProps} /> : <PasswordHideIcon {...iconProps} />}
       secureTextEntry={enablePasswordIcon}
       {...props}
     />

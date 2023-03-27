@@ -36,12 +36,12 @@ export class NavigationService {
           },
         };
         break;
-      case Route.ForgetPassword:
+      case Route.ForgotPassword:
         navRoute = Route.AuthStack;
         navParams = {
           screen: Route.LoginStack,
           params: {
-            screen: Route.ForgetPassword,
+            screen: Route.ForgotPassword,
             params: {
               screen: route,
               params: params,
@@ -106,10 +106,13 @@ export class NavigationService {
         navParams = {
           screen: Route.SignupStack,
           params: {
-            screen: Route.PrivacyPolicy,
+            screen: Route.InfoStack,
             params: {
-              screen: route,
-              params: params,
+              screen: Route.PrivacyPolicy,
+              params: {
+                screen: route,
+                params: params,
+              },
             },
           },
         };
@@ -119,10 +122,13 @@ export class NavigationService {
         navParams = {
           screen: Route.SignupStack,
           params: {
-            screen: Route.TermsOfUse,
+            screen: Route.InfoStack,
             params: {
-              screen: route,
-              params: params,
+              screen: Route.TermsOfUse,
+              params: {
+                screen: route,
+                params: params,
+              },
             },
           },
         };
