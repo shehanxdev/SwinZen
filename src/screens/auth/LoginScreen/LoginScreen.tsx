@@ -79,6 +79,7 @@ export function LoginScreen() {
                 error={(isTouched || isSubmitted) && error !== undefined}
                 returnKeyType={'next'}
                 onSubmitEditing={() => setFocus('password')}
+                autoCapitalize={'none'}
               />
             )}
           />

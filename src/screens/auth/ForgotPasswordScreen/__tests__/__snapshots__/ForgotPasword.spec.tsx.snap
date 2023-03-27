@@ -263,6 +263,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                       }
                     >
                       <TextInput
+                        autoCapitalize="none"
                         editable={true}
                         maxFontSizeMultiplier={1.5}
                         multiline={false}
