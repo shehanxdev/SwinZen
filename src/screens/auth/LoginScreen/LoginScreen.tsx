@@ -96,7 +96,7 @@ export function LoginScreen() {
                 helperText={(isTouched || isSubmitted) && error?.message}
                 helperTextColor={Color.Error.SzMain}
                 error={(isTouched || isSubmitted) && error !== undefined}
-                returnKeyType={'next'}
+                returnKeyType={'done'}
               />
             )}
           />

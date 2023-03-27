@@ -5,7 +5,7 @@ export const forgotPasswordValidationSchema = yup
     username: yup
       .string()
       .required('Please enter Email ID')
-      .email('Invalid Email')
+      .email('Invalid Email ID')
       .max(50, 'Email must not be 50 letters long'),
   })
   .required();
