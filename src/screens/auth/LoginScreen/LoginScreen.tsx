@@ -13,6 +13,10 @@ export function LoginScreen() {
       <Button mode="contained" onPress={() => NavigationService.navigate(Route.Signup)}>
         Sign Up
       </Button>
+      <View style={tw`mt-5`}></View>
+      <Button mode="contained" onPress={() => NavigationService.navigate(Route.ForgetPassword)}>
+        Forget Password
+      </Button>
     </View>
   );
 }

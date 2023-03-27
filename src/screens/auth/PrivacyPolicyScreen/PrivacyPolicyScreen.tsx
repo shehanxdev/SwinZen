@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Image,
   ImageBackground,
   Linking,
   NativeModules,
@@ -10,9 +9,9 @@ import {
   View,
 } from 'react-native';
 
-import { Link, Text } from '@sz/components';
+import { BackIcon, Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { TextVariant } from '@sz/constants';
+import { TextAlignment, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
 import { IMAGES } from '../../../assets/images';
@@ -25,10 +24,9 @@ export function PrivacyPolicyScreen() {
     <View testID="PrivacyPolicyScreenTestID" style={tw`flex-1`}>
       <ImageBackground style={tw`flex-1`} source={IMAGES.gradientBg}>
         <SafeAreaView>
-          {/*TODO:: Remove this images and replace with SVG later*/}
-          <View style={tw`flex-row items-center justify-between my-5`}>
+          <View style={tw`flex-row items-center justify-between m-5 `}>
             <TouchableOpacity onPress={() => NavigationService.goBack()}>
-              <Image source={IMAGES.leftArrow} style={tw`m-2`} />
+              <BackIcon />
             </TouchableOpacity>
             <View style={tw`mr-7`}>
               <Text variant={TextVariant.SubTitle2SemiBold}>Privacy policy</Text>
@@ -38,7 +36,7 @@ export function PrivacyPolicyScreen() {
           <View style={tw`relative bg-white opacity-15 mx-3 mb-10 rounded-xl border border-neutral-700 h-5/6`} />
           <View style={tw`absolute mt-[${customMargin}px] mx-3 h-4.6/6`}>
             <ScrollView style={tw`mx-5 z-1`}>
-              <Text variant={TextVariant.Body2Regular}>
+              <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Auto}>
                 {`Introduction
             \n(“Sports Zoom LLC” or “We” or “Us”) respect your privacy and are committed to protecting it through our compliance with this policy. \nThis policy describes the types of information we may collect from you or that you may provide when you visit the website ( `}
                 <Link text="SwingZen Website" onPress={() => Linking.openURL('https://swingzen.com')} />

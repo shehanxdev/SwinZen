@@ -11,11 +11,13 @@ module.exports = {
     '^@sz/config(.*)$': '<rootDir>/src/config$1',
     '^@sz/constants(.*)$': '<rootDir>/src/constants$1',
     '^@sz/hooks(.*)$': '<rootDir>/src/hooks$1',
+    '^@sz/models(.*)$': '<rootDir>/src/models$1',
     '^@sz/routes(.*)$': '<rootDir>/src/routes$1',
     '^@sz/screens(.*)$': '<rootDir>/src/screens$1',
     '^@sz/services(.*)$': '<rootDir>/src/services$1',
     '^@sz/stores(.*)$': '<rootDir>/src/stores$1',
     '^@sz/utils(.*)$': '<rootDir>/src/utils$1',
+    '\\.svg': '<rootDir>/__mocks__/svgMock.js',
   },
   transform: {
     '/node_modules/.+\\.(js|ts|tsx)$': './react-native-jest-preprocessor.js',

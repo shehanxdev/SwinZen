@@ -6,15 +6,17 @@ import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
-export function EmailVerificationScreen() {
+export function ForgetPasswordScreen() {
   return (
     <View style={tw`m-auto`}>
-      <Text style={tw`m-10`}>Verify Email</Text>
+      <Text style={tw`m-10`}>Forget Password Screen</Text>
+      <Button mode="contained" onPress={() => NavigationService.navigate(Route.ResetPasswordEmailVerification)}>
+        reset password email confirm
+      </Button>
+      <View style={tw`mt-5`}></View>
       <Button mode="contained" onPress={() => NavigationService.navigate(Route.Signup)}>
         Back to Signup
       </Button>
     </View>
   );
 }
-
-export default EmailVerificationScreen;

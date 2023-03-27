@@ -52,6 +52,8 @@ exports[`PrivacyPolicyScreen Screen should render PrivacyPolicyScreen correctly 
             "flexDirection": "row",
             "justifyContent": "space-between",
             "marginBottom": 20,
+            "marginLeft": 20,
+            "marginRight": 20,
             "marginTop": 20,
           }
         }
@@ -90,20 +92,9 @@ exports[`PrivacyPolicyScreen Screen should render PrivacyPolicyScreen correctly 
             }
           }
         >
-          <Image
-            source={
-              {
-                "testUri": "../../../src/assets/images/LeftArrow.png",
-              }
-            }
-            style={
-              {
-                "marginBottom": 8,
-                "marginLeft": 8,
-                "marginRight": 8,
-                "marginTop": 8,
-              }
-            }
+          <SvgMock
+            height={20}
+            width={12}
           />
         </View>
         <View
@@ -124,7 +115,7 @@ exports[`PrivacyPolicyScreen Screen should render PrivacyPolicyScreen correctly 
                   "fontFamily": "SourceSansPro-SemiBold",
                   "fontSize": 21,
                   "fontWeight": "600",
-                  "textAlign": "auto",
+                  "textAlign": "center",
                 },
               ]
             }
@@ -202,7 +193,7 @@ This policy describes the types of information we may collect from you or that y
                       "fontFamily": "SourceSansPro-Regular",
                       "fontSize": 16,
                       "fontWeight": "bold",
-                      "textAlign": "auto",
+                      "textAlign": "center",
                     },
                   ]
                 }
@@ -368,7 +359,7 @@ To ask questions or comment about this privacy policy and our privacy practices,
                       "fontFamily": "SourceSansPro-Regular",
                       "fontSize": 16,
                       "fontWeight": "bold",
-                      "textAlign": "auto",
+                      "textAlign": "center",
                       "textDecorationLine": "underline",
                     },
                   ]

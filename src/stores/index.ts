@@ -6,6 +6,8 @@ import { RootModel, models } from './models';
 
 type FullModel = ExtraModelsFromLoading<RootModel>;
 
+export let store: ReturnType<typeof initializeStore>;
+
 export const initializeStore = () => {
   const plugins: Plugin<RootModel, FullModel, Partial<FullModel>>[] | undefined = [];
 
@@ -17,13 +19,10 @@ export const initializeStore = () => {
     plugins,
   });
 
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
   store = initializedStore;
 
   return initializedStore;
 };
-
-export let store: ReturnType<typeof initializeStore>;
 
 export type Store = typeof store;
 export type Dispatch = RematchDispatch<RootModel>;
