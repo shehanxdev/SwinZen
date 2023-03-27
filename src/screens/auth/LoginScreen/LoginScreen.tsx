@@ -1,24 +1,129 @@
+/* eslint-disable import/no-extraneous-dependencies */
+import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
-import { Text, View } from 'react-native';
-import { Button } from 'react-native-paper';
+import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
+import { View } from 'react-native';
 
+import {
+  AccountLockIcon,
+  Button,
+  Link,
+  MailIcon,
+  PasswordField,
+  SwingZenLogoIcon,
+  Text,
+  TextField,
+} from '@sz/components';
 import { tw } from '@sz/config';
-import { Route } from '@sz/constants';
+import { Color, Route, TextVariant } from '@sz/constants';
+import { LoginFormValues } from '@sz/models';
 import { NavigationService } from '@sz/services';
+import { useDispatch, useSelector } from '@sz/stores';
+import { loginValidationSchema } from '@sz/utils';
+
+import { BaseAuthScreen } from '../components';
 
 export function LoginScreen() {
+  const {
+    control,
+    setFocus,
+    handleSubmit,
+    formState: { isSubmitted, errors },
+  } = useForm<LoginFormValues>({ mode: 'onChange', resolver: yupResolver(loginValidationSchema) });
+
+  const loading = useSelector(state => state.loading.effects.userStore.loginUserWithCredentials);
+
+  const dispatch = useDispatch();
+
+  const onLoginFormInvalid: SubmitErrorHandler<LoginFormValues> = () => {
+    console.log(errors);
+    //TODO:: handle error
+  };
+
+  const onLoginFormValid: SubmitHandler<LoginFormValues> = async formInput => {
+    try {
+      await dispatch.userStore.loginUserWithCredentials();
+      console.log('formInput', formInput);
+    } catch (error: any) {
+      console.log('error', error);
+    }
+  };
+
   return (
-    <View style={tw`m-auto`}>
-      <Text style={tw`m-10`}>Login</Text>
-      <Button mode="contained" onPress={() => NavigationService.navigate(Route.Signup)}>
-        Sign Up
-      </Button>
-      <View style={tw`mt-5`}></View>
-      <Button mode="contained" onPress={() => NavigationService.navigate(Route.ForgetPassword)}>
-        Forget Password
-      </Button>
-    </View>
+    <BaseAuthScreen testID="LoginScreenTestID">
+      <View style={tw`flex-1 justify-between`}>
+        <View style={tw`flex mt-20 mx-5`}>
+          <View style={tw`items-center`}>
+            <SwingZenLogoIcon />
+          </View>
+          <View style={tw`items-center`}>
+            <View style={tw`mt-3 mb-20`}>
+              <Text variant={TextVariant.SubTitle2SemiBold}>Sign in to continue</Text>
+            </View>
+          </View>
+        </View>
+        <View style={tw`flex-1 mx-5`}>
+          <Controller
+            control={control}
+            name="username"
+            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
+              <TextField
+                ref={ref}
+                label="Your Email"
+                leftIcon={<MailIcon />}
+                value={value}
+                onChangeText={onChange}
+                onBlur={onBlur}
+                helperText={(isTouched || isSubmitted) && error?.message}
+                helperTextColor={Color.Error.SzMain}
+                error={(isTouched || isSubmitted) && error !== undefined}
+                returnKeyType={'next'}
+                onSubmitEditing={() => setFocus('password')}
+              />
+            )}
+          />
+          <Controller
+            control={control}
+            name="password"
+            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
+              <PasswordField
+                ref={ref}
+                label="Your Password"
+                leftIcon={<AccountLockIcon />}
+                value={value}
+                onChangeText={onChange}
+                onBlur={onBlur}
+                helperText={(isTouched || isSubmitted) && error?.message}
+                helperTextColor={Color.Error.SzMain}
+                error={(isTouched || isSubmitted) && error !== undefined}
+                returnKeyType={'next'}
+              />
+            )}
+          />
+          <View style={tw`items-end`}>
+            <Link
+              text="Forgot password?"
+              onPress={() => {
+                NavigationService.navigate(Route.ForgetPassword);
+              }}
+            />
+          </View>
+        </View>
+        <View style={tw`items-center mt-10 mb-5 mx-5`}>
+          <View style={tw`mb-2`}>
+            <Button onPress={handleSubmit(onLoginFormValid, onLoginFormInvalid)} title={'Sign in'} loading={loading} />
+          </View>
+          <Text variant={TextVariant.Body2Regular}>
+            Don’t Have An Account?
+            <Link
+              text=" Sign up"
+              onPress={() => {
+                NavigationService.navigate(Route.Signup);
+              }}
+            />
+          </Text>
+        </View>
+      </View>
+    </BaseAuthScreen>
   );
 }
-
-export default LoginScreen;

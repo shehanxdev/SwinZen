@@ -29,5 +29,9 @@ export const userStore = createModel<RootModel>()({
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  effects: dispatch => ({}),
+  effects: dispatch => ({
+    async loginUserWithCredentials(/* PAYLOAD */) {
+      await new Promise(r => setTimeout(r, 2000)); //TODO:: This is a dummy delay to mock API call.
+    },
+  }),
 });
