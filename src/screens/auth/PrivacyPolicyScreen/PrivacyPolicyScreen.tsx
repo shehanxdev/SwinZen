@@ -1,40 +1,26 @@
 import React from 'react';
-import {
-  ImageBackground,
-  Linking,
-  NativeModules,
-  SafeAreaView,
-  ScrollView,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { ImageBackground, Linking, NativeModules, Platform, SafeAreaView, ScrollView, View } from 'react-native';
 
-import { BackIcon, Link, Text } from '@sz/components';
+import { Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { TextAlignment, TextVariant } from '@sz/constants';
-import { NavigationService } from '@sz/services';
 
 import { IMAGES } from '../../../assets/images';
 
 export function PrivacyPolicyScreen() {
   const { StatusBarManager } = NativeModules;
-  const customMargin = StatusBarManager.HEIGHT + 105; // providing top margin for absolute content
+  const StatusBarHeight = StatusBarManager.HEIGHT;
+  const customMargin = StatusBarHeight + 80; // providing top margin for absolute content
+  const customTopMargin = Platform.OS === 'ios' ? 5 : 20;
 
   return (
     <View testID="PrivacyPolicyScreenTestID" style={tw`flex-1`}>
       <ImageBackground style={tw`flex-1`} source={IMAGES.gradientBg}>
         <SafeAreaView>
-          <View style={tw`flex-row items-center justify-between m-5 `}>
-            <TouchableOpacity onPress={() => NavigationService.goBack()}>
-              <BackIcon />
-            </TouchableOpacity>
-            <View style={tw`mr-7`}>
-              <Text variant={TextVariant.SubTitle2SemiBold}>Privacy policy</Text>
-            </View>
-            <View />
-          </View>
-          <View style={tw`relative bg-white opacity-15 mx-3 mb-10 rounded-xl border border-neutral-700 h-5/6`} />
-          <View style={tw`absolute mt-[${customMargin}px] mx-3 h-4.6/6`}>
+          <View
+            style={tw`relative bg-white opacity-15 mx-3 mt-${customTopMargin} mb-10 rounded-xl border border-neutral-700 h-170`}
+          />
+          <View style={tw`absolute mt-[${customMargin}px] mx-3 h-160`}>
             <ScrollView style={tw`mx-5 z-1`}>
               <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Auto}>
                 {`Introduction
