@@ -13,6 +13,7 @@ export function ResetPasswordEmailVerificationScreen() {
   return (
     <BaseAuthScreen>
       <View style={tw`flex-1 justify-between`} testID="ResetPasswordEmailVerificationScreenContainerTestID">
+        {/* // TODO: move header to navigation */}
         <View style={tw`mb-5 mx-5`}>
           <TouchableOpacity onPress={() => NavigationService.goBack()}>
             <BackIcon />
