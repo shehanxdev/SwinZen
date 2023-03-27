@@ -211,6 +211,7 @@ exports[`SignupScreen Screen should render SignupScreen correctly 1`] = `
                       <TextInput
                         editable={true}
                         maxFontSizeMultiplier={1.5}
+                        maxLength={10}
                         multiline={false}
                         onBlur={[Function]}
                         onChangeText={[Function]}
@@ -231,8 +232,8 @@ exports[`SignupScreen Screen should render SignupScreen correctly 1`] = `
                               "height": 50,
                             },
                             {
-                              "paddingBottom": 17,
-                              "paddingTop": 17,
+                              "paddingBottom": 13,
+                              "paddingTop": 13,
                             },
                             {
                               "color": "#ADB5BD",
@@ -427,6 +428,7 @@ exports[`SignupScreen Screen should render SignupScreen correctly 1`] = `
                         autoCapitalize="none"
                         editable={true}
                         maxFontSizeMultiplier={1.5}
+                        maxLength={50}
                         multiline={false}
                         onBlur={[Function]}
                         onChangeText={[Function]}
@@ -447,8 +449,8 @@ exports[`SignupScreen Screen should render SignupScreen correctly 1`] = `
                               "height": 50,
                             },
                             {
-                              "paddingBottom": 17,
-                              "paddingTop": 17,
+                              "paddingBottom": 13,
+                              "paddingTop": 13,
                             },
                             {
                               "color": "#ADB5BD",
@@ -642,6 +644,7 @@ exports[`SignupScreen Screen should render SignupScreen correctly 1`] = `
                       <TextInput
                         editable={true}
                         maxFontSizeMultiplier={1.5}
+                        maxLength={20}
                         multiline={false}
                         onBlur={[Function]}
                         onChangeText={[Function]}
@@ -663,8 +666,8 @@ exports[`SignupScreen Screen should render SignupScreen correctly 1`] = `
                               "height": 50,
                             },
                             {
-                              "paddingBottom": 17,
-                              "paddingTop": 17,
+                              "paddingBottom": 13,
+                              "paddingTop": 13,
                             },
                             {
                               "color": "#ADB5BD",
@@ -943,6 +946,7 @@ exports[`SignupScreen Screen should render SignupScreen correctly 1`] = `
                       <TextInput
                         editable={true}
                         maxFontSizeMultiplier={1.5}
+                        maxLength={20}
                         multiline={false}
                         onBlur={[Function]}
                         onChangeText={[Function]}
@@ -964,8 +968,8 @@ exports[`SignupScreen Screen should render SignupScreen correctly 1`] = `
                               "height": 50,
                             },
                             {
-                              "paddingBottom": 17,
-                              "paddingTop": 17,
+                              "paddingBottom": 13,
+                              "paddingTop": 13,
                             },
                             {
                               "color": "#ADB5BD",
@@ -1263,8 +1267,8 @@ exports[`SignupScreen Screen should render SignupScreen correctly 1`] = `
                               "height": 50,
                             },
                             {
-                              "paddingBottom": 17,
-                              "paddingTop": 17,
+                              "paddingBottom": 13,
+                              "paddingTop": 13,
                             },
                             {
                               "color": "#ADB5BD",

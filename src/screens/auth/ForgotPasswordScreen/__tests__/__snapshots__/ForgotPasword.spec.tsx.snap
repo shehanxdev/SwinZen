@@ -217,6 +217,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                         autoCapitalize="none"
                         editable={true}
                         maxFontSizeMultiplier={1.5}
+                        maxLength={50}
                         multiline={false}
                         onBlur={[Function]}
                         onChangeText={[Function]}
@@ -236,8 +237,8 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                               "height": 50,
                             },
                             {
-                              "paddingBottom": 17,
-                              "paddingTop": 17,
+                              "paddingBottom": 13,
+                              "paddingTop": 13,
                             },
                             {
                               "color": "#ADB5BD",
