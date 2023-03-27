@@ -18,6 +18,7 @@ import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { LoginFormValues } from '@sz/models';
 import { NavigationService } from '@sz/services';
+import { useDispatch, useSelector } from '@sz/stores';
 import { loginValidationSchema } from '@sz/utils';
 
 import { BaseAuthScreen } from '../components';
@@ -30,14 +31,18 @@ export function LoginScreen() {
     formState: { isSubmitted, errors },
   } = useForm<LoginFormValues>({ mode: 'onChange', resolver: yupResolver(loginValidationSchema) });
 
+  const loading = useSelector(state => state.loading.effects.userStore.loginUserWithCredentials);
+
+  const dispatch = useDispatch();
+
   const onLoginFormInvalid: SubmitErrorHandler<LoginFormValues> = () => {
     console.log(errors);
     //TODO:: handle error
   };
 
   const onLoginFormValid: SubmitHandler<LoginFormValues> = async formInput => {
-    // TODO: API Integration
     try {
+      await dispatch.userStore.loginUserWithCredentials();
       console.log('formInput', formInput);
     } catch (error: any) {
       console.log('error', error);
@@ -106,7 +111,7 @@ export function LoginScreen() {
         </View>
         <View style={tw`items-center mt-10 mb-5 mx-5`}>
           <View style={tw`mb-2`}>
-            <Button onPress={handleSubmit(onLoginFormValid, onLoginFormInvalid)} title={'Sign in'} />
+            <Button onPress={handleSubmit(onLoginFormValid, onLoginFormInvalid)} title={'Sign in'} loading={loading} />
           </View>
           <Text variant={TextVariant.Body2Regular}>
             Don’t Have An Account?

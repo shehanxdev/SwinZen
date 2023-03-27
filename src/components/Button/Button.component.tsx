@@ -24,6 +24,7 @@ export function Button({
   disabled = false,
   uppercase = false,
   fullWidth = true,
+  loading = false,
 }: ButtonProps) {
   const [isButtonClicked, setIsButtonClicked] = useState<boolean>(false);
 
@@ -51,6 +52,7 @@ export function Button({
         uppercase={uppercase}
         disabled={disabled}
         onPress={onPress}
+        loading={loading} //TODO::Replace with the correct loading indicator
         style={tw`bg-[${buttonBackgroundColor}] rounded-2.5 justify-center shadow-none border border-[${buttonBorderColor}] ${
           fullWidth ? 'w-full' : undefined
         }`}
