@@ -95,6 +95,7 @@ export function SignupScreen() {
                 error={(isTouched || isSubmitted) && error !== undefined}
                 returnKeyType={'next'}
                 onSubmitEditing={() => setFocus('password')}
+                autoCapitalize={'none'}
               />
             )}
           />

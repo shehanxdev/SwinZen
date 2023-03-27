@@ -424,6 +424,7 @@ exports[`SignupScreen Screen should render SignupScreen correctly 1`] = `
                       }
                     >
                       <TextInput
+                        autoCapitalize="none"
                         editable={true}
                         maxFontSizeMultiplier={1.5}
                         multiline={false}
