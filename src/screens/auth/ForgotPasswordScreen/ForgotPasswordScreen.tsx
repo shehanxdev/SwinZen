@@ -36,6 +36,7 @@ export function ForgotPasswordScreen() {
   return (
     <BaseAuthScreen>
       <View style={tw`flex-1 justify-between`} testID="ForgotPasswordScreenTestID">
+        {/* // TODO: move header to navigation */}
         <View style={tw`mb-5 mx-5`}>
           <TouchableOpacity onPress={() => NavigationService.goBack()}>
             <BackIcon />
