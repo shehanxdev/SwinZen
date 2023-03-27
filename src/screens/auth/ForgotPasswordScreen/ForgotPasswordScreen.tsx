@@ -68,6 +68,7 @@ export function ForgotPasswordScreen() {
                 helperTextColor={Color.Error.SzMain}
                 error={(isTouched || isSubmitted) && error !== undefined}
                 returnKeyType={'done'}
+                autoCapitalize={'none'}
               />
             )}
           />
