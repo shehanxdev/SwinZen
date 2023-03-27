@@ -1,5 +1,6 @@
 export enum Route {
   AuthStack = 'auth-stack',
+  InfoStack = 'info-stack',
   SignupStack = 'signup-stack',
   LoginStack = 'login-stack',
   Login = 'login',
