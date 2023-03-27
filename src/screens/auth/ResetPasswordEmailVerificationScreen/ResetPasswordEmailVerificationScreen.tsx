@@ -31,7 +31,7 @@ export function ResetPasswordEmailVerificationScreen() {
             }}
           />
         </View>
-        <View style={tw`items-center mb-5 items-center mx-5`}>
+        <View style={tw`items-center mb-5 mx-5`}>
           <View style={tw`mb-3`}>
             <Button
               onPress={() => {

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
@@ -68,6 +69,7 @@ export function SignupScreen() {
                 ref={ref}
                 label="Your Name"
                 leftIcon={<ProfileIcon />}
+                maxLength={10}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
@@ -87,6 +89,7 @@ export function SignupScreen() {
                 ref={ref}
                 label="Your Email"
                 leftIcon={<MailIcon />}
+                maxLength={50}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
@@ -95,6 +98,7 @@ export function SignupScreen() {
                 error={(isTouched || isSubmitted) && error !== undefined}
                 returnKeyType={'next'}
                 onSubmitEditing={() => setFocus('password')}
+                autoCapitalize={'none'}
               />
             )}
           />
@@ -106,6 +110,7 @@ export function SignupScreen() {
                 ref={ref}
                 label="Your Password"
                 leftIcon={<AccountLockIcon />}
+                maxLength={20}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
@@ -123,8 +128,9 @@ export function SignupScreen() {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <PasswordField
                 ref={ref}
-                label="Your Password"
+                label="Please Confirm Your Password"
                 leftIcon={<AccountLockIcon />}
+                maxLength={20}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
@@ -142,7 +148,7 @@ export function SignupScreen() {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <TextField
                 ref={ref}
-                label="Your Promotion Code"
+                label="Your Promotion Code (If Applicable)"
                 leftIcon={<SecurityIcon />}
                 value={value}
                 onChangeText={onChange}

@@ -1,5 +1,6 @@
 export enum Route {
   AuthStack = 'auth-stack',
+  InfoStack = 'info-stack',
   SignupStack = 'signup-stack',
   LoginStack = 'login-stack',
   Login = 'login',
@@ -8,6 +9,6 @@ export enum Route {
   PrivacyPolicy = 'privacy-policy',
   TermsOfUse = 'terms-of-use',
   ResetPasswordEmailVerification = 'reset-password-email-verification',
-  ForgetPassword = 'forget-password',
+  ForgotPassword = 'forgot-password',
   ResetPassword = 'reset-password',
 }
