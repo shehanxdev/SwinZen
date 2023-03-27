@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Image,
   ImageBackground,
   Linking,
   NativeModules,
@@ -10,9 +9,9 @@ import {
   View,
 } from 'react-native';
 
-import { Link, Text } from '@sz/components';
+import { BackIcon, Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { TextVariant } from '@sz/constants';
+import { TextAlignment, TextVariant } from '@sz/constants';
 import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
@@ -27,9 +26,9 @@ export function TermsOfUseScreen() {
       <ImageBackground style={tw`flex-1`} source={IMAGES.gradientBg}>
         <SafeAreaView>
           {/*TODO:: Remove this images and replace with SVG later*/}
-          <View style={tw`flex-row items-center justify-between my-5`}>
+          <View style={tw`flex-row items-center justify-between m-5`}>
             <TouchableOpacity onPress={() => NavigationService.goBack()}>
-              <Image source={IMAGES.leftArrow} style={tw`m-2`} />
+              <BackIcon />
             </TouchableOpacity>
             <View style={tw`mr-7`}>
               <Text variant={TextVariant.SubTitle2SemiBold}>Terms of Use</Text>
@@ -39,7 +38,7 @@ export function TermsOfUseScreen() {
           <View style={tw`relative bg-white opacity-15 mx-3 mb-10 rounded-xl border border-neutral-700 h-5/6`} />
           <View style={tw`absolute mt-[${customMargin}px] mx-3 h-4.6/6`}>
             <ScrollView style={tw`mx-5 z-1`}>
-              <Text variant={TextVariant.Body2Regular}>
+              <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Auto}>
                 {`Acceptance of the Terms of Use
                 \nThese terms of use are entered into by and between You and Sports Zoom LLC, “we” or “us“. The following terms and conditions, together with any documents they expressly incorporate by reference collectively, these “Terms of Use“, govern your access to and use of, including any content, functionality and services offered on or through `}
                 <Link text="SwingZen Website" onPress={() => Linking.openURL('https://swingzen.com')} />

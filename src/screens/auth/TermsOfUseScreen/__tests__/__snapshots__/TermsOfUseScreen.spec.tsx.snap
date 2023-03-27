@@ -52,6 +52,8 @@ exports[`TermsOfUseScreen Screen should render TermsOfUseScreen correctly 1`] = 
             "flexDirection": "row",
             "justifyContent": "space-between",
             "marginBottom": 20,
+            "marginLeft": 20,
+            "marginRight": 20,
             "marginTop": 20,
           }
         }
@@ -90,20 +92,9 @@ exports[`TermsOfUseScreen Screen should render TermsOfUseScreen correctly 1`] = 
             }
           }
         >
-          <Image
-            source={
-              {
-                "testUri": "../../../src/assets/images/LeftArrow.png",
-              }
-            }
-            style={
-              {
-                "marginBottom": 8,
-                "marginLeft": 8,
-                "marginRight": 8,
-                "marginTop": 8,
-              }
-            }
+          <SvgMock
+            height={20}
+            width={12}
           />
         </View>
         <View
@@ -124,7 +115,7 @@ exports[`TermsOfUseScreen Screen should render TermsOfUseScreen correctly 1`] = 
                   "fontFamily": "SourceSansPro-SemiBold",
                   "fontSize": 21,
                   "fontWeight": "600",
-                  "textAlign": "auto",
+                  "textAlign": "center",
                 },
               ]
             }
@@ -201,7 +192,7 @@ These terms of use are entered into by and between You and Sports Zoom LLC, “w
                       "fontFamily": "SourceSansPro-Regular",
                       "fontSize": 16,
                       "fontWeight": "bold",
-                      "textAlign": "auto",
+                      "textAlign": "center",
                     },
                   ]
                 }
@@ -223,7 +214,7 @@ Please read the Terms of Use carefully before you start to use the Website. By u
                       "fontFamily": "SourceSansPro-Regular",
                       "fontSize": 16,
                       "fontWeight": "bold",
-                      "textAlign": "auto",
+                      "textAlign": "center",
                     },
                   ]
                 }
@@ -266,7 +257,7 @@ To access the Website or some of the resources it offers, you may be asked to pr
                       "fontFamily": "SourceSansPro-Regular",
                       "fontSize": 16,
                       "fontWeight": "bold",
-                      "textAlign": "auto",
+                      "textAlign": "center",
                     },
                   ]
                 }
@@ -400,7 +391,7 @@ Violate the legal rights (including the rights of publicity and privacy) of othe
                       "fontFamily": "SourceSansPro-Regular",
                       "fontSize": 16,
                       "fontWeight": "bold",
-                      "textAlign": "auto",
+                      "textAlign": "center",
                     },
                   ]
                 }
@@ -454,7 +445,7 @@ All information we collect on this Website is subject to our
                       "fontFamily": "SourceSansPro-Regular",
                       "fontSize": 16,
                       "fontWeight": "bold",
-                      "textAlign": "auto",
+                      "textAlign": "center",
                     },
                   ]
                 }
