@@ -104,7 +104,7 @@ export function LoginScreen() {
             <Link
               text="Forgot password?"
               onPress={() => {
-                NavigationService.navigate(Route.ForgetPassword);
+                NavigationService.navigate(Route.ForgotPassword);
               }}
             />
           </View>
