@@ -1,12 +1,16 @@
 import { createModel } from '@rematch/core';
 
+import { LoginRequestData } from '@sz/models';
+//TODO::Fix require cycle issue
+import { AuthService } from '@sz/services';
+
 import { RootModel } from './';
 
 export interface UserState {
   isAuthenticated: boolean;
   accessToken: string | null;
   refreshToken: string | null;
-  //TODO::fill other user realted state here
+  //TODO::fill other user related state here
 }
 
 const initialState: UserState = {
@@ -28,10 +32,12 @@ export const userStore = createModel<RootModel>()({
       return { ...state, refreshToken };
     },
   },
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   effects: dispatch => ({
-    async loginUserWithCredentials(/* PAYLOAD */) {
-      await new Promise(r => setTimeout(r, 2000)); //TODO:: This is a dummy delay to mock API call.
+    async loginUserWithCredentials(payload: LoginRequestData) {
+      const data = await AuthService.loginUserWithCredentials(payload);
+      dispatch.userStore.setAccessToken(data.accessToken);
+      dispatch.userStore.setRefreshToken(data.refreshToken);
+      dispatch.userStore.setIsAuthenticated(true);
     },
   }),
 });

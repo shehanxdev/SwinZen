@@ -7,16 +7,6 @@ import { APIError } from './APIError';
 
 type HttpVerbs = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 
-//TODO::remove this after we have a proper way to get refresh/access tokens
-const dummyTokenResponse = () => {
-  return new Promise(resolve => {
-    resolve({
-      ok: true,
-      data: 'dummy token data',
-    });
-  });
-};
-
 export class HttpService {
   // used to handle anonymous API calls
   private apiSauceWithoutAuth!: ApisauceInstance;
@@ -92,7 +82,7 @@ export class HttpService {
       throw new APIError('INTERNAL_ERROR', 'Refresh token is not available!');
     }
 
-    const response = (await dummyTokenResponse()) as any; //TODO::replace with the actual get tokens API call once those APIs are ready
+    const response = (await new Promise(r => setTimeout(r, 2000))) as any; //TODO::replace with the actual get tokens API call && add the relevant logic once those APIs are ready
 
     if (!response!.ok) {
       throw new APIError(response.problem, response.data);
