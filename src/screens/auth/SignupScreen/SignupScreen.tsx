@@ -68,6 +68,7 @@ export function SignupScreen() {
                 ref={ref}
                 label="Your Name"
                 leftIcon={<ProfileIcon />}
+                maxLength={10}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
@@ -87,6 +88,7 @@ export function SignupScreen() {
                 ref={ref}
                 label="Your Email"
                 leftIcon={<MailIcon />}
+                maxLength={50}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
@@ -107,6 +109,7 @@ export function SignupScreen() {
                 ref={ref}
                 label="Your Password"
                 leftIcon={<AccountLockIcon />}
+                maxLength={20}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
@@ -126,6 +129,7 @@ export function SignupScreen() {
                 ref={ref}
                 label="Please Confirm Your Password"
                 leftIcon={<AccountLockIcon />}
+                maxLength={20}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}

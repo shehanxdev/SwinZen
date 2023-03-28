@@ -1,13 +1,12 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
-import { TouchableOpacity, View } from 'react-native';
+import { View } from 'react-native';
 
-import { AccountLockIcon, BackIcon, Button, PasswordField, Text } from '@sz/components';
+import { AccountLockIcon, Button, PasswordField, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextVariant } from '@sz/constants';
 import { ResetPasswordFormValues } from '@sz/models';
-import { NavigationService } from '@sz/services';
 import { resetPasswordValidationSchema } from '@sz/utils';
 
 import { BaseAuthScreen } from '../components/BaseAuthScreen';
@@ -36,12 +35,6 @@ export function ResetPasswordScreen() {
   return (
     <BaseAuthScreen>
       <View style={tw`flex-1 justify-between`} testID="ResetPasswordScreenTestID">
-        {/* // TODO: move header to navigation */}
-        <View style={tw`mb-5 mx-5`}>
-          <TouchableOpacity onPress={() => NavigationService.goBack()}>
-            <BackIcon />
-          </TouchableOpacity>
-        </View>
         <View style={tw`mx-5 flex-1 justify-center content-center`}>
           <View style={tw`items-center`}>
             <View style={tw`mt-3 mb-5`}>
@@ -61,6 +54,7 @@ export function ResetPasswordScreen() {
                 ref={ref}
                 label="Your New Password"
                 leftIcon={<AccountLockIcon />}
+                maxLength={20}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
@@ -80,6 +74,7 @@ export function ResetPasswordScreen() {
                 ref={ref}
                 label="Confirm Your New Password"
                 leftIcon={<AccountLockIcon />}
+                maxLength={20}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}

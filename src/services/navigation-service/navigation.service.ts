@@ -106,10 +106,13 @@ export class NavigationService {
         navParams = {
           screen: Route.SignupStack,
           params: {
-            screen: Route.PrivacyPolicy,
+            screen: Route.InfoStack,
             params: {
-              screen: route,
-              params: params,
+              screen: Route.PrivacyPolicy,
+              params: {
+                screen: route,
+                params: params,
+              },
             },
           },
         };
@@ -119,10 +122,13 @@ export class NavigationService {
         navParams = {
           screen: Route.SignupStack,
           params: {
-            screen: Route.TermsOfUse,
+            screen: Route.InfoStack,
             params: {
-              screen: route,
-              params: params,
+              screen: Route.TermsOfUse,
+              params: {
+                screen: route,
+                params: params,
+              },
             },
           },
         };

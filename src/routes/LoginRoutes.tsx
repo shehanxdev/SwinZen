@@ -1,9 +1,16 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
+import { TouchableOpacity } from 'react-native';
 
-import { Route } from './../constants';
-import { ForgotPasswordScreen, ResetPasswordEmailVerificationScreen, ResetPasswordScreen } from './../screens';
-import { LoginScreen } from './../screens';
+import { BackIcon } from '@sz/components';
+import { Route } from '@sz/constants';
+import {
+  ForgotPasswordScreen,
+  LoginScreen,
+  ResetPasswordEmailVerificationScreen,
+  ResetPasswordScreen,
+} from '@sz/screens';
+import { NavigationService } from '@sz/services';
 
 export type LoginStackParamList = {
   [Route.Login]: {
@@ -26,9 +33,17 @@ export function LoginStack() {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: false,
+        title: '',
+        headerShown: true,
+        headerBackTitleVisible: false,
+        headerTransparent: true,
+        headerLeft: () => (
+          <TouchableOpacity onPress={() => NavigationService.goBack()}>
+            <BackIcon />
+          </TouchableOpacity>
+        ),
       }}>
-      <Stack.Screen name={Route.Login} component={LoginScreen} />
+      <Stack.Screen name={Route.Login} component={LoginScreen} options={{ headerShown: false }} />
       <Stack.Screen name={Route.ForgotPassword} component={ForgotPasswordScreen} />
       <Stack.Screen name={Route.ResetPasswordEmailVerification} component={ResetPasswordEmailVerificationScreen} />
       <Stack.Screen name={Route.ResetPassword} component={ResetPasswordScreen} />
