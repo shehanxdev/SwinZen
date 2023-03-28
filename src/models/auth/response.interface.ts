@@ -14,16 +14,16 @@ export interface BaseResponse {
   message: string;
 }
 
-export interface ApiResponse<Data> extends BaseResponse {
+export interface ApiResponse<T> extends BaseResponse {
   /*
    * Response data specific to the request
    */
-  data: Data;
+  data: T;
 }
 
-export interface ApiErrorResponse<Error> extends BaseResponse {
+export interface ApiErrorResponse<T> extends BaseResponse {
   /*
    * Error data specific to the request
    */
-  error: Error;
+  error: T;
 }
