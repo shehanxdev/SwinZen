@@ -1,11 +1,14 @@
 import { ApiResponse, ApisauceInstance, create } from 'apisauce';
 
 import { IS_JEST_RUNTIME } from '@sz/constants';
-import { store } from '@sz/stores';
 
 import { APIError } from './APIError';
 
 type HttpVerbs = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
+
+export type OnTokenUpdateHandler = (accessToken: string, refreshToken: string) => unknown;
+export type GetAccessTokenCallback = () => string | null;
+export type GetRefreshTokenCallback = () => string | null;
 
 export class HttpService {
   // used to handle anonymous API calls
@@ -21,25 +24,22 @@ export class HttpService {
   // passed as an argument in order to avoid issues with JEST runtime
   private baseUrl: string;
 
-  constructor(baseUrl: string) {
+  private getAccessToken: GetAccessTokenCallback;
+  private getRefreshToken: GetRefreshTokenCallback;
+  private onTokenUpdate: OnTokenUpdateHandler;
+
+  constructor(
+    baseUrl: string,
+    getAccessToken: GetAccessTokenCallback,
+    getRefreshToken: GetRefreshTokenCallback,
+    onTokenUpdate: OnTokenUpdateHandler,
+  ) {
     this.baseUrl = baseUrl;
     this.initializeApiSauce();
+    this.getAccessToken = getAccessToken;
+    this.getRefreshToken = getRefreshToken;
+    this.onTokenUpdate = onTokenUpdate;
   }
-
-  private getAccessToken = () => {
-    return store.getState().userStore.accessToken;
-  };
-
-  private getRefreshToken = () => {
-    return store.getState().userStore.refreshToken;
-  };
-
-  private onTokenUpdate = (accessToken: string, refreshToken: string) => {
-    store.dispatch.userStore.setAccessToken(accessToken);
-    store.dispatch.userStore.setRefreshToken(refreshToken);
-
-    //TODO::update auth state in secure storage
-  };
 
   private initializeApiSauce = () => {
     this.apiSauce = create({ baseURL: undefined });

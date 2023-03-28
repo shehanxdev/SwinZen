@@ -11,6 +11,7 @@ interface HttpServiceWithPrivates extends Omit<HttpService, 'apiSauce' | 'apiSau
 }
 
 const getHttpService = () => {
+  // TODO:: update unit tests to reflect the changes in the HttpService
   return new HttpService(baseUrl) as unknown as HttpServiceWithPrivates;
 };
 
