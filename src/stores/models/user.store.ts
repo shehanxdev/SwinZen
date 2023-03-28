@@ -32,7 +32,6 @@ export const userStore = createModel<RootModel>()({
       return { ...state, refreshToken };
     },
   },
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   effects: dispatch => ({
     async loginUserWithCredentials(payload: LoginRequestData) {
       const data = await AuthService.loginUserWithCredentials(payload);
