@@ -8,7 +8,7 @@ import { Route, TextAlignment } from '@sz/constants';
 import { PrivacyPolicyScreen, TermsOfUseScreen } from '@sz/screens';
 import { NavigationService } from '@sz/services';
 
-export type SignupStackParamList = {
+export type InfoStackParamList = {
   [Route.PrivacyPolicy]: {
     // Can be used for future props
   };
@@ -17,7 +17,7 @@ export type SignupStackParamList = {
   };
 };
 
-const Stack = createNativeStackNavigator<SignupStackParamList>();
+const Stack = createNativeStackNavigator<InfoStackParamList>();
 
 export function InfoStack() {
   return (
