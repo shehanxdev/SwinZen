@@ -1,4 +1,4 @@
-import { AuthApiErrorResponses, AuthApiResponses, LoginErrorResponse, LoginResponse, LoginUserData } from '@sz/models';
+import { ApiErrorResponse, ApiResponse, LoginErrorResponse, LoginResponse, LoginUserData } from '@sz/models';
 import { HttpServiceInstance } from '@sz/services';
 
 export class AuthService {
@@ -7,8 +7,8 @@ export class AuthService {
 
     try {
       const response = await httpServiceInstance.postAnonymous<
-        AuthApiResponses<LoginResponse>,
-        AuthApiErrorResponses<LoginErrorResponse>
+        ApiResponse<LoginResponse>,
+        ApiErrorResponse<LoginErrorResponse>
       >('/api/v1/auth/sign-in', data);
 
       console.log(response);
