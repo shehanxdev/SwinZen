@@ -1,9 +1,9 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
-import { TouchableOpacity, View } from 'react-native';
+import { View } from 'react-native';
 
-import { BackIcon, Button, Link, MailIcon, Text, TextField } from '@sz/components';
+import { Button, Link, MailIcon, Text, TextField } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { ForgotPasswordFormValues } from '@sz/models';
@@ -36,12 +36,6 @@ export function ForgotPasswordScreen() {
   return (
     <BaseAuthScreen>
       <View style={tw`flex-1 justify-between`} testID="ForgotPasswordScreenTestID">
-        {/* // TODO: move header to navigation */}
-        <View style={tw`mb-5 mx-5`}>
-          <TouchableOpacity onPress={() => NavigationService.goBack()}>
-            <BackIcon />
-          </TouchableOpacity>
-        </View>
         <View style={tw`mx-5 flex-1 justify-center content-center`}>
           <View style={tw`items-center`}>
             <View style={tw`mt-3 mb-5`}>
@@ -61,6 +55,7 @@ export function ForgotPasswordScreen() {
                 ref={ref}
                 label="Your Email"
                 leftIcon={<MailIcon />}
+                maxLength={50}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}

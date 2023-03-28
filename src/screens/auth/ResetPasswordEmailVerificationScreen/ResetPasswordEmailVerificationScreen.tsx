@@ -1,7 +1,7 @@
 import React from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { View } from 'react-native';
 
-import { BackIcon, Button, Link, Text } from '@sz/components';
+import { Button, Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Route, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
@@ -13,12 +13,6 @@ export function ResetPasswordEmailVerificationScreen() {
   return (
     <BaseAuthScreen>
       <View style={tw`flex-1 justify-between`} testID="ResetPasswordEmailVerificationScreenContainerTestID">
-        {/* // TODO: move header to navigation */}
-        <View style={tw`mb-5 mx-5`}>
-          <TouchableOpacity onPress={() => NavigationService.goBack()}>
-            <BackIcon />
-          </TouchableOpacity>
-        </View>
         <View style={tw`mx-5 flex-1 justify-center content-center`}>
           <View style={tw`items-center`}>
             <View style={tw`mt-3 mb-5`}>

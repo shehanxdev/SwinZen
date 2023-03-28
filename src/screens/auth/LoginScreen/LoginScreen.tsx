@@ -72,6 +72,7 @@ export function LoginScreen() {
                 ref={ref}
                 label="Your Email"
                 leftIcon={<MailIcon />}
+                maxLength={50}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
@@ -92,6 +93,7 @@ export function LoginScreen() {
                 ref={ref}
                 label="Your Password"
                 leftIcon={<AccountLockIcon />}
+                maxLength={20}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
