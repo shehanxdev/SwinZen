@@ -7,7 +7,7 @@ export const signupValidationSchema = yup
     name: yup
       .string()
       .trim()
-      .required('Please enter First Name')
+      .required('Please enter Name')
       .min(2, 'Username must be at least 2 letters long')
       .max(10, 'Username must not be 10 letters long'),
     username: yup
