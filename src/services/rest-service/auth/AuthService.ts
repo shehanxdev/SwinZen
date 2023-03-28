@@ -2,7 +2,7 @@ import { AuthApiErrorResponses, AuthApiResponses, LoginErrorResponse, LoginRespo
 import { HttpServiceInstance } from '@sz/services';
 
 export class AuthService {
-  static async login(data: LoginUserData) {
+  static async loginUserWithCredentials(data: LoginUserData) {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     try {
