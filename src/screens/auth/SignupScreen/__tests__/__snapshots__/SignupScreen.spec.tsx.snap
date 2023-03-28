@@ -232,8 +232,8 @@ exports[`SignupScreen Screen should render SignupScreen correctly 1`] = `
                               "height": 50,
                             },
                             {
-                              "paddingBottom": 13,
-                              "paddingTop": 13,
+                              "paddingBottom": 17,
+                              "paddingTop": 17,
                             },
                             {
                               "color": "#ADB5BD",
@@ -449,8 +449,8 @@ exports[`SignupScreen Screen should render SignupScreen correctly 1`] = `
                               "height": 50,
                             },
                             {
-                              "paddingBottom": 13,
-                              "paddingTop": 13,
+                              "paddingBottom": 17,
+                              "paddingTop": 17,
                             },
                             {
                               "color": "#ADB5BD",
@@ -666,8 +666,8 @@ exports[`SignupScreen Screen should render SignupScreen correctly 1`] = `
                               "height": 50,
                             },
                             {
-                              "paddingBottom": 13,
-                              "paddingTop": 13,
+                              "paddingBottom": 17,
+                              "paddingTop": 17,
                             },
                             {
                               "color": "#ADB5BD",
@@ -968,8 +968,8 @@ exports[`SignupScreen Screen should render SignupScreen correctly 1`] = `
                               "height": 50,
                             },
                             {
-                              "paddingBottom": 13,
-                              "paddingTop": 13,
+                              "paddingBottom": 17,
+                              "paddingTop": 17,
                             },
                             {
                               "color": "#ADB5BD",
@@ -1267,8 +1267,8 @@ exports[`SignupScreen Screen should render SignupScreen correctly 1`] = `
                               "height": 50,
                             },
                             {
-                              "paddingBottom": 13,
-                              "paddingTop": 13,
+                              "paddingBottom": 17,
+                              "paddingTop": 17,
                             },
                             {
                               "color": "#ADB5BD",
