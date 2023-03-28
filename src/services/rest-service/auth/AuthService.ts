@@ -1,5 +1,6 @@
 import { ApiErrorResponse, ApiResponse, LoginErrorResponse, LoginResponse, LoginUserData } from '@sz/models';
-import { APIError, HttpServiceInstance } from '@sz/services';
+
+import { APIError, HttpServiceInstance } from './../../http-service';
 
 export class AuthService {
   static async loginUserWithCredentials(data: LoginUserData) {

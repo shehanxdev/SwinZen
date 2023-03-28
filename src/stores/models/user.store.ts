@@ -9,7 +9,7 @@ export interface UserState {
   isAuthenticated: boolean;
   accessToken: string | null;
   refreshToken: string | null;
-  //TODO::fill other user realted state here
+  //TODO::fill other user related state here
 }
 
 const initialState: UserState = {
