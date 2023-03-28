@@ -4,7 +4,7 @@ import React from 'react';
 import { Route } from '@sz/constants';
 import { PrivacyPolicyScreen, TermsOfUseScreen } from '@sz/screens';
 
-export type SignupStackParamList = {
+export type InfoStackParamList = {
   [Route.PrivacyPolicy]: {
     // Can be used for future props
   };
@@ -13,7 +13,7 @@ export type SignupStackParamList = {
   };
 };
 
-const Stack = createNativeStackNavigator<SignupStackParamList>();
+const Stack = createNativeStackNavigator<InfoStackParamList>();
 
 export function InfoStack() {
   return (
