@@ -1,5 +1,5 @@
 import { ApiErrorResponse, ApiResponse, LoginErrorResponse, LoginResponse, LoginUserData } from '@sz/models';
-import { HttpServiceInstance } from '@sz/services';
+import { APIError, HttpServiceInstance } from '@sz/services';
 
 export class AuthService {
   static async loginUserWithCredentials(data: LoginUserData) {
@@ -11,10 +11,13 @@ export class AuthService {
         ApiErrorResponse<LoginErrorResponse>
       >('/api/v1/auth/sign-in', data);
 
-      console.log(response);
+      if (!response?.data) {
+        throw new APIError('UNKNOWN_ERROR');
+      }
+
+      return response.data;
     } catch (error) {
       console.error('Error response', error, JSON.stringify(error));
-      throw error;
     }
   }
 }

@@ -43,7 +43,9 @@ export function LoginScreen() {
   const onLoginFormValid: SubmitHandler<LoginFormValues> = async formInput => {
     try {
       await dispatch.userStore.loginUserWithCredentials(formInput);
+      //TODO::navigate to home
     } catch (error: any) {
+      //TODO:: handle error
       console.log('error', error);
     }
   };

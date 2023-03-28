@@ -17,7 +17,7 @@ export interface LoginResponse {
   accessToken: string;
   expiresIn: number;
   refreshExpiresIn: number;
-  refreshToken: number;
+  refreshToken: string;
 }
 
 export interface LoginErrorResponse {
