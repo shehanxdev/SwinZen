@@ -1,5 +1,8 @@
 import { createModel } from '@rematch/core';
 
+import { LoginRequestData } from '@sz/models';
+import { AuthService } from '@sz/services';
+
 import { RootModel } from './';
 
 export interface UserState {
@@ -30,8 +33,8 @@ export const userStore = createModel<RootModel>()({
   },
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   effects: dispatch => ({
-    async loginUserWithCredentials(/* PAYLOAD */) {
-      await new Promise(r => setTimeout(r, 2000)); //TODO:: This is a dummy delay to mock API call.
+    async loginUserWithCredentials(payload: LoginRequestData) {
+      await AuthService.login(payload);
     },
   }),
 });

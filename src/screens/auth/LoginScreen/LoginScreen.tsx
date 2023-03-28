@@ -42,8 +42,7 @@ export function LoginScreen() {
 
   const onLoginFormValid: SubmitHandler<LoginFormValues> = async formInput => {
     try {
-      await dispatch.userStore.loginUserWithCredentials();
-      console.log('formInput', formInput);
+      await dispatch.userStore.loginUserWithCredentials(formInput);
     } catch (error: any) {
       console.log('error', error);
     }
