@@ -1,4 +1,4 @@
-import { signupValidationSchema } from '@sz/utils';
+import { signupValidationSchema } from './signup.validations';
 
 describe('signupValidationSchema', () => {
   it('should pass validation with valid input', async () => {
