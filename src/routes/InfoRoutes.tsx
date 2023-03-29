@@ -2,9 +2,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 
-import { BackIcon } from '@sz/components';
-import { tw } from '@sz/config';
-import { Route, TextAlignment } from '@sz/constants';
+import { BackIcon, Text } from '@sz/components';
+import { Route, TextAlignment, TextVariant } from '@sz/constants';
 import { PrivacyPolicyScreen, TermsOfUseScreen } from '@sz/screens';
 import { NavigationService } from '@sz/services';
 
@@ -23,12 +22,11 @@ export function InfoStack() {
   return (
     <Stack.Navigator
       screenOptions={{
-        title: '',
         headerShown: true,
-        headerTitleStyle: tw`flex-1 text-white text-[21px] font-bold text-center`,
         headerTitleAlign: TextAlignment.Center,
         headerBackTitleVisible: false,
         headerTransparent: true,
+        headerTitle: ({ children }) => <Text variant={TextVariant.SubTitle2SemiBold}>{children}</Text>,
         headerLeft: () => (
           <TouchableOpacity onPress={() => NavigationService.goBack()}>
             <BackIcon />
