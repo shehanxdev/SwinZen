@@ -1,33 +1,33 @@
 import React from 'react';
-import { ImageBackground, Linking, NativeModules, Platform, SafeAreaView, ScrollView, View } from 'react-native';
+import { ImageBackground, Linking, Platform, SafeAreaView, ScrollView, View } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 import { Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { TextAlignment, TextVariant } from '@sz/constants';
+import { SwingZenUrl, TextAlignment, TextVariant } from '@sz/constants';
 import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
-import { IMAGES } from '../../../assets/images';
+import { images } from '../../../assets/images';
 
 export function TermsOfUseScreen() {
-  const { StatusBarManager } = NativeModules;
-  const StatusBarHeight = StatusBarManager.HEIGHT;
-  const customMargin = StatusBarHeight + 80; // providing top margin for absolute content
-  const customTopMargin = Platform.OS === 'ios' ? 5 : 20;
+  const androidHeaderHeight = 56;
+  const customTopMargin = Platform.OS === 'ios' ? 34 : androidHeaderHeight + 34;
 
   return (
     <View testID="TermsOfUseScreenTestID" style={tw`flex-1`}>
-      <ImageBackground style={tw`flex-1`} source={IMAGES.gradientBg}>
+      <ImageBackground style={tw`flex-1`} source={images.gradientBackground}>
         <SafeAreaView>
-          <View
-            style={tw`relative bg-white opacity-15 mx-3 mt-${customTopMargin} mb-10 rounded-xl border border-neutral-700 h-170`}
-          />
-          <View style={tw`absolute mt-[${customMargin}px] mx-3 h-160`}>
-            <ScrollView style={tw`mx-5 z-1`}>
+          <LinearGradient
+            useAngle
+            angle={90}
+            colors={['#8EFF0012', '#FFFFFF05', '#FFFFFF02']} //TODO:: update, these colours are NOT available within the design system
+            style={tw`mx-5 mt-[${customTopMargin}px] mb-[134px] rounded-[10px] border border-neutral-700`}>
+            <ScrollView style={tw`relative m-6`}>
               <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Auto}>
                 {`Acceptance of the Terms of Use
                 \nThese terms of use are entered into by and between You and Sports Zoom LLC, “we” or “us“. The following terms and conditions, together with any documents they expressly incorporate by reference collectively, these “Terms of Use“, govern your access to and use of, including any content, functionality and services offered on or through `}
-                <Link text="SwingZen Website" onPress={() => Linking.openURL('https://swingzen.com')} />
+                <Link text="SwingZen Website" onPress={() => Linking.openURL(SwingZenUrl)} />
                 {` here in known as “the Website”, whether as a guest or a registered user.
                 \nPlease read the Terms of Use carefully before you start to use the Website. By using the Website or by clicking to accept or agree to the Terms of Use when this option is made available to you, you accept and agree to be bound and abide by these Terms of Use and our Privacy Policy, found `}
                 <Link text="here" onPress={() => NavigationService.navigate(Route.PrivacyPolicy)} />
@@ -155,11 +155,9 @@ export function TermsOfUseScreen() {
                 \nAll other feedback, comments, requests for technical support and other communications relating to the Website should be directed to Sports Zoom LLC 6601 Edgemoore Dr College Grove TN 37046.`}
               </Text>
             </ScrollView>
-          </View>
+          </LinearGradient>
         </SafeAreaView>
       </ImageBackground>
     </View>
   );
 }
-
-export default TermsOfUseScreen;

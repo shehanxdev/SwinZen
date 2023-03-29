@@ -90,9 +90,6 @@ export function PrivacyPolicyScreen() {
               </Text>
             </ScrollView>
           </LinearGradient>
-          {/* <View
-            style={tw`relative bg-white opacity-15 mx-5 mt-${customTopMargin} mb-10 rounded-[10px] border border-neutral-700 h-170`}
-          /> */}
         </SafeAreaView>
       </ImageBackground>
     </View>
