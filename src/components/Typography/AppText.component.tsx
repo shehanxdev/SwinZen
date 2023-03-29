@@ -38,7 +38,6 @@ export function Text({
         },
         tw`${textStyles}`,
       ]}
-      onPress={onPress}
       testID={testID}
       onPress={onPress}
       numberOfLines={numberOfLines}>
