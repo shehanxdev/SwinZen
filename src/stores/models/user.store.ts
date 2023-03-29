@@ -40,9 +40,8 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setIsAuthenticated(true);
     },
     async registerUser(payload: SignupRequestData) {
-      const data = await AuthService.registerUser(payload);
-      console.log(data);
-      //TODO::save required user data to the store
+      AuthService.registerUser(payload);
+      //TODO::save required user data to the store and persistence storage if required
     },
   }),
 });
