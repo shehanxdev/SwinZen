@@ -28,13 +28,6 @@ export const signupValidationSchema = yup
       .string()
       .required('Please confirm Password')
       .oneOf([yup.ref('password')], 'Your passwords do not match'),
-    loginPassword: yup
-      .string()
-      .required('Please enter Password')
-      .matches(
-        /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/,
-        'Password must contain at least one Uppercase letter, Lowercase letter, Numeric character and Special character',
-      ),
     promoCode: yup.string(),
   })
   .required();
