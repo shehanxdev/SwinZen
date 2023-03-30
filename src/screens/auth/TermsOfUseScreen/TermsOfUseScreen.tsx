@@ -4,15 +4,14 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import { Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { SwingZenUrl, TextAlignment, TextVariant } from '@sz/constants';
+import { AndroidHeaderHeight, SwingZenUrl, TextAlignment, TextVariant } from '@sz/constants';
 import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
 import { images } from '../../../assets/images';
 
 export function TermsOfUseScreen() {
-  const androidHeaderHeight = 56;
-  const customTopMargin = Platform.OS === 'ios' ? 34 : androidHeaderHeight + 34;
+  const customTopMargin = Platform.OS === 'ios' ? 34 : AndroidHeaderHeight + 34; // This 34 is the top margin according to figma design
 
   return (
     <View testID="TermsOfUseScreenTestID" style={tw`flex-1`}>
@@ -22,7 +21,7 @@ export function TermsOfUseScreen() {
             useAngle
             angle={90}
             colors={['#8EFF0012', '#FFFFFF05', '#FFFFFF02']} //TODO:: update, these colours are NOT available within the design system
-            style={tw`mx-5 mt-[${customTopMargin}px] mb-[134px] rounded-[10px] border border-neutral-700`}>
+            style={tw`mx-5 mt-[${customTopMargin}px] mb-[99px] rounded-2.5 border border-neutral-700`}>
             <ScrollView style={tw`relative m-6`}>
               <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Auto}>
                 {`Acceptance of the Terms of Use
