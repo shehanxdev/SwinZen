@@ -8,6 +8,8 @@ import { CustomMenuIcon, SwingZenLogoIcon } from '@sz/components';
 import { Route } from '@sz/constants';
 import { AnalysisScreen, HomeScreen, LibraryScreen, UploadScreen, VideosScreen } from '@sz/screens';
 
+import { commonScreenOptions } from '../configs';
+
 const Tab = createBottomTabNavigator();
 
 export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamListBase>) {
@@ -19,7 +21,7 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
         e.preventDefault();
 
         // Prompt the user before leaving the app
-        //TODO::Replace with a relative alert
+        //TODO::Replace with a proper alert
         Alert.alert('Exit SwingZen', 'You sure want to exist?', [
           {
             text: 'No',
@@ -39,8 +41,7 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
   return (
     <Tab.Navigator
       screenOptions={{
-        headerTransparent: true,
-        headerTitle: '',
+        ...commonScreenOptions,
         headerLeft: () => (
           <View style={{ paddingLeft: 20 }}>
             <SwingZenLogoIcon width={70} height={34} />
