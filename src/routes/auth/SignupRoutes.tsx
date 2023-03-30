@@ -4,7 +4,7 @@ import React from 'react';
 import { Route } from '@sz/constants';
 import { RegisterEmailVerificationScreen, SignupScreen } from '@sz/screens';
 
-import { InfoStack } from './InfoRoutes';
+import { InfoStack } from '../info';
 
 export type SignupStackParamList = {
   [Route.Signup]: {

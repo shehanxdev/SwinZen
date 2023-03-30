@@ -6,15 +6,13 @@ import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
-export function PrivacyPolicyScreen() {
+export function TermsOfUseScreen() {
   return (
     <View style={tw`m-auto`}>
-      <Text style={tw`m-10`}>Privacy Policy</Text>
+      <Text style={tw`m-10`}>Terms Of Use</Text>
       <Button mode="contained" onPress={() => NavigationService.navigate(Route.Signup)}>
         Back to Signup
       </Button>
     </View>
   );
 }
-
-export default PrivacyPolicyScreen;
