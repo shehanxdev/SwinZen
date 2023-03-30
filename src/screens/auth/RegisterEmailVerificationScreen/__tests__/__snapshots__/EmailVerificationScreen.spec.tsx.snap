@@ -460,8 +460,47 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
               <View
                 style={
                   {
-                    "marginBottom": 12,
-                    "marginTop": 120,
+                    "alignItems": "flex-end",
+                    "marginTop": 8,
+                  }
+                }
+              >
+                <Text
+                  onPress={[Function]}
+                  style={
+                    [
+                      {
+                        "color": "#69AA67",
+                        "lineHeight": 20,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
+                  }
+                >
+                  Resend the code
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                  "marginBottom": 20,
+                  "marginLeft": 20,
+                  "marginRight": 20,
+                  "marginTop": 60,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "marginBottom": 8,
                   }
                 }
               >
@@ -608,45 +647,6 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                   </View>
                 </View>
               </View>
-              <View
-                style={
-                  {
-                    "alignItems": "center",
-                  }
-                }
-              >
-                <Text
-                  onPress={[Function]}
-                  style={
-                    [
-                      {
-                        "color": "#69AA67",
-                        "lineHeight": 20,
-                      },
-                      {
-                        "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "bold",
-                        "textAlign": "center",
-                      },
-                    ]
-                  }
-                >
-                  Resend the code
-                </Text>
-              </View>
-            </View>
-            <View
-              style={
-                {
-                  "alignItems": "center",
-                  "marginBottom": 20,
-                  "marginLeft": 20,
-                  "marginRight": 20,
-                  "marginTop": 60,
-                }
-              }
-            >
               <Text
                 style={
                   [

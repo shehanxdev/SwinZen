@@ -102,34 +102,22 @@ export class NavigationService {
         };
         break;
       case Route.PrivacyPolicy:
-        navRoute = Route.AuthStack;
+        navRoute = Route.InfoStack;
         navParams = {
-          screen: Route.SignupStack,
+          screen: Route.PrivacyPolicy,
           params: {
-            screen: Route.InfoStack,
-            params: {
-              screen: Route.PrivacyPolicy,
-              params: {
-                screen: route,
-                params: params,
-              },
-            },
+            screen: route,
+            params: params,
           },
         };
         break;
       case Route.TermsOfUse:
-        navRoute = Route.AuthStack;
+        navRoute = Route.InfoStack;
         navParams = {
-          screen: Route.SignupStack,
+          screen: Route.TermsOfUse,
           params: {
-            screen: Route.InfoStack,
-            params: {
-              screen: Route.TermsOfUse,
-              params: {
-                screen: route,
-                params: params,
-              },
-            },
+            screen: route,
+            params: params,
           },
         };
         break;
