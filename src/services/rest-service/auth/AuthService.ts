@@ -10,7 +10,7 @@ export class AuthService {
       const response = await httpServiceInstance.postAnonymous<
         ApiResponse<LoginResponse>,
         ApiErrorResponse<LoginErrorResponse>
-      >('/api/v1/auth/sign-in', data);
+      >('/auth/sign-in', data);
 
       if (!response?.data) {
         throw new APIError('UNKNOWN_ERROR');
