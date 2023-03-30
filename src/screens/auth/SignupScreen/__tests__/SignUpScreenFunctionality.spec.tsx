@@ -3,8 +3,10 @@ import React from 'react';
 
 import { SignupScreen } from '../SignupScreen';
 
-jest.useFakeTimers();
 describe('Sign Up Screen', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
   it('should render the component without errors', () => {
     const { getByTestId } = render(<SignupScreen />);
     expect(getByTestId('SignupScreenTestID')).toBeTruthy();

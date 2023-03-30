@@ -12,69 +12,146 @@ describe('signupValidationSchema', () => {
     expect(signupValidationSchema.validate(validInput)).resolves.toBe(validInput);
   });
 
-  it('should fail validation with invalid name input', async () => {
+  it('should fail validation with empty name', async () => {
+    const invalidInput = {
+      name: '',
+    };
+    let validationResult;
+    try {
+      validationResult = await signupValidationSchema.validateAt('name', invalidInput);
+    } catch (error) {
+      validationResult = error;
+    }
+    expect(validationResult.errors[0]).toBe('Please enter Name');
+  });
+
+  it('should fail validation with invalid name input less than 2 letters', async () => {
     const invalidInput = {
       name: 'J',
-      username: 'john@example.com',
-      password: '&srte3wTknhFfI!',
-      confirmPassword: '&srte3wTknhFfI!',
-      loginPassword: '&srte3wTknhFfI!',
     };
-    expect(signupValidationSchema.validate(invalidInput)).rejects.toThrow();
+    let validationResult;
+    try {
+      validationResult = await signupValidationSchema.validateAt('name', invalidInput);
+    } catch (error) {
+      validationResult = error;
+    }
+    expect(validationResult.errors[0]).toBe('Username must be at least 2 letters long');
   });
 
+  it('should fail validation with invalid name input with more than 10 letters', async () => {
+    const invalidInput = {
+      name: 'Johnwithmorethantenletters',
+    };
+    let validationResult;
+    try {
+      validationResult = await signupValidationSchema.validateAt('name', invalidInput);
+    } catch (error) {
+      validationResult = error;
+    }
+    expect(validationResult.errors[0]).toBe('Username must not be 10 letters long');
+  });
   it('should fail validation with invalid username input', async () => {
     const invalidInput = {
-      name: 'John',
-      username: 'notanemail',
-      password: '&srte3wTknhFfI!',
-      confirmPassword: '&srte3wTknhFfI!',
-      loginPassword: '&srte3wTknhFfI!',
+      username: 'invalid',
     };
-    expect(signupValidationSchema.validate(invalidInput)).rejects.toThrow();
+    let validationResult;
+    try {
+      validationResult = await signupValidationSchema.validateAt('username', invalidInput);
+    } catch (error) {
+      validationResult = error;
+    }
+    expect(validationResult.errors[0]).toBe('Invalid Email');
   });
 
-  it('should fail validation with invalid password input', async () => {
+  it('should fail validation with empty username', async () => {
     const invalidInput = {
-      name: 'John',
-      username: 'john@example.com',
+      username: '',
+    };
+    let validationResult;
+    try {
+      validationResult = await signupValidationSchema.validateAt('username', invalidInput);
+    } catch (error) {
+      validationResult = error;
+    }
+    expect(validationResult.errors[0]).toBe('Please enter Email ID');
+  });
+
+  it('should fail validation with username input with more than 50 characters', async () => {
+    const invalidInput = {
+      username:
+        'johnwith_more_than_fifty_characters_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@example.com',
+    };
+    let validationResult;
+    try {
+      validationResult = await signupValidationSchema.validateAt('username', invalidInput);
+    } catch (error) {
+      validationResult = error;
+    }
+    expect(validationResult.errors[0]).toBe('Email must not be 50 letters long');
+  });
+
+  it('should fail validation with invalid login weak password input', async () => {
+    const invalidInput = {
       password: 'weak',
-      confirmPassword: 'weak',
-      loginPassword: 'weak',
     };
-    expect(signupValidationSchema.validate(invalidInput)).rejects.toThrow();
+    let validationResult;
+    try {
+      validationResult = await signupValidationSchema.validateAt('password', invalidInput);
+    } catch (error) {
+      validationResult = error;
+    }
+    expect(validationResult.errors[0]).toBe('Password must be at least 8 letters long');
   });
 
-  it('should fail validation with passwords that do not match', async () => {
+  it('should fail validation with a password with more than 20 characters ', async () => {
     const invalidInput = {
-      name: 'John',
-      username: 'john@example.com',
-      password: '&srte3wTknhFfI!',
-      confirmPassword: '&srtsadase3wTknhFfI!',
-      loginPassword: '&srte3wTknhFfI!',
+      password: 'password_with_more_than_twenty_character_is_not_allowed',
     };
-    expect(signupValidationSchema.validate(invalidInput)).rejects.toThrow();
+    let validationResult;
+    try {
+      validationResult = await signupValidationSchema.validateAt('password', invalidInput);
+    } catch (error) {
+      validationResult = error;
+    }
+    expect(validationResult.errors[0]).toBe('Password must not be 20 letters long');
   });
-
-  it('should fail validation with invalid login password input', async () => {
+  it('should fail validation with an invalid password ', async () => {
     const invalidInput = {
-      name: 'John',
-      username: 'john@example.com',
-      password: 'Password1!',
-      confirmPassword: 'Password1!',
-      loginPassword: 'weak',
+      password: 'abcdefghi',
     };
-    expect(signupValidationSchema.validate(invalidInput)).rejects.toThrow();
+    let validationResult;
+    try {
+      validationResult = await signupValidationSchema.validateAt('password', invalidInput);
+    } catch (error) {
+      validationResult = error;
+    }
+    expect(validationResult.errors[0]).toBe(
+      'Password must contain at least one Uppercase letter, Lowercase letter, Numeric character and Special character',
+    );
   });
-
-  it('should pass validation with empty promoCode input', async () => {
+  it('should fail validation with an invalid confirm password ', async () => {
+    const invalidInput = {
+      name: 'Jhon',
+      username: 'john@gmail.com',
+      password: 'Password!1',
+      confirmPassword: 'notamatch',
+      loginPassword: 'Password!1',
+    };
+    let validationResult;
+    try {
+      validationResult = await signupValidationSchema.validate(invalidInput);
+    } catch (error) {
+      validationResult = error;
+    }
+    expect(validationResult.errors[0]).toBe('Your passwords do not match');
+  });
+  it('should pass the validation without the promo code', async () => {
     const validInput = {
-      name: 'John',
-      username: 'john@example.com',
-      password: 'Password1!',
-      confirmPassword: 'Password1!',
-      promoCode: '',
-      loginPassword: 'Password1!',
+      name: 'Jhon',
+      username: 'john@gmail.com',
+      password: 'Password!1',
+      confirmPassword: 'Password!1',
+      loginPassword: 'Password!1',
     };
     expect(signupValidationSchema.validate(validInput)).resolves.toBe(validInput);
   });
