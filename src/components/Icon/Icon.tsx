@@ -3,6 +3,7 @@ import React from 'react';
 import {
   AccountLockSvg,
   BackIconSvg,
+  CustomMenu,
   MailIconSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
@@ -49,4 +50,8 @@ export function SecurityIcon({ color = Color.Neutral.Sz500, width = 20, height =
 
 export function SwingZenLogoIcon({ color, width = 108, height = 55 }: SvgIconProps) {
   return <SwingZenLogo width={width} height={height} fill={color} />;
+}
+
+export function CustomMenuIcon({ color = Color.Neutral.White, width = 24, height = 24 }: SvgIconProps) {
+  return <CustomMenu width={width} height={height} fill={color} />;
 }
