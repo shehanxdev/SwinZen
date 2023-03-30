@@ -1,3 +1,6 @@
+/*
+ * NOTE::This is a work around to avoid circular dependancy issue.
+ */
 import Config from 'react-native-config';
 
 import { ConfigService, HttpService, HttpServiceInstance } from '@sz/services';
