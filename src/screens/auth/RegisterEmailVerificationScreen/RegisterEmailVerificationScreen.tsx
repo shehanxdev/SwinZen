@@ -32,17 +32,9 @@ export function RegisterEmailVerificationScreen() {
               console.log(value); //TODO::use these value when integrating APIs
             }}
           />
-          <View style={tw`mt-30 mb-3`}>
-            <Button
-              onPress={() => {
-                //TODO::implement with the API integration
-              }}
-              title={'Verify'}
-            />
-          </View>
-          <View style={tw`items-center`}>
+          <View style={tw`items-end mt-2`}>
             <Link
-              text={'Resend the code'}
+              text="Resend the code"
               onPress={() => {
                 //TODO::implement with the API integration
               }}
@@ -50,10 +42,18 @@ export function RegisterEmailVerificationScreen() {
           </View>
         </View>
         <View style={tw`items-center mb-5 items-center mx-5 mt-15`}>
+          <View style={tw`mb-2`}>
+            <Button
+              onPress={() => {
+                //TODO::implement with the API integration
+              }}
+              title="Verify"
+            />
+          </View>
           <Text variant={TextVariant.Body2Regular}>
             By continuing, you agree to our{' '}
             <Link
-              text={'Privacy Policy'}
+              text="Privacy Policy"
               onPress={() => {
                 NavigationService.navigate(Route.PrivacyPolicy);
               }}
