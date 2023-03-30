@@ -1,32 +1,22 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import { ImageBackground, Linking, Platform, SafeAreaView, ScrollView, View } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import { Linking, View } from 'react-native';
 
-import { images } from '@sz/assets';
 import { Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { AndroidHeaderHeight, SwingZenMail, SwingZenUrl, TextAlignment, TextVariant } from '@sz/constants';
+import { SwingZenMail, SwingZenUrl, TextAlignment, TextVariant } from '@sz/constants';
 import { LinkingService } from '@sz/services';
 
-export function PrivacyPolicyScreen() {
-  const customTopMargin = Platform.OS === 'ios' ? 34 : AndroidHeaderHeight + 34; // This 34 is the top margin according to figma design
+import { BaseScreen } from '../components';
 
+export function PrivacyPolicyScreen() {
   return (
-    <View testID="PrivacyPolicyScreenTestID" style={tw`flex-1`}>
-      <ImageBackground style={tw`flex-1`} source={images.gradientBackground}>
-        <SafeAreaView>
-          <LinearGradient
-            useAngle
-            angle={90}
-            colors={['#8EFF0012', '#FFFFFF05', '#FFFFFF02']} //TODO:: update, these colours are NOT available within the design system
-            style={tw`mx-5 mt-[${customTopMargin}px] mb-[99px] rounded-2.5 border border-neutral-700`}>
-            <ScrollView style={tw`relative m-6`}>
-              <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Auto}>
-                {`Introduction
+    <BaseScreen>
+      <View style={tw`p-6`} testID="PrivacyPolicyScreenTestID">
+        <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Auto}>
+          {`Introduction
             \n(“Sports Zoom LLC” or “We” or “Us”) respect your privacy and are committed to protecting it through our compliance with this policy. \nThis policy describes the types of information we may collect from you or that you may provide when you visit the website ( `}
-                <Link text="SwingZen Website" onPress={() => Linking.openURL(SwingZenUrl)} />
-                {` ) and our practices for collecting, using, maintaining, protecting, and disclosing that information.
+          <Link text="SwingZen Website" onPress={() => Linking.openURL(SwingZenUrl)} />
+          {` ) and our practices for collecting, using, maintaining, protecting, and disclosing that information.
             \nThis policy applies to information we collect: \nOn this Website. In email, text, and other electronic messages between you and this Website. Through mobile and desktop applications you download from this Website, which provide dedicated non-browser-based interaction between you and this Website. \nWhen you interact with our advertising and applications on third-party websites and services, if those applications or advertising include links to this policy.
             \nIt does not apply to information collected by: \nus offline or through any other means, including on any other website operated by Sports Zoom LLC or any third party including our affiliates and subsidiaries; or \nany third party including our affiliates and subsidiaries, including through any application or content including advertising that may link to or be accessible from or on the Website.
             \nPlease read this policy carefully to understand our policies and practices regarding your information and how we will treat it. If you do not agree with our policies and practices, your choice is not to use our Website. By accessing or using this Website, you agree to this privacy policy. This policy may change from time to time. Your continued use of this Website after we make changes is deemed to be acceptance of those changes, so please check the policy periodically for updates.
@@ -83,14 +73,11 @@ export function PrivacyPolicyScreen() {
             \nIt is our policy to post any changes we make to our privacy policy on this page with a notice that the privacy policy has been updated on the Website home page. If we make material changes to how we treat our users’ personal information, we will notify you by email to the primary email address specified in your account and/or through a notice on the Website home page. The date the privacy policy was last revised is identified at the top of the page. You are responsible for ensuring we have an up-to-date active and deliverable email address for you, and for periodically visiting our Website and this privacy policy to check for any changes. 
             \n \nContact Information 
             \nTo ask questions or comment about this privacy policy and our privacy practices, contact us at: `}
-                <Link text="info@swingzen.com" underline onPress={() => LinkingService.linkingMail(SwingZenMail)} />
-                {` or Sports Zoom LLC 423 S Margin St Franklin TN 37064.
+          <Link text="info@swingzen.com" underline onPress={() => LinkingService.linkingMail(SwingZenMail)} />
+          {` or Sports Zoom LLC 423 S Margin St Franklin TN 37064.
             \n`}
-              </Text>
-            </ScrollView>
-          </LinearGradient>
-        </SafeAreaView>
-      </ImageBackground>
-    </View>
+        </Text>
+      </View>
+    </BaseScreen>
   );
 }

@@ -2,96 +2,88 @@
 
 exports[`Privacy Policy Screen Screen should render Privacy Policy Screen correctly 1`] = `
 <View
+  accessibilityIgnoresInvertColors={true}
   style={
     {
       "flexBasis": "0%",
       "flexGrow": 1,
       "flexShrink": 1,
+      "paddingTop": 50,
     }
   }
-  testID="PrivacyPolicyScreenTestID"
 >
-  <View
-    accessibilityIgnoresInvertColors={true}
-    style={
+  <Image
+    source={
       {
-        "flexBasis": "0%",
-        "flexGrow": 1,
-        "flexShrink": 1,
+        "testUri": "../../../src/assets/images/gradientBackground.png",
       }
     }
-  >
-    <Image
-      source={
+    style={
+      [
         {
-          "testUri": "../../../src/assets/images/gradientBackground.png",
-        }
-      }
-      style={
-        [
-          {
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          {
-            "height": undefined,
-            "width": undefined,
-          },
-          undefined,
-        ]
-      }
-    />
-    <RCTSafeAreaView>
-      <BVLinearGradient
-        angle={90}
-        colors={
-          [
-            311361280,
-            100663295,
-            50331647,
-          ]
-        }
-        endPoint={
-          {
-            "x": 0.5,
-            "y": 1,
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        {
+          "height": undefined,
+          "width": undefined,
+        },
+        undefined,
+      ]
+    }
+  />
+  <RCTSafeAreaView>
+    <RCTScrollView>
+      <View>
+        <BVLinearGradient
+          angle={90}
+          colors={
+            [
+              311361280,
+              100663295,
+              50331647,
+            ]
           }
-        }
-        locations={null}
-        startPoint={
-          {
-            "x": 0.5,
-            "y": 0,
-          }
-        }
-        style={
-          {
-            "borderColor": "#404040",
-            "borderRadius": 10,
-            "borderWidth": 1,
-            "marginBottom": 99,
-            "marginLeft": 20,
-            "marginRight": 20,
-            "marginTop": 34,
-          }
-        }
-        useAngle={true}
-      >
-        <RCTScrollView
-          style={
+          endPoint={
             {
-              "marginBottom": 24,
-              "marginLeft": 24,
-              "marginRight": 24,
-              "marginTop": 24,
-              "position": "relative",
+              "x": 0.5,
+              "y": 1,
             }
           }
+          locations={null}
+          startPoint={
+            {
+              "x": 0.5,
+              "y": 0,
+            }
+          }
+          style={
+            {
+              "borderColor": "#404040",
+              "borderRadius": 10,
+              "borderWidth": 1,
+              "marginBottom": 20,
+              "marginLeft": 20,
+              "marginRight": 20,
+              "marginTop": 34,
+            }
+          }
+          useAngle={true}
         >
-          <View>
+          <View
+            style={
+              {
+                "paddingBottom": 24,
+                "paddingLeft": 24,
+                "paddingRight": 24,
+                "paddingTop": 24,
+              }
+            }
+            testID="PrivacyPolicyScreenTestID"
+          >
             <Text
               style={
                 [
@@ -303,9 +295,9 @@ To ask questions or comment about this privacy policy and our privacy practices,
 
             </Text>
           </View>
-        </RCTScrollView>
-      </BVLinearGradient>
-    </RCTSafeAreaView>
-  </View>
+        </BVLinearGradient>
+      </View>
+    </RCTScrollView>
+  </RCTSafeAreaView>
 </View>
 `;
