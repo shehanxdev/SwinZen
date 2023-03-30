@@ -26,3 +26,7 @@ jest.mock('@react-navigation/native', () => {
 // });
 
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
+
+jest.mock('@react-navigation/elements', () => ({
+  useHeaderHeight: jest.fn(() => 50), // Mock the useHeaderHeight hook
+}));

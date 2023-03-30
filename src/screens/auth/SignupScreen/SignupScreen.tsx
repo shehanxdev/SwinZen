@@ -44,7 +44,7 @@ export function SignupScreen() {
   const onSignUpFormValid: SubmitHandler<SignupFormValues> = async formInput => {
     try {
       await dispatch.userStore.registerUser(formInput);
-      //TODO::navigate to home
+      NavigationService.navigate(Route.Login);
     } catch (error: any) {
       //TODO:: handle error
       console.log('error', error);

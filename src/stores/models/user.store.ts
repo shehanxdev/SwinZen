@@ -1,7 +1,6 @@
 import { createModel } from '@rematch/core';
 
 import { LoginRequestData, SignupRequestData } from '@sz/models';
-//TODO::Fix require cycle issue
 import { AuthService } from '@sz/services';
 
 import { RootModel } from './';
@@ -40,7 +39,7 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setIsAuthenticated(true);
     },
     async registerUser(payload: SignupRequestData) {
-      AuthService.registerUser(payload);
+      await AuthService.registerUser(payload);
       //TODO::save required user data to the store and persistence storage if required
     },
   }),
