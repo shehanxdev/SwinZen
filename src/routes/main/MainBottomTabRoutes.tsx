@@ -1,14 +1,29 @@
+import { BlurView } from '@react-native-community/blur';
 import { BottomTabScreenProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ParamListBase } from '@react-navigation/native';
 import React, { useEffect } from 'react';
 import { Alert, BackHandler, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-import { CustomMenuIcon, SwingZenLogoIcon } from '@sz/components';
-import { Route } from '@sz/constants';
+import {
+  BottomTabAnalysisIconWithLabel,
+  BottomTabHomeIconWithLabel,
+  BottomTabLibraryIconWithLabel,
+  BottomTabUploadIconWithLabel,
+  BottomTabVideoIconWithLabel,
+  CustomMenuIcon,
+  SwingZenLogoIcon,
+} from '@sz/components';
+import { tw } from '@sz/config';
+import { Color, Route } from '@sz/constants';
 import { AnalysisScreen, HomeScreen, LibraryScreen, UploadScreen, VideosScreen } from '@sz/screens';
 
 import { commonScreenOptions } from '../configs';
+
+const stylesConfig = {
+  blurStyles: tw`overflow-hidden absolute top-0 bottom-0 left-0 right-0 rounded-t-3xl border-[${Color.Neutral.Sz500}] border-t`,
+  tabBarStyles: tw`absolute border-t-0 h-[95.5px]`, //TODO::need to discuss and update about the height of the bottom tab
+};
 
 const Tab = createBottomTabNavigator();
 
@@ -43,21 +58,74 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
       screenOptions={{
         ...commonScreenOptions,
         headerLeft: () => (
-          <View style={{ paddingLeft: 20 }}>
+          <View style={tw`pl-5`}>
             <SwingZenLogoIcon width={70} height={34} />
           </View>
         ),
         headerRight: () => (
-          <TouchableOpacity onPress={() => {}} style={{ paddingRight: 20 }}>
+          <TouchableOpacity onPress={() => {}} style={tw`pr-5`}>
             <CustomMenuIcon />
           </TouchableOpacity>
         ),
+        //TODO::check remove borderRadius on android
+        tabBarStyle: stylesConfig.tabBarStyles,
+        tabBarShowLabel: false,
+        tabBarBackground: () => (
+          <View style={stylesConfig.blurStyles}>
+            <BlurView
+              blurType="light"
+              blurAmount={10}
+              style={stylesConfig.blurStyles}
+              reducedTransparencyFallbackColor="white" //TODO::update with a proper color
+            />
+          </View>
+        ),
       }}>
-      <Tab.Screen name={Route.HomeTab} component={HomeScreen} />
-      <Tab.Screen name={Route.VideosTab} component={VideosScreen} />
-      <Tab.Screen name={Route.UploadVideoTab} component={UploadScreen} />
-      <Tab.Screen name={Route.AnalysisTab} component={AnalysisScreen} />
-      <Tab.Screen name={Route.LibraryTab} component={LibraryScreen} />
+      <Tab.Screen
+        name={Route.HomeTab}
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({ focused }) => {
+            return <BottomTabHomeIconWithLabel color={focused ? Color.Primary.Sz400 : Color.Neutral.Sz500} />;
+          },
+        }}
+      />
+      <Tab.Screen
+        name={Route.VideosTab}
+        component={VideosScreen}
+        options={{
+          tabBarIcon: ({ focused }) => {
+            return <BottomTabVideoIconWithLabel color={focused ? Color.Primary.Sz400 : Color.Neutral.Sz500} />;
+          },
+        }}
+      />
+      <Tab.Screen
+        name={Route.UploadVideoTab}
+        component={UploadScreen}
+        options={{
+          tabBarIcon: ({ focused }) => {
+            return <BottomTabUploadIconWithLabel color={focused ? Color.Primary.Sz400 : Color.Neutral.Sz500} />;
+          },
+        }}
+      />
+      <Tab.Screen
+        name={Route.AnalysisTab}
+        component={AnalysisScreen}
+        options={{
+          tabBarIcon: ({ focused }) => {
+            return <BottomTabAnalysisIconWithLabel color={focused ? Color.Primary.Sz400 : Color.Neutral.Sz500} />;
+          },
+        }}
+      />
+      <Tab.Screen
+        name={Route.LibraryTab}
+        component={LibraryScreen}
+        options={{
+          tabBarIcon: ({ focused }) => {
+            return <BottomTabLibraryIconWithLabel color={focused ? Color.Primary.Sz400 : Color.Neutral.Sz500} />;
+          },
+        }}
+      />
     </Tab.Navigator>
   );
 }
