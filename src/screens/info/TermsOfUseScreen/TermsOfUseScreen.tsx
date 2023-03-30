@@ -1,36 +1,26 @@
 import React from 'react';
-import { ImageBackground, Linking, Platform, SafeAreaView, ScrollView, View } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import { Linking, View } from 'react-native';
 
 import { Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { AndroidHeaderHeight, SwingZenUrl, TextAlignment, TextVariant } from '@sz/constants';
+import { SwingZenUrl, TextAlignment, TextVariant } from '@sz/constants';
 import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
-import { images } from '../../../assets/images';
+import { BaseScreen } from '../components';
 
 export function TermsOfUseScreen() {
-  const customTopMargin = Platform.OS === 'ios' ? 34 : AndroidHeaderHeight + 34; // This 34 is the top margin according to figma design
-
   return (
-    <View testID="TermsOfUseScreenTestID" style={tw`flex-1`}>
-      <ImageBackground style={tw`flex-1`} source={images.gradientBackground}>
-        <SafeAreaView>
-          <LinearGradient
-            useAngle
-            angle={90}
-            colors={['#8EFF0012', '#FFFFFF05', '#FFFFFF02']} //TODO:: update, these colours are NOT available within the design system
-            style={tw`mx-5 mt-[${customTopMargin}px] mb-[99px] rounded-2.5 border border-neutral-700`}>
-            <ScrollView style={tw`relative m-6`}>
-              <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Auto}>
-                {`Acceptance of the Terms of Use
+    <BaseScreen>
+      <View testID="TermsOfUseScreenTestID" style={tw`p-6`}>
+        <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Auto}>
+          {`Acceptance of the Terms of Use
                 \nThese terms of use are entered into by and between You and Sports Zoom LLC, “we” or “us“. The following terms and conditions, together with any documents they expressly incorporate by reference collectively, these “Terms of Use“, govern your access to and use of, including any content, functionality and services offered on or through `}
-                <Link text="SwingZen Website" onPress={() => Linking.openURL(SwingZenUrl)} />
-                {` here in known as “the Website”, whether as a guest or a registered user.
+          <Link text="SwingZen Website" onPress={() => Linking.openURL(SwingZenUrl)} />
+          {` here in known as “the Website”, whether as a guest or a registered user.
                 \nPlease read the Terms of Use carefully before you start to use the Website. By using the Website or by clicking to accept or agree to the Terms of Use when this option is made available to you, you accept and agree to be bound and abide by these Terms of Use and our Privacy Policy, found `}
-                <Link text="here" onPress={() => NavigationService.navigate(Route.PrivacyPolicy)} />
-                {`, incorporated herein by reference. If you do not want to agree to these Terms of Use or the Privacy Policy, you must not access or use the Website.
+          <Link text="here" onPress={() => NavigationService.navigate(Route.PrivacyPolicy)} />
+          {`, incorporated herein by reference. If you do not want to agree to these Terms of Use or the Privacy Policy, you must not access or use the Website.
                 \nThis Website is offered and available to users who are 13/18 years of age or older, and reside in the United States or any of its territories or possessions. By using this Website, you represent and warrant that you are of legal age to form a binding contract with Sports Zoom LLC and meet all of the foregoing eligibility requirements. If you do not meet all of these requirements, you must not access or use the Website.
                 \n \nChanges to the Terms of Use
                 \nWe may revise and update these Terms of Use from time to time in our sole discretion. All changes are effective immediately when we post them and apply to all access to and use of the Website thereafter. However, any changes to the dispute resolution provisions set forth in Governing Law and Jurisdiction will not apply to any disputes for which the parties have actual notice on or prior to the date the change is posted on the Website.
@@ -41,8 +31,8 @@ export function TermsOfUseScreen() {
                 \nYou are responsible for:
                 \nMaking all arrangements necessary for you to have access to the Website. \nEnsuring that all persons who access the Website through your internet connection are aware of these Terms of Use and comply with them.
                 \nTo access the Website or some of the resources it offers, you may be asked to provide certain registration details or other information. It is a condition of your use of the Website that all the information you provide on the Website is correct, current and complete. You agree that all information you provide to register with this Website or otherwise, including but not limited to through the use of any interactive features on the Website, is governed by our `}
-                <Link text="Privacy Policy" onPress={() => NavigationService.navigate(Route.PrivacyPolicy)} />
-                {`, and you consent to all actions we take with respect to your information consistent with our Privacy Policy.
+          <Link text="Privacy Policy" onPress={() => NavigationService.navigate(Route.PrivacyPolicy)} />
+          {`, and you consent to all actions we take with respect to your information consistent with our Privacy Policy.
                 \nIf you choose, or are provided with, a user name, password or any other piece of information as part of our security procedures, you must treat such information as confidential, and you must not disclose it to any other person or entity. You also acknowledge that your account is personal to you and agree not to provide any other person with access to this Website or portions of it using your user name, password or other security information. You agree to notify us immediately of any unauthorized access to or use of your user name or password or any other breach of security. You also agree to ensure that you exit from your account at the end of each session. You should use particular caution when accessing your account from a public or shared computer so that others are not able to view or record your password or other personal information.
                 \nWe have the right to disable any user name, password or other identifier, whether chosen by you or provided by us, at any time in our sole discretion for any or no reason, including if, in our opinion, you have violated any provision of these Terms of Use.
                 \n \nIntellectual Property Rights
@@ -91,8 +81,8 @@ export function TermsOfUseScreen() {
                 \nPromote sexually explicit or pornographic material, violence, or discrimination based on race, sex, religion, nationality, disability, sexual orientation or age.
                 \nInfringe any patent, trademark, trade secret, copyright or other intellectual property or other rights of any other person.
                 \nViolate the legal rights (including the rights of publicity and privacy) of others or contain any material that could give rise to any civil or criminal liability under applicable laws or regulations or that otherwise may be in conflict with these Terms of Use and our `}
-                <Link text="Privacy Policy" onPress={() => NavigationService.navigate(Route.PrivacyPolicy)} />
-                {`.
+          <Link text="Privacy Policy" onPress={() => NavigationService.navigate(Route.PrivacyPolicy)} />
+          {`.
                 \nBe likely to deceive any person.
                 \nPromote any illegal activity, or advocate, promote or assist any unlawful act.
                 \nCause annoyance, inconvenience or needless anxiety or be likely to upset, embarrass, alarm or annoy any other person.
@@ -108,8 +98,8 @@ export function TermsOfUseScreen() {
                 \nWe may update the content on this Website from time to time, but its content is not necessarily complete or up-to-date. Any of the material on the Website may be out of date at any given time, and we are under no obligation to update such material.
                 \n \nInformation About You and Your Visits to the Website
                 \nAll information we collect on this Website is subject to our `}
-                <Link text="Privacy Policy" onPress={() => NavigationService.navigate(Route.PrivacyPolicy)} />
-                {`. By using the Website, you consent to all actions taken by us with respect to your information in compliance with the Privacy Policy.
+          <Link text="Privacy Policy" onPress={() => NavigationService.navigate(Route.PrivacyPolicy)} />
+          {`. By using the Website, you consent to all actions taken by us with respect to your information in compliance with the Privacy Policy.
                 \n \nLinking to the Website and Social Media Features
                 \nYou may link to our homepage, provided you do so in a way that is fair and legal and does not damage our reputation or take advantage of it, but you must not establish a link in such a way as to suggest any form of association, approval or endorsement on our part[ without our express written consent. This Website may provide certain social media features that enable you to:
                 \nLink from your own or certain third-party websites to certain content on this Website.
@@ -152,11 +142,8 @@ export function TermsOfUseScreen() {
                 \n \nYour Comments and Concerns
                 \nThis website is operated by 9805 NE Hilltop Dr. Bainbridge Island, WA 98110. \nAll notices of copyright infringement claims should be sent to the copyright agent designated by contacting 
                 \nAll other feedback, comments, requests for technical support and other communications relating to the Website should be directed to Sports Zoom LLC 6601 Edgemoore Dr College Grove TN 37046.`}
-              </Text>
-            </ScrollView>
-          </LinearGradient>
-        </SafeAreaView>
-      </ImageBackground>
-    </View>
+        </Text>
+      </View>
+    </BaseScreen>
   );
 }
