@@ -22,7 +22,6 @@ export function InfoStack() {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: true,
         headerTitleAlign: TextAlignment.Center,
         headerBackTitleVisible: false,
         headerTransparent: true,
