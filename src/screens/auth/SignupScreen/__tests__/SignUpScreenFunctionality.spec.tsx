@@ -2,7 +2,6 @@ import { fireEvent, render, waitFor } from '@testing-library/react-native';
 import React from 'react';
 
 import { SignupScreen } from '../SignupScreen';
-import { renderWithProviders } from './../../../../utils/unit-tests/render.util';
 
 describe('Sign Up Screen', () => {
   const getrenderedScreen = () => render(<SignupScreen />);
@@ -15,7 +14,7 @@ describe('Sign Up Screen', () => {
     expect(getByTestId('SignupScreenTestID')).toBeTruthy();
   });
   it('should show error message for empty name field', async () => {
-    const { getByTestId, getByText } = getrenderedScreen();
+    const { getByText } = getrenderedScreen();
     const nameInput = getByText('Your Name');
     fireEvent(nameInput, 'onChangeText', '');
     fireEvent(nameInput, 'blur');
