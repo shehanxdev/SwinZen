@@ -1,2 +1,2 @@
-# NOTE :: ignoring linting in all js files outside the src directory. 
-*.js
+.eslintrc.js
+.prettierrc.js

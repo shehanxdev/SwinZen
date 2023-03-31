@@ -4,5 +4,8 @@ module.exports = {
   bracketSpacing: true,
   singleQuote: true,
   trailingComma: 'all',
-  // TODO:: add sorting order and import sorting order
+  printWidth: 120,
+  importOrder: ['^@sz/(.*)$', '^[./]'],
+  importOrderSeparation: true,
+  importOrderSortSpecifiers: true,
 };

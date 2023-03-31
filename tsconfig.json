@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "jsx": "react-jsx",
+    "jsx": "react-native",
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
@@ -17,7 +17,19 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@sz/assets": ["src/assets/index"],
+      "@sz/components": ["src/components/index"],
+      "@sz/config": ["src/config/index"],
+      "@sz/constants": ["src/constants/index"],
+      "@sz/hooks": ["src/hooks/index"],
+      "@sz/models": ["src/models/index"],
+      "@sz/routes": ["src/routes/index"],
+      "@sz/screens": ["src/screens/index"],
+      "@sz/services": ["src/services/index"],
+      "@sz/stores": ["src/stores/index"],
+      "@sz/utils": ["src/utils/index"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

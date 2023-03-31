@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Run linters and unit tests
+npx lint-staged && yarn run test
+
+# Snapshots created during the pre commit stage aren't moving into the staging area automatically
+# Following script is to move those snapshot files into the staging area
+SNAP_FILES=$(git diff --name-only --cached | grep '\.snap$' || true)
+
+if [ -n "$SNAP_FILES" ]; then
+  for FILE in $SNAP_FILES; do
+   git add "$FILE"
+  done
+fi

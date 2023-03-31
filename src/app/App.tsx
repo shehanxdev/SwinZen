@@ -1,10 +1,16 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { StatusBar, View } from 'react-native';
+
+import { tw } from '@sz/config';
+import { Routes } from '@sz/routes';
 
 export function App() {
   return (
     <>
-      <Text>Hello from SwingZen</Text>
+      <StatusBar barStyle="light-content" />
+      <View style={tw`h-full`}>
+        <Routes />
+      </View>
     </>
   );
 }
