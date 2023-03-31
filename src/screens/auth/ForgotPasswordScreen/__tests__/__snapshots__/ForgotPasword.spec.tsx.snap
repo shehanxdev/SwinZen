@@ -246,6 +246,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                               "fontSize": 16,
                               "fontVariant": undefined,
                               "fontWeight": undefined,
+                              "lineHeight": 17,
                               "textAlign": "left",
                               "textAlignVertical": "center",
                             },
