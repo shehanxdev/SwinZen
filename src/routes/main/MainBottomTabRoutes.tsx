@@ -2,7 +2,7 @@ import { BlurView } from '@react-native-community/blur';
 import { BottomTabScreenProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ParamListBase } from '@react-navigation/native';
 import React, { useEffect } from 'react';
-import { Alert, BackHandler, View } from 'react-native';
+import { Alert, BackHandler, Platform, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import {
@@ -21,7 +21,7 @@ import { AnalysisScreen, HomeScreen, LibraryScreen, UploadScreen, VideosScreen }
 import { commonScreenOptions } from '../configs';
 
 const stylesConfig = {
-  blurStyles: tw`overflow-hidden absolute top-0 bottom-0 left-0 right-0 rounded-t-3xl border`,
+  blurStyles: tw`overflow-hidden absolute top-0 bottom-0 left-0 right-0 rounded-3xl border`,
   tabBarStyles: tw`absolute border-t-0 h-[95.5px]`,
 };
 
@@ -67,6 +67,7 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
             <CustomMenuIcon />
           </TouchableOpacity>
         ),
+        ...(Platform.OS === 'android' && { animationEnabled: false }), //BlurView causes suddent crash in android devices when using with React Navigation.  It cause by the animations provided by the React Navigation. Temporary turned off animations in android devices.
         tabBarStyle: stylesConfig.tabBarStyles,
         tabBarShowLabel: false,
         tabBarBackground: () => (
