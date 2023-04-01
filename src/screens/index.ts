@@ -1,3 +1,3 @@
 export * from './auth';
-export * from './Infoo';
+export * from './info';
 export * from './main';
