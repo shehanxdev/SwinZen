@@ -67,7 +67,6 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
             <CustomMenuIcon />
           </TouchableOpacity>
         ),
-        ...(Platform.OS === 'android' && { animationEnabled: false }), //BlurView causes suddent crash in android devices when using with React Navigation.  It cause by the animations provided by the React Navigation. Temporary turned off animations in android devices.
         tabBarStyle: stylesConfig.tabBarStyles,
         tabBarShowLabel: false,
         tabBarBackground: () => (
