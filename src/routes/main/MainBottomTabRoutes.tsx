@@ -21,8 +21,8 @@ import { AnalysisScreen, HomeScreen, LibraryScreen, UploadScreen, VideosScreen }
 import { commonScreenOptions } from '../configs';
 
 const stylesConfig = {
-  blurStyles: tw`overflow-hidden absolute top-0 bottom-0 left-0 right-0 rounded-t-3xl border-[${Color.Neutral.Sz500}] border-t`,
-  tabBarStyles: tw`absolute border-t-0 h-[95.5px]`, //TODO::need to discuss and update about the height of the bottom tab
+  blurStyles: tw`overflow-hidden absolute top-0 bottom-0 left-0 right-0 rounded-t-3xl border`,
+  tabBarStyles: tw`absolute border-t-0 h-[95.5px]`,
 };
 
 const Tab = createBottomTabNavigator();
@@ -67,17 +67,22 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
             <CustomMenuIcon />
           </TouchableOpacity>
         ),
-        //TODO::check remove borderRadius on android
         tabBarStyle: stylesConfig.tabBarStyles,
         tabBarShowLabel: false,
         tabBarBackground: () => (
-          <View style={stylesConfig.blurStyles}>
-            <BlurView
-              blurType="light"
-              blurAmount={10}
-              style={stylesConfig.blurStyles}
-              reducedTransparencyFallbackColor="white" //TODO::update with a proper color
-            />
+          <View style={[stylesConfig.blurStyles, { borderColor: Color.Neutral.Sz500 }]}>
+            {/*
+             * NOTE::This is tempory workaround to avoid issues with borders at the edges getting blured when using blurView.
+             * Border width of the nested view is set to so the outer view's border will not get blured.
+             */}
+            <View style={[stylesConfig.blurStyles, { borderWidth: 0 }]}>
+              <BlurView
+                blurType="dark"
+                blurAmount={10} //Note::This is a magic number to handle blur amount.
+                style={stylesConfig.blurStyles}
+                reducedTransparencyFallbackColor={Color.Neutral.Sz900} //NOTE::This is the fallback color when the accessibility setting Reduce Transparency is enabled
+              />
+            </View>
           </View>
         ),
       }}>
@@ -86,7 +91,7 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
         component={HomeScreen}
         options={{
           tabBarIcon: ({ focused }) => {
-            return <BottomTabHomeIconWithLabel color={focused ? Color.Primary.Sz400 : Color.Neutral.Sz500} />;
+            return <BottomTabHomeIconWithLabel {...(focused && { color: Color.Primary.Sz400 })} />;
           },
         }}
       />
@@ -95,7 +100,7 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
         component={VideosScreen}
         options={{
           tabBarIcon: ({ focused }) => {
-            return <BottomTabVideoIconWithLabel color={focused ? Color.Primary.Sz400 : Color.Neutral.Sz500} />;
+            return <BottomTabVideoIconWithLabel {...(focused && { color: Color.Primary.Sz400 })} />;
           },
         }}
       />
@@ -104,7 +109,7 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
         component={UploadScreen}
         options={{
           tabBarIcon: ({ focused }) => {
-            return <BottomTabUploadIconWithLabel color={focused ? Color.Primary.Sz400 : Color.Neutral.Sz500} />;
+            return <BottomTabUploadIconWithLabel {...(focused && { color: Color.Primary.Sz400 })} />;
           },
         }}
       />
@@ -113,7 +118,7 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
         component={AnalysisScreen}
         options={{
           tabBarIcon: ({ focused }) => {
-            return <BottomTabAnalysisIconWithLabel color={focused ? Color.Primary.Sz400 : Color.Neutral.Sz500} />;
+            return <BottomTabAnalysisIconWithLabel {...(focused && { color: Color.Primary.Sz400 })} />;
           },
         }}
       />
@@ -122,7 +127,7 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
         component={LibraryScreen}
         options={{
           tabBarIcon: ({ focused }) => {
-            return <BottomTabLibraryIconWithLabel color={focused ? Color.Primary.Sz400 : Color.Neutral.Sz500} />;
+            return <BottomTabLibraryIconWithLabel {...(focused && { color: Color.Primary.Sz400 })} />;
           },
         }}
       />
