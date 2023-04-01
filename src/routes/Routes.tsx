@@ -9,6 +9,7 @@ import { NavigationService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
 
 import { AuthStack } from './auth';
+import { InfoStack } from './info';
 import { MainStack } from './main';
 
 const Stack = createStackNavigator();
@@ -54,6 +55,7 @@ export function Routes() {
         }}>
         <Stack.Screen name={Route.AuthStack} component={AuthStack} />
         <Stack.Screen name={Route.MainStack} component={MainStack} />
+        <Stack.Screen name={Route.InfoStack} component={InfoStack} />
       </Stack.Navigator>
     </NavigationContainer>
   );

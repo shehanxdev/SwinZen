@@ -4,16 +4,11 @@ import React from 'react';
 import { Route } from '@sz/constants';
 import { RegisterEmailVerificationScreen, SignupScreen } from '@sz/screens';
 
-import { InfoStack } from '../info';
-
 export type SignupStackParamList = {
   [Route.Signup]: {
     // Can be used for future props
   };
   [Route.RegisterEmailVerification]: {
-    // Can be used for future props
-  };
-  [Route.InfoStack]: {
     // Can be used for future props
   };
 };
@@ -28,7 +23,6 @@ export function SignupStack() {
       }}>
       <Stack.Screen name={Route.Signup} component={SignupScreen} />
       <Stack.Screen name={Route.RegisterEmailVerification} component={RegisterEmailVerificationScreen} />
-      <Stack.Screen name={Route.InfoStack} component={InfoStack} />
     </Stack.Navigator>
   );
 }

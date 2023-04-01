@@ -1,3 +1,3 @@
-export const IMAGES = {
-  footerLogo: require('./FooterLogo.png'),
+export const images = {
+  gradientBackground: require('./gradientBackground.png'),
 };

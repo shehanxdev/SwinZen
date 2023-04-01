@@ -39,6 +39,7 @@ export function SignupScreen() {
 
   const onSignUpFormValid: SubmitHandler<SignupFormValues> = async formInput => {
     // TODO: API Integration
+    NavigationService.navigate(Route.RegisterEmailVerification);
     try {
       console.log('formInput', formInput);
     } catch (error: any) {
