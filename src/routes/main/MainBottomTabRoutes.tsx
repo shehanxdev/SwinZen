@@ -2,7 +2,7 @@ import { BlurView } from '@react-native-community/blur';
 import { BottomTabScreenProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ParamListBase } from '@react-navigation/native';
 import React, { useEffect } from 'react';
-import { Alert, BackHandler, Platform, View } from 'react-native';
+import { Alert, BackHandler, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 import {
