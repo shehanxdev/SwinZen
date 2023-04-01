@@ -49,7 +49,7 @@ export function Routes() {
       fallback={<Text>Loading...</Text>} //TODO:: update to an actual loading indicator
       onStateChange={onStateChange}>
       <Stack.Navigator
-        initialRouteName={Route.AuthStack}
+        initialRouteName={Route.InfoStack}
         screenOptions={{
           headerShown: false,
         }}>
