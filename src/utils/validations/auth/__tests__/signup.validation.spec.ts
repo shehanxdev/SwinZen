@@ -1,4 +1,4 @@
-import { signupValidationSchema } from './signup.validations';
+import { signupValidationSchema } from '../signup.validations';
 
 describe('signupValidationSchema', () => {
   it('should pass validation with valid input', async () => {
@@ -50,6 +50,7 @@ describe('signupValidationSchema', () => {
     }
     expect(validationResult.errors[0]).toBe('Username must not be 10 letters long');
   });
+
   it('should fail validation with invalid username input', async () => {
     const invalidInput = {
       username: 'invalid',
@@ -115,6 +116,7 @@ describe('signupValidationSchema', () => {
     }
     expect(validationResult.errors[0]).toBe('Password must not be 20 letters long');
   });
+
   it('should fail validation with an invalid password ', async () => {
     const invalidInput = {
       password: 'abcdefghi',
@@ -129,6 +131,7 @@ describe('signupValidationSchema', () => {
       'Password must contain at least one Uppercase letter, Lowercase letter, Numeric character and Special character',
     );
   });
+
   it('should fail validation with an invalid confirm password ', async () => {
     const invalidInput = {
       name: 'Jhon',
@@ -145,6 +148,7 @@ describe('signupValidationSchema', () => {
     }
     expect(validationResult.errors[0]).toBe('Your passwords do not match');
   });
+
   it('should pass the validation without the promo code', async () => {
     const validInput = {
       name: 'Jhon',
