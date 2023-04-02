@@ -6,7 +6,7 @@ import { SignupScreen } from '../SignupScreen';
 describe('SignupScreen Screen', () => {
   const testID = 'SignupScreenTestID';
 
-  //TODO::replace witht the render with providers after PR : https://bitbucket.org/paladinanalytics/mobile-app/pull-requests/39 get merged
+  //TODO::replace with the render with providers after PR : https://bitbucket.org/paladinanalytics/mobile-app/pull-requests/39 get merged
   const getRenderedScreen = () => render(<SignupScreen />);
 
   it(`should render SignupScreen correctly`, () => {
