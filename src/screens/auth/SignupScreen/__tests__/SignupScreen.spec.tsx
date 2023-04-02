@@ -6,7 +6,9 @@ import { SignupScreen } from '../SignupScreen';
 describe('SignupScreen Screen', () => {
   const testID = 'SignupScreenTestID';
 
+  //TODO::replace witht the render with providers after PR : https://bitbucket.org/paladinanalytics/mobile-app/pull-requests/39 get merged
   const getRenderedScreen = () => render(<SignupScreen />);
+
   it(`should render SignupScreen correctly`, () => {
     const renderer = getRenderedScreen();
     const renderTree = renderer.toJSON();
@@ -21,7 +23,7 @@ describe('SignupScreen Screen', () => {
 
   it('should show error message for empty name field', async () => {
     const { getByText } = getRenderedScreen();
-    const nameInput = getByText('Your Name');
+    const nameInput = getByText('Your Name'); //TODO::get by test id rather than using text
     fireEvent(nameInput, 'onChangeText', '');
     fireEvent(nameInput, 'blur');
 
@@ -60,6 +62,7 @@ describe('SignupScreen Screen', () => {
       expect(getByText('Invalid Email')).toBeDefined();
     });
   });
+
   it('should show error message for empty email', async () => {
     const { getByText } = getRenderedScreen();
     const emailInput = getByText('Your Email');
@@ -69,6 +72,7 @@ describe('SignupScreen Screen', () => {
       expect(getByText('Please enter Email ID')).toBeDefined();
     });
   });
+
   it('should show error message for email with more than 50 letters', async () => {
     const { getByText } = getRenderedScreen();
     const emailInput = getByText('Your Email');
@@ -82,6 +86,7 @@ describe('SignupScreen Screen', () => {
       expect(getByText('Email must not be 50 letters long')).toBeDefined();
     });
   });
+
   it('should show error message for weak password input', async () => {
     const { getByText } = getRenderedScreen();
     const passwordInput = getByText('Your Password');
@@ -91,6 +96,7 @@ describe('SignupScreen Screen', () => {
       expect(getByText('Password must be at least 8 letters long')).toBeDefined();
     });
   });
+
   it('should show error message for password with more than 20 characters', async () => {
     const { getByText } = getRenderedScreen();
     const passwordInput = getByText('Your Password');
@@ -100,6 +106,7 @@ describe('SignupScreen Screen', () => {
       expect(getByText('Password must not be 20 letters long')).toBeDefined();
     });
   });
+
   it('should show error message for invalid password ', async () => {
     const { getByText } = getRenderedScreen();
     const passwordInput = getByText('Your Password');
@@ -113,6 +120,7 @@ describe('SignupScreen Screen', () => {
       ).toBeDefined();
     });
   });
+
   it('should show error message for invalid confirm password', async () => {
     const { getByText } = getRenderedScreen();
     const passwordInput = getByText('Your Password');
