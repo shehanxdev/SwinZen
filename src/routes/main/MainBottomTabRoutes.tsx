@@ -21,8 +21,8 @@ import { AnalysisScreen, HomeScreen, LibraryScreen, UploadScreen, VideosScreen }
 import { commonScreenOptions } from '../configs';
 
 const stylesConfig = {
-  blurStyles: tw`overflow-hidden absolute top-0 bottom-0 left-0 right-0 rounded-3xl border`,
-  tabBarStyles: tw`absolute border-t-0 h-[95.5px]`,
+  blurStyles: tw`overflow-hidden absolute top-0 bottom-0 left-0 right-0 rounded-t-3xl border`,
+  tabBarStyles: tw`absolute border-t-0 h-[95.5px] -bottom-1 -left-1 -right-1`,
 };
 
 const Tab = createBottomTabNavigator();
