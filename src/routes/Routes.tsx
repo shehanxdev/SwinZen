@@ -52,7 +52,6 @@ export function Routes() {
         initialRouteName={Route.AuthStack}
         screenOptions={{
           headerShown: false,
-          ...(Platform.OS === 'android' && { animationEnabled: false }), //BlurView causes suddent crash in android devices when use with React Navigation.  It cause by the animations provided by the React Navigation. Temporary turned off animations in android devices.
         }}>
         <Stack.Screen name={Route.AuthStack} component={AuthStack} />
         <Stack.Screen name={Route.MainStack} component={MainStack} />
