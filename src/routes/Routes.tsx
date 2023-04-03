@@ -1,15 +1,16 @@
 import { NavigationContainer, NavigationState } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import { Text } from 'react-native';
+import { Platform, Text } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 
 import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
 
-import { AuthStack } from './AuthRoutes';
-import { InfoStack } from './InfoRoutes';
+import { AuthStack } from './auth';
+import { InfoStack } from './info';
+import { MainStack } from './main';
 
 const Stack = createStackNavigator();
 
@@ -53,6 +54,7 @@ export function Routes() {
           headerShown: false,
         }}>
         <Stack.Screen name={Route.AuthStack} component={AuthStack} />
+        <Stack.Screen name={Route.MainStack} component={MainStack} />
         <Stack.Screen name={Route.InfoStack} component={InfoStack} />
       </Stack.Navigator>
     </NavigationContainer>

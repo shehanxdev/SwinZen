@@ -8,7 +8,7 @@ export function App() {
   return (
     <>
       <StatusBar barStyle="light-content" />
-      <View style={tw`h-full`}>
+      <View style={tw`flex-1`}>
         <Routes />
       </View>
     </>

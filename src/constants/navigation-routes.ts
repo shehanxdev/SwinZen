@@ -11,4 +11,11 @@ export enum Route {
   ResetPasswordEmailVerification = 'reset-password-email-verification',
   ForgotPassword = 'forgot-password',
   ResetPassword = 'reset-password',
+  MainStack = 'main-stack',
+  MainBottomTabRoutesStack = 'main-bottom-tab-routes-stack',
+  HomeTab = 'home-tab',
+  VideosTab = 'videos-tab',
+  UploadVideoTab = 'upload-video-tab',
+  AnalysisTab = 'analysis-tab',
+  LibraryTab = 'library-tab',
 }
