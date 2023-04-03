@@ -3,7 +3,6 @@ import { ReactNode } from 'react';
 import React from 'react';
 import Config from 'react-native-config';
 import { Provider as PaperProvider } from 'react-native-paper';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
 
 import { paperTheme } from '@sz/config';
@@ -17,9 +16,7 @@ export function renderWithProviders(ui: RenderParams[0], options?: RenderParams[
 
   const BaseProviders = ({ children }: { children: ReactNode }) => (
     <Provider store={store}>
-      <PaperProvider theme={paperTheme}>
-        <SafeAreaProvider>{children}</SafeAreaProvider>
-      </PaperProvider>
+      <PaperProvider theme={paperTheme}>{children}</PaperProvider>
     </Provider>
   );
 
