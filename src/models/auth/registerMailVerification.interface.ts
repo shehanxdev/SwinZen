@@ -10,11 +10,7 @@ export interface RegisterMailVerificationRequestData {
   otp: string;
 }
 
-export interface RegisterMailVerificationResponse {
-  data: Response;
-}
-
-export interface Response {}
+export interface RegisterMailVerificationResponse {}
 
 export interface RegisterMailVerificationErrorResponse {
   error: string;

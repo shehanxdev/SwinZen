@@ -67,11 +67,6 @@ export class AuthService {
         ApiErrorResponse<RegisterMailVerificationErrorResponse>
       >('/auth/verify-otp', data);
 
-      if (!response?.data) {
-        throw new APIError('UNKNOWN_ERROR');
-      }
-      console.log('$$$$$$$$$$', response.data);
-
       return response.data;
     } catch (error) {
       console.error('Error response', error, JSON.stringify(error));
@@ -87,11 +82,6 @@ export class AuthService {
         ApiResponse<ResendOtpResponse>,
         ApiErrorResponse<ResendOtpErrorResponse>
       >('/auth/resend-otp', data);
-
-      if (!response?.data) {
-        throw new APIError('UNKNOWN_ERROR');
-      }
-      console.log('@@@@@@@@@@', response.data);
 
       return response.data;
     } catch (error) {

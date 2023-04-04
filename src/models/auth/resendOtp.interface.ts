@@ -6,11 +6,7 @@ export interface ResendOtpRequestData {
   username: string;
 }
 
-export interface ResendOtpResponse {
-  data: OtpResponse;
-}
-
-export interface OtpResponse {}
+export interface ResendOtpResponse {}
 
 export interface ResendOtpErrorResponse {
   error: string;
