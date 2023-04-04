@@ -52,6 +52,6 @@ export function SwingZenLogoIcon({ color, width = 108, height = 55 }: SvgIconPro
   return <SwingZenLogo width={width} height={height} fill={color} />;
 }
 
-export function FeatureListTickIcon({ color, width, height }: SvgIconProps) {
+export function FeatureListTickIcon({ width, height }: SvgIconProps) {
   return <FeatureListTick width={width} height={height} />;
 }

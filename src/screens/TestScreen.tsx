@@ -1,10 +1,9 @@
+//TODO remove this file only for dev purpose
 import React from 'react';
 import tw from 'twrnc';
 
-import { SubscriptionCard, Text } from '@sz/components';
-import { Color, TextVariant } from '@sz/constants';
+import { SubscriptionCard } from '@sz/components';
 
-//TODO remove this file only for dev purpose
 import { BaseAuthScreen } from './auth/components';
 
 export function TestScreen() {
