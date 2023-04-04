@@ -121,6 +121,56 @@ export class NavigationService {
           },
         };
         break;
+      case Route.ProfileSettings:
+        navRoute = Route.InfoStack;
+        navParams = {
+          screen: Route.ProfileSettings,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+      case Route.Notification:
+        navRoute = Route.InfoStack;
+        navParams = {
+          screen: Route.Notification,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+      case Route.Followers:
+        navRoute = Route.InfoStack;
+        navParams = {
+          screen: Route.Followers,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+      case Route.AboutUs:
+        navRoute = Route.InfoStack;
+        navParams = {
+          screen: Route.AboutUs,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+      case Route.ContactUs:
+        navRoute = Route.InfoStack;
+        navParams = {
+          screen: Route.ContactUs,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
     }
 
     return { route: navRoute, params: navParams };
