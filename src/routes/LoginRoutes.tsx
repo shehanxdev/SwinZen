@@ -4,6 +4,8 @@ import { TouchableOpacity } from 'react-native';
 
 import { BackIcon } from '@sz/components';
 import { Route } from '@sz/constants';
+//TODO remove
+import { TestScreen } from '@sz/screens';
 import {
   ForgotPasswordScreen,
   LoginScreen,
@@ -25,6 +27,8 @@ export type LoginStackParamList = {
   [Route.ResetPassword]: {
     // Can be used for future props
   };
+  //TODO remove
+  [Route.test]: {};
 };
 
 const Stack = createNativeStackNavigator<LoginStackParamList>();
@@ -47,6 +51,8 @@ export function LoginStack() {
       <Stack.Screen name={Route.ForgotPassword} component={ForgotPasswordScreen} />
       <Stack.Screen name={Route.ResetPasswordEmailVerification} component={ResetPasswordEmailVerificationScreen} />
       <Stack.Screen name={Route.ResetPassword} component={ResetPasswordScreen} />
+      {/* //TODO remove below route only for dev purpose */}
+      <Stack.Screen name={Route.test} component={TestScreen} />
     </Stack.Navigator>
   );
 }

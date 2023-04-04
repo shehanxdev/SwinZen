@@ -126,6 +126,14 @@ export function LoginScreen() {
               }}
             />
           </Text>
+          {/* //TODO Remove below Link only for dev purpose */}
+          <Link
+            text="Test Price plan"
+            onPress={() => {
+              console.log('test link clicked');
+              NavigationService.navigate(Route.test);
+            }}
+          />
         </View>
       </View>
     </BaseAuthScreen>
