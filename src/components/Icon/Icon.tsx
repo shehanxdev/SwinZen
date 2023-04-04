@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {
+  AboutIconSvg,
   AccountLockSvg,
   BackIconSvg,
   BottomTabAnalysisSvg,
@@ -8,13 +9,22 @@ import {
   BottomTabLibrarySvg,
   BottomTabUploadSvg,
   BottomTabVideoSvg,
+  ContactIconSvg,
+  CrossIconSvg,
   CustomMenuSvg,
+  FollowersIconSvg,
+  FriendIconSvg,
+  LogoutIconSvg,
   MailIconSvg,
+  NotificationIconSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
+  PrivacyIconSvg,
   ProfileIconSvg,
+  ProfileSettingsIconSvg,
   SecurityIconSvg,
   SwingZenLogoSvg,
+  TermsIconSvg,
 } from '@sz/assets';
 import { Color } from '@sz/constants';
 
@@ -79,4 +89,44 @@ export function BottomTabAnalysisIconWithLabel({ color = Color.Neutral.Sz500, wi
 
 export function BottomTabLibraryIconWithLabel({ color = Color.Neutral.Sz500, width = 34, height = 43 }: SvgIconProps) {
   return <BottomTabLibrarySvg width={width} height={height} fill={color} />;
+}
+
+export function AboutIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <AboutIconSvg width={width} height={height} fill={color} />;
+}
+
+export function ContactIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <ContactIconSvg width={width} height={height} fill={color} />;
+}
+
+export function CrossIcon({ color, width = 16, height = 16 }: SvgIconProps) {
+  return <CrossIconSvg width={width} height={height} fill={color} />;
+}
+
+export function FollowersIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <FollowersIconSvg width={width} height={height} fill={color} />;
+}
+
+export function FriendIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <FriendIconSvg width={width} height={height} fill={color} />;
+}
+
+export function LogoutIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <LogoutIconSvg width={width} height={height} fill={color} />;
+}
+
+export function NotificationIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <NotificationIconSvg width={width} height={height} fill={color} />;
+}
+
+export function PrivacyIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <PrivacyIconSvg width={width} height={height} fill={color} />;
+}
+
+export function ProfileSettingsIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <ProfileSettingsIconSvg width={width} height={height} fill={color} />;
+}
+
+export function TermsIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <TermsIconSvg width={width} height={height} fill={color} />;
 }
