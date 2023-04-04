@@ -1,5 +1,5 @@
 import { BlurView } from '@react-native-community/blur';
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { ActivityIndicator, ImageBackground, View } from 'react-native';
 
 import { ErrorIcon, PlayButtonIcon, Text, UploadIcon } from '@sz/components';
@@ -7,10 +7,12 @@ import { tw } from '@sz/config';
 import { Color, TextVariant } from '@sz/constants';
 
 export function VideoUploadCard() {
+  //TODO:: to be removed once the upload logic implemented
   const [uploaded, setUploaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [isError] = useState(true);
+  const [isError] = useState(false);
 
+  //TODO:: to be removed once the upload logic implemented
   const onUpload = () => {
     setIsLoading(true);
     setTimeout(() => {
@@ -19,15 +21,42 @@ export function VideoUploadCard() {
     }, 2000);
   };
 
+  const renderIcon = useMemo(() => {
+    if (!isLoading && !isError) {
+      return <UploadIcon />;
+    } else if (isLoading) {
+      return <ActivityIndicator size="large" />;
+    } else {
+      return <ErrorIcon />;
+    }
+  }, [isLoading, isError]);
+
+  const renderTitle = useMemo(() => {
+    if (isLoading) {
+      return 'Uploading.. Please wait!';
+    } else if (!isLoading && !isError) {
+      return 'No Data to Report. Get Started!';
+    } else {
+      return 'Your video failed to upload!';
+    }
+  }, [isLoading, isError]);
+
+  const renderLinkText = useMemo(() => {
+    if (isError) {
+      return 'Find out why';
+    }
+    if (!isLoading && !isError) {
+      return 'Upload a video';
+    }
+  }, [isLoading, isError]);
+
   return (
-    <View style={tw`h-[218px] rounded-[10px] overflow-hidden`}>
+    <View style={tw`h-[218px] rounded-[10px] overflow-hidden `}>
       {!uploaded ? (
         <View
-          style={tw.style(
-            !isError
-              ? 'flex-1, rounded-[10px], overflow-hidden, border-2, border-[#E9ECEF], border-dashed, isError && border-non'
-              : 'flex-1  rounded-[10px] overflow-hidden border-none',
-          )}>
+          style={tw`flex-1 rounded-[10px] overflow-hidden ${
+            !isError ? 'border-2 border-[#E9ECEF] border-dashed' : 'border-none'
+          }`}>
           <BlurView
             blurType="dark"
             blurAmount={10}
@@ -35,18 +64,11 @@ export function VideoUploadCard() {
             style={tw`absolute inset-x-0 inset-y-0 rounded-[10px]`}
           />
           <View style={tw`justify-center items-center flex-1 pt-[40px]`}>
-            {!isLoading && !isError && <UploadIcon width={45} height={45} />}
-            {isLoading && <ActivityIndicator size="large" />}
-            {isError && <ErrorIcon width={45} height={45} />}
+            {renderIcon}
             <View style={tw`mt-3`}>
-              <Text variant={TextVariant.Body1Regular}>
-                {isLoading && 'Uploading.. Please wait!'}
-                {!isLoading && !isError && 'No Data to Report. Get Started!'}
-                {isError && 'Your video failed to upload!'}
-              </Text>
+              <Text variant={TextVariant.Body1Regular}>{renderTitle}</Text>
               <Text onPress={onUpload} variant={TextVariant.Links} color={Color.Primary.Sz400} underline>
-                {!isLoading && !isError && 'Upload a video'}
-                {isError && 'Find out why'}
+                {renderLinkText}
               </Text>
             </View>
           </View>
