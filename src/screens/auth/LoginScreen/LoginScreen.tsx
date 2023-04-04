@@ -13,7 +13,7 @@ import {
   SwingZenLogoIcon,
   Text,
   TextField,
-} from '@sz/components';  
+} from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { LoginFormValues } from '@sz/models';
@@ -22,7 +22,6 @@ import { useDispatch, useSelector } from '@sz/stores';
 import { loginValidationSchema } from '@sz/utils';
 
 import { BaseAuthScreen } from '../components';
-import { VideoUploadCard } from '../../home/components/VideoUploadArea';
 
 export function LoginScreen() {
   const {
@@ -54,7 +53,6 @@ export function LoginScreen() {
   return (
     <BaseAuthScreen testID="LoginScreenTestID">
       <View style={tw`flex-1 justify-between`}>
-        <VideoUploadCard />
         <View style={tw`flex mt-20 mx-5`}>
           <View style={tw`items-center`}>
             <SwingZenLogoIcon />
