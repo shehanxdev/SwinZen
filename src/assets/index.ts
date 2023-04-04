@@ -11,3 +11,11 @@ export { default as UploadSvg } from './icons/home/document-upload.svg';
 export { default as PlayButtonSvg } from './icons/home/play-button.svg';
 export { default as ErrorIconSvg } from './icons/home/error.svg';
 export { default as SwingZenLogo } from './logo/swingzen-logo.svg';
+export { default as SwingZenLogoSvg } from './logo/swingzen-logo.svg';
+export { default as CustomMenuSvg } from './icons/main/custom-menu.svg';
+
+export { default as BottomTabHomeSvg } from './icons/bottom-tab/home-icon.svg';
+export { default as BottomTabVideoSvg } from './icons/bottom-tab/videos-icon.svg';
+export { default as BottomTabUploadSvg } from './icons/bottom-tab/upload-icon.svg';
+export { default as BottomTabAnalysisSvg } from './icons/bottom-tab/analysis-icon.svg';
+export { default as BottomTabLibrarySvg } from './icons/bottom-tab/library-icon.svg';
