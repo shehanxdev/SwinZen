@@ -10,7 +10,7 @@ export function VideoUploadCard() {
   //TODO:: to be removed once the upload logic implemented
   const [uploaded, setUploaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [isError] = useState(false);
+  const [isError] = useState(true);
 
   //TODO:: to be removed once the upload logic implemented
   const onUpload = () => {
@@ -63,13 +63,21 @@ export function VideoUploadCard() {
             reducedTransparencyFallbackColor={Color.Neutral.Sz900}
             style={tw`absolute inset-x-0 inset-y-0 rounded-[10px]`}
           />
-          <View style={tw`justify-center items-center flex-1 pt-[40px]`}>
+          <View style={tw`justify-center items-center flex-1`}>
             {renderIcon}
             <View style={tw`mt-3`}>
               <Text variant={TextVariant.Body1Regular}>{renderTitle}</Text>
               <Text onPress={onUpload} variant={TextVariant.Links} color={Color.Primary.Sz400} underline>
                 {renderLinkText}
               </Text>
+            </View>
+            <View style={tw`absolute bottom-0 right-0 left-0`}>
+              <View style={tw`flex-row items-center  justify-between w-full pb-5 px-5`}>
+                <Text variant={TextVariant.Body2SemiBold}>04 JUN 2022 • Down the line</Text>
+                <Text variant={TextVariant.Body2SemiBold} color={Color.Secondary.Sz900}>
+                  All failed videos
+                </Text>
+              </View>
             </View>
           </View>
         </View>
