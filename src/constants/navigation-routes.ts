@@ -11,4 +11,6 @@ export enum Route {
   ResetPasswordEmailVerification = 'reset-password-email-verification',
   ForgotPassword = 'forgot-password',
   ResetPassword = 'reset-password',
+  //TODO remove following route only for dev purpose
+  test = 'price-plan',
 }

@@ -3,6 +3,7 @@ import React from 'react';
 import {
   AccountLockSvg,
   BackIconSvg,
+  FeatureListTick,
   MailIconSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
@@ -49,4 +50,8 @@ export function SecurityIcon({ color = Color.Neutral.Sz500, width = 20, height =
 
 export function SwingZenLogoIcon({ color, width = 108, height = 55 }: SvgIconProps) {
   return <SwingZenLogo width={width} height={height} fill={color} />;
+}
+
+export function FeatureListTickIcon({ color, width, height }: SvgIconProps) {
+  return <FeatureListTick width={width} height={height} />;
 }
