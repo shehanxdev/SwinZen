@@ -9,15 +9,15 @@ import {
   BottomTabUploadSvg,
   BottomTabVideoSvg,
   CustomMenuSvg,
+  ErrorIconSvg,
   MailIconSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
+  PlayButtonSvg,
   ProfileIconSvg,
   SecurityIconSvg,
-  UploadSvg,
-  PlayButtonSvg,
-  ErrorIconSvg,
   SwingZenLogoSvg,
+  UploadSvg,
 } from '@sz/assets';
 import { Color } from '@sz/constants';
 
@@ -84,14 +84,14 @@ export function BottomTabLibraryIconWithLabel({ color = Color.Neutral.Sz500, wid
   return <BottomTabLibrarySvg width={width} height={height} fill={color} />;
 }
 
-export function UploadIcon({ color, width = 108, height = 55 }: SvgIconProps) {
+export function UploadIcon({ color = Color.Neutral.Sz100, width = 108, height = 55 }: SvgIconProps) {
   return <UploadSvg width={width} height={height} fill={color} />;
 }
 
-export function PlayButtonIcon({ color, width = 108, height = 55 }: SvgIconProps) {
+export function PlayButtonIcon({ color = Color.Neutral.Sz100, width = 108, height = 55 }: SvgIconProps) {
   return <PlayButtonSvg width={width} height={height} fill={color} />;
 }
 
-export function ErrorIcon({ color, width = 108, height = 55 }: SvgIconProps) {
+export function ErrorIcon({ color = Color.Neutral.Sz100, width = 108, height = 55 }: SvgIconProps) {
   return <ErrorIconSvg width={width} height={height} fill={color} />;
 }
