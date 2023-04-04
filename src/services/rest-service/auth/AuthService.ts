@@ -4,6 +4,12 @@ import {
   LoginErrorResponse,
   LoginResponse,
   LoginUserData,
+  RegisterMailVerificationData,
+  RegisterMailVerificationErrorResponse,
+  RegisterMailVerificationResponse,
+  ResendOtpData,
+  ResendOtpErrorResponse,
+  ResendOtpResponse,
   SignupErrorResponse,
   SignupResponse,
   SignupUserData,
@@ -44,6 +50,48 @@ export class AuthService {
       if (!response?.data) {
         throw new APIError('UNKNOWN_ERROR');
       }
+
+      return response.data;
+    } catch (error) {
+      console.error('Error response', error, JSON.stringify(error));
+      throw new APIError('CLIENT_ERROR');
+    }
+  }
+
+  static async registerMailVerification(data: RegisterMailVerificationData) {
+    const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
+
+    try {
+      const response = await httpServiceInstance.postAnonymous<
+        ApiResponse<RegisterMailVerificationResponse>,
+        ApiErrorResponse<RegisterMailVerificationErrorResponse>
+      >('/auth/verify-otp', data);
+
+      if (!response?.data) {
+        throw new APIError('UNKNOWN_ERROR');
+      }
+      console.log('$$$$$$$$$$', response.data);
+
+      return response.data;
+    } catch (error) {
+      console.error('Error response', error, JSON.stringify(error));
+      throw new APIError('CLIENT_ERROR');
+    }
+  }
+
+  static async resendOtp(data: ResendOtpData) {
+    const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
+
+    try {
+      const response = await httpServiceInstance.postAnonymous<
+        ApiResponse<ResendOtpResponse>,
+        ApiErrorResponse<ResendOtpErrorResponse>
+      >('/auth/resend-otp', data);
+
+      if (!response?.data) {
+        throw new APIError('UNKNOWN_ERROR');
+      }
+      console.log('@@@@@@@@@@', response.data);
 
       return response.data;
     } catch (error) {

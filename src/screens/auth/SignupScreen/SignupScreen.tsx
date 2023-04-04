@@ -44,7 +44,7 @@ export function SignupScreen() {
   const onSignUpFormValid: SubmitHandler<SignupFormValues> = async formInput => {
     try {
       await dispatch.userStore.registerUser(formInput);
-      NavigationService.navigate(Route.Login);
+      NavigationService.navigate(Route.RegisterEmailVerification, formInput);
     } catch (error: any) {
       //TODO:: handle error
       console.log('error', error);
