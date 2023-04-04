@@ -11,7 +11,3 @@ export interface RegisterMailVerificationRequestData {
 }
 
 export interface RegisterMailVerificationResponse {}
-
-export interface RegisterMailVerificationErrorResponse {
-  error: string;
-}

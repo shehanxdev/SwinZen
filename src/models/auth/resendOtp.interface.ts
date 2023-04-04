@@ -7,7 +7,3 @@ export interface ResendOtpRequestData {
 }
 
 export interface ResendOtpResponse {}
-
-export interface ResendOtpErrorResponse {
-  error: string;
-}

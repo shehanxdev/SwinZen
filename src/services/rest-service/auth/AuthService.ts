@@ -1,16 +1,13 @@
 import {
   ApiErrorResponse,
   ApiResponse,
-  LoginErrorResponse,
+  ErrorResponse,
   LoginResponse,
   LoginUserData,
   RegisterMailVerificationData,
-  RegisterMailVerificationErrorResponse,
   RegisterMailVerificationResponse,
   ResendOtpData,
-  ResendOtpErrorResponse,
   ResendOtpResponse,
-  SignupErrorResponse,
   SignupResponse,
   SignupUserData,
 } from '@sz/models';
@@ -24,7 +21,7 @@ export class AuthService {
     try {
       const response = await httpServiceInstance.postAnonymous<
         ApiResponse<LoginResponse>,
-        ApiErrorResponse<LoginErrorResponse>
+        ApiErrorResponse<ErrorResponse>
       >('/auth/sign-in', data);
 
       if (!response?.data) {
@@ -44,7 +41,7 @@ export class AuthService {
     try {
       const response = await httpServiceInstance.postAnonymous<
         ApiResponse<SignupResponse>,
-        ApiErrorResponse<SignupErrorResponse>
+        ApiErrorResponse<ErrorResponse>
       >('/auth/sign-up', data);
 
       if (!response?.data) {
@@ -64,7 +61,7 @@ export class AuthService {
     try {
       const response = await httpServiceInstance.postAnonymous<
         ApiResponse<RegisterMailVerificationResponse>,
-        ApiErrorResponse<RegisterMailVerificationErrorResponse>
+        ApiErrorResponse<ErrorResponse>
       >('/auth/verify-otp', data);
 
       return response.data;
@@ -80,7 +77,7 @@ export class AuthService {
     try {
       const response = await httpServiceInstance.postAnonymous<
         ApiResponse<ResendOtpResponse>,
-        ApiErrorResponse<ResendOtpErrorResponse>
+        ApiErrorResponse<ErrorResponse>
       >('/auth/resend-otp', data);
 
       return response.data;

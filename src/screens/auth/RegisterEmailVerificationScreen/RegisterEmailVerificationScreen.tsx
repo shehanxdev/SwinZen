@@ -6,17 +6,14 @@ import { tw } from '@sz/config';
 import { Route, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
+import { getMaskedMail } from '@sz/utils';
 
 import { BaseAuthScreen, OTPInput } from '../components';
 
 export function RegisterEmailVerificationScreen({ route }) {
   const [otp, setOtp] = useState('');
 
-  const username = route.params.params.username;
-  // Note: This use to make masked mail with the first three letters and the mail domain
-  const splittedMail = username?.split('@');
-  const maskedMail =
-    splittedMail && splittedMail[0].substring(0, 3) + '*'.repeat(splittedMail[0].length - 3) + '@' + splittedMail[1];
+  const username = route.params.params;
 
   const loading = useSelector(state => state.loading.effects.userStore.registerMailVerification);
 
@@ -59,7 +56,7 @@ export function RegisterEmailVerificationScreen({ route }) {
             </View>
             <View style={tw`mb-6`}>
               <Text variant={TextVariant.Body2Regular}>
-                {`Enter the code received in your email address ${maskedMail}`}
+                {`Enter the code received in your email address ${getMaskedMail(username)}`}
               </Text>
             </View>
           </View>

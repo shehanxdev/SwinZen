@@ -6,7 +6,7 @@ import { RegisterEmailVerificationScreen } from '../RegisterEmailVerificationScr
 
 describe('Register Email Verification Screen', () => {
   const testID = 'RegisterEmailVerificationScreenContainerTestID';
-  const mockRoute = { params: { params: { username: 'test@gmail.com' } } };
+  const mockRoute = { params: { params: 'test@gmail.com' } };
 
   const getRenderedScreen = () => renderWithProviders(<RegisterEmailVerificationScreen route={mockRoute} />);
 
