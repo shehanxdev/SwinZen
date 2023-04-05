@@ -1,1 +1,1 @@
-export * from './VideoUploadCard';
+export * from './VideoUploadCard.component';

@@ -6,6 +6,8 @@ import { ErrorIcon, PlayButtonIcon, Text, UploadIcon } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextVariant } from '@sz/constants';
 
+import { CardBottomText } from './CardBottomText.component';
+
 export function VideoUploadCard() {
   //TODO:: to be removed once the upload logic implemented
   const [uploaded, setUploaded] = useState(false);
@@ -26,7 +28,7 @@ export function VideoUploadCard() {
       return <UploadIcon />;
     } else if (isLoading) {
       return <ActivityIndicator size="large" />;
-    } else {
+    } else if (isError) {
       return <ErrorIcon />;
     }
   }, [isLoading, isError]);
@@ -36,7 +38,7 @@ export function VideoUploadCard() {
       return 'Uploading.. Please wait!';
     } else if (!isLoading && !isError) {
       return 'No Data to Report. Get Started!';
-    } else {
+    } else if (isError) {
       return 'Your video failed to upload!';
     }
   }, [isLoading, isError]);
@@ -51,17 +53,17 @@ export function VideoUploadCard() {
   }, [isLoading, isError]);
 
   return (
-    <View style={tw`h-[218px] rounded-[10px] overflow-hidden `}>
+    <View style={tw`h-[218px] rounded-2.5 overflow-hidden`}>
       {!uploaded ? (
         <View
-          style={tw`flex-1 rounded-[10px] overflow-hidden ${
-            !isError ? 'border-2 border-[#E9ECEF] border-dashed' : 'border-none'
+          style={tw`flex-1 rounded-2.5 overflow-hidden  ${
+            !isError ? `border-[1px] border-dashed border-[${Color.Neutral.Sz200}]` : 'border-0'
           }`}>
           <BlurView
             blurType="dark"
             blurAmount={10}
             reducedTransparencyFallbackColor={Color.Neutral.Sz900}
-            style={tw`absolute inset-x-0 inset-y-0 rounded-[10px]`}
+            style={tw`absolute inset-x-0 inset-y-0 rounded-2.5`}
           />
           <View style={tw`justify-center items-center flex-1`}>
             {renderIcon}
@@ -71,14 +73,7 @@ export function VideoUploadCard() {
                 {renderLinkText}
               </Text>
             </View>
-            <View style={tw`absolute bottom-0 right-0 left-0`}>
-              <View style={tw`flex-row items-center  justify-between w-full pb-5 px-5`}>
-                <Text variant={TextVariant.Body2SemiBold}>04 JUN 2022 • Down the line</Text>
-                <Text variant={TextVariant.Body2SemiBold} color={Color.Secondary.Sz900}>
-                  All failed videos
-                </Text>
-              </View>
-            </View>
+            {isError && <CardBottomText isError date="04 JUN 2022 • Down the line" results="All failed videos" />}
           </View>
         </View>
       ) : (
@@ -89,12 +84,7 @@ export function VideoUploadCard() {
             style={tw`flex-1 items-center justify-center`}>
             <PlayButtonIcon width={45} height={45} />
           </ImageBackground>
-          <View style={tw`absolute bottom-0 right-0 left-0`}>
-            <View style={tw`flex-row items-center  justify-between w-full pb-5 px-5`}>
-              <Text variant={TextVariant.Body1SemiBold}>04 JUN 2022 • Faceview</Text>
-              <Text variant={TextVariant.Body2SemiBold}>10 • Pass</Text>
-            </View>
-          </View>
+          <CardBottomText date="04 JUN 2022 • Faceview" results="10 • Pass" />
         </View>
       )}
     </View>
