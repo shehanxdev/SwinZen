@@ -12,7 +12,7 @@ export function VideoUploadCard() {
   //TODO:: to be removed once the upload logic implemented
   const [uploaded, setUploaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [isError] = useState(true);
+  const [isError] = useState(false);
 
   //TODO:: to be removed once the upload logic implemented
   const onUpload = () => {
