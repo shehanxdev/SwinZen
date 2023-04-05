@@ -158,7 +158,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                         ]
                       }
                     >
-                      Enter the code received in your email address tes*@gmail.com
+                      Enter the code received in your email address t**t@gmail.com
                     </Text>
                   </View>
                 </View>
