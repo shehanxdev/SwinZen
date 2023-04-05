@@ -38,6 +38,11 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setRefreshToken(data.refreshToken);
       dispatch.userStore.setIsAuthenticated(true);
     },
+    async logoutUser() {
+      dispatch.userStore.setAccessToken(null);
+      dispatch.userStore.setRefreshToken(null);
+      dispatch.userStore.setIsAuthenticated(false);
+    },
     async registerUser(payload: SignupRequestData) {
       await AuthService.registerUser(payload);
       //TODO::save required user data to the store and persistence storage if required
