@@ -1,23 +1,40 @@
-import React, { useState } from 'react';
+import { yupResolver } from '@hookform/resolvers/yup';
+import React from 'react';
+import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { View } from 'react-native';
 
 import { Button, Link, SwingZenLogoIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Route, TextVariant } from '@sz/constants';
+import { OtpVerficationValue } from '@sz/models';
 import { NavigationService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
-import { getMaskedMail } from '@sz/utils';
+import { getMaskedMail, registerOtpValidationSchema } from '@sz/utils';
 
 import { BaseAuthScreen, OTPInput } from '../components';
 
 export function RegisterEmailVerificationScreen({ route }) {
-  const [otp, setOtp] = useState('');
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+    getValues,
+  } = useForm<OtpVerficationValue>({ mode: 'onChange', resolver: yupResolver(registerOtpValidationSchema) });
 
   const username = route.params.params;
 
   const loading = useSelector(state => state.loading.effects.userStore.registerMailVerification);
 
   const dispatch = useDispatch();
+
+  const onSignUpFormInvalid: SubmitErrorHandler<OtpVerficationValue> = () => {
+    console.log(errors);
+    //TODO:: handle error
+  };
+
+  const onSignUpFormValid: SubmitHandler<OtpVerficationValue> = () => {
+    console.log('success');
+  };
 
   const onResend = () => {
     try {
@@ -32,7 +49,7 @@ export function RegisterEmailVerificationScreen({ route }) {
     const otpData = {
       username: username,
       otpType: 'string',
-      otp: otp,
+      otp: getValues('otp'),
     };
     try {
       await dispatch.userStore.registerMailVerification(otpData);
@@ -60,7 +77,17 @@ export function RegisterEmailVerificationScreen({ route }) {
               </Text>
             </View>
           </View>
-          <OTPInput onChangeValue={value => setOtp(value)} />
+          <Controller
+            control={control}
+            name="otp"
+            render={({ field: { value, onChange } }) => (
+              <OTPInput
+                value={value}
+                onChangeValue={onChange}
+                onSubmitEditing={handleSubmit(onSignUpFormValid, onSignUpFormInvalid)}
+              />
+            )}
+          />
           <View style={tw`items-end mt-2`}>
             <Link text="Resend the code" onPress={onResend} />
           </View>

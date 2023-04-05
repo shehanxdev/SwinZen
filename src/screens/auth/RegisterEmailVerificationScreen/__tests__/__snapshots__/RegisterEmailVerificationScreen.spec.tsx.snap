@@ -463,7 +463,6 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                     }
                     textContentType="oneTimeCode"
                     underlineColorAndroid="transparent"
-                    value=""
                   />
                 </View>
                 <View

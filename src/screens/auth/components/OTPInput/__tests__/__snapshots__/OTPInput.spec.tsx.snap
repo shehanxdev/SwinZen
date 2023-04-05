@@ -45,18 +45,9 @@ exports[`OTPInput Component should render correctly 1`] = `
           },
         ]
       }
-    />
-    <View
-      style={
-        {
-          "backgroundColor": "#6C757D",
-          "bottom": 14,
-          "height": 1,
-          "position": "absolute",
-          "width": 28,
-        }
-      }
-    />
+    >
+      1
+    </Text>
   </View>
   <View
     onLayout={[Function]}
@@ -88,18 +79,9 @@ exports[`OTPInput Component should render correctly 1`] = `
           },
         ]
       }
-    />
-    <View
-      style={
-        {
-          "backgroundColor": "#6C757D",
-          "bottom": 14,
-          "height": 1,
-          "position": "absolute",
-          "width": 28,
-        }
-      }
-    />
+    >
+      2
+    </Text>
   </View>
   <View
     onLayout={[Function]}
@@ -131,18 +113,9 @@ exports[`OTPInput Component should render correctly 1`] = `
           },
         ]
       }
-    />
-    <View
-      style={
-        {
-          "backgroundColor": "#6C757D",
-          "bottom": 14,
-          "height": 1,
-          "position": "absolute",
-          "width": 28,
-        }
-      }
-    />
+    >
+      3
+    </Text>
   </View>
   <View
     onLayout={[Function]}
@@ -174,18 +147,9 @@ exports[`OTPInput Component should render correctly 1`] = `
           },
         ]
       }
-    />
-    <View
-      style={
-        {
-          "backgroundColor": "#6C757D",
-          "bottom": 14,
-          "height": 1,
-          "position": "absolute",
-          "width": 28,
-        }
-      }
-    />
+    >
+      4
+    </Text>
   </View>
   <View
     onLayout={[Function]}
@@ -217,18 +181,9 @@ exports[`OTPInput Component should render correctly 1`] = `
           },
         ]
       }
-    />
-    <View
-      style={
-        {
-          "backgroundColor": "#6C757D",
-          "bottom": 14,
-          "height": 1,
-          "position": "absolute",
-          "width": 28,
-        }
-      }
-    />
+    >
+      5
+    </Text>
   </View>
   <View
     onLayout={[Function]}
@@ -286,7 +241,7 @@ exports[`OTPInput Component should render correctly 1`] = `
     onChangeText={[Function]}
     onFocus={[Function]}
     onPressOut={[Function]}
-    onSubmitEditing={[Function]}
+    onSubmitEditing={[MockFunction]}
     returnKeyType="done"
     spellCheck={false}
     style={
@@ -303,7 +258,7 @@ exports[`OTPInput Component should render correctly 1`] = `
     testID="OTPInputTestID"
     textContentType="oneTimeCode"
     underlineColorAndroid="transparent"
-    value=""
+    value="12345"
   />
 </View>
 `;

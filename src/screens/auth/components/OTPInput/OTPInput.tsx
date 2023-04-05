@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View } from 'react-native';
-import { Keyboard } from 'react-native';
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field';
 
 import { Text } from '@sz/components';
@@ -11,12 +10,12 @@ const CELL_COUNT = 6;
 
 export interface OTPInputProps {
   testID?: string;
+  value: string;
   onChangeValue: (text: string) => void;
+  onSubmitEditing: () => void;
 }
 
-export function OTPInput({ testID, onChangeValue }: OTPInputProps) {
-  //TODO::remove thus inner state when integrating with the react-hook-form
-  const [value, setValue] = useState('');
+export function OTPInput({ testID, value, onChangeValue, onSubmitEditing }: OTPInputProps) {
   /*
    * This is an additional logic provided by the react-native-confirmation-code-field library
    * useBlurOnFulfill hook has the logic to blurring <TextInput/> when value all the cells get filled with a value
@@ -35,7 +34,7 @@ export function OTPInput({ testID, onChangeValue }: OTPInputProps) {
    */
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
     value: value,
-    setValue: setValue,
+    setValue: onChangeValue,
   });
 
   return (
@@ -45,8 +44,6 @@ export function OTPInput({ testID, onChangeValue }: OTPInputProps) {
       {...props}
       value={value}
       onChangeText={value => {
-        //TODO::add validations when integrating with the react-hook-form
-        setValue(value);
         onChangeValue(value);
       }}
       cellCount={CELL_COUNT}
@@ -54,7 +51,7 @@ export function OTPInput({ testID, onChangeValue }: OTPInputProps) {
       rootStyle={tw`h-17.25 self-center`}
       keyboardType="number-pad"
       returnKeyType={'done'}
-      onSubmitEditing={() => Keyboard.dismiss()} //TODO::Remove this or replace with submit handler if not required since keyboard closes automatically after all the digits get filled.
+      onSubmitEditing={onSubmitEditing}
       textContentType="oneTimeCode"
       renderCell={({ index, symbol, isFocused }) => (
         <View

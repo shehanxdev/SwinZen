@@ -1,3 +1,7 @@
+export interface OtpVerficationValue {
+  otp: string;
+}
+
 export interface RegisterMailVerificationData {
   username: string;
   otpType: string;
