@@ -58,6 +58,9 @@ export function ResetPasswordEmailVerificationScreen() {
               />
             )}
           />
+          <View style={tw`items-end mt-2`}>
+            <Link text="Resend the code" />
+          </View>
         </View>
         <View style={tw`items-center mb-5 mx-5`}>
           <View style={tw`mb-3`}>
@@ -68,7 +71,6 @@ export function ResetPasswordEmailVerificationScreen() {
               title={'Verify'}
             />
           </View>
-          <Link text={'Resend the code'} />
         </View>
       </View>
     </BaseAuthScreen>
