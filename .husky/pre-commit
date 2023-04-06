@@ -1,8 +1,11 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# Run linters and unit tests
-npx lint-staged && yarn run test
+# Run linters 
+npx lint-staged
+ 
+# Run unit tests
+yarn run test
 
 # Snapshots created during the pre commit stage aren't moving into the staging area automatically
 # Following script is to move those snapshot files into the staging area
