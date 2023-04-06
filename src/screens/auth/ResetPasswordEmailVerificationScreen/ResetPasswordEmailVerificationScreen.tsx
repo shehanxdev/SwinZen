@@ -8,7 +8,7 @@ import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { OtpVerficationValue } from '@sz/models';
 import { NavigationService } from '@sz/services';
-import { resetOtpValidationSchema } from '@sz/utils';
+import { otpValidationSchema } from '@sz/utils';
 
 import { OTPInput } from '../components';
 import { BaseAuthScreen } from '../components/BaseAuthScreen';
@@ -18,7 +18,7 @@ export function ResetPasswordEmailVerificationScreen() {
     control,
     handleSubmit,
     formState: { errors, isSubmitted },
-  } = useForm<OtpVerficationValue>({ mode: 'onChange', resolver: yupResolver(resetOtpValidationSchema) });
+  } = useForm<OtpVerficationValue>({ mode: 'onChange', resolver: yupResolver(otpValidationSchema) });
 
   const onResetEmailFormInvalid: SubmitErrorHandler<OtpVerficationValue> = () => {
     console.log(errors);

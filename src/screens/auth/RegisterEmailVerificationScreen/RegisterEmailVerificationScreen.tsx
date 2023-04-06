@@ -9,7 +9,7 @@ import { Color, Route, TextVariant } from '@sz/constants';
 import { OtpVerficationValue } from '@sz/models';
 import { NavigationService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
-import { getMaskedMail, registerOtpValidationSchema } from '@sz/utils';
+import { getMaskedMail, otpValidationSchema } from '@sz/utils';
 
 import { BaseAuthScreen, OTPInput } from '../components';
 
@@ -19,7 +19,7 @@ export function RegisterEmailVerificationScreen({ route }) {
     handleSubmit,
     formState: { errors, isSubmitted },
     getValues,
-  } = useForm<OtpVerficationValue>({ mode: 'onChange', resolver: yupResolver(registerOtpValidationSchema) });
+  } = useForm<OtpVerficationValue>({ mode: 'onChange', resolver: yupResolver(otpValidationSchema) });
 
   const username = route.params.params;
 
