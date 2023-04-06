@@ -10,12 +10,6 @@ export interface EmailVerificationData {
   otp: string;
 }
 
-export interface EmailVerificationRequestData {
-  username: string;
-  otpType: OtpType;
-  otp: string;
-}
-
 export interface EmailVerificationResponse {
   resetPasswordToken?: string;
 }

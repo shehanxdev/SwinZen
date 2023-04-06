@@ -13,13 +13,6 @@ export interface SignupUserData {
   promoCode: string;
 }
 
-export interface SignupRequestData {
-  name: string;
-  username: string;
-  password: string;
-  promoCode: string;
-}
-
 export interface SignupResponse {
   user: User;
 }

@@ -1,12 +1,12 @@
 import { createModel } from '@rematch/core';
 
 import {
-  EmailVerificationRequestData,
-  ForgetPasswordRequestData,
-  LoginRequestData,
-  ResendOtpRequestData,
+  EmailVerificationData,
+  ForgetPasswordData,
+  LoginUserData,
+  ResendOtpData,
   ResetPasswordData,
-  SignupRequestData,
+  SignupUserData,
 } from '@sz/models';
 import { AuthService } from '@sz/services';
 
@@ -44,13 +44,13 @@ export const userStore = createModel<RootModel>()({
     },
   },
   effects: dispatch => ({
-    async loginUserWithCredentials(payload: LoginRequestData) {
+    async loginUserWithCredentials(payload: LoginUserData) {
       const data = await AuthService.loginUserWithCredentials(payload);
       dispatch.userStore.setAccessToken(data.accessToken);
       dispatch.userStore.setRefreshToken(data.refreshToken);
       dispatch.userStore.setIsAuthenticated(true);
     },
-    async registerUser(payload: SignupRequestData) {
+    async registerUser(payload: SignupUserData) {
       await AuthService.registerUser(payload);
       //TODO::save required user data to the store and persistence storage if required
     },
@@ -58,14 +58,14 @@ export const userStore = createModel<RootModel>()({
      * NOTE:These function is being shared between registeration and forget password flows since it's the default BE behaviour
      * api/v1/auth/resend-otp
      */
-    async emailVerification(payload: EmailVerificationRequestData) {
+    async emailVerification(payload: EmailVerificationData) {
       const data = await AuthService.emailVerification(payload);
       dispatch.userStore.setPasswordResetToken(data?.resetPasswordToken);
     },
-    async resendOtp(payload: ResendOtpRequestData) {
+    async resendOtp(payload: ResendOtpData) {
       await AuthService.resendOtp(payload);
     },
-    async forgetPassword(payload: ForgetPasswordRequestData) {
+    async forgetPassword(payload: ForgetPasswordData) {
       await AuthService.forgetPassword(payload);
     },
     async resetPassword(payload: ResetPasswordData) {
