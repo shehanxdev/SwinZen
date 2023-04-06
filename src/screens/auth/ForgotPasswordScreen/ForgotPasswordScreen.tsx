@@ -32,7 +32,7 @@ export function ForgotPasswordScreen() {
   const onForgotPasswordFormValid: SubmitHandler<ForgotPasswordFormValues> = async formInput => {
     try {
       await dispatch.userStore.forgetPassword(formInput);
-      NavigationService.navigate(Route.ResetPasswordEmailVerification);
+      NavigationService.navigate(Route.ResetPasswordEmailVerification, { email: formInput.email });
     } catch (error: any) {
       console.log('error', error);
     }
