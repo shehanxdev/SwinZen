@@ -1,6 +1,11 @@
 import { createModel } from '@rematch/core';
 
-import { LoginRequestData, SignupRequestData } from '@sz/models';
+import {
+  LoginRequestData,
+  RegisterMailVerificationRequestData,
+  ResendOtpRequestData,
+  SignupRequestData,
+} from '@sz/models';
 import { AuthService } from '@sz/services';
 
 import { RootModel } from './';
@@ -41,6 +46,12 @@ export const userStore = createModel<RootModel>()({
     async registerUser(payload: SignupRequestData) {
       await AuthService.registerUser(payload);
       //TODO::save required user data to the store and persistence storage if required
+    },
+    async registerMailVerification(payload: RegisterMailVerificationRequestData) {
+      await AuthService.registerMailVerification(payload);
+    },
+    async resendOtp(payload: ResendOtpRequestData) {
+      await AuthService.resendOtp(payload);
     },
   }),
 });
