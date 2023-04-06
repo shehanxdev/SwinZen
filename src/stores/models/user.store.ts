@@ -1,9 +1,9 @@
 import { createModel } from '@rematch/core';
 
 import {
+  EmailVerificationRequestData,
   ForgetPasswordRequestData,
   LoginRequestData,
-  RegisterMailVerificationRequestData,
   ResendOtpRequestData,
   SignupRequestData,
 } from '@sz/models';
@@ -48,8 +48,12 @@ export const userStore = createModel<RootModel>()({
       await AuthService.registerUser(payload);
       //TODO::save required user data to the store and persistence storage if required
     },
-    async registerMailVerification(payload: RegisterMailVerificationRequestData) {
-      await AuthService.registerMailVerification(payload);
+    /*
+     * NOTE:These function is being shared between registeration and forget password flows since it's the default BE behaviour
+     * api/v1/auth/resend-otp
+     */
+    async emailVerification(payload: EmailVerificationRequestData) {
+      await AuthService.emailVerification(payload);
     },
     async resendOtp(payload: ResendOtpRequestData) {
       await AuthService.resendOtp(payload);

@@ -5,7 +5,7 @@ import { Alert, View } from 'react-native';
 
 import { Button, Link, SwingZenLogoIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, Route, TextVariant } from '@sz/constants';
+import { Color, OtpTypes, Route, TextVariant } from '@sz/constants';
 import { OtpVerficationValue } from '@sz/models';
 import { NavigationService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
@@ -23,7 +23,7 @@ export function RegisterEmailVerificationScreen({ route }) {
 
   const username = route.params.params;
 
-  const loading = useSelector(state => state.loading.effects.userStore.registerMailVerification);
+  const loading = useSelector(state => state.loading.effects.userStore.emailVerification);
 
   const dispatch = useDispatch();
 
@@ -50,11 +50,11 @@ export function RegisterEmailVerificationScreen({ route }) {
   const onVerify = async () => {
     const otpData = {
       username: username,
-      otpType: 'string',
+      otpType: OtpTypes.VERIFICATION,
       otp: getValues('otp'),
     };
     try {
-      await dispatch.userStore.registerMailVerification(otpData);
+      await dispatch.userStore.emailVerification(otpData);
       NavigationService.navigate(Route.Login);
     } catch (error: any) {
       //TODO:: handle error

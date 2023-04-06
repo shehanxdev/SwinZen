@@ -1,12 +1,12 @@
 import {
   ApiErrorResponse,
   ApiResponse,
+  EmailVerificationData,
+  EmailVerificationResponse,
   ForgetPasswordData,
   ForgetPasswordResponse,
   LoginResponse,
   LoginUserData,
-  RegisterMailVerificationData,
-  RegisterMailVerificationResponse,
   ResendOtpData,
   ResendOtpResponse,
   SignupResponse,
@@ -56,12 +56,12 @@ export class AuthService {
     }
   }
 
-  static async registerMailVerification(data: RegisterMailVerificationData) {
+  static async emailVerification(data: EmailVerificationData) {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     try {
       const response = await httpServiceInstance.postAnonymous<
-        ApiResponse<RegisterMailVerificationResponse>,
+        ApiResponse<EmailVerificationResponse>,
         ApiErrorResponse
       >('/auth/verify-otp', data);
 
