@@ -5,7 +5,7 @@ import { View } from 'react-native';
 
 import { Button, Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Route, TextVariant } from '@sz/constants';
+import { Color, Route, TextVariant } from '@sz/constants';
 import { OtpVerficationValue } from '@sz/models';
 import { NavigationService } from '@sz/services';
 import { resetOtpValidationSchema } from '@sz/utils';
@@ -17,7 +17,7 @@ export function ResetPasswordEmailVerificationScreen() {
   const {
     control,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitted },
   } = useForm<OtpVerficationValue>({ mode: 'onChange', resolver: yupResolver(resetOtpValidationSchema) });
 
   const onSignUpFormInvalid: SubmitErrorHandler<OtpVerficationValue> = () => {
@@ -47,11 +47,14 @@ export function ResetPasswordEmailVerificationScreen() {
           <Controller
             control={control}
             name="otp"
-            render={({ field: { value, onChange } }) => (
+            render={({ field: { value, onChange }, fieldState: { error, isTouched } }) => (
               <OTPInput
                 value={value}
                 onChangeValue={onChange}
                 onSubmitEditing={handleSubmit(onSignUpFormValid, onSignUpFormInvalid)}
+                helperText={(isTouched || isSubmitted) && error?.message}
+                helperTextColor={Color.Error.SzMain}
+                error={(isTouched || isSubmitted) && error !== undefined}
               />
             )}
           />
