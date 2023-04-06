@@ -1,7 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
-import { View } from 'react-native';
+import { Alert, View } from 'react-native';
 
 import { AccountLockIcon, Button, PasswordField, Text } from '@sz/components';
 import { tw } from '@sz/config';
@@ -38,8 +38,13 @@ export function ResetPasswordScreen({ route }) {
         password: formInput.password,
         headers: { 'x-auth': passwordResetToken },
       });
-      NavigationService.navigate(Route.Login);
+
+      //TODO::replace with proper alert
+      Alert.alert('Success', 'Password reset successfullly', [
+        { text: 'OK', onPress: () => NavigationService.navigate(Route.Login) },
+      ]);
     } catch (error: any) {
+      //TODO::handle errors
       console.log('error', error);
     }
   };
