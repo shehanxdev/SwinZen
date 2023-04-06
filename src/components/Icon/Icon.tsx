@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
   AccountLockSvg,
+  ArrowRightSvg,
   BackIconSvg,
   BottomTabAnalysisSvg,
   BottomTabHomeSvg,
@@ -59,6 +60,10 @@ export function SwingZenLogoIcon({ color, width = 108, height = 55 }: SvgIconPro
 
 export function CustomMenuIcon({ color = Color.Neutral.White, width = 24, height = 24 }: SvgIconProps) {
   return <CustomMenuSvg width={width} height={height} fill={color} />;
+}
+
+export function RightArrowIcon({ color = Color.Neutral.Sz100, width = 7.25, height = 14 }: SvgIconProps) {
+  return <ArrowRightSvg width={width} height={height} fill={color} />;
 }
 
 export function BottomTabHomeIconWithLabel({ color = Color.Neutral.Sz500, width = 30, height = 43 }: SvgIconProps) {
