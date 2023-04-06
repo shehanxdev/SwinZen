@@ -1,7 +1,8 @@
 import {
   ApiErrorResponse,
   ApiResponse,
-  ErrorResponse,
+  ForgetPasswordData,
+  ForgetPasswordResponse,
   LoginResponse,
   LoginUserData,
   RegisterMailVerificationData,
@@ -19,10 +20,10 @@ export class AuthService {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     try {
-      const response = await httpServiceInstance.postAnonymous<
-        ApiResponse<LoginResponse>,
-        ApiErrorResponse<ErrorResponse>
-      >('/auth/sign-in', data);
+      const response = await httpServiceInstance.postAnonymous<ApiResponse<LoginResponse>, ApiErrorResponse>(
+        '/auth/sign-in',
+        data,
+      );
 
       if (!response?.data) {
         throw new APIError('UNKNOWN_ERROR');
@@ -39,10 +40,10 @@ export class AuthService {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     try {
-      const response = await httpServiceInstance.postAnonymous<
-        ApiResponse<SignupResponse>,
-        ApiErrorResponse<ErrorResponse>
-      >('/auth/sign-up', data);
+      const response = await httpServiceInstance.postAnonymous<ApiResponse<SignupResponse>, ApiErrorResponse>(
+        '/auth/sign-up',
+        data,
+      );
 
       if (!response?.data) {
         throw new APIError('UNKNOWN_ERROR');
@@ -61,7 +62,7 @@ export class AuthService {
     try {
       const response = await httpServiceInstance.postAnonymous<
         ApiResponse<RegisterMailVerificationResponse>,
-        ApiErrorResponse<ErrorResponse>
+        ApiErrorResponse
       >('/auth/verify-otp', data);
 
       return response.data;
@@ -75,10 +76,26 @@ export class AuthService {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     try {
-      const response = await httpServiceInstance.postAnonymous<
-        ApiResponse<ResendOtpResponse>,
-        ApiErrorResponse<ErrorResponse>
-      >('/auth/resend-otp', data);
+      const response = await httpServiceInstance.postAnonymous<ApiResponse<ResendOtpResponse>, ApiErrorResponse>(
+        '/auth/resend-otp',
+        data,
+      );
+
+      return response.data;
+    } catch (error) {
+      console.error('Error response', error, JSON.stringify(error));
+      throw new APIError('CLIENT_ERROR');
+    }
+  }
+
+  static async forgetPassword(data: ForgetPasswordData) {
+    const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
+
+    try {
+      const response = await httpServiceInstance.postAnonymous<ApiResponse<ForgetPasswordResponse>, ApiErrorResponse>(
+        '/auth/forgot-password',
+        data,
+      );
 
       return response.data;
     } catch (error) {

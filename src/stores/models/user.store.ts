@@ -1,6 +1,7 @@
 import { createModel } from '@rematch/core';
 
 import {
+  ForgetPasswordRequestData,
   LoginRequestData,
   RegisterMailVerificationRequestData,
   ResendOtpRequestData,
@@ -52,6 +53,9 @@ export const userStore = createModel<RootModel>()({
     },
     async resendOtp(payload: ResendOtpRequestData) {
       await AuthService.resendOtp(payload);
+    },
+    async forgetPassword(payload: ForgetPasswordRequestData) {
+      await AuthService.forgetPassword(payload);
     },
   }),
 });
