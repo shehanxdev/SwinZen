@@ -1,7 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
-import { View } from 'react-native';
+import { Alert, View } from 'react-native';
 
 import { Button, Link, SwingZenLogoIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
@@ -27,18 +27,20 @@ export function RegisterEmailVerificationScreen({ route }) {
 
   const dispatch = useDispatch();
 
-  const onSignUpFormInvalid: SubmitErrorHandler<OtpVerficationValue> = () => {
+  const onRegisterEmailFormInvalid: SubmitErrorHandler<OtpVerficationValue> = () => {
     console.log(errors);
     //TODO:: handle error
   };
 
-  const onSignUpFormValid: SubmitHandler<OtpVerficationValue> = () => {
+  const onRegisterEmailFormValid: SubmitHandler<OtpVerficationValue> = () => {
     console.log('success');
   };
 
   const onResend = () => {
     try {
       dispatch.userStore.resendOtp({ username: username });
+      // TODO:: add proper success alert later
+      Alert.alert('Success', 'Otp resent successfullly', [{ text: 'OK', onPress: () => console.log('OK Pressed') }]);
     } catch (error: any) {
       //TODO:: handle error
       console.log('error', error);
@@ -84,7 +86,7 @@ export function RegisterEmailVerificationScreen({ route }) {
               <OTPInput
                 value={value}
                 onChangeValue={onChange}
-                onSubmitEditing={handleSubmit(onSignUpFormValid, onSignUpFormInvalid)}
+                onSubmitEditing={handleSubmit(onRegisterEmailFormValid, onRegisterEmailFormInvalid)}
                 helperText={(isTouched || isSubmitted) && error?.message}
                 helperTextColor={Color.Error.SzMain}
                 error={(isTouched || isSubmitted) && error !== undefined}

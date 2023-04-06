@@ -20,12 +20,12 @@ export function ResetPasswordEmailVerificationScreen() {
     formState: { errors, isSubmitted },
   } = useForm<OtpVerficationValue>({ mode: 'onChange', resolver: yupResolver(resetOtpValidationSchema) });
 
-  const onSignUpFormInvalid: SubmitErrorHandler<OtpVerficationValue> = () => {
+  const onResetEmailFormInvalid: SubmitErrorHandler<OtpVerficationValue> = () => {
     console.log(errors);
     //TODO:: handle error
   };
 
-  const onSignUpFormValid: SubmitHandler<OtpVerficationValue> = () => {
+  const onResetEmailFormValid: SubmitHandler<OtpVerficationValue> = () => {
     console.log('success');
   };
 
@@ -51,7 +51,7 @@ export function ResetPasswordEmailVerificationScreen() {
               <OTPInput
                 value={value}
                 onChangeValue={onChange}
-                onSubmitEditing={handleSubmit(onSignUpFormValid, onSignUpFormInvalid)}
+                onSubmitEditing={handleSubmit(onResetEmailFormValid, onResetEmailFormInvalid)}
                 helperText={(isTouched || isSubmitted) && error?.message}
                 helperTextColor={Color.Error.SzMain}
                 error={(isTouched || isSubmitted) && error !== undefined}
