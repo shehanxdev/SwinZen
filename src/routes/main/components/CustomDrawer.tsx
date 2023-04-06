@@ -66,7 +66,7 @@ export function CustomDrawer() {
         style={tw`flex-1`}
         reducedTransparencyFallbackColor={Color.Neutral.Sz900}>
         <DrawerContentScrollView>
-          <View style={tw`flex-row justify-between items-center mx-6 mb-6.5`}>
+          <View style={tw`flex-row justify-between items-center mx-6 mt-8 mb-6.5`}>
             <SwingZenLogoSvg />
             <TouchableOpacity onPress={() => navigation.dispatch(DrawerActions.closeDrawer())}>
               <CrossIcon />
