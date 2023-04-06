@@ -1,10 +1,13 @@
 import {
   ApiErrorResponse,
   ApiResponse,
-  LoginErrorResponse,
+  ErrorResponse,
   LoginResponse,
   LoginUserData,
-  SignupErrorResponse,
+  RegisterMailVerificationData,
+  RegisterMailVerificationResponse,
+  ResendOtpData,
+  ResendOtpResponse,
   SignupResponse,
   SignupUserData,
 } from '@sz/models';
@@ -18,7 +21,7 @@ export class AuthService {
     try {
       const response = await httpServiceInstance.postAnonymous<
         ApiResponse<LoginResponse>,
-        ApiErrorResponse<LoginErrorResponse>
+        ApiErrorResponse<ErrorResponse>
       >('/auth/sign-in', data);
 
       if (!response?.data) {
@@ -38,12 +41,44 @@ export class AuthService {
     try {
       const response = await httpServiceInstance.postAnonymous<
         ApiResponse<SignupResponse>,
-        ApiErrorResponse<SignupErrorResponse>
+        ApiErrorResponse<ErrorResponse>
       >('/auth/sign-up', data);
 
       if (!response?.data) {
         throw new APIError('UNKNOWN_ERROR');
       }
+
+      return response.data;
+    } catch (error) {
+      console.error('Error response', error, JSON.stringify(error));
+      throw new APIError('CLIENT_ERROR');
+    }
+  }
+
+  static async registerMailVerification(data: RegisterMailVerificationData) {
+    const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
+
+    try {
+      const response = await httpServiceInstance.postAnonymous<
+        ApiResponse<RegisterMailVerificationResponse>,
+        ApiErrorResponse<ErrorResponse>
+      >('/auth/verify-otp', data);
+
+      return response.data;
+    } catch (error) {
+      console.error('Error response', error, JSON.stringify(error));
+      throw new APIError('CLIENT_ERROR');
+    }
+  }
+
+  static async resendOtp(data: ResendOtpData) {
+    const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
+
+    try {
+      const response = await httpServiceInstance.postAnonymous<
+        ApiResponse<ResendOtpResponse>,
+        ApiErrorResponse<ErrorResponse>
+      >('/auth/resend-otp', data);
 
       return response.data;
     } catch (error) {

@@ -1,15 +1,34 @@
+import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
+import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { View } from 'react-native';
 
 import { Button, Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Route, TextVariant } from '@sz/constants';
+import { Color, Route, TextVariant } from '@sz/constants';
+import { OtpVerficationValue } from '@sz/models';
 import { NavigationService } from '@sz/services';
+import { otpValidationSchema } from '@sz/utils';
 
 import { OTPInput } from '../components';
 import { BaseAuthScreen } from '../components/BaseAuthScreen';
 
 export function ResetPasswordEmailVerificationScreen() {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors, isSubmitted },
+  } = useForm<OtpVerficationValue>({ mode: 'onChange', resolver: yupResolver(otpValidationSchema) });
+
+  const onResetEmailFormInvalid: SubmitErrorHandler<OtpVerficationValue> = () => {
+    console.log(errors);
+    //TODO:: handle error
+  };
+
+  const onResetEmailFormValid: SubmitHandler<OtpVerficationValue> = () => {
+    console.log('success');
+  };
+
   return (
     <BaseAuthScreen>
       <View style={tw`flex-1 justify-between`} testID="ResetPasswordEmailVerificationScreenContainerTestID">
@@ -25,11 +44,23 @@ export function ResetPasswordEmailVerificationScreen() {
               </Text>
             </View>
           </View>
-          <OTPInput
-            onChangeValue={value => {
-              console.log(value); //TODO::use these value when integrating APIs
-            }}
+          <Controller
+            control={control}
+            name="otp"
+            render={({ field: { value, onChange }, fieldState: { error, isTouched } }) => (
+              <OTPInput
+                value={value}
+                onChangeValue={onChange}
+                onSubmitEditing={handleSubmit(onResetEmailFormValid, onResetEmailFormInvalid)}
+                helperText={(isTouched || isSubmitted) && error?.message}
+                helperTextColor={Color.Error.SzMain}
+                error={(isTouched || isSubmitted) && error !== undefined}
+              />
+            )}
           />
+          <View style={tw`items-end mt-2`}>
+            <Link text="Resend the code" />
+          </View>
         </View>
         <View style={tw`items-center mb-5 mx-5`}>
           <View style={tw`mb-3`}>
@@ -40,7 +71,6 @@ export function ResetPasswordEmailVerificationScreen() {
               title={'Verify'}
             />
           </View>
-          <Link text={'Resend the code'} />
         </View>
       </View>
     </BaseAuthScreen>
