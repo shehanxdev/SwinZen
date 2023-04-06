@@ -36,9 +36,9 @@ export function RegisterEmailVerificationScreen({ route }) {
     console.log('success');
   };
 
-  const onResend = () => {
+  const onResend = async () => {
     try {
-      dispatch.userStore.resendOtp({ username: username });
+      await dispatch.userStore.resendOtp({ username: username });
       // TODO:: add proper success alert later
       Alert.alert('Success', 'Otp resent successfullly', [{ text: 'OK', onPress: () => console.log('OK Pressed') }]);
     } catch (error: any) {
