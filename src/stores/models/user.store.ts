@@ -5,6 +5,7 @@ import {
   ForgetPasswordRequestData,
   LoginRequestData,
   ResendOtpRequestData,
+  ResetPasswordData,
   SignupRequestData,
 } from '@sz/models';
 import { AuthService } from '@sz/services';
@@ -15,6 +16,7 @@ export interface UserState {
   isAuthenticated: boolean;
   accessToken: string | null;
   refreshToken: string | null;
+  passwordResetToken: string | null;
   //TODO::fill other user related state here
 }
 
@@ -22,6 +24,7 @@ const initialState: UserState = {
   isAuthenticated: false,
   accessToken: null,
   refreshToken: null,
+  passwordResetToken: null,
 };
 
 export const userStore = createModel<RootModel>()({
@@ -35,6 +38,9 @@ export const userStore = createModel<RootModel>()({
     },
     setRefreshToken(state: UserState, refreshToken: string | null) {
       return { ...state, refreshToken };
+    },
+    setPasswordResetToken(state: UserState, passwordResetToken: string | null) {
+      return { ...state, passwordResetToken };
     },
   },
   effects: dispatch => ({
@@ -53,13 +59,17 @@ export const userStore = createModel<RootModel>()({
      * api/v1/auth/resend-otp
      */
     async emailVerification(payload: EmailVerificationRequestData) {
-      await AuthService.emailVerification(payload);
+      const data = await AuthService.emailVerification(payload);
+      dispatch.userStore.setPasswordResetToken(data?.resetPasswordToken);
     },
     async resendOtp(payload: ResendOtpRequestData) {
       await AuthService.resendOtp(payload);
     },
     async forgetPassword(payload: ForgetPasswordRequestData) {
       await AuthService.forgetPassword(payload);
+    },
+    async resetPassword(payload: ResetPasswordData) {
+      await AuthService.resetPassword(payload);
     },
   }),
 });

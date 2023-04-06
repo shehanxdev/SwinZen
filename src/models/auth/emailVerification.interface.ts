@@ -16,4 +16,6 @@ export interface EmailVerificationRequestData {
   otp: string;
 }
 
-export interface EmailVerificationResponse {}
+export interface EmailVerificationResponse {
+  resetPasswordToken?: string;
+}

@@ -56,7 +56,7 @@ export function ResetPasswordEmailVerificationScreen({ route }) {
     };
     try {
       await dispatch.userStore.emailVerification(otpData);
-      NavigationService.navigate(Route.ResetPassword);
+      NavigationService.navigate(Route.ResetPassword, { email: email });
     } catch (error: any) {
       //TODO:: handle error
       console.log('error', error);

@@ -5,19 +5,26 @@ import { View } from 'react-native';
 
 import { AccountLockIcon, Button, PasswordField, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, TextVariant } from '@sz/constants';
+import { Color, Route, TextVariant } from '@sz/constants';
 import { ResetPasswordFormValues } from '@sz/models';
+import { NavigationService } from '@sz/services';
+import { useDispatch, useSelector } from '@sz/stores';
 import { resetPasswordValidationSchema } from '@sz/utils';
 
 import { BaseAuthScreen } from '../components/BaseAuthScreen';
 
-export function ResetPasswordScreen() {
+export function ResetPasswordScreen({ route }) {
   const {
     control,
     handleSubmit,
     setFocus,
     formState: { isSubmitted, errors },
   } = useForm<ResetPasswordFormValues>({ mode: 'onChange', resolver: yupResolver(resetPasswordValidationSchema) });
+  const email = route.params.params.email;
+
+  const passwordResetToken = useSelector(state => state.userStore.passwordResetToken);
+
+  const dispatch = useDispatch();
 
   const onResetPasswordFormInvalid: SubmitErrorHandler<ResetPasswordFormValues> = () => {
     console.log(errors);
@@ -25,9 +32,13 @@ export function ResetPasswordScreen() {
   };
 
   const onResetPasswordFormValid: SubmitHandler<ResetPasswordFormValues> = async formInput => {
-    // TODO: API Integration
     try {
-      console.log('formInput', formInput);
+      await dispatch.userStore.resetPassword({
+        email: email,
+        password: formInput.password,
+        headers: { 'x-auth': passwordResetToken },
+      });
+      NavigationService.navigate(Route.Login);
     } catch (error: any) {
       console.log('error', error);
     }
