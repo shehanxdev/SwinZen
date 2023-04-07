@@ -39,7 +39,7 @@ export const userStore = createModel<RootModel>()({
     setRefreshToken(state: UserState, refreshToken: string | null) {
       return { ...state, refreshToken };
     },
-    setPasswordResetToken(state: UserState, passwordResetToken: string | null) {
+    setPasswordResetToken(state: UserState, passwordResetToken: string) {
       return { ...state, passwordResetToken };
     },
     clearPasswordResetToken(state: UserState) {
