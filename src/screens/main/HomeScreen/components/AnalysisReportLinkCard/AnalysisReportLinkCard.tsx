@@ -9,7 +9,7 @@ import { Color, TextAlignment, TextVariant } from '@sz/constants';
 export function AnalysisReportLinkCard() {
   return (
     <View
-      style={tw`border-[0.5px] border-[${Color.Neutral.Sz500}] rounded-lg flex-row justify-between px-5 items-center py-4`}>
+      style={tw`border-[0.5px] h-[87px] border-[${Color.Neutral.Sz500}] rounded-lg flex-row justify-between px-5 items-center py-4`}>
       <BlurView
         blurType="dark"
         blurAmount={10}
@@ -18,13 +18,15 @@ export function AnalysisReportLinkCard() {
       />
       <View style={tw`pr-6`}>
         <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Left}>
-          Learn more about your progress. View your{' '}
+          Learn more about your progress. View your{''}
           <Text variant={TextVariant.Links} underline color={Color.Primary.Sz400}>
             Instant analysis report
           </Text>
         </Text>
       </View>
-      <RightArrowIcon />
+      <View style={tw`pr-2`}>
+        <RightArrowIcon />
+      </View>
     </View>
   );
 }
