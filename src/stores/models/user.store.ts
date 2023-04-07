@@ -42,6 +42,9 @@ export const userStore = createModel<RootModel>()({
     setPasswordResetToken(state: UserState, passwordResetToken: string | null) {
       return { ...state, passwordResetToken };
     },
+    clearPasswordResetToken(state: UserState) {
+      return { ...state, passwordResetToken: null };
+    },
   },
   effects: dispatch => ({
     async loginUserWithCredentials(payload: LoginUserData) {
@@ -68,8 +71,9 @@ export const userStore = createModel<RootModel>()({
     async forgetPassword(payload: ForgetPasswordData) {
       await AuthService.forgetPassword(payload);
     },
-    async resetPassword(payload: ResetPasswordData) {
-      await AuthService.resetPassword(payload);
+    async resetPassword(payload: ResetPasswordData, state) {
+      const { passwordResetToken } = state.userStore;
+      await AuthService.resetPassword(payload, { 'x-auth': passwordResetToken });
     },
   }),
 });

@@ -107,8 +107,8 @@ export class AuthService {
     }
   }
 
-  static async resetPassword(data: ResetPasswordData) {
-    const { email, password, headers } = data;
+  static async resetPassword(data: ResetPasswordData, headers: {}) {
+    const { email, password } = data;
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     const payload: ResetPasswordRequestData = {

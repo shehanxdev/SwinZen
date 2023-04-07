@@ -8,7 +8,7 @@ import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { ResetPasswordFormValues } from '@sz/models';
 import { NavigationService } from '@sz/services';
-import { useDispatch, useSelector } from '@sz/stores';
+import { useDispatch } from '@sz/stores';
 import { resetPasswordValidationSchema } from '@sz/utils';
 
 import { BaseAuthScreen } from '../components/BaseAuthScreen';
@@ -22,8 +22,6 @@ export function ResetPasswordScreen({ route }) {
   } = useForm<ResetPasswordFormValues>({ mode: 'onChange', resolver: yupResolver(resetPasswordValidationSchema) });
   const email = route.params.params.email;
 
-  const passwordResetToken = useSelector(state => state.userStore.passwordResetToken);
-
   const dispatch = useDispatch();
 
   const onResetPasswordFormInvalid: SubmitErrorHandler<ResetPasswordFormValues> = () => {
@@ -36,12 +34,17 @@ export function ResetPasswordScreen({ route }) {
       await dispatch.userStore.resetPassword({
         email: email,
         password: formInput.password,
-        headers: { 'x-auth': passwordResetToken },
       });
 
       //TODO::replace with proper alert
       Alert.alert('Success', 'Password reset successfullly', [
-        { text: 'OK', onPress: () => NavigationService.navigate(Route.Login) },
+        {
+          text: 'OK',
+          onPress: () => {
+            dispatch.userStore.clearPasswordResetToken();
+            NavigationService.navigate(Route.Login);
+          },
+        },
       ]);
     } catch (error: any) {
       //TODO::handle errors

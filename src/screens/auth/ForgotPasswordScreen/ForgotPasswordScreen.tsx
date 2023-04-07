@@ -32,7 +32,7 @@ export function ForgotPasswordScreen() {
   const onForgotPasswordFormValid: SubmitHandler<ForgotPasswordFormValues> = async formInput => {
     try {
       await dispatch.userStore.forgetPassword(formInput);
-      NavigationService.navigate(Route.ResetPasswordEmailVerification, { email: formInput.email });
+      NavigationService.navigate(Route.ResetPasswordEmailVerification, { email: formInput.email }); //TODO::introduce type safety to the params
     } catch (error: any) {
       console.log('error', error);
     }

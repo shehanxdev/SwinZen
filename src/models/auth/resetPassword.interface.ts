@@ -11,7 +11,6 @@ export interface ResetPasswordRequestData {
 export interface ResetPasswordData {
   email: string;
   password: string;
-  headers: {};
 }
 
 export interface ResetPasswordResponse {}
