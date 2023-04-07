@@ -1,13 +1,17 @@
 import {
   ApiErrorResponse,
   ApiResponse,
-  ErrorResponse,
+  EmailVerificationData,
+  EmailVerificationResponse,
+  ForgetPasswordData,
+  ForgetPasswordResponse,
   LoginResponse,
   LoginUserData,
-  RegisterMailVerificationData,
-  RegisterMailVerificationResponse,
   ResendOtpData,
   ResendOtpResponse,
+  ResetPasswordData,
+  ResetPasswordRequestData,
+  ResetPasswordResponse,
   SignupResponse,
   SignupUserData,
 } from '@sz/models';
@@ -19,10 +23,10 @@ export class AuthService {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     try {
-      const response = await httpServiceInstance.postAnonymous<
-        ApiResponse<LoginResponse>,
-        ApiErrorResponse<ErrorResponse>
-      >('/auth/sign-in', data);
+      const response = await httpServiceInstance.postAnonymous<ApiResponse<LoginResponse>, ApiErrorResponse>(
+        '/auth/sign-in',
+        data,
+      );
 
       if (!response?.data) {
         throw new APIError('UNKNOWN_ERROR');
@@ -39,10 +43,10 @@ export class AuthService {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     try {
-      const response = await httpServiceInstance.postAnonymous<
-        ApiResponse<SignupResponse>,
-        ApiErrorResponse<ErrorResponse>
-      >('/auth/sign-up', data);
+      const response = await httpServiceInstance.postAnonymous<ApiResponse<SignupResponse>, ApiErrorResponse>(
+        '/auth/sign-up',
+        data,
+      );
 
       if (!response?.data) {
         throw new APIError('UNKNOWN_ERROR');
@@ -55,13 +59,13 @@ export class AuthService {
     }
   }
 
-  static async registerMailVerification(data: RegisterMailVerificationData) {
+  static async emailVerification(data: EmailVerificationData) {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     try {
       const response = await httpServiceInstance.postAnonymous<
-        ApiResponse<RegisterMailVerificationResponse>,
-        ApiErrorResponse<ErrorResponse>
+        ApiResponse<EmailVerificationResponse>,
+        ApiErrorResponse
       >('/auth/verify-otp', data);
 
       return response.data;
@@ -75,10 +79,48 @@ export class AuthService {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     try {
-      const response = await httpServiceInstance.postAnonymous<
-        ApiResponse<ResendOtpResponse>,
-        ApiErrorResponse<ErrorResponse>
-      >('/auth/resend-otp', data);
+      const response = await httpServiceInstance.postAnonymous<ApiResponse<ResendOtpResponse>, ApiErrorResponse>(
+        '/auth/resend-otp',
+        data,
+      );
+
+      return response.data;
+    } catch (error) {
+      console.error('Error response', error, JSON.stringify(error));
+      throw new APIError('CLIENT_ERROR');
+    }
+  }
+
+  static async forgetPassword(data: ForgetPasswordData) {
+    const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
+
+    try {
+      const response = await httpServiceInstance.postAnonymous<ApiResponse<ForgetPasswordResponse>, ApiErrorResponse>(
+        '/auth/forgot-password',
+        data,
+      );
+
+      return response.data;
+    } catch (error) {
+      console.error('Error response', error, JSON.stringify(error));
+      throw new APIError('CLIENT_ERROR');
+    }
+  }
+
+  static async resetPassword(data: ResetPasswordData, headers: {}) {
+    const { email, password } = data;
+    const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
+
+    const payload: ResetPasswordRequestData = {
+      email: email,
+      password: password,
+    };
+
+    try {
+      const response = await httpServiceInstance.postAnonymousWithCustomHeaders<
+        ApiResponse<ResetPasswordResponse>,
+        ApiErrorResponse
+      >('/auth/reset-password', { ...headers }, payload);
 
       return response.data;
     } catch (error) {
