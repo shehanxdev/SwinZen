@@ -1,9 +1,13 @@
 import { forgotPasswordErrorMessages, forgotPasswordValidationSchema } from '../forgotPassword.validations';
 
 describe('forgotPasswordValidationSchema', () => {
+  it('should pass the test for valid email input', () => {
+    const validInput = 'valid@gmail.com';
+    expect(forgotPasswordValidationSchema.validateAt('username', { username: validInput }));
+  });
   it('should throw an error if a number is input', async () => {
-    const input = { username: 265 };
-    expect(forgotPasswordValidationSchema.validate(input)).rejects.toThrow();
+    const invalidInput = { username: 265 };
+    expect(forgotPasswordValidationSchema.validate(invalidInput)).rejects.toThrow();
   });
   it('should throw an error when email is empty', async () => {
     const input = { username: '' };
