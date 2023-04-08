@@ -1,6 +1,6 @@
 import { forgotPasswordErrorMessages, forgotPasswordValidationSchema } from '../forgotPassword.validations';
 
-describe('forgotPasswordValidationSchema', () => {
+describe('forgot Password validation schema', () => {
   it('should pass the test for valid email input', () => {
     const validInput = 'valid@gmail.com';
     expect(forgotPasswordValidationSchema.validateAt('username', { username: validInput }));
