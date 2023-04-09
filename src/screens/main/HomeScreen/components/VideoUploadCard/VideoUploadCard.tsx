@@ -2,19 +2,19 @@ import { BlurView } from '@react-native-community/blur';
 import React, { useMemo, useState } from 'react';
 import { ActivityIndicator, ImageBackground, View } from 'react-native';
 
-import { ErrorIcon, PlayButtonIcon, Text, UploadIcon } from '@sz/components';
+import { ErrorIcon, Link, PlayButtonIcon, Text, UploadIcon } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextVariant } from '@sz/constants';
 
-import { CardBottomText } from './CardBottomText.component';
+import { VideoUploadCardFooter } from './VideoUploadCardFooter';
 
 export function VideoUploadCard() {
-  //TODO:: to be removed once the upload logic implemented
+  //TODO:: Removed this once the upload logi gets implemented
   const [uploaded, setUploaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isError] = useState(false);
 
-  //TODO:: to be removed once the upload logic implemented
+  //TODO:: Removed this once the upload logi gets implemented
   const onUpload = () => {
     setIsLoading(true);
     setTimeout(() => {
@@ -53,27 +53,29 @@ export function VideoUploadCard() {
   }, [isLoading, isError]);
 
   return (
-    <View style={tw`h-[218px] rounded-2.5 overflow-hidden`}>
+    <View style={tw`h-54.5 rounded-2.5 overflow-hidden`}>
       {!uploaded ? (
         <View
           style={tw`flex-1 rounded-2.5 overflow-hidden  ${
-            !isError ? `border-[1px] border-dashed border-[${Color.Neutral.Sz200}]` : 'border-0'
+            !isError ? `border border-dashed border-[${Color.Neutral.Sz200}]` : 'border-0'
           }`}>
           <BlurView
-            blurType="dark"
-            blurAmount={10}
+            blurType="light"
+            blurAmount={1} //TODO::extract these magic values to a common file
             reducedTransparencyFallbackColor={Color.Neutral.Sz900}
             style={tw`absolute inset-x-0 inset-y-0 rounded-2.5`}
           />
-          <View style={tw`justify-center items-center flex-1`}>
+          <View style={tw`items-center mt-[90.67px] flex-1`}>
             {renderIcon}
-            <View style={tw`mt-3`}>
-              <Text variant={TextVariant.Body1Regular}>{renderTitle}</Text>
-              <Text onPress={onUpload} variant={TextVariant.Links} color={Color.Primary.Sz400} underline>
-                {renderLinkText}
-              </Text>
+            <View style={tw`mt-[16.67px]`}>
+              <Text variant={TextVariant.Body2Regular}>{renderTitle}</Text>
+              <View style={tw`mt-1`}>
+                <Link text={renderLinkText} onPress={onUpload} underline />
+              </View>
             </View>
-            {isError && <CardBottomText isError date="04 JUN 2022 • Down the line" results="All failed videos" />}
+            {isError && (
+              <VideoUploadCardFooter isError date="04 JUN 2022 • Down the line" results="All failed videos" />
+            )}
           </View>
         </View>
       ) : (
@@ -82,9 +84,9 @@ export function VideoUploadCard() {
             source={{ uri: 'https://i.ibb.co/XFvHx8J/Rectangle-132.png' }}
             resizeMode="cover"
             style={tw`flex-1 items-center justify-center`}>
-            <PlayButtonIcon width={45} height={45} />
+            <PlayButtonIcon />
           </ImageBackground>
-          <CardBottomText date="04 JUN 2022 • Faceview" results="10 • Pass" />
+          <VideoUploadCardFooter date="04 JUN 2022 • Faceview" results="10 • Pass" />
         </View>
       )}
     </View>
