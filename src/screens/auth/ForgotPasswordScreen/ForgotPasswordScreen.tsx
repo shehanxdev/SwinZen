@@ -8,6 +8,7 @@ import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { ForgotPasswordFormValues } from '@sz/models';
 import { NavigationService } from '@sz/services';
+import { useDispatch, useSelector } from '@sz/stores';
 import { forgotPasswordValidationSchema } from '@sz/utils';
 
 import { BaseAuthScreen } from '../components/BaseAuthScreen';
@@ -19,16 +20,19 @@ export function ForgotPasswordScreen() {
     formState: { isSubmitted, errors },
   } = useForm<ForgotPasswordFormValues>({ mode: 'onChange', resolver: yupResolver(forgotPasswordValidationSchema) });
 
+  const dispatch = useDispatch();
+
+  const loading = useSelector(state => state.loading.effects.userStore.forgetPassword);
+
   const onForgotPasswordFormInvalid: SubmitErrorHandler<ForgotPasswordFormValues> = () => {
     console.log(errors);
     //TODO:: handle error
   };
 
   const onForgotPasswordFormValid: SubmitHandler<ForgotPasswordFormValues> = async formInput => {
-    // TODO: API Integration
-    NavigationService.navigate(Route.ResetPasswordEmailVerification);
     try {
-      console.log('formInput', formInput);
+      await dispatch.userStore.forgetPassword(formInput);
+      NavigationService.navigate(Route.ResetPasswordEmailVerification, { email: formInput.email }); //TODO::introduce type safety to the params
     } catch (error: any) {
       console.log('error', error);
     }
@@ -49,7 +53,7 @@ export function ForgotPasswordScreen() {
           </View>
           <Controller
             control={control}
-            name="username"
+            name="email"
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <TextField
                 ref={ref}
@@ -71,6 +75,7 @@ export function ForgotPasswordScreen() {
         <View style={tw`items-center mb-5 mx-5`}>
           <View style={tw`mb-3`}>
             <Button
+              loading={loading}
               onPress={handleSubmit(onForgotPasswordFormValid, onForgotPasswordFormInvalid)}
               title="Reset password"
             />

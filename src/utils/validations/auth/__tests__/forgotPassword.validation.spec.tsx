@@ -3,14 +3,14 @@ import { forgotPasswordErrorMessages, forgotPasswordValidationSchema } from '../
 describe('forgot Password validation schema', () => {
   it('should pass the test for valid email input', () => {
     const validInput = 'valid@gmail.com';
-    expect(forgotPasswordValidationSchema.validateAt('username', { username: validInput }));
+    expect(forgotPasswordValidationSchema.validateAt('email', { email: validInput }));
   });
   it('should throw an error if a number is input', async () => {
-    const invalidInput = { username: 265 };
+    const invalidInput = { email: 265 };
     expect(forgotPasswordValidationSchema.validate(invalidInput)).rejects.toThrow();
   });
   it('should throw an error when email is empty', async () => {
-    const input = { username: '' };
+    const input = { email: '' };
     let validationResult;
     try {
       await forgotPasswordValidationSchema.validate(input);
@@ -36,7 +36,7 @@ describe('forgot Password validation schema', () => {
     let validationResult;
     for (const email of invalidEmails) {
       try {
-        await forgotPasswordValidationSchema.validateAt('username', { username: email });
+        await forgotPasswordValidationSchema.validateAt('email', { email: email });
       } catch (error) {
         validationResult = error;
       }
@@ -45,10 +45,10 @@ describe('forgot Password validation schema', () => {
     }
   });
   it('should throw an error when email with more than 50 characters is input', async () => {
-    const input = { username: `${'a'.repeat(56)}@gmail.com` };
+    const input = { email: `${'a'.repeat(56)}@gmail.com` };
     let validationResult;
     try {
-      await forgotPasswordValidationSchema.validateAt('username', input);
+      await forgotPasswordValidationSchema.validateAt('email', input);
     } catch (error) {
       validationResult = error;
     }

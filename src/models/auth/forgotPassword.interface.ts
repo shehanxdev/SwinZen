@@ -1,3 +1,9 @@
 export interface ForgotPasswordFormValues {
-  username: string;
+  email: string;
 }
+
+export interface ForgetPasswordData {
+  email: string;
+}
+
+export interface ForgetPasswordResponse {}

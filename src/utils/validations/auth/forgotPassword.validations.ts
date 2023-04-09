@@ -8,7 +8,7 @@ export const forgotPasswordErrorMessages = {
 
 export const forgotPasswordValidationSchema = yup
   .object({
-    username: yup
+    email: yup
       .string()
       .required(forgotPasswordErrorMessages['email:required'])
       .email(forgotPasswordErrorMessages['email:invalid'])

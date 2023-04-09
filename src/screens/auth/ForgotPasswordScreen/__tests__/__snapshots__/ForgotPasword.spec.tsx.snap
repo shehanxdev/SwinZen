@@ -1,279 +1,428 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctly 1`] = `
-<BVLinearGradient
-  colors={
-    [
-      4279320343,
-      4278650887,
-    ]
-  }
-  endPoint={
-    {
-      "x": 0.5,
-      "y": 1,
-    }
-  }
-  locations={null}
-  startPoint={
-    {
-      "x": 0.5,
-      "y": 0,
-    }
-  }
+<View
+  collapsable={false}
+  pointerEvents="box-none"
   style={
     {
-      "height": "100%",
+      "flex": 1,
     }
   }
 >
-  <RCTSafeAreaView
+  <BVLinearGradient
+    colors={
+      [
+        4279320343,
+        4278650887,
+      ]
+    }
+    endPoint={
+      {
+        "x": 0.5,
+        "y": 1,
+      }
+    }
+    locations={null}
+    startPoint={
+      {
+        "x": 0.5,
+        "y": 0,
+      }
+    }
     style={
       {
-        "flexBasis": "0%",
-        "flexGrow": 1,
-        "flexShrink": 1,
+        "height": "100%",
       }
     }
   >
-    <View
-      onLayout={[Function]}
+    <RCTSafeAreaView
       style={
-        [
-          {
-            "flexBasis": "0%",
-            "flexGrow": 1,
-            "flexShrink": 1,
-          },
-          {
-            "paddingBottom": 0,
-          },
-        ]
+        {
+          "flexBasis": "0%",
+          "flexGrow": 1,
+          "flexShrink": 1,
+        }
       }
     >
-      <RCTScrollView
-        contentContainerStyle={
-          {
-            "flexGrow": 1,
-          }
+      <View
+        onLayout={[Function]}
+        style={
+          [
+            {
+              "flexBasis": "0%",
+              "flexGrow": 1,
+              "flexShrink": 1,
+            },
+            {
+              "paddingBottom": 0,
+            },
+          ]
         }
-        keyboardShouldPersistTaps="handled"
       >
-        <View>
-          <View
-            style={
-              {
-                "flexBasis": "0%",
-                "flexGrow": 1,
-                "flexShrink": 1,
-                "justifyContent": "space-between",
-              }
+        <RCTScrollView
+          contentContainerStyle={
+            {
+              "flexGrow": 1,
             }
-            testID="ForgotPasswordScreenTestID"
-          >
+          }
+          keyboardShouldPersistTaps="handled"
+        >
+          <View>
             <View
               style={
                 {
-                  "alignContent": "center",
                   "flexBasis": "0%",
                   "flexGrow": 1,
                   "flexShrink": 1,
-                  "justifyContent": "center",
-                  "marginLeft": 20,
-                  "marginRight": 20,
+                  "justifyContent": "space-between",
                 }
               }
+              testID="ForgotPasswordScreenTestID"
             >
               <View
                 style={
                   {
-                    "alignItems": "center",
+                    "alignContent": "center",
+                    "flexBasis": "0%",
+                    "flexGrow": 1,
+                    "flexShrink": 1,
+                    "justifyContent": "center",
+                    "marginLeft": 20,
+                    "marginRight": 20,
                   }
                 }
               >
                 <View
                   style={
                     {
-                      "marginBottom": 20,
-                      "marginTop": 12,
-                    }
-                  }
-                >
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#F8F9FA",
-                          "lineHeight": 28,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-SemiBold",
-                          "fontSize": 21,
-                          "fontWeight": "600",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    Forgot password
-                  </Text>
-                </View>
-                <View
-                  style={
-                    {
-                      "marginBottom": 52,
-                    }
-                  }
-                >
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#F8F9FA",
-                          "lineHeight": 24,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-Regular",
-                          "fontSize": 16,
-                          "fontWeight": "normal",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    Enter the email associated with your account to receive reset instructions
-                  </Text>
-                </View>
-              </View>
-              <View>
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#E9ECEF",
-                        "lineHeight": 24,
-                      },
-                      {
-                        "fontFamily": "SourceSansPro-SemiBold",
-                        "fontSize": 16,
-                        "fontWeight": "600",
-                        "textAlign": "auto",
-                      },
-                    ]
-                  }
-                >
-                  Your Email
-                </Text>
-                <View
-                  style={
-                    {
-                      "marginBottom": 0,
-                      "marginLeft": 0,
-                      "marginRight": 0,
-                      "marginTop": 0,
-                      "paddingBottom": 0,
-                      "paddingLeft": 0,
-                      "paddingRight": 0,
-                      "paddingTop": 0,
+                      "alignItems": "center",
                     }
                   }
                 >
                   <View
-                    pointerEvents="none"
                     style={
-                      [
-                        {
-                          "bottom": 0,
-                          "left": 0,
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 6,
-                        },
-                        {
-                          "backgroundColor": "#283E36",
-                          "borderColor": "#ffffff00",
-                          "borderRadius": 10,
-                          "borderWidth": 1,
-                        },
-                      ]
+                      {
+                        "marginBottom": 20,
+                        "marginTop": 12,
+                      }
                     }
-                    testID="text-input-outline"
-                  />
-                  <View>
-                    <View
+                  >
+                    <Text
                       style={
                         [
                           {
-                            "paddingBottom": 0,
+                            "color": "#F8F9FA",
+                            "lineHeight": 28,
                           },
                           {
-                            "minHeight": 50,
-                            "paddingTop": 8,
+                            "fontFamily": "SourceSansPro-SemiBold",
+                            "fontSize": 21,
+                            "fontWeight": "600",
+                            "textAlign": "center",
                           },
                         ]
                       }
                     >
-                      <TextInput
-                        autoCapitalize="none"
-                        editable={true}
-                        maxFontSizeMultiplier={1.5}
-                        maxLength={50}
-                        multiline={false}
-                        onBlur={[Function]}
-                        onChangeText={[Function]}
-                        onFocus={[Function]}
-                        placeholderTextColor="#ADB5BD"
-                        returnKeyType="done"
-                        selectionColor="#6C757D"
-                        style={
-                          [
-                            {
-                              "flexGrow": 1,
-                              "margin": 0,
-                              "paddingHorizontal": 14,
-                              "zIndex": 1,
-                            },
-                            {
-                              "height": 50,
-                            },
-                            {
-                              "paddingBottom": 17,
-                              "paddingTop": 17,
-                            },
-                            {
-                              "color": "#ADB5BD",
-                              "fontFamily": "System",
-                              "fontSize": 16,
-                              "fontVariant": undefined,
-                              "fontWeight": undefined,
-                              "textAlign": "left",
-                              "textAlignVertical": "center",
-                            },
-                            false,
-                            {
-                              "marginLeft": 44,
-                              "paddingLeft": 0,
-                            },
-                          ]
-                        }
-                        underlineColorAndroid="transparent"
-                      />
-                    </View>
-                    <View
+                      Forgot password
+                    </Text>
+                  </View>
+                  <View
+                    style={
+                      {
+                        "marginBottom": 52,
+                      }
+                    }
+                  >
+                    <Text
                       style={
                         [
                           {
-                            "alignItems": "center",
-                            "height": 24,
-                            "justifyContent": "center",
-                            "position": "absolute",
-                            "width": 24,
+                            "color": "#F8F9FA",
+                            "lineHeight": 24,
                           },
                           {
-                            "left": 12,
-                            "top": 16,
+                            "fontFamily": "SourceSansPro-Regular",
+                            "fontSize": 16,
+                            "fontWeight": "normal",
+                            "textAlign": "center",
                           },
                         ]
+                      }
+                    >
+                      Enter the email associated with your account to receive reset instructions
+                    </Text>
+                  </View>
+                </View>
+                <View>
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#E9ECEF",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-SemiBold",
+                          "fontSize": 16,
+                          "fontWeight": "600",
+                          "textAlign": "auto",
+                        },
+                      ]
+                    }
+                  >
+                    Your Email
+                  </Text>
+                  <View
+                    style={
+                      {
+                        "marginBottom": 0,
+                        "marginLeft": 0,
+                        "marginRight": 0,
+                        "marginTop": 0,
+                        "paddingBottom": 0,
+                        "paddingLeft": 0,
+                        "paddingRight": 0,
+                        "paddingTop": 0,
+                      }
+                    }
+                  >
+                    <View
+                      pointerEvents="none"
+                      style={
+                        [
+                          {
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 6,
+                          },
+                          {
+                            "backgroundColor": "#283E36",
+                            "borderColor": "#ffffff00",
+                            "borderRadius": 10,
+                            "borderWidth": 1,
+                          },
+                        ]
+                      }
+                      testID="text-input-outline"
+                    />
+                    <View>
+                      <View
+                        style={
+                          [
+                            {
+                              "paddingBottom": 0,
+                            },
+                            {
+                              "minHeight": 50,
+                              "paddingTop": 8,
+                            },
+                          ]
+                        }
+                      >
+                        <TextInput
+                          autoCapitalize="none"
+                          editable={true}
+                          maxFontSizeMultiplier={1.5}
+                          maxLength={50}
+                          multiline={false}
+                          onBlur={[Function]}
+                          onChangeText={[Function]}
+                          onFocus={[Function]}
+                          placeholderTextColor="#ADB5BD"
+                          returnKeyType="done"
+                          selectionColor="#6C757D"
+                          style={
+                            [
+                              {
+                                "flexGrow": 1,
+                                "margin": 0,
+                                "paddingHorizontal": 14,
+                                "zIndex": 1,
+                              },
+                              {
+                                "height": 50,
+                              },
+                              {
+                                "paddingBottom": 17,
+                                "paddingTop": 17,
+                              },
+                              {
+                                "color": "#ADB5BD",
+                                "fontFamily": "SourceSansPro-Regular",
+                                "fontSize": 16,
+                                "fontVariant": undefined,
+                                "fontWeight": undefined,
+                                "lineHeight": 18,
+                                "paddingBottom": 0,
+                                "paddingLeft": 0,
+                                "paddingRight": 0,
+                                "paddingTop": 0,
+                                "textAlign": "left",
+                                "textAlignVertical": "center",
+                              },
+                              false,
+                              {
+                                "marginLeft": 44,
+                                "paddingLeft": 0,
+                              },
+                            ]
+                          }
+                          underlineColorAndroid="transparent"
+                        />
+                      </View>
+                      <View
+                        style={
+                          [
+                            {
+                              "alignItems": "center",
+                              "height": 24,
+                              "justifyContent": "center",
+                              "position": "absolute",
+                              "width": 24,
+                            },
+                            {
+                              "left": 12,
+                              "top": 16,
+                            },
+                          ]
+                        }
+                      >
+                        <View
+                          accessibilityRole="button"
+                          accessibilityState={
+                            {
+                              "disabled": false,
+                            }
+                          }
+                          accessibilityValue={
+                            {
+                              "max": undefined,
+                              "min": undefined,
+                              "now": undefined,
+                              "text": undefined,
+                            }
+                          }
+                          accessible={true}
+                          focusable={true}
+                          hitSlop={
+                            {
+                              "bottom": 6,
+                              "left": 6,
+                              "right": 6,
+                              "top": 6,
+                            }
+                          }
+                          onClick={[Function]}
+                          onResponderGrant={[Function]}
+                          onResponderMove={[Function]}
+                          onResponderRelease={[Function]}
+                          onResponderTerminate={[Function]}
+                          onResponderTerminationRequest={[Function]}
+                          onStartShouldSetResponder={[Function]}
+                          style={
+                            [
+                              {
+                                "overflow": "hidden",
+                              },
+                              [
+                                {
+                                  "alignItems": "center",
+                                  "justifyContent": "center",
+                                  "margin": 6,
+                                  "overflow": "hidden",
+                                },
+                                {
+                                  "borderRadius": 18,
+                                  "height": 36,
+                                  "width": 36,
+                                },
+                                undefined,
+                                {
+                                  "marginTop": "50%",
+                                },
+                              ],
+                            ]
+                          }
+                        >
+                          <View>
+                            <SvgMock
+                              fill="#ADB5BD"
+                              height={20}
+                              width={20}
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#E35F5F",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 15,
+                          "fontWeight": "600",
+                          "textAlign": "auto",
+                        },
+                      ]
+                    }
+                  />
+                </View>
+              </View>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "marginBottom": 20,
+                    "marginLeft": 20,
+                    "marginRight": 20,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "marginBottom": 12,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      {
+                        "flexDirection": "row",
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        {
+                          "backgroundColor": "#69AA67",
+                          "borderColor": "#ffffff00",
+                          "borderRadius": 10,
+                          "borderStyle": "solid",
+                          "borderWidth": 1,
+                          "elevation": 0,
+                          "justifyContent": "center",
+                          "minWidth": "auto",
+                          "shadowColor": "#000",
+                          "shadowOffset": {
+                            "height": 0,
+                            "width": 0,
+                          },
+                          "shadowOpacity": 0,
+                          "shadowRadius": 0,
+                          "width": "100%",
+                        }
                       }
                     >
                       <View
@@ -293,14 +442,6 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                         }
                         accessible={true}
                         focusable={true}
-                        hitSlop={
-                          {
-                            "bottom": 6,
-                            "left": 6,
-                            "right": 6,
-                            "top": 6,
-                          }
-                        }
                         onClick={[Function]}
                         onResponderGrant={[Function]}
                         onResponderMove={[Function]}
@@ -313,239 +454,113 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                             {
                               "overflow": "hidden",
                             },
-                            [
-                              {
-                                "alignItems": "center",
-                                "justifyContent": "center",
-                                "margin": 6,
-                                "overflow": "hidden",
-                              },
-                              {
-                                "borderRadius": 18,
-                                "height": 36,
-                                "width": 36,
-                              },
-                              undefined,
-                              {
-                                "marginTop": "50%",
-                              },
-                            ],
+                            {
+                              "borderRadius": 10,
+                            },
                           ]
                         }
                       >
-                        <View>
-                          <SvgMock
-                            fill="#ADB5BD"
-                            height={20}
-                            width={20}
-                          />
+                        <View
+                          style={
+                            [
+                              {
+                                "alignItems": "center",
+                                "flexDirection": "row",
+                                "justifyContent": "center",
+                              },
+                              {
+                                "height": 48,
+                              },
+                            ]
+                          }
+                        >
+                          <Text
+                            numberOfLines={1}
+                            selectable={false}
+                            style={
+                              [
+                                {
+                                  "color": "#000000",
+                                  "fontFamily": "SourceSansPro-Regular",
+                                  "fontWeight": "normal",
+                                },
+                                {
+                                  "textAlign": "left",
+                                },
+                                [
+                                  {
+                                    "letterSpacing": 1,
+                                    "marginHorizontal": 16,
+                                    "marginVertical": 9,
+                                    "textAlign": "center",
+                                  },
+                                  {
+                                    "marginHorizontal": 8,
+                                  },
+                                  false,
+                                  {
+                                    "color": "#6200ee",
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontWeight": "normal",
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontWeight": "normal",
+                                  },
+                                  undefined,
+                                ],
+                              ]
+                            }
+                          >
+                            <Text
+                              style={
+                                [
+                                  {
+                                    "color": "#F8F9FA",
+                                    "lineHeight": 24,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 16,
+                                    "fontWeight": "600",
+                                    "textAlign": "center",
+                                  },
+                                ]
+                              }
+                            >
+                              Reset password
+                            </Text>
+                          </Text>
                         </View>
                       </View>
                     </View>
                   </View>
                 </View>
                 <Text
+                  onPress={[Function]}
                   style={
                     [
                       {
-                        "color": "#E35F5F",
-                        "lineHeight": 24,
+                        "color": "#69AA67",
+                        "lineHeight": 20,
                       },
                       {
                         "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 15,
-                        "fontWeight": "600",
-                        "textAlign": "auto",
+                        "fontSize": 16,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
                       },
                     ]
                   }
-                />
-              </View>
-            </View>
-            <View
-              style={
-                {
-                  "alignItems": "center",
-                  "marginBottom": 20,
-                  "marginLeft": 20,
-                  "marginRight": 20,
-                }
-              }
-            >
-              <View
-                style={
-                  {
-                    "marginBottom": 12,
-                  }
-                }
-              >
-                <View
-                  style={
-                    {
-                      "flexDirection": "row",
-                    }
-                  }
                 >
-                  <View
-                    collapsable={false}
-                    onTouchEnd={[Function]}
-                    onTouchStart={[Function]}
-                    style={
-                      {
-                        "backgroundColor": "#69AA67",
-                        "borderColor": "#ffffff00",
-                        "borderRadius": 10,
-                        "borderStyle": "solid",
-                        "borderWidth": 1,
-                        "elevation": 0,
-                        "justifyContent": "center",
-                        "minWidth": "auto",
-                        "shadowColor": "#000",
-                        "shadowOffset": {
-                          "height": 0,
-                          "width": 0,
-                        },
-                        "shadowOpacity": 0,
-                        "shadowRadius": 0,
-                        "width": "100%",
-                      }
-                    }
-                  >
-                    <View
-                      accessibilityRole="button"
-                      accessibilityState={
-                        {
-                          "disabled": false,
-                        }
-                      }
-                      accessibilityValue={
-                        {
-                          "max": undefined,
-                          "min": undefined,
-                          "now": undefined,
-                          "text": undefined,
-                        }
-                      }
-                      accessible={true}
-                      focusable={true}
-                      onClick={[Function]}
-                      onResponderGrant={[Function]}
-                      onResponderMove={[Function]}
-                      onResponderRelease={[Function]}
-                      onResponderTerminate={[Function]}
-                      onResponderTerminationRequest={[Function]}
-                      onStartShouldSetResponder={[Function]}
-                      style={
-                        [
-                          {
-                            "overflow": "hidden",
-                          },
-                          {
-                            "borderRadius": 10,
-                          },
-                        ]
-                      }
-                    >
-                      <View
-                        style={
-                          [
-                            {
-                              "alignItems": "center",
-                              "flexDirection": "row",
-                              "justifyContent": "center",
-                            },
-                            {
-                              "height": 48,
-                            },
-                          ]
-                        }
-                      >
-                        <Text
-                          numberOfLines={1}
-                          selectable={false}
-                          style={
-                            [
-                              {
-                                "color": "#000000",
-                                "fontFamily": "System",
-                                "fontWeight": "400",
-                              },
-                              {
-                                "textAlign": "left",
-                              },
-                              [
-                                {
-                                  "letterSpacing": 1,
-                                  "marginHorizontal": 16,
-                                  "marginVertical": 9,
-                                  "textAlign": "center",
-                                },
-                                {
-                                  "marginHorizontal": 8,
-                                },
-                                false,
-                                {
-                                  "color": "#6200ee",
-                                  "fontFamily": "System",
-                                  "fontWeight": "500",
-                                },
-                                {
-                                  "fontFamily": "System",
-                                  "fontWeight": "500",
-                                },
-                                undefined,
-                              ],
-                            ]
-                          }
-                        >
-                          <Text
-                            style={
-                              [
-                                {
-                                  "color": "#F8F9FA",
-                                  "lineHeight": 24,
-                                },
-                                {
-                                  "fontFamily": "SourceSansPro-SemiBold",
-                                  "fontSize": 16,
-                                  "fontWeight": "600",
-                                  "textAlign": "center",
-                                },
-                              ]
-                            }
-                          >
-                            Reset password
-                          </Text>
-                        </Text>
-                      </View>
-                    </View>
-                  </View>
-                </View>
+                  Back to login
+                </Text>
               </View>
-              <Text
-                onPress={[Function]}
-                style={
-                  [
-                    {
-                      "color": "#69AA67",
-                      "lineHeight": 20,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 16,
-                      "fontWeight": "bold",
-                      "textAlign": "center",
-                    },
-                  ]
-                }
-              >
-                Back to login
-              </Text>
             </View>
           </View>
-        </View>
-      </RCTScrollView>
-    </View>
-  </RCTSafeAreaView>
-</BVLinearGradient>
+        </RCTScrollView>
+      </View>
+    </RCTSafeAreaView>
+  </BVLinearGradient>
+</View>
 `;

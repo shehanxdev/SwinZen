@@ -118,7 +118,7 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
           },
           roundness: 10,
           fonts: {
-            regular: tw`text-[16px] font-normal`,
+            regular: tw`text-[16px] font-normal p-0 leading-[18px]`,
           },
         }}
         autoCapitalize={autoCapitalize}

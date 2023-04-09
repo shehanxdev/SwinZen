@@ -54,6 +54,7 @@ enum Tertiary {
   Sz100 = `#DAFEAC`, //NOTE::figma contain two different colors(#DAFEAC, #FBFFF7) with the border. #FBFFF7 neeeds to be removed since it does not consider within the colors
 }
 
+//TODO::refactor transparency color to  use with the other color pallettes
 enum Transparency {
   Sz100 = `#212529`,
   Sz80 = `#212529cc`,
