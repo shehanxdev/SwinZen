@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Reset Password Email Verification Screen should render correctly 1`] = `
+exports[`Register Email Verification Screen should render correctly 1`] = `
 <View
   collapsable={false}
   pointerEvents="box-none"
@@ -78,18 +78,14 @@ exports[`Reset Password Email Verification Screen should render correctly 1`] = 
                   "justifyContent": "space-between",
                 }
               }
-              testID="ResetPasswordEmailVerificationScreenContainerTestID"
+              testID="RegisterEmailVerificationScreenContainerTestID"
             >
               <View
                 style={
                   {
-                    "alignContent": "center",
-                    "flexBasis": "0%",
-                    "flexGrow": 1,
-                    "flexShrink": 1,
-                    "justifyContent": "center",
                     "marginLeft": 20,
                     "marginRight": 20,
+                    "marginTop": 80,
                   }
                 }
               >
@@ -100,10 +96,22 @@ exports[`Reset Password Email Verification Screen should render correctly 1`] = 
                     }
                   }
                 >
+                  <SvgMock
+                    height={55}
+                    width={108}
+                  />
+                </View>
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                    }
+                  }
+                >
                   <View
                     style={
                       {
-                        "marginBottom": 20,
+                        "marginBottom": 90,
                         "marginTop": 12,
                       }
                     }
@@ -130,7 +138,7 @@ exports[`Reset Password Email Verification Screen should render correctly 1`] = 
                   <View
                     style={
                       {
-                        "marginBottom": 52,
+                        "marginBottom": 24,
                       }
                     }
                   >
@@ -511,13 +519,14 @@ exports[`Reset Password Email Verification Screen should render correctly 1`] = 
                     "marginBottom": 20,
                     "marginLeft": 20,
                     "marginRight": 20,
+                    "marginTop": 60,
                   }
                 }
               >
                 <View
                   style={
                     {
-                      "marginBottom": 12,
+                      "marginBottom": 8,
                     }
                   }
                 >
@@ -664,6 +673,66 @@ exports[`Reset Password Email Verification Screen should render correctly 1`] = 
                     </View>
                   </View>
                 </View>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#F8F9FA",
+                        "lineHeight": 24,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "normal",
+                        "textAlign": "center",
+                      },
+                    ]
+                  }
+                >
+                  By continuing, you agree to our
+                   
+                  <Text
+                    onPress={[Function]}
+                    style={
+                      [
+                        {
+                          "color": "#69AA67",
+                          "lineHeight": 20,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "bold",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    Privacy Policy
+                  </Text>
+                   
+                  and our
+                   
+                  <Text
+                    onPress={[Function]}
+                    style={
+                      [
+                        {
+                          "color": "#69AA67",
+                          "lineHeight": 20,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "bold",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    Terms of Use
+                  </Text>
+                </Text>
               </View>
             </View>
           </View>

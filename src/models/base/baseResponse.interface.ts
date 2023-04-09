@@ -1,6 +1,5 @@
 /**
  * The common structure for all API responses.
- * TODO:::refactor only if this cannot be shared between the domains(Auth, etc....)
  */
 export interface BaseResponse {
   /**
@@ -21,7 +20,7 @@ export interface ApiResponse<T> extends BaseResponse {
   data: T;
 }
 
-export interface ApiErrorResponse<T> extends BaseResponse {
+export interface ApiErrorResponse<T = string> extends BaseResponse {
   /*
    * Error data specific to the request
    */

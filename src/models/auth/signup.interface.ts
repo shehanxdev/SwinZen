@@ -13,13 +13,6 @@ export interface SignupUserData {
   promoCode: string;
 }
 
-export interface SignupRequestData {
-  name: string;
-  username: string;
-  password: string;
-  promoCode: string;
-}
-
 export interface SignupResponse {
   user: User;
 }
@@ -39,9 +32,4 @@ export interface User {
   deviceId: string;
   createdAt: string;
   updatedAt: string;
-}
-
-//TODO::create a common error response rather than having domain specific errors if it's possible after sync with the back end devs
-export interface SignupErrorResponse {
-  error: string;
 }
