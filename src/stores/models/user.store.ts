@@ -1,10 +1,12 @@
 import { createModel } from '@rematch/core';
 
 import {
-  LoginRequestData,
-  RegisterMailVerificationRequestData,
-  ResendOtpRequestData,
-  SignupRequestData,
+  EmailVerificationData,
+  ForgetPasswordData,
+  LoginUserData,
+  ResendOtpData,
+  ResetPasswordData,
+  SignupUserData,
 } from '@sz/models';
 import { AuthService } from '@sz/services';
 
@@ -14,6 +16,7 @@ export interface UserState {
   isAuthenticated: boolean;
   accessToken: string | null;
   refreshToken: string | null;
+  passwordResetToken: string | null;
   //TODO::fill other user related state here
 }
 
@@ -21,6 +24,7 @@ const initialState: UserState = {
   isAuthenticated: false,
   accessToken: null,
   refreshToken: null,
+  passwordResetToken: null,
 };
 
 export const userStore = createModel<RootModel>()({
@@ -35,9 +39,15 @@ export const userStore = createModel<RootModel>()({
     setRefreshToken(state: UserState, refreshToken: string | null) {
       return { ...state, refreshToken };
     },
+    setPasswordResetToken(state: UserState, passwordResetToken: string) {
+      return { ...state, passwordResetToken };
+    },
+    clearPasswordResetToken(state: UserState) {
+      return { ...state, passwordResetToken: null };
+    },
   },
   effects: dispatch => ({
-    async loginUserWithCredentials(payload: LoginRequestData) {
+    async loginUserWithCredentials(payload: LoginUserData) {
       const data = await AuthService.loginUserWithCredentials(payload);
       dispatch.userStore.setAccessToken(data.accessToken);
       dispatch.userStore.setRefreshToken(data.refreshToken);
@@ -48,15 +58,27 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setRefreshToken(null);
       dispatch.userStore.setIsAuthenticated(false);
     },
-    async registerUser(payload: SignupRequestData) {
+    async registerUser(payload: SignupUserData) {
       await AuthService.registerUser(payload);
       //TODO::save required user data to the store and persistence storage if required
     },
-    async registerMailVerification(payload: RegisterMailVerificationRequestData) {
-      await AuthService.registerMailVerification(payload);
+    /*
+     * NOTE:These function is being shared between registeration and forget password flows since it's the default BE behaviour
+     * api/v1/auth/resend-otp
+     */
+    async emailVerification(payload: EmailVerificationData) {
+      const data = await AuthService.emailVerification(payload);
+      dispatch.userStore.setPasswordResetToken(data?.resetPasswordToken);
     },
-    async resendOtp(payload: ResendOtpRequestData) {
+    async resendOtp(payload: ResendOtpData) {
       await AuthService.resendOtp(payload);
+    },
+    async forgetPassword(payload: ForgetPasswordData) {
+      await AuthService.forgetPassword(payload);
+    },
+    async resetPassword(payload: ResetPasswordData, state) {
+      const { passwordResetToken } = state.userStore;
+      await AuthService.resetPassword(payload, { 'x-auth': passwordResetToken });
     },
   }),
 });
