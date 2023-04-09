@@ -1,12 +1,13 @@
-import { render } from '@testing-library/react-native';
 import * as React from 'react';
+
+import { renderWithProviders } from '@sz/utils';
 
 import { ForgotPasswordScreen } from '../ForgotPasswordScreen';
 
 describe('ForgotPasswordScreen Screen', () => {
   const testID = 'ForgotPasswordScreenTestID';
 
-  const getRenderedScreen = () => render(<ForgotPasswordScreen />);
+  const getRenderedScreen = () => renderWithProviders(<ForgotPasswordScreen />);
   it(`should render ForgotPasswordScreen correctly`, () => {
     const renderer = getRenderedScreen();
     const renderTree = renderer.toJSON();

@@ -1,3 +1,4 @@
+export * from './auth';
 export * from './colors';
 export * from './navigation-routes';
 export * from './regular-expressions';

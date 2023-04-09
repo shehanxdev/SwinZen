@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
@@ -20,6 +19,7 @@ import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { SignupFormValues } from '@sz/models';
 import { NavigationService } from '@sz/services';
+import { useDispatch, useSelector } from '@sz/stores';
 import { signupValidationSchema } from '@sz/utils';
 
 import { BaseAuthScreen } from '../components';
@@ -32,17 +32,21 @@ export function SignupScreen() {
     formState: { isSubmitted, errors },
   } = useForm<SignupFormValues>({ mode: 'onChange', resolver: yupResolver(signupValidationSchema) });
 
+  const loading = useSelector(state => state.loading.effects.userStore.registerUser);
+
+  const dispatch = useDispatch();
+
   const onSignUpFormInvalid: SubmitErrorHandler<SignupFormValues> = () => {
     console.log(errors);
     //TODO:: handle error
   };
 
   const onSignUpFormValid: SubmitHandler<SignupFormValues> = async formInput => {
-    // TODO: API Integration
-    NavigationService.navigate(Route.RegisterEmailVerification);
     try {
-      console.log('formInput', formInput);
+      await dispatch.userStore.registerUser(formInput);
+      NavigationService.navigate(Route.RegisterEmailVerification, formInput.username);
     } catch (error: any) {
+      //TODO:: handle error
       console.log('error', error);
     }
   };
@@ -163,7 +167,11 @@ export function SignupScreen() {
         </View>
         <View style={tw`items-center mt-10 mb-5 mx-5`}>
           <View style={tw`mb-2`}>
-            <Button onPress={handleSubmit(onSignUpFormValid, onSignUpFormInvalid)} title={'Register'} />
+            <Button
+              onPress={handleSubmit(onSignUpFormValid, onSignUpFormInvalid)}
+              title={'Register'}
+              loading={loading}
+            />
           </View>
           <Text variant={TextVariant.Body2Regular}>
             {'Already Have An Account? '}

@@ -1,11 +1,14 @@
-import { render } from '@testing-library/react-native';
 import * as React from 'react';
+
+import { renderWithProviders } from '@sz/utils';
 
 import { RegisterEmailVerificationScreen } from '../RegisterEmailVerificationScreen';
 
 describe('Register Email Verification Screen', () => {
   const testID = 'RegisterEmailVerificationScreenContainerTestID';
-  const getRenderedScreen = () => render(<RegisterEmailVerificationScreen />);
+  const mockRoute = { params: { params: 'test@gmail.com' } };
+
+  const getRenderedScreen = () => renderWithProviders(<RegisterEmailVerificationScreen route={mockRoute} />);
 
   it(`should render correctly`, () => {
     const rendered = getRenderedScreen();

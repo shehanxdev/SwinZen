@@ -11,6 +11,11 @@ export enum Route {
   ResetPasswordEmailVerification = 'reset-password-email-verification',
   ForgotPassword = 'forgot-password',
   ResetPassword = 'reset-password',
-  //TODO remove following route only for dev purpose
-  test = 'price-plan',
+  MainStack = 'main-stack',
+  MainBottomTabRoutesStack = 'main-bottom-tab-routes-stack',
+  HomeTab = 'home-tab',
+  VideosTab = 'videos-tab',
+  UploadVideoTab = 'upload-video-tab',
+  AnalysisTab = 'analysis-tab',
+  LibraryTab = 'library-tab',
 }

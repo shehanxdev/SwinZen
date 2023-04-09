@@ -218,6 +218,10 @@ export class HttpService {
     return this.fetch<T, U>('GET', path, query, undefined, false, headers);
   };
 
+  public postAnonymousWithCustomHeaders = async <T, U = T>(path: string, headers: {}, data: unknown, query?: {}) => {
+    return this.fetch<T, U>('POST', path, query, data, true, headers);
+  };
+
   public getApiSauceInstance = () => {
     return this.apiSauceWithoutAuth;
   };

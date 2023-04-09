@@ -1,12 +1,14 @@
-import { render } from '@testing-library/react-native';
 import * as React from 'react';
+
+import { renderWithProviders } from '@sz/utils';
 
 import { ResetPasswordScreen } from '../ResetPasswordScreen';
 
 describe('ResetPasswordScreen Screen', () => {
   const testID = 'ResetPasswordScreenTestID';
+  const mockRoute = { params: { params: { email: 'test@gmail.com' } } };
 
-  const getRenderedScreen = () => render(<ResetPasswordScreen />);
+  const getRenderedScreen = () => renderWithProviders(<ResetPasswordScreen route={mockRoute} />);
   it(`should render ResetPasswordScreen correctly`, () => {
     const renderer = getRenderedScreen();
     const renderTree = renderer.toJSON();

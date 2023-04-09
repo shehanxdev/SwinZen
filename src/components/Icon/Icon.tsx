@@ -3,13 +3,19 @@ import React from 'react';
 import {
   AccountLockSvg,
   BackIconSvg,
+  BottomTabAnalysisSvg,
+  BottomTabHomeSvg,
+  BottomTabLibrarySvg,
+  BottomTabUploadSvg,
+  BottomTabVideoSvg,
+  CustomMenuSvg,
   FeatureListTick,
   MailIconSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
   ProfileIconSvg,
   SecurityIconSvg,
-  SwingZenLogo,
+  SwingZenLogoSvg,
 } from '@sz/assets';
 import { Color } from '@sz/constants';
 
@@ -49,7 +55,31 @@ export function SecurityIcon({ color = Color.Neutral.Sz500, width = 20, height =
 }
 
 export function SwingZenLogoIcon({ color, width = 108, height = 55 }: SvgIconProps) {
-  return <SwingZenLogo width={width} height={height} fill={color} />;
+  return <SwingZenLogoSvg width={width} height={height} fill={color} />;
+}
+
+export function CustomMenuIcon({ color = Color.Neutral.White, width = 24, height = 24 }: SvgIconProps) {
+  return <CustomMenuSvg width={width} height={height} fill={color} />;
+}
+
+export function BottomTabHomeIconWithLabel({ color = Color.Neutral.Sz500, width = 30, height = 43 }: SvgIconProps) {
+  return <BottomTabHomeSvg width={width} height={height} fill={color} />;
+}
+
+export function BottomTabVideoIconWithLabel({ color = Color.Neutral.Sz500, width = 33, height = 43 }: SvgIconProps) {
+  return <BottomTabVideoSvg width={width} height={height} fill={color} />;
+}
+
+export function BottomTabUploadIconWithLabel({ color = Color.Neutral.Sz500, width = 36, height = 43 }: SvgIconProps) {
+  return <BottomTabUploadSvg width={width} height={height} fill={color} />;
+}
+
+export function BottomTabAnalysisIconWithLabel({ color = Color.Neutral.Sz500, width = 40, height = 43 }: SvgIconProps) {
+  return <BottomTabAnalysisSvg width={width} height={height} fill={color} />;
+}
+
+export function BottomTabLibraryIconWithLabel({ color = Color.Neutral.Sz500, width = 34, height = 43 }: SvgIconProps) {
+  return <BottomTabLibrarySvg width={width} height={height} fill={color} />;
 }
 
 export function FeatureListTickIcon({ width, height }: SvgIconProps) {
