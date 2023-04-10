@@ -62,7 +62,7 @@ export function CustomMenuIcon({ color = Color.Neutral.White, width = 24, height
   return <CustomMenuSvg width={width} height={height} fill={color} />;
 }
 
-export function RightArrowIcon({ color = Color.Neutral.Sz100, width = 7.25, height = 14 }: SvgIconProps) {
+export function RightArrowIcon({ color = Color.Neutral.Sz100, width = 7.75, height = 14 }: SvgIconProps) {
   return <ArrowRightSvg width={width} height={height} fill={color} />;
 }
 
