@@ -1,8 +1,8 @@
 import { BlurView } from '@react-native-community/blur';
 import React, { useMemo, useState } from 'react';
-import { ActivityIndicator, ImageBackground, View } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 
-import { ErrorIcon, Link, PlayButtonIcon, Text, UploadIcon } from '@sz/components';
+import { ErrorIcon, Link, Text, UploadIcon } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextVariant } from '@sz/constants';
 
@@ -10,7 +10,6 @@ import { VideoUploadCardFooter } from './VideoUploadCardFooter';
 
 export function VideoUploadCard() {
   //TODO:: Removed this once the upload logi gets implemented
-  const [uploaded, setUploaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isError] = useState(false);
 
@@ -19,7 +18,6 @@ export function VideoUploadCard() {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      setUploaded(true);
     }, 2000);
   };
 
@@ -54,41 +52,27 @@ export function VideoUploadCard() {
 
   return (
     <View style={tw`h-54.5 rounded-2.5 overflow-hidden`}>
-      {!uploaded ? (
-        <View
-          style={tw`flex-1 rounded-2.5 overflow-hidden  ${
-            !isError ? `border border-dashed border-[${Color.Neutral.Sz200}]` : 'border-0'
-          }`}>
-          <BlurView
-            blurType="light"
-            blurAmount={1} //TODO::extract these magic values to a common file
-            reducedTransparencyFallbackColor={Color.Neutral.Sz900}
-            style={tw`absolute inset-x-0 inset-y-0 rounded-2.5`}
-          />
-          <View style={tw`items-center mt-[90.67px] flex-1`}>
-            {renderIcon}
-            <View style={tw`mt-[16.67px]`}>
-              <Text variant={TextVariant.Body2Regular}>{renderTitle}</Text>
-              <View style={tw`mt-1`}>
-                <Link text={renderLinkText} onPress={onUpload} underline />
-              </View>
+      <View
+        style={tw`flex-1 rounded-2.5 overflow-hidden  ${
+          !isError ? `border border-dashed border-[${Color.Neutral.Sz200}]` : 'border-0'
+        }`}>
+        <BlurView
+          blurType="light"
+          blurAmount={1} //TODO::extract these magic values to a common file
+          reducedTransparencyFallbackColor={Color.Neutral.Sz900}
+          style={tw`absolute inset-x-0 inset-y-0 rounded-2.5`}
+        />
+        <View style={tw`items-center flex-1 mt-[${isError ? '31.67px' : '90.67px'}]`}>
+          {renderIcon}
+          <View style={tw`mt-[16.67px]`}>
+            <Text variant={TextVariant.Body2Regular}>{renderTitle}</Text>
+            <View style={tw`mt-1`}>
+              <Link text={renderLinkText} onPress={onUpload} underline />
             </View>
-            {isError && (
-              <VideoUploadCardFooter isError date="04 JUN 2022 • Down the line" results="All failed videos" />
-            )}
           </View>
+          {isError && <VideoUploadCardFooter isError date="04 JUN 2022 • Down the line" results="All failed videos" />}
         </View>
-      ) : (
-        <View style={tw`flex-1`}>
-          <ImageBackground
-            source={{ uri: 'https://i.ibb.co/XFvHx8J/Rectangle-132.png' }}
-            resizeMode="cover"
-            style={tw`flex-1 items-center justify-center`}>
-            <PlayButtonIcon />
-          </ImageBackground>
-          <VideoUploadCardFooter date="04 JUN 2022 • Faceview" results="10 • Pass" />
-        </View>
-      )}
+      </View>
     </View>
   );
 }
