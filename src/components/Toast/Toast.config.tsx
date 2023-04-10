@@ -23,7 +23,7 @@ const otherInitialToastProps: OtherInitialToastProps = {
   icon: {
     //@ts-ignore
     icon: () => (
-      <TouchableOpacity onPress={hideMessage}>
+      <TouchableOpacity onPress={hideMessage} style={tw`mt-1`}>
         <CloseButton color={Color.Neutral.Sz100} />
       </TouchableOpacity>
     ),
