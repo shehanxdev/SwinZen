@@ -16,13 +16,13 @@ export { default as BottomTabUploadSvg } from './icons/bottom-tab/upload-icon.sv
 export { default as BottomTabAnalysisSvg } from './icons/bottom-tab/analysis-icon.svg';
 export { default as BottomTabLibrarySvg } from './icons/bottom-tab/library-icon.svg';
 
-export { default as AboutIconSvg } from './icons/drawer/about-icon.svg';
-export { default as ContactIconSvg } from './icons/drawer/contact-icon.svg';
-export { default as CrossIconSvg } from './icons/drawer/cross-icon.svg';
-export { default as FollowersIconSvg } from './icons/drawer/followers-icon.svg';
-export { default as FriendIconSvg } from './icons/drawer/friend-icon.svg';
-export { default as LogoutIconSvg } from './icons/drawer/logout-icon.svg';
-export { default as NotificationIconSvg } from './icons/drawer/notification-icon.svg';
-export { default as PrivacyIconSvg } from './icons/drawer/privacy-icon.svg';
-export { default as ProfileSettingsIconSvg } from './icons/drawer/profile-icon.svg';
-export { default as TermsIconSvg } from './icons/drawer/terms-icon.svg';
+export { default as DrawerAboutSvg } from './icons/drawer/about-icon.svg';
+export { default as DrawerContactSvg } from './icons/drawer/contact-icon.svg';
+export { default as DrawerCrossSvg } from './icons/drawer/cross-icon.svg';
+export { default as DrawerFollowersSvg } from './icons/drawer/followers-icon.svg';
+export { default as DrawerFriendSvg } from './icons/drawer/friend-icon.svg';
+export { default as DrawerLogoutSvg } from './icons/drawer/logout-icon.svg';
+export { default as DrawerNotificationSvg } from './icons/drawer/notification-icon.svg';
+export { default as DrawerPrivacySvg } from './icons/drawer/privacy-icon.svg';
+export { default as DrawerProfileSettingsSvg } from './icons/drawer/profile-icon.svg';
+export { default as DrawerTermsSvg } from './icons/drawer/terms-icon.svg';

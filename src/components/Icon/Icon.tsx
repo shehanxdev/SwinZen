@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {
-  AboutIconSvg,
   AccountLockSvg,
   BackIconSvg,
   BottomTabAnalysisSvg,
@@ -9,22 +8,23 @@ import {
   BottomTabLibrarySvg,
   BottomTabUploadSvg,
   BottomTabVideoSvg,
-  ContactIconSvg,
-  CrossIconSvg,
   CustomMenuSvg,
-  FollowersIconSvg,
-  FriendIconSvg,
-  LogoutIconSvg,
+  DrawerAboutSvg,
+  DrawerContactSvg,
+  DrawerCrossSvg,
+  DrawerFollowersSvg,
+  DrawerFriendSvg,
+  DrawerLogoutSvg,
+  DrawerNotificationSvg,
+  DrawerPrivacySvg,
+  DrawerProfileSettingsSvg,
+  DrawerTermsSvg,
   MailIconSvg,
-  NotificationIconSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
-  PrivacyIconSvg,
   ProfileIconSvg,
-  ProfileSettingsIconSvg,
   SecurityIconSvg,
   SwingZenLogoSvg,
-  TermsIconSvg,
 } from '@sz/assets';
 import { Color } from '@sz/constants';
 
@@ -91,42 +91,42 @@ export function BottomTabLibraryIconWithLabel({ color = Color.Neutral.Sz500, wid
   return <BottomTabLibrarySvg width={width} height={height} fill={color} />;
 }
 
-export function AboutIcon({ color, width = 24, height = 24 }: SvgIconProps) {
-  return <AboutIconSvg width={width} height={height} fill={color} />;
+export function DrawerAboutIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <DrawerAboutSvg width={width} height={height} fill={color} />;
 }
 
-export function ContactIcon({ color, width = 24, height = 24 }: SvgIconProps) {
-  return <ContactIconSvg width={width} height={height} fill={color} />;
+export function DrawerContactIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <DrawerContactSvg width={width} height={height} fill={color} />;
 }
 
-export function CrossIcon({ color, width = 16, height = 16 }: SvgIconProps) {
-  return <CrossIconSvg width={width} height={height} fill={color} />;
+export function DrawerCrossIcon({ color, width = 16, height = 16 }: SvgIconProps) {
+  return <DrawerCrossSvg width={width} height={height} fill={color} />;
 }
 
-export function FollowersIcon({ color, width = 24, height = 24 }: SvgIconProps) {
-  return <FollowersIconSvg width={width} height={height} fill={color} />;
+export function DrawerFollowersIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <DrawerFollowersSvg width={width} height={height} fill={color} />;
 }
 
-export function FriendIcon({ color, width = 24, height = 24 }: SvgIconProps) {
-  return <FriendIconSvg width={width} height={height} fill={color} />;
+export function DrawerFriendIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <DrawerFriendSvg width={width} height={height} fill={color} />;
 }
 
-export function LogoutIcon({ color, width = 24, height = 24 }: SvgIconProps) {
-  return <LogoutIconSvg width={width} height={height} fill={color} />;
+export function DrawerLogoutIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <DrawerLogoutSvg width={width} height={height} fill={color} />;
 }
 
-export function NotificationIcon({ color, width = 24, height = 24 }: SvgIconProps) {
-  return <NotificationIconSvg width={width} height={height} fill={color} />;
+export function DrawerNotificationIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <DrawerNotificationSvg width={width} height={height} fill={color} />;
 }
 
-export function PrivacyIcon({ color, width = 24, height = 24 }: SvgIconProps) {
-  return <PrivacyIconSvg width={width} height={height} fill={color} />;
+export function DrawerPrivacyIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <DrawerPrivacySvg width={width} height={height} fill={color} />;
 }
 
-export function ProfileSettingsIcon({ color, width = 24, height = 24 }: SvgIconProps) {
-  return <ProfileSettingsIconSvg width={width} height={height} fill={color} />;
+export function DrawerProfileSettingsIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <DrawerProfileSettingsSvg width={width} height={height} fill={color} />;
 }
 
-export function TermsIcon({ color, width = 24, height = 24 }: SvgIconProps) {
-  return <TermsIconSvg width={width} height={height} fill={color} />;
+export function DrawerTermsIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+  return <DrawerTermsSvg width={width} height={height} fill={color} />;
 }

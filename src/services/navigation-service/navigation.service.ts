@@ -1,3 +1,4 @@
+import { DrawerActions } from '@react-navigation/native';
 import React from 'react';
 
 import { Route } from '@sz/constants';
@@ -15,6 +16,14 @@ export class NavigationService {
 
   public static goBack() {
     NavigationService.navigationRef.current?.goBack();
+  }
+
+  public static openDrawer() {
+    NavigationService.navigationRef.current?.dispatch(DrawerActions.openDrawer());
+  }
+
+  public static closeDrawer() {
+    NavigationService.navigationRef.current?.dispatch(DrawerActions.closeDrawer());
   }
 
   private static getNavigation(route: Route, params?: any) {

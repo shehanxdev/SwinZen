@@ -4,24 +4,10 @@ import { TouchableOpacity } from 'react-native';
 
 import { BackIcon, Text } from '@sz/components';
 import { Route, TextAlignment, TextVariant } from '@sz/constants';
-import {
-  AboutUsScreen,
-  ContactUsScreen,
-  FollowersScreen,
-  NotificationScreen,
-  PrivacyPolicyScreen,
-  ProfileSettingsScreen,
-  TermsOfUseScreen,
-} from '@sz/screens';
+import { AboutUsScreen, ContactUsScreen, FollowersScreen, PrivacyPolicyScreen, TermsOfUseScreen } from '@sz/screens';
 import { NavigationService } from '@sz/services';
 
 export type InfoStackParamList = {
-  [Route.ProfileSettings]: {
-    // Can be used for future props
-  };
-  [Route.Notification]: {
-    // Can be used for future props
-  };
   [Route.Followers]: {
     // Can be used for future props
   };
@@ -55,12 +41,6 @@ export function InfoStack() {
           </TouchableOpacity>
         ),
       }}>
-      <Stack.Screen
-        name={Route.ProfileSettings}
-        component={ProfileSettingsScreen}
-        options={{ title: 'Profile settings' }}
-      />
-      <Stack.Screen name={Route.Notification} component={NotificationScreen} options={{ title: 'Notifications' }} />
       <Stack.Screen name={Route.Followers} component={FollowersScreen} options={{ title: 'Followers' }} />
       <Stack.Screen name={Route.AboutUs} component={AboutUsScreen} options={{ title: 'About us' }} />
       <Stack.Screen name={Route.PrivacyPolicy} component={PrivacyPolicyScreen} options={{ title: 'Privacy policy' }} />
