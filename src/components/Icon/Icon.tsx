@@ -9,10 +9,10 @@ import {
   BottomTabUploadSvg,
   BottomTabVideoSvg,
   CustomMenuSvg,
-  FeatureListTick,
   MailIconSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
+  PricePlanFeatureListTick,
   ProfileIconSvg,
   SecurityIconSvg,
   SwingZenLogoSvg,
@@ -82,6 +82,6 @@ export function BottomTabLibraryIconWithLabel({ color = Color.Neutral.Sz500, wid
   return <BottomTabLibrarySvg width={width} height={height} fill={color} />;
 }
 
-export function FeatureListTickIcon({ width, height }: SvgIconProps) {
-  return <FeatureListTick width={width} height={height} />;
+export function PricePlanFeatureListTickIcon({ width, height }: SvgIconProps) {
+  return <PricePlanFeatureListTick width={width} height={height} />;
 }
