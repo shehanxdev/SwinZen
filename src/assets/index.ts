@@ -8,8 +8,8 @@ export { default as PasswordRevealEyeSvg } from './icons/account/password-reveal
 export { default as ProfileIconSvg } from './icons/account/profile_icon.svg';
 export { default as SecurityIconSvg } from './icons/account/security_icon.svg';
 export { default as SwingZenLogoSvg } from './logo/swingzen-logo.svg';
-export { default as CrossSvg } from './icons/main/cross-icon.svg';
-export { default as CustomMenuSvg } from './icons/other/custom-menu.svg';
+export { default as CrossSvg } from './icons/other/cross-icon.svg';
+export { default as CustomMenuSvg } from './icons/main/custom-menu.svg';
 
 export { default as BottomTabHomeSvg } from './icons/bottom-tab/home-icon.svg';
 export { default as BottomTabVideoSvg } from './icons/bottom-tab/videos-icon.svg';
