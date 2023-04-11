@@ -12,7 +12,7 @@ interface BaseScreenProps extends Partial<LinearGradientProps> {
   testID?: string;
 }
 
-export function BaseScreen({
+export function BaseInfoScreen({
   children,
   testID,
   colors = ['#8EFF0012', '#FFFFFF05', '#FFFFFF02'], //TODO:: update, these colours are NOT available within the design system
