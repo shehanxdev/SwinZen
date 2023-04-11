@@ -24,7 +24,7 @@ export function DrawerItem({ active, title, icon, onPress }: DrawerItemProps) {
   return (
     <TouchableOpacity style={tw`flex-row mx-6 mt-7`} onPress={onPress}>
       <View style={tw`mr-3.25`}>{renderIcon}</View>
-      <Text color={active ? Color.Primary.Sz400 : Color.Neutral.White} variant={TextVariant.Body2SemiBold}>
+      <Text color={active ? Color.Primary.Sz400 : Color.Neutral.Sz300} variant={TextVariant.Body2SemiBold}>
         {title}
       </Text>
     </TouchableOpacity>
