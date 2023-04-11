@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { BlurView } from '@react-native-community/blur';
 import { DrawerContentScrollView } from '@react-navigation/drawer';
-import React, { ReactElement } from 'react';
-import { GestureResponderEvent, TouchableOpacity, View } from 'react-native';
+import React from 'react';
+import { TouchableOpacity, View } from 'react-native';
 
 import { SwingZenLogoSvg } from '@sz/assets';
 import {
@@ -24,12 +24,6 @@ import { useDispatch } from '@sz/stores';
 
 import { DrawerItem } from './DrawerItem';
 
-interface ItemProps {
-  title: string;
-  icon: ReactElement;
-  action: (event: GestureResponderEvent) => void;
-}
-
 export function CustomDrawer() {
   const dispatch = useDispatch();
 
@@ -46,55 +40,6 @@ export function CustomDrawer() {
     }
   };
 
-  // providing data into list
-  const listData: ItemProps[] = [
-    {
-      title: 'Profile Settings',
-      icon: <DrawerProfileSettingsIcon />,
-      action: () => NavigationService.navigate(Route.ProfileSettings),
-    },
-    {
-      title: 'Notification',
-      icon: <DrawerNotificationIcon />,
-      action: () => NavigationService.navigate(Route.Notification),
-    },
-    {
-      title: 'Followers',
-      icon: <DrawerFollowersIcon />,
-      action: () => NavigationService.navigate(Route.Followers),
-    },
-    {
-      title: 'About us',
-      icon: <DrawerAboutIcon />,
-      action: () => NavigationService.navigate(Route.AboutUs),
-    },
-    {
-      title: 'Privacy policy',
-      icon: <DrawerPrivacyIcon />,
-      action: () => NavigationService.navigate(Route.PrivacyPolicy),
-    },
-    {
-      title: 'Terms of use',
-      icon: <DrawerTermsIcon />,
-      action: () => NavigationService.navigate(Route.TermsOfUse),
-    },
-    {
-      title: 'Contact us',
-      icon: <DrawerContactIcon />,
-      action: () => NavigationService.navigate(Route.ContactUs),
-    },
-    {
-      title: 'Tell your friend',
-      icon: <DrawerFriendIcon />,
-      action: onShare,
-    },
-    {
-      title: 'Logout',
-      icon: <DrawerLogoutIcon />,
-      action: Logout,
-    },
-  ];
-
   return (
     <View style={tw`overflow-hidden absolute top-0 bottom-0 left-0 right-0 rounded-r-[32px]`}>
       <BlurView
@@ -109,9 +54,43 @@ export function CustomDrawer() {
               <CrossIcon />
             </TouchableOpacity>
           </View>
-          {listData.map((data, index) => (
-            <DrawerItem key={index} title={data.title} icon={data.icon} onPress={data.action} />
-          ))}
+          <DrawerItem
+            title="Profile Settings"
+            icon={<DrawerProfileSettingsIcon />}
+            onPress={() => NavigationService.navigate(Route.ProfileSettings)}
+          />
+          <DrawerItem
+            title="Notification"
+            icon={<DrawerNotificationIcon />}
+            onPress={() => NavigationService.navigate(Route.Notification)}
+          />
+          <DrawerItem
+            title="Followers"
+            icon={<DrawerFollowersIcon />}
+            onPress={() => NavigationService.navigate(Route.Followers)}
+          />
+          <DrawerItem
+            title="About us"
+            icon={<DrawerAboutIcon />}
+            onPress={() => NavigationService.navigate(Route.AboutUs)}
+          />
+          <DrawerItem
+            title="Privacy policy"
+            icon={<DrawerPrivacyIcon />}
+            onPress={() => NavigationService.navigate(Route.PrivacyPolicy)}
+          />
+          <DrawerItem
+            title="Terms of use"
+            icon={<DrawerTermsIcon />}
+            onPress={() => NavigationService.navigate(Route.TermsOfUse)}
+          />
+          <DrawerItem
+            title="Contact us"
+            icon={<DrawerContactIcon />}
+            onPress={() => NavigationService.navigate(Route.ContactUs)}
+          />
+          <DrawerItem title="Tell your friend" icon={<DrawerFriendIcon />} onPress={onShare} />
+          <DrawerItem title="Logout" icon={<DrawerLogoutIcon />} onPress={Logout} />
         </DrawerContentScrollView>
       </BlurView>
     </View>
