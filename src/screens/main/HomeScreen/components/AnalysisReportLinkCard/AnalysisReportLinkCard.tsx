@@ -7,12 +7,11 @@ import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
 export function AnalysisReportLinkCard() {
-  //TODO:: Implement the navigation logic
-  const handleOnPress = () => {};
-
   return (
     <Pressable
-      onPress={handleOnPress}
+      onPress={() => {
+        //TODO::implement
+      }}
       style={({ pressed }) =>
         tw`border-[0.5px] h-[87px] border-[${
           Color.Neutral.Sz500
