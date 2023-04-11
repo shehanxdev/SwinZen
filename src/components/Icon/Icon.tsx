@@ -91,42 +91,42 @@ export function BottomTabLibraryIconWithLabel({ color = Color.Neutral.Sz500, wid
   return <BottomTabLibrarySvg width={width} height={height} fill={color} />;
 }
 
-export function DrawerAboutIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+export function DrawerAboutIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
   return <DrawerAboutSvg width={width} height={height} fill={color} />;
 }
 
-export function DrawerContactIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+export function DrawerContactIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
   return <DrawerContactSvg width={width} height={height} fill={color} />;
 }
 
-export function DrawerCrossIcon({ color, width = 16, height = 16 }: SvgIconProps) {
+export function DrawerCrossIcon({ color = Color.Neutral.Sz300, width = 16, height = 16 }: SvgIconProps) {
   return <DrawerCrossSvg width={width} height={height} fill={color} />;
 }
 
-export function DrawerFollowersIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+export function DrawerFollowersIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
   return <DrawerFollowersSvg width={width} height={height} fill={color} />;
 }
 
-export function DrawerFriendIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+export function DrawerFriendIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
   return <DrawerFriendSvg width={width} height={height} fill={color} />;
 }
 
-export function DrawerLogoutIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+export function DrawerLogoutIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
   return <DrawerLogoutSvg width={width} height={height} fill={color} />;
 }
 
-export function DrawerNotificationIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+export function DrawerNotificationIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
   return <DrawerNotificationSvg width={width} height={height} fill={color} />;
 }
 
-export function DrawerPrivacyIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+export function DrawerPrivacyIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
   return <DrawerPrivacySvg width={width} height={height} fill={color} />;
 }
 
-export function DrawerProfileSettingsIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+export function DrawerProfileSettingsIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
   return <DrawerProfileSettingsSvg width={width} height={height} fill={color} />;
 }
 
-export function DrawerTermsIcon({ color, width = 24, height = 24 }: SvgIconProps) {
+export function DrawerTermsIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
   return <DrawerTermsSvg width={width} height={height} fill={color} />;
 }
