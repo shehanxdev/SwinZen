@@ -6,9 +6,9 @@ import { TouchableOpacity, View } from 'react-native';
 
 import { SwingZenLogoSvg } from '@sz/assets';
 import {
+  CrossIcon,
   DrawerAboutIcon,
   DrawerContactIcon,
-  DrawerCrossIcon,
   DrawerFollowersIcon,
   DrawerFriendIcon,
   DrawerLogoutIcon,
@@ -51,7 +51,7 @@ export function CustomDrawer() {
           <View style={tw`flex-row justify-between items-center mx-6 mt-8 mb-6.5`}>
             <SwingZenLogoSvg />
             <TouchableOpacity onPress={() => NavigationService.closeDrawer()}>
-              <DrawerCrossIcon />
+              <CrossIcon />
             </TouchableOpacity>
           </View>
           <DrawerItem

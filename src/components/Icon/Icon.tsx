@@ -8,10 +8,10 @@ import {
   BottomTabLibrarySvg,
   BottomTabUploadSvg,
   BottomTabVideoSvg,
+  CrossSvg,
   CustomMenuSvg,
   DrawerAboutSvg,
   DrawerContactSvg,
-  DrawerCrossSvg,
   DrawerFollowersSvg,
   DrawerFriendSvg,
   DrawerLogoutSvg,
@@ -43,34 +43,6 @@ export function BackIcon({ color, width = 12, height = 20 }: SvgIconProps) {
   return <BackIconSvg width={width} height={height} fill={color} />;
 }
 
-export function MailIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
-  return <MailIconSvg width={width} height={height} fill={color} />;
-}
-
-export function PasswordHideIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
-  return <PasswordHideEyeSvg width={width} height={height} fill={color} />;
-}
-
-export function PasswordRevealIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
-  return <PasswordRevealEyeSvg width={width} height={height} fill={color} />;
-}
-
-export function ProfileIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
-  return <ProfileIconSvg width={width} height={height} fill={color} />;
-}
-
-export function SecurityIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
-  return <SecurityIconSvg width={width} height={height} fill={color} />;
-}
-
-export function SwingZenLogoIcon({ color, width = 108, height = 55 }: SvgIconProps) {
-  return <SwingZenLogoSvg width={width} height={height} fill={color} />;
-}
-
-export function CustomMenuIcon({ color = Color.Neutral.White, width = 24, height = 24 }: SvgIconProps) {
-  return <CustomMenuSvg width={width} height={height} fill={color} />;
-}
-
 export function BottomTabHomeIconWithLabel({ color = Color.Neutral.Sz500, width = 30, height = 43 }: SvgIconProps) {
   return <BottomTabHomeSvg width={width} height={height} fill={color} />;
 }
@@ -91,16 +63,20 @@ export function BottomTabLibraryIconWithLabel({ color = Color.Neutral.Sz500, wid
   return <BottomTabLibrarySvg width={width} height={height} fill={color} />;
 }
 
+export function CrossIcon({ color = Color.Neutral.Sz300, width = 16, height = 16 }: SvgIconProps) {
+  return <CrossSvg width={width} height={height} fill={color} />;
+}
+
+export function CustomMenuIcon({ color = Color.Neutral.White, width = 24, height = 24 }: SvgIconProps) {
+  return <CustomMenuSvg width={width} height={height} fill={color} />;
+}
+
 export function DrawerAboutIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
   return <DrawerAboutSvg width={width} height={height} fill={color} />;
 }
 
 export function DrawerContactIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
   return <DrawerContactSvg width={width} height={height} fill={color} />;
-}
-
-export function DrawerCrossIcon({ color = Color.Neutral.Sz300, width = 16, height = 16 }: SvgIconProps) {
-  return <DrawerCrossSvg width={width} height={height} fill={color} />;
 }
 
 export function DrawerFollowersIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
@@ -129,4 +105,28 @@ export function DrawerProfileSettingsIcon({ color = Color.Neutral.Sz300, width =
 
 export function DrawerTermsIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
   return <DrawerTermsSvg width={width} height={height} fill={color} />;
+}
+
+export function MailIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
+  return <MailIconSvg width={width} height={height} fill={color} />;
+}
+
+export function PasswordHideIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
+  return <PasswordHideEyeSvg width={width} height={height} fill={color} />;
+}
+
+export function PasswordRevealIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
+  return <PasswordRevealEyeSvg width={width} height={height} fill={color} />;
+}
+
+export function ProfileIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
+  return <ProfileIconSvg width={width} height={height} fill={color} />;
+}
+
+export function SecurityIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
+  return <SecurityIconSvg width={width} height={height} fill={color} />;
+}
+
+export function SwingZenLogoIcon({ color, width = 108, height = 55 }: SvgIconProps) {
+  return <SwingZenLogoSvg width={width} height={height} fill={color} />;
 }
