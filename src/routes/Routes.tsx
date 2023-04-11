@@ -1,7 +1,7 @@
 import { NavigationContainer, NavigationState } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import { Platform, Text } from 'react-native';
+import { Text } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 
 import { Route } from '@sz/constants';
