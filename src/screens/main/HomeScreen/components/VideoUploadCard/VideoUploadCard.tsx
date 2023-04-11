@@ -70,7 +70,9 @@ export function VideoUploadCard() {
               <Link text={renderLinkText} onPress={onUpload} underline />
             </View>
           </View>
-          {isError && <VideoUploadCardFooter isError date="04 JUN 2022 • Down the line" results="All failed videos" />}
+          {isError && (
+            <VideoUploadCardFooter isError date="04 JUN 2022" cameraAngle="Down the line" results="All failed videos" />
+          )}
         </View>
       </View>
     </View>

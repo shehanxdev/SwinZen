@@ -15,7 +15,7 @@ export function VideoThumbnailCard() {
         style={tw`flex-1 items-center justify-center`}>
         <PlayButtonIcon />
       </ImageBackground>
-      <VideoUploadCardFooter date="04 JUN 2022 • Faceview" results="10 • Pass" />
+      <VideoUploadCardFooter date="04 JUN 2022" cameraAngle="Faceview" results="10 • Pass" />
     </View>
   );
 }
