@@ -12,6 +12,7 @@ import {
   MailIconSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
+  PricePlanFeatureListTick,
   ProfileIconSvg,
   SecurityIconSvg,
   SwingZenLogoSvg,
@@ -79,4 +80,8 @@ export function BottomTabAnalysisIconWithLabel({ color = Color.Neutral.Sz500, wi
 
 export function BottomTabLibraryIconWithLabel({ color = Color.Neutral.Sz500, width = 34, height = 43 }: SvgIconProps) {
   return <BottomTabLibrarySvg width={width} height={height} fill={color} />;
+}
+
+export function PricePlanFeatureListTickIcon({ width, height }: SvgIconProps) {
+  return <PricePlanFeatureListTick width={width} height={height} />;
 }
