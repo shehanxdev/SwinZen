@@ -5,7 +5,7 @@ import { Color } from '@sz/constants';
 type ToastParams = {
   message: string;
   description: string;
-  otherConfigs?: Partial<MessageOptions>;
+  otherConfigs?: Omit<MessageOptions, 'message' | 'description'>;
 };
 
 /*
