@@ -8,6 +8,7 @@ import {
   BottomTabLibrarySvg,
   BottomTabUploadSvg,
   BottomTabVideoSvg,
+  CloseButtonSvg,
   CustomMenuSvg,
   ErrorIconSvg,
   MailIconSvg,
@@ -94,4 +95,8 @@ export function PlayButtonIcon({ color = Color.Neutral.Sz100, width = 46, height
 
 export function ErrorIcon({ color = Color.Neutral.Sz100, width = 38, height = 36 }: SvgIconProps) {
   return <ErrorIconSvg width={width} height={height} fill={color} />;
+}
+
+export function CloseButton({ color = Color.Neutral.Sz500, width = 12, height = 12 }: SvgIconProps) {
+  return <CloseButtonSvg width={width} height={height} fill={color} />;
 }
