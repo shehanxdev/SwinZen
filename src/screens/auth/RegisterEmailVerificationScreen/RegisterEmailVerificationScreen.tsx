@@ -55,7 +55,7 @@ export function RegisterEmailVerificationScreen({ route }) {
       await dispatch.userStore.emailVerification(otpData);
       NavigationService.navigate(Route.Login);
     } catch (error: any) {
-      ToastService.error({ message: error.data.error, description: error.data.message });
+      ToastService.error({ message: 'Failed!', description: error.data.message });
     }
   };
 
