@@ -45,7 +45,7 @@ export function LoginScreen() {
       await dispatch.userStore.loginUserWithCredentials(formInput);
       NavigationService.navigate(Route.MainStack);
     } catch (error: any) {
-      ToastService.error({ message: error.data.error, description: error.data.message });
+      ToastService.error({ message: 'Failed!', description: error.data.message });
     }
   };
 

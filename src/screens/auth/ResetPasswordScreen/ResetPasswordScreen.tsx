@@ -36,11 +36,11 @@ export function ResetPasswordScreen({ route }) {
         password: formInput.password,
       });
 
-      ToastService.success({ message: 'Success', description: 'Password reset successfullly.' });
+      ToastService.success({ message: 'Success!', description: 'Password reset successfullly.' });
       dispatch.userStore.clearPasswordResetToken();
       NavigationService.navigate(Route.Login);
     } catch (error: any) {
-      ToastService.error({ message: error.data.error, description: error.data.message });
+      ToastService.error({ message: 'Failed!', description: error.data.message });
     }
   };
   return (

@@ -34,7 +34,7 @@ export function ForgotPasswordScreen() {
       await dispatch.userStore.forgetPassword(formInput);
       NavigationService.navigate(Route.ResetPasswordEmailVerification, { email: formInput.email }); //TODO::introduce type safety to the params
     } catch (error: any) {
-      ToastService.error({ message: error.data.error, description: error.data.message });
+      ToastService.error({ message: 'Failed!', description: error.data.message });
     }
   };
   return (

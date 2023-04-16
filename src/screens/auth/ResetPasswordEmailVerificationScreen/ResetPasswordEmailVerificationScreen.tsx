@@ -40,9 +40,9 @@ export function ResetPasswordEmailVerificationScreen({ route }) {
   const onResend = async () => {
     try {
       await dispatch.userStore.resendOtp({ username: email });
-      ToastService.success({ message: 'Success', description: 'OTP resent successfully.' });
+      ToastService.success({ message: 'Success!', description: 'OTP resent successfully.' });
     } catch (error: any) {
-      ToastService.error({ message: error.data.error, description: error.data.message });
+      ToastService.error({ message: 'Failed!', description: error.data.message });
     }
   };
 
@@ -56,7 +56,7 @@ export function ResetPasswordEmailVerificationScreen({ route }) {
       await dispatch.userStore.emailVerification(otpData);
       NavigationService.navigate(Route.ResetPassword, { email: email });
     } catch (error: any) {
-      ToastService.error({ message: error.data.error, description: error.data.message });
+      ToastService.error({ message: 'Failed!', description: error.data.message });
     }
   };
 

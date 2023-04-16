@@ -46,7 +46,7 @@ export function SignupScreen() {
       await dispatch.userStore.registerUser(formInput);
       NavigationService.navigate(Route.RegisterEmailVerification, formInput.username);
     } catch (error: any) {
-      ToastService.error({ message: error.data.error, description: error.data.message });
+      ToastService.error({ message: 'Failed!', description: error.data.message });
     }
   };
 
