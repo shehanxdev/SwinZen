@@ -1,13 +1,13 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
-import { Alert, View } from 'react-native';
+import { View } from 'react-native';
 
 import { AccountLockIcon, Button, PasswordField, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { ResetPasswordFormValues } from '@sz/models';
-import { NavigationService } from '@sz/services';
+import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
 import { resetPasswordValidationSchema } from '@sz/utils';
 
@@ -36,19 +36,11 @@ export function ResetPasswordScreen({ route }) {
         password: formInput.password,
       });
 
-      //TODO::replace with proper alert
-      Alert.alert('Success', 'Password reset successfullly', [
-        {
-          text: 'OK',
-          onPress: () => {
-            dispatch.userStore.clearPasswordResetToken();
-            NavigationService.navigate(Route.Login);
-          },
-        },
-      ]);
+      ToastService.success({ message: 'Success', description: 'Password reset successfullly.' });
+      dispatch.userStore.clearPasswordResetToken();
+      NavigationService.navigate(Route.Login);
     } catch (error: any) {
-      //TODO::handle errors
-      console.log('error', error);
+      ToastService.error({ message: error.data.error, description: error.data.message });
     }
   };
   return (

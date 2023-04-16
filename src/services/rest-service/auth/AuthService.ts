@@ -34,8 +34,7 @@ export class AuthService {
 
       return response.data;
     } catch (error) {
-      console.error('Error response', error, JSON.stringify(error));
-      throw new APIError('CLIENT_ERROR');
+      throw new APIError<ApiErrorResponse>('CLIENT_ERROR', error.data);
     }
   }
 
@@ -54,8 +53,7 @@ export class AuthService {
 
       return response.data;
     } catch (error) {
-      console.error('Error response', error, JSON.stringify(error));
-      throw new APIError('CLIENT_ERROR');
+      throw new APIError<ApiErrorResponse>('CLIENT_ERROR', error.data);
     }
   }
 
@@ -70,8 +68,7 @@ export class AuthService {
 
       return response.data;
     } catch (error) {
-      console.error('Error response', error, JSON.stringify(error));
-      throw new APIError('CLIENT_ERROR');
+      throw new APIError<ApiErrorResponse>('CLIENT_ERROR', error.data);
     }
   }
 
@@ -86,8 +83,7 @@ export class AuthService {
 
       return response.data;
     } catch (error) {
-      console.error('Error response', error, JSON.stringify(error));
-      throw new APIError('CLIENT_ERROR');
+      throw new APIError<ApiErrorResponse>('CLIENT_ERROR', error.data);
     }
   }
 
@@ -102,8 +98,7 @@ export class AuthService {
 
       return response.data;
     } catch (error) {
-      console.error('Error response', error, JSON.stringify(error));
-      throw new APIError('CLIENT_ERROR');
+      throw new APIError<ApiErrorResponse>('CLIENT_ERROR', error.data);
     }
   }
 
@@ -124,8 +119,7 @@ export class AuthService {
 
       return response.data;
     } catch (error) {
-      console.error('Error response', error, JSON.stringify(error));
-      throw new APIError('CLIENT_ERROR');
+      throw new APIError<ApiErrorResponse>('CLIENT_ERROR', error.data);
     }
   }
 }
