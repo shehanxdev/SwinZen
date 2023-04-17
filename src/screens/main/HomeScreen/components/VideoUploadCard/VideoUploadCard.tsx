@@ -9,11 +9,11 @@ import { Color, TextVariant } from '@sz/constants';
 import { VideoUploadCardFooter } from './VideoUploadCardFooter';
 
 export function VideoUploadCard() {
-  //TODO:: Removed this once the upload logi gets implemented
+  //TODO:: Removed this once the upload logic gets implemented
   const [isLoading, setIsLoading] = useState(false);
   const [isError] = useState(false);
 
-  //TODO:: Removed this once the upload logi gets implemented
+  //TODO:: Removed this once the upload logic gets implemented
   const onUpload = () => {
     setIsLoading(true);
     setTimeout(() => {
