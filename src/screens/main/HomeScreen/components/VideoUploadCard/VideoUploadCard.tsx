@@ -1,5 +1,5 @@
 import { BlurView } from '@react-native-community/blur';
-import React, { useMemo, useState } from 'react';
+import React, { ReactElement, useMemo, useState } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 
 import { ErrorIcon, Link, Text, UploadIcon } from '@sz/components';
@@ -7,6 +7,12 @@ import { tw } from '@sz/config';
 import { Color, TextVariant } from '@sz/constants';
 
 import { VideoUploadCardFooter } from './VideoUploadCardFooter';
+
+type RenderedData = {
+  icon: ReactElement;
+  title: string;
+  linkText?: string;
+};
 
 export function VideoUploadCard() {
   //TODO:: Removed this once the upload logic gets implemented
@@ -21,32 +27,24 @@ export function VideoUploadCard() {
     }, 2000);
   };
 
-  const renderIcon = useMemo(() => {
-    if (!isLoading && !isError) {
-      return <UploadIcon />;
-    } else if (isLoading) {
-      return <ActivityIndicator size="large" />;
-    } else if (isError) {
-      return <ErrorIcon />;
-    }
-  }, [isLoading, isError]);
-
-  const renderTitle = useMemo(() => {
+  const getRenderedData: RenderedData = useMemo(() => {
     if (isLoading) {
-      return 'Uploading.. Please wait!';
-    } else if (!isLoading && !isError) {
-      return 'No Data to Report. Get Started!';
+      return {
+        icon: <ActivityIndicator size="large" />,
+        title: 'Uploading.. Please wait!',
+      };
     } else if (isError) {
-      return 'Your video failed to upload!';
-    }
-  }, [isLoading, isError]);
-
-  const renderLinkText = useMemo(() => {
-    if (isError) {
-      return 'Find out why';
-    }
-    if (!isLoading && !isError) {
-      return 'Upload a video';
+      return {
+        icon: <ErrorIcon />,
+        title: 'Your video failed to upload!',
+        linkText: 'Find out why',
+      };
+    } else {
+      return {
+        icon: <UploadIcon />,
+        title: 'No Data to Report. Get Started!',
+        linkText: 'Upload a video',
+      };
     }
   }, [isLoading, isError]);
 
@@ -63,11 +61,11 @@ export function VideoUploadCard() {
           style={tw`absolute inset-x-0 inset-y-0 rounded-2.5`}
         />
         <View style={tw`items-center flex-1 mt-[${isError ? '31.67px' : '90.67px'}]`}>
-          {renderIcon}
+          {getRenderedData.icon}
           <View style={tw`mt-[16.67px]`}>
-            <Text variant={TextVariant.Body2Regular}>{renderTitle}</Text>
+            <Text variant={TextVariant.Body2Regular}>{getRenderedData.title}</Text>
             <View style={tw`mt-1`}>
-              <Link text={renderLinkText} onPress={onUpload} underline />
+              <Link text={getRenderedData?.linkText} onPress={onUpload} underline />
             </View>
           </View>
           {isError && (
