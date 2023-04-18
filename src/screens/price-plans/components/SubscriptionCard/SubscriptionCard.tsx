@@ -31,7 +31,7 @@ export function SubscriptionCard({
   testID = 'RNCardSubscriptionCard',
   LinearGradientProps = { colors: ['#8EFF001F', '#95FF101D', '#FFFFFF1F'], locations: [0, 0.0719, 1] }, //TODO :: these colors are not in the design system
 }: PriceCardProps) {
-  //TODO following sttes were intented to be used with the previous UI design and have not been completed because of the Change Request of the UI.
+  //TODO following states were intented to be used with the previous UI design and have not been completed because of the Change Request of the UI.
   // const [isFocused, setIsFocused] = React.useState<boolean>(false);
   // const buttonBackgroundColor = React.useMemo(() => {
   //   return isFocused ? Color.Neutral.Sz100 : Color.Primary.Sz400;
@@ -42,7 +42,9 @@ export function SubscriptionCard({
   // }, [isFocused]);
 
   return (
-    <View style={tw`mx-12  `}>
+    <View style={tw`mx-12`}>
+      //TODO following wrapper element was intented to be used with the previous UI design and have not been completed
+      because of the Change Request of the UI.
       {/* <TouchableWithoutFeedback
         onPress={() => {
           setIsFocused(true);
