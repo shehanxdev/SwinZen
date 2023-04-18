@@ -8,6 +8,7 @@ export { default as PasswordRevealEyeSvg } from './icons/account/password-reveal
 export { default as ProfileIconSvg } from './icons/account/profile_icon.svg';
 export { default as SecurityIconSvg } from './icons/account/security_icon.svg';
 export { default as SwingZenLogoSvg } from './logo/swingzen-logo.svg';
+export { default as CloseButtonSvg } from './icons/other/close-button.svg';
 export { default as CrossSvg } from './icons/other/cross-icon.svg';
 export { default as CustomMenuSvg } from './icons/main/custom-menu.svg';
 

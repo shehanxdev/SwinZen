@@ -8,6 +8,7 @@ import {
   BottomTabLibrarySvg,
   BottomTabUploadSvg,
   BottomTabVideoSvg,
+  CloseButtonSvg,
   CrossSvg,
   CustomMenuSvg,
   DrawerAboutSvg,
@@ -61,6 +62,10 @@ export function BottomTabAnalysisIconWithLabel({ color = Color.Neutral.Sz500, wi
 
 export function BottomTabLibraryIconWithLabel({ color = Color.Neutral.Sz500, width = 34, height = 43 }: SvgIconProps) {
   return <BottomTabLibrarySvg width={width} height={height} fill={color} />;
+}
+
+export function CloseButton({ color = Color.Neutral.Sz500, width = 12, height = 12 }: SvgIconProps) {
+  return <CloseButtonSvg width={width} height={height} fill={color} />;
 }
 
 export function CrossIcon({ color = Color.Neutral.Sz300, width = 16, height = 16 }: SvgIconProps) {
