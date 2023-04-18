@@ -12,6 +12,12 @@ enum Primary {
   Sz300 = `#8DBE8B`,
   Sz200 = `#C0DBBF`,
   Sz100 = `#F0F7F0`, //NOTE::figma contain two different colors(#F0F7F0, #C0DBBF) with the border. #C0DBBF neeeds to be removed since it does not consider within the colors
+
+  //NOTE::Following colors are related to the toasts messages but not available within the design system colors.
+  SzSuccess = '#59BC56',
+  SzInfo = '#607CDE',
+  SzError = '#DB4747',
+  SzWarning = '#CFD248',
 }
 
 enum Neutral {

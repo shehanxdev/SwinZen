@@ -8,6 +8,7 @@ import {
   BottomTabLibrarySvg,
   BottomTabUploadSvg,
   BottomTabVideoSvg,
+  CloseButtonSvg,
   CustomMenuSvg,
   MailIconSvg,
   PasswordHideEyeSvg,
@@ -84,4 +85,8 @@ export function BottomTabLibraryIconWithLabel({ color = Color.Neutral.Sz500, wid
 
 export function PricePlanFeatureListTickIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
   return <PricePlanFeatureListTick fill={color} width={width} height={height} />;
+}
+
+export function CloseButton({ color = Color.Neutral.Sz500, width = 12, height = 12 }: SvgIconProps) {
+  return <CloseButtonSvg width={width} height={height} fill={color} />;
 }
