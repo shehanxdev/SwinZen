@@ -82,6 +82,6 @@ export function BottomTabLibraryIconWithLabel({ color = Color.Neutral.Sz500, wid
   return <BottomTabLibrarySvg width={width} height={height} fill={color} />;
 }
 
-export function PricePlanFeatureListTickIcon({ width, height }: SvgIconProps) {
-  return <PricePlanFeatureListTick width={width} height={height} />;
+export function PricePlanFeatureListTickIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
+  return <PricePlanFeatureListTick fill={color} width={width} height={height} />;
 }
