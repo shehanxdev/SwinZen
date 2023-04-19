@@ -109,12 +109,12 @@ This policy describes the types of information we may collect from you or that y
                 style={
                   [
                     {
-                      "color": "#69AA67",
+                      "color": "#A2FD2F",
                       "lineHeight": 20,
                     },
                     {
                       "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 16,
+                      "fontSize": 15,
                       "fontWeight": "bold",
                       "textAlign": "center",
                     },
@@ -275,12 +275,12 @@ To ask questions or comment about this privacy policy and our privacy practices,
                 style={
                   [
                     {
-                      "color": "#69AA67",
+                      "color": "#A2FD2F",
                       "lineHeight": 20,
                     },
                     {
                       "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 16,
+                      "fontSize": 15,
                       "fontWeight": "bold",
                       "textAlign": "center",
                       "textDecorationLine": "underline",

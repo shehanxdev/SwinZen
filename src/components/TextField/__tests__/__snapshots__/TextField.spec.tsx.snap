@@ -44,7 +44,7 @@ exports[`TextField Component should render correctly 1`] = `
             "top": 6,
           },
           {
-            "backgroundColor": "#283E36",
+            "backgroundColor": "#16501D",
             "borderColor": "#ffffff00",
             "borderRadius": 10,
             "borderWidth": 1,
@@ -93,7 +93,7 @@ exports[`TextField Component should render correctly 1`] = `
                 "paddingTop": 17,
               },
               {
-                "color": "#ADB5BD",
+                "color": "#DEE2E6",
                 "fontFamily": "System",
                 "fontSize": 16,
                 "fontVariant": undefined,
