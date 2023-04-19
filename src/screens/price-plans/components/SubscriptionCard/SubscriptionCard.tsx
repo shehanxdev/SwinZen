@@ -38,8 +38,8 @@ export function SubscriptionCard({
     <Card
       onPress={onCardPress}
       testID={testID}
-      style={tw`bg-[${Color.Transparency.full}] ${isSelected ? `border-[${Color.Neutral.Sz500}]` : ''} ${
-        isSelected ? `border` : ''
+      style={tw`bg-[${Color.Transparency.full}] ${
+        isSelected ? `border-[${Color.Neutral.Sz500}] border` : ''
       } shadow-none`}>
       <LinearGradient
         colors={['#8EFF001F', '#95FF101D', '#FFFFFF1F']} //TODO :: these colors are not in the design system
