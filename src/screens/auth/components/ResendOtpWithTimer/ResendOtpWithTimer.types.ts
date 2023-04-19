@@ -11,6 +11,7 @@ export type OtpMinutes = IntRange<0, 11>;
 export type OtpSeconds = IntRange<0, 60>;
 
 export interface ResendOtpWithTimerProps {
+  testID?: string;
   initialMinutes?: OtpMinutes;
   initialSeconds?: OtpSeconds;
   onResend: () => Promise<void>;

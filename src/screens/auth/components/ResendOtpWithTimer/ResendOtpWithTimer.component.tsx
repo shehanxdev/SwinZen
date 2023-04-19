@@ -6,6 +6,7 @@ import { DEFAULT_OTP_RESEND_TIMER_MINUTES, DEFAULT_OTP_RESEND_TIMER_SECONDS } fr
 import { OtpMinutes, OtpSeconds, ResendOtpWithTimerProps } from './ResendOtpWithTimer.types';
 
 export function ResendOtpWithTimer({
+  testID = 'ResendOtpWithTimerTestID',
   onResend,
   initialMinutes = DEFAULT_OTP_RESEND_TIMER_MINUTES,
   initialSeconds = DEFAULT_OTP_RESEND_TIMER_SECONDS,
@@ -50,6 +51,7 @@ export function ResendOtpWithTimer({
 
   return (
     <Link
+      testID={testID}
       text={linkText}
       onPress={() => {
         onResend();

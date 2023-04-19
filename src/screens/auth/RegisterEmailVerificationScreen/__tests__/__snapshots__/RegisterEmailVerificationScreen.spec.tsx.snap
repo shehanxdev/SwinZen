@@ -506,6 +506,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                         },
                       ]
                     }
+                    testID="ResendOtpWithTimerTestID"
                   >
                     Resend again in 5:00
                   </Text>
