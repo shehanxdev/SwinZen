@@ -1,10 +1,10 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field';
 
 import { Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, TextAlignment, TextVariant } from '@sz/constants';
+import { Color, TextVariant } from '@sz/constants';
 
 const CELL_COUNT = 6;
 
@@ -13,20 +13,9 @@ export interface OTPInputProps {
   value: string;
   onChangeValue: (text: string) => void;
   onSubmitEditing: () => void;
-  error: boolean;
-  helperText: string;
-  helperTextColor: Color;
 }
 
-export function OTPInput({
-  testID,
-  value,
-  onChangeValue,
-  onSubmitEditing,
-  helperText,
-  helperTextColor = Color.Neutral.Sz200,
-  error,
-}: OTPInputProps) {
+export function OTPInput({ testID, value, onChangeValue, onSubmitEditing }: OTPInputProps) {
   /*
    * This is an additional logic provided by the react-native-confirmation-code-field library
    * useBlurOnFulfill hook has the logic to blurring <TextInput/> when value all the cells get filled with a value
@@ -48,18 +37,6 @@ export function OTPInput({
     setValue: onChangeValue,
   });
 
-  const helperTextComponent = useMemo(
-    () => (
-      <Text
-        variant={TextVariant.Labels}
-        color={error ? Color.Error.SzMain : helperTextColor}
-        textAlign={TextAlignment.Auto}>
-        {helperText}
-      </Text>
-    ),
-    [helperText, helperTextColor, error],
-  );
-
   return (
     <View>
       <CodeField
@@ -72,7 +49,7 @@ export function OTPInput({
         }}
         cellCount={CELL_COUNT}
         testID={testID}
-        rootStyle={tw`h-17.25 self-center`}
+        rootStyle={tw`h-18 self-center`}
         keyboardType="number-pad"
         returnKeyType={'done'}
         onSubmitEditing={onSubmitEditing}
@@ -81,15 +58,14 @@ export function OTPInput({
           <View
             onLayout={getCellOnLayoutHandler(index)}
             key={index}
-            style={tw`h-full rounded-2.5 w-13 justify-center items-center bg-[${Color.Neutral.Sz1000}] ${
-              isFocused ? `border border-[${Color.Neutral.Sz600}]` : 'border-0'
+            style={tw`h-full rounded-2.5 w-13 justify-center items-center bg-[${Color.Primary.Sz700}] ${
+              isFocused ? `border border-[${Color.Neutral.Sz100}]` : 'border-0'
             } ${index !== 0 ? 'ml-2.5' : 'ml-0'}`}>
             <Text variant={TextVariant.SubTitle2SemiBold}>{symbol || (isFocused ? <Cursor /> : null)}</Text>
             {!symbol && <View style={tw`absolute w-7 h-px bg-[${Color.Neutral.Sz600}] bottom-3.5`} />}
           </View>
         )}
       />
-      {helperTextComponent}
     </View>
   );
 }

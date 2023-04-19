@@ -5,7 +5,7 @@ import { Alert, View } from 'react-native';
 
 import { Button, Link, SwingZenLogoIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, OtpType, Route, TextVariant } from '@sz/constants';
+import { OtpType, Route, TextVariant } from '@sz/constants';
 import { OtpVerficationValue } from '@sz/models';
 import { NavigationService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
@@ -17,11 +17,11 @@ export function RegisterEmailVerificationScreen({ route }) {
   const {
     control,
     handleSubmit,
-    formState: { errors, isSubmitted },
+    formState: { errors },
     getValues,
   } = useForm<OtpVerficationValue>({ mode: 'onChange', resolver: yupResolver(otpValidationSchema) });
 
-  const username = route.params.params;
+  const username = route?.params?.params ?? 'shihara@surge.global';
 
   const loading = useSelector(state => state.loading.effects.userStore.emailVerification);
 
@@ -65,15 +65,15 @@ export function RegisterEmailVerificationScreen({ route }) {
   return (
     <BaseAuthScreen>
       <View style={tw`flex-1 justify-between`} testID="RegisterEmailVerificationScreenContainerTestID">
-        <View style={tw`mt-20 mx-5`}>
+        <View style={tw`mt-[35px] mx-5`}>
           <View style={tw`items-center`}>
             <SwingZenLogoIcon />
           </View>
           <View style={tw`items-center`}>
-            <View style={tw`mt-3 mb-22.5`}>
+            <View style={tw`mt-6 mb-2`}>
               <Text variant={TextVariant.SubTitle2SemiBold}>Email verification</Text>
             </View>
-            <View style={tw`mb-6`}>
+            <View style={tw`mb-10`}>
               <Text variant={TextVariant.Body2Regular}>
                 {`Enter the code received in your email address ${getMaskedMail(username)}`}
               </Text>
@@ -82,23 +82,20 @@ export function RegisterEmailVerificationScreen({ route }) {
           <Controller
             control={control}
             name="otp"
-            render={({ field: { value, onChange }, fieldState: { error, isTouched } }) => (
+            render={({ field: { value, onChange } }) => (
               <OTPInput
                 value={value}
                 onChangeValue={onChange}
                 onSubmitEditing={handleSubmit(onRegisterEmailFormValid, onRegisterEmailFormInvalid)}
-                helperText={(isTouched || isSubmitted) && error?.message}
-                helperTextColor={Color.Error.SzMain}
-                error={(isTouched || isSubmitted) && error !== undefined}
               />
             )}
           />
-          <View style={tw`items-end mt-2`}>
+          <View style={tw`items-center mt-6`}>
             <Link text="Resend the code" onPress={onResend} />
           </View>
         </View>
         <View style={tw`items-center mb-5 items-center mx-5 mt-15`}>
-          <View style={tw`mb-2`}>
+          <View style={tw`mb-6`}>
             <Button onPress={onVerify} title="Verify" loading={loading} />
           </View>
           <Text variant={TextVariant.Body2Regular}>
