@@ -44,7 +44,7 @@ export function SubscriptionCard({
       <LinearGradient
         colors={['#8EFF001F', '#95FF101D', '#FFFFFF1F']} //TODO :: these colors are not in the design system
         locations={[0, 0.0719, 1]}
-        style={tw`flex-col items-center px-8 py-4 rounded-xl`}>
+        style={tw`flex-col items-center px-8 py-4 rounded-[10px]`}>
         <View style={tw`mt-4`}>
           <Text variant={TextVariant.SubTitle1} color={Color.Primary.Sz200}>
             {title}
