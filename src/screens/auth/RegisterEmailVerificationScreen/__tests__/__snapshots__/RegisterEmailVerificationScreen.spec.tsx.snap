@@ -44,11 +44,14 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
       resizeMode="repeat"
       source={
         {
-          "testUri": "../../../src/assets/images/grassBackground.jpeg",
+          "testUri": "../../../src/assets/images/grassBackground.jpg",
         }
       }
       style={
         {
+          "flexBasis": "0%",
+          "flexGrow": 1,
+          "flexShrink": 1,
           "opacity": 0.1,
         }
       }
@@ -517,7 +520,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                         },
                         {
                           "fontFamily": "SourceSansPro-Regular",
-                          "fontSize": 16,
+                          "fontSize": 15,
                           "fontWeight": "bold",
                           "textAlign": "center",
                         },
@@ -717,7 +720,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                         },
                         {
                           "fontFamily": "SourceSansPro-Regular",
-                          "fontSize": 16,
+                          "fontSize": 15,
                           "fontWeight": "bold",
                           "textAlign": "center",
                         },
@@ -739,7 +742,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                         },
                         {
                           "fontFamily": "SourceSansPro-Regular",
-                          "fontSize": 16,
+                          "fontSize": 15,
                           "fontWeight": "bold",
                           "textAlign": "center",
                         },

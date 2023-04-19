@@ -173,7 +173,7 @@ export function SignupScreen() {
               loading={loading}
             />
           </View>
-          <Text variant={TextVariant.Body2SemiBold}>
+          <Text variant={TextVariant.Labels}>
             {'Already have an account? '}
             <Link
               underline
