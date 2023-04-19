@@ -29,7 +29,7 @@ export function SubscriptionCard({
   subTitle,
   price,
   pricingDescription,
-  testID = 'SubscriptionCard',
+  testID = 'SubscriptionCardTestID',
   onCardPress,
   onGetStarted,
   isSelected,
