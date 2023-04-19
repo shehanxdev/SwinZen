@@ -492,7 +492,6 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                   }
                 >
                   <Text
-                    onPress={[Function]}
                     style={
                       [
                         {
@@ -508,7 +507,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                       ]
                     }
                   >
-                    Resend the code
+                    Resend again in 5:00
                   </Text>
                 </View>
               </View>
