@@ -131,8 +131,8 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                   <View
                     style={
                       {
-                        "marginBottom": 40,
-                        "marginTop": 12,
+                        "marginBottom": 16,
+                        "marginTop": 24,
                       }
                     }
                   >
@@ -230,7 +230,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                               "paddingBottom": 0,
                             },
                             {
-                              "minHeight": 50,
+                              "minHeight": 48,
                               "paddingTop": 8,
                             },
                           ]
@@ -257,11 +257,11 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                                 "zIndex": 1,
                               },
                               {
-                                "height": 50,
+                                "height": 48,
                               },
                               {
-                                "paddingBottom": 17,
-                                "paddingTop": 17,
+                                "paddingBottom": 16,
+                                "paddingTop": 16,
                               },
                               {
                                 "color": "#DEE2E6",
@@ -299,7 +299,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                             },
                             {
                               "left": 12,
-                              "top": 16,
+                              "top": 15,
                             },
                           ]
                         }
@@ -451,7 +451,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                               "paddingBottom": 0,
                             },
                             {
-                              "minHeight": 50,
+                              "minHeight": 48,
                               "paddingTop": 8,
                             },
                           ]
@@ -479,11 +479,11 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                                 "zIndex": 1,
                               },
                               {
-                                "height": 50,
+                                "height": 48,
                               },
                               {
-                                "paddingBottom": 17,
-                                "paddingTop": 17,
+                                "paddingBottom": 16,
+                                "paddingTop": 16,
                               },
                               {
                                 "color": "#DEE2E6",
@@ -521,7 +521,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                             },
                             {
                               "left": 12,
-                              "top": 16,
+                              "top": 15,
                             },
                           ]
                         }
@@ -673,7 +673,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                               "paddingBottom": 0,
                             },
                             {
-                              "minHeight": 50,
+                              "minHeight": 48,
                               "paddingTop": 8,
                             },
                           ]
@@ -701,11 +701,11 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                                 "zIndex": 1,
                               },
                               {
-                                "height": 50,
+                                "height": 48,
                               },
                               {
-                                "paddingBottom": 17,
-                                "paddingTop": 17,
+                                "paddingBottom": 16,
+                                "paddingTop": 16,
                               },
                               {
                                 "color": "#DEE2E6",
@@ -745,7 +745,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                             },
                             {
                               "left": 12,
-                              "top": 16,
+                              "top": 15,
                             },
                           ]
                         }
@@ -828,7 +828,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                             },
                             {
                               "right": 12,
-                              "top": 16,
+                              "top": 15,
                             },
                           ]
                         }
@@ -980,7 +980,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                               "paddingBottom": 0,
                             },
                             {
-                              "minHeight": 50,
+                              "minHeight": 48,
                               "paddingTop": 8,
                             },
                           ]
@@ -1008,11 +1008,11 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                                 "zIndex": 1,
                               },
                               {
-                                "height": 50,
+                                "height": 48,
                               },
                               {
-                                "paddingBottom": 17,
-                                "paddingTop": 17,
+                                "paddingBottom": 16,
+                                "paddingTop": 16,
                               },
                               {
                                 "color": "#DEE2E6",
@@ -1052,7 +1052,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                             },
                             {
                               "left": 12,
-                              "top": 16,
+                              "top": 15,
                             },
                           ]
                         }
@@ -1135,7 +1135,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                             },
                             {
                               "right": 12,
-                              "top": 16,
+                              "top": 15,
                             },
                           ]
                         }
@@ -1287,7 +1287,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                               "paddingBottom": 0,
                             },
                             {
-                              "minHeight": 50,
+                              "minHeight": 48,
                               "paddingTop": 8,
                             },
                           ]
@@ -1312,11 +1312,11 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                                 "zIndex": 1,
                               },
                               {
-                                "height": 50,
+                                "height": 48,
                               },
                               {
-                                "paddingBottom": 17,
-                                "paddingTop": 17,
+                                "paddingBottom": 16,
+                                "paddingTop": 16,
                               },
                               {
                                 "color": "#DEE2E6",
@@ -1354,7 +1354,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                             },
                             {
                               "left": 12,
-                              "top": 16,
+                              "top": 15,
                             },
                           ]
                         }
@@ -1633,7 +1633,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                         },
                         {
                           "fontFamily": "SourceSansPro-Regular",
-                          "fontSize": 15,
+                          "fontSize": 16,
                           "fontWeight": "bold",
                           "textAlign": "center",
                           "textDecorationLine": "underline",

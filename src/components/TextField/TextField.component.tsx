@@ -95,7 +95,7 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
     <View>
       {labelTextComponent}
       <TextInput
-        style={tw`h-12.5 p-0 m-0`}
+        style={tw`h-12 p-0 m-0`}
         ref={ref}
         mode="outlined"
         secureTextEntry={secureTextEntry}

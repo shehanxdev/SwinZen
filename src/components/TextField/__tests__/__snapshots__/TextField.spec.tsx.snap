@@ -61,7 +61,7 @@ exports[`TextField Component should render correctly 1`] = `
               "paddingBottom": 0,
             },
             {
-              "minHeight": 50,
+              "minHeight": 48,
               "paddingTop": 8,
             },
           ]
@@ -86,11 +86,11 @@ exports[`TextField Component should render correctly 1`] = `
                 "zIndex": 1,
               },
               {
-                "height": 50,
+                "height": 48,
               },
               {
-                "paddingBottom": 17,
-                "paddingTop": 17,
+                "paddingBottom": 16,
+                "paddingTop": 16,
               },
               {
                 "color": "#DEE2E6",

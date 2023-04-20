@@ -235,7 +235,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                               "paddingBottom": 0,
                             },
                             {
-                              "minHeight": 50,
+                              "minHeight": 48,
                               "paddingTop": 8,
                             },
                           ]
@@ -262,11 +262,11 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                                 "zIndex": 1,
                               },
                               {
-                                "height": 50,
+                                "height": 48,
                               },
                               {
-                                "paddingBottom": 17,
-                                "paddingTop": 17,
+                                "paddingBottom": 16,
+                                "paddingTop": 16,
                               },
                               {
                                 "color": "#DEE2E6",
@@ -304,7 +304,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                             },
                             {
                               "left": 12,
-                              "top": 16,
+                              "top": 15,
                             },
                           ]
                         }
@@ -565,7 +565,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                       },
                       {
                         "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 15,
+                        "fontSize": 16,
                         "fontWeight": "bold",
                         "textAlign": "center",
                       },

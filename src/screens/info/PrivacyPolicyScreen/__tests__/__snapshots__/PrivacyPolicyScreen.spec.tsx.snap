@@ -114,7 +114,7 @@ This policy describes the types of information we may collect from you or that y
                     },
                     {
                       "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 15,
+                      "fontSize": 16,
                       "fontWeight": "bold",
                       "textAlign": "center",
                     },
@@ -280,7 +280,7 @@ To ask questions or comment about this privacy policy and our privacy practices,
                     },
                     {
                       "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 15,
+                      "fontSize": 16,
                       "fontWeight": "bold",
                       "textAlign": "center",
                       "textDecorationLine": "underline",
