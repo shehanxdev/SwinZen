@@ -13,8 +13,9 @@ exports[`login screen should render LoginScreen correctly 1`] = `
   <BVLinearGradient
     colors={
       [
-        4279320343,
-        4278650887,
+        4279917603,
+        4278984207,
+        4278650631,
       ]
     }
     endPoint={
@@ -32,17 +33,35 @@ exports[`login screen should render LoginScreen correctly 1`] = `
     }
     style={
       {
-        "height": "100%",
+        "flexBasis": "0%",
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "position": "relative",
       }
     }
     testID="LoginScreenTestID"
   >
-    <RCTSafeAreaView
+    <Image
+      resizeMode="repeat"
+      source={
+        {
+          "testUri": "../../../src/assets/images/grassBackground.jpg",
+        }
+      }
       style={
         {
           "flexBasis": "0%",
           "flexGrow": 1,
           "flexShrink": 1,
+          "opacity": 0.1,
+        }
+      }
+    />
+    <RCTSafeAreaView
+      style={
+        {
+          "height": "100%",
+          "position": "absolute",
         }
       }
     >
@@ -86,7 +105,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                     "display": "flex",
                     "marginLeft": 20,
                     "marginRight": 20,
-                    "marginTop": 80,
+                    "marginTop": 40,
                   }
                 }
               >
@@ -113,7 +132,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                     style={
                       {
                         "marginBottom": 80,
-                        "marginTop": 12,
+                        "marginTop": 24,
                       }
                     }
                   >
@@ -166,7 +185,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                       ]
                     }
                   >
-                    Your Email
+                    Your email
                   </Text>
                   <View
                     style={
@@ -194,7 +213,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                             "top": 6,
                           },
                           {
-                            "backgroundColor": "#283E36",
+                            "backgroundColor": "#16501D",
                             "borderColor": "#ffffff00",
                             "borderRadius": 10,
                             "borderWidth": 1,
@@ -211,7 +230,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                               "paddingBottom": 0,
                             },
                             {
-                              "minHeight": 50,
+                              "minHeight": 48,
                               "paddingTop": 8,
                             },
                           ]
@@ -239,14 +258,14 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                                 "zIndex": 1,
                               },
                               {
-                                "height": 50,
+                                "height": 48,
                               },
                               {
-                                "paddingBottom": 17,
-                                "paddingTop": 17,
+                                "paddingBottom": 16,
+                                "paddingTop": 16,
                               },
                               {
-                                "color": "#ADB5BD",
+                                "color": "#DEE2E6",
                                 "fontFamily": "SourceSansPro-Regular",
                                 "fontSize": 16,
                                 "fontVariant": undefined,
@@ -281,7 +300,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                             },
                             {
                               "left": 12,
-                              "top": 16,
+                              "top": 15,
                             },
                           ]
                         }
@@ -346,7 +365,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                           <View>
                             <SvgMock
                               fill="#ADB5BD"
-                              height={20}
+                              height={17}
                               width={20}
                             />
                           </View>
@@ -388,7 +407,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                       ]
                     }
                   >
-                    Your Password
+                    Your password
                   </Text>
                   <View
                     style={
@@ -416,7 +435,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                             "top": 6,
                           },
                           {
-                            "backgroundColor": "#283E36",
+                            "backgroundColor": "#16501D",
                             "borderColor": "#ffffff00",
                             "borderRadius": 10,
                             "borderWidth": 1,
@@ -433,7 +452,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                               "paddingBottom": 0,
                             },
                             {
-                              "minHeight": 50,
+                              "minHeight": 48,
                               "paddingTop": 8,
                             },
                           ]
@@ -460,14 +479,14 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                                 "zIndex": 1,
                               },
                               {
-                                "height": 50,
+                                "height": 48,
                               },
                               {
-                                "paddingBottom": 17,
-                                "paddingTop": 17,
+                                "paddingBottom": 16,
+                                "paddingTop": 16,
                               },
                               {
-                                "color": "#ADB5BD",
+                                "color": "#DEE2E6",
                                 "fontFamily": "SourceSansPro-Regular",
                                 "fontSize": 16,
                                 "fontVariant": undefined,
@@ -504,7 +523,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                             },
                             {
                               "left": 12,
-                              "top": 16,
+                              "top": 15,
                             },
                           ]
                         }
@@ -569,8 +588,8 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                           <View>
                             <SvgMock
                               fill="#ADB5BD"
-                              height={20}
-                              width={20}
+                              height={24}
+                              width={24}
                             />
                           </View>
                         </View>
@@ -587,7 +606,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                             },
                             {
                               "right": 12,
-                              "top": 16,
+                              "top": 15,
                             },
                           ]
                         }
@@ -652,8 +671,8 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                           <View>
                             <SvgMock
                               fill="#ADB5BD"
-                              height={20}
-                              width={20}
+                              height={24}
+                              width={24}
                             />
                           </View>
                         </View>
@@ -681,6 +700,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                   style={
                     {
                       "alignItems": "flex-end",
+                      "marginTop": 12,
                     }
                   }
                 >
@@ -689,7 +709,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                     style={
                       [
                         {
-                          "color": "#69AA67",
+                          "color": "#A2FD2F",
                           "lineHeight": 20,
                         },
                         {
@@ -697,6 +717,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                           "fontSize": 16,
                           "fontWeight": "bold",
                           "textAlign": "center",
+                          "textDecorationLine": "underline",
                         },
                       ]
                     }
@@ -719,7 +740,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                 <View
                   style={
                     {
-                      "marginBottom": 8,
+                      "marginBottom": 24,
                     }
                   }
                 >
@@ -736,7 +757,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                       onTouchStart={[Function]}
                       style={
                         {
-                          "backgroundColor": "#69AA67",
+                          "backgroundColor": "#A2FD2F",
                           "borderColor": "#ffffff00",
                           "borderRadius": 10,
                           "borderStyle": "solid",
@@ -846,19 +867,19 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                               style={
                                 [
                                   {
-                                    "color": "#F8F9FA",
-                                    "lineHeight": 24,
+                                    "color": "#283E36",
+                                    "lineHeight": 28,
                                   },
                                   {
                                     "fontFamily": "SourceSansPro-SemiBold",
-                                    "fontSize": 16,
-                                    "fontWeight": "600",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
                                     "textAlign": "center",
                                   },
                                 ]
                               }
                             >
-                              Sign in
+                              SIGN IN
                             </Text>
                           </Text>
                         </View>
@@ -875,20 +896,20 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                       },
                       {
                         "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "normal",
+                        "fontSize": 15,
+                        "fontWeight": "600",
                         "textAlign": "center",
                       },
                     ]
                   }
                 >
-                  Don’t Have An Account?
+                  Don’t have an account?
                   <Text
                     onPress={[Function]}
                     style={
                       [
                         {
-                          "color": "#69AA67",
+                          "color": "#A2FD2F",
                           "lineHeight": 20,
                         },
                         {
@@ -896,6 +917,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                           "fontSize": 16,
                           "fontWeight": "bold",
                           "textAlign": "center",
+                          "textDecorationLine": "underline",
                         },
                       ]
                     }

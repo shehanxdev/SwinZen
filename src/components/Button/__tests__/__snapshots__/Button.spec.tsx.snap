@@ -126,12 +126,12 @@ exports[`Button Component should render correctly should render correctly with [
               [
                 {
                   "color": "#2125293d",
-                  "lineHeight": 24,
+                  "lineHeight": 28,
                 },
                 {
                   "fontFamily": "SourceSansPro-SemiBold",
-                  "fontSize": 16,
-                  "fontWeight": "600",
+                  "fontSize": 18,
+                  "fontWeight": "bold",
                   "textAlign": "center",
                 },
               ]
@@ -272,12 +272,12 @@ exports[`Button Component should render correctly should render correctly with [
               [
                 {
                   "color": "#DEE2E6",
-                  "lineHeight": 24,
+                  "lineHeight": 28,
                 },
                 {
                   "fontFamily": "SourceSansPro-SemiBold",
-                  "fontSize": 16,
-                  "fontWeight": "600",
+                  "fontSize": 18,
+                  "fontWeight": "bold",
                   "textAlign": "center",
                 },
               ]
@@ -417,13 +417,13 @@ exports[`Button Component should render correctly should render correctly with [
             style={
               [
                 {
-                  "color": "#F8F9FA",
-                  "lineHeight": 24,
+                  "color": "#283E36",
+                  "lineHeight": 28,
                 },
                 {
                   "fontFamily": "SourceSansPro-SemiBold",
-                  "fontSize": 16,
-                  "fontWeight": "600",
+                  "fontSize": 18,
+                  "fontWeight": "bold",
                   "textAlign": "center",
                 },
               ]

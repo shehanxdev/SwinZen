@@ -13,7 +13,7 @@ export enum TextVariant {
   SubTitle2Italic = 'SubTitle2Italic',
 
   // Body 1
-  Body1SemiBold = 'Body1SemiBold',
+  Body1Bold = 'Body1Bold',
   Body1Regular = 'Body1Regular',
 
   // Body 2

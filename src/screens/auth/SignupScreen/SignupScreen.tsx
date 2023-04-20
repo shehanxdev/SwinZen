@@ -54,12 +54,12 @@ export function SignupScreen() {
   return (
     <BaseAuthScreen testID="SignupScreenTestID">
       <View style={tw`flex-1 justify-between`}>
-        <View style={tw`flex mt-20 mx-5`}>
+        <View style={tw`flex mt-10 mx-5`}>
           <View style={tw`items-center`}>
             <SwingZenLogoIcon />
           </View>
           <View style={tw`items-center`}>
-            <View style={tw`mt-3 mb-10`}>
+            <View style={tw`mt-6 mb-4`}>
               <Text variant={TextVariant.SubTitle2SemiBold}>Register with us</Text>
             </View>
           </View>
@@ -71,7 +71,7 @@ export function SignupScreen() {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <TextField
                 ref={ref}
-                label="Your Name"
+                label="Your name"
                 leftIcon={<ProfileIcon />}
                 maxLength={10}
                 value={value}
@@ -91,7 +91,7 @@ export function SignupScreen() {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <TextField
                 ref={ref}
-                label="Your Email"
+                label="Your email"
                 leftIcon={<MailIcon />}
                 maxLength={50}
                 value={value}
@@ -112,7 +112,7 @@ export function SignupScreen() {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <PasswordField
                 ref={ref}
-                label="Your Password"
+                label="Your password"
                 leftIcon={<AccountLockIcon />}
                 maxLength={20}
                 value={value}
@@ -132,7 +132,7 @@ export function SignupScreen() {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <PasswordField
                 ref={ref}
-                label="Please Confirm Your Password"
+                label="Please confirm your password"
                 leftIcon={<AccountLockIcon />}
                 maxLength={20}
                 value={value}
@@ -152,7 +152,7 @@ export function SignupScreen() {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <TextField
                 ref={ref}
-                label="Your Promotion Code (If Applicable)"
+                label="Your promotion code (If Applicable)"
                 leftIcon={<SecurityIcon />}
                 value={value}
                 onChangeText={onChange}
@@ -165,17 +165,18 @@ export function SignupScreen() {
             )}
           />
         </View>
-        <View style={tw`items-center mt-10 mb-5 mx-5`}>
-          <View style={tw`mb-2`}>
+        <View style={tw`items-center mt-18 mb-5 mx-5`}>
+          <View style={tw`mb-6`}>
             <Button
               onPress={handleSubmit(onSignUpFormValid, onSignUpFormInvalid)}
-              title={'Register'}
+              title={'REGISTER'}
               loading={loading}
             />
           </View>
-          <Text variant={TextVariant.Body2Regular}>
-            {'Already Have An Account? '}
+          <Text variant={TextVariant.Labels}>
+            {'Already have an account? '}
             <Link
+              underline
               text="Sign in"
               onPress={() => {
                 NavigationService.navigate(Route.Login);
