@@ -82,10 +82,10 @@ exports[`Terms Of Use Screen Screen should render Terms Of Use Screen correctly 
           <View
             style={
               {
-                "paddingBottom": 24,
-                "paddingLeft": 24,
-                "paddingRight": 24,
-                "paddingTop": 24,
+                "paddingBottom": 16,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "paddingTop": 16,
               }
             }
             testID="TermsOfUseScreenTestID"
@@ -480,7 +480,7 @@ The Terms of Use and our Privacy Policy constitute the sole and entire agreement
  
 Your Comments and Concerns
                 
-This website is operated by 9805 NE Hilltop Dr. Bainbridge Island, WA 98110. 
+This website is operated by 423 S Margin St Franklin TN 37064. 
 All notices of copyright infringement claims should be sent to the copyright agent designated by contacting 
                 
 All other feedback, comments, requests for technical support and other communications relating to the Website should be directed to Sports Zoom LLC 6601 Edgemoore Dr College Grove TN 37046.
