@@ -12,7 +12,7 @@ import { BaseScreen } from '../components';
 export function TermsOfUseScreen() {
   return (
     <BaseScreen>
-      <View testID="TermsOfUseScreenTestID" style={tw`p-4`}>
+      <View testID="TermsOfUseScreenTestID" style={tw`px-4 py-6`}>
         <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Auto}>
           {`Acceptance of the Terms of Use
                 \nThese terms of use are entered into by and between You and Sports Zoom LLC, “we” or “us“. The following terms and conditions, together with any documents they expressly incorporate by reference collectively, these “Terms of Use“, govern your access to and use of, including any content, functionality and services offered on or through `}

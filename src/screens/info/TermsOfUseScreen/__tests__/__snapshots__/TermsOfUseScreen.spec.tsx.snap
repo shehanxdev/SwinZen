@@ -82,10 +82,10 @@ exports[`Terms Of Use Screen Screen should render Terms Of Use Screen correctly 
           <View
             style={
               {
-                "paddingBottom": 16,
+                "paddingBottom": 24,
                 "paddingLeft": 16,
                 "paddingRight": 16,
-                "paddingTop": 16,
+                "paddingTop": 24,
               }
             }
             testID="TermsOfUseScreenTestID"
