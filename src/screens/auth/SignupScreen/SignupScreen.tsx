@@ -59,7 +59,7 @@ export function SignupScreen() {
             <SwingZenLogoIcon />
           </View>
           <View style={tw`items-center`}>
-            <View style={tw`mt-3 mb-10`}>
+            <View style={tw`mt-6 mb-4`}>
               <Text variant={TextVariant.SubTitle2SemiBold}>Register with us</Text>
             </View>
           </View>

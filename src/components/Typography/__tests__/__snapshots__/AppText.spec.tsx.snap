@@ -387,7 +387,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-Regular",
-        "fontSize": 15,
+        "fontSize": 16,
         "fontWeight": "bold",
         "textAlign": "auto",
       },
@@ -410,7 +410,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-Regular",
-        "fontSize": 15,
+        "fontSize": 16,
         "fontWeight": "bold",
         "textAlign": "auto",
         "textDecorationLine": "underline",
@@ -998,7 +998,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-Regular",
-        "fontSize": 15,
+        "fontSize": 16,
         "fontWeight": "bold",
         "textAlign": "center",
       },
@@ -1021,7 +1021,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-Regular",
-        "fontSize": 15,
+        "fontSize": 16,
         "fontWeight": "bold",
         "textAlign": "center",
         "textDecorationLine": "underline",
@@ -1609,7 +1609,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-Regular",
-        "fontSize": 15,
+        "fontSize": 16,
         "fontWeight": "bold",
         "textAlign": "justify",
       },
@@ -1632,7 +1632,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-Regular",
-        "fontSize": 15,
+        "fontSize": 16,
         "fontWeight": "bold",
         "textAlign": "justify",
         "textDecorationLine": "underline",
@@ -2220,7 +2220,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-Regular",
-        "fontSize": 15,
+        "fontSize": 16,
         "fontWeight": "bold",
         "textAlign": "left",
       },
@@ -2243,7 +2243,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-Regular",
-        "fontSize": 15,
+        "fontSize": 16,
         "fontWeight": "bold",
         "textAlign": "left",
         "textDecorationLine": "underline",
@@ -2831,7 +2831,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-Regular",
-        "fontSize": 15,
+        "fontSize": 16,
         "fontWeight": "bold",
         "textAlign": "right",
       },
@@ -2854,7 +2854,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-Regular",
-        "fontSize": 15,
+        "fontSize": 16,
         "fontWeight": "bold",
         "textAlign": "right",
         "textDecorationLine": "underline",
