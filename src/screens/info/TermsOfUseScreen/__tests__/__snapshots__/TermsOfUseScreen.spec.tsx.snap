@@ -1,78 +1,84 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Terms Of Use Screen Screen should render Terms Of Use Screen correctly 1`] = `
-<View
-  accessibilityIgnoresInvertColors={true}
+<BVLinearGradient
+  colors={
+    [
+      4279917603,
+      4278984207,
+      4278650631,
+    ]
+  }
+  endPoint={
+    {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
   style={
     {
       "flexBasis": "0%",
       "flexGrow": 1,
       "flexShrink": 1,
-      "paddingTop": 50,
+      "position": "relative",
     }
   }
 >
   <Image
+    resizeMode="repeat"
     source={
       {
-        "testUri": "../../../src/assets/images/gradientBackground.png",
+        "testUri": "../../../src/assets/images/grassBackground.jpg",
       }
     }
     style={
-      [
-        {
-          "bottom": 0,
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        },
-        {
-          "height": undefined,
-          "width": undefined,
-        },
-        undefined,
-      ]
+      {
+        "flexBasis": "0%",
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "opacity": 0.1,
+      }
     }
   />
-  <RCTSafeAreaView>
-    <RCTScrollView>
-      <View>
-        <BVLinearGradient
-          angle={90}
-          colors={
-            [
-              311361280,
-              100663295,
-              50331647,
-            ]
+  <RCTSafeAreaView
+    style={
+      {
+        "height": "100%",
+        "position": "absolute",
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "paddingBottom": 0,
+          },
+        ]
+      }
+    >
+      <RCTScrollView
+        contentContainerStyle={
+          {
+            "flexGrow": 1,
           }
-          endPoint={
-            {
-              "x": 0.5,
-              "y": 1,
-            }
-          }
-          locations={null}
-          startPoint={
-            {
-              "x": 0.5,
-              "y": 0,
-            }
-          }
-          style={
-            {
-              "borderColor": "#404040",
-              "borderRadius": 10,
-              "borderWidth": 1,
-              "marginBottom": 20,
-              "marginLeft": 20,
-              "marginRight": 20,
-              "marginTop": 34,
-            }
-          }
-          useAngle={true}
-        >
+        }
+        keyboardShouldPersistTaps="handled"
+      >
+        <View>
           <View
             style={
               {
@@ -108,7 +114,7 @@ These terms of use are entered into by and between You and Sports Zoom LLC, “w
                 style={
                   [
                     {
-                      "color": "#69AA67",
+                      "color": "#A2FD2F",
                       "lineHeight": 20,
                     },
                     {
@@ -116,6 +122,7 @@ These terms of use are entered into by and between You and Sports Zoom LLC, “w
                       "fontSize": 16,
                       "fontWeight": "bold",
                       "textAlign": "center",
+                      "textDecorationLine": "underline",
                     },
                   ]
                 }
@@ -130,7 +137,7 @@ Please read the Terms of Use carefully before you start to use the Website. By u
                 style={
                   [
                     {
-                      "color": "#69AA67",
+                      "color": "#A2FD2F",
                       "lineHeight": 20,
                     },
                     {
@@ -138,6 +145,7 @@ Please read the Terms of Use carefully before you start to use the Website. By u
                       "fontSize": 16,
                       "fontWeight": "bold",
                       "textAlign": "center",
+                      "textDecorationLine": "underline",
                     },
                   ]
                 }
@@ -173,7 +181,7 @@ To access the Website or some of the resources it offers, you may be asked to pr
                 style={
                   [
                     {
-                      "color": "#69AA67",
+                      "color": "#A2FD2F",
                       "lineHeight": 20,
                     },
                     {
@@ -181,6 +189,7 @@ To access the Website or some of the resources it offers, you may be asked to pr
                       "fontSize": 16,
                       "fontWeight": "bold",
                       "textAlign": "center",
+                      "textDecorationLine": "underline",
                     },
                   ]
                 }
@@ -307,7 +316,7 @@ Violate the legal rights (including the rights of publicity and privacy) of othe
                 style={
                   [
                     {
-                      "color": "#69AA67",
+                      "color": "#A2FD2F",
                       "lineHeight": 20,
                     },
                     {
@@ -315,6 +324,7 @@ Violate the legal rights (including the rights of publicity and privacy) of othe
                       "fontSize": 16,
                       "fontWeight": "bold",
                       "textAlign": "center",
+                      "textDecorationLine": "underline",
                     },
                   ]
                 }
@@ -361,7 +371,7 @@ All information we collect on this Website is subject to our
                 style={
                   [
                     {
-                      "color": "#69AA67",
+                      "color": "#A2FD2F",
                       "lineHeight": 20,
                     },
                     {
@@ -369,6 +379,7 @@ All information we collect on this Website is subject to our
                       "fontSize": 16,
                       "fontWeight": "bold",
                       "textAlign": "center",
+                      "textDecorationLine": "underline",
                     },
                   ]
                 }
@@ -475,9 +486,9 @@ All notices of copyright infringement claims should be sent to the copyright age
 All other feedback, comments, requests for technical support and other communications relating to the Website should be directed to Sports Zoom LLC 6601 Edgemoore Dr College Grove TN 37046.
             </Text>
           </View>
-        </BVLinearGradient>
-      </View>
-    </RCTScrollView>
+        </View>
+      </RCTScrollView>
+    </View>
   </RCTSafeAreaView>
-</View>
+</BVLinearGradient>
 `;
