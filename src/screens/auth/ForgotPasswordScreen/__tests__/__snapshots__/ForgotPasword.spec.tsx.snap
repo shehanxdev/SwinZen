@@ -106,7 +106,6 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                     "flexBasis": "0%",
                     "flexGrow": 1,
                     "flexShrink": 1,
-                    "justifyContent": "center",
                     "marginLeft": 20,
                     "marginRight": 20,
                   }
@@ -122,8 +121,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                   <View
                     style={
                       {
-                        "marginBottom": 20,
-                        "marginTop": 12,
+                        "marginTop": 120,
                       }
                     }
                   >
@@ -149,7 +147,8 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                   <View
                     style={
                       {
-                        "marginBottom": 52,
+                        "marginBottom": 32,
+                        "marginTop": 8,
                       }
                     }
                   >
@@ -190,7 +189,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                       ]
                     }
                   >
-                    Your Email
+                    Your email
                   </Text>
                   <View
                     style={
@@ -408,7 +407,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                 <View
                   style={
                     {
-                      "marginBottom": 12,
+                      "marginBottom": 24,
                     }
                   }
                 >
@@ -547,7 +546,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                                 ]
                               }
                             >
-                              Reset password
+                              RESET PASSWORD
                             </Text>
                           </Text>
                         </View>
