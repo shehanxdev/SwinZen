@@ -15,6 +15,7 @@ import {
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
   PlayButtonSvg,
+  PricePlanFeatureListTick,
   ProfileIconSvg,
   SecurityIconSvg,
   SwingZenLogoSvg,
@@ -95,6 +96,10 @@ export function PlayButtonIcon({ color = Color.Neutral.Sz100, width = 46, height
 
 export function ErrorIcon({ color = Color.Neutral.Sz100, width = 38, height = 36 }: SvgIconProps) {
   return <ErrorIconSvg width={width} height={height} fill={color} />;
+}
+
+export function PricePlanFeatureListTickIcon({ color = Color.Neutral.Sz500, width = 12, height = 12 }: SvgIconProps) {
+  return <PricePlanFeatureListTick fill={color} width={width} height={height} />;
 }
 
 export function CloseButton({ color = Color.Neutral.Sz500, width = 12, height = 12 }: SvgIconProps) {
