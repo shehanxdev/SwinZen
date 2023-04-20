@@ -716,6 +716,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                           "fontSize": 16,
                           "fontWeight": "bold",
                           "textAlign": "center",
+                          "textDecorationLine": "underline",
                         },
                       ]
                     }
@@ -915,6 +916,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                           "fontSize": 16,
                           "fontWeight": "bold",
                           "textAlign": "center",
+                          "textDecorationLine": "underline",
                         },
                       ]
                     }
