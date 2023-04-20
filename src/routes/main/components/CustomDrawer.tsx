@@ -9,8 +9,8 @@ import {
   CrossIcon,
   DrawerAboutIcon,
   DrawerContactIcon,
+  DrawerFAQIcon,
   DrawerFollowersIcon,
-  DrawerFriendIcon,
   DrawerLogoutIcon,
   DrawerNotificationIcon,
   DrawerPrivacyIcon,
@@ -26,10 +26,6 @@ import { DrawerItem } from './DrawerItem';
 
 export function CustomDrawer() {
   const dispatch = useDispatch();
-
-  const onShare = async () => {
-    // TODO:: implement
-  };
 
   const Logout = async () => {
     try {
@@ -75,6 +71,11 @@ export function CustomDrawer() {
             onPress={() => NavigationService.navigate(Route.AboutUs)}
           />
           <DrawerItem
+            title="FAQ"
+            icon={<DrawerFAQIcon />}
+            onPress={() => NavigationService.navigate(Route.TermsOfUse)}
+          />
+          <DrawerItem
             title="Privacy policy"
             icon={<DrawerPrivacyIcon />}
             onPress={() => NavigationService.navigate(Route.PrivacyPolicy)}
@@ -89,7 +90,6 @@ export function CustomDrawer() {
             icon={<DrawerContactIcon />}
             onPress={() => NavigationService.navigate(Route.ContactUs)}
           />
-          <DrawerItem title="Tell your friend" icon={<DrawerFriendIcon />} onPress={onShare} />
           <DrawerItem title="Logout" icon={<DrawerLogoutIcon />} onPress={Logout} />
         </DrawerContentScrollView>
       </BlurView>

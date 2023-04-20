@@ -13,8 +13,8 @@ import {
   CustomMenuSvg,
   DrawerAboutSvg,
   DrawerContactSvg,
+  DrawerFAQSvg,
   DrawerFollowersSvg,
-  DrawerFriendSvg,
   DrawerLogoutSvg,
   DrawerNotificationSvg,
   DrawerPrivacySvg,
@@ -68,7 +68,7 @@ export function CloseButton({ color = Color.Neutral.Sz500, width = 12, height = 
   return <CloseButtonSvg width={width} height={height} fill={color} />;
 }
 
-export function CrossIcon({ color = Color.Neutral.Sz300, width = 16, height = 16 }: SvgIconProps) {
+export function CrossIcon({ color = Color.Neutral.Sz300, width = 20, height = 20 }: SvgIconProps) {
   return <CrossSvg width={width} height={height} fill={color} />;
 }
 
@@ -84,12 +84,12 @@ export function DrawerContactIcon({ color = Color.Neutral.Sz300, width = 24, hei
   return <DrawerContactSvg width={width} height={height} fill={color} />;
 }
 
-export function DrawerFollowersIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
-  return <DrawerFollowersSvg width={width} height={height} fill={color} />;
+export function DrawerFAQIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
+  return <DrawerFAQSvg width={width} height={height} fill={color} />;
 }
 
-export function DrawerFriendIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
-  return <DrawerFriendSvg width={width} height={height} fill={color} />;
+export function DrawerFollowersIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
+  return <DrawerFollowersSvg width={width} height={height} fill={color} />;
 }
 
 export function DrawerLogoutIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
