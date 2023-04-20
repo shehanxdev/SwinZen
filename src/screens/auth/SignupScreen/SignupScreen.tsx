@@ -18,7 +18,7 @@ import {
 import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { SignupFormValues } from '@sz/models';
-import { NavigationService } from '@sz/services';
+import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { signupValidationSchema } from '@sz/utils';
 
@@ -46,8 +46,7 @@ export function SignupScreen() {
       await dispatch.userStore.registerUser(formInput);
       NavigationService.navigate(Route.RegisterEmailVerification, formInput.username);
     } catch (error: any) {
-      //TODO:: handle error
-      console.log('error', error);
+      ToastService.error({ message: 'Failed!', description: error.data.message });
     }
   };
 
