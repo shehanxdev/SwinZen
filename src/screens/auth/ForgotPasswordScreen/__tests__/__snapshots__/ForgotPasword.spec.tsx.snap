@@ -13,8 +13,9 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
   <BVLinearGradient
     colors={
       [
-        4279320343,
-        4278650887,
+        4279917603,
+        4278984207,
+        4278650631,
       ]
     }
     endPoint={
@@ -32,16 +33,34 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
     }
     style={
       {
-        "height": "100%",
+        "flexBasis": "0%",
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "position": "relative",
       }
     }
   >
-    <RCTSafeAreaView
+    <Image
+      resizeMode="repeat"
+      source={
+        {
+          "testUri": "../../../src/assets/images/grassBackground.jpg",
+        }
+      }
       style={
         {
           "flexBasis": "0%",
           "flexGrow": 1,
           "flexShrink": 1,
+          "opacity": 0.1,
+        }
+      }
+    />
+    <RCTSafeAreaView
+      style={
+        {
+          "height": "100%",
+          "position": "absolute",
         }
       }
     >
@@ -199,7 +218,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                             "top": 6,
                           },
                           {
-                            "backgroundColor": "#283E36",
+                            "backgroundColor": "#16501D",
                             "borderColor": "#ffffff00",
                             "borderRadius": 10,
                             "borderWidth": 1,
@@ -216,7 +235,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                               "paddingBottom": 0,
                             },
                             {
-                              "minHeight": 50,
+                              "minHeight": 48,
                               "paddingTop": 8,
                             },
                           ]
@@ -243,14 +262,14 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                                 "zIndex": 1,
                               },
                               {
-                                "height": 50,
+                                "height": 48,
                               },
                               {
-                                "paddingBottom": 17,
-                                "paddingTop": 17,
+                                "paddingBottom": 16,
+                                "paddingTop": 16,
                               },
                               {
-                                "color": "#ADB5BD",
+                                "color": "#DEE2E6",
                                 "fontFamily": "SourceSansPro-Regular",
                                 "fontSize": 16,
                                 "fontVariant": undefined,
@@ -285,7 +304,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                             },
                             {
                               "left": 12,
-                              "top": 16,
+                              "top": 15,
                             },
                           ]
                         }
@@ -350,7 +369,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                           <View>
                             <SvgMock
                               fill="#ADB5BD"
-                              height={20}
+                              height={17}
                               width={20}
                             />
                           </View>
@@ -406,7 +425,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                       onTouchStart={[Function]}
                       style={
                         {
-                          "backgroundColor": "#69AA67",
+                          "backgroundColor": "#A2FD2F",
                           "borderColor": "#ffffff00",
                           "borderRadius": 10,
                           "borderStyle": "solid",
@@ -516,13 +535,13 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                               style={
                                 [
                                   {
-                                    "color": "#F8F9FA",
-                                    "lineHeight": 24,
+                                    "color": "#283E36",
+                                    "lineHeight": 28,
                                   },
                                   {
                                     "fontFamily": "SourceSansPro-SemiBold",
-                                    "fontSize": 16,
-                                    "fontWeight": "600",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
                                     "textAlign": "center",
                                   },
                                 ]
@@ -541,7 +560,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                   style={
                     [
                       {
-                        "color": "#69AA67",
+                        "color": "#A2FD2F",
                         "lineHeight": 20,
                       },
                       {
@@ -549,6 +568,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                         "fontSize": 16,
                         "fontWeight": "bold",
                         "textAlign": "center",
+                        "textDecorationLine": "underline",
                       },
                     ]
                   }
