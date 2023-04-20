@@ -23,6 +23,7 @@ import {
   MailIconSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
+  PricePlanFeatureListTick,
   ProfileIconSvg,
   SecurityIconSvg,
   SwingZenLogoSvg,
@@ -122,6 +123,10 @@ export function PasswordHideIcon({ color = Color.Neutral.Sz500, width = 20, heig
 
 export function PasswordRevealIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
   return <PasswordRevealEyeSvg width={width} height={height} fill={color} />;
+}
+
+export function PricePlanFeatureListTickIcon({ color = Color.Neutral.Sz500, width = 12, height = 12 }: SvgIconProps) {
+  return <PricePlanFeatureListTick fill={color} width={width} height={height} />;
 }
 
 export function ProfileIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {

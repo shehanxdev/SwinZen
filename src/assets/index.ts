@@ -17,6 +17,7 @@ export { default as BottomTabVideoSvg } from './icons/bottom-tab/videos-icon.svg
 export { default as BottomTabUploadSvg } from './icons/bottom-tab/upload-icon.svg';
 export { default as BottomTabAnalysisSvg } from './icons/bottom-tab/analysis-icon.svg';
 export { default as BottomTabLibrarySvg } from './icons/bottom-tab/library-icon.svg';
+export { default as PricePlanFeatureListTick } from './icons/price-plan/price-plan-feature-list-tick.svg';
 
 export { default as DrawerAboutSvg } from './icons/drawer/about-icon.svg';
 export { default as DrawerContactSvg } from './icons/drawer/contact-icon.svg';
