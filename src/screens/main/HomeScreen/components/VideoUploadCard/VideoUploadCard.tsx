@@ -55,7 +55,7 @@ export function VideoUploadCard() {
           !isError ? `border border-dashed border-[${Color.Neutral.Sz200}]` : 'border-0'
         }`}>
         <BlurView
-          blurType="light"
+          blurType="dark"
           blurAmount={1} //TODO::extract these magic values to a common file
           reducedTransparencyFallbackColor={Color.Neutral.Sz900}
           style={tw`absolute inset-x-0 inset-y-0 rounded-2.5`}
