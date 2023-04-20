@@ -117,6 +117,7 @@ This policy describes the types of information we may collect from you or that y
                       "fontSize": 16,
                       "fontWeight": "bold",
                       "textAlign": "center",
+                      "textDecorationLine": "underline",
                     },
                   ]
                 }
