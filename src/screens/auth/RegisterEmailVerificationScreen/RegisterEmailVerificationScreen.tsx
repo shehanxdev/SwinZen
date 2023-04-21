@@ -21,7 +21,7 @@ export function RegisterEmailVerificationScreen({ route }) {
     getValues,
   } = useForm<OtpVerficationValue>({ mode: 'onChange', resolver: yupResolver(otpValidationSchema) });
 
-  const username = route?.params?.params ?? 'shihara@surge.global';
+  const username = route.params.params;
 
   const loading = useSelector(state => state.loading.effects.userStore.emailVerification);
 

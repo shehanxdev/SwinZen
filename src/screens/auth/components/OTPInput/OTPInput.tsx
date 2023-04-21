@@ -4,7 +4,7 @@ import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-
 
 import { Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, TextVariant } from '@sz/constants';
+import { TextVariant } from '@sz/constants';
 
 const CELL_COUNT = 6;
 
@@ -58,11 +58,11 @@ export function OTPInput({ testID, value, onChangeValue, onSubmitEditing }: OTPI
           <View
             onLayout={getCellOnLayoutHandler(index)}
             key={index}
-            style={tw`h-full rounded-2.5 w-13 justify-center items-center bg-[${Color.Primary.Sz700}] ${
-              isFocused ? `border border-[${Color.Neutral.Sz100}]` : 'border-0'
+            style={tw`h-full rounded-2.5 w-13 justify-center items-center bg-Primary-Sz700 ${
+              isFocused ? `border border-Neutral-Sz100` : 'border-0'
             } ${index !== 0 ? 'ml-2.5' : 'ml-0'}`}>
             <Text variant={TextVariant.SubTitle2SemiBold}>{symbol || (isFocused ? <Cursor /> : null)}</Text>
-            {!symbol && <View style={tw`absolute w-7 h-px bg-[${Color.Neutral.Sz600}] bottom-3.5`} />}
+            {!symbol && <View style={tw`absolute w-7 h-px bg-Neutral-Sz600 bottom-3.5`} />}
           </View>
         )}
       />
