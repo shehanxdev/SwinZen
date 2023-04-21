@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResendOtpWithTimer Component should render correctly 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#A2FD2F",
+        "lineHeight": 20,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "textAlign": "center",
+        "textDecorationLine": "underline",
+      },
+    ]
+  }
+  testID="ResendOtpWithTimerTestID"
+>
+  Resend again in 05:00
+</Text>
+`;
