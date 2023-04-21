@@ -65,7 +65,7 @@ export function Button({
           setIsButtonClicked(false);
         }}
         onLongPress={onLongPress}>
-        <Text variant={TextVariant.Body1Bold} color={disabled ? disabledTextColor : textColor}>
+        <Text variant={TextVariant.Body1SemiBold} color={disabled ? disabledTextColor : textColor}>
           {title}
         </Text>
       </RNPaperButton>
