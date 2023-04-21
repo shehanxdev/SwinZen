@@ -12,6 +12,7 @@ import {
   CloseButtonSvg,
   CustomMenuSvg,
   MailIconSvg,
+  MessageSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
   PricePlanFeatureListTick,
@@ -94,4 +95,8 @@ export function PricePlanFeatureListTickIcon({ color = Color.Neutral.Sz500, widt
 
 export function CloseButton({ color = Color.Neutral.Sz500, width = 12, height = 12 }: SvgIconProps) {
   return <CloseButtonSvg width={width} height={height} fill={color} />;
+}
+
+export function MessageIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
+  return <MessageSvg width={width} height={height} fill={color} />;
 }

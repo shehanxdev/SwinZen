@@ -135,7 +135,7 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
           activeOutlineColor={error ? Color.Error.SzMain : activeOutlineColor}
           autoCorrect={autoCorrect}
           multiline={true}
-          left={leftIcon && <TextInput.Icon name={() => leftIconComponent} style={{ justifyContent: 'flex-start' }} />}
+          left={leftIcon && <TextInput.Icon name={() => leftIconComponent} style={{ marginTop: '-360%' }} />}
           right={
             rightIcon && (
               <TextInput.Icon name={() => rightIconComponent} onPress={onRightIconPress} style={{ marginTop: '50%' }} />
