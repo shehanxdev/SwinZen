@@ -3,7 +3,7 @@ import React from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { View } from 'react-native';
 
-import { Button, Link, Text } from '@sz/components';
+import { Button, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { OtpType, Route, TextVariant } from '@sz/constants';
 import { OtpVerficationValue } from '@sz/models';
@@ -13,6 +13,7 @@ import { getMaskedMail, otpValidationSchema } from '@sz/utils';
 
 import { OTPInput } from '../components';
 import { BaseAuthScreen } from '../components/BaseAuthScreen';
+import { ResendOtpWithTimer } from '../components/ResendOtpWithTimer';
 
 export function ResetPasswordEmailVerificationScreen({ route }) {
   const {
@@ -87,7 +88,7 @@ export function ResetPasswordEmailVerificationScreen({ route }) {
             )}
           />
           <View style={tw`items-center mt-6`}>
-            <Link text="Resend the code" onPress={onResend} />
+            <ResendOtpWithTimer onResend={onResend} />
           </View>
         </View>
         <View style={tw`items-center mb-5 mx-5`}>

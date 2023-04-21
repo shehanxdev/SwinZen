@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from '@sz/stores';
 import { getMaskedMail, otpValidationSchema } from '@sz/utils';
 
 import { BaseAuthScreen, OTPInput } from '../components';
+import { ResendOtpWithTimer } from '../components/ResendOtpWithTimer';
 
 export function RegisterEmailVerificationScreen({ route }) {
   const {
@@ -88,7 +89,7 @@ export function RegisterEmailVerificationScreen({ route }) {
             )}
           />
           <View style={tw`items-center mt-6`}>
-            <Link text="Resend the code" onPress={onResend} />
+            <ResendOtpWithTimer onResend={onResend} />
           </View>
         </View>
         <View style={tw`items-center mb-5 items-center mx-5 mt-15`}>
