@@ -34,6 +34,7 @@ type WithRNTextInputProps = Pick<
 >;
 
 export interface TextFieldProps extends WithRNTextInputProps {
+  isTextArea?: boolean;
   helperText?: string;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;

@@ -11,6 +11,7 @@ import { TextFieldProps } from './TextField.types';
 //TODO::handle scroll on focus
 export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTextField(
   {
+    isTextArea = false, //todo change to false
     backgroundColor = Color.Primary.Sz700,
     defaultValue,
     value,
@@ -94,54 +95,105 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
   return (
     <View>
       {labelTextComponent}
-      <TextInput
-        style={tw`h-12 p-0 m-0`}
-        ref={ref}
-        mode="outlined"
-        secureTextEntry={secureTextEntry}
-        defaultValue={defaultValue}
-        textContentType={textContentType}
-        disabled={disabled}
-        autoComplete={autoComplete}
-        value={value}
-        onChangeText={onChangeText}
-        onBlur={onBlur}
-        onFocus={onFocus}
-        placeholder={placeholder}
-        theme={{
-          colors: {
-            primary: Color.Primary.Sz800,
-            placeholder: Color.Neutral.Sz500, //Figma does not specify this value. Update accordinly
-            text: disabled ? Color.Neutral.Sz700 : textColor,
-            background: backgroundColor,
-            disabled: Color.Neutral.Sz700,
-          },
-          roundness: 10,
-          fonts: {
-            regular: tw`text-[16px] font-normal p-0 leading-[18px]`,
-          },
-        }}
-        autoCapitalize={autoCapitalize}
-        onEndEditing={onEndEditing}
-        onSubmitEditing={onSubmitEditing}
-        maxLength={maxLength}
-        keyboardType={keyboardType}
-        blurOnSubmit={blurOnSubmit}
-        testID={testID}
-        outlineColor={error ? Color.Error.SzMain : outlineColor}
-        activeOutlineColor={error ? Color.Error.SzMain : activeOutlineColor}
-        autoCorrect={autoCorrect}
-        multiline={multiline}
-        numberOfLines={numberOfLines}
-        left={leftIcon && <TextInput.Icon name={() => leftIconComponent} style={{ marginTop: '50%' }} />}
-        right={
-          rightIcon && (
-            <TextInput.Icon name={() => rightIconComponent} onPress={onRightIconPress} style={{ marginTop: '50%' }} />
-          )
-        }
-        returnKeyType={returnKeyType}
-        returnKeyLabel={returnKeyLabel}
-      />
+      {isTextArea ? (
+        <TextInput
+          numberOfLines={!numberOfLines && 7}
+          style={tw`h-32 px-0 py-4 m-0`}
+          ref={ref}
+          mode="outlined"
+          secureTextEntry={secureTextEntry}
+          defaultValue={defaultValue}
+          textContentType={textContentType}
+          disabled={disabled}
+          autoComplete={autoComplete}
+          value={value}
+          onChangeText={onChangeText}
+          onBlur={onBlur}
+          onFocus={onFocus}
+          placeholder={placeholder}
+          theme={{
+            colors: {
+              primary: Color.Primary.Sz800,
+              placeholder: Color.Neutral.Sz500, //Figma does not specify this value. Update accordinly
+              text: disabled ? Color.Neutral.Sz700 : textColor,
+              background: backgroundColor,
+              disabled: Color.Neutral.Sz700,
+            },
+            roundness: 10,
+            fonts: {
+              regular: tw`text-[16px] font-normal p-0 leading-[18px]`,
+            },
+          }}
+          autoCapitalize={autoCapitalize}
+          onEndEditing={onEndEditing}
+          onSubmitEditing={onSubmitEditing}
+          maxLength={maxLength}
+          keyboardType={keyboardType}
+          blurOnSubmit={blurOnSubmit}
+          testID={testID}
+          outlineColor={error ? Color.Error.SzMain : outlineColor}
+          activeOutlineColor={error ? Color.Error.SzMain : activeOutlineColor}
+          autoCorrect={autoCorrect}
+          multiline={true}
+          left={leftIcon && <TextInput.Icon name={() => leftIconComponent} style={{ justifyContent: 'flex-start' }} />}
+          right={
+            rightIcon && (
+              <TextInput.Icon name={() => rightIconComponent} onPress={onRightIconPress} style={{ marginTop: '50%' }} />
+            )
+          }
+          returnKeyType={returnKeyType}
+          returnKeyLabel={returnKeyLabel}
+        />
+      ) : (
+        <TextInput
+          style={tw`h-12 p-0 m-0`}
+          ref={ref}
+          mode="outlined"
+          secureTextEntry={secureTextEntry}
+          defaultValue={defaultValue}
+          textContentType={textContentType}
+          disabled={disabled}
+          autoComplete={autoComplete}
+          value={value}
+          onChangeText={onChangeText}
+          onBlur={onBlur}
+          onFocus={onFocus}
+          placeholder={placeholder}
+          theme={{
+            colors: {
+              primary: Color.Primary.Sz800,
+              placeholder: Color.Neutral.Sz500, //Figma does not specify this value. Update accordinly
+              text: disabled ? Color.Neutral.Sz700 : textColor,
+              background: backgroundColor,
+              disabled: Color.Neutral.Sz700,
+            },
+            roundness: 10,
+            fonts: {
+              regular: tw`text-[16px] font-normal p-0 leading-[18px]`,
+            },
+          }}
+          autoCapitalize={autoCapitalize}
+          onEndEditing={onEndEditing}
+          onSubmitEditing={onSubmitEditing}
+          maxLength={maxLength}
+          keyboardType={keyboardType}
+          blurOnSubmit={blurOnSubmit}
+          testID={testID}
+          outlineColor={error ? Color.Error.SzMain : outlineColor}
+          activeOutlineColor={error ? Color.Error.SzMain : activeOutlineColor}
+          autoCorrect={autoCorrect}
+          multiline={multiline}
+          numberOfLines={numberOfLines}
+          left={leftIcon && <TextInput.Icon name={() => leftIconComponent} style={{ marginTop: '50%' }} />}
+          right={
+            rightIcon && (
+              <TextInput.Icon name={() => rightIconComponent} onPress={onRightIconPress} style={{ marginTop: '50%' }} />
+            )
+          }
+          returnKeyType={returnKeyType}
+          returnKeyLabel={returnKeyLabel}
+        />
+      )}
       {helperTextComponent}
     </View>
   );
