@@ -492,7 +492,6 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                   }
                 >
                   <Text
-                    onPress={[Function]}
                     style={
                       [
                         {
@@ -507,8 +506,9 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                         },
                       ]
                     }
+                    testID="ResendOtpWithTimerTestID"
                   >
-                    Resend the code
+                    Resend again in 05:00
                   </Text>
                 </View>
               </View>
