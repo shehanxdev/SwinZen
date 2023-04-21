@@ -101,16 +101,6 @@ export class NavigationService {
           },
         };
         break;
-      case Route.PricePlans:
-        navRoute = Route.PricePlansStack;
-        navParams = {
-          screen: Route.PricePlans,
-          params: {
-            screen: route,
-            params: params,
-          },
-        };
-        break;
       case Route.PrivacyPolicy:
         navRoute = Route.InfoStack;
         navParams = {
@@ -125,6 +115,26 @@ export class NavigationService {
         navRoute = Route.InfoStack;
         navParams = {
           screen: Route.TermsOfUse,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+      case Route.PricePlans:
+        navRoute = Route.PricePlansStack;
+        navParams = {
+          screen: Route.PricePlans,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+      case Route.PlanDetails:
+        navRoute = Route.PricePlansStack;
+        navParams = {
+          screen: Route.PlanDetails,
           params: {
             screen: route,
             params: params,

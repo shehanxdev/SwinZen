@@ -9,6 +9,7 @@ export enum Route {
   LoginStack = 'login-stack',
   MainStack = 'main-stack',
   MainBottomTabRoutesStack = 'main-bottom-tab-routes-stack',
+  PlanDetails = 'plan-details',
   PricePlans = 'price-plans',
   PricePlansStack = 'price-plans-stack',
   PrivacyPolicy = 'privacy-policy',

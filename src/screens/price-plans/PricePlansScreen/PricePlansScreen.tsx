@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { ActivityIndicator, ScrollView, View } from 'react-native';
 
 import { tw } from '@sz/config';
-import { Color } from '@sz/constants';
+import { Color, Route } from '@sz/constants';
+import { NavigationService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 
 import { BasePricePlansScreen, SubscriptionCard } from '../components';
@@ -36,6 +37,7 @@ export function PricePlansScreen() {
                 price={data.price}
                 frequency={data.frequency}
                 featureList={data.features}
+                onCardPress={() => NavigationService.navigate(Route.PlanDetails, { data })}
               />
             </View>
           ))}
