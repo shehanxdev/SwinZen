@@ -1,1 +1,1 @@
-export * from './SubscriptionCard.component';
+export * from './SubscriptionCard';
