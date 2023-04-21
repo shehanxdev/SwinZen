@@ -1,13 +1,13 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
-import { Alert, View } from 'react-native';
+import { View } from 'react-native';
 
 import { Button, Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { OtpType, Route, TextVariant } from '@sz/constants';
 import { OtpVerficationValue } from '@sz/models';
-import { NavigationService } from '@sz/services';
+import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { getMaskedMail, otpValidationSchema } from '@sz/utils';
 
@@ -40,11 +40,9 @@ export function ResetPasswordEmailVerificationScreen({ route }) {
   const onResend = async () => {
     try {
       await dispatch.userStore.resendOtp({ username: email });
-      // TODO:: add proper success alert later
-      Alert.alert('Success', 'Otp resent successfullly', [{ text: 'OK', onPress: () => console.log('OK Pressed') }]);
+      ToastService.success({ message: 'Success!', description: 'OTP resent successfully.' });
     } catch (error: any) {
-      //TODO:: handle error
-      console.log('error', error);
+      ToastService.error({ message: 'Failed!', description: error.data.message });
     }
   };
 
@@ -58,8 +56,7 @@ export function ResetPasswordEmailVerificationScreen({ route }) {
       await dispatch.userStore.emailVerification(otpData);
       NavigationService.navigate(Route.ResetPassword, { email: email });
     } catch (error: any) {
-      //TODO:: handle error
-      console.log('error', error);
+      ToastService.error({ message: 'Failed!', description: error.data.message });
     }
   };
 
