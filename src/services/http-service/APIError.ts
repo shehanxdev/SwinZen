@@ -1,3 +1,5 @@
+import { BASE_ERROR } from '@sz/constants';
+
 /**
  * Error Codes used here extends the codes defined by apisauce
  * Reference: https://github.com/infinitered/apisauce
@@ -20,7 +22,7 @@ export class APIError<T> extends Error {
   constructor(message: ErrorCodes, data?: T, statusCode?: number) {
     super(message);
     this.message = message;
-    this.data = data;
+    this.data = data ?? (BASE_ERROR as any);
     this.statusCode = statusCode;
   }
 }

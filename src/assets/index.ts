@@ -1,6 +1,7 @@
 export * from './images';
 
 export { default as AccountLockSvg } from './icons/account/account-lock.svg';
+export { default as ArrowRightSvg } from './icons/main/arrow-right.svg';
 export { default as BackIconSvg } from './icons/account//back-icon.svg';
 export { default as MailIconSvg } from './icons/account/mail_icon.svg';
 export { default as PasswordHideEyeSvg } from './icons/account/password-hide-eye.svg';

@@ -17,7 +17,7 @@ import {
 import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { LoginFormValues } from '@sz/models';
-import { NavigationService } from '@sz/services';
+import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { loginValidationSchema } from '@sz/utils';
 
@@ -45,8 +45,7 @@ export function LoginScreen() {
       await dispatch.userStore.loginUserWithCredentials(formInput);
       NavigationService.navigate(Route.MainStack);
     } catch (error: any) {
-      //TODO:: handle error
-      console.log('error', error);
+      ToastService.error({ message: 'Failed!', description: error.data.message });
     }
   };
 
