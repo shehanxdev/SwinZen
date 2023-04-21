@@ -41,7 +41,7 @@ export function ResendOtpWithTimer({
 
   const linkText = useMemo(() => {
     if (minutes === 0 && seconds === 0) return 'Resend the code';
-    return `Resend again in ${minutes}:${seconds.toString().padStart(2, '0')}`;
+    return `Resend again in ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   }, [minutes, seconds]);
 
   const resetTimers = () => {

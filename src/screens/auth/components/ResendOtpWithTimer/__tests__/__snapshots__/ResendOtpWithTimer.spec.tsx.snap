@@ -18,6 +18,6 @@ exports[`ResendOtpWithTimer Component should render correctly 1`] = `
   }
   testID="ResendOtpWithTimerTestID"
 >
-  Resend again in 5:00
+  Resend again in 05:00
 </Text>
 `;
