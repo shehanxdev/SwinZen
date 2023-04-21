@@ -6,11 +6,11 @@ import { tw } from '@sz/config';
 import { SwingZenMail, SwingZenUrl, TextAlignment, TextVariant } from '@sz/constants';
 import { LinkingService } from '@sz/services';
 
-import { BaseScreen } from '../components';
+import { BaseInfoScreen } from '../components';
 
 export function PrivacyPolicyScreen() {
   return (
-    <BaseScreen>
+    <BaseInfoScreen>
       <View style={tw`p-6`} testID="PrivacyPolicyScreenTestID">
         <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Auto}>
           {`Introduction
@@ -78,6 +78,6 @@ export function PrivacyPolicyScreen() {
             \n`}
         </Text>
       </View>
-    </BaseScreen>
+    </BaseInfoScreen>
   );
 }
