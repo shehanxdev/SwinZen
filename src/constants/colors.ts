@@ -49,7 +49,7 @@ enum Secondary {
 
 /* Currently this is available within the design system as a Secondary value. Since two different colors cannot exist in there, this has to be added to the design system */
 enum Tertiary {
-  Sz900 = `#A2FD2F`,
+  Sz900 = `#A2FD2F`, //NOTE::figma contain different color(#8EFF00). #8EFF00 neeeds to be removed since it does not consider within the colors
   Sz800 = `#B5FD59`,
   Sz700 = `#C4FE7A`,
   Sz600 = `#CBFE8A`,

@@ -28,14 +28,13 @@ export function PricePlansScreen() {
           <ActivityIndicator size="small" color={Color.Neutral.White} />
         </View>
       ) : (
-        <ScrollView style={tw`mt-4.5`}>
+        <ScrollView style={tw`mt-4 mx-6.25`}>
           {orderedPricePlans.map((data, index) => (
             <View key={index} style={tw`my-2`}>
               <SubscriptionCard
                 title={data.name}
-                subTitle={data.description}
                 price={data.price}
-                pricingDescription={data.frequency}
+                frequency={data.frequency}
                 featureList={data.features}
               />
             </View>
