@@ -10,11 +10,11 @@ import { Text } from '../Typography';
 import { ButtonProps } from './Button.types';
 
 export function Button({
-  backgroundColor = Color.Primary.Sz400,
-  activeStateBackgroundColor = Color.Primary.Sz600,
+  backgroundColor = Color.Tertiary.Sz900,
+  activeStateBackgroundColor = Color.Tertiary.Sz1000,
   onPress,
   onLongPress,
-  textColor = Color.Neutral.Sz100,
+  textColor = Color.Neutral.Sz1000,
   testID,
   title,
   borderColor = Color.Transparency.full,
@@ -65,7 +65,7 @@ export function Button({
           setIsButtonClicked(false);
         }}
         onLongPress={onLongPress}>
-        <Text variant={TextVariant.Body2SemiBold} color={disabled ? disabledTextColor : textColor}>
+        <Text variant={TextVariant.Body1SemiBold} color={disabled ? disabledTextColor : textColor}>
           {title}
         </Text>
       </RNPaperButton>
