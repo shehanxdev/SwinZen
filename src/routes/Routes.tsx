@@ -11,6 +11,7 @@ import { useDispatch } from '@sz/stores';
 import { AuthStack } from './auth';
 import { InfoStack } from './info';
 import { MainStack } from './main';
+import { PricePlansStack } from './pricePlans';
 
 const Stack = createStackNavigator();
 
@@ -54,6 +55,7 @@ export function Routes() {
           headerShown: false,
         }}>
         <Stack.Screen name={Route.AuthStack} component={AuthStack} />
+        <Stack.Screen name={Route.PricePlansStack} component={PricePlansStack} />
         <Stack.Screen name={Route.MainStack} component={MainStack} />
         <Stack.Screen name={Route.InfoStack} component={InfoStack} />
       </Stack.Navigator>
