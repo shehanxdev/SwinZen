@@ -11,7 +11,7 @@ exports[`OTPInput Component should render correctly 1`] = `
         },
         {
           "alignSelf": "center",
-          "height": 69,
+          "height": 72,
         },
       ]
     }
@@ -21,7 +21,7 @@ exports[`OTPInput Component should render correctly 1`] = `
       style={
         {
           "alignItems": "center",
-          "backgroundColor": "#283E36",
+          "backgroundColor": "#16501D",
           "borderRadius": 10,
           "borderWidth": 0,
           "height": "100%",
@@ -55,7 +55,7 @@ exports[`OTPInput Component should render correctly 1`] = `
       style={
         {
           "alignItems": "center",
-          "backgroundColor": "#283E36",
+          "backgroundColor": "#16501D",
           "borderRadius": 10,
           "borderWidth": 0,
           "height": "100%",
@@ -89,7 +89,7 @@ exports[`OTPInput Component should render correctly 1`] = `
       style={
         {
           "alignItems": "center",
-          "backgroundColor": "#283E36",
+          "backgroundColor": "#16501D",
           "borderRadius": 10,
           "borderWidth": 0,
           "height": "100%",
@@ -123,7 +123,7 @@ exports[`OTPInput Component should render correctly 1`] = `
       style={
         {
           "alignItems": "center",
-          "backgroundColor": "#283E36",
+          "backgroundColor": "#16501D",
           "borderRadius": 10,
           "borderWidth": 0,
           "height": "100%",
@@ -157,7 +157,7 @@ exports[`OTPInput Component should render correctly 1`] = `
       style={
         {
           "alignItems": "center",
-          "backgroundColor": "#283E36",
+          "backgroundColor": "#16501D",
           "borderRadius": 10,
           "borderWidth": 0,
           "height": "100%",
@@ -191,7 +191,7 @@ exports[`OTPInput Component should render correctly 1`] = `
       style={
         {
           "alignItems": "center",
-          "backgroundColor": "#283E36",
+          "backgroundColor": "#16501D",
           "borderRadius": 10,
           "borderWidth": 0,
           "height": "100%",
@@ -262,21 +262,5 @@ exports[`OTPInput Component should render correctly 1`] = `
       value="12345"
     />
   </View>
-  <Text
-    style={
-      [
-        {
-          "color": "#E9ECEF",
-          "lineHeight": 24,
-        },
-        {
-          "fontFamily": "SourceSansPro-Regular",
-          "fontSize": 15,
-          "fontWeight": "600",
-          "textAlign": "auto",
-        },
-      ]
-    }
-  />
 </View>
 `;
