@@ -110,6 +110,56 @@ export class NavigationService {
           },
         };
         break;
+      case Route.ProfileSettings:
+        navRoute = Route.AccountStack;
+        navParams = {
+          screen: Route.ProfileSettings,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+      case Route.Notification:
+        navRoute = Route.AccountStack;
+        navParams = {
+          screen: Route.Notification,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+      case Route.Followers:
+        navRoute = Route.AccountStack;
+        navParams = {
+          screen: Route.Followers,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+      case Route.AboutUs:
+        navRoute = Route.InfoStack;
+        navParams = {
+          screen: Route.AboutUs,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+      case Route.FAQ:
+        navRoute = Route.InfoStack;
+        navParams = {
+          screen: Route.FAQ,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
       case Route.PrivacyPolicy:
         navRoute = Route.InfoStack;
         navParams = {
@@ -124,46 +174,6 @@ export class NavigationService {
         navRoute = Route.InfoStack;
         navParams = {
           screen: Route.TermsOfUse,
-          params: {
-            screen: route,
-            params: params,
-          },
-        };
-        break;
-      case Route.ProfileSettings:
-        navRoute = Route.InfoStack;
-        navParams = {
-          screen: Route.ProfileSettings,
-          params: {
-            screen: route,
-            params: params,
-          },
-        };
-        break;
-      case Route.Notification:
-        navRoute = Route.InfoStack;
-        navParams = {
-          screen: Route.Notification,
-          params: {
-            screen: route,
-            params: params,
-          },
-        };
-        break;
-      case Route.Followers:
-        navRoute = Route.InfoStack;
-        navParams = {
-          screen: Route.Followers,
-          params: {
-            screen: route,
-            params: params,
-          },
-        };
-        break;
-      case Route.AboutUs:
-        navRoute = Route.InfoStack;
-        navParams = {
-          screen: Route.AboutUs,
           params: {
             screen: route,
             params: params,

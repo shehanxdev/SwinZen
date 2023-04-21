@@ -19,7 +19,7 @@ import {
 } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route } from '@sz/constants';
-import { NavigationService } from '@sz/services';
+import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
 
 import { DrawerItem } from './DrawerItem';
@@ -32,12 +32,12 @@ export function CustomDrawer() {
       await dispatch.userStore.logoutUser();
       NavigationService.navigate(Route.Login);
     } catch (error: any) {
-      console.log('error:', error);
+      ToastService.error({ message: 'Failed!', description: error.data.message });
     }
   };
 
   return (
-    <View style={tw`overflow-hidden absolute top-0 bottom-0 left-0 right-0 rounded-r-[32px]`}>
+    <View style={tw`overflow-hidden absolute top-0 bottom-0 left-0 right-0 rounded-r-8`}>
       <BlurView
         blurType="dark"
         blurAmount={1}
@@ -70,11 +70,7 @@ export function CustomDrawer() {
             icon={<DrawerAboutIcon />}
             onPress={() => NavigationService.navigate(Route.AboutUs)}
           />
-          <DrawerItem
-            title="FAQ"
-            icon={<DrawerFAQIcon />}
-            onPress={() => NavigationService.navigate(Route.TermsOfUse)}
-          />
+          <DrawerItem title="FAQ" icon={<DrawerFAQIcon />} onPress={() => NavigationService.navigate(Route.FAQ)} />
           <DrawerItem
             title="Privacy policy"
             icon={<DrawerPrivacyIcon />}
