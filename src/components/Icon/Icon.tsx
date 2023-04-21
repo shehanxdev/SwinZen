@@ -2,12 +2,14 @@ import React from 'react';
 
 import {
   AccountLockSvg,
+  ArrowRightSvg,
   BackIconSvg,
   BottomTabAnalysisSvg,
   BottomTabHomeSvg,
   BottomTabLibrarySvg,
   BottomTabUploadSvg,
   BottomTabVideoSvg,
+  CloseButtonSvg,
   CustomMenuSvg,
   MailIconSvg,
   PasswordHideEyeSvg,
@@ -62,6 +64,10 @@ export function CustomMenuIcon({ color = Color.Neutral.White, width = 24, height
   return <CustomMenuSvg width={width} height={height} fill={color} />;
 }
 
+export function RightArrowIcon({ color = Color.Neutral.Sz100, width = 7.75, height = 14 }: SvgIconProps) {
+  return <ArrowRightSvg width={width} height={height} fill={color} />;
+}
+
 export function BottomTabHomeIconWithLabel({ color = Color.Neutral.Sz500, width = 30, height = 43 }: SvgIconProps) {
   return <BottomTabHomeSvg width={width} height={height} fill={color} />;
 }
@@ -82,6 +88,10 @@ export function BottomTabLibraryIconWithLabel({ color = Color.Neutral.Sz500, wid
   return <BottomTabLibrarySvg width={width} height={height} fill={color} />;
 }
 
-export function PricePlanFeatureListTickIcon({ width, height }: SvgIconProps) {
-  return <PricePlanFeatureListTick width={width} height={height} />;
+export function PricePlanFeatureListTickIcon({ color = Color.Neutral.Sz500, width = 12, height = 12 }: SvgIconProps) {
+  return <PricePlanFeatureListTick fill={color} width={width} height={height} />;
+}
+
+export function CloseButton({ color = Color.Neutral.Sz500, width = 12, height = 12 }: SvgIconProps) {
+  return <CloseButtonSvg width={width} height={height} fill={color} />;
 }
