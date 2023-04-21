@@ -104,7 +104,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                   {
                     "marginLeft": 20,
                     "marginRight": 20,
-                    "marginTop": 80,
+                    "marginTop": 35,
                   }
                 }
               >
@@ -130,8 +130,8 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                   <View
                     style={
                       {
-                        "marginBottom": 90,
-                        "marginTop": 12,
+                        "marginBottom": 8,
+                        "marginTop": 24,
                       }
                     }
                   >
@@ -157,7 +157,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                   <View
                     style={
                       {
-                        "marginBottom": 24,
+                        "marginBottom": 40,
                       }
                     }
                   >
@@ -191,7 +191,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                         },
                         {
                           "alignSelf": "center",
-                          "height": 69,
+                          "height": 72,
                         },
                       ]
                     }
@@ -201,7 +201,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                       style={
                         {
                           "alignItems": "center",
-                          "backgroundColor": "#283E36",
+                          "backgroundColor": "#16501D",
                           "borderRadius": 10,
                           "borderWidth": 0,
                           "height": "100%",
@@ -244,7 +244,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                       style={
                         {
                           "alignItems": "center",
-                          "backgroundColor": "#283E36",
+                          "backgroundColor": "#16501D",
                           "borderRadius": 10,
                           "borderWidth": 0,
                           "height": "100%",
@@ -287,7 +287,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                       style={
                         {
                           "alignItems": "center",
-                          "backgroundColor": "#283E36",
+                          "backgroundColor": "#16501D",
                           "borderRadius": 10,
                           "borderWidth": 0,
                           "height": "100%",
@@ -330,7 +330,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                       style={
                         {
                           "alignItems": "center",
-                          "backgroundColor": "#283E36",
+                          "backgroundColor": "#16501D",
                           "borderRadius": 10,
                           "borderWidth": 0,
                           "height": "100%",
@@ -373,7 +373,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                       style={
                         {
                           "alignItems": "center",
-                          "backgroundColor": "#283E36",
+                          "backgroundColor": "#16501D",
                           "borderRadius": 10,
                           "borderWidth": 0,
                           "height": "100%",
@@ -416,7 +416,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                       style={
                         {
                           "alignItems": "center",
-                          "backgroundColor": "#283E36",
+                          "backgroundColor": "#16501D",
                           "borderRadius": 10,
                           "borderWidth": 0,
                           "height": "100%",
@@ -485,33 +485,16 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                       underlineColorAndroid="transparent"
                     />
                   </View>
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#E35F5F",
-                          "lineHeight": 24,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-Regular",
-                          "fontSize": 15,
-                          "fontWeight": "600",
-                          "textAlign": "auto",
-                        },
-                      ]
-                    }
-                  />
                 </View>
                 <View
                   style={
                     {
-                      "alignItems": "flex-end",
-                      "marginTop": 8,
+                      "alignItems": "center",
+                      "marginTop": 24,
                     }
                   }
                 >
                   <Text
-                    onPress={[Function]}
                     style={
                       [
                         {
@@ -527,8 +510,9 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                         },
                       ]
                     }
+                    testID="ResendOtpWithTimerTestID"
                   >
-                    Resend the code
+                    Resend again in 05:00
                   </Text>
                 </View>
               </View>
@@ -546,7 +530,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                 <View
                   style={
                     {
-                      "marginBottom": 8,
+                      "marginBottom": 24,
                     }
                   }
                 >
