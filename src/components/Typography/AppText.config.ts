@@ -63,7 +63,7 @@ export const AppTextStyles: Record<TextVariant, React.CSSProperties> = {
   },
 
   // Body 1
-  [TextVariant.Body1Bold]: {
+  [TextVariant.Body1SemiBold]: {
     fontSize: '18px',
     fontWeight: FontWeight.Bold,
     lineHeight: '28px',
@@ -136,7 +136,7 @@ export function getAppTextStyles(variant: TextVariant) {
 
   switch (variant) {
     case TextVariant.SubTitle2SemiBold:
-    case TextVariant.Body1Bold:
+    case TextVariant.Body1SemiBold:
     case TextVariant.Body2SemiBold:
       textStyles += ' font-SourceSansProSemiBold';
       break;
