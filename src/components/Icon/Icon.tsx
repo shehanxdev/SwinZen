@@ -38,7 +38,7 @@ export interface SvgIconProps {
   testID?: string;
 }
 
-export function AccountLockIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
+export function AccountLockIcon({ color = Color.Neutral.Sz500, width = 24, height = 24 }: SvgIconProps) {
   return <AccountLockSvg width={width} height={height} fill={color} />;
 }
 

@@ -9,8 +9,8 @@ export function Link({
   onPress,
   testID,
   text,
-  textColor = Color.Primary.Sz400,
-  underline = false,
+  textColor = Color.Tertiary.Sz900,
+  underline = true,
   disabled = false,
 }: LinkProps) {
   return (

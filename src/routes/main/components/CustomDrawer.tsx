@@ -37,13 +37,13 @@ export function CustomDrawer() {
   };
 
   return (
-    <View style={tw`overflow-hidden absolute top-0 bottom-0 left-0 right-0 rounded-r-8`}>
+    <View style={tw`overflow-hidden absolute inset-0 rounded-r-8`}>
       <BlurView
         blurType="dark"
         blurAmount={1}
         style={tw`flex-1`}
         reducedTransparencyFallbackColor={Color.Neutral.Sz900}>
-        <DrawerContentScrollView>
+        <DrawerContentScrollView contentContainerStyle={tw`pb-6`}>
           <View style={tw`flex-row justify-between items-center mx-6 mt-8 mb-6.5`}>
             <SwingZenLogoSvg />
             <TouchableOpacity onPress={() => NavigationService.closeDrawer()}>
