@@ -7,7 +7,7 @@ import { Button, Link, MailIcon, Text, TextField } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { ForgotPasswordFormValues } from '@sz/models';
-import { NavigationService } from '@sz/services';
+import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { forgotPasswordValidationSchema } from '@sz/utils';
 
@@ -34,7 +34,7 @@ export function ForgotPasswordScreen() {
       await dispatch.userStore.forgetPassword(formInput);
       NavigationService.navigate(Route.ResetPasswordEmailVerification, { email: formInput.email }); //TODO::introduce type safety to the params
     } catch (error: any) {
-      console.log('error', error);
+      ToastService.error({ message: 'Failed!', description: error.data.message });
     }
   };
   return (

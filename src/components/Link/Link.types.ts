@@ -10,4 +10,5 @@ export interface LinkProps extends WithRNLinkProps {
   text: string;
   textColor?: Color;
   underline?: boolean;
+  disabled?: boolean;
 }
