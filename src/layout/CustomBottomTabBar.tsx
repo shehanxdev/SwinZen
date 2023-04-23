@@ -22,9 +22,10 @@ export const bottomTabIcons = [
 ];
 
 interface CustomBottomTabBarProps {
-  onCustomUploadButtonClicked: () => void;
+  onCustomUploadButtonClicked: () => void; //Callback to handle custom onPress event of custom upload button.
 }
 
+//Callback to handle tab navigations onPress event of the tab buttons except for the custom upload button.
 function onPress(isFocused: boolean, route: any, navigation: any) {
   const event = navigation.emit({
     type: 'tabPress',
@@ -42,11 +43,6 @@ function renderIcon(index: number, isFocused: boolean) {
   return React.cloneElement(bottomTabIcons[index], {
     ...(isFocused && { color: Color.Neutral.Sz200 }),
   });
-}
-
-function iconContainerStyles(index: number, isFocused: boolean) {
-  //NOTE::#d9d9d90a isn't avaialble under the design system.
-  return tw`p-1 mt-${index === 2 ? 4 : 6.25} bg-[${isFocused ? '#d9d9d90a' : `${Color.Transparency.full}`}]`;
 }
 
 /*
@@ -82,7 +78,8 @@ export function CustomBottomTabBar({
                 onPress(isFocused, route, navigation);
               }
             }}
-            style={iconContainerStyles(index, isFocused)}>
+            style={tw`p-1 mt-${index === 2 ? 4 : 6.25} bg-[${isFocused ? '#d9d9d90a' : `${Color.Transparency.full}`}]`}>
+            {/* NOTE::#d9d9d90a isn't avaialble under the design system. */}
             {renderIcon(index, isFocused)}
           </TouchableOpacity>
         );
