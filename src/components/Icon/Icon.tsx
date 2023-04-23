@@ -68,23 +68,23 @@ export function RightArrowIcon({ color = Color.Neutral.Sz100, width = 7.75, heig
   return <ArrowRightSvg width={width} height={height} fill={color} />;
 }
 
-export function BottomTabHomeIconWithLabel({ color = Color.Neutral.Sz500, width = 30, height = 43 }: SvgIconProps) {
+export function BottomTabHomeIconWithLabel({ color = Color.Neutral.Sz600, width = 46, height = 43 }: SvgIconProps) {
   return <BottomTabHomeSvg width={width} height={height} fill={color} />;
 }
 
-export function BottomTabVideoIconWithLabel({ color = Color.Neutral.Sz500, width = 33, height = 43 }: SvgIconProps) {
+export function BottomTabVideoIconWithLabel({ color = Color.Neutral.Sz600, width = 46, height = 43 }: SvgIconProps) {
   return <BottomTabVideoSvg width={width} height={height} fill={color} />;
 }
 
-export function BottomTabUploadIconWithLabel({ color = Color.Neutral.Sz500, width = 36, height = 43 }: SvgIconProps) {
+export function BottomTabCustomUploadIcon({ color = Color.Tertiary.Sz900, width = 60, height = 60 }: SvgIconProps) {
   return <BottomTabUploadSvg width={width} height={height} fill={color} />;
 }
 
-export function BottomTabAnalysisIconWithLabel({ color = Color.Neutral.Sz500, width = 40, height = 43 }: SvgIconProps) {
+export function BottomTabAnalysisIconWithLabel({ color = Color.Neutral.Sz600, width = 46, height = 43 }: SvgIconProps) {
   return <BottomTabAnalysisSvg width={width} height={height} fill={color} />;
 }
 
-export function BottomTabLibraryIconWithLabel({ color = Color.Neutral.Sz500, width = 34, height = 43 }: SvgIconProps) {
+export function BottomTabLibraryIconWithLabel({ color = Color.Neutral.Sz600, width = 46, height = 43 }: SvgIconProps) {
   return <BottomTabLibrarySvg width={width} height={height} fill={color} />;
 }
 

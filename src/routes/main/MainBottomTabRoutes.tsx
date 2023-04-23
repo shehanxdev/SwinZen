@@ -2,20 +2,12 @@ import { BlurView } from '@react-native-community/blur';
 import { BottomTabScreenProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ParamListBase } from '@react-navigation/native';
 import React, { useEffect } from 'react';
-import { Alert, BackHandler, View } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Alert, BackHandler, TouchableOpacity, View } from 'react-native';
 
-import {
-  BottomTabAnalysisIconWithLabel,
-  BottomTabHomeIconWithLabel,
-  BottomTabLibraryIconWithLabel,
-  BottomTabUploadIconWithLabel,
-  BottomTabVideoIconWithLabel,
-  CustomMenuIcon,
-  SwingZenLogoIcon,
-} from '@sz/components';
+import { CustomMenuIcon, SwingZenLogoIcon } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route } from '@sz/constants';
+import { CustomBottomTabBar } from '@sz/layout';
 import { AnalysisScreen, HomeScreen, LibraryScreen, UploadScreen, VideosScreen } from '@sz/screens';
 
 import { commonScreenOptions } from '../configs';
@@ -55,6 +47,14 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
 
   return (
     <Tab.Navigator
+      tabBar={props => (
+        <CustomBottomTabBar
+          {...props}
+          onCustomUploadButtonClicked={() => {
+            Alert.alert('Custom bottom tab upload icon clicked.'); //TODO::replace with a relevant callback
+          }}
+        />
+      )}
       screenOptions={{
         ...commonScreenOptions,
         headerLeft: () => (
@@ -86,51 +86,11 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
           </View>
         ),
       }}>
-      <Tab.Screen
-        name={Route.HomeTab}
-        component={HomeScreen}
-        options={{
-          tabBarIcon: ({ focused }) => {
-            return <BottomTabHomeIconWithLabel {...(focused && { color: Color.Primary.Sz400 })} />;
-          },
-        }}
-      />
-      <Tab.Screen
-        name={Route.VideosTab}
-        component={VideosScreen}
-        options={{
-          tabBarIcon: ({ focused }) => {
-            return <BottomTabVideoIconWithLabel {...(focused && { color: Color.Primary.Sz400 })} />;
-          },
-        }}
-      />
-      <Tab.Screen
-        name={Route.UploadVideoTab}
-        component={UploadScreen}
-        options={{
-          tabBarIcon: ({ focused }) => {
-            return <BottomTabUploadIconWithLabel {...(focused && { color: Color.Primary.Sz400 })} />;
-          },
-        }}
-      />
-      <Tab.Screen
-        name={Route.AnalysisTab}
-        component={AnalysisScreen}
-        options={{
-          tabBarIcon: ({ focused }) => {
-            return <BottomTabAnalysisIconWithLabel {...(focused && { color: Color.Primary.Sz400 })} />;
-          },
-        }}
-      />
-      <Tab.Screen
-        name={Route.LibraryTab}
-        component={LibraryScreen}
-        options={{
-          tabBarIcon: ({ focused }) => {
-            return <BottomTabLibraryIconWithLabel {...(focused && { color: Color.Primary.Sz400 })} />;
-          },
-        }}
-      />
+      <Tab.Screen name={Route.HomeTab} component={HomeScreen} />
+      <Tab.Screen name={Route.VideosTab} component={VideosScreen} />
+      <Tab.Screen name={Route.UploadVideoTab} component={UploadScreen} />
+      <Tab.Screen name={Route.AnalysisTab} component={AnalysisScreen} />
+      <Tab.Screen name={Route.LibraryTab} component={LibraryScreen} />
     </Tab.Navigator>
   );
 }
