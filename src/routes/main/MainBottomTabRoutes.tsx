@@ -1,4 +1,3 @@
-import { BlurView } from '@react-native-community/blur';
 import { BottomTabScreenProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ParamListBase } from '@react-navigation/native';
 import React, { useEffect } from 'react';
@@ -6,16 +5,11 @@ import { Alert, BackHandler, TouchableOpacity, View } from 'react-native';
 
 import { CustomMenuIcon, SwingZenLogoIcon } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, Route } from '@sz/constants';
+import { Route } from '@sz/constants';
 import { CustomBottomTabBar } from '@sz/layout';
 import { AnalysisScreen, HomeScreen, LibraryScreen, UploadScreen, VideosScreen } from '@sz/screens';
 
 import { commonScreenOptions } from '../configs';
-
-const stylesConfig = {
-  blurStyles: tw`overflow-hidden absolute top-0 bottom-0 left-0 right-0 rounded-t-3xl border`,
-  tabBarStyles: tw`absolute border-t-0 h-[95.5px] -bottom-1 -left-1 -right-1`,
-};
 
 const Tab = createBottomTabNavigator();
 
@@ -67,24 +61,7 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
             <CustomMenuIcon />
           </TouchableOpacity>
         ),
-        tabBarStyle: stylesConfig.tabBarStyles,
         tabBarShowLabel: false,
-        tabBarBackground: () => (
-          <View style={[stylesConfig.blurStyles, { borderColor: Color.Neutral.Sz500 }]}>
-            {/*
-             * NOTE::This is tempory workaround to avoid issues with borders at the edges getting blured when using blurView.
-             * Border width of the nested view is set to so the outer view's border will not get blured.
-             */}
-            <View style={[stylesConfig.blurStyles, { borderWidth: 0 }]}>
-              <BlurView
-                blurType="dark"
-                blurAmount={10} //Note::This is a magic number to handle blur amount.
-                style={stylesConfig.blurStyles}
-                reducedTransparencyFallbackColor={Color.Neutral.Sz900} //NOTE::This is the fallback color when the accessibility setting Reduce Transparency is enabled
-              />
-            </View>
-          </View>
-        ),
       }}>
       <Tab.Screen name={Route.HomeTab} component={HomeScreen} />
       <Tab.Screen name={Route.VideosTab} component={VideosScreen} />
