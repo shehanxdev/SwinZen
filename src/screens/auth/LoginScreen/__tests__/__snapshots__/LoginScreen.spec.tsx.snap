@@ -105,7 +105,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                     "display": "flex",
                     "marginLeft": 20,
                     "marginRight": 20,
-                    "marginTop": 80,
+                    "marginTop": 40,
                   }
                 }
               >
@@ -132,7 +132,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                     style={
                       {
                         "marginBottom": 80,
-                        "marginTop": 12,
+                        "marginTop": 24,
                       }
                     }
                   >
@@ -185,7 +185,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                       ]
                     }
                   >
-                    Your Email
+                    Your email
                   </Text>
                   <View
                     style={
@@ -365,7 +365,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                           <View>
                             <SvgMock
                               fill="#ADB5BD"
-                              height={17}
+                              height={20}
                               width={20}
                             />
                           </View>
@@ -407,7 +407,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                       ]
                     }
                   >
-                    Your Password
+                    Your password
                   </Text>
                   <View
                     style={
@@ -671,8 +671,8 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                           <View>
                             <SvgMock
                               fill="#ADB5BD"
-                              height={24}
-                              width={24}
+                              height={20}
+                              width={20}
                             />
                           </View>
                         </View>
@@ -700,6 +700,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                   style={
                     {
                       "alignItems": "flex-end",
+                      "marginTop": 12,
                     }
                   }
                 >
@@ -739,7 +740,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                 <View
                   style={
                     {
-                      "marginBottom": 8,
+                      "marginBottom": 24,
                     }
                   }
                 >
@@ -878,7 +879,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                                 ]
                               }
                             >
-                              Sign in
+                              SIGN IN
                             </Text>
                           </Text>
                         </View>
@@ -895,14 +896,14 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                       },
                       {
                         "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "normal",
+                        "fontSize": 15,
+                        "fontWeight": "600",
                         "textAlign": "center",
                       },
                     ]
                   }
                 >
-                  Don’t Have An Account?
+                  Don’t have an account?
                   <Text
                     onPress={[Function]}
                     style={

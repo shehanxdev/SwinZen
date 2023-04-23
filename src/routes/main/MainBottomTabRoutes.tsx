@@ -8,6 +8,7 @@ import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
 import { CustomBottomTabBar } from '@sz/layout';
 import { AnalysisScreen, HomeScreen, LibraryScreen, UploadScreen, VideosScreen } from '@sz/screens';
+import { NavigationService } from '@sz/services';
 
 import { commonScreenOptions } from '../configs';
 
@@ -57,7 +58,7 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
           </View>
         ),
         headerRight: () => (
-          <TouchableOpacity onPress={() => {}} style={tw`pr-5`}>
+          <TouchableOpacity onPress={() => NavigationService.openDrawer()} style={tw`pr-5`}>
             <CustomMenuIcon />
           </TouchableOpacity>
         ),
