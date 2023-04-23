@@ -14,6 +14,7 @@ import {
   MailIconSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
+  PhoneIconSvg,
   PricePlanFeatureListTick,
   ProfileIconSvg,
   SecurityIconSvg,
@@ -94,4 +95,8 @@ export function PricePlanFeatureListTickIcon({ color = Color.Neutral.Sz500, widt
 
 export function CloseButton({ color = Color.Neutral.Sz500, width = 12, height = 12 }: SvgIconProps) {
   return <CloseButtonSvg width={width} height={height} fill={color} />;
+}
+
+export function PhoneIcon({ color = Color.Neutral.Sz500, width = 18, height = 18 }: SvgIconProps) {
+  return <PhoneIconSvg width={width} height={height} fill={color} />;
 }

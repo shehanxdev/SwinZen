@@ -1,14 +1,14 @@
 import React, { forwardRef } from 'react';
 import { TextInput as RNTextInput } from 'react-native';
 
-import { TextField, TextFieldProps } from '../TextField';
+import { TextField, TextFieldProps } from '../../TextField';
 
 const MASK_PLACEHOLDER = '#';
 
 type WithAppTextInputProps = Omit<TextFieldProps, 'value' | 'defaultValue'>;
 
 export interface MaskedInputProps extends WithAppTextInputProps {
-  value: string;
+  value?: string;
   inputMask: string;
 }
 
