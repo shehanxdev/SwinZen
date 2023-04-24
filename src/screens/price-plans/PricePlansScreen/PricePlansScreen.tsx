@@ -36,6 +36,7 @@ export function PricePlansScreen() {
                 price={data.price}
                 frequency={data.frequency}
                 featureList={data.features}
+                betterValue={data.banner}
               />
             </View>
           ))}

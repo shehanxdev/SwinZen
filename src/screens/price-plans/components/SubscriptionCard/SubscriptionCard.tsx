@@ -11,10 +11,10 @@ export interface SubscriptionCardProps {
   testID?: string;
   title: string;
   price: number;
-  frequency: string;
+  frequency: string | null;
   featureList: string[];
   onCardPress?: () => void;
-  betterValue?: boolean;
+  betterValue?: string | null;
 }
 
 export function SubscriptionCard({
@@ -24,7 +24,7 @@ export function SubscriptionCard({
   frequency,
   featureList,
   onCardPress,
-  betterValue = false,
+  betterValue = null,
 }: SubscriptionCardProps) {
   return (
     <TouchableOpacity testID={testID} onPress={onCardPress}>
@@ -32,7 +32,7 @@ export function SubscriptionCard({
         {betterValue && (
           <View style={tw`bg-[${Color.Tertiary.Sz900}] h-6.25 w-fit rounded-t-2.5`}>
             <Text variant={TextVariant.Labels} color={Color.Primary.Sz900}>
-              Better value!
+              {betterValue}
             </Text>
           </View>
         )}
@@ -45,7 +45,7 @@ export function SubscriptionCard({
               {`$${price}`}
             </Text>
             <Text variant={TextVariant.Body2Regular} color={Color.Neutral.Sz100}>
-              {frequency}
+              {frequency && '/' + frequency}
             </Text>
           </View>
           <View style={tw`bg-[${Color.Neutral.Sz700}] self-center mt-3.5 h-0.25 w-61`} />
