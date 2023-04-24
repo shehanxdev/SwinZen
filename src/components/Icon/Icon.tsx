@@ -22,7 +22,6 @@ import {
   DrawerProfileSettingsSvg,
   DrawerTermsSvg,
   MailIconSvg,
-  MessageSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
   PricePlanFeatureListTick,
@@ -145,8 +144,4 @@ export function SecurityIcon({ color = Color.Neutral.Sz500, width = 20, height =
 
 export function SwingZenLogoIcon({ color, width = 108, height = 55 }: SvgIconProps) {
   return <SwingZenLogoSvg width={width} height={height} fill={color} />;
-}
-
-export function MessageIcon({ color, width = 20, height = 20 }: SvgIconProps) {
-  return <MessageSvg width={width} height={height} fill={color} />;
 }
