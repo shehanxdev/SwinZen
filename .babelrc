@@ -25,6 +25,12 @@
           "@sz/utils": "./src/utils/index"
         }
       }
+    ],
+    [
+      "react-native-reanimated/plugin",
+      {
+        "relativeSourceLocation": true
+      }
     ]
   ]
 }
