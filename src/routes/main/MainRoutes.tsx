@@ -1,9 +1,11 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import React from 'react';
 
+import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
 
 import { MainBottomTabRoutes } from './MainBottomTabRoutes';
+import { CustomDrawer } from './components';
 
 export type MainStackParamList = {
   [Route.MainBottomTabRoutesStack]: {
@@ -11,15 +13,25 @@ export type MainStackParamList = {
   };
 };
 
-const Stack = createNativeStackNavigator<MainStackParamList>();
+// TODO:: use/move the drawer at the most suitable place
+const Drawer = createDrawerNavigator<MainStackParamList>();
 
 export function MainStack() {
   return (
-    <Stack.Navigator
+    <Drawer.Navigator
       screenOptions={{
         headerShown: false,
-      }}>
-      <Stack.Screen name={Route.MainBottomTabRoutesStack} component={MainBottomTabRoutes} />
-    </Stack.Navigator>
+        drawerType: 'front',
+        drawerStyle: tw`bg-transparent rounded-r-[32px] border-neutral-500 border-r-2`,
+      }}
+      drawerContent={() => <CustomDrawer />}>
+      <Drawer.Screen
+        name={Route.MainBottomTabRoutesStack}
+        component={MainBottomTabRoutes}
+        options={{
+          drawerItemStyle: { height: 0 },
+        }}
+      />
+    </Drawer.Navigator>
   );
 }
