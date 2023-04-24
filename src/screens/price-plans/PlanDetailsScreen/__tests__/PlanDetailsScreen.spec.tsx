@@ -9,11 +9,13 @@ describe('Plan Details Screen screen', () => {
   const mockRoute = {
     params: {
       params: {
-        name: 'testName',
-        longDescription: 'testLongDescription',
-        featureList: ['testFeatureOne', 'testFeatureTwo'],
-        price: 99.0,
-        frequency: 'testFrequency',
+        data: {
+          name: 'testName',
+          description: 'testLongDescription',
+          features: ['testFeatureOne', 'testFeatureTwo'],
+          price: 99.0,
+          frequency: 'testFrequency',
+        },
       },
     },
   };

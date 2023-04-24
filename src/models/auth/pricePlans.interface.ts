@@ -10,8 +10,8 @@ export interface Plan {
   id: string;
   name: string;
   description: string;
-  longDescription: string;
-  frequency: string;
+  banner: string | null;
+  frequency: string | null;
   price: number;
   currency: string;
   features: Array<string>;

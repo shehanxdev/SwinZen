@@ -14,10 +14,6 @@ export function PricePlansScreen() {
   const loading = useSelector(state => state.loading.effects.pricePlansStore.getPricePlans);
   const pricePlans = useSelector(state => state.pricePlansStore.pricePlans);
 
-  // response result has annual plan as the first plan, so need to reverse order
-  const orderedPricePlans = [...pricePlans].reverse();
-  console.log('PricePlans: ', orderedPricePlans);
-
   useEffect(() => {
     dispatch.pricePlansStore.getPricePlans();
   }, []);
@@ -31,7 +27,7 @@ export function PricePlansScreen() {
         </View>
       ) : (
         <ScrollView style={tw`mt-4 mx-6.25`}>
-          {orderedPricePlans.map((data, index) => (
+          {pricePlans.map((data, index) => (
             <View key={index} style={tw`my-2`}>
               <SubscriptionCard
                 title={data.name}

@@ -9,8 +9,7 @@ import { NavigationService } from '@sz/services';
 import { BasePricePlansScreen } from '../components';
 
 export function PlanDetailsScreen({ route }) {
-  const data = route.params.params;
-  console.log('$$$$$$$$$$', data);
+  const data = route.params.params.data;
 
   const onProceed = () => {
     //TODO:: handle payment proceed and change routes later
@@ -20,21 +19,21 @@ export function PlanDetailsScreen({ route }) {
 
   return (
     <BasePricePlansScreen testID="PlanDetailsScreenTestID">
-      <View style={tw`flex-1 justify-between`}>
-        <View style={tw`mx-5 flex-1 content-center items-center`}>
-          <View style={tw`mt-20`}>
+      <View style={tw`flex-1 justify-between mx-4`}>
+        <View style={tw`mx-5 flex-1`}>
+          <View style={tw`mt-2`}>
             <Text variant={TextVariant.Labels}>You have chosen the</Text>
           </View>
           <View style={tw`mt-1`}>
             <Text variant={TextVariant.SubTitle1}>{data.name}</Text>
           </View>
           <View style={tw`mt-10`}>
-            <Text variant={TextVariant.Body2Regular}>{data.longDescription}</Text>
+            <Text variant={TextVariant.Body2Regular}>{data.description}</Text>
           </View>
-          <View style={tw`mt-6`}>
-            {data.featureList.map((feature, index) => {
+          <View style={tw`mt-4`}>
+            {data.features.map((feature, index) => {
               return (
-                <View style={tw`flex-row justify-center items-center gap-2`} key={index}>
+                <View style={tw`flex-row justify-center items-center gap-2 mt-2`} key={index}>
                   <View style={tw`mt-1`}>
                     <PricePlanFeatureListTickIcon />
                   </View>
@@ -46,14 +45,16 @@ export function PlanDetailsScreen({ route }) {
             })}
           </View>
         </View>
-        <View style={tw`items-center mb-5 content-center`}>
-          <View style={tw`flex-row justify-center items-center gap-2`}>
+        <View style={tw`items-center mb-5`}>
+          <View style={tw`flex-row gap-2 items-center`}>
             <Text variant={TextVariant.Heading1} color={Color.Neutral.Sz100}>
               {`$${data.price}`}
             </Text>
-            <Text variant={TextVariant.Body2Regular} color={Color.Neutral.Sz100}>
-              {data.frequency}
-            </Text>
+            <View style={tw`mt-6`}>
+              <Text variant={TextVariant.Body2Regular} color={Color.Neutral.Sz100}>
+                {data.frequency && '/' + data.frequency}
+              </Text>
+            </View>
           </View>
           <View style={tw`mt-16 mb-3`}>
             <Button onPress={onProceed} title="PROCEED TO PAY" />
