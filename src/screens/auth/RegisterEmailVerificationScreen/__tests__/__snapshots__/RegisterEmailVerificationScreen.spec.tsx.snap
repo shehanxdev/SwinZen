@@ -13,8 +13,9 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
   <BVLinearGradient
     colors={
       [
-        4279320343,
-        4278650887,
+        4279917603,
+        4278984207,
+        4278650631,
       ]
     }
     endPoint={
@@ -32,16 +33,34 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
     }
     style={
       {
-        "height": "100%",
+        "flexBasis": "0%",
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "position": "relative",
       }
     }
   >
-    <RCTSafeAreaView
+    <Image
+      resizeMode="repeat"
+      source={
+        {
+          "testUri": "../../../src/assets/images/grassBackground.jpg",
+        }
+      }
       style={
         {
           "flexBasis": "0%",
           "flexGrow": 1,
           "flexShrink": 1,
+          "opacity": 0.1,
+        }
+      }
+    />
+    <RCTSafeAreaView
+      style={
+        {
+          "height": "100%",
+          "position": "absolute",
         }
       }
     >
@@ -479,7 +498,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                     style={
                       [
                         {
-                          "color": "#69AA67",
+                          "color": "#A2FD2F",
                           "lineHeight": 20,
                         },
                         {
@@ -487,6 +506,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                           "fontSize": 16,
                           "fontWeight": "bold",
                           "textAlign": "center",
+                          "textDecorationLine": "underline",
                         },
                       ]
                     }
@@ -527,7 +547,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                       onTouchStart={[Function]}
                       style={
                         {
-                          "backgroundColor": "#69AA67",
+                          "backgroundColor": "#A2FD2F",
                           "borderColor": "#ffffff00",
                           "borderRadius": 10,
                           "borderStyle": "solid",
@@ -637,13 +657,13 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                               style={
                                 [
                                   {
-                                    "color": "#F8F9FA",
-                                    "lineHeight": 24,
+                                    "color": "#283E36",
+                                    "lineHeight": 28,
                                   },
                                   {
                                     "fontFamily": "SourceSansPro-SemiBold",
-                                    "fontSize": 16,
-                                    "fontWeight": "600",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
                                     "textAlign": "center",
                                   },
                                 ]
@@ -680,7 +700,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                     style={
                       [
                         {
-                          "color": "#69AA67",
+                          "color": "#A2FD2F",
                           "lineHeight": 20,
                         },
                         {
@@ -688,6 +708,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                           "fontSize": 16,
                           "fontWeight": "bold",
                           "textAlign": "center",
+                          "textDecorationLine": "underline",
                         },
                       ]
                     }
@@ -702,7 +723,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                     style={
                       [
                         {
-                          "color": "#69AA67",
+                          "color": "#A2FD2F",
                           "lineHeight": 20,
                         },
                         {
@@ -710,6 +731,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                           "fontSize": 16,
                           "fontWeight": "bold",
                           "textAlign": "center",
+                          "textDecorationLine": "underline",
                         },
                       ]
                     }
