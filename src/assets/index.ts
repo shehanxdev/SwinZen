@@ -29,3 +29,4 @@ export { default as DrawerNotificationSvg } from './icons/drawer/notification-ic
 export { default as DrawerPrivacySvg } from './icons/drawer/privacy-icon.svg';
 export { default as DrawerProfileSettingsSvg } from './icons/drawer/profile-icon.svg';
 export { default as DrawerTermsSvg } from './icons/drawer/terms-icon.svg';
+export { default as MessageSvg } from './icons/contact-us/message.svg';
