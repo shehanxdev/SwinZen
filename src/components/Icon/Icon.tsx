@@ -85,6 +85,18 @@ export function BottomTabLibraryIconWithLabel({ color = Color.Neutral.Sz600, wid
   return <BottomTabLibrarySvg width={width} height={height} fill={color} />;
 }
 
+export function UploadIcon({ color = Color.Neutral.Sz100, width = 35, height = 36 }: SvgIconProps) {
+  return <UploadSvg width={width} height={height} fill={color} />;
+}
+
+export function PlayButtonIcon({ color = Color.Neutral.Sz100, width = 46, height = 46 }: SvgIconProps) {
+  return <PlayButtonSvg width={width} height={height} fill={color} />;
+}
+
+export function ErrorIcon({ color = Color.Neutral.Sz100, width = 38, height = 36 }: SvgIconProps) {
+  return <ErrorIconSvg width={width} height={height} fill={color} />;
+}
+
 export function DrawerContactIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
   return <DrawerContactSvg width={width} height={height} fill={color} />;
 }
@@ -127,18 +139,6 @@ export function PasswordHideIcon({ color = Color.Neutral.Sz500, width = 20, heig
 
 export function PasswordRevealIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
   return <PasswordRevealEyeSvg width={width} height={height} fill={color} />;
-}
-
-export function UploadIcon({ color = Color.Neutral.Sz100, width = 35, height = 36 }: SvgIconProps) {
-  return <UploadSvg width={width} height={height} fill={color} />;
-}
-
-export function PlayButtonIcon({ color = Color.Neutral.Sz100, width = 46, height = 46 }: SvgIconProps) {
-  return <PlayButtonSvg width={width} height={height} fill={color} />;
-}
-
-export function ErrorIcon({ color = Color.Neutral.Sz100, width = 38, height = 36 }: SvgIconProps) {
-  return <ErrorIconSvg width={width} height={height} fill={color} />;
 }
 
 export function PricePlanFeatureListTickIcon({ color = Color.Neutral.Sz500, width = 12, height = 12 }: SvgIconProps) {
