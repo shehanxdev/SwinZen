@@ -41,7 +41,7 @@ export function InfoStack() {
           </TouchableOpacity>
         ),
       }}>
-      <Stack.Screen name={Route.AboutUs} component={AboutUsScreen} options={{ title: 'About us' }} />
+      <Stack.Screen name={Route.AboutUs} component={AboutUsScreen} options={{ title: 'What is SwingZen?' }} />
       <Stack.Screen name={Route.FAQ} component={FAQScreen} options={{ title: 'FAQ' }} />
       <Stack.Screen name={Route.PrivacyPolicy} component={PrivacyPolicyScreen} options={{ title: 'Privacy policy' }} />
       <Stack.Screen name={Route.TermsOfUse} component={TermsOfUseScreen} options={{ title: 'Terms of use' }} />
