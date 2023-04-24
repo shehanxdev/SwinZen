@@ -13,8 +13,9 @@ exports[`Price Plans Screen screen should render Price Plans Screen correctly 1`
   <BVLinearGradient
     colors={
       [
-        4279320343,
-        4278650887,
+        4279917603,
+        4278984207,
+        4278650631,
       ]
     }
     endPoint={
@@ -32,17 +33,35 @@ exports[`Price Plans Screen screen should render Price Plans Screen correctly 1`
     }
     style={
       {
-        "height": "100%",
+        "flexBasis": "0%",
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "position": "relative",
       }
     }
     testID="PricePlansScreenTestID"
   >
-    <RCTSafeAreaView
+    <Image
+      resizeMode="repeat"
+      source={
+        {
+          "testUri": "../../../src/assets/images/grassBackground.jpg",
+        }
+      }
       style={
         {
           "flexBasis": "0%",
           "flexGrow": 1,
           "flexShrink": 1,
+          "opacity": 0.1,
+        }
+      }
+    />
+    <RCTSafeAreaView
+      style={
+        {
+          "height": "100%",
+          "position": "absolute",
         }
       }
     >
