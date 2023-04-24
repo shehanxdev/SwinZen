@@ -1,13 +1,13 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
-import { Alert, View } from 'react-native';
+import { View } from 'react-native';
 
 import { AccountLockIcon, Button, PasswordField, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { ResetPasswordFormValues } from '@sz/models';
-import { NavigationService } from '@sz/services';
+import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
 import { resetPasswordValidationSchema } from '@sz/utils';
 
@@ -36,30 +36,22 @@ export function ResetPasswordScreen({ route }) {
         password: formInput.password,
       });
 
-      //TODO::replace with proper alert
-      Alert.alert('Success', 'Password reset successfullly', [
-        {
-          text: 'OK',
-          onPress: () => {
-            dispatch.userStore.clearPasswordResetToken();
-            NavigationService.navigate(Route.Login);
-          },
-        },
-      ]);
+      ToastService.success({ message: 'Success!', description: 'Password reset successfullly.' });
+      dispatch.userStore.clearPasswordResetToken();
+      NavigationService.navigate(Route.Login);
     } catch (error: any) {
-      //TODO::handle errors
-      console.log('error', error);
+      ToastService.error({ message: 'Failed!', description: error.data.message });
     }
   };
   return (
     <BaseAuthScreen>
       <View style={tw`flex-1 justify-between`} testID="ResetPasswordScreenTestID">
-        <View style={tw`mx-5 flex-1 justify-center content-center`}>
+        <View style={tw`mx-5 flex-1 content-center`}>
           <View style={tw`items-center`}>
-            <View style={tw`mt-3 mb-5`}>
+            <View style={tw`mt-20`}>
               <Text variant={TextVariant.SubTitle2SemiBold}>Reset password</Text>
             </View>
-            <View style={tw`mb-13`}>
+            <View style={tw`mt-2 mb-8`}>
               <Text variant={TextVariant.Body2Regular}>
                 Your new password must be different from your previously used passwords
               </Text>
@@ -71,7 +63,7 @@ export function ResetPasswordScreen({ route }) {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <PasswordField
                 ref={ref}
-                label="Your New Password"
+                label="Your new password"
                 leftIcon={<AccountLockIcon />}
                 maxLength={20}
                 value={value}
@@ -91,7 +83,7 @@ export function ResetPasswordScreen({ route }) {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <PasswordField
                 ref={ref}
-                label="Confirm Your New Password"
+                label="Confirm your new password"
                 leftIcon={<AccountLockIcon />}
                 maxLength={20}
                 value={value}
@@ -109,7 +101,7 @@ export function ResetPasswordScreen({ route }) {
           <View style={tw`mb-3`}>
             <Button
               onPress={handleSubmit(onResetPasswordFormValid, onResetPasswordFormInvalid)}
-              title="Save new password"
+              title="SAVE NEW PASSWORD"
             />
           </View>
         </View>

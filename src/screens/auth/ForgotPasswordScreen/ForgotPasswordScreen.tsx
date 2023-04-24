@@ -7,7 +7,7 @@ import { Button, Link, MailIcon, Text, TextField } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { ForgotPasswordFormValues } from '@sz/models';
-import { NavigationService } from '@sz/services';
+import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { forgotPasswordValidationSchema } from '@sz/utils';
 
@@ -34,18 +34,18 @@ export function ForgotPasswordScreen() {
       await dispatch.userStore.forgetPassword(formInput);
       NavigationService.navigate(Route.ResetPasswordEmailVerification, { email: formInput.email }); //TODO::introduce type safety to the params
     } catch (error: any) {
-      console.log('error', error);
+      ToastService.error({ message: 'Failed!', description: error.data.message });
     }
   };
   return (
     <BaseAuthScreen>
       <View style={tw`flex-1 justify-between`} testID="ForgotPasswordScreenTestID">
-        <View style={tw`mx-5 flex-1 justify-center content-center`}>
+        <View style={tw`mx-5 flex-1 content-center`}>
           <View style={tw`items-center`}>
-            <View style={tw`mt-3 mb-5`}>
+            <View style={tw`mt-30`}>
               <Text variant={TextVariant.SubTitle2SemiBold}>Forgot password</Text>
             </View>
-            <View style={tw`mb-13`}>
+            <View style={tw`mt-2 mb-8`}>
               <Text variant={TextVariant.Body2Regular}>
                 Enter the email associated with your account to receive reset instructions
               </Text>
@@ -57,7 +57,7 @@ export function ForgotPasswordScreen() {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <TextField
                 ref={ref}
-                label="Your Email"
+                label="Your email"
                 leftIcon={<MailIcon />}
                 maxLength={50}
                 value={value}
@@ -73,11 +73,11 @@ export function ForgotPasswordScreen() {
           />
         </View>
         <View style={tw`items-center mb-5 mx-5`}>
-          <View style={tw`mb-3`}>
+          <View style={tw`mb-6`}>
             <Button
               loading={loading}
               onPress={handleSubmit(onForgotPasswordFormValid, onForgotPasswordFormInvalid)}
-              title="Reset password"
+              title="RESET PASSWORD"
             />
           </View>
           <Link
