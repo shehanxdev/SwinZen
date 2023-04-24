@@ -16,6 +16,7 @@ export function PricePlansScreen() {
 
   // response result has annual plan as the first plan, so need to reverse order
   const orderedPricePlans = [...pricePlans].reverse();
+  console.log('PricePlans: ', orderedPricePlans);
 
   useEffect(() => {
     dispatch.pricePlansStore.getPricePlans();
