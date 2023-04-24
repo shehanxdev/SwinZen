@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { BlurView } from '@react-native-community/blur';
 import { BottomTabScreenProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ParamListBase } from '@react-navigation/native';
@@ -17,6 +18,7 @@ import {
 import { tw } from '@sz/config';
 import { Color, Route } from '@sz/constants';
 import { AnalysisScreen, HomeScreen, LibraryScreen, UploadScreen, VideosScreen } from '@sz/screens';
+import { NavigationService } from '@sz/services';
 
 import { commonScreenOptions } from '../configs';
 
@@ -63,7 +65,7 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
           </View>
         ),
         headerRight: () => (
-          <TouchableOpacity onPress={() => {}} style={tw`pr-5`}>
+          <TouchableOpacity onPress={() => NavigationService.openDrawer()} style={tw`pr-5`}>
             <CustomMenuIcon />
           </TouchableOpacity>
         ),

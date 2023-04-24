@@ -83,8 +83,8 @@ exports[`Privacy Policy Screen Screen should render Privacy Policy Screen correc
             style={
               {
                 "paddingBottom": 24,
-                "paddingLeft": 24,
-                "paddingRight": 24,
+                "paddingLeft": 16,
+                "paddingRight": 16,
                 "paddingTop": 24,
               }
             }

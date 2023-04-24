@@ -11,7 +11,7 @@ import { BaseScreen } from '../components';
 export function PrivacyPolicyScreen() {
   return (
     <BaseScreen>
-      <View style={tw`p-6`} testID="PrivacyPolicyScreenTestID">
+      <View style={tw`px-4 py-6`} testID="PrivacyPolicyScreenTestID">
         <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Auto}>
           {`Introduction
             \n(“Sports Zoom LLC” or “We” or “Us”) respect your privacy and are committed to protecting it through our compliance with this policy. \nThis policy describes the types of information we may collect from you or that you may provide when you visit the website ( `}
