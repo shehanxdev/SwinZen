@@ -14,7 +14,7 @@ import { tw } from '@sz/config';
 import { Color } from '@sz/constants';
 import { useSafeAreaInsets } from '@sz/hooks';
 
-export const bottomTabIcons = [
+const bottomTabIcons = [
   <BottomTabHomeIconWithLabel />,
   <BottomTabVideoIconWithLabel />,
   <BottomTabCustomUploadIcon />,
