@@ -11,6 +11,7 @@ module.exports = {
     '^@sz/config(.*)$': '<rootDir>/src/config$1',
     '^@sz/constants(.*)$': '<rootDir>/src/constants$1',
     '^@sz/hooks(.*)$': '<rootDir>/src/hooks$1',
+    '^@sz/layout(.*)$': '<rootDir>/src/layout$1',
     '^@sz/models(.*)$': '<rootDir>/src/models$1',
     '^@sz/routes(.*)$': '<rootDir>/src/routes$1',
     '^@sz/screens(.*)$': '<rootDir>/src/screens$1',
