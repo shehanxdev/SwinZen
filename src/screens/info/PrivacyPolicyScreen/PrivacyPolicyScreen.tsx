@@ -11,7 +11,7 @@ import { BaseScreen } from '../components';
 export function PrivacyPolicyScreen() {
   return (
     <BaseScreen>
-      <View style={tw`p-6`} testID="PrivacyPolicyScreenTestID">
+      <View style={tw`px-4 py-6`} testID="PrivacyPolicyScreenTestID">
         <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Auto}>
           {`Introduction
             \n(“Sports Zoom LLC” or “We” or “Us”) respect your privacy and are committed to protecting it through our compliance with this policy. \nThis policy describes the types of information we may collect from you or that you may provide when you visit the website ( `}
@@ -64,7 +64,7 @@ export function PrivacyPolicyScreen() {
             \nYou may also send us an email to request access to, correct or delete any personal information that you have provided to us. We cannot delete your personal information except by also deleting your user account. We may not accommodate a request to change information if we believe the change would violate any law or legal requirement or cause the information to be incorrect. 
             \nIf you delete your User Contributions from the Website, copies of your User Contributions may remain viewable in cached and archived pages, or might have been copied or stored by other Website users. Proper access and use of information provided on the Website, including User Contributions, is governed by our terms of use. 
             \n \nYour California Privacy Rights 
-            \nCalifornia Civil Code Section § 1798.83 permits users of our Website that are California residents to request certain information regarding our disclosure of personal information to third parties for their direct marketing purposes. To make such a request, please send an email to  or write to us at: 9805 NE Hilltop Dr. Bainbridge Island, WA 98110. 
+            \nCalifornia Civil Code Section § 1798.83 permits users of our Website that are California residents to request certain information regarding our disclosure of personal information to third parties for their direct marketing purposes. To make such a request, please send an email to  or write to us at: 423 S Margin St Franklin TN 37064. 
             \n \nData Security 
             \nWe have implemented measures designed to secure your personal information from accidental loss and from unauthorized access, use, alteration, and disclosure. All information you provide to us is stored on our secure servers behind firewalls. Any payment transactions will be encrypted using SSL technology. 
             \nThe safety and security of your information also depends on you. Where we have given you or where you have chosen a password for access to certain parts of our Website, you are responsible for keeping this password confidential. We ask you not to share your password with anyone. We urge you to be careful about giving out information in public areas of the Website like message boards. The information you share in public areas may be viewed by any user of the Website. 
