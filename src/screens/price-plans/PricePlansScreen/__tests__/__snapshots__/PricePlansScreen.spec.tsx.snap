@@ -73,6 +73,8 @@ exports[`PricePlans Screen should render PricePlans Screen correctly 1`] = `
             <RCTScrollView
               style={
                 {
+                  "marginLeft": 25,
+                  "marginRight": 25,
                   "marginTop": 18,
                 }
               }

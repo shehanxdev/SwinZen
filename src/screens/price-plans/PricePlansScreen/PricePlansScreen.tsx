@@ -8,7 +8,7 @@ import { BasePricePlansScreen, SubscriptionCard } from '../components';
 export function PricePlansScreen() {
   return (
     <BasePricePlansScreen testID="PricePlansScreenTestID">
-      <ScrollView style={tw`mt-4.5`}>
+      <ScrollView style={tw`mt-4.5 mx-6.25`}>
         <View style={tw`my-2`}>
           <SubscriptionCard
             title="Swinzen Free"
@@ -20,7 +20,6 @@ export function PricePlansScreen() {
         </View>
         <View style={tw`my-2`}>
           <SubscriptionCard
-            hasBorder
             title="Monthly Plan"
             subTitle="Start your account with pro features and analyzing activities"
             price={9.99}
