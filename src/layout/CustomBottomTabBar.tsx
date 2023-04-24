@@ -12,6 +12,7 @@ import {
 } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color } from '@sz/constants';
+import { useSafeAreaInsets } from '@sz/hooks';
 
 export const bottomTabIcons = [
   <BottomTabHomeIconWithLabel />,
@@ -55,35 +56,40 @@ export function CustomBottomTabBar({
   navigation,
   onCustomUploadButtonClicked,
 }: BottomTabBarProps & CustomBottomTabBarProps) {
-  return (
-    <View
-      style={[
-        tw`flex-row justify-between h-31.5 border-t-4 px-[25px] border-t-[#d9d9d90a] bg-[#070807]`, //NOTE::#070807, #d9d9d90a are not available under the design system
-      ]}>
-      {state.routes.map((route, index) => {
-        const { options } = descriptors[route.key];
-        const isFocused = state.index === index;
+  const { bottom } = useSafeAreaInsets();
 
-        return (
-          <TouchableOpacity
-            key={index}
-            accessibilityRole="button"
-            accessibilityState={isFocused ? { selected: true } : {}}
-            accessibilityLabel={options.tabBarAccessibilityLabel}
-            testID={options.tabBarTestID}
-            onPress={() => {
-              if (index === 2) {
-                onCustomUploadButtonClicked();
-              } else {
-                onPress(isFocused, route, navigation);
-              }
-            }}
-            style={tw`p-1 mt-${index === 2 ? 4 : 6.25} bg-[${isFocused ? '#d9d9d90a' : `${Color.Transparency.full}`}]`}>
-            {/* NOTE::#d9d9d90a isn't avaialble under the design system. */}
-            {renderIcon(index, isFocused)}
-          </TouchableOpacity>
-        );
-      })}
+  return (
+    // Note::Wrapped with additional view to get rid of the IOS bottom color issue.
+    <View style={tw`bg-[#070807]`}>
+      <View
+        style={[
+          tw`flex-row justify-between mb-[${bottom}px] items-center h-23 border-t-4 px-6.25 py-4 border-t-[#d9d9d90a] bg-[#070807]`, //NOTE::#070807, #d9d9d90a are not available under the design system
+        ]}>
+        {state.routes.map((route, index) => {
+          const { options } = descriptors[route.key];
+          const isFocused = state.index === index;
+
+          return (
+            <TouchableOpacity
+              key={index}
+              accessibilityRole="button"
+              accessibilityState={isFocused ? { selected: true } : {}}
+              accessibilityLabel={options.tabBarAccessibilityLabel}
+              testID={options.tabBarTestID}
+              onPress={() => {
+                if (index === 2) {
+                  onCustomUploadButtonClicked();
+                } else {
+                  onPress(isFocused, route, navigation);
+                }
+              }}
+              style={tw`p-1 bg-[${isFocused ? '#d9d9d90a' : `${Color.Transparency.full}`}]`}>
+              {/* NOTE::#d9d9d90a isn't avaialble under the design system. */}
+              {renderIcon(index, isFocused)}
+            </TouchableOpacity>
+          );
+        })}
+      </View>
     </View>
   );
 }
