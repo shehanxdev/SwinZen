@@ -1,9 +1,11 @@
 import React from 'react';
-import { KeyboardAvoidingView, Platform, SafeAreaView, ScrollView } from 'react-native';
+import { Image, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { LinearGradientProps } from 'react-native-linear-gradient';
 
+import { images } from '@sz/assets';
 import { tw } from '@sz/config';
+import { Color } from '@sz/constants';
 
 interface BasePricePlansScreenProps extends Partial<LinearGradientProps> {
   children: React.ReactNode;
@@ -11,12 +13,13 @@ interface BasePricePlansScreenProps extends Partial<LinearGradientProps> {
 
 export function BasePricePlansScreen({
   children,
-  colors = ['#113F17', '#070807'], //TODO:: update, these colours are NOT available within the design system
+  colors = ['#1A5C23', Color.Primary.Sz800, Color.Primary.Sz900], //TODO:: update, these colours are NOT available within the design system
   ...otherlinearGradientProps
 }: BasePricePlansScreenProps) {
   return (
-    <LinearGradient {...otherlinearGradientProps} colors={colors} style={tw`h-full`}>
-      <SafeAreaView style={tw`flex-1`}>
+    <LinearGradient {...otherlinearGradientProps} colors={colors} style={tw`relative flex-1`}>
+      <Image source={images.grassBackground} style={tw`flex-1 opacity-10`} resizeMode="repeat" />
+      <SafeAreaView style={tw`absolute h-full w-screen`}>
         <KeyboardAvoidingView style={tw`flex-1`} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
           <ScrollView contentContainerStyle={tw`grow`} keyboardShouldPersistTaps="handled">
             {children}
