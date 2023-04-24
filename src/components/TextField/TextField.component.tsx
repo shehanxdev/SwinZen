@@ -11,7 +11,6 @@ import { TextFieldProps } from './TextField.types';
 //TODO::handle scroll on focus
 export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTextField(
   {
-    textArea = false,
     backgroundColor = Color.Primary.Sz700,
     defaultValue,
     value,
@@ -96,7 +95,7 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
     <View>
       {labelTextComponent}
       <TextInput
-        style={textArea ? tw`h-[132px] px-0 py-4 m-0` : tw`h-12 p-0 m-0`}
+        style={tw`h-12 p-0 m-0`}
         ref={ref}
         mode="outlined"
         secureTextEntry={secureTextEntry}
@@ -132,13 +131,9 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
         outlineColor={error ? Color.Error.SzMain : outlineColor}
         activeOutlineColor={error ? Color.Error.SzMain : activeOutlineColor}
         autoCorrect={autoCorrect}
-        multiline={textArea ? true : multiline}
-        numberOfLines={textArea ? !numberOfLines && 7 : numberOfLines}
-        left={
-          leftIcon && (
-            <TextInput.Icon name={() => leftIconComponent} style={{ marginTop: textArea ? '-360%' : '50%' }} />
-          )
-        }
+        multiline={multiline}
+        numberOfLines={numberOfLines}
+        left={leftIcon && <TextInput.Icon name={() => leftIconComponent} style={{ marginTop: '50%' }} />}
         right={
           rightIcon && (
             <TextInput.Icon name={() => rightIconComponent} onPress={onRightIconPress} style={{ marginTop: '50%' }} />
