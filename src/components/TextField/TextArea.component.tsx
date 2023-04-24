@@ -4,11 +4,6 @@ import { TextInput as RNTextInput } from 'react-native';
 import { TextField } from './TextField.component';
 import { TextFieldProps } from './TextField.types';
 
-interface TextAreaProps extends TextFieldProps {}
-
-export const TextArea = forwardRef<RNTextInput, TextAreaProps>(function TextAreainput(
-  { height = '132px', multiline = true, ...props },
-  ref,
-) {
-  return <TextField height={height} ref={ref} multiline={multiline} {...props} />;
+export const TextArea = forwardRef<RNTextInput, TextFieldProps>(function TextAreainput(props, ref) {
+  return <TextField ref={ref} multiline={true} innerTextInputStyle="h-[132px] p-4 m-0" {...props} />;
 });

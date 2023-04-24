@@ -34,7 +34,7 @@ type WithRNTextInputProps = Pick<
 >;
 
 export interface TextFieldProps extends WithRNTextInputProps {
-  height?: string;
+  innerTextInputStyle?: string;
   helperText?: string;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
