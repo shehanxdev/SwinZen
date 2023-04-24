@@ -46,12 +46,12 @@ export function ResetPasswordScreen({ route }) {
   return (
     <BaseAuthScreen>
       <View style={tw`flex-1 justify-between`} testID="ResetPasswordScreenTestID">
-        <View style={tw`mx-5 flex-1 justify-center content-center`}>
+        <View style={tw`mx-5 flex-1 content-center`}>
           <View style={tw`items-center`}>
-            <View style={tw`mt-3 mb-5`}>
+            <View style={tw`mt-20`}>
               <Text variant={TextVariant.SubTitle2SemiBold}>Reset password</Text>
             </View>
-            <View style={tw`mb-13`}>
+            <View style={tw`mt-2 mb-8`}>
               <Text variant={TextVariant.Body2Regular}>
                 Your new password must be different from your previously used passwords
               </Text>
@@ -63,7 +63,7 @@ export function ResetPasswordScreen({ route }) {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <PasswordField
                 ref={ref}
-                label="Your New Password"
+                label="Your new password"
                 leftIcon={<AccountLockIcon />}
                 maxLength={20}
                 value={value}
@@ -83,7 +83,7 @@ export function ResetPasswordScreen({ route }) {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <PasswordField
                 ref={ref}
-                label="Confirm Your New Password"
+                label="Confirm your new password"
                 leftIcon={<AccountLockIcon />}
                 maxLength={20}
                 value={value}
@@ -101,7 +101,7 @@ export function ResetPasswordScreen({ route }) {
           <View style={tw`mb-3`}>
             <Button
               onPress={handleSubmit(onResetPasswordFormValid, onResetPasswordFormInvalid)}
-              title="Save new password"
+              title="SAVE NEW PASSWORD"
             />
           </View>
         </View>

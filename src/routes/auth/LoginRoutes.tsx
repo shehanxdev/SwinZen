@@ -44,7 +44,7 @@ export function LoginStack() {
         ),
       }}>
       <Stack.Screen name={Route.Login} component={LoginScreen} options={{ headerShown: false }} />
-      <Stack.Screen name={Route.ForgotPassword} component={ForgotPasswordScreen} />
+      <Stack.Screen name={Route.ForgotPassword} component={ForgotPasswordScreen} options={{ headerShown: false }} />
       <Stack.Screen name={Route.ResetPasswordEmailVerification} component={ResetPasswordEmailVerificationScreen} />
       <Stack.Screen name={Route.ResetPassword} component={ResetPasswordScreen} />
     </Stack.Navigator>
