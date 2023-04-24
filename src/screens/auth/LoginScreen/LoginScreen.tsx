@@ -17,7 +17,7 @@ import {
 import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { LoginFormValues } from '@sz/models';
-import { NavigationService } from '@sz/services';
+import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { loginValidationSchema } from '@sz/utils';
 
@@ -45,20 +45,19 @@ export function LoginScreen() {
       await dispatch.userStore.loginUserWithCredentials(formInput);
       NavigationService.navigate(Route.MainStack);
     } catch (error: any) {
-      //TODO:: handle error
-      console.log('error', error);
+      ToastService.error({ message: 'Failed!', description: error.data.message });
     }
   };
 
   return (
     <BaseAuthScreen testID="LoginScreenTestID">
       <View style={tw`flex-1 justify-between`}>
-        <View style={tw`flex mt-20 mx-5`}>
+        <View style={tw`flex mt-10 mx-5`}>
           <View style={tw`items-center`}>
             <SwingZenLogoIcon />
           </View>
           <View style={tw`items-center`}>
-            <View style={tw`mt-3 mb-20`}>
+            <View style={tw`mt-6 mb-20`}>
               <Text variant={TextVariant.SubTitle2SemiBold}>Sign in to continue</Text>
             </View>
           </View>
@@ -70,7 +69,7 @@ export function LoginScreen() {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <TextField
                 ref={ref}
-                label="Your Email"
+                label="Your email"
                 leftIcon={<MailIcon />}
                 maxLength={50}
                 value={value}
@@ -91,7 +90,7 @@ export function LoginScreen() {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <PasswordField
                 ref={ref}
-                label="Your Password"
+                label="Your password"
                 leftIcon={<AccountLockIcon />}
                 maxLength={20}
                 value={value}
@@ -104,7 +103,7 @@ export function LoginScreen() {
               />
             )}
           />
-          <View style={tw`items-end`}>
+          <View style={tw`items-end mt-3`}>
             <Link
               text="Forgot password?"
               onPress={() => {
@@ -114,11 +113,11 @@ export function LoginScreen() {
           </View>
         </View>
         <View style={tw`items-center mt-10 mb-5 mx-5`}>
-          <View style={tw`mb-2`}>
-            <Button onPress={handleSubmit(onLoginFormValid, onLoginFormInvalid)} title={'Sign in'} loading={loading} />
+          <View style={tw`mb-6`}>
+            <Button onPress={handleSubmit(onLoginFormValid, onLoginFormInvalid)} title={'SIGN IN'} loading={loading} />
           </View>
-          <Text variant={TextVariant.Body2Regular}>
-            Don’t Have An Account?
+          <Text variant={TextVariant.Labels}>
+            Don’t have an account?
             <Link
               text=" Sign up"
               onPress={() => {
