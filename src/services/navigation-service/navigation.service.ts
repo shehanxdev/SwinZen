@@ -1,3 +1,4 @@
+import { DrawerActions } from '@react-navigation/native';
 import React from 'react';
 
 import { Route } from '@sz/constants';
@@ -15,6 +16,14 @@ export class NavigationService {
 
   public static goBack() {
     NavigationService.navigationRef.current?.goBack();
+  }
+
+  public static openDrawer() {
+    NavigationService.navigationRef.current?.dispatch(DrawerActions.openDrawer());
+  }
+
+  public static closeDrawer() {
+    NavigationService.navigationRef.current?.dispatch(DrawerActions.closeDrawer());
   }
 
   private static getNavigation(route: Route, params?: any) {
@@ -101,6 +110,26 @@ export class NavigationService {
           },
         };
         break;
+      case Route.AboutUs:
+        navRoute = Route.InfoStack;
+        navParams = {
+          screen: Route.AboutUs,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+      case Route.FAQ:
+        navRoute = Route.InfoStack;
+        navParams = {
+          screen: Route.FAQ,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
       case Route.PrivacyPolicy:
         navRoute = Route.InfoStack;
         navParams = {
@@ -115,6 +144,36 @@ export class NavigationService {
         navRoute = Route.InfoStack;
         navParams = {
           screen: Route.TermsOfUse,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+      case Route.ProfileSettings:
+        navRoute = Route.AccountStack;
+        navParams = {
+          screen: Route.ProfileSettings,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+      case Route.Notification:
+        navRoute = Route.AccountStack;
+        navParams = {
+          screen: Route.Notification,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+      case Route.Followers:
+        navRoute = Route.AccountStack;
+        navParams = {
+          screen: Route.Followers,
           params: {
             screen: route,
             params: params,
