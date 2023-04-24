@@ -113,10 +113,26 @@ export class NavigationService {
       case Route.ProfileSettings:
         navRoute = Route.AccountStack;
         navParams = {
-          screen: Route.ProfileSettings,
+          screen: Route.ProfileStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.ProfileSettings,
+            params: {
+              screen: route,
+              params: params,
+            },
+          },
+        };
+        break;
+      case Route.ChangePassword:
+        navRoute = Route.AccountStack;
+        navParams = {
+          screen: Route.ProfileStack,
+          params: {
+            screen: Route.ChangePassword,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
