@@ -8,6 +8,7 @@ import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
 
+import { AccountStack } from './account';
 import { AuthStack } from './auth';
 import { InfoStack } from './info';
 import { MainStack } from './main';
@@ -57,6 +58,7 @@ export function Routes() {
         <Stack.Screen name={Route.AuthStack} component={AuthStack} />
         <Stack.Screen name={Route.PricePlansStack} component={PricePlansStack} />
         <Stack.Screen name={Route.MainStack} component={MainStack} />
+        <Stack.Screen name={Route.AccountStack} component={AccountStack} />
         <Stack.Screen name={Route.InfoStack} component={InfoStack} />
       </Stack.Navigator>
     </NavigationContainer>

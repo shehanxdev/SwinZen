@@ -364,8 +364,8 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                           <View>
                             <SvgMock
                               fill="#ADB5BD"
-                              height={24}
-                              width={24}
+                              height={20}
+                              width={20}
                             />
                           </View>
                         </View>
@@ -586,7 +586,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                           <View>
                             <SvgMock
                               fill="#ADB5BD"
-                              height={17}
+                              height={20}
                               width={20}
                             />
                           </View>
@@ -893,8 +893,8 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                           <View>
                             <SvgMock
                               fill="#ADB5BD"
-                              height={24}
-                              width={24}
+                              height={20}
+                              width={20}
                             />
                           </View>
                         </View>
@@ -1200,8 +1200,8 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                           <View>
                             <SvgMock
                               fill="#ADB5BD"
-                              height={24}
-                              width={24}
+                              height={20}
+                              width={20}
                             />
                           </View>
                         </View>

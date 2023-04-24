@@ -87,125 +87,209 @@ exports[`PricePlans Screen should render PricePlans Screen correctly 1`] = `
                   }
                 >
                   <View
+                    collapsable={false}
                     style={
                       {
-                        "marginLeft": 48,
-                        "marginRight": 48,
+                        "backgroundColor": "#ffffff00",
+                        "borderColor": "rgba(0, 0, 0, 0.12)",
+                        "borderRadius": 4,
+                        "elevation": 0,
+                        "shadowColor": "#000",
+                        "shadowOffset": {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
                       }
                     }
                   >
                     <View
-                      collapsable={false}
-                      style={
+                      accessibilityState={
                         {
-                          "backgroundColor": "transparent",
-                          "borderColor": "rgba(0, 0, 0, 0.12)",
-                          "borderRadius": 4,
-                          "elevation": 0,
-                          "shadowColor": "#000",
-                          "shadowOffset": {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0,
-                          "shadowRadius": 0,
+                          "busy": undefined,
+                          "checked": undefined,
+                          "disabled": true,
+                          "expanded": undefined,
+                          "selected": undefined,
                         }
                       }
+                      accessible={true}
+                      focusable={false}
+                      onClick={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        {
+                          "flexGrow": 1,
+                          "flexShrink": 1,
+                        }
+                      }
+                      testID="SubscriptionCardTestID"
                     >
-                      <View
-                        accessibilityState={
+                      <BVLinearGradient
+                        colors={
+                          [
+                            529465088,
+                            496369424,
+                            536870911,
+                          ]
+                        }
+                        endPoint={
                           {
-                            "busy": undefined,
-                            "checked": undefined,
-                            "disabled": true,
-                            "expanded": undefined,
-                            "selected": undefined,
+                            "x": 0.5,
+                            "y": 1,
                           }
                         }
-                        accessible={true}
-                        focusable={false}
-                        onClick={[Function]}
-                        onResponderGrant={[Function]}
-                        onResponderMove={[Function]}
-                        onResponderRelease={[Function]}
-                        onResponderTerminate={[Function]}
-                        onResponderTerminationRequest={[Function]}
-                        onStartShouldSetResponder={[Function]}
+                        index={0}
+                        locations={
+                          [
+                            0,
+                            0.0719,
+                            1,
+                          ]
+                        }
+                        siblings={[]}
+                        startPoint={
+                          {
+                            "x": 0.5,
+                            "y": 0,
+                          }
+                        }
                         style={
                           {
-                            "flexGrow": 1,
-                            "flexShrink": 1,
+                            "alignItems": "center",
+                            "borderRadius": 10,
+                            "flexDirection": "column",
+                            "paddingBottom": 16,
+                            "paddingLeft": 32,
+                            "paddingRight": 32,
+                            "paddingTop": 16,
                           }
                         }
-                        testID="RNCardSubscriptionCard"
+                        total={1}
                       >
-                        <BVLinearGradient
-                          colors={
-                            [
-                              529465088,
-                              496369424,
-                              536870911,
-                            ]
-                          }
-                          endPoint={
-                            {
-                              "x": 0.5,
-                              "y": 1,
-                            }
-                          }
-                          index={0}
-                          locations={
-                            [
-                              0,
-                              0.0719,
-                              1,
-                            ]
-                          }
-                          siblings={[]}
-                          startPoint={
-                            {
-                              "x": 0.5,
-                              "y": 0,
-                            }
-                          }
+                        <View
                           style={
                             {
-                              "alignItems": "center",
-                              "borderRadius": 12,
-                              "flexDirection": "column",
-                              "paddingBottom": 16,
-                              "paddingLeft": 32,
-                              "paddingRight": 32,
-                              "paddingTop": 16,
+                              "marginTop": 16,
                             }
                           }
-                          total={1}
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "color": "#C0DBBF",
+                                  "lineHeight": 40,
+                                },
+                                {
+                                  "fontFamily": "SourceSansPro-Regular",
+                                  "fontSize": 28,
+                                  "fontWeight": "600",
+                                  "textAlign": "center",
+                                },
+                              ]
+                            }
+                          >
+                            Swinzen Free
+                          </Text>
+                          <Text
+                            style={
+                              [
+                                {
+                                  "color": "#F8F9FA",
+                                  "lineHeight": 24,
+                                },
+                                {
+                                  "fontFamily": "SourceSansPro-Regular",
+                                  "fontSize": 15,
+                                  "fontWeight": "600",
+                                  "textAlign": "center",
+                                },
+                              ]
+                            }
+                          >
+                            Start your account with a stunning profile & free features
+                          </Text>
+                        </View>
+                        <View
+                          style={
+                            {
+                              "marginTop": 32,
+                            }
+                          }
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "color": "#69AA67",
+                                  "lineHeight": 64,
+                                },
+                                {
+                                  "fontFamily": "SourceSansPro-Regular",
+                                  "fontSize": 48,
+                                  "fontWeight": "bold",
+                                  "textAlign": "center",
+                                },
+                              ]
+                            }
+                          >
+                            $0
+                          </Text>
+                          <Text
+                            style={
+                              [
+                                {
+                                  "color": "#F8F9FA",
+                                  "lineHeight": 24,
+                                },
+                                {
+                                  "fontFamily": "SourceSansPro-Regular",
+                                  "fontSize": 16,
+                                  "fontWeight": "normal",
+                                  "textAlign": "center",
+                                },
+                              ]
+                            }
+                          >
+                            Absolutely free
+                          </Text>
+                        </View>
+                        <View
+                          style={
+                            {
+                              "marginTop": 32,
+                            }
+                          }
                         >
                           <View
                             style={
                               {
-                                "marginTop": 16,
+                                "alignItems": "flex-start",
+                                "flexDirection": "row",
+                                "gap": 8,
                               }
                             }
                           >
-                            <Text
+                            <View
                               style={
-                                [
-                                  {
-                                    "color": "#C0DBBF",
-                                    "lineHeight": 40,
-                                  },
-                                  {
-                                    "fontFamily": "SourceSansPro-Regular",
-                                    "fontSize": 28,
-                                    "fontWeight": "600",
-                                    "textAlign": "center",
-                                  },
-                                ]
+                                {
+                                  "marginTop": 8,
+                                }
                               }
                             >
-                              Swinzen Free
-                            </Text>
+                              <SvgMock
+                                fill="#ADB5BD"
+                                height={12}
+                                width={12}
+                              />
+                            </View>
                             <Text
                               style={
                                 [
@@ -217,39 +301,36 @@ exports[`PricePlans Screen should render PricePlans Screen correctly 1`] = `
                                     "fontFamily": "SourceSansPro-Regular",
                                     "fontSize": 15,
                                     "fontWeight": "600",
-                                    "textAlign": "center",
+                                    "textAlign": "left",
                                   },
                                 ]
                               }
                             >
-                              Start your account with a stunning profile & free features
+                              Has ads
                             </Text>
                           </View>
                           <View
                             style={
                               {
-                                "marginTop": 32,
+                                "alignItems": "flex-start",
+                                "flexDirection": "row",
+                                "gap": 8,
                               }
                             }
                           >
-                            <Text
+                            <View
                               style={
-                                [
-                                  {
-                                    "color": "#69AA67",
-                                    "lineHeight": 64,
-                                  },
-                                  {
-                                    "fontFamily": "SourceSansPro-Regular",
-                                    "fontSize": 48,
-                                    "fontWeight": "bold",
-                                    "textAlign": "center",
-                                  },
-                                ]
+                                {
+                                  "marginTop": 8,
+                                }
                               }
                             >
-                              $0
-                            </Text>
+                              <SvgMock
+                                fill="#ADB5BD"
+                                height={12}
+                                width={12}
+                              />
+                            </View>
                             <Text
                               style={
                                 [
@@ -259,297 +340,210 @@ exports[`PricePlans Screen should render PricePlans Screen correctly 1`] = `
                                   },
                                   {
                                     "fontFamily": "SourceSansPro-Regular",
-                                    "fontSize": 16,
-                                    "fontWeight": "normal",
-                                    "textAlign": "center",
+                                    "fontSize": 15,
+                                    "fontWeight": "600",
+                                    "textAlign": "left",
                                   },
                                 ]
                               }
                             >
-                              Absolutely free
+                              Only 5 uploads per month
                             </Text>
                           </View>
                           <View
                             style={
                               {
-                                "marginTop": 32,
+                                "alignItems": "flex-start",
+                                "flexDirection": "row",
+                                "gap": 8,
                               }
                             }
                           >
                             <View
                               style={
                                 {
-                                  "alignItems": "flex-start",
-                                  "flexDirection": "row",
-                                  "gap": 8,
+                                  "marginTop": 8,
                                 }
                               }
                             >
-                              <View
-                                style={
-                                  {
-                                    "marginTop": 8,
-                                  }
-                                }
-                              >
-                                <SvgMock
-                                  height={12}
-                                  width={12}
-                                />
-                              </View>
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#F8F9FA",
-                                      "lineHeight": 24,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-Regular",
-                                      "fontSize": 15,
-                                      "fontWeight": "600",
-                                      "textAlign": "left",
-                                    },
-                                  ]
-                                }
-                              >
-                                Has ads
-                              </Text>
+                              <SvgMock
+                                fill="#ADB5BD"
+                                height={12}
+                                width={12}
+                              />
                             </View>
-                            <View
+                            <Text
                               style={
-                                {
-                                  "alignItems": "flex-start",
-                                  "flexDirection": "row",
-                                  "gap": 8,
-                                }
+                                [
+                                  {
+                                    "color": "#F8F9FA",
+                                    "lineHeight": 24,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-Regular",
+                                    "fontSize": 15,
+                                    "fontWeight": "600",
+                                    "textAlign": "left",
+                                  },
+                                ]
                               }
                             >
-                              <View
-                                style={
-                                  {
-                                    "marginTop": 8,
-                                  }
-                                }
-                              >
-                                <SvgMock
-                                  height={12}
-                                  width={12}
-                                />
-                              </View>
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#F8F9FA",
-                                      "lineHeight": 24,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-Regular",
-                                      "fontSize": 15,
-                                      "fontWeight": "600",
-                                      "textAlign": "left",
-                                    },
-                                  ]
-                                }
-                              >
-                                Only 5 uploads per month
-                              </Text>
-                            </View>
-                            <View
-                              style={
-                                {
-                                  "alignItems": "flex-start",
-                                  "flexDirection": "row",
-                                  "gap": 8,
-                                }
-                              }
-                            >
-                              <View
-                                style={
-                                  {
-                                    "marginTop": 8,
-                                  }
-                                }
-                              >
-                                <SvgMock
-                                  height={12}
-                                  width={12}
-                                />
-                              </View>
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#F8F9FA",
-                                      "lineHeight": 24,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-Regular",
-                                      "fontSize": 15,
-                                      "fontWeight": "600",
-                                      "textAlign": "left",
-                                    },
-                                  ]
-                                }
-                              >
-                                Access to the analyzed video   playback and data
-                              </Text>
-                            </View>
+                              Access to the analyzed video   playback and data
+                            </Text>
                           </View>
+                        </View>
+                        <View
+                          style={
+                            {
+                              "marginTop": 32,
+                              "width": 200,
+                            }
+                          }
+                        >
                           <View
                             style={
                               {
-                                "marginTop": 32,
-                                "width": 200,
+                                "flexDirection": "row",
                               }
                             }
                           >
                             <View
+                              collapsable={false}
+                              onTouchEnd={[Function]}
+                              onTouchStart={[Function]}
                               style={
                                 {
-                                  "flexDirection": "row",
+                                  "backgroundColor": "#28642A",
+                                  "borderColor": "#ffffff00",
+                                  "borderRadius": 10,
+                                  "borderStyle": "solid",
+                                  "borderWidth": 1,
+                                  "elevation": 0,
+                                  "justifyContent": "center",
+                                  "minWidth": "auto",
+                                  "shadowColor": "#000",
+                                  "shadowOffset": {
+                                    "height": 0,
+                                    "width": 0,
+                                  },
+                                  "shadowOpacity": 0,
+                                  "shadowRadius": 0,
+                                  "width": "100%",
                                 }
                               }
                             >
                               <View
-                                collapsable={false}
-                                onTouchEnd={[Function]}
-                                onTouchStart={[Function]}
-                                style={
+                                accessibilityRole="button"
+                                accessibilityState={
                                   {
-                                    "backgroundColor": "#69AA67",
-                                    "borderColor": "#ffffff00",
-                                    "borderRadius": 10,
-                                    "borderStyle": "solid",
-                                    "borderWidth": 1,
-                                    "elevation": 0,
-                                    "justifyContent": "center",
-                                    "minWidth": "auto",
-                                    "shadowColor": "#000",
-                                    "shadowOffset": {
-                                      "height": 0,
-                                      "width": 0,
-                                    },
-                                    "shadowOpacity": 0,
-                                    "shadowRadius": 0,
-                                    "width": "100%",
+                                    "disabled": true,
                                   }
+                                }
+                                accessibilityValue={
+                                  {
+                                    "max": undefined,
+                                    "min": undefined,
+                                    "now": undefined,
+                                    "text": undefined,
+                                  }
+                                }
+                                accessible={true}
+                                focusable={false}
+                                onClick={[Function]}
+                                onResponderGrant={[Function]}
+                                onResponderMove={[Function]}
+                                onResponderRelease={[Function]}
+                                onResponderTerminate={[Function]}
+                                onResponderTerminationRequest={[Function]}
+                                onStartShouldSetResponder={[Function]}
+                                style={
+                                  [
+                                    {
+                                      "overflow": "hidden",
+                                    },
+                                    {
+                                      "borderRadius": 10,
+                                    },
+                                  ]
                                 }
                               >
                                 <View
-                                  accessibilityRole="button"
-                                  accessibilityState={
-                                    {
-                                      "disabled": true,
-                                    }
-                                  }
-                                  accessibilityValue={
-                                    {
-                                      "max": undefined,
-                                      "min": undefined,
-                                      "now": undefined,
-                                      "text": undefined,
-                                    }
-                                  }
-                                  accessible={true}
-                                  focusable={false}
-                                  onClick={[Function]}
-                                  onResponderGrant={[Function]}
-                                  onResponderMove={[Function]}
-                                  onResponderRelease={[Function]}
-                                  onResponderTerminate={[Function]}
-                                  onResponderTerminationRequest={[Function]}
-                                  onStartShouldSetResponder={[Function]}
                                   style={
                                     [
                                       {
-                                        "overflow": "hidden",
+                                        "alignItems": "center",
+                                        "flexDirection": "row",
+                                        "justifyContent": "center",
                                       },
                                       {
-                                        "borderRadius": 10,
+                                        "height": 48,
                                       },
                                     ]
                                   }
                                 >
-                                  <View
+                                  <Text
+                                    numberOfLines={1}
+                                    selectable={false}
                                     style={
                                       [
                                         {
-                                          "alignItems": "center",
-                                          "flexDirection": "row",
-                                          "justifyContent": "center",
+                                          "color": "#000000",
+                                          "fontFamily": "SourceSansPro-Regular",
+                                          "fontWeight": "normal",
                                         },
                                         {
-                                          "height": 48,
+                                          "textAlign": "left",
                                         },
+                                        [
+                                          {
+                                            "letterSpacing": 1,
+                                            "marginHorizontal": 16,
+                                            "marginVertical": 9,
+                                            "textAlign": "center",
+                                          },
+                                          {
+                                            "marginHorizontal": 8,
+                                          },
+                                          false,
+                                          {
+                                            "color": "#6200ee",
+                                            "fontFamily": "SourceSansPro-SemiBold",
+                                            "fontWeight": "normal",
+                                          },
+                                          {
+                                            "fontFamily": "SourceSansPro-SemiBold",
+                                            "fontWeight": "normal",
+                                          },
+                                          undefined,
+                                        ],
                                       ]
                                     }
                                   >
                                     <Text
-                                      numberOfLines={1}
-                                      selectable={false}
                                       style={
                                         [
                                           {
-                                            "color": "#000000",
-                                            "fontFamily": "SourceSansPro-Regular",
-                                            "fontWeight": "normal",
+                                            "color": "#283E36",
+                                            "lineHeight": 28,
                                           },
                                           {
-                                            "textAlign": "left",
+                                            "fontFamily": "SourceSansPro-SemiBold",
+                                            "fontSize": 18,
+                                            "fontWeight": "bold",
+                                            "textAlign": "center",
                                           },
-                                          [
-                                            {
-                                              "letterSpacing": 1,
-                                              "marginHorizontal": 16,
-                                              "marginVertical": 9,
-                                              "textAlign": "center",
-                                            },
-                                            {
-                                              "marginHorizontal": 8,
-                                            },
-                                            false,
-                                            {
-                                              "color": "#6200ee",
-                                              "fontFamily": "SourceSansPro-SemiBold",
-                                              "fontWeight": "normal",
-                                            },
-                                            {
-                                              "fontFamily": "SourceSansPro-SemiBold",
-                                              "fontWeight": "normal",
-                                            },
-                                            undefined,
-                                          ],
                                         ]
                                       }
                                     >
-                                      <Text
-                                        style={
-                                          [
-                                            {
-                                              "color": "#F8F9FA",
-                                              "lineHeight": 24,
-                                            },
-                                            {
-                                              "fontFamily": "SourceSansPro-SemiBold",
-                                              "fontSize": 16,
-                                              "fontWeight": "600",
-                                              "textAlign": "center",
-                                            },
-                                          ]
-                                        }
-                                      >
-                                        Get Started
-                                      </Text>
+                                      Get Started
                                     </Text>
-                                  </View>
+                                  </Text>
                                 </View>
                               </View>
                             </View>
                           </View>
-                        </BVLinearGradient>
-                      </View>
+                        </View>
+                      </BVLinearGradient>
                     </View>
                   </View>
                 </View>
@@ -562,127 +556,209 @@ exports[`PricePlans Screen should render PricePlans Screen correctly 1`] = `
                   }
                 >
                   <View
+                    collapsable={false}
                     style={
                       {
-                        "marginLeft": 48,
-                        "marginRight": 48,
+                        "backgroundColor": "#ffffff00",
+                        "borderColor": "rgba(0, 0, 0, 0.12)",
+                        "borderRadius": 4,
+                        "elevation": 0,
+                        "shadowColor": "#000",
+                        "shadowOffset": {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
                       }
                     }
                   >
                     <View
-                      collapsable={false}
-                      style={
+                      accessibilityState={
                         {
-                          "backgroundColor": "transparent",
-                          "borderColor": "rgba(0, 0, 0, 0.12)",
-                          "borderRadius": 4,
-                          "elevation": 0,
-                          "shadowColor": "#000",
-                          "shadowOffset": {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0,
-                          "shadowRadius": 0,
+                          "busy": undefined,
+                          "checked": undefined,
+                          "disabled": true,
+                          "expanded": undefined,
+                          "selected": undefined,
                         }
                       }
+                      accessible={true}
+                      focusable={false}
+                      onClick={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        {
+                          "flexGrow": 1,
+                          "flexShrink": 1,
+                        }
+                      }
+                      testID="SubscriptionCardTestID"
                     >
-                      <View
-                        accessibilityState={
+                      <BVLinearGradient
+                        colors={
+                          [
+                            529465088,
+                            496369424,
+                            536870911,
+                          ]
+                        }
+                        endPoint={
                           {
-                            "busy": undefined,
-                            "checked": undefined,
-                            "disabled": true,
-                            "expanded": undefined,
-                            "selected": undefined,
+                            "x": 0.5,
+                            "y": 1,
                           }
                         }
-                        accessible={true}
-                        focusable={false}
-                        onClick={[Function]}
-                        onResponderGrant={[Function]}
-                        onResponderMove={[Function]}
-                        onResponderRelease={[Function]}
-                        onResponderTerminate={[Function]}
-                        onResponderTerminationRequest={[Function]}
-                        onStartShouldSetResponder={[Function]}
+                        index={0}
+                        locations={
+                          [
+                            0,
+                            0.0719,
+                            1,
+                          ]
+                        }
+                        siblings={[]}
+                        startPoint={
+                          {
+                            "x": 0.5,
+                            "y": 0,
+                          }
+                        }
                         style={
                           {
-                            "flexGrow": 1,
-                            "flexShrink": 1,
+                            "alignItems": "center",
+                            "borderRadius": 10,
+                            "flexDirection": "column",
+                            "paddingBottom": 16,
+                            "paddingLeft": 32,
+                            "paddingRight": 32,
+                            "paddingTop": 16,
                           }
                         }
-                        testID="RNCardSubscriptionCard"
+                        total={1}
                       >
-                        <BVLinearGradient
-                          colors={
-                            [
-                              529465088,
-                              496369424,
-                              536870911,
-                            ]
-                          }
-                          endPoint={
-                            {
-                              "x": 0.5,
-                              "y": 1,
-                            }
-                          }
-                          index={0}
-                          locations={
-                            [
-                              0,
-                              0.0719,
-                              1,
-                            ]
-                          }
-                          siblings={[]}
-                          startPoint={
-                            {
-                              "x": 0.5,
-                              "y": 0,
-                            }
-                          }
+                        <View
                           style={
                             {
-                              "alignItems": "center",
-                              "borderColor": "#ADB5BD",
-                              "borderRadius": 12,
-                              "borderWidth": 2,
-                              "flexDirection": "column",
-                              "paddingBottom": 16,
-                              "paddingLeft": 32,
-                              "paddingRight": 32,
-                              "paddingTop": 16,
+                              "marginTop": 16,
                             }
                           }
-                          total={1}
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "color": "#C0DBBF",
+                                  "lineHeight": 40,
+                                },
+                                {
+                                  "fontFamily": "SourceSansPro-Regular",
+                                  "fontSize": 28,
+                                  "fontWeight": "600",
+                                  "textAlign": "center",
+                                },
+                              ]
+                            }
+                          >
+                            Monthly Plan
+                          </Text>
+                          <Text
+                            style={
+                              [
+                                {
+                                  "color": "#F8F9FA",
+                                  "lineHeight": 24,
+                                },
+                                {
+                                  "fontFamily": "SourceSansPro-Regular",
+                                  "fontSize": 15,
+                                  "fontWeight": "600",
+                                  "textAlign": "center",
+                                },
+                              ]
+                            }
+                          >
+                            Start your account with pro features and analyzing activities
+                          </Text>
+                        </View>
+                        <View
+                          style={
+                            {
+                              "marginTop": 32,
+                            }
+                          }
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "color": "#69AA67",
+                                  "lineHeight": 64,
+                                },
+                                {
+                                  "fontFamily": "SourceSansPro-Regular",
+                                  "fontSize": 48,
+                                  "fontWeight": "bold",
+                                  "textAlign": "center",
+                                },
+                              ]
+                            }
+                          >
+                            $9.99
+                          </Text>
+                          <Text
+                            style={
+                              [
+                                {
+                                  "color": "#F8F9FA",
+                                  "lineHeight": 24,
+                                },
+                                {
+                                  "fontFamily": "SourceSansPro-Regular",
+                                  "fontSize": 16,
+                                  "fontWeight": "normal",
+                                  "textAlign": "center",
+                                },
+                              ]
+                            }
+                          >
+                            Paid monthly
+                          </Text>
+                        </View>
+                        <View
+                          style={
+                            {
+                              "marginTop": 32,
+                            }
+                          }
                         >
                           <View
                             style={
                               {
-                                "marginTop": 16,
+                                "alignItems": "flex-start",
+                                "flexDirection": "row",
+                                "gap": 8,
                               }
                             }
                           >
-                            <Text
+                            <View
                               style={
-                                [
-                                  {
-                                    "color": "#C0DBBF",
-                                    "lineHeight": 40,
-                                  },
-                                  {
-                                    "fontFamily": "SourceSansPro-Regular",
-                                    "fontSize": 28,
-                                    "fontWeight": "600",
-                                    "textAlign": "center",
-                                  },
-                                ]
+                                {
+                                  "marginTop": 8,
+                                }
                               }
                             >
-                              Monthly Plan
-                            </Text>
+                              <SvgMock
+                                fill="#ADB5BD"
+                                height={12}
+                                width={12}
+                              />
+                            </View>
                             <Text
                               style={
                                 [
@@ -694,39 +770,36 @@ exports[`PricePlans Screen should render PricePlans Screen correctly 1`] = `
                                     "fontFamily": "SourceSansPro-Regular",
                                     "fontSize": 15,
                                     "fontWeight": "600",
-                                    "textAlign": "center",
+                                    "textAlign": "left",
                                   },
                                 ]
                               }
                             >
-                              Start your account with pro features and analyzing activities
+                              Unlimited video upload
                             </Text>
                           </View>
                           <View
                             style={
                               {
-                                "marginTop": 32,
+                                "alignItems": "flex-start",
+                                "flexDirection": "row",
+                                "gap": 8,
                               }
                             }
                           >
-                            <Text
+                            <View
                               style={
-                                [
-                                  {
-                                    "color": "#69AA67",
-                                    "lineHeight": 64,
-                                  },
-                                  {
-                                    "fontFamily": "SourceSansPro-Regular",
-                                    "fontSize": 48,
-                                    "fontWeight": "bold",
-                                    "textAlign": "center",
-                                  },
-                                ]
+                                {
+                                  "marginTop": 8,
+                                }
                               }
                             >
-                              $9.99
-                            </Text>
+                              <SvgMock
+                                fill="#ADB5BD"
+                                height={12}
+                                width={12}
+                              />
+                            </View>
                             <Text
                               style={
                                 [
@@ -736,297 +809,210 @@ exports[`PricePlans Screen should render PricePlans Screen correctly 1`] = `
                                   },
                                   {
                                     "fontFamily": "SourceSansPro-Regular",
-                                    "fontSize": 16,
-                                    "fontWeight": "normal",
-                                    "textAlign": "center",
+                                    "fontSize": 15,
+                                    "fontWeight": "600",
+                                    "textAlign": "left",
                                   },
                                 ]
                               }
                             >
-                              Paid monthly
+                              analysis and playback
                             </Text>
                           </View>
                           <View
                             style={
                               {
-                                "marginTop": 32,
+                                "alignItems": "flex-start",
+                                "flexDirection": "row",
+                                "gap": 8,
                               }
                             }
                           >
                             <View
                               style={
                                 {
-                                  "alignItems": "flex-start",
-                                  "flexDirection": "row",
-                                  "gap": 8,
+                                  "marginTop": 8,
                                 }
                               }
                             >
-                              <View
-                                style={
-                                  {
-                                    "marginTop": 8,
-                                  }
-                                }
-                              >
-                                <SvgMock
-                                  height={12}
-                                  width={12}
-                                />
-                              </View>
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#F8F9FA",
-                                      "lineHeight": 24,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-Regular",
-                                      "fontSize": 15,
-                                      "fontWeight": "600",
-                                      "textAlign": "left",
-                                    },
-                                  ]
-                                }
-                              >
-                                Unlimited video upload
-                              </Text>
+                              <SvgMock
+                                fill="#ADB5BD"
+                                height={12}
+                                width={12}
+                              />
                             </View>
-                            <View
+                            <Text
                               style={
-                                {
-                                  "alignItems": "flex-start",
-                                  "flexDirection": "row",
-                                  "gap": 8,
-                                }
+                                [
+                                  {
+                                    "color": "#F8F9FA",
+                                    "lineHeight": 24,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-Regular",
+                                    "fontSize": 15,
+                                    "fontWeight": "600",
+                                    "textAlign": "left",
+                                  },
+                                ]
                               }
                             >
-                              <View
-                                style={
-                                  {
-                                    "marginTop": 8,
-                                  }
-                                }
-                              >
-                                <SvgMock
-                                  height={12}
-                                  width={12}
-                                />
-                              </View>
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#F8F9FA",
-                                      "lineHeight": 24,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-Regular",
-                                      "fontSize": 15,
-                                      "fontWeight": "600",
-                                      "textAlign": "left",
-                                    },
-                                  ]
-                                }
-                              >
-                                analysis and playback
-                              </Text>
-                            </View>
-                            <View
-                              style={
-                                {
-                                  "alignItems": "flex-start",
-                                  "flexDirection": "row",
-                                  "gap": 8,
-                                }
-                              }
-                            >
-                              <View
-                                style={
-                                  {
-                                    "marginTop": 8,
-                                  }
-                                }
-                              >
-                                <SvgMock
-                                  height={12}
-                                  width={12}
-                                />
-                              </View>
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#F8F9FA",
-                                      "lineHeight": 24,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-Regular",
-                                      "fontSize": 15,
-                                      "fontWeight": "600",
-                                      "textAlign": "left",
-                                    },
-                                  ]
-                                }
-                              >
-                                Store uploaded Video for 30 days
-                              </Text>
-                            </View>
+                              Store uploaded Video for 30 days
+                            </Text>
                           </View>
+                        </View>
+                        <View
+                          style={
+                            {
+                              "marginTop": 32,
+                              "width": 200,
+                            }
+                          }
+                        >
                           <View
                             style={
                               {
-                                "marginTop": 32,
-                                "width": 200,
+                                "flexDirection": "row",
                               }
                             }
                           >
                             <View
+                              collapsable={false}
+                              onTouchEnd={[Function]}
+                              onTouchStart={[Function]}
                               style={
                                 {
-                                  "flexDirection": "row",
+                                  "backgroundColor": "#28642A",
+                                  "borderColor": "#ffffff00",
+                                  "borderRadius": 10,
+                                  "borderStyle": "solid",
+                                  "borderWidth": 1,
+                                  "elevation": 0,
+                                  "justifyContent": "center",
+                                  "minWidth": "auto",
+                                  "shadowColor": "#000",
+                                  "shadowOffset": {
+                                    "height": 0,
+                                    "width": 0,
+                                  },
+                                  "shadowOpacity": 0,
+                                  "shadowRadius": 0,
+                                  "width": "100%",
                                 }
                               }
                             >
                               <View
-                                collapsable={false}
-                                onTouchEnd={[Function]}
-                                onTouchStart={[Function]}
-                                style={
+                                accessibilityRole="button"
+                                accessibilityState={
                                   {
-                                    "backgroundColor": "#69AA67",
-                                    "borderColor": "#ffffff00",
-                                    "borderRadius": 10,
-                                    "borderStyle": "solid",
-                                    "borderWidth": 1,
-                                    "elevation": 0,
-                                    "justifyContent": "center",
-                                    "minWidth": "auto",
-                                    "shadowColor": "#000",
-                                    "shadowOffset": {
-                                      "height": 0,
-                                      "width": 0,
-                                    },
-                                    "shadowOpacity": 0,
-                                    "shadowRadius": 0,
-                                    "width": "100%",
+                                    "disabled": true,
                                   }
+                                }
+                                accessibilityValue={
+                                  {
+                                    "max": undefined,
+                                    "min": undefined,
+                                    "now": undefined,
+                                    "text": undefined,
+                                  }
+                                }
+                                accessible={true}
+                                focusable={false}
+                                onClick={[Function]}
+                                onResponderGrant={[Function]}
+                                onResponderMove={[Function]}
+                                onResponderRelease={[Function]}
+                                onResponderTerminate={[Function]}
+                                onResponderTerminationRequest={[Function]}
+                                onStartShouldSetResponder={[Function]}
+                                style={
+                                  [
+                                    {
+                                      "overflow": "hidden",
+                                    },
+                                    {
+                                      "borderRadius": 10,
+                                    },
+                                  ]
                                 }
                               >
                                 <View
-                                  accessibilityRole="button"
-                                  accessibilityState={
-                                    {
-                                      "disabled": true,
-                                    }
-                                  }
-                                  accessibilityValue={
-                                    {
-                                      "max": undefined,
-                                      "min": undefined,
-                                      "now": undefined,
-                                      "text": undefined,
-                                    }
-                                  }
-                                  accessible={true}
-                                  focusable={false}
-                                  onClick={[Function]}
-                                  onResponderGrant={[Function]}
-                                  onResponderMove={[Function]}
-                                  onResponderRelease={[Function]}
-                                  onResponderTerminate={[Function]}
-                                  onResponderTerminationRequest={[Function]}
-                                  onStartShouldSetResponder={[Function]}
                                   style={
                                     [
                                       {
-                                        "overflow": "hidden",
+                                        "alignItems": "center",
+                                        "flexDirection": "row",
+                                        "justifyContent": "center",
                                       },
                                       {
-                                        "borderRadius": 10,
+                                        "height": 48,
                                       },
                                     ]
                                   }
                                 >
-                                  <View
+                                  <Text
+                                    numberOfLines={1}
+                                    selectable={false}
                                     style={
                                       [
                                         {
-                                          "alignItems": "center",
-                                          "flexDirection": "row",
-                                          "justifyContent": "center",
+                                          "color": "#000000",
+                                          "fontFamily": "SourceSansPro-Regular",
+                                          "fontWeight": "normal",
                                         },
                                         {
-                                          "height": 48,
+                                          "textAlign": "left",
                                         },
+                                        [
+                                          {
+                                            "letterSpacing": 1,
+                                            "marginHorizontal": 16,
+                                            "marginVertical": 9,
+                                            "textAlign": "center",
+                                          },
+                                          {
+                                            "marginHorizontal": 8,
+                                          },
+                                          false,
+                                          {
+                                            "color": "#6200ee",
+                                            "fontFamily": "SourceSansPro-SemiBold",
+                                            "fontWeight": "normal",
+                                          },
+                                          {
+                                            "fontFamily": "SourceSansPro-SemiBold",
+                                            "fontWeight": "normal",
+                                          },
+                                          undefined,
+                                        ],
                                       ]
                                     }
                                   >
                                     <Text
-                                      numberOfLines={1}
-                                      selectable={false}
                                       style={
                                         [
                                           {
-                                            "color": "#000000",
-                                            "fontFamily": "SourceSansPro-Regular",
-                                            "fontWeight": "normal",
+                                            "color": "#283E36",
+                                            "lineHeight": 28,
                                           },
                                           {
-                                            "textAlign": "left",
+                                            "fontFamily": "SourceSansPro-SemiBold",
+                                            "fontSize": 18,
+                                            "fontWeight": "bold",
+                                            "textAlign": "center",
                                           },
-                                          [
-                                            {
-                                              "letterSpacing": 1,
-                                              "marginHorizontal": 16,
-                                              "marginVertical": 9,
-                                              "textAlign": "center",
-                                            },
-                                            {
-                                              "marginHorizontal": 8,
-                                            },
-                                            false,
-                                            {
-                                              "color": "#6200ee",
-                                              "fontFamily": "SourceSansPro-SemiBold",
-                                              "fontWeight": "normal",
-                                            },
-                                            {
-                                              "fontFamily": "SourceSansPro-SemiBold",
-                                              "fontWeight": "normal",
-                                            },
-                                            undefined,
-                                          ],
                                         ]
                                       }
                                     >
-                                      <Text
-                                        style={
-                                          [
-                                            {
-                                              "color": "#F8F9FA",
-                                              "lineHeight": 24,
-                                            },
-                                            {
-                                              "fontFamily": "SourceSansPro-SemiBold",
-                                              "fontSize": 16,
-                                              "fontWeight": "600",
-                                              "textAlign": "center",
-                                            },
-                                          ]
-                                        }
-                                      >
-                                        Get Started
-                                      </Text>
+                                      Get Started
                                     </Text>
-                                  </View>
+                                  </Text>
                                 </View>
                               </View>
                             </View>
                           </View>
-                        </BVLinearGradient>
-                      </View>
+                        </View>
+                      </BVLinearGradient>
                     </View>
                   </View>
                 </View>
@@ -1039,125 +1025,209 @@ exports[`PricePlans Screen should render PricePlans Screen correctly 1`] = `
                   }
                 >
                   <View
+                    collapsable={false}
                     style={
                       {
-                        "marginLeft": 48,
-                        "marginRight": 48,
+                        "backgroundColor": "#ffffff00",
+                        "borderColor": "rgba(0, 0, 0, 0.12)",
+                        "borderRadius": 4,
+                        "elevation": 0,
+                        "shadowColor": "#000",
+                        "shadowOffset": {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
                       }
                     }
                   >
                     <View
-                      collapsable={false}
-                      style={
+                      accessibilityState={
                         {
-                          "backgroundColor": "transparent",
-                          "borderColor": "rgba(0, 0, 0, 0.12)",
-                          "borderRadius": 4,
-                          "elevation": 0,
-                          "shadowColor": "#000",
-                          "shadowOffset": {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0,
-                          "shadowRadius": 0,
+                          "busy": undefined,
+                          "checked": undefined,
+                          "disabled": true,
+                          "expanded": undefined,
+                          "selected": undefined,
                         }
                       }
+                      accessible={true}
+                      focusable={false}
+                      onClick={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        {
+                          "flexGrow": 1,
+                          "flexShrink": 1,
+                        }
+                      }
+                      testID="SubscriptionCardTestID"
                     >
-                      <View
-                        accessibilityState={
+                      <BVLinearGradient
+                        colors={
+                          [
+                            529465088,
+                            496369424,
+                            536870911,
+                          ]
+                        }
+                        endPoint={
                           {
-                            "busy": undefined,
-                            "checked": undefined,
-                            "disabled": true,
-                            "expanded": undefined,
-                            "selected": undefined,
+                            "x": 0.5,
+                            "y": 1,
                           }
                         }
-                        accessible={true}
-                        focusable={false}
-                        onClick={[Function]}
-                        onResponderGrant={[Function]}
-                        onResponderMove={[Function]}
-                        onResponderRelease={[Function]}
-                        onResponderTerminate={[Function]}
-                        onResponderTerminationRequest={[Function]}
-                        onStartShouldSetResponder={[Function]}
+                        index={0}
+                        locations={
+                          [
+                            0,
+                            0.0719,
+                            1,
+                          ]
+                        }
+                        siblings={[]}
+                        startPoint={
+                          {
+                            "x": 0.5,
+                            "y": 0,
+                          }
+                        }
                         style={
                           {
-                            "flexGrow": 1,
-                            "flexShrink": 1,
+                            "alignItems": "center",
+                            "borderRadius": 10,
+                            "flexDirection": "column",
+                            "paddingBottom": 16,
+                            "paddingLeft": 32,
+                            "paddingRight": 32,
+                            "paddingTop": 16,
                           }
                         }
-                        testID="RNCardSubscriptionCard"
+                        total={1}
                       >
-                        <BVLinearGradient
-                          colors={
-                            [
-                              529465088,
-                              496369424,
-                              536870911,
-                            ]
-                          }
-                          endPoint={
-                            {
-                              "x": 0.5,
-                              "y": 1,
-                            }
-                          }
-                          index={0}
-                          locations={
-                            [
-                              0,
-                              0.0719,
-                              1,
-                            ]
-                          }
-                          siblings={[]}
-                          startPoint={
-                            {
-                              "x": 0.5,
-                              "y": 0,
-                            }
-                          }
+                        <View
                           style={
                             {
-                              "alignItems": "center",
-                              "borderRadius": 12,
-                              "flexDirection": "column",
-                              "paddingBottom": 16,
-                              "paddingLeft": 32,
-                              "paddingRight": 32,
-                              "paddingTop": 16,
+                              "marginTop": 16,
                             }
                           }
-                          total={1}
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "color": "#C0DBBF",
+                                  "lineHeight": 40,
+                                },
+                                {
+                                  "fontFamily": "SourceSansPro-Regular",
+                                  "fontSize": 28,
+                                  "fontWeight": "600",
+                                  "textAlign": "center",
+                                },
+                              ]
+                            }
+                          >
+                            Annual Plan
+                          </Text>
+                          <Text
+                            style={
+                              [
+                                {
+                                  "color": "#F8F9FA",
+                                  "lineHeight": 24,
+                                },
+                                {
+                                  "fontFamily": "SourceSansPro-Regular",
+                                  "fontSize": 15,
+                                  "fontWeight": "600",
+                                  "textAlign": "center",
+                                },
+                              ]
+                            }
+                          >
+                            Start your account with pro features and analyzing activities
+                          </Text>
+                        </View>
+                        <View
+                          style={
+                            {
+                              "marginTop": 32,
+                            }
+                          }
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "color": "#69AA67",
+                                  "lineHeight": 64,
+                                },
+                                {
+                                  "fontFamily": "SourceSansPro-Regular",
+                                  "fontSize": 48,
+                                  "fontWeight": "bold",
+                                  "textAlign": "center",
+                                },
+                              ]
+                            }
+                          >
+                            $99.99
+                          </Text>
+                          <Text
+                            style={
+                              [
+                                {
+                                  "color": "#F8F9FA",
+                                  "lineHeight": 24,
+                                },
+                                {
+                                  "fontFamily": "SourceSansPro-Regular",
+                                  "fontSize": 16,
+                                  "fontWeight": "normal",
+                                  "textAlign": "center",
+                                },
+                              ]
+                            }
+                          >
+                            per month, paid annually
+                          </Text>
+                        </View>
+                        <View
+                          style={
+                            {
+                              "marginTop": 32,
+                            }
+                          }
                         >
                           <View
                             style={
                               {
-                                "marginTop": 16,
+                                "alignItems": "flex-start",
+                                "flexDirection": "row",
+                                "gap": 8,
                               }
                             }
                           >
-                            <Text
+                            <View
                               style={
-                                [
-                                  {
-                                    "color": "#C0DBBF",
-                                    "lineHeight": 40,
-                                  },
-                                  {
-                                    "fontFamily": "SourceSansPro-Regular",
-                                    "fontSize": 28,
-                                    "fontWeight": "600",
-                                    "textAlign": "center",
-                                  },
-                                ]
+                                {
+                                  "marginTop": 8,
+                                }
                               }
                             >
-                              Annual Plan
-                            </Text>
+                              <SvgMock
+                                fill="#ADB5BD"
+                                height={12}
+                                width={12}
+                              />
+                            </View>
                             <Text
                               style={
                                 [
@@ -1169,39 +1239,36 @@ exports[`PricePlans Screen should render PricePlans Screen correctly 1`] = `
                                     "fontFamily": "SourceSansPro-Regular",
                                     "fontSize": 15,
                                     "fontWeight": "600",
-                                    "textAlign": "center",
+                                    "textAlign": "left",
                                   },
                                 ]
                               }
                             >
-                              Start your account with pro features and analyzing activities
+                              Unlimited video upload
                             </Text>
                           </View>
                           <View
                             style={
                               {
-                                "marginTop": 32,
+                                "alignItems": "flex-start",
+                                "flexDirection": "row",
+                                "gap": 8,
                               }
                             }
                           >
-                            <Text
+                            <View
                               style={
-                                [
-                                  {
-                                    "color": "#69AA67",
-                                    "lineHeight": 64,
-                                  },
-                                  {
-                                    "fontFamily": "SourceSansPro-Regular",
-                                    "fontSize": 48,
-                                    "fontWeight": "bold",
-                                    "textAlign": "center",
-                                  },
-                                ]
+                                {
+                                  "marginTop": 8,
+                                }
                               }
                             >
-                              $99.99
-                            </Text>
+                              <SvgMock
+                                fill="#ADB5BD"
+                                height={12}
+                                width={12}
+                              />
+                            </View>
                             <Text
                               style={
                                 [
@@ -1211,297 +1278,210 @@ exports[`PricePlans Screen should render PricePlans Screen correctly 1`] = `
                                   },
                                   {
                                     "fontFamily": "SourceSansPro-Regular",
-                                    "fontSize": 16,
-                                    "fontWeight": "normal",
-                                    "textAlign": "center",
+                                    "fontSize": 15,
+                                    "fontWeight": "600",
+                                    "textAlign": "left",
                                   },
                                 ]
                               }
                             >
-                              per month, paid annually
+                              video analysis and playback
                             </Text>
                           </View>
                           <View
                             style={
                               {
-                                "marginTop": 32,
+                                "alignItems": "flex-start",
+                                "flexDirection": "row",
+                                "gap": 8,
                               }
                             }
                           >
                             <View
                               style={
                                 {
-                                  "alignItems": "flex-start",
-                                  "flexDirection": "row",
-                                  "gap": 8,
+                                  "marginTop": 8,
                                 }
                               }
                             >
-                              <View
-                                style={
-                                  {
-                                    "marginTop": 8,
-                                  }
-                                }
-                              >
-                                <SvgMock
-                                  height={12}
-                                  width={12}
-                                />
-                              </View>
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#F8F9FA",
-                                      "lineHeight": 24,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-Regular",
-                                      "fontSize": 15,
-                                      "fontWeight": "600",
-                                      "textAlign": "left",
-                                    },
-                                  ]
-                                }
-                              >
-                                Unlimited video upload
-                              </Text>
+                              <SvgMock
+                                fill="#ADB5BD"
+                                height={12}
+                                width={12}
+                              />
                             </View>
-                            <View
+                            <Text
                               style={
-                                {
-                                  "alignItems": "flex-start",
-                                  "flexDirection": "row",
-                                  "gap": 8,
-                                }
+                                [
+                                  {
+                                    "color": "#F8F9FA",
+                                    "lineHeight": 24,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-Regular",
+                                    "fontSize": 15,
+                                    "fontWeight": "600",
+                                    "textAlign": "left",
+                                  },
+                                ]
                               }
                             >
-                              <View
-                                style={
-                                  {
-                                    "marginTop": 8,
-                                  }
-                                }
-                              >
-                                <SvgMock
-                                  height={12}
-                                  width={12}
-                                />
-                              </View>
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#F8F9FA",
-                                      "lineHeight": 24,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-Regular",
-                                      "fontSize": 15,
-                                      "fontWeight": "600",
-                                      "textAlign": "left",
-                                    },
-                                  ]
-                                }
-                              >
-                                video analysis and playback
-                              </Text>
-                            </View>
-                            <View
-                              style={
-                                {
-                                  "alignItems": "flex-start",
-                                  "flexDirection": "row",
-                                  "gap": 8,
-                                }
-                              }
-                            >
-                              <View
-                                style={
-                                  {
-                                    "marginTop": 8,
-                                  }
-                                }
-                              >
-                                <SvgMock
-                                  height={12}
-                                  width={12}
-                                />
-                              </View>
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#F8F9FA",
-                                      "lineHeight": 24,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-Regular",
-                                      "fontSize": 15,
-                                      "fontWeight": "600",
-                                      "textAlign": "left",
-                                    },
-                                  ]
-                                }
-                              >
-                                store uploaded Video for 365 days
-                              </Text>
-                            </View>
+                              store uploaded Video for 365 days
+                            </Text>
                           </View>
+                        </View>
+                        <View
+                          style={
+                            {
+                              "marginTop": 32,
+                              "width": 200,
+                            }
+                          }
+                        >
                           <View
                             style={
                               {
-                                "marginTop": 32,
-                                "width": 200,
+                                "flexDirection": "row",
                               }
                             }
                           >
                             <View
+                              collapsable={false}
+                              onTouchEnd={[Function]}
+                              onTouchStart={[Function]}
                               style={
                                 {
-                                  "flexDirection": "row",
+                                  "backgroundColor": "#28642A",
+                                  "borderColor": "#ffffff00",
+                                  "borderRadius": 10,
+                                  "borderStyle": "solid",
+                                  "borderWidth": 1,
+                                  "elevation": 0,
+                                  "justifyContent": "center",
+                                  "minWidth": "auto",
+                                  "shadowColor": "#000",
+                                  "shadowOffset": {
+                                    "height": 0,
+                                    "width": 0,
+                                  },
+                                  "shadowOpacity": 0,
+                                  "shadowRadius": 0,
+                                  "width": "100%",
                                 }
                               }
                             >
                               <View
-                                collapsable={false}
-                                onTouchEnd={[Function]}
-                                onTouchStart={[Function]}
-                                style={
+                                accessibilityRole="button"
+                                accessibilityState={
                                   {
-                                    "backgroundColor": "#69AA67",
-                                    "borderColor": "#ffffff00",
-                                    "borderRadius": 10,
-                                    "borderStyle": "solid",
-                                    "borderWidth": 1,
-                                    "elevation": 0,
-                                    "justifyContent": "center",
-                                    "minWidth": "auto",
-                                    "shadowColor": "#000",
-                                    "shadowOffset": {
-                                      "height": 0,
-                                      "width": 0,
-                                    },
-                                    "shadowOpacity": 0,
-                                    "shadowRadius": 0,
-                                    "width": "100%",
+                                    "disabled": true,
                                   }
+                                }
+                                accessibilityValue={
+                                  {
+                                    "max": undefined,
+                                    "min": undefined,
+                                    "now": undefined,
+                                    "text": undefined,
+                                  }
+                                }
+                                accessible={true}
+                                focusable={false}
+                                onClick={[Function]}
+                                onResponderGrant={[Function]}
+                                onResponderMove={[Function]}
+                                onResponderRelease={[Function]}
+                                onResponderTerminate={[Function]}
+                                onResponderTerminationRequest={[Function]}
+                                onStartShouldSetResponder={[Function]}
+                                style={
+                                  [
+                                    {
+                                      "overflow": "hidden",
+                                    },
+                                    {
+                                      "borderRadius": 10,
+                                    },
+                                  ]
                                 }
                               >
                                 <View
-                                  accessibilityRole="button"
-                                  accessibilityState={
-                                    {
-                                      "disabled": true,
-                                    }
-                                  }
-                                  accessibilityValue={
-                                    {
-                                      "max": undefined,
-                                      "min": undefined,
-                                      "now": undefined,
-                                      "text": undefined,
-                                    }
-                                  }
-                                  accessible={true}
-                                  focusable={false}
-                                  onClick={[Function]}
-                                  onResponderGrant={[Function]}
-                                  onResponderMove={[Function]}
-                                  onResponderRelease={[Function]}
-                                  onResponderTerminate={[Function]}
-                                  onResponderTerminationRequest={[Function]}
-                                  onStartShouldSetResponder={[Function]}
                                   style={
                                     [
                                       {
-                                        "overflow": "hidden",
+                                        "alignItems": "center",
+                                        "flexDirection": "row",
+                                        "justifyContent": "center",
                                       },
                                       {
-                                        "borderRadius": 10,
+                                        "height": 48,
                                       },
                                     ]
                                   }
                                 >
-                                  <View
+                                  <Text
+                                    numberOfLines={1}
+                                    selectable={false}
                                     style={
                                       [
                                         {
-                                          "alignItems": "center",
-                                          "flexDirection": "row",
-                                          "justifyContent": "center",
+                                          "color": "#000000",
+                                          "fontFamily": "SourceSansPro-Regular",
+                                          "fontWeight": "normal",
                                         },
                                         {
-                                          "height": 48,
+                                          "textAlign": "left",
                                         },
+                                        [
+                                          {
+                                            "letterSpacing": 1,
+                                            "marginHorizontal": 16,
+                                            "marginVertical": 9,
+                                            "textAlign": "center",
+                                          },
+                                          {
+                                            "marginHorizontal": 8,
+                                          },
+                                          false,
+                                          {
+                                            "color": "#6200ee",
+                                            "fontFamily": "SourceSansPro-SemiBold",
+                                            "fontWeight": "normal",
+                                          },
+                                          {
+                                            "fontFamily": "SourceSansPro-SemiBold",
+                                            "fontWeight": "normal",
+                                          },
+                                          undefined,
+                                        ],
                                       ]
                                     }
                                   >
                                     <Text
-                                      numberOfLines={1}
-                                      selectable={false}
                                       style={
                                         [
                                           {
-                                            "color": "#000000",
-                                            "fontFamily": "SourceSansPro-Regular",
-                                            "fontWeight": "normal",
+                                            "color": "#283E36",
+                                            "lineHeight": 28,
                                           },
                                           {
-                                            "textAlign": "left",
+                                            "fontFamily": "SourceSansPro-SemiBold",
+                                            "fontSize": 18,
+                                            "fontWeight": "bold",
+                                            "textAlign": "center",
                                           },
-                                          [
-                                            {
-                                              "letterSpacing": 1,
-                                              "marginHorizontal": 16,
-                                              "marginVertical": 9,
-                                              "textAlign": "center",
-                                            },
-                                            {
-                                              "marginHorizontal": 8,
-                                            },
-                                            false,
-                                            {
-                                              "color": "#6200ee",
-                                              "fontFamily": "SourceSansPro-SemiBold",
-                                              "fontWeight": "normal",
-                                            },
-                                            {
-                                              "fontFamily": "SourceSansPro-SemiBold",
-                                              "fontWeight": "normal",
-                                            },
-                                            undefined,
-                                          ],
                                         ]
                                       }
                                     >
-                                      <Text
-                                        style={
-                                          [
-                                            {
-                                              "color": "#F8F9FA",
-                                              "lineHeight": 24,
-                                            },
-                                            {
-                                              "fontFamily": "SourceSansPro-SemiBold",
-                                              "fontSize": 16,
-                                              "fontWeight": "600",
-                                              "textAlign": "center",
-                                            },
-                                          ]
-                                        }
-                                      >
-                                        Get Started
-                                      </Text>
+                                      Get Started
                                     </Text>
-                                  </View>
+                                  </Text>
                                 </View>
                               </View>
                             </View>
                           </View>
-                        </BVLinearGradient>
-                      </View>
+                        </View>
+                      </BVLinearGradient>
                     </View>
                   </View>
                 </View>
