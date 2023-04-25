@@ -11,6 +11,7 @@ import { TextFieldProps } from './TextField.types';
 //TODO::handle scroll on focus
 export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTextField(
   {
+    innerTextInputStyles = tw`h-12 p-0 m-0`,
     backgroundColor = Color.Primary.Sz700,
     defaultValue,
     value,
@@ -95,7 +96,7 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
     <View>
       {labelTextComponent}
       <TextInput
-        style={tw`h-12 p-0 m-0`}
+        style={innerTextInputStyles}
         ref={ref}
         mode="outlined"
         secureTextEntry={secureTextEntry}
