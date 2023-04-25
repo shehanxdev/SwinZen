@@ -1,84 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Privacy Policy Screen Screen should render Privacy Policy Screen correctly 1`] = `
-<View
-  accessibilityIgnoresInvertColors={true}
+<BVLinearGradient
+  colors={
+    [
+      4279917603,
+      4278984207,
+      4278650631,
+    ]
+  }
+  endPoint={
+    {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
   style={
     {
       "flexBasis": "0%",
       "flexGrow": 1,
       "flexShrink": 1,
-      "paddingTop": 50,
+      "position": "relative",
     }
   }
 >
   <Image
+    resizeMode="repeat"
     source={
       {
-        "testUri": "../../../src/assets/images/gradientBackground.png",
+        "testUri": "../../../src/assets/images/grassBackground.jpg",
       }
     }
     style={
-      [
-        {
-          "bottom": 0,
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        },
-        {
-          "height": undefined,
-          "width": undefined,
-        },
-        undefined,
-      ]
+      {
+        "flexBasis": "0%",
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "opacity": 0.1,
+      }
     }
   />
-  <RCTSafeAreaView>
-    <RCTScrollView>
-      <View>
-        <BVLinearGradient
-          angle={90}
-          colors={
-            [
-              311361280,
-              100663295,
-              50331647,
-            ]
+  <RCTSafeAreaView
+    style={
+      {
+        "height": "100%",
+        "paddingTop": 50,
+        "position": "absolute",
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "paddingBottom": 0,
+          },
+        ]
+      }
+    >
+      <RCTScrollView
+        contentContainerStyle={
+          {
+            "flexGrow": 1,
           }
-          endPoint={
-            {
-              "x": 0.5,
-              "y": 1,
-            }
-          }
-          locations={null}
-          startPoint={
-            {
-              "x": 0.5,
-              "y": 0,
-            }
-          }
-          style={
-            {
-              "borderColor": "#404040",
-              "borderRadius": 10,
-              "borderWidth": 1,
-              "marginBottom": 20,
-              "marginLeft": 20,
-              "marginRight": 20,
-              "marginTop": 34,
-            }
-          }
-          useAngle={true}
-        >
+        }
+        keyboardShouldPersistTaps="handled"
+      >
+        <View>
           <View
             style={
               {
                 "paddingBottom": 24,
-                "paddingLeft": 24,
-                "paddingRight": 24,
+                "paddingLeft": 16,
+                "paddingRight": 16,
                 "paddingTop": 24,
               }
             }
@@ -251,7 +258,7 @@ If you delete your User Contributions from the Website, copies of your User Cont
  
 Your California Privacy Rights 
             
-California Civil Code Section § 1798.83 permits users of our Website that are California residents to request certain information regarding our disclosure of personal information to third parties for their direct marketing purposes. To make such a request, please send an email to  or write to us at: 9805 NE Hilltop Dr. Bainbridge Island, WA 98110. 
+California Civil Code Section § 1798.83 permits users of our Website that are California residents to request certain information regarding our disclosure of personal information to third parties for their direct marketing purposes. To make such a request, please send an email to  or write to us at: 423 S Margin St Franklin TN 37064. 
             
  
 Data Security 
@@ -296,9 +303,9 @@ To ask questions or comment about this privacy policy and our privacy practices,
 
             </Text>
           </View>
-        </BVLinearGradient>
-      </View>
-    </RCTScrollView>
+        </View>
+      </RCTScrollView>
+    </View>
   </RCTSafeAreaView>
-</View>
+</BVLinearGradient>
 `;
