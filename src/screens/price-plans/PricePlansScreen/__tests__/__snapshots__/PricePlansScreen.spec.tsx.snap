@@ -61,6 +61,7 @@ exports[`Price Plans Screen screen should render Price Plans Screen correctly 1`
       style={
         {
           "height": "100%",
+          "paddingTop": 50,
           "position": "absolute",
         }
       }
