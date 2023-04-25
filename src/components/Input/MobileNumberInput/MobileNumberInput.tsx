@@ -3,7 +3,7 @@ import { TextInput as RNTextInput } from 'react-native';
 
 import { PhoneIcon } from '../../Icon';
 import { MaskedInput } from '../MaskedInput';
-import { TextFieldProps } from './../../TextField';
+import { TextFieldProps } from '../TextField';
 
 type MobileNumberFieldProps = Omit<TextFieldProps, 'leftIcon' | 'rightIcon' | 'keyboardType' | 'onRightIconPress'>;
 

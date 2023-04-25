@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { TextInput as RNTextInput } from 'react-native';
 
-import { TextField, TextFieldProps } from '../../TextField';
+import { TextField, TextFieldProps } from '../TextField';
 
 const MASK_PLACEHOLDER = '#';
 

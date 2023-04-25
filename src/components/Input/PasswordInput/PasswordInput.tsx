@@ -4,8 +4,8 @@ import { TextInput as RNTextInput } from 'react-native';
 import { Color } from '@sz/constants';
 
 import { PasswordHideIcon, PasswordRevealIcon, SvgIconProps } from '../../Icon';
-import { TextField } from '../../TextField';
-import { TextFieldProps } from '../../TextField/TextField.types';
+import { TextField } from '../TextField';
+import { TextFieldProps } from '../TextField/TextField.types';
 
 export interface PasswordFieldProps extends TextFieldProps {
   passwordIconColor?: Color;
