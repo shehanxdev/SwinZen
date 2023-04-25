@@ -8,7 +8,8 @@ import { PricePlansScreen } from '../PricePlansScreen';
 
 describe('Price Plans Screen screen', () => {
   const testID = 'PricePlansScreenTestID';
-  const getRenderedScreen = () => renderWithProviders(<PricePlansScreen />);
+  const mockRoute = { param: null };
+  const getRenderedScreen = () => renderWithProviders(<PricePlansScreen route={mockRoute} />);
 
   act(() => {
     beforeAll(() => {
