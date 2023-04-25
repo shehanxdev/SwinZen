@@ -15,6 +15,8 @@ export { default as SwingZenLogoSvg } from './logo/swingzen-logo.svg';
 export { default as CloseButtonSvg } from './icons/other/close-button.svg';
 export { default as CrossSvg } from './icons/other/cross-icon.svg';
 export { default as CustomMenuSvg } from './icons/main/custom-menu.svg';
+export { default as ArrowDown } from './icons/faq/arrow-down.svg';
+export { default as ArrowUp } from './icons/faq/arrow-up.svg';
 
 export { default as BottomTabHomeSvg } from './icons/bottom-tab/home-icon.svg';
 export { default as BottomTabVideoSvg } from './icons/bottom-tab/videos-icon.svg';

@@ -2,7 +2,9 @@ import React from 'react';
 
 import {
   AccountLockSvg,
+  ArrowDown,
   ArrowRightSvg,
+  ArrowUp,
   BackIconSvg,
   BottomTabAnalysisSvg,
   BottomTabHomeSvg,
@@ -151,6 +153,14 @@ export function ProfileIcon({ color = Color.Neutral.Sz500, width = 20, height = 
 
 export function RightArrowIcon({ color = Color.Neutral.Sz100, width = 7.75, height = 14 }: SvgIconProps) {
   return <ArrowRightSvg width={width} height={height} fill={color} />;
+}
+
+export function UpArrowIcon({ color = Color.Neutral.White, width = 24, height = 24 }: SvgIconProps) {
+  return <ArrowUp width={width} height={height} fill={color} />;
+}
+
+export function DownArrowIcon({ color = Color.Neutral.White, width = 24, height = 24 }: SvgIconProps) {
+  return <ArrowDown width={width} height={height} fill={color} />;
 }
 
 export function SecurityIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
