@@ -49,7 +49,7 @@ export function FAQScreen() {
 
   return (
     <BaseScreen>
-      <View style={tw`flex-1 p-4`}>
+      <View style={tw`flex-1 p-4`} testID="FAQScreenTestID">
         <Accordion
           sections={CONTENT}
           activeSections={activeSections}

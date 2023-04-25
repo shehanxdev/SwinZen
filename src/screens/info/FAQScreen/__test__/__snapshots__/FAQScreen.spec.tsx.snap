@@ -1,0 +1,819 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FAQ screen should render FAQ Screen correctly 1`] = `
+<BVLinearGradient
+  colors={
+    [
+      4279917603,
+      4278984207,
+      4278650631,
+    ]
+  }
+  endPoint={
+    {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    {
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "position": "relative",
+    }
+  }
+>
+  <Image
+    resizeMode="repeat"
+    source={
+      {
+        "testUri": "../../../src/assets/images/grassBackground.jpg",
+      }
+    }
+    style={
+      {
+        "flexBasis": "0%",
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "opacity": 0.1,
+      }
+    }
+  />
+  <RCTSafeAreaView
+    style={
+      {
+        "height": "100%",
+        "paddingTop": 50,
+        "position": "absolute",
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "paddingBottom": 0,
+          },
+        ]
+      }
+    >
+      <RCTScrollView
+        contentContainerStyle={
+          {
+            "flexGrow": 1,
+          }
+        }
+        keyboardShouldPersistTaps="handled"
+      >
+        <View>
+          <View
+            style={
+              {
+                "flexBasis": "0%",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "paddingBottom": 16,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "paddingTop": 16,
+              }
+            }
+            testID="FAQScreenTestID"
+          >
+            <View>
+              <View
+                style={
+                  {
+                    "marginBottom": 36,
+                  }
+                }
+              >
+                <View
+                  accessibilityState={
+                    {
+                      "busy": undefined,
+                      "checked": undefined,
+                      "disabled": undefined,
+                      "expanded": false,
+                      "selected": undefined,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  collapsable={false}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      {
+                        "flexDirection": "row",
+                        "justifyContent": "space-between",
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        {
+                          "maxWidth": "90%",
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#F8F9FA",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-SemiBold",
+                              "fontSize": 16,
+                              "fontWeight": "600",
+                              "textAlign": "left",
+                            },
+                          ]
+                        }
+                      >
+                        I am not getting club speed on some videos. Why is that?
+                      </Text>
+                    </View>
+                    <SvgMock
+                      fill="#FFFFFF"
+                      height={24}
+                      width={24}
+                    />
+                  </View>
+                </View>
+                <View
+                  collapsable={false}
+                  pointerEvents="none"
+                  style={
+                    {
+                      "height": 0,
+                      "overflow": "hidden",
+                    }
+                  }
+                >
+                  <View
+                    collapsable={false}
+                    forwardedRef={[Function]}
+                    onLayout={[Function]}
+                    style={{}}
+                  >
+                    <Text
+                      style={
+                        [
+                          {
+                            "color": "#ADB5BD",
+                            "lineHeight": 24,
+                          },
+                          {
+                            "fontFamily": "SourceSansPro-Regular",
+                            "fontSize": 16,
+                            "fontWeight": "normal",
+                            "textAlign": "left",
+                          },
+                        ]
+                      }
+                    >
+                      You can use up to two devices per account. This allows you to use your phone and laptop, for example, with one account
+                    </Text>
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  {
+                    "marginBottom": 36,
+                  }
+                }
+              >
+                <View
+                  accessibilityState={
+                    {
+                      "busy": undefined,
+                      "checked": undefined,
+                      "disabled": undefined,
+                      "expanded": false,
+                      "selected": undefined,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  collapsable={false}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      {
+                        "flexDirection": "row",
+                        "justifyContent": "space-between",
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        {
+                          "maxWidth": "90%",
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#F8F9FA",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-SemiBold",
+                              "fontSize": 16,
+                              "fontWeight": "600",
+                              "textAlign": "left",
+                            },
+                          ]
+                        }
+                      >
+                        How many video uploads are provided for subscription?
+                      </Text>
+                    </View>
+                    <SvgMock
+                      fill="#FFFFFF"
+                      height={24}
+                      width={24}
+                    />
+                  </View>
+                </View>
+                <View
+                  collapsable={false}
+                  pointerEvents="none"
+                  style={
+                    {
+                      "height": 0,
+                      "overflow": "hidden",
+                    }
+                  }
+                >
+                  <View
+                    collapsable={false}
+                    forwardedRef={[Function]}
+                    onLayout={[Function]}
+                    style={{}}
+                  >
+                    <Text
+                      style={
+                        [
+                          {
+                            "color": "#ADB5BD",
+                            "lineHeight": 24,
+                          },
+                          {
+                            "fontFamily": "SourceSansPro-Regular",
+                            "fontSize": 16,
+                            "fontWeight": "normal",
+                            "textAlign": "left",
+                          },
+                        ]
+                      }
+                    >
+                      You can use up to two devices per account. This allows you to use your phone and laptop, for example, with one account
+                    </Text>
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  {
+                    "marginBottom": 36,
+                  }
+                }
+              >
+                <View
+                  accessibilityState={
+                    {
+                      "busy": undefined,
+                      "checked": undefined,
+                      "disabled": undefined,
+                      "expanded": false,
+                      "selected": undefined,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  collapsable={false}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      {
+                        "flexDirection": "row",
+                        "justifyContent": "space-between",
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        {
+                          "maxWidth": "90%",
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#F8F9FA",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-SemiBold",
+                              "fontSize": 16,
+                              "fontWeight": "600",
+                              "textAlign": "left",
+                            },
+                          ]
+                        }
+                      >
+                        Can I use more than one device with my account?
+                      </Text>
+                    </View>
+                    <SvgMock
+                      fill="#FFFFFF"
+                      height={24}
+                      width={24}
+                    />
+                  </View>
+                </View>
+                <View
+                  collapsable={false}
+                  pointerEvents="none"
+                  style={
+                    {
+                      "height": 0,
+                      "overflow": "hidden",
+                    }
+                  }
+                >
+                  <View
+                    collapsable={false}
+                    forwardedRef={[Function]}
+                    onLayout={[Function]}
+                    style={{}}
+                  >
+                    <Text
+                      style={
+                        [
+                          {
+                            "color": "#ADB5BD",
+                            "lineHeight": 24,
+                          },
+                          {
+                            "fontFamily": "SourceSansPro-Regular",
+                            "fontSize": 16,
+                            "fontWeight": "normal",
+                            "textAlign": "left",
+                          },
+                        ]
+                      }
+                    >
+                      You can use up to two devices per account. This allows you to use your phone and laptop, for example, with one account
+                    </Text>
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  {
+                    "marginBottom": 36,
+                  }
+                }
+              >
+                <View
+                  accessibilityState={
+                    {
+                      "busy": undefined,
+                      "checked": undefined,
+                      "disabled": undefined,
+                      "expanded": false,
+                      "selected": undefined,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  collapsable={false}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      {
+                        "flexDirection": "row",
+                        "justifyContent": "space-between",
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        {
+                          "maxWidth": "90%",
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#F8F9FA",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-SemiBold",
+                              "fontSize": 16,
+                              "fontWeight": "600",
+                              "textAlign": "left",
+                            },
+                          ]
+                        }
+                      >
+                        If I have a lesson plan with an instructor, can they see all of my uploads?
+                      </Text>
+                    </View>
+                    <SvgMock
+                      fill="#FFFFFF"
+                      height={24}
+                      width={24}
+                    />
+                  </View>
+                </View>
+                <View
+                  collapsable={false}
+                  pointerEvents="none"
+                  style={
+                    {
+                      "height": 0,
+                      "overflow": "hidden",
+                    }
+                  }
+                >
+                  <View
+                    collapsable={false}
+                    forwardedRef={[Function]}
+                    onLayout={[Function]}
+                    style={{}}
+                  >
+                    <Text
+                      style={
+                        [
+                          {
+                            "color": "#ADB5BD",
+                            "lineHeight": 24,
+                          },
+                          {
+                            "fontFamily": "SourceSansPro-Regular",
+                            "fontSize": 16,
+                            "fontWeight": "normal",
+                            "textAlign": "left",
+                          },
+                        ]
+                      }
+                    >
+                      You can use up to two devices per account. This allows you to use your phone and laptop, for example, with one account
+                    </Text>
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  {
+                    "marginBottom": 36,
+                  }
+                }
+              >
+                <View
+                  accessibilityState={
+                    {
+                      "busy": undefined,
+                      "checked": undefined,
+                      "disabled": undefined,
+                      "expanded": false,
+                      "selected": undefined,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  collapsable={false}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      {
+                        "flexDirection": "row",
+                        "justifyContent": "space-between",
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        {
+                          "maxWidth": "90%",
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#F8F9FA",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-SemiBold",
+                              "fontSize": 16,
+                              "fontWeight": "600",
+                              "textAlign": "left",
+                            },
+                          ]
+                        }
+                      >
+                        If I have a lesson ongoing can I communicate to my instructor through the system?
+                      </Text>
+                    </View>
+                    <SvgMock
+                      fill="#FFFFFF"
+                      height={24}
+                      width={24}
+                    />
+                  </View>
+                </View>
+                <View
+                  collapsable={false}
+                  pointerEvents="none"
+                  style={
+                    {
+                      "height": 0,
+                      "overflow": "hidden",
+                    }
+                  }
+                >
+                  <View
+                    collapsable={false}
+                    forwardedRef={[Function]}
+                    onLayout={[Function]}
+                    style={{}}
+                  >
+                    <Text
+                      style={
+                        [
+                          {
+                            "color": "#ADB5BD",
+                            "lineHeight": 24,
+                          },
+                          {
+                            "fontFamily": "SourceSansPro-Regular",
+                            "fontSize": 16,
+                            "fontWeight": "normal",
+                            "textAlign": "left",
+                          },
+                        ]
+                      }
+                    >
+                      You can use up to two devices per account. This allows you to use your phone and laptop, for example, with one account
+                    </Text>
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  {
+                    "marginBottom": 36,
+                  }
+                }
+              >
+                <View
+                  accessibilityState={
+                    {
+                      "busy": undefined,
+                      "checked": undefined,
+                      "disabled": undefined,
+                      "expanded": false,
+                      "selected": undefined,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  collapsable={false}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    {
+                      "opacity": 1,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      {
+                        "flexDirection": "row",
+                        "justifyContent": "space-between",
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        {
+                          "maxWidth": "90%",
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#F8F9FA",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-SemiBold",
+                              "fontSize": 16,
+                              "fontWeight": "600",
+                              "textAlign": "left",
+                            },
+                          ]
+                        }
+                      >
+                        How long do I have access to my videos?
+                      </Text>
+                    </View>
+                    <SvgMock
+                      fill="#FFFFFF"
+                      height={24}
+                      width={24}
+                    />
+                  </View>
+                </View>
+                <View
+                  collapsable={false}
+                  pointerEvents="none"
+                  style={
+                    {
+                      "height": 0,
+                      "overflow": "hidden",
+                    }
+                  }
+                >
+                  <View
+                    collapsable={false}
+                    forwardedRef={[Function]}
+                    onLayout={[Function]}
+                    style={{}}
+                  >
+                    <Text
+                      style={
+                        [
+                          {
+                            "color": "#ADB5BD",
+                            "lineHeight": 24,
+                          },
+                          {
+                            "fontFamily": "SourceSansPro-Regular",
+                            "fontSize": 16,
+                            "fontWeight": "normal",
+                            "textAlign": "left",
+                          },
+                        ]
+                      }
+                    >
+                      You can use up to two devices per account. This allows you to use your phone and laptop, for example, with one account
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+  </RCTSafeAreaView>
+</BVLinearGradient>
+`;
