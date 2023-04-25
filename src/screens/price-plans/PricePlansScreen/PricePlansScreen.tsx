@@ -34,7 +34,11 @@ export function PricePlansScreen() {
                 price={data.price}
                 frequency={data.frequency}
                 featureList={data.features}
-                onCardPress={() => NavigationService.navigate(Route.PlanDetails, { data })}
+                onCardPress={
+                  data.frequency
+                    ? () => NavigationService.navigate(Route.PlanDetails, { data })
+                    : () => NavigationService.navigate(Route.MainStack)
+                }
               />
             </View>
           ))}

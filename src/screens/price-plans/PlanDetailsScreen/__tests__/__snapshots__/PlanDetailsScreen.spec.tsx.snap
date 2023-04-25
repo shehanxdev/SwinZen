@@ -61,6 +61,7 @@ exports[`Plan Details Screen screen should render Plan Details Screen correctly 
       style={
         {
           "height": "100%",
+          "paddingTop": 50,
           "position": "absolute",
         }
       }
