@@ -29,7 +29,7 @@ export function PricePlansStack() {
           </TouchableOpacity>
         ),
       }}>
-      <Stack.Screen name={Route.PricePlans} component={PricePlansScreen} options={{ title: 'Join us today!' }} />
+      <Stack.Screen name={Route.PricePlans} component={PricePlansScreen} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }
