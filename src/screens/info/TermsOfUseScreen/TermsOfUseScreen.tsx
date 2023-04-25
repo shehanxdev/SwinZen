@@ -7,11 +7,11 @@ import { SwingZenUrl, TextAlignment, TextVariant } from '@sz/constants';
 import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
-import { BaseScreen } from '../components';
+import { BaseInfoScreen } from '../components';
 
 export function TermsOfUseScreen() {
   return (
-    <BaseScreen>
+    <BaseInfoScreen>
       <View testID="TermsOfUseScreenTestID" style={tw`px-4 py-6`}>
         <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Auto}>
           {`Acceptance of the Terms of Use
@@ -144,6 +144,6 @@ export function TermsOfUseScreen() {
                 \nAll other feedback, comments, requests for technical support and other communications relating to the Website should be directed to Sports Zoom LLC 6601 Edgemoore Dr College Grove TN 37046.`}
         </Text>
       </View>
-    </BaseScreen>
+    </BaseInfoScreen>
   );
 }
