@@ -17,6 +17,8 @@ export function PricePlansScreen({ route }) {
 
   const loading = useSelector(state => state.loading.effects.pricePlansStore.getPricePlans);
   const pricePlans = useSelector(state => state.pricePlansStore.pricePlans);
+  // sorting by price to display the lowest first
+  const sortedPlans = pricePlans.sort((a, b) => a.price - b.price);
 
   useEffect(() => {
     dispatch.pricePlansStore.getPricePlans();
@@ -35,7 +37,7 @@ export function PricePlansScreen({ route }) {
         </View>
       ) : (
         <View style={tw`mt-10 mx-6.25`}>
-          {pricePlans.map((data, index) => (
+          {sortedPlans.map((data, index) => (
             <View key={index} style={tw`my-2`}>
               <SubscriptionCard
                 title={data.name}
