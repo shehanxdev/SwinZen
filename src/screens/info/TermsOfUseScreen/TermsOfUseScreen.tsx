@@ -12,7 +12,7 @@ import { BaseScreen } from '../components';
 export function TermsOfUseScreen() {
   return (
     <BaseScreen>
-      <View testID="TermsOfUseScreenTestID" style={tw`p-6`}>
+      <View testID="TermsOfUseScreenTestID" style={tw`px-4 py-6`}>
         <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Auto}>
           {`Acceptance of the Terms of Use
                 \nThese terms of use are entered into by and between You and Sports Zoom LLC, “we” or “us“. The following terms and conditions, together with any documents they expressly incorporate by reference collectively, these “Terms of Use“, govern your access to and use of, including any content, functionality and services offered on or through `}
@@ -140,7 +140,7 @@ export function TermsOfUseScreen() {
                 \n \nEntire Agreement
                 \nThe Terms of Use and our Privacy Policy constitute the sole and entire agreement between you and with respect to the Website and supersede all prior and contemporaneous understandings, agreements, representations and warranties, both written and oral, with respect to the Website.
                 \n \nYour Comments and Concerns
-                \nThis website is operated by 9805 NE Hilltop Dr. Bainbridge Island, WA 98110. \nAll notices of copyright infringement claims should be sent to the copyright agent designated by contacting 
+                \nThis website is operated by 423 S Margin St Franklin TN 37064. \nAll notices of copyright infringement claims should be sent to the copyright agent designated by contacting 
                 \nAll other feedback, comments, requests for technical support and other communications relating to the Website should be directed to Sports Zoom LLC 6601 Edgemoore Dr College Grove TN 37046.`}
         </Text>
       </View>
