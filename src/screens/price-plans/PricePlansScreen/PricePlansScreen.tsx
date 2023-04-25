@@ -10,6 +10,7 @@ export function PricePlansScreen() {
     <BasePricePlansScreen testID="PricePlansScreenTestID">
       <ScrollView style={tw`mt-4.5 mx-6.25`}>
         <View style={tw`my-2`}>
+          {/* TODO:: API integration is pending */}
           <SubscriptionCard
             title="Swinzen Free"
             subTitle="Start your account with a stunning profile & free features"
