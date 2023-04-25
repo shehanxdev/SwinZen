@@ -8,6 +8,9 @@ export { default as PasswordHideEyeSvg } from './icons/account/password-hide-eye
 export { default as PasswordRevealEyeSvg } from './icons/account/password-reveal-eye.svg';
 export { default as ProfileIconSvg } from './icons/account/profile_icon.svg';
 export { default as SecurityIconSvg } from './icons/account/security_icon.svg';
+export { default as UploadSvg } from './icons/main/document-upload.svg';
+export { default as PlayButtonSvg } from './icons/main/play-button.svg';
+export { default as ErrorIconSvg } from './icons/main/error.svg';
 export { default as SwingZenLogoSvg } from './logo/swingzen-logo.svg';
 export { default as CloseButtonSvg } from './icons/other/close-button.svg';
 export { default as PhoneIconSvg } from './icons/other/phone-icon.svg';
