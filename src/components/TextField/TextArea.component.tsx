@@ -1,9 +1,16 @@
 import React, { forwardRef } from 'react';
 import { TextInput as RNTextInput } from 'react-native';
 
+import { tw } from '@sz/config';
+
 import { TextField } from './TextField.component';
 import { TextFieldProps } from './TextField.types';
 
-export const TextArea = forwardRef<RNTextInput, TextFieldProps>(function TextAreainput(props, ref) {
-  return <TextField ref={ref} multiline={true} innerTextInputStyle="min-h-33 p-4 m-0" {...props} />;
+type TextAreaProps = Omit<TextFieldProps, 'leftIcon' | 'rightIcon' | 'onRightIconPress' | 'multiline'>;
+
+export const TextArea = forwardRef<RNTextInput, TextAreaProps>(function TextAreainput(
+  { innerTextInputStyles = tw`min-h-33 p-4 m-0`, ...rest }: TextAreaProps,
+  ref,
+) {
+  return <TextField ref={ref} multiline={true} innerTextInputStyles={innerTextInputStyles} {...rest} />;
 });
