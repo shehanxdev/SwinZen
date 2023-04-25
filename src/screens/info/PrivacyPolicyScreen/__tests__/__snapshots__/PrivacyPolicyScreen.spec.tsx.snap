@@ -51,6 +51,7 @@ exports[`Privacy Policy Screen Screen should render Privacy Policy Screen correc
     style={
       {
         "height": "100%",
+        "paddingTop": 50,
         "position": "absolute",
       }
     }

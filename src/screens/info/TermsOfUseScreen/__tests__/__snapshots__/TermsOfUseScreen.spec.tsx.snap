@@ -51,6 +51,7 @@ exports[`Terms Of Use Screen Screen should render Terms Of Use Screen correctly 
     style={
       {
         "height": "100%",
+        "paddingTop": 50,
         "position": "absolute",
       }
     }
