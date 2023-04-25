@@ -52,6 +52,7 @@ exports[`About Us Screen Screen should render About Us Screen correctly 1`] = `
     style={
       {
         "height": "100%",
+        "paddingTop": 50,
         "position": "absolute",
       }
     }
@@ -80,7 +81,7 @@ exports[`About Us Screen Screen should render About Us Screen correctly 1`] = `
         keyboardShouldPersistTaps="handled"
       >
         <View>
-          <RCTScrollView
+          <View
             style={
               {
                 "backgroundColor": "rgba(7, 7, 7, 0.46)",
@@ -99,7 +100,34 @@ exports[`About Us Screen Screen should render About Us Screen correctly 1`] = `
               }
             }
           >
-            <View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#F8F9FA",
+                    "lineHeight": 24,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 16,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              SwingZen is a new app technology utilizing a cutting-edge biomechanical feedback analytics system to track the range of motion of a golfer’s body, club, and swing dynamics from any smartphone. No expensive doppler or sensors needed!
+            </Text>
+            <View
+              style={
+                {
+                  "flexDirection": "row",
+                  "gap": 8,
+                  "marginLeft": 12,
+                  "marginTop": 16,
+                }
+              }
+            >
               <Text
                 style={
                   [
@@ -116,292 +144,263 @@ exports[`About Us Screen Screen should render About Us Screen correctly 1`] = `
                   ]
                 }
               >
-                SwingZen is a new app technology utilizing a cutting-edge biomechanical feedback analytics system to track the range of motion of a golfer’s body, club, and swing dynamics from any smartphone. No expensive doppler or sensors needed!
+                •
               </Text>
-              <View
+              <Text
                 style={
-                  {
-                    "flexDirection": "row",
-                    "gap": 8,
-                    "marginLeft": 12,
-                    "marginTop": 16,
-                  }
+                  [
+                    {
+                      "color": "#F8F9FA",
+                      "lineHeight": 24,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
                 }
               >
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#F8F9FA",
-                        "lineHeight": 24,
-                      },
-                      {
-                        "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "normal",
-                        "textAlign": "auto",
-                      },
-                    ]
-                  }
-                >
-                  •
-                </Text>
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#F8F9FA",
-                        "lineHeight": 24,
-                      },
-                      {
-                        "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "normal",
-                        "textAlign": "auto",
-                      },
-                    ]
-                  }
-                >
-                  Utilizes cutting edge biomechanical feedback system.
-                </Text>
-              </View>
-              <View
-                style={
-                  {
-                    "flexDirection": "row",
-                    "gap": 8,
-                    "marginLeft": 12,
-                    "marginTop": 16,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#F8F9FA",
-                        "lineHeight": 24,
-                      },
-                      {
-                        "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "normal",
-                        "textAlign": "auto",
-                      },
-                    ]
-                  }
-                >
-                  •
-                </Text>
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#F8F9FA",
-                        "lineHeight": 24,
-                      },
-                      {
-                        "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "normal",
-                        "textAlign": "auto",
-                      },
-                    ]
-                  }
-                >
-                  Tracks up to 20 points of body and club for quick frame by frame review.
-                </Text>
-              </View>
-              <View
-                style={
-                  {
-                    "flexDirection": "row",
-                    "gap": 8,
-                    "marginLeft": 12,
-                    "marginTop": 16,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#F8F9FA",
-                        "lineHeight": 24,
-                      },
-                      {
-                        "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "normal",
-                        "textAlign": "auto",
-                      },
-                    ]
-                  }
-                >
-                  •
-                </Text>
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#F8F9FA",
-                        "lineHeight": 24,
-                      },
-                      {
-                        "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "normal",
-                        "textAlign": "auto",
-                      },
-                    ]
-                  }
-                >
-                  Delivers data points to your analyzed video such as angles and point movement during swing.
-                </Text>
-              </View>
-              <View
-                style={
-                  {
-                    "flexDirection": "row",
-                    "gap": 8,
-                    "marginLeft": 12,
-                    "marginTop": 16,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#F8F9FA",
-                        "lineHeight": 24,
-                      },
-                      {
-                        "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "normal",
-                        "textAlign": "auto",
-                      },
-                    ]
-                  }
-                >
-                  •
-                </Text>
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#F8F9FA",
-                        "lineHeight": 24,
-                      },
-                      {
-                        "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "normal",
-                        "textAlign": "auto",
-                      },
-                    ]
-                  }
-                >
-                  Requires no expensive sensors or doppler system. Only your smartphone.
-                </Text>
-              </View>
-              <View
-                style={
-                  {
-                    "flexDirection": "row",
-                    "gap": 8,
-                    "marginLeft": 12,
-                    "marginTop": 16,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#F8F9FA",
-                        "lineHeight": 24,
-                      },
-                      {
-                        "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "normal",
-                        "textAlign": "auto",
-                      },
-                    ]
-                  }
-                >
-                  •
-                </Text>
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#F8F9FA",
-                        "lineHeight": 24,
-                      },
-                      {
-                        "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "normal",
-                        "textAlign": "auto",
-                      },
-                    ]
-                  }
-                >
-                  Delivers exclusive video and swing fault instruction content under the Instruction tab.
-                </Text>
-              </View>
-              <View
-                style={
-                  {
-                    "flexDirection": "row",
-                    "gap": 8,
-                    "marginLeft": 12,
-                    "marginTop": 16,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#F8F9FA",
-                        "lineHeight": 24,
-                      },
-                      {
-                        "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "normal",
-                        "textAlign": "auto",
-                      },
-                    ]
-                  }
-                >
-                  •
-                </Text>
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#F8F9FA",
-                        "lineHeight": 24,
-                      },
-                      {
-                        "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "normal",
-                        "textAlign": "auto",
-                      },
-                    ]
-                  }
-                >
-                  If desired, you can work with an instructor or coach that will have instant access to your information through their instructors.
-                </Text>
-              </View>
+                Utilizes cutting edge biomechanical feedback system.
+              </Text>
             </View>
-          </RCTScrollView>
+            <View
+              style={
+                {
+                  "flexDirection": "row",
+                  "gap": 8,
+                  "marginLeft": 12,
+                  "marginTop": 16,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#F8F9FA",
+                      "lineHeight": 24,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                •
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#F8F9FA",
+                      "lineHeight": 24,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Tracks up to 20 points of body and club for quick frame by frame review.
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "flexDirection": "row",
+                  "gap": 8,
+                  "marginLeft": 12,
+                  "marginTop": 16,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#F8F9FA",
+                      "lineHeight": 24,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                •
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#F8F9FA",
+                      "lineHeight": 24,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Delivers data points to your analyzed video such as angles and point movement during swing.
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "flexDirection": "row",
+                  "gap": 8,
+                  "marginLeft": 12,
+                  "marginTop": 16,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#F8F9FA",
+                      "lineHeight": 24,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                •
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#F8F9FA",
+                      "lineHeight": 24,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Requires no expensive sensors or doppler system. Only your smartphone.
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "flexDirection": "row",
+                  "gap": 8,
+                  "marginLeft": 12,
+                  "marginTop": 16,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#F8F9FA",
+                      "lineHeight": 24,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                •
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#F8F9FA",
+                      "lineHeight": 24,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Delivers exclusive video and swing fault instruction content under the Instruction tab.
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "flexDirection": "row",
+                  "gap": 8,
+                  "marginLeft": 12,
+                  "marginTop": 16,
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#F8F9FA",
+                      "lineHeight": 24,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                •
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#F8F9FA",
+                      "lineHeight": 24,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 16,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                If desired, you can work with an instructor or coach that will have instant access to your information through their instructors.
+              </Text>
+            </View>
+          </View>
         </View>
       </RCTScrollView>
     </View>

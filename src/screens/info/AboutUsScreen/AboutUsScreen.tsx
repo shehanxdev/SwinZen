@@ -1,16 +1,16 @@
 import React from 'react';
-import { ScrollView, View } from 'react-native';
+import { View } from 'react-native';
 
 import { Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { AboutUsPoints, Color, TextAlignment, TextVariant } from '@sz/constants';
 
-import { BaseScreen } from '../components';
+import { BaseInfoScreen } from '../components';
 
 export function AboutUsScreen() {
   return (
-    <BaseScreen testID="AboutUsScreenTestID">
-      <ScrollView style={tw`flex-1 bg-[${Color.Primary.Sz900}]/46 rounded-2.5 mx-4 mt-6.25 mb-24 p-6`}>
+    <BaseInfoScreen testID="AboutUsScreenTestID">
+      <View style={tw`flex-1 bg-[${Color.Primary.Sz900}]/46 rounded-2.5 mx-4 mt-6.25 mb-24 p-6`}>
         <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Auto}>
           SwingZen is a new app technology utilizing a cutting-edge biomechanical feedback analytics system to track the
           range of motion of a golfer’s body, club, and swing dynamics from any smartphone. No expensive doppler or
@@ -26,7 +26,7 @@ export function AboutUsScreen() {
             </Text>
           </View>
         ))}
-      </ScrollView>
-    </BaseScreen>
+      </View>
+    </BaseInfoScreen>
   );
 }
