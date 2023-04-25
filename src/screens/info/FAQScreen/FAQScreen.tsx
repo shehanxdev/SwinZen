@@ -1,13 +1,10 @@
-import { BlurView } from '@react-native-community/blur';
 import React, { useState } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
 
-import { DownArrowIcon, Text, UpArrowIcon } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
-import { BaseScreen } from '../components';
+import { BaseScreen, FAQSectionContent, FAQSectionHeader } from '../components';
 
 //TODO:: To be integrated with once the endpoints are ready
 const CONTENT = [
@@ -50,43 +47,17 @@ export function FAQScreen() {
     setActiveSections(sections.includes(undefined) ? [] : sections);
   };
 
-  const renderHeader = (section, _, isActive) => {
-    return (
-      <View style={tw`flex-row justify-between`}>
-        <View style={tw`max-w-[90%]`}>
-          <Text variant={TextVariant.Body2SemiBold} color={Color.Neutral.Sz100} textAlign={TextAlignment.Left}>
-            {section.title}
-          </Text>
-        </View>
-        {isActive ? <DownArrowIcon /> : <UpArrowIcon />}
-      </View>
-    );
-  };
-
-  const renderContent = section => {
-    return (
-      <View style={tw``}>
-        <Text variant={TextVariant.Body2Regular} color={Color.Neutral.Sz500} textAlign={TextAlignment.Left}>
-          {section.content}
-        </Text>
-      </View>
-    );
-  };
-
   return (
     <BaseScreen>
       <View style={tw`flex-1 p-4`}>
-        <BlurView blurType="dark" blurAmount={10} style={tw`absolute inset-0`} />
         <Accordion
           sections={CONTENT}
           activeSections={activeSections}
-          //@ts-ignore
-          renderHeader={renderHeader}
-          renderContent={renderContent}
+          renderHeader={FAQSectionHeader}
+          renderContent={FAQSectionContent}
           renderAsFlatList={false}
           sectionContainerStyle={tw`mb-9`}
           touchableComponent={TouchableOpacity}
-          //@ts-ignore
           onChange={setSections}
           expandMultiple={false}
         />
