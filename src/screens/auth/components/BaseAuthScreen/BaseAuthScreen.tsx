@@ -18,7 +18,11 @@ export function BaseAuthScreen({
 }: BaseAuthScreenProps) {
   return (
     <LinearGradient {...otherlinearGradientProps} colors={colors} style={tw`relative flex-1`}>
-      <Image source={images.grassBackground} style={tw`flex-1 opacity-10`} resizeMode="repeat" />
+      <Image
+        source={images.grassBackground}
+        style={tw`absolute flex-1 opacity-10 h-screen w-screen`}
+        resizeMode="repeat"
+      />
       <SafeAreaView style={tw`absolute h-full`}>
         <KeyboardAvoidingView style={tw`flex-1`} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
           <ScrollView contentContainerStyle={tw`grow`} keyboardShouldPersistTaps="handled">
