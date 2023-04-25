@@ -5,7 +5,7 @@ import { Link } from '@sz/components';
 import { tw } from '@sz/config';
 import { NavigationService } from '@sz/services';
 
-import { BaseScreen } from '../components';
+import { BaseScreen } from './../../../screens/account/components';
 
 export function ContactUsScreen() {
   return (
