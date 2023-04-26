@@ -81,8 +81,8 @@ export function ContactUsScreen() {
               <TextField
                 ref={ref}
                 label="Phone number(Optional)"
-                leftIcon={<PhoneIcon />} //todo change the icon
-                maxLength={50}
+                leftIcon={<PhoneIcon />}
+                maxLength={12}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
@@ -104,7 +104,7 @@ export function ContactUsScreen() {
               <TextArea
                 ref={ref}
                 label="Message"
-                maxLength={50}
+                maxLength={200}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}

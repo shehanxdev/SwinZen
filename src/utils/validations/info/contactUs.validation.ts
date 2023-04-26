@@ -11,7 +11,11 @@ export const contactUsFormErrorMessages = {
   'username:email': 'Invalid Email',
   'username:max': 'Email must not be 50 letters long',
 
-  'mobileNumber:matches': 'Mobile number must be a valid US mobile number (+1 555 555 1234)',
+  'mobileNumber:required': 'Please enter phone number',
+  'mobileNumber:matches': 'Invalid phone number',
+
+  'message:required': 'Please enter your Message',
+  'message:max': 'Maximum character limit is 200', //todo clarify isf we need an error message since the TexField component's maxLength attribute has already limited the character limit to 200 which means the error message won't even get displayed
 };
 
 export const contactUsValidationSchema = yup
@@ -27,6 +31,13 @@ export const contactUsValidationSchema = yup
       .required(contactUsFormErrorMessages['username:required'])
       .email(contactUsFormErrorMessages['username:email'])
       .max(50, contactUsFormErrorMessages['username:max']),
-    mobileNumber: yup.string().matches(ValidMobileNumberRegex, contactUsFormErrorMessages['mobileNumber:matches']), //todo mobile number field only accepts us mobile numbers so make sure if this is okay.
+    mobileNumber: yup
+      .string()
+      .required(contactUsFormErrorMessages['mobileNumber:required'])
+      .matches(ValidMobileNumberRegex, contactUsFormErrorMessages['mobileNumber:matches']),
+    message: yup
+      .string()
+      .required(contactUsFormErrorMessages['message:required'])
+      .max(200, contactUsFormErrorMessages['message:max']),
   })
   .required();
