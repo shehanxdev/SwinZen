@@ -7,7 +7,6 @@ import { TextFieldProps } from '../TextField';
 
 type MobileNumberFieldProps = Omit<TextFieldProps, 'leftIcon' | 'rightIcon' | 'keyboardType' | 'onRightIconPress'>;
 
-//TODO::update the mask depending on the requirements, handle leading zero and country once the requirements get finalized
 export const MobileNumberField = forwardRef<RNTextInput, MobileNumberFieldProps>(function MobileNumberInput(
   { ...props },
   ref,
