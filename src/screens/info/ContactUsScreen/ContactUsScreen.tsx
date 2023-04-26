@@ -1,3 +1,4 @@
+import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { View } from 'react-native';
@@ -6,6 +7,7 @@ import { ContactUsFormValues } from 'src/models/info/contactUs.interface';
 import { Button, MailIcon, PhoneIcon, ProfileIcon, Text, TextArea, TextField } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
+import { contactUsValidationSchema } from '@sz/utils';
 
 import { BaseInfoScreen } from '../components';
 
@@ -15,7 +17,7 @@ export function ContactUsScreen() {
     handleSubmit,
     setFocus,
     formState: { isSubmitted },
-  } = useForm<ContactUsFormValues>({ mode: 'onChange' });
+  } = useForm<ContactUsFormValues>({ mode: 'onChange', resolver: yupResolver(contactUsValidationSchema) });
 
   return (
     <BaseInfoScreen testID="ContactUsScreenTestID">
