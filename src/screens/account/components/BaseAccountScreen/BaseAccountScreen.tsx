@@ -8,15 +8,15 @@ import { tw } from '@sz/config';
 import { Color } from '@sz/constants';
 import { useHeaderHeight } from '@sz/hooks';
 
-interface BaseInfoScreenProps extends Partial<LinearGradientProps> {
+interface BaseAccountScreenProps extends Partial<LinearGradientProps> {
   children: React.ReactNode;
 }
 
-export function BaseInfoScreen({
+export function BaseAccountScreen({
   children,
   colors = ['#1A5C23', Color.Primary.Sz800, Color.Primary.Sz900], //TODO:: update, these colours are NOT available within the design system
   ...otherlinearGradientProps
-}: BaseInfoScreenProps) {
+}: BaseAccountScreenProps) {
   const headerHeight = useHeaderHeight();
 
   return (

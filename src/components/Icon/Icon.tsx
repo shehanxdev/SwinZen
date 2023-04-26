@@ -25,6 +25,8 @@ import {
   DrawerTermsSvg,
   ErrorIconSvg,
   MailIconSvg,
+  NotificationDotSvg,
+  NotificationTimerSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
   PlayButtonSvg,
@@ -133,6 +135,14 @@ export function DrawerTermsIcon({ color = Color.Neutral.Sz300, width = 24, heigh
 
 export function MailIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
   return <MailIconSvg width={width} height={height} fill={color} />;
+}
+
+export function NotificationDotIcon({ color = Color.Tertiary.Sz900, width = 8, height = 8 }: SvgIconProps) {
+  return <NotificationDotSvg width={width} height={height} fill={color} />;
+}
+
+export function NotificationTimerIcon({ color = Color.Neutral.Sz100, width = 17, height = 17 }: SvgIconProps) {
+  return <NotificationTimerSvg width={width} height={height} fill={color} />;
 }
 
 export function PasswordHideIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {

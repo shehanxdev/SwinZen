@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import moment from 'moment';
+
 /**
  * Returns a masked version of an email address, replacing the characters between
  * the first character and the character before "@" symbol with a mask character (defaults to "*").
@@ -11,4 +14,54 @@ export function getMaskedMail(email: string, mask?: string) {
   return email.replace(/^(.)(.*)(.@.*)$/, function (_, a, b, c) {
     return a + b.replace(/./g, mask) + c;
   });
+}
+
+// TODO:: need to change after firebase and API integration
+// type declaration for getSectionList param
+export interface DataProps {
+  time: Date;
+  message: string;
+  read: boolean;
+}
+
+// manipulating moment calender according to the design
+moment.updateLocale('en', {
+  calendar: {
+    lastDay: '[Yesterday]',
+    sameDay: '[Today]',
+    lastWeek: '[Last Week]',
+  },
+});
+
+/**
+ * Returns a section list array with title and data propertised
+ * which is needed for RN SectionList to work properly
+ *
+ * @param {DataProps[]} dataArray - The email address to mask.
+ */
+export function getSectionList(dataArray: DataProps[]) {
+  // Create an object to store the sections
+  const sections = {};
+
+  // Loop through the dummyData array
+  dataArray.forEach(item => {
+    // Get the date string in the format 'YYYY-MM-DD'
+    const date = item.time.toISOString().split('T')[0];
+
+    // If the section does not exist in the sections object, create it
+    if (!sections[date]) {
+      sections[date] = [];
+    }
+
+    // Add the item to the corresponding section
+    sections[date].push(item);
+  });
+
+  // Convert the sections object into an array of sections with titles
+  const sectionList = Object.keys(sections).map(date => ({
+    title: moment(date).calendar(),
+    data: sections[date],
+  }));
+
+  return sectionList;
 }

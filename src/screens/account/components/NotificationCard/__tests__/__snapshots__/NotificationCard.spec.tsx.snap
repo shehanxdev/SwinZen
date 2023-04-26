@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotificationCard Component should render NotificationCard component correctly 1`] = `
+<View
+  collapsable={false}
+  pointerEvents="box-none"
+  style={
+    {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "marginLeft": 16,
+        "marginRight": 16,
+        "opacity": 1,
+      }
+    }
+    testID="NotificationCardTestID"
+  >
+    <View
+      style={
+        {
+          "flexDirection": "row",
+          "gap": 12,
+          "marginTop": 16,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "marginTop": 8,
+          }
+        }
+      >
+        <SvgMock
+          fill="#6C757D"
+          height={8}
+          width={8}
+        />
+      </View>
+      <Text
+        style={
+          [
+            {
+              "color": "#6C757D",
+              "lineHeight": 24,
+            },
+            {
+              "fontFamily": "SourceSansPro-Regular",
+              "fontSize": 16,
+              "fontWeight": "normal",
+              "textAlign": "auto",
+            },
+          ]
+        }
+      >
+        test message
+      </Text>
+    </View>
+    <View
+      style={
+        {
+          "flexDirection": "row",
+          "gap": 11,
+          "justifyContent": "flex-end",
+          "marginBottom": 16,
+          "marginTop": 5,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "marginTop": 4,
+          }
+        }
+      >
+        <SvgMock
+          fill="#6C757D"
+          height={17}
+          width={17}
+        />
+      </View>
+      <Text
+        style={
+          [
+            {
+              "color": "#6C757D",
+              "lineHeight": 24,
+            },
+            {
+              "fontFamily": "SourceSansPro-Regular",
+              "fontSize": 16,
+              "fontWeight": "normal",
+              "textAlign": "auto",
+            },
+          ]
+        }
+      >
+        a few seconds ago
+      </Text>
+    </View>
+  </View>
+</View>
+`;
