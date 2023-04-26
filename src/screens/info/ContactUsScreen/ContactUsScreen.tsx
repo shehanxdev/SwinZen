@@ -1,9 +1,9 @@
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { View } from 'react-native';
-import { contactUsFormValues } from 'src/models/info/contactUs.interface';
+import { ContactUsFormValues } from 'src/models/info/contactUs.interface';
 
-import { Button, MailIcon, ProfileIcon, Text, TextArea, TextField } from '@sz/components';
+import { Button, MailIcon, PhoneIcon, ProfileIcon, Text, TextArea, TextField } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
@@ -15,7 +15,7 @@ export function ContactUsScreen() {
     handleSubmit,
     setFocus,
     formState: { isSubmitted },
-  } = useForm<contactUsFormValues>({ mode: 'onChange' });
+  } = useForm<ContactUsFormValues>({ mode: 'onChange' });
 
   return (
     <BaseInfoScreen testID="ContactUsScreenTestID">
@@ -79,7 +79,7 @@ export function ContactUsScreen() {
               <TextField
                 ref={ref}
                 label="Phone number(Optional)"
-                leftIcon={<MailIcon />} //todo change the icon
+                leftIcon={<PhoneIcon />} //todo change the icon
                 maxLength={50}
                 value={value}
                 onChangeText={onChange}
