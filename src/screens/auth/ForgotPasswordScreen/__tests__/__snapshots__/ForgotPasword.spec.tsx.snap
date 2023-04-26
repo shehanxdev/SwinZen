@@ -41,7 +41,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
     }
   >
     <Image
-      resizeMode="repeat"
+      resizeMode="cover"
       source={
         {
           "testUri": "../../../src/assets/images/grassBackground.jpg",
@@ -49,9 +49,6 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
       }
       style={
         {
-          "flexBasis": "0%",
-          "flexGrow": 1,
-          "flexShrink": 1,
           "opacity": 0.1,
           "position": "absolute",
         }

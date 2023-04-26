@@ -42,7 +42,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
     testID="SignupScreenTestID"
   >
     <Image
-      resizeMode="repeat"
+      resizeMode="cover"
       source={
         {
           "testUri": "../../../src/assets/images/grassBackground.jpg",
@@ -50,9 +50,6 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
       }
       style={
         {
-          "flexBasis": "0%",
-          "flexGrow": 1,
-          "flexShrink": 1,
           "opacity": 0.1,
           "position": "absolute",
         }
