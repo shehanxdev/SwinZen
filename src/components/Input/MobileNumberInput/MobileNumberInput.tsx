@@ -7,11 +7,22 @@ import { TextFieldProps } from '../TextField';
 
 type MobileNumberFieldProps = Omit<TextFieldProps, 'leftIcon' | 'rightIcon' | 'keyboardType' | 'onRightIconPress'>;
 
+const COUNTRY_CODE = '+1'; //USA as for the current requirements
+
+//NOTE::currently this implemenation to highly coupled with USA baased numbers.
 export const MobileNumberField = forwardRef<RNTextInput, MobileNumberFieldProps>(function MobileNumberInput(
-  { ...props },
+  { value, ...props },
   ref,
 ) {
   return (
-    <MaskedInput inputMask={'+1 ### ### ####'} ref={ref} leftIcon={<PhoneIcon />} {...props} keyboardType="phone-pad" />
+    <MaskedInput
+      isMobileNumber={true}
+      inputMask={`${COUNTRY_CODE} ### ### ####`}
+      ref={ref}
+      leftIcon={<PhoneIcon />}
+      {...props}
+      keyboardType="phone-pad"
+      value={value ?? COUNTRY_CODE.concat(' ')}
+    />
   );
 });

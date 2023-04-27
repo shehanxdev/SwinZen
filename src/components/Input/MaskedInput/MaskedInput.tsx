@@ -10,6 +10,7 @@ type WithAppTextInputProps = Omit<TextFieldProps, 'value' | 'defaultValue'>;
 export interface MaskedInputProps extends WithAppTextInputProps {
   value?: string;
   inputMask: string;
+  isMobileNumber?: boolean; //this prop is use to handle edge cased for the when using as a mobile number
 }
 
 function getCleanedValue(value: string, mask: string) {
@@ -52,7 +53,7 @@ function maskInputString(value: string, mask: string) {
 }
 
 export const MaskedInput = forwardRef<RNTextInput, MaskedInputProps>(function (
-  { inputMask, onChangeText, value, ...props },
+  { inputMask, onChangeText, isMobileNumber = false, value, ...props },
   ref,
 ) {
   const getMaskedValue = (val: string) => maskInputString(val, inputMask);
@@ -63,6 +64,7 @@ export const MaskedInput = forwardRef<RNTextInput, MaskedInputProps>(function (
       {...props}
       value={value}
       onChangeText={changedValue => {
+        if (isMobileNumber && changedValue.length === 2) return; //EDGE CASE :: stop erasing the country code for mobile number
         if (!value || (value && !value.startsWith(changedValue))) {
           // If the charactors in value isn't deleted from the end to the begining
           onChangeText(getMaskedValue(changedValue));
