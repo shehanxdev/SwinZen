@@ -18,8 +18,8 @@ export function UnexpectedErrorScreen({ resetError }: UnexpectedErrorScreenProps
   return (
     // TODO:::This BaseAuthScreen should be renamed and sharable among the multiple domains without repeating the code. Update here once this done.
     <BaseAuthScreen>
-      <View style={tw`flex-1 items-center mx-5 justify-between mt-65`}>
-        <View>
+      <View style={tw`flex-1 items-center mx-5 justify-between`}>
+        <View style={tw`m-auto`}>
           <View style={tw`mb-6`}>
             <Text variant={TextVariant.SubTitle1}>Something went wrong!</Text>
           </View>
