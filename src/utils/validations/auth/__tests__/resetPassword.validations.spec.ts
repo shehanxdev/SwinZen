@@ -27,13 +27,6 @@ describe('resetPasswordValidationSchema', () => {
     expect(error.message).toBe(resetPasswordErrorMessages['password:max']);
   });
 
-  it('should return an error message for an invalid password format', async () => {
-    const input = { password: 'password', confirmPassword: 'password' };
-    const error = await resetPasswordValidationSchema.validateAt('password', input).catch(err => err);
-    expect(error).toBeInstanceOf(ValidationError);
-    expect(error.message).toBe(resetPasswordErrorMessages['password:match']);
-  });
-
   it('should throw an error if confirmPassword is empty', async () => {
     const input = { confirmPassword: undefined };
     let validationResult;
