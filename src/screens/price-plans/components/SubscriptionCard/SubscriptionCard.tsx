@@ -9,6 +9,7 @@ import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
 export interface SubscriptionCardProps {
   testID?: string;
+  selected?: boolean;
   title: string;
   price: number;
   frequency: string | null;
@@ -19,6 +20,7 @@ export interface SubscriptionCardProps {
 
 export function SubscriptionCard({
   testID = 'SubscriptionCardTestID',
+  selected = false,
   title,
   price,
   frequency,
@@ -37,14 +39,14 @@ export function SubscriptionCard({
           </View>
         )}
         <View style={tw`my-7.5`}>
-          <Text variant={TextVariant.SubTitle2SemiBold} color={Color.Primary.Sz100}>
+          <Text variant={TextVariant.SubTitle2SemiBold} color={selected ? Color.Neutral.Sz600 : Color.Primary.Sz100}>
             {title}
           </Text>
           <View style={tw`flex-row justify-center items-center gap-2`}>
-            <Text variant={TextVariant.Heading3} color={Color.Tertiary.Sz900}>
+            <Text variant={TextVariant.Heading3} color={selected ? Color.Neutral.Sz600 : Color.Tertiary.Sz900}>
               {`$${price}`}
             </Text>
-            <Text variant={TextVariant.Body2Regular} color={Color.Neutral.Sz100}>
+            <Text variant={TextVariant.Body2Regular} color={selected ? Color.Neutral.Sz600 : Color.Neutral.Sz100}>
               {frequency && '/' + frequency}
             </Text>
           </View>
@@ -54,9 +56,12 @@ export function SubscriptionCard({
               return (
                 <View style={tw`flex-row justify-center items-center gap-2`} key={index}>
                   <View style={tw`mt-1`}>
-                    <PricePlanFeatureListTickIcon />
+                    <PricePlanFeatureListTickIcon color={selected ? Color.Neutral.Sz600 : Color.Tertiary.Sz900} />
                   </View>
-                  <Text textAlign={TextAlignment.Center} variant={TextVariant.Labels} color={Color.Neutral.Sz100}>
+                  <Text
+                    textAlign={TextAlignment.Center}
+                    variant={TextVariant.Labels}
+                    color={selected ? Color.Neutral.Sz600 : Color.Neutral.Sz100}>
                     {feature}
                   </Text>
                 </View>
