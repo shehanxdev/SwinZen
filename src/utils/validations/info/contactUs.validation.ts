@@ -15,7 +15,7 @@ export const contactUsFormErrorMessages = {
   'mobileNumber:matches': 'Invalid phone number',
 
   'message:required': 'Please enter your Message',
-  'message:max': 'Maximum character limit is 200', //todo clarify isf we need an error message since the TexField component's maxLength attribute has already limited the character limit to 200 which means the error message won't even get displayed
+  'message:max': 'Maximum character limit is 200',
 };
 
 export const contactUsValidationSchema = yup
