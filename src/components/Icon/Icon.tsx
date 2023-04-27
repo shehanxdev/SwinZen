@@ -2,7 +2,9 @@ import React from 'react';
 
 import {
   AccountLockSvg,
+  ArrowDown,
   ArrowRightSvg,
+  ArrowUp,
   BackIconSvg,
   BottomTabAnalysisSvg,
   BottomTabHomeSvg,
@@ -21,13 +23,16 @@ import {
   DrawerPrivacySvg,
   DrawerProfileSettingsSvg,
   DrawerTermsSvg,
+  ErrorIconSvg,
   MailIconSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
+  PlayButtonSvg,
   PricePlanFeatureListTick,
   ProfileIconSvg,
   SecurityIconSvg,
   SwingZenLogoSvg,
+  UploadSvg,
 } from '@sz/assets';
 import { Color } from '@sz/constants';
 
@@ -80,6 +85,18 @@ export function BottomTabAnalysisIconWithLabel({ color = Color.Neutral.Sz600, wi
 
 export function BottomTabLibraryIconWithLabel({ color = Color.Neutral.Sz600, width = 46, height = 43 }: SvgIconProps) {
   return <BottomTabLibrarySvg width={width} height={height} fill={color} />;
+}
+
+export function UploadIcon({ color = Color.Neutral.Sz100, width = 35, height = 36 }: SvgIconProps) {
+  return <UploadSvg width={width} height={height} fill={color} />;
+}
+
+export function PlayButtonIcon({ color = Color.Neutral.Sz100, width = 46, height = 46 }: SvgIconProps) {
+  return <PlayButtonSvg width={width} height={height} fill={color} />;
+}
+
+export function ErrorIcon({ color = Color.Neutral.Sz100, width = 38, height = 36 }: SvgIconProps) {
+  return <ErrorIconSvg width={width} height={height} fill={color} />;
 }
 
 export function DrawerContactIcon({ color = Color.Neutral.Sz300, width = 24, height = 24 }: SvgIconProps) {
@@ -136,6 +153,14 @@ export function ProfileIcon({ color = Color.Neutral.Sz500, width = 20, height = 
 
 export function RightArrowIcon({ color = Color.Neutral.Sz100, width = 7.75, height = 14 }: SvgIconProps) {
   return <ArrowRightSvg width={width} height={height} fill={color} />;
+}
+
+export function UpArrowIcon({ color = Color.Neutral.White, width = 24, height = 24 }: SvgIconProps) {
+  return <ArrowUp width={width} height={height} fill={color} />;
+}
+
+export function DownArrowIcon({ color = Color.Neutral.White, width = 24, height = 24 }: SvgIconProps) {
+  return <ArrowDown width={width} height={height} fill={color} />;
 }
 
 export function SecurityIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {

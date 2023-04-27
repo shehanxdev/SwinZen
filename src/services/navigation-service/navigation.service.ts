@@ -110,6 +110,16 @@ export class NavigationService {
           },
         };
         break;
+      case Route.PricePlans:
+        navRoute = Route.PricePlansStack;
+        navParams = {
+          screen: Route.PricePlans,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
       case Route.ProfileSettings:
         navRoute = Route.AccountStack;
         navParams = {
