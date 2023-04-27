@@ -1,30 +1,49 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import RNRestart from 'react-native-restart';
 
-import { Button } from '@sz/components';
+import { Button, Text } from '@sz/components';
 import { tw } from '@sz/config';
+import { Color, TextVariant } from '@sz/constants';
+
+//TODO::replace with a relevant BaseView
+import { BaseAuthScreen } from './../../../screens/auth/components';
 
 interface UnexpectedErrorScreenProps {
   error: Error;
   resetError: any;
 }
 
-//TODO::This is dummy screen. Replace with a relevant screen.
-export function UnexpectedErrorScreen({ error, resetError }: UnexpectedErrorScreenProps) {
+export function UnexpectedErrorScreen({ resetError }: UnexpectedErrorScreenProps) {
   return (
-    <View style={tw`m-20`}>
-      <Text style={tw`m-10`}>UnexpectedError Screen</Text>
-      <Text>{error.toString()}</Text>
-      <View style={tw`mt-2`} />
-      <Button onPress={resetError} title={'Try again'} />
-      <View style={tw`mt-2`} />
-      <Button
-        title={'Reload App'}
-        onPress={() => {
-          RNRestart.restart();
-        }}
-      />
-    </View>
+    // TODO:::This BaseAuthScreen should be renamed and sharable among the multiple domains without repeating the code. Update here once this done.
+    <BaseAuthScreen>
+      <View style={tw`flex-1 items-center mx-5 justify-between mt-65`}>
+        <View>
+          <View style={tw`mb-6`}>
+            <Text variant={TextVariant.SubTitle1}>Something went wrong!</Text>
+          </View>
+          <Text variant={TextVariant.Body2Regular}>
+            OH NO! Error occurred. Click Try Again button to have another go or click Reload App. If this keeps
+            happening please try contacting our team.
+          </Text>
+        </View>
+        <View style={tw`mb-5`}>
+          <View style={tw`mb-4`}>
+            <Button onPress={resetError} title={'TRY AGAIN'} />
+          </View>
+          <Button
+            borderColor={'#1A5C23' as Color}
+            backgroundColor={Color.Transparency.full}
+            textColor={Color.Tertiary.Sz900}
+            activeStateBackgroundColor={Color.Primary.Sz400} //NOTE::not defined within the design system.
+            title={'RELOAD APP'}
+            onPress={() => {
+              RNRestart.restart();
+            }}
+          />
+        </View>
+      </View>
+    </BaseAuthScreen>
   );
 }
