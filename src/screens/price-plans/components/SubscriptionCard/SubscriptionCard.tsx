@@ -32,7 +32,7 @@ export function SubscriptionCard({
     <TouchableOpacity testID={testID} onPress={onCardPress}>
       <Card style={tw`bg-[${Color.Primary.Sz700}]/50 rounded-2.5 content-center`}>
         {betterValue && (
-          <View style={tw`bg-[${Color.Tertiary.Sz900}] h-6.25 rounded-t-2.5`}>
+          <View style={tw`bg-[${selected ? Color.Neutral.Sz600 : Color.Tertiary.Sz900}] h-6.25 rounded-t-2.5`}>
             <Text variant={TextVariant.Labels} color={Color.Primary.Sz900}>
               {betterValue}
             </Text>
