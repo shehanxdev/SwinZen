@@ -32,7 +32,7 @@ exports[`Privacy Policy Screen Screen should render Privacy Policy Screen correc
   }
 >
   <Image
-    resizeMode="repeat"
+    resizeMode="cover"
     source={
       {
         "testUri": "../../../src/assets/images/grassBackground.jpg",
@@ -40,10 +40,8 @@ exports[`Privacy Policy Screen Screen should render Privacy Policy Screen correc
     }
     style={
       {
-        "flexBasis": "0%",
-        "flexGrow": 1,
-        "flexShrink": 1,
         "opacity": 0.1,
+        "position": "absolute",
       }
     }
   />
@@ -52,7 +50,6 @@ exports[`Privacy Policy Screen Screen should render Privacy Policy Screen correc
       {
         "height": "100%",
         "paddingTop": 50,
-        "position": "absolute",
       }
     }
   >

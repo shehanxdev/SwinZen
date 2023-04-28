@@ -4,8 +4,9 @@ import { View } from 'react-native';
 import { DownArrowIcon, Text, UpArrowIcon } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
+import { FaqSection } from '@sz/models';
 
-export function FAQSectionHeader(section, _, isActive) {
+export function FAQSectionHeader(section: FaqSection, _: number, isActive: boolean) {
   return (
     <View style={tw`flex-row justify-between`}>
       <View style={tw`max-w-[90%]`}>
