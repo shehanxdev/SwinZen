@@ -3,8 +3,8 @@ import React from 'react';
 
 import { Color } from '@sz/constants';
 
+import { TextField } from '../TextField.component';
 import { TextFieldProps } from '../TextField.types';
-import { TextField } from './../TextField.component';
 
 describe('TextField Component', () => {
   let value = '';
