@@ -1,6 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import moment from 'moment';
 
+import { NotificationDataType } from '@sz/models';
+
 /**
  * Returns a masked version of an email address, replacing the characters between
  * the first character and the character before "@" symbol with a mask character (defaults to "*").
@@ -16,15 +18,14 @@ export function getMaskedMail(email: string, mask?: string) {
   });
 }
 
-// TODO:: need to change after firebase and API integration
-// type declaration for getSectionList param
-export interface DataProps {
-  time: Date;
-  message: string;
-  read: boolean;
-}
+/**
+ * Returns a section list array with title and data propertised
+ * which is needed for RN SectionList to work properly
+ *
+ * @param {NotificationDataType[]} dataArray - The data array to manipulate.
+ */
 
-// manipulating moment calender according to the design
+// manipulating moment calender according to the design, should config when component is rendering and testing
 moment.updateLocale('en', {
   calendar: {
     lastDay: '[Yesterday]',
@@ -33,13 +34,7 @@ moment.updateLocale('en', {
   },
 });
 
-/**
- * Returns a section list array with title and data propertised
- * which is needed for RN SectionList to work properly
- *
- * @param {DataProps[]} dataArray - The email address to mask.
- */
-export function getSectionList(dataArray: DataProps[]) {
+export function getSectionList(dataArray: NotificationDataType[]) {
   // Create an object to store the sections
   const sections = {};
 
