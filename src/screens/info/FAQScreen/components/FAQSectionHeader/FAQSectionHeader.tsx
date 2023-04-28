@@ -8,7 +8,7 @@ import { FaqSection } from '@sz/models';
 
 export function FAQSectionHeader(section: FaqSection, _: number, isActive: boolean) {
   return (
-    <View style={tw`flex-row justify-between`}>
+    <View style={tw`flex-row justify-between`} testID="FAQSectionHeaderTestID">
       <View style={tw`max-w-[90%]`}>
         <Text variant={TextVariant.Body2SemiBold} color={Color.Neutral.Sz100} textAlign={TextAlignment.Left}>
           {section.title}

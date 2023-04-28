@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FAQ section header should render FAQ Section content correctly 1`] = `
+<View
+  style={
+    {
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+    }
+  }
+  testID="FAQSectionHeaderTestID"
+>
+  <View
+    style={
+      {
+        "maxWidth": "90%",
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F8F9FA",
+            "lineHeight": 24,
+          },
+          {
+            "fontFamily": "SourceSansPro-SemiBold",
+            "fontSize": 16,
+            "fontWeight": "600",
+            "textAlign": "left",
+          },
+        ]
+      }
+    />
+  </View>
+  <SvgMock
+    fill="#FFFFFF"
+    height={24}
+    width={24}
+  />
+</View>
+`;
