@@ -17,6 +17,7 @@
           "@sz/config": "./src/config/index",
           "@sz/constants": "./src/constants/index",
           "@sz/hooks": "./src/hooks/index",
+          "@sz/layout": "./src/layout/index",
           "@sz/models": "./src/models/index",
           "@sz/routes": "./src/routes/index",
           "@sz/screens": "./src/screens/index",
@@ -24,6 +25,12 @@
           "@sz/stores": "./src/stores/index",
           "@sz/utils": "./src/utils/index"
         }
+      }
+    ],
+    [
+      "react-native-reanimated/plugin",
+      {
+        "relativeSourceLocation": true
       }
     ]
   ]

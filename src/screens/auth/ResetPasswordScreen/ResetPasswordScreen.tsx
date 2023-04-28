@@ -5,19 +5,24 @@ import { View } from 'react-native';
 
 import { AccountLockIcon, Button, PasswordField, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, TextVariant } from '@sz/constants';
+import { Color, Route, TextVariant } from '@sz/constants';
 import { ResetPasswordFormValues } from '@sz/models';
+import { NavigationService, ToastService } from '@sz/services';
+import { useDispatch } from '@sz/stores';
 import { resetPasswordValidationSchema } from '@sz/utils';
 
 import { BaseAuthScreen } from '../components/BaseAuthScreen';
 
-export function ResetPasswordScreen() {
+export function ResetPasswordScreen({ route }) {
   const {
     control,
     handleSubmit,
     setFocus,
     formState: { isSubmitted, errors },
   } = useForm<ResetPasswordFormValues>({ mode: 'onChange', resolver: yupResolver(resetPasswordValidationSchema) });
+  const email = route.params.params.email;
+
+  const dispatch = useDispatch();
 
   const onResetPasswordFormInvalid: SubmitErrorHandler<ResetPasswordFormValues> = () => {
     console.log(errors);
@@ -25,22 +30,28 @@ export function ResetPasswordScreen() {
   };
 
   const onResetPasswordFormValid: SubmitHandler<ResetPasswordFormValues> = async formInput => {
-    // TODO: API Integration
     try {
-      console.log('formInput', formInput);
+      await dispatch.userStore.resetPassword({
+        email: email,
+        password: formInput.password,
+      });
+
+      ToastService.success({ message: 'Success!', description: 'Password reset successfullly.' });
+      dispatch.userStore.clearPasswordResetToken();
+      NavigationService.navigate(Route.Login);
     } catch (error: any) {
-      console.log('error', error);
+      ToastService.error({ message: 'Failed!', description: error.data.message });
     }
   };
   return (
     <BaseAuthScreen>
       <View style={tw`flex-1 justify-between`} testID="ResetPasswordScreenTestID">
-        <View style={tw`mx-5 flex-1 justify-center content-center`}>
+        <View style={tw`mx-5 flex-1 content-center`}>
           <View style={tw`items-center`}>
-            <View style={tw`mt-3 mb-5`}>
+            <View style={tw`mt-20`}>
               <Text variant={TextVariant.SubTitle2SemiBold}>Reset password</Text>
             </View>
-            <View style={tw`mb-13`}>
+            <View style={tw`mt-2 mb-8`}>
               <Text variant={TextVariant.Body2Regular}>
                 Your new password must be different from your previously used passwords
               </Text>
@@ -52,7 +63,7 @@ export function ResetPasswordScreen() {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <PasswordField
                 ref={ref}
-                label="Your New Password"
+                label="Your new password"
                 leftIcon={<AccountLockIcon />}
                 maxLength={20}
                 value={value}
@@ -72,7 +83,7 @@ export function ResetPasswordScreen() {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <PasswordField
                 ref={ref}
-                label="Confirm Your New Password"
+                label="Confirm your new password"
                 leftIcon={<AccountLockIcon />}
                 maxLength={20}
                 value={value}
@@ -90,7 +101,7 @@ export function ResetPasswordScreen() {
           <View style={tw`mb-3`}>
             <Button
               onPress={handleSubmit(onResetPasswordFormValid, onResetPasswordFormInvalid)}
-              title="Save new password"
+              title="SAVE NEW PASSWORD"
             />
           </View>
         </View>

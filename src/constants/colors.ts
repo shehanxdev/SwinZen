@@ -12,6 +12,12 @@ enum Primary {
   Sz300 = `#8DBE8B`,
   Sz200 = `#C0DBBF`,
   Sz100 = `#F0F7F0`, //NOTE::figma contain two different colors(#F0F7F0, #C0DBBF) with the border. #C0DBBF neeeds to be removed since it does not consider within the colors
+
+  //NOTE::Following colors are related to the toasts messages but not available within the design system colors.
+  SzSuccess = '#59BC56',
+  SzInfo = '#607CDE',
+  SzError = '#DB4747',
+  SzWarning = '#CFD248',
 }
 
 enum Neutral {
@@ -43,6 +49,7 @@ enum Secondary {
 
 /* Currently this is available within the design system as a Secondary value. Since two different colors cannot exist in there, this has to be added to the design system */
 enum Tertiary {
+  Sz1000 = `#7DC424`,
   Sz900 = `#A2FD2F`,
   Sz800 = `#B5FD59`,
   Sz700 = `#C4FE7A`,
@@ -54,6 +61,7 @@ enum Tertiary {
   Sz100 = `#DAFEAC`, //NOTE::figma contain two different colors(#DAFEAC, #FBFFF7) with the border. #FBFFF7 neeeds to be removed since it does not consider within the colors
 }
 
+//TODO::refactor transparency color to  use with the other color pallettes
 enum Transparency {
   Sz100 = `#212529`,
   Sz80 = `#212529cc`,

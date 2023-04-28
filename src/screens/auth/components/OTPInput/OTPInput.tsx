@@ -1,22 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View } from 'react-native';
-import { Keyboard } from 'react-native';
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field';
 
 import { Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, TextVariant } from '@sz/constants';
+import { TextVariant } from '@sz/constants';
 
 const CELL_COUNT = 6;
 
 export interface OTPInputProps {
   testID?: string;
+  value: string;
   onChangeValue: (text: string) => void;
+  onSubmitEditing: () => void;
 }
 
-export function OTPInput({ testID, onChangeValue }: OTPInputProps) {
-  //TODO::remove thus inner state when integrating with the react-hook-form
-  const [value, setValue] = useState('');
+export function OTPInput({ testID, value, onChangeValue, onSubmitEditing }: OTPInputProps) {
   /*
    * This is an additional logic provided by the react-native-confirmation-code-field library
    * useBlurOnFulfill hook has the logic to blurring <TextInput/> when value all the cells get filled with a value
@@ -35,38 +34,38 @@ export function OTPInput({ testID, onChangeValue }: OTPInputProps) {
    */
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
     value: value,
-    setValue: setValue,
+    setValue: onChangeValue,
   });
 
   return (
-    <CodeField
-      ref={codeFieldRef}
-      caretHidden={false}
-      {...props}
-      value={value}
-      onChangeText={value => {
-        //TODO::add validations when integrating with the react-hook-form
-        setValue(value);
-        onChangeValue(value);
-      }}
-      cellCount={CELL_COUNT}
-      testID={testID}
-      rootStyle={tw`h-17.25 self-center`}
-      keyboardType="number-pad"
-      returnKeyType={'done'}
-      onSubmitEditing={() => Keyboard.dismiss()} //TODO::Remove this or replace with submit handler if not required since keyboard closes automatically after all the digits get filled.
-      textContentType="oneTimeCode"
-      renderCell={({ index, symbol, isFocused }) => (
-        <View
-          onLayout={getCellOnLayoutHandler(index)}
-          key={index}
-          style={tw`h-full rounded-2.5 w-13 justify-center items-center bg-[${Color.Neutral.Sz1000}] ${
-            isFocused ? `border border-[${Color.Neutral.Sz600}]` : 'border-0'
-          } ${index !== 0 ? 'ml-2.5' : 'ml-0'}`}>
-          <Text variant={TextVariant.SubTitle2SemiBold}>{symbol || (isFocused ? <Cursor /> : null)}</Text>
-          {!symbol && <View style={tw`absolute w-7 h-px bg-[${Color.Neutral.Sz600}] bottom-3.5`} />}
-        </View>
-      )}
-    />
+    <View>
+      <CodeField
+        ref={codeFieldRef}
+        caretHidden={false}
+        {...props}
+        value={value}
+        onChangeText={value => {
+          onChangeValue(value);
+        }}
+        cellCount={CELL_COUNT}
+        testID={testID}
+        rootStyle={tw`h-18 self-center`}
+        keyboardType="number-pad"
+        returnKeyType={'done'}
+        onSubmitEditing={onSubmitEditing}
+        textContentType="oneTimeCode"
+        renderCell={({ index, symbol, isFocused }) => (
+          <View
+            onLayout={getCellOnLayoutHandler(index)}
+            key={index}
+            style={tw`h-full rounded-2.5 w-13 justify-center items-center bg-Primary-Sz700 ${
+              isFocused ? `border border-Neutral-Sz100` : 'border-0'
+            } ${index !== 0 ? 'ml-2.5' : 'ml-0'}`}>
+            <Text variant={TextVariant.SubTitle2SemiBold}>{symbol || (isFocused ? <Cursor /> : null)}</Text>
+            {!symbol && <View style={tw`absolute w-7 h-px bg-Neutral-Sz600 bottom-3.5`} />}
+          </View>
+        )}
+      />
+    </View>
   );
 }
