@@ -1,7 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import moment from 'moment';
-
 import { NotificationDataType } from '@sz/models';
+
+import { customMoment } from './moment';
 
 /**
  * Returns a masked version of an email address, replacing the characters between
@@ -24,47 +23,36 @@ export function getMaskedMail(email: string, mask?: string) {
  *
  * @param {NotificationDataType[]} dataArray - The data array to manipulate.
  */
+function getCategorisedAry(dataArray: NotificationDataType[]) {
+  // Create an object to store the sections
+  const sections = {};
 
-// manipulating moment calender according to the design, should config when component is rendering and testing
-moment.updateLocale('en', {
-  calendar: {
-    lastDay: '[Yesterday]',
-    sameDay: '[Today]',
-    lastWeek: '[Last Week]',
-  },
-});
+  // Loop through the dummyData array
+  dataArray.forEach(item => {
+    // Get the date string in the format 'YYYY-MM-DD'
+    const date = item.time.toISOString().split('T')[0];
+
+    // If the section does not exist in the sections object, create it
+    if (!sections[date]) {
+      sections[date] = [];
+    }
+
+    // Add the item to the corresponding section
+    sections[date].push(item);
+  });
+
+  return sections;
+}
+
+function getMappedAry(dataArray: NotificationDataType[]) {
+  const sectionList = Object.keys(getCategorisedAry(dataArray)).map(date => ({
+    title: customMoment(date).calendar(),
+    data: getCategorisedAry(dataArray)[date],
+  }));
+
+  return sectionList;
+}
 
 export function getSectionList(dataArray: NotificationDataType[]) {
-  function getCategorisedAry() {
-    // Create an object to store the sections
-    const sections = {};
-
-    // Loop through the dummyData array
-    dataArray.forEach(item => {
-      // Get the date string in the format 'YYYY-MM-DD'
-      const date = item.time.toISOString().split('T')[0];
-
-      // If the section does not exist in the sections object, create it
-      if (!sections[date]) {
-        sections[date] = [];
-      }
-
-      // Add the item to the corresponding section
-      sections[date].push(item);
-    });
-
-    return sections;
-  }
-
-  function getMappedAry() {
-    // Convert the sections object into an array of sections with titles
-    const sectionList = Object.keys(getCategorisedAry()).map(date => ({
-      title: moment(date).calendar(),
-      data: getCategorisedAry()[date],
-    }));
-
-    return sectionList;
-  }
-
-  return getMappedAry();
+  return getMappedAry(dataArray);
 }

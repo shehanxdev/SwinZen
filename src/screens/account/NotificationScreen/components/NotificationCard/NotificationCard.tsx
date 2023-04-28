@@ -1,17 +1,16 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import moment from 'moment';
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 
 import { NotificationDotIcon, NotificationTimerIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
+import { customMoment } from '@sz/utils';
 
 interface NotificationCardProps {
   testID?: string;
   readStatus: boolean;
   message: string;
-  time: object;
+  time: Date;
 }
 
 export function NotificationCard({ testID, readStatus = false, message, time }: NotificationCardProps) {
@@ -39,7 +38,7 @@ export function NotificationCard({ testID, readStatus = false, message, time }: 
           color={readStatus ? Color.Neutral.Sz600 : Color.Neutral.Sz100}
           variant={TextVariant.Body2Regular}
           textAlign={TextAlignment.Auto}>
-          {moment(time).fromNow()}
+          {customMoment(time).fromNow()}
         </Text>
       </View>
     </TouchableOpacity>
