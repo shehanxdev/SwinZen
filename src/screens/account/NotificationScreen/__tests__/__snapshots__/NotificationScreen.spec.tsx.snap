@@ -358,7 +358,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                       ]
                     }
                   >
-                    in 33 minutes
+                    in 27 minutes
                   </Text>
                 </View>
               </View>
@@ -496,7 +496,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                     ]
                   }
                 >
-                  in 33 minutes
+                  in 27 minutes
                 </Text>
               </View>
             </View>
