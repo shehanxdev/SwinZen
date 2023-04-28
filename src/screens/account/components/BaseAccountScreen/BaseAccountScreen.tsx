@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView } from 'react-native';
+import { Image, KeyboardAvoidingView, Platform, SafeAreaView } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { LinearGradientProps } from 'react-native-linear-gradient';
 
@@ -24,9 +24,7 @@ export function BaseAccountScreen({
       <Image source={images.grassBackground} style={tw`absolute flex-1 opacity-10`} resizeMode="repeat" />
       <SafeAreaView style={tw`h-full pt-[${headerHeight}px]`}>
         <KeyboardAvoidingView style={tw`flex-1`} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-          <ScrollView contentContainerStyle={tw`grow`} keyboardShouldPersistTaps="handled">
-            {children}
-          </ScrollView>
+          {children}
         </KeyboardAvoidingView>
       </SafeAreaView>
     </LinearGradient>

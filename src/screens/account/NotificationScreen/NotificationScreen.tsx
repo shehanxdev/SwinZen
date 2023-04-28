@@ -40,6 +40,7 @@ export function NotificationScreen() {
         </Text>
       </View>
       <SectionList
+        stickySectionHeadersEnabled={false}
         sections={getSectionList(notificationDummyData)}
         keyExtractor={(item, index) => item + index}
         ItemSeparatorComponent={() => <View style={tw`mx-4 h-0.25 bg-[${Color.Neutral.Sz600}]`} />}

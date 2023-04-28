@@ -35,28 +35,36 @@ moment.updateLocale('en', {
 });
 
 export function getSectionList(dataArray: NotificationDataType[]) {
-  // Create an object to store the sections
-  const sections = {};
+  function getCategorisedAry() {
+    // Create an object to store the sections
+    const sections = {};
 
-  // Loop through the dummyData array
-  dataArray.forEach(item => {
-    // Get the date string in the format 'YYYY-MM-DD'
-    const date = item.time.toISOString().split('T')[0];
+    // Loop through the dummyData array
+    dataArray.forEach(item => {
+      // Get the date string in the format 'YYYY-MM-DD'
+      const date = item.time.toISOString().split('T')[0];
 
-    // If the section does not exist in the sections object, create it
-    if (!sections[date]) {
-      sections[date] = [];
-    }
+      // If the section does not exist in the sections object, create it
+      if (!sections[date]) {
+        sections[date] = [];
+      }
 
-    // Add the item to the corresponding section
-    sections[date].push(item);
-  });
+      // Add the item to the corresponding section
+      sections[date].push(item);
+    });
 
-  // Convert the sections object into an array of sections with titles
-  const sectionList = Object.keys(sections).map(date => ({
-    title: moment(date).calendar(),
-    data: sections[date],
-  }));
+    return sections;
+  }
 
-  return sectionList;
+  function getMappedAry() {
+    // Convert the sections object into an array of sections with titles
+    const sectionList = Object.keys(getCategorisedAry()).map(date => ({
+      title: moment(date).calendar(),
+      data: getCategorisedAry()[date],
+    }));
+
+    return sectionList;
+  }
+
+  return getMappedAry();
 }
