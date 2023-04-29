@@ -32,7 +32,9 @@ exports[`FAQ section header should render FAQ Section content correctly 1`] = `
           },
         ]
       }
-    />
+    >
+      Lorem ipsum dolor sit amet, consectetur
+    </Text>
   </View>
   <SvgMock
     fill="#FFFFFF"

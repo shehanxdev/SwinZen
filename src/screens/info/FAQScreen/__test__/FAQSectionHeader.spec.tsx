@@ -1,18 +1,18 @@
 import { render } from '@testing-library/react-native';
-import * as React from 'react';
 
 import { FAQSectionHeader } from '../components/FAQSectionHeader';
 
 describe('FAQ section header', () => {
   const testID = 'FAQSectionHeaderTestID';
-  const dummyFAQ = {
-    title: 'Lorem ipsum dolor sit amet, consectetur',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non dolor purus. Nunc semper sapien congue tortor',
-  };
+  const dummyFAQ = [
+    {
+      title: 'Lorem ipsum dolor sit amet, consectetur',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non dolor purus. Nunc semper sapien congue tortor',
+    },
+  ];
 
-  //@ts-ignore
-  const getRenderedComponent = () => render(<FAQSectionHeader content={dummyFAQ} index={1} isActive={true} />);
+  const getRenderedComponent = () => render(FAQSectionHeader(dummyFAQ[0], 1, true));
 
   it(`should render FAQ Section content correctly`, () => {
     const renderer = getRenderedComponent();
