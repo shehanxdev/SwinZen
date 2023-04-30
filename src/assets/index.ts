@@ -32,6 +32,7 @@ export { default as NotificationDotSvg } from './icons/account/notification-dot.
 export { default as NotificationTimerSvg } from './icons/account/notification-timer.svg';
 export { default as PasswordHideEyeSvg } from './icons/account/password-hide-eye.svg';
 export { default as PasswordRevealEyeSvg } from './icons/account/password-reveal-eye.svg';
+export { default as PhoneIconSvg } from './icons/other/phone-icon.svg';
 export { default as PlayButtonSvg } from './icons/main/play-button.svg';
 export { default as PricePlanFeatureListTick } from './icons/price-plan/price-plan-feature-list-tick.svg';
 export { default as ProfileIconSvg } from './icons/account/profile_icon.svg';
