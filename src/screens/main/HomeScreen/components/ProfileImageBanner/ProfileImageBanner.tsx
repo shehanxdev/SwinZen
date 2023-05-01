@@ -26,8 +26,9 @@ export function ProfileImageBanner() {
   const currentWindowWidth = Dimensions.get('window').width;
 
   const [profileImage] = useState(null); //TODO::remove this when integrations with the APIs && get profile related data for the store.
-
   const [backgroundContainerWidth, setBackgroundContainerWidth] = useState(currentWindowWidth);
+
+  //containerWidth = backgroundContainerWidth - {profileImageWidth / 2}
   const containerWidth = useMemo(
     () => backgroundContainerWidth - (PROFILE_IMAGE_DIMENTIONS.width / 2) * 4,
     [backgroundContainerWidth],
