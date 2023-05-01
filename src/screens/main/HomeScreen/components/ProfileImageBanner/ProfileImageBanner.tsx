@@ -58,6 +58,7 @@ export function ProfileImageBanner() {
         let { width } = event.nativeEvent.layout;
         setBackgroundContainerWidth(width);
       }}
+      testID="ProfileImageBannerComponentTestID"
       style={tw`w-full h-18 rounded-2.5`}>
       {renderProfileImageBanner}
       <TouchableOpacity
