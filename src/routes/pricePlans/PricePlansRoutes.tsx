@@ -4,11 +4,14 @@ import { TouchableOpacity } from 'react-native';
 
 import { BackIcon, Text } from '@sz/components';
 import { Route, TextAlignment, TextVariant } from '@sz/constants';
-import { PricePlansScreen } from '@sz/screens';
+import { PlanDetailsScreen, PricePlansScreen } from '@sz/screens';
 import { NavigationService } from '@sz/services';
 
 export type PricePlansStackParamList = {
   [Route.PricePlans]: {
+    // Can be used for future props
+  };
+  [Route.PlanDetails]: {
     // Can be used for future props
   };
 };
@@ -30,6 +33,7 @@ export function PricePlansStack() {
         ),
       }}>
       <Stack.Screen name={Route.PricePlans} component={PricePlansScreen} options={{ headerShown: false }} />
+      <Stack.Screen name={Route.PlanDetails} component={PlanDetailsScreen} options={{ title: '' }} />
     </Stack.Navigator>
   );
 }
