@@ -12,6 +12,7 @@ interface ArrowContainerProps extends PropsWithChildren {
 export function ArrowContainer({ children, onArrowIconPress, disabled = false }: ArrowContainerProps) {
   return (
     <TouchableOpacity
+      disabled={disabled}
       style={tw`h-7.5 w-7.5 rounded-full justify-center items-center bg-[${
         disabled ? Color.Neutral.Sz600 : '#1A5C23'
       }]`}
