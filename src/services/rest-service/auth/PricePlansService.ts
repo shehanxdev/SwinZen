@@ -7,7 +7,9 @@ export class PricePlansService {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     try {
-      const response = await httpServiceInstance.get<ApiResponse<PricePlansResponse>, ApiErrorResponse>('/plans');
+      const response = await httpServiceInstance.get<ApiResponse<PricePlansResponse>, ApiErrorResponse>('/plans', {
+        sortBy: 'price:asc',
+      });
 
       if (!response?.data) {
         throw new APIError('UNKNOWN_ERROR');
