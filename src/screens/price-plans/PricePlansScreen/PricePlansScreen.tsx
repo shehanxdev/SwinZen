@@ -30,14 +30,19 @@ export function PricePlansScreen({ route }) {
       ) : (
         <View style={tw`mt-10 mx-6.25`}>
           {data &&
-            data.results.map((data, index) => (
+            data.results.map((item, index) => (
               <View key={index} style={tw`my-2`}>
                 <SubscriptionCard
-                  title={data.name}
-                  price={data.price}
-                  frequency={data.frequency}
-                  featureList={data.features}
-                  betterValue={data.banner}
+                  title={item.name}
+                  price={item.price}
+                  frequency={item.frequency}
+                  featureList={item.features}
+                  betterValue={item.banner}
+                  onCardPress={
+                    item.frequency
+                      ? () => NavigationService.navigate(Route.PlanDetails, { item })
+                      : () => NavigationService.navigate(Route.MainStack)
+                  }
                 />
               </View>
             ))}

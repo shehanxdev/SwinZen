@@ -9,7 +9,7 @@ import { NavigationService } from '@sz/services';
 import { BasePricePlansScreen } from '../components';
 
 export function PlanDetailsScreen({ route }) {
-  const data = route.params.params.data;
+  const data = route.params.params.item;
 
   const onProceed = () => {
     //TODO:: handle payment proceed and change routes later
