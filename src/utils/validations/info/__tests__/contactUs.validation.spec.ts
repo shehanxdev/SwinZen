@@ -5,7 +5,7 @@ describe('contact us validation schema', () => {
     const validInput = {
       name: 'John',
       username: 'john@example.com',
-      mobileNumber: '+15555551234',
+      mobileNumber: '+1 123 345 453',
       message: 'Valid test message',
     };
     let validationResult;

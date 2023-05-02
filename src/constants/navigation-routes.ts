@@ -28,4 +28,6 @@ export enum Route {
   TermsOfUse = 'terms-of-use',
   UploadVideoTab = 'upload-video-tab',
   VideosTab = 'videos-tab',
+  ProfileStack = 'profile-stack',
+  ChangePassword = 'change-password',
 }

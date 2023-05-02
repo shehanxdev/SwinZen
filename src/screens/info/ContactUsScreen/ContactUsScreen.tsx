@@ -4,7 +4,7 @@ import { Controller, useForm } from 'react-hook-form';
 import { View } from 'react-native';
 import { ContactUsFormValues } from 'src/models/info/contactUs.interface';
 
-import { Button, MailIcon, PhoneIcon, ProfileIcon, Text, TextArea, TextField } from '@sz/components';
+import { Button, MailIcon, MobileNumberField, ProfileIcon, Text, TextArea, TextField } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 import { contactUsValidationSchema } from '@sz/utils';
@@ -78,11 +78,10 @@ export function ContactUsScreen() {
             control={control}
             name="mobileNumber"
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
-              <TextField
+              <MobileNumberField
                 ref={ref}
                 label="Phone number(Optional)"
-                leftIcon={<PhoneIcon />}
-                maxLength={12}
+                maxLength={14}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
