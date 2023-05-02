@@ -39,7 +39,7 @@ export function MonthSelector({ disabled = false, onNextPreviousIconPress, onNex
   const isLimitReached = useMemo(() => visibleMonth.getMonth() === new Date().getMonth(), [visibleMonth]);
 
   return (
-    <View style={tw`flex flex-row h-18 justify-between items-center px-4`}>
+    <View style={tw`flex flex-row h-18 justify-between items-center px-4`} testID="MonthSelectorComponentTestID">
       <ArrowContainer onArrowIconPress={onNextPreviousIconPressInternal}>
         <MoveLeftArrowIcon />
       </ArrowContainer>
