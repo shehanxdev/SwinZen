@@ -13,6 +13,7 @@ export { default as PlayButtonSvg } from './icons/main/play-button.svg';
 export { default as ErrorIconSvg } from './icons/main/error.svg';
 export { default as SwingZenLogoSvg } from './logo/swingzen-logo.svg';
 export { default as CloseButtonSvg } from './icons/other/close-button.svg';
+export { default as PhoneIconSvg } from './icons/other/phone-icon.svg';
 export { default as CrossSvg } from './icons/other/cross-icon.svg';
 export { default as CustomMenuSvg } from './icons/main/custom-menu.svg';
 export { default as ArrowDown } from './icons/faq/arrow-down.svg';
