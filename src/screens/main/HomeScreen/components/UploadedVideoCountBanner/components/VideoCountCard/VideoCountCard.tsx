@@ -5,7 +5,7 @@ import { Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
-interface VideoCountCardProps {
+export interface VideoCountCardProps {
   count: number | string;
   description: string;
   backgroundColor?: Color;
