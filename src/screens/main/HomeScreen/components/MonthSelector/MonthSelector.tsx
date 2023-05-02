@@ -40,13 +40,13 @@ export function MonthSelector({ disabled = false, onNextPreviousIconPress, onNex
 
   return (
     <View style={tw`flex flex-row h-18 justify-between items-center px-4`} testID="MonthSelectorComponentTestID">
-      <ArrowContainer onArrowIconPress={onNextPreviousIconPressInternal}>
+      <ArrowContainer onArrowIconPress={onNextPreviousIconPressInternal} disabled={disabled}>
         <MoveLeftArrowIcon />
       </ArrowContainer>
       <Text variant={TextVariant.SubTitle2SemiBold} color={disabled ? Color.Neutral.Sz600 : ('#1A5C23' as Color)}>
         {renderMonthDate}
       </Text>
-      <ArrowContainer onArrowIconPress={onNextMonthIconPressInternal} disabled={isLimitReached}>
+      <ArrowContainer onArrowIconPress={onNextMonthIconPressInternal} disabled={isLimitReached || disabled}>
         <MoveRightArrowIcon />
       </ArrowContainer>
     </View>
