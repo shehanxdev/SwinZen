@@ -5,7 +5,7 @@ import { TextInput } from 'react-native-paper';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
-import { Text } from '../Typography';
+import { Text } from '../../Typography';
 import { TextFieldProps } from './TextField.types';
 
 //TODO::handle scroll on focus
