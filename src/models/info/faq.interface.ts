@@ -1,4 +1,8 @@
 export interface FaqSection {
-  title: string;
-  content: string;
+  question: string;
+  answer: string;
+}
+
+export interface FaqResponse {
+  results: [FaqSection];
 }

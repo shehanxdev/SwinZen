@@ -11,7 +11,7 @@ export function FAQSectionHeader(section: FaqSection, _: number, isActive: boole
     <View style={tw`flex-row justify-between`}>
       <View style={tw`max-w-[90%]`}>
         <Text variant={TextVariant.Body2SemiBold} color={Color.Neutral.Sz100} textAlign={TextAlignment.Left}>
-          {section.title}
+          {section.question}
         </Text>
       </View>
       {isActive ? <DownArrowIcon /> : <UpArrowIcon />}
