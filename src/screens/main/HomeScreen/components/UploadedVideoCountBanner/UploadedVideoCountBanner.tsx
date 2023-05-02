@@ -13,7 +13,7 @@ interface UploadedVideoCountBannerProps {
 
 export function UploadedVideoCountBanner({ VideoCount = 0, SwinZenUniVideoCount = 0 }: UploadedVideoCountBannerProps) {
   return (
-    <View style={[tw`flex flex-row justify-between min-h-15`]}>
+    <View style={[tw`flex flex-row justify-between min-h-15`]} testID="UploadedVideoCountBannerComponentTestID">
       <VideoCountCard count={VideoCount} description={`Video\nUploads`} />
       <View style={tw`w-2.5`} />
       <VideoCountCard
