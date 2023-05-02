@@ -937,7 +937,7 @@ exports[`ContactUs Screen should render ContactUsScreen correctly 1`] = `
               <View
                 style={
                   {
-                    "marginBottom": 63,
+                    "marginBottom": 16,
                   }
                 }
               >
