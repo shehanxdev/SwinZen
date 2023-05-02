@@ -8,7 +8,7 @@ export const contactUsFormErrorMessages = {
   'name:max': 'Username must not be 10 letters long',
 
   'username:required': 'Please enter Email ID',
-  'username:email': 'Invalid Email',
+  'username:invalid': 'Invalid Email',
   'username:max': 'Email must not be 50 letters long',
 
   'mobileNumber:required': 'Please enter phone number',
@@ -29,7 +29,7 @@ export const contactUsValidationSchema = yup
     username: yup
       .string()
       .required(contactUsFormErrorMessages['username:required'])
-      .email(contactUsFormErrorMessages['username:email'])
+      .email(contactUsFormErrorMessages['username:invalid'])
       .max(50, contactUsFormErrorMessages['username:max']),
     mobileNumber: yup
       .string()
