@@ -25,6 +25,8 @@ import {
   DrawerTermsSvg,
   ErrorIconSvg,
   MailIconSvg,
+  MoveLeftArrowSvg,
+  MoveRightArrowSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
   PhoneIconSvg,
@@ -174,4 +176,12 @@ export function SwingZenLogoIcon({ color, width = 108, height = 55 }: SvgIconPro
 
 export function PhoneIcon({ color = Color.Neutral.Sz500, width = 18, height = 18 }: SvgIconProps) {
   return <PhoneIconSvg width={width} height={height} fill={color} />;
+}
+
+export function MoveLeftArrowIcon({ color = Color.Neutral.White, width = 15, height = 15 }: SvgIconProps) {
+  return <MoveLeftArrowSvg width={width} height={height} fill={color} />;
+}
+
+export function MoveRightArrowIcon({ color = Color.Neutral.White, width = 15, height = 15 }: SvgIconProps) {
+  return <MoveRightArrowSvg width={width} height={height} fill={color} />;
 }
