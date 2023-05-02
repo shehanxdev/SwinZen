@@ -6,7 +6,7 @@ export class InfoService {
   static async getFAQ() {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
     try {
-      const response = await httpServiceInstance.getAnonymous<ApiResponse<FaqResponse>, ApiErrorResponse>('faq');
+      const response = await httpServiceInstance.getAnonymous<ApiResponse<FaqResponse>, ApiErrorResponse>('/faq');
 
       if (!response) {
         throw new APIError('UNKNOWN_ERROR');

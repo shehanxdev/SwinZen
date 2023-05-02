@@ -4,5 +4,5 @@ export interface FaqSection {
 }
 
 export interface FaqResponse {
-  results: [FaqSection];
+  results: FaqSection[];
 }

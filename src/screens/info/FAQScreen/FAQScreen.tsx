@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { ActivityIndicator, TouchableOpacity, View } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
 
+import { Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color } from '@sz/constants';
+import { TextVariant } from '@sz/constants';
 import { useFetch } from '@sz/hooks';
 import { InfoService } from '@sz/services';
 
@@ -20,12 +21,12 @@ export function FAQScreen() {
 
   return (
     <BaseInfoScreen>
-      <View style={tw`bg-[${Color.Primary.Sz900}]/46 rounded-2.5 m-4 p-4`}>
+      <View style={tw`bg-Primary-Sz900 rounded-2.5 m-4 p-4`}>
         {
           //TODO:: to be replaced with a proper loader
           isLoading && <ActivityIndicator size="large" />
         }
-        {data?.length && (
+        {!isLoading && data?.length && (
           <Accordion
             sections={data}
             activeSections={activeSections}
@@ -38,6 +39,11 @@ export function FAQScreen() {
             expandMultiple={false}
           />
         )}
+
+        {
+          //TODO:: to be replaced with a proper UI
+          !isLoading && !data?.length && <Text variant={TextVariant.Body1Regular}>No FAQ's available</Text>
+        }
       </View>
     </BaseInfoScreen>
   );
