@@ -12,7 +12,8 @@ describe('FAQ section header', () => {
     },
   ];
 
-  const getRenderedComponent = () => render(FAQSectionHeader(dummyFAQ[0], 1, true));
+  const getRenderedComponent = () => render(<FAQSectionHeader content={dummyFAQ[0]} index={1} isActive={true} />);
+  // const getRenderedComponent = () => render(FAQSectionHeader(dummyFAQ[0], 1, true));
 
   it(`should render FAQ Section content correctly`, () => {
     const renderer = getRenderedComponent();
