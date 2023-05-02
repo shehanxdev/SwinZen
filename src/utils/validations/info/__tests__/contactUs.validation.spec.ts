@@ -10,6 +10,7 @@ describe('contact us validation schema', () => {
     };
     await expect(contactUsValidationSchema.validate(validInput)).resolves.toBeTruthy();
   });
+
   it('should give an error if the name field is empty', async () => {
     const invalidNameInput = '';
 
@@ -19,6 +20,7 @@ describe('contact us validation schema', () => {
       expect(error.message).toBe(contactUsFormErrorMessages['name:required']);
     }
   });
+
   it('should give an error if the name input has less than 2 characters', async () => {
     const invalidNameInput = 'J';
 
@@ -38,6 +40,7 @@ describe('contact us validation schema', () => {
       expect(error.message).toBe(contactUsFormErrorMessages['name:max']);
     }
   });
+
   it('should not give an error if the userName(Email) input is valid', async () => {
     const validEmails = [
       'prettyandsimple@example.com',
@@ -105,6 +108,7 @@ describe('contact us validation schema', () => {
       expect(error.message).toBe(contactUsFormErrorMessages['mobileNumber:required']);
     }
   });
+
   it('should should give an error for invalid mobile number input', async () => {
     const invalidMobileNumberInputs = [
       '+1 123 45 678',
@@ -126,6 +130,7 @@ describe('contact us validation schema', () => {
       }
     }
   });
+
   it('should should not give an error for valid mobile number input', async () => {
     const validMobileNumberInputs = [
       '+1 225 555 443',
@@ -151,6 +156,7 @@ describe('contact us validation schema', () => {
       expect(error.message).toBe(contactUsFormErrorMessages['message:required']);
     }
   });
+
   it('should give an erro if the message is too long', async () => {
     const invalidMessageInput = `${'a'.repeat(201)}`;
 
