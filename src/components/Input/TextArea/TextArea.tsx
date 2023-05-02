@@ -3,8 +3,8 @@ import { TextInput as RNTextInput } from 'react-native';
 
 import { tw } from '@sz/config';
 
-import { TextField } from './TextField.component';
-import { TextFieldProps } from './TextField.types';
+import { TextField } from '../TextField/TextField.component';
+import { TextFieldProps } from '../TextField/TextField.types';
 
 type TextAreaProps = Omit<TextFieldProps, 'leftIcon' | 'rightIcon' | 'onRightIconPress' | 'multiline'>;
 

@@ -80,5 +80,12 @@ export const userStore = createModel<RootModel>()({
       const { passwordResetToken } = state.userStore;
       await AuthService.resetPassword(payload, { 'x-auth': passwordResetToken });
     },
+    async profileChangePassword(
+      {
+        /* PAYLOAD */
+      },
+    ) {
+      //TODO::implement
+    },
   }),
 });

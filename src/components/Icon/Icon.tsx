@@ -27,6 +27,7 @@ import {
   MailIconSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
+  PhoneIconSvg,
   PlayButtonSvg,
   PricePlanFeatureListTick,
   ProfileIconSvg,
@@ -169,4 +170,8 @@ export function SecurityIcon({ color = Color.Neutral.Sz500, width = 20, height =
 
 export function SwingZenLogoIcon({ color, width = 108, height = 55 }: SvgIconProps) {
   return <SwingZenLogoSvg width={width} height={height} fill={color} />;
+}
+
+export function PhoneIcon({ color = Color.Neutral.Sz500, width = 18, height = 18 }: SvgIconProps) {
+  return <PhoneIconSvg width={width} height={height} fill={color} />;
 }
