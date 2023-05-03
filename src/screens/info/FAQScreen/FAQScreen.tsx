@@ -26,6 +26,7 @@ export function FAQScreen() {
       return <ActivityIndicator size="large" />; //TODO:: to be replaced with a proper loader
     } else if (data?.length) {
       return (
+        //TODO::handle pagination
         <Accordion
           sections={data ?? []}
           activeSections={activeSections}
