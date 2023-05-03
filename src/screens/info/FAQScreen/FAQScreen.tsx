@@ -4,6 +4,7 @@ import Accordion from 'react-native-collapsible/Accordion';
 
 import { tw } from '@sz/config';
 import { Color } from '@sz/constants';
+import { FaqSection } from '@sz/models';
 
 import { BaseInfoScreen } from '../components';
 import { CONTENT } from './FAQDummyData';
@@ -18,11 +19,13 @@ export function FAQScreen() {
 
   return (
     <BaseInfoScreen>
-      <View style={tw`bg-[${Color.Primary.Sz900}]/46 rounded-2.5 m-4 p-4`}>
+      <View style={tw`bg-[${Color.Primary.Sz900}]/46 rounded-2.5 m-4 p-4`} testID="FAQScreenTestID">
         <Accordion
           sections={CONTENT}
           activeSections={activeSections}
-          renderHeader={FAQSectionHeader}
+          renderHeader={(content: FaqSection, index: number, isActive: boolean) => (
+            <FAQSectionHeader content={content} index={index} isActive={isActive} />
+          )}
           renderContent={FAQSectionContent}
           renderAsFlatList={false}
           sectionContainerStyle={tw`mb-9`}
