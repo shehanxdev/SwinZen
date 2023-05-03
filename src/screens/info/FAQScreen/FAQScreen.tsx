@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { ActivityIndicator, TouchableOpacity, View } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
 
@@ -19,31 +19,33 @@ export function FAQScreen() {
     setActiveSections(sections.includes(undefined) ? [] : sections);
   };
 
-  return (
-    <BaseInfoScreen>
-      <View style={tw`bg-Primary-Sz900 rounded-2.5 m-4 p-4`}>
-        {
-          //TODO:: to be replaced with a proper loader
-          isLoading && <ActivityIndicator size="large" />
-        }
-        {!isLoading && data?.length && (
-          <Accordion
-            sections={data}
-            activeSections={activeSections}
-            renderHeader={FAQSectionHeader}
-            renderContent={FAQSectionContent}
-            renderAsFlatList={false}
-            sectionContainerStyle={tw`mb-9`}
-            touchableComponent={TouchableOpacity}
-            onChange={setSections}
-            expandMultiple={false}
-          />
-        )}
+  const renderFAQ = useMemo(() => {
+    //TODO:: to be replaced with a proper loader
+    if (isLoading) return <ActivityIndicator size="large" />;
+    else if (data?.length) {
+      return (
+        <Accordion
+          sections={data ?? []}
+          activeSections={activeSections}
+          renderHeader={FAQSectionHeader}
+          renderContent={FAQSectionContent}
+          renderAsFlatList={true}
+          sectionContainerStyle={tw`mb-9`}
+          touchableComponent={TouchableOpacity}
+          onChange={setSections}
+          expandMultiple={false}
+        />
+      );
+    } else {
+      //TODO:: to be replaced with a proper UI
+      <Text variant={TextVariant.Body1Regular}>No FAQ's available</Text>;
+    }
+  }, [isLoading, data, activeSections]);
 
-        {
-          //TODO:: to be replaced with a proper UI
-          !isLoading && !data?.length && <Text variant={TextVariant.Body1Regular}>No FAQ's available</Text>
-        }
+  return (
+    <BaseInfoScreen wrapWithScrollView={false}>
+      <View style={[tw`bg-Primary-Sz900 rounded-2.5 m-4 p-4 `, { backgroundColor: `rgba(0,0,0,.5)` }]}>
+        {renderFAQ}
       </View>
     </BaseInfoScreen>
   );
