@@ -6,6 +6,7 @@ import { Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { TextVariant } from '@sz/constants';
 import { useFetch } from '@sz/hooks';
+import { FaqSection } from '@sz/models';
 import { InfoService } from '@sz/services';
 
 import { BaseInfoScreen } from '../components';
@@ -27,7 +28,9 @@ export function FAQScreen() {
         <Accordion
           sections={data ?? []}
           activeSections={activeSections}
-          renderHeader={FAQSectionHeader}
+          renderHeader={(content: FaqSection, index: number, isActive: boolean) => (
+            <FAQSectionHeader content={content} index={index} isActive={isActive} />
+          )}
           renderContent={FAQSectionContent}
           renderAsFlatList={true}
           sectionContainerStyle={tw`mb-9`}
@@ -44,7 +47,9 @@ export function FAQScreen() {
 
   return (
     <BaseInfoScreen wrapWithScrollView={false}>
-      <View style={[tw`bg-Primary-Sz900 rounded-2.5 m-4 p-4 `, { backgroundColor: `rgba(0,0,0,.5)` }]}>
+      <View
+        style={[tw`bg-Primary-Sz900 rounded-2.5 m-4 p-4 `, { backgroundColor: `rgba(0,0,0,.5)` }]}
+        testID="FAQScreenTestID">
         {renderFAQ}
       </View>
     </BaseInfoScreen>
