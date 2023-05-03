@@ -30,3 +30,13 @@ jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 jest.mock('@react-navigation/elements', () => ({
   useHeaderHeight: jest.fn(() => 50), // Mock the useHeaderHeight hook
 }));
+
+jest.mock('@react-native-firebase/messaging', () => ({
+  messaging: jest.fn(() => ({
+    hasPermission: jest.fn(() => Promise.resolve(true)),
+    subscribeToTopic: jest.fn(),
+    unsubscribeFromTopic: jest.fn(),
+    requestPermission: jest.fn(() => Promise.resolve(true)),
+    getToken: jest.fn(() => Promise.resolve('myMockToken')),
+  })),
+}));
