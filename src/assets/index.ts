@@ -39,3 +39,4 @@ export { default as ProfileIconSvg } from './icons/account/profile_icon.svg';
 export { default as SecurityIconSvg } from './icons/account/security_icon.svg';
 export { default as SwingZenLogoSvg } from './logo/swingzen-logo.svg';
 export { default as UploadSvg } from './icons/main/document-upload.svg';
+export { default as PhoneSvg } from './icons/contact-us/phone-icon.svg';
