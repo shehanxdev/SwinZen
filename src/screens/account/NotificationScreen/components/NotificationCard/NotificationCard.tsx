@@ -2,9 +2,8 @@ import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 
 import { NotificationDotIcon, NotificationTimerIcon, Text } from '@sz/components';
-import { tw } from '@sz/config';
+import { customMomentFn, tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
-import { updatedMoment } from '@sz/utils';
 
 interface NotificationCardProps {
   testID?: string;
@@ -38,7 +37,7 @@ export function NotificationCard({ testID, readStatus = false, message, time }: 
           color={readStatus ? Color.Neutral.Sz600 : Color.Neutral.Sz100}
           variant={TextVariant.Body2Regular}
           textAlign={TextAlignment.Auto}>
-          {updatedMoment(time).fromNow()}
+          {customMomentFn(time).fromNow()}
         </Text>
       </View>
     </TouchableOpacity>
