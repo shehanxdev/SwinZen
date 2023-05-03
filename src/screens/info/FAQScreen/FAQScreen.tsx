@@ -14,6 +14,7 @@ import { FAQSectionContent, FAQSectionHeader } from './components';
 
 export function FAQScreen() {
   const [activeSections, setActiveSections] = useState([]);
+
   const { isLoading, data } = useFetch(InfoService.getFAQ);
 
   const setSections = (sections: number[]) => {
@@ -21,9 +22,9 @@ export function FAQScreen() {
   };
 
   const renderFAQ = useMemo(() => {
-    //TODO:: to be replaced with a proper loader
-    if (isLoading) return <ActivityIndicator size="large" />;
-    else if (data?.length) {
+    if (isLoading) {
+      return <ActivityIndicator size="large" />; //TODO:: to be replaced with a proper loader
+    } else if (data?.length) {
       return (
         <Accordion
           sections={data ?? []}
@@ -47,9 +48,7 @@ export function FAQScreen() {
 
   return (
     <BaseInfoScreen wrapWithScrollView={false}>
-      <View
-        style={[tw`bg-Primary-Sz900 rounded-2.5 m-4 p-4 `, { backgroundColor: `rgba(0,0,0,.5)` }]}
-        testID="FAQScreenTestID">
+      <View style={tw`rounded-2.5 m-4 p-4 bg-Transparency-dark`} testID="FAQScreenTestID">
         {renderFAQ}
       </View>
     </BaseInfoScreen>
