@@ -10,18 +10,18 @@ import { useHeaderHeight } from '@sz/hooks';
 
 interface BaseAccountScreenProps extends Partial<LinearGradientProps> {
   children: React.ReactNode;
-  wrappWithScrollView?: boolean;
+  wrapWithScrollView?: boolean;
 }
 
 export function BaseAccountScreen({
   children,
-  wrappWithScrollView = true,
+  wrapWithScrollView = true,
   colors = ['#1A5C23', Color.Primary.Sz800, Color.Primary.Sz900], //TODO:: update, these colours are NOT available within the design system
   ...otherlinearGradientProps
 }: BaseAccountScreenProps) {
   const headerHeight = useHeaderHeight();
 
-  const renderChildren = wrappWithScrollView ? (
+  const renderChildren = wrapWithScrollView ? (
     <ScrollView contentContainerStyle={tw`grow`} keyboardShouldPersistTaps="handled">
       {children}
     </ScrollView>

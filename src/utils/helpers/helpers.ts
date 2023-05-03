@@ -1,6 +1,6 @@
 import { NotificationDataType } from '@sz/models';
 
-import { customMoment } from './moment';
+import { updatedMoment } from './moment';
 
 /**
  * Returns a masked version of an email address, replacing the characters between
@@ -18,12 +18,11 @@ export function getMaskedMail(email: string, mask?: string) {
 }
 
 /**
- * Returns a section list array with title and data propertised
- * which is needed for RN SectionList to work properly
+ * Returns a sections array after categorising by the date
  *
  * @param {NotificationDataType[]} dataArray - The data array to manipulate.
  */
-function getCategorisedAry(dataArray: NotificationDataType[]) {
+function getSectonsByDate(dataArray: NotificationDataType[]) {
   // Create an object to store the sections
   const sections = {};
 
@@ -44,15 +43,26 @@ function getCategorisedAry(dataArray: NotificationDataType[]) {
   return sections;
 }
 
-function getMappedAry(dataArray: NotificationDataType[]) {
-  const sectionList = Object.keys(getCategorisedAry(dataArray)).map(date => ({
-    title: customMoment(date).calendar(),
-    data: getCategorisedAry(dataArray)[date],
+/**
+ * Returns a section list array with title and data array propertised by the categorised sections
+ *
+ * @param {NotificationDataType[]} dataArray - The data array to manipulate.
+ */
+function getMappedSectionsByCalendar(dataArray: NotificationDataType[]) {
+  const sectionList = Object.keys(getSectonsByDate(dataArray)).map(date => ({
+    title: updatedMoment(date).calendar(),
+    data: getSectonsByDate(dataArray)[date],
   }));
 
   return sectionList;
 }
 
+/**
+ * Returns a section list array with title and data propertised
+ * which is needed for RN SectionList to work properly
+ *
+ * @param {NotificationDataType[]} dataArray - The data array to manipulate.
+ */
 export function getSectionList(dataArray: NotificationDataType[]) {
-  return getMappedAry(dataArray);
+  return getMappedSectionsByCalendar(dataArray);
 }

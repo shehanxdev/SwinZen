@@ -6,7 +6,7 @@ import moment from 'moment';
  *
  * @param {string | Date} data - The data/time string or Date object.
  */
-export function customMoment(data?: string | Date) {
+export function updatedMoment(data?: string | Date) {
   // manipulating moment calender according to the design, should config when component is rendering and testing
   moment.updateLocale('en', {
     calendar: {

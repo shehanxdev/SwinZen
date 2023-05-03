@@ -15,7 +15,7 @@ const unreadCount = notificationDummyData.reduce((count, message) => (message.re
 
 export function NotificationScreen() {
   return (
-    <BaseAccountScreen testID="NotificationScreenTestID" wrappWithScrollView={false}>
+    <BaseAccountScreen testID="NotificationScreenTestID" wrapWithScrollView={false}>
       <View style={tw`mt-3 mx-5`}>
         <Text variant={TextVariant.Body2SemiBold} textAlign={TextAlignment.Auto}>
           You have
@@ -29,7 +29,7 @@ export function NotificationScreen() {
         stickySectionHeadersEnabled={false}
         sections={getSectionList(notificationDummyData)}
         keyExtractor={(item, index) => item + index}
-        ItemSeparatorComponent={() => <View style={tw`mx-4 h-0.25 bg-[${Color.Neutral.Sz600}]`} />}
+        ItemSeparatorComponent={() => <View style={tw`mx-4 h-0.25 bg-Neutral-Sz600`} />}
         renderItem={({ item }) => <NotificationCard time={item.time} message={item.message} readStatus={item.read} />}
         renderSectionHeader={({ section: { title } }) => <SectionHeader title={title} />}
       />
