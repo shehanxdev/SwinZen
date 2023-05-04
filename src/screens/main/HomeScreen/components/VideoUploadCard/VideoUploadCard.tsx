@@ -2,25 +2,27 @@ import React, { ReactElement, useMemo, useState } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { ErrorIcon, Link, Text, UploadIcon } from '@sz/components';
+import { ErrorIcon, Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextVariant } from '@sz/constants';
 
-import { VideoUploadCardFooter } from './VideoUploadCardFooter';
+//import { VideoUploadCardFooter } from './VideoUploadCardFooter';
 
 type RenderedData = {
-  icon: ReactElement;
+  icon?: ReactElement;
   title: string;
   linkText?: string;
 };
-const blackColorWithAlpha = Color.Neutral.Black + '33'; //TODO:: Decide
+
+//*NOTE:: Following color are colors in the design system but with custom alpha values
+const blackColorWithAlpha = Color.Neutral.Black + '33';
 const orangeColorWithAlpha = Color.Secondary.Sz900 + '57';
 
 export function VideoUploadCard() {
   //TODO:: Removed this once the upload logic gets implemented
 
   const [isLoading, setIsLoading] = useState(false);
-  const [isError] = useState(false);
+  const [isError] = useState(true);
 
   //TODO:: Removed this once the upload logic gets implemented
   const onUpload = () => {
@@ -38,13 +40,12 @@ export function VideoUploadCard() {
       };
     } else if (isError) {
       return {
-        icon: <ErrorIcon />,
+        icon: <ErrorIcon color={Color.Secondary.Sz900} />,
         title: 'Your video failed to upload!',
         linkText: 'Find out why',
       };
     } else {
       return {
-        icon: <UploadIcon />,
         title: 'No Data to Report. Get Started!',
         linkText: 'Upload a video',
       };
@@ -63,22 +64,29 @@ export function VideoUploadCard() {
           reducedTransparencyFallbackColor="#00000033"
           style={tw`absolute inset-x-0 inset-y-0 rounded-2.5`}
         /> */}
-        <LinearGradient colors={[blackColorWithAlpha, blackColorWithAlpha]} style={tw`absolute inset-0`}>
-          <View style={tw`items-center justify-center flex-1`}>
-            <View style={tw`mt-[16.67px]`}>
-              <Text variant={TextVariant.Body2Regular}>{getRenderedData.title}</Text>
-              <View style={tw`mt-1`}>
-                <Link text={getRenderedData?.linkText} onPress={onUpload} underline />
-              </View>
+        <LinearGradient
+          colors={isError ? ['#F6581500', '#F65815'] : [blackColorWithAlpha, blackColorWithAlpha]}
+          locations={[0, 0.5433]}
+          style={tw`absolute inset-0`}>
+          <View style={tw`items-center justify-center flex-1 gap-1`}>
+            {getRenderedData.icon}
+            <Text variant={TextVariant.Body2Regular}>{getRenderedData.title}</Text>
+            <View>
+              <Link
+                textColor={isError ? Color.Neutral.White : Color.Tertiary.Sz900}
+                text={getRenderedData?.linkText}
+                onPress={onUpload}
+                underline
+              />
             </View>
-            {isError && (
+            {/* {isError && (
               <VideoUploadCardFooter
                 isError
                 date="04 JUN 2022"
                 cameraAngle="Down the line"
                 results="All failed videos"
               />
-            )}
+            )} */}
           </View>
         </LinearGradient>
       </View>
