@@ -7,12 +7,13 @@ describe('FAQ section content', () => {
   const testID = 'FAQSectionContentTestID';
 
   const dummyFAQ = {
-    title: 'Lorem ipsum dolor sit amet, consectetur',
-    content:
+    question: 'Lorem ipsum dolor sit amet, consectetur',
+    answer:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non dolor purus. Nunc semper sapien congue tortor',
   };
 
-  const getRenderedComponent = () => render(<FAQSectionContent title={dummyFAQ.title} content={dummyFAQ.content} />);
+  const getRenderedComponent = () =>
+    render(<FAQSectionContent question={dummyFAQ.question} answer={dummyFAQ.answer} />);
 
   it(`should render FAQ Section content correctly`, () => {
     const renderer = getRenderedComponent();
