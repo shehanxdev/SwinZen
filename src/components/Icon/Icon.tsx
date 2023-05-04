@@ -32,6 +32,7 @@ import {
   PricePlanFeatureListTick,
   ProfileIconSvg,
   SecurityIconSvg,
+  SquareTickSvg,
   SwingZenLogoSvg,
   UploadSvg,
 } from '@sz/assets';
@@ -174,4 +175,8 @@ export function SwingZenLogoIcon({ color, width = 108, height = 55 }: SvgIconPro
 
 export function PhoneIcon({ color = Color.Neutral.Sz500, width = 18, height = 18 }: SvgIconProps) {
   return <PhoneIconSvg width={width} height={height} fill={color} />;
+}
+
+export function SquareTickIcon({ width = 12, height = 11 }: SvgIconProps) {
+  return <SquareTickSvg width={width} height={height} fill="none" />;
 }
