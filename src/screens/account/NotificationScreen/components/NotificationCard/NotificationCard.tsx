@@ -13,11 +13,11 @@ interface NotificationCardProps {
 }
 
 export function NotificationCard({ testID, readStatus = false, message, time }: NotificationCardProps) {
-  // TODO:: API integration should be implemented, locally store notification and handle read status change, Notification onRead event should be handled later
-  const onRead = () => {};
+  // TODO:: API integration should be implemented, notification handleOnPress event should be handled later
+  const handleOnPress = () => {};
 
   return (
-    <TouchableOpacity testID={testID} style={tw`mx-4`} onPress={onRead}>
+    <TouchableOpacity testID={testID} style={tw`mx-4`} onPress={handleOnPress}>
       <View style={tw`flex-row mt-4 gap-3`}>
         <View style={tw`mt-2`}>
           <NotificationDotIcon color={readStatus ? Color.Neutral.Sz600 : Color.Tertiary.Sz900} />
