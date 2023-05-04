@@ -6,7 +6,7 @@ import { ErrorIcon, Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextVariant } from '@sz/constants';
 
-//import { VideoUploadCardFooter } from './VideoUploadCardFooter';
+import { VideoUploadCardFooter } from './VideoUploadCardFooter';
 
 type RenderedData = {
   icon?: ReactElement;
@@ -53,22 +53,16 @@ export function VideoUploadCard() {
   }, [isLoading, isError]);
 
   return (
-    <View style={tw`h-54.5 rounded-2.5 overflow-hidden `}>
+    <View style={tw`rounded-2.5 overflow-hidden `}>
       <View
         style={tw`flex-1 rounded-2.5 overflow-hidden border border-[${
           isError ? orangeColorWithAlpha : Color.Tertiary.Sz900
         }]`}>
-        {/* <BlurView
-          blurType="dark"
-          blurAmount={1} //TODO::extract these magic values to a common file
-          reducedTransparencyFallbackColor="#00000033"
-          style={tw`absolute inset-x-0 inset-y-0 rounded-2.5`}
-        /> */}
         <LinearGradient
           colors={isError ? ['#F6581500', '#F65815'] : [blackColorWithAlpha, blackColorWithAlpha]}
           locations={[0, 0.5433]}
-          style={tw`absolute inset-0`}>
-          <View style={tw`items-center justify-center flex-1 gap-1`}>
+          style={tw`inset-0`}>
+          <View style={tw`items-center justify-center flex-1 gap-1 ${isError ? `mt-10.25 mb-13` : `mt-19.5 mb-22`} `}>
             {getRenderedData.icon}
             <Text variant={TextVariant.Body2Regular}>{getRenderedData.title}</Text>
             <View>
@@ -79,17 +73,12 @@ export function VideoUploadCard() {
                 underline
               />
             </View>
-            {/* {isError && (
-              <VideoUploadCardFooter
-                isError
-                date="04 JUN 2022"
-                cameraAngle="Down the line"
-                results="All failed videos"
-              />
-            )} */}
           </View>
         </LinearGradient>
       </View>
+      {isError && (
+        <VideoUploadCardFooter isError date="04 JUN 2022" cameraAngle="Down the line" results="All failed videos" />
+      )}
     </View>
   );
 }
