@@ -6,12 +6,18 @@ import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 import { FaqSection } from '@sz/models';
 
-export function FAQSectionHeader(section: FaqSection, _: number, isActive: boolean) {
+interface FAQSectionHeaderPropTypes {
+  content: FaqSection;
+  index: number;
+  isActive: boolean;
+}
+
+export function FAQSectionHeader({ content, isActive }: FAQSectionHeaderPropTypes) {
   return (
-    <View style={tw`flex-row justify-between`}>
+    <View style={tw`flex-row justify-between`} testID="FAQSectionHeaderTestID">
       <View style={tw`max-w-[90%]`}>
         <Text variant={TextVariant.Body2SemiBold} color={Color.Neutral.Sz100} textAlign={TextAlignment.Left}>
-          {section.title}
+          {content.title}
         </Text>
       </View>
       {isActive ? <DownArrowIcon /> : <UpArrowIcon />}
