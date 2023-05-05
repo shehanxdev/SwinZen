@@ -1,6 +1,9 @@
 export const SwingZenUrl = 'https://swingzen.com';
 export const SwingZenMail = 'info@swingzen.com';
 
+// static measurements
+export const headerTopMargin = 20;
+
 // static constants
 export const AboutUsPoints = [
   'Utilizes cutting edge biomechanical feedback system.',

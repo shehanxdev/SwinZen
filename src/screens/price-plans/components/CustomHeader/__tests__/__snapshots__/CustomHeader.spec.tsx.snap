@@ -14,8 +14,8 @@ exports[`CustomHeader Component should render CustomHeader component correctly 1
     style={
       {
         "flexDirection": "row",
-        "height": 200,
         "justifyContent": "space-between",
+        "marginTop": 0,
       }
     }
     testID="CustomHeaderTestID"
@@ -51,8 +51,8 @@ exports[`CustomHeader Component should render CustomHeader component correctly 1
       style={
         {
           "opacity": 1,
-          "paddingLeft": 18,
-          "paddingRight": 18,
+          "paddingLeft": 16,
+          "paddingRight": 16,
         }
       }
     >
@@ -79,7 +79,13 @@ exports[`CustomHeader Component should render CustomHeader component correctly 1
     >
       testTitle
     </Text>
-    <View />
+    <View
+      style={
+        {
+          "width": 48,
+        }
+      }
+    />
   </View>
 </View>
 `;

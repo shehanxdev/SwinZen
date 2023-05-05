@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, View } from 'react-native';
+import { ActivityIndicator, ScrollView, View } from 'react-native';
 
 import { tw } from '@sz/config';
 import { Color, Route } from '@sz/constants';
@@ -17,7 +17,7 @@ export function PricePlansScreen({ route }) {
   const params = route.params;
 
   return (
-    <BasePricePlansScreen testID="PricePlansScreenTestID">
+    <BasePricePlansScreen testID="PricePlansScreenTestID" wrapWithScrollView={false}>
       <CustomHeader
         title="Join us today!"
         onBackPress={() => (params ? NavigationService.goBack() : NavigationService.navigate(Route.MainStack))}
@@ -28,7 +28,7 @@ export function PricePlansScreen({ route }) {
           <ActivityIndicator size="small" color={Color.Neutral.White} />
         </View>
       ) : (
-        <View style={tw`mt-10 mx-6.25`}>
+        <ScrollView style={tw`mt-10 mx-6.25`}>
           {data &&
             data.results.map((item, index) => (
               <View key={index} style={tw`my-2`}>
@@ -46,7 +46,7 @@ export function PricePlansScreen({ route }) {
                 />
               </View>
             ))}
-        </View>
+        </ScrollView>
       )}
     </BasePricePlansScreen>
   );

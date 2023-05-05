@@ -54,7 +54,7 @@ exports[`SubscriptionCard Component should render SubscriptionCard component cor
           "borderColor": "rgba(0, 0, 0, 0.12)",
           "borderRadius": 10,
           "elevation": 1,
-          "shadowColor": "#000000",
+          "shadowColor": "rgba(22, 80, 29, 0.2)",
           "shadowOffset": {
             "height": 0.5,
             "width": 0,
