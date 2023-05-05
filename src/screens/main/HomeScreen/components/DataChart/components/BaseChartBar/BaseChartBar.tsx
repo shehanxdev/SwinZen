@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
-import { View } from 'react-native';
+import React, { useMemo, useState } from 'react';
+import { LayoutChangeEvent, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Animated, { FadeInDown, FadeOutDown } from 'react-native-reanimated';
 
@@ -8,22 +8,29 @@ import { tw } from '@sz/config';
 import { Color, TextVariant } from '@sz/constants';
 
 //NOTE::all the dimention values are in 'px' due to technical difficulties with dynamic height values
-const CHART_MAX_HEIGHT = 235;
+const CHART_DEFAULT_HEIGHT = 235;
+
+const BAR_THRESHOLD_VALUE = 10; //maximum value that can be use as passes/fails count for a specific month
+
 const TOP_VALUE_INDICATOR_NOTCH_DIMENTIONS = {
   height: 36,
   width: 36,
 };
+
 const BAR_WIDTH = 36;
+
 const LINEAR_GRADIENT_COLORS = {
   pass: [Color.Tertiary.Sz900, '#a2fd2f54', '#a2fd2f00'],
   fail: [Color.Secondary.Sz900, '#f658154d', '#f6581500'],
 };
+
 const TOP_VALUE_INDICATOR_NOTCH_ERROR_BOX_SHADOW_STYLES = {
   shadowColor: Color.Neutral.Black,
   shadowOffset: { width: 0, height: 4 },
   shadowOpacity: 0.25,
   shadowRadius: 3,
 };
+
 const TOP_VALUE_INDICATOR_NOTCH_ERROR_POSITIONS = {
   top: -(TOP_VALUE_INDICATOR_NOTCH_DIMENTIONS.height / 2),
   height: TOP_VALUE_INDICATOR_NOTCH_DIMENTIONS.height,
@@ -33,23 +40,38 @@ const TOP_VALUE_INDICATOR_NOTCH_ERROR_POSITIONS = {
 type ChartBarType = 'pass' | 'fail';
 
 interface ChartBarProps {
-  barValue: number; //TODO::shouldn't let any number. Need to restrict to less or equal than  20 as per the current requiment
+  barValue: number; //TODO::shouldn't let any number. Need to restrict to less or equal than  10 as per the current requiment
   chartBarType: ChartBarType;
 }
 
 export function ChartBar({ barValue, chartBarType }: ChartBarProps) {
-  const visibleHeight = useMemo(() => CHART_MAX_HEIGHT * (barValue / 20), [barValue]);
+  {
+    /*
+     * This state is use as dynamic height for the chart as well as for the single bar based on it's pass/fail value.
+     * It will adjust automatically based on the height same as the chart height which defined within the root component,
+     * where the chart is being used.
+     */
+  }
+  const [currentHeight, setCurrentHeight] = useState(CHART_DEFAULT_HEIGHT);
+
+  const barVisibleHeight = useMemo(() => currentHeight * (barValue / BAR_THRESHOLD_VALUE), [barValue, currentHeight]);
+
+  const onAnimatedViewLayout = (event: LayoutChangeEvent) => {
+    var { height } = event.nativeEvent.layout;
+    setCurrentHeight(height);
+  };
 
   return (
     <Animated.View
-      style={[tw`items-end justify-end`, { height: CHART_MAX_HEIGHT }]}
+      style={tw`items-end justify-end`}
       entering={FadeInDown.duration(500)}
-      exiting={FadeOutDown.duration(500)}>
+      exiting={FadeOutDown.duration(500)}
+      onLayout={onAnimatedViewLayout}>
       <View>
         <LinearGradient
           colors={chartBarType === 'pass' ? LINEAR_GRADIENT_COLORS.pass : LINEAR_GRADIENT_COLORS.fail}
           locations={[0, 0.48, 1]}
-          style={{ height: visibleHeight, width: BAR_WIDTH }}
+          style={{ height: barVisibleHeight, width: BAR_WIDTH }}
         />
         <View
           style={[
