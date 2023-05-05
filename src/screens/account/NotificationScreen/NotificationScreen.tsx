@@ -20,7 +20,7 @@ export function NotificationScreen() {
         <Text variant={TextVariant.Body2SemiBold} textAlign={TextAlignment.Auto}>
           You have
           <Text color={Color.Tertiary.Sz900} variant={TextVariant.Body2SemiBold}>
-            {' ' + unreadCount + ' new '}
+            {` ${unreadCount} new`}
           </Text>
           notifications today!
         </Text>

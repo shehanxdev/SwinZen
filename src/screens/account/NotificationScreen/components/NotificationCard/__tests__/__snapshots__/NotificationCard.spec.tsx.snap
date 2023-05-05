@@ -69,24 +69,34 @@ exports[`NotificationCard Component should render NotificationCard component cor
           width={8}
         />
       </View>
-      <Text
+      <View
         style={
-          [
-            {
-              "color": "#6C757D",
-              "lineHeight": 24,
-            },
-            {
-              "fontFamily": "SourceSansPro-Regular",
-              "fontSize": 16,
-              "fontWeight": "normal",
-              "textAlign": "auto",
-            },
-          ]
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          }
         }
       >
-        test message
-      </Text>
+        <Text
+          style={
+            [
+              {
+                "color": "#6C757D",
+                "lineHeight": 24,
+              },
+              {
+                "fontFamily": "SourceSansPro-Regular",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "textAlign": "auto",
+              },
+            ]
+          }
+        >
+          test message
+        </Text>
+      </View>
     </View>
     <View
       style={
