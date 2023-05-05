@@ -7,8 +7,28 @@ import { Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextVariant } from '@sz/constants';
 
-const MAX_HEIGHT = 235;
-const TOP_VALUE_INDICATOR_NOTCH_HEIGHT = 36;
+//NOTE::all the dimention values are in 'px' due to technical difficulties with dynamic height values
+const CHART_MAX_HEIGHT = 235;
+const TOP_VALUE_INDICATOR_NOTCH_DIMENTIONS = {
+  height: 36,
+  width: 36,
+};
+const BAR_WIDTH = 36;
+const LINEAR_GRADIENT_COLORS = {
+  pass: [Color.Tertiary.Sz900, '#a2fd2f54', '#a2fd2f00'],
+  fail: [Color.Secondary.Sz900, '#f658154d', '#f6581500'],
+};
+const TOP_VALUE_INDICATOR_NOTCH_ERROR_BOX_SHADOW_STYLES = {
+  shadowColor: Color.Neutral.Black,
+  shadowOffset: { width: 0, height: 4 },
+  shadowOpacity: 0.25,
+  shadowRadius: 3,
+};
+const TOP_VALUE_INDICATOR_NOTCH_ERROR_POSITIONS = {
+  top: -(TOP_VALUE_INDICATOR_NOTCH_DIMENTIONS.height / 2),
+  height: TOP_VALUE_INDICATOR_NOTCH_DIMENTIONS.height,
+  width: TOP_VALUE_INDICATOR_NOTCH_DIMENTIONS.width,
+};
 
 type ChartBarType = 'pass' | 'fail';
 
@@ -18,42 +38,36 @@ interface ChartBarProps {
 }
 
 export function ChartBar({ barValue, chartBarType }: ChartBarProps) {
-  const visibleHeight = useMemo(() => MAX_HEIGHT * (barValue / 20), [barValue]);
+  const visibleHeight = useMemo(() => CHART_MAX_HEIGHT * (barValue / 20), [barValue]);
 
   return (
     <Animated.View
-      style={[tw`items-end justify-end`]}
-      key={'uniqueKey'} //TODO::update
+      style={[tw`items-end justify-end`, { height: CHART_MAX_HEIGHT }]}
       entering={FadeInDown.duration(500)}
       exiting={FadeOutDown.duration(500)}>
       <View>
         <LinearGradient
-          colors={
-            chartBarType === 'pass' ? ['#A2FD2F', '#a2fd2f54', '#a2fd2f00'] : ['#F65815', '#f658154d', '#f6581500']
-          } //TODO :: these colors are not in the design system
-          locations={[0, 0.48, 1]} //TODO::check figma on break points
-          style={[tw`m-auto h-58.75 w-9 relative`, { height: visibleHeight }]}></LinearGradient>
+          colors={chartBarType === 'pass' ? LINEAR_GRADIENT_COLORS.pass : LINEAR_GRADIENT_COLORS.fail}
+          locations={[0, 0.48, 1]}
+          style={{ height: visibleHeight, width: BAR_WIDTH }}
+        />
         <View
           style={[
-            tw`rounded-full z-1 absolute ${chartBarType === 'pass' ? 'bg-Neutral-White' : 'bg-Secondary-Sz900'}`,
+            tw`rounded-full justify-center absolute ${
+              chartBarType === 'pass' ? 'bg-Neutral-White' : 'bg-Secondary-Sz900'
+            }`,
             {
-              // TODO::update box shadow
-              top: -TOP_VALUE_INDICATOR_NOTCH_HEIGHT / 2,
-              height: TOP_VALUE_INDICATOR_NOTCH_HEIGHT, //TODO::add object
-              width: TOP_VALUE_INDICATOR_NOTCH_HEIGHT,
-              shadowColor: '#171717',
-              shadowOffset: { width: -2, height: 4 },
-              shadowOpacity: 0.2,
-              shadowRadius: 3,
-              justifyContent: 'center',
+              ...(chartBarType === 'fail' && {
+                ...TOP_VALUE_INDICATOR_NOTCH_ERROR_BOX_SHADOW_STYLES,
+              }),
             },
+            TOP_VALUE_INDICATOR_NOTCH_ERROR_POSITIONS,
           ]}>
           {/* TODO::font style not avaialble within the design system */}
           <Text
             variant={TextVariant.Body2SemiBold}
             color={chartBarType === 'pass' ? Color.Primary.Sz700 : Color.Neutral.White}>
-            {/* TODO::Remove hardcoded values */}
-            10
+            {barValue}
           </Text>
         </View>
       </View>
