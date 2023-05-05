@@ -21,11 +21,12 @@ interface DataChartProps {
 export function DataChart({ sectionOne, sectionTwo, sectionThree, sectionFour }: DataChartProps) {
   const renderChartData = useMemo(() => {
     const combinedChartData = [sectionOne, sectionTwo, sectionThree, sectionFour];
-    return combinedChartData.map(data => (
-      <>
+
+    return combinedChartData.map((data, index) => (
+      <React.Fragment key={index}>
         <BaseResultsSection passes={data.passes} fails={data.fails} />
         <BaseResultSectionDivider />
-      </>
+      </React.Fragment>
     ));
   }, [sectionOne, sectionTwo, sectionThree, sectionFour]);
   return <View style={tw`mt-20 flex flex-row h-58.75 justify-between`}>{renderChartData}</View>;
