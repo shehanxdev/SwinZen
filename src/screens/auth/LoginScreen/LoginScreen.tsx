@@ -63,47 +63,51 @@ export function LoginScreen() {
           </View>
         </View>
         <View style={tw`flex-1 mx-5`}>
-          <Controller
-            control={control}
-            name="username"
-            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
-              <TextField
-                ref={ref}
-                label="Your email"
-                leftIcon={<MailIcon />}
-                maxLength={50}
-                value={value}
-                onChangeText={onChange}
-                onBlur={onBlur}
-                helperText={(isTouched || isSubmitted) && error?.message}
-                helperTextColor={Color.Error.SzMain}
-                error={(isTouched || isSubmitted) && error !== undefined}
-                returnKeyType={'next'}
-                onSubmitEditing={() => setFocus('password')}
-                autoCapitalize={'none'}
-              />
-            )}
-          />
-          <Controller
-            control={control}
-            name="password"
-            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
-              <PasswordField
-                ref={ref}
-                label="Your password"
-                leftIcon={<AccountLockIcon />}
-                maxLength={20}
-                value={value}
-                onChangeText={onChange}
-                onBlur={onBlur}
-                helperText={(isTouched || isSubmitted) && error?.message}
-                helperTextColor={Color.Error.SzMain}
-                error={(isTouched || isSubmitted) && error !== undefined}
-                returnKeyType={'done'}
-              />
-            )}
-          />
-          <View style={tw`items-end mt-3`}>
+          <View style={tw`mb-4`}>
+            <Controller
+              control={control}
+              name="username"
+              render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
+                <TextField
+                  ref={ref}
+                  label="Your email"
+                  leftIcon={<MailIcon />}
+                  maxLength={50}
+                  value={value}
+                  onChangeText={onChange}
+                  onBlur={onBlur}
+                  helperText={(isTouched || isSubmitted) && error?.message}
+                  helperTextColor={Color.Error.SzMain}
+                  error={(isTouched || isSubmitted) && error !== undefined}
+                  returnKeyType={'next'}
+                  onSubmitEditing={() => setFocus('password')}
+                  autoCapitalize={'none'}
+                />
+              )}
+            />
+          </View>
+          <View style={tw`mb-6`}>
+            <Controller
+              control={control}
+              name="password"
+              render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
+                <PasswordField
+                  ref={ref}
+                  label="Your password"
+                  leftIcon={<AccountLockIcon />}
+                  maxLength={20}
+                  value={value}
+                  onChangeText={onChange}
+                  onBlur={onBlur}
+                  helperText={(isTouched || isSubmitted) && error?.message}
+                  helperTextColor={Color.Error.SzMain}
+                  error={(isTouched || isSubmitted) && error !== undefined}
+                  returnKeyType={'done'}
+                />
+              )}
+            />
+          </View>
+          <View style={tw`items-end`}>
             <Link
               text="Forgot password?"
               onPress={() => {
