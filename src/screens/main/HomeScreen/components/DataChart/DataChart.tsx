@@ -25,9 +25,9 @@ export function DataChart({ sectionOne, sectionTwo, sectionThree, sectionFour }:
     return combinedChartData.map((data, index) => (
       <React.Fragment key={index}>
         <BaseResultsSection passes={data.passes} fails={data.fails} />
-        <BaseResultSectionDivider />
+        {index !== 3 && <BaseResultSectionDivider />}
       </React.Fragment>
     ));
   }, [sectionOne, sectionTwo, sectionThree, sectionFour]);
-  return <View style={tw`mt-20 flex flex-row h-58.75 justify-between`}>{renderChartData}</View>;
+  return <View style={tw`flex flex-row h-58.75 justify-between`}>{renderChartData}</View>;
 }

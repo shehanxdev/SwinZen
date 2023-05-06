@@ -10,7 +10,8 @@ import { Color, TextVariant } from '@sz/constants';
 //NOTE::all the dimention values are in 'px' due to technical difficulties with dynamic height values
 const CHART_DEFAULT_HEIGHT = 235;
 
-const BAR_THRESHOLD_VALUE = 10; //maximum value that can be use as passes/fails count for a specific month
+//maximum value that can be use as passes/fails count for a specific month
+const BAR_THRESHOLD_VALUE = 10;
 
 const TOP_VALUE_INDICATOR_NOTCH_DIMENTIONS = {
   height: 36,
@@ -66,6 +67,7 @@ export function ChartBar({ barValue, chartBarType }: ChartBarProps) {
       style={tw`items-end justify-end`}
       entering={FadeInDown.duration(500)}
       exiting={FadeOutDown.duration(500)}
+      key={Math.random()}
       onLayout={onAnimatedViewLayout}>
       <View>
         <LinearGradient
