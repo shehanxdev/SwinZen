@@ -38,14 +38,14 @@ const TOP_VALUE_INDICATOR_NOTCH_ERROR_POSITIONS = {
   width: TOP_VALUE_INDICATOR_NOTCH_DIMENTIONS.width,
 };
 
-type ChartBarType = 'pass' | 'fail';
+type BaseChartBarType = 'pass' | 'fail';
 
-interface ChartBarProps {
+export interface BaseChartBarProps {
   barValue: number; //TODO::shouldn't let any number. Need to restrict to less or equal than  10 as per the current requiment
-  chartBarType: ChartBarType;
+  chartBarType: BaseChartBarType;
 }
 
-export function ChartBar({ barValue, chartBarType }: ChartBarProps) {
+export function BaseChartBar({ barValue, chartBarType }: BaseChartBarProps) {
   {
     /*
      * This state is use as dynamic height for the chart as well as for the single bar based on it's pass/fail value.
@@ -68,6 +68,7 @@ export function ChartBar({ barValue, chartBarType }: ChartBarProps) {
       entering={FadeInDown.duration(500)}
       exiting={FadeOutDown.duration(500)}
       key={Math.random()}
+      testID="BaseChartBarComponentTestID"
       onLayout={onAnimatedViewLayout}>
       <View>
         <LinearGradient

@@ -29,5 +29,9 @@ export function DataChart({ sectionOne, sectionTwo, sectionThree, sectionFour }:
       </React.Fragment>
     ));
   }, [sectionOne, sectionTwo, sectionThree, sectionFour]);
-  return <View style={tw`flex flex-row h-58.75 justify-between`}>{renderChartData}</View>;
+  return (
+    <View style={tw`flex flex-row h-58.75 justify-between`} testID="DataChartTestID">
+      {renderChartData}
+    </View>
+  );
 }
