@@ -100,6 +100,7 @@ exports[`ProfileImageBanner component should render ProfileImageBanner component
       [
         {
           "alignItems": "flex-start",
+          "backgroundColor": "#070707bf",
           "borderRadius": 10,
           "height": 72,
           "overflow": "hidden",
@@ -113,26 +114,6 @@ exports[`ProfileImageBanner component should render ProfileImageBanner component
       ]
     }
   >
-    <BlurView
-      blurAmount={1}
-      blurType="dark"
-      reducedTransparencyFallbackColor="#212529"
-      style={
-        [
-          {
-            "backgroundColor": "transparent",
-          },
-          {
-            "borderRadius": 10,
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-        ]
-      }
-    />
     <Text
       style={
         [

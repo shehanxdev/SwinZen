@@ -1,4 +1,3 @@
-import { BlurView } from '@react-native-community/blur';
 import React, { useMemo, useState } from 'react';
 import { Dimensions, Image, TouchableOpacity, View } from 'react-native';
 
@@ -69,18 +68,12 @@ export function ProfileImageBanner() {
       </TouchableOpacity>
       <View
         style={[
-          tw`h-18 pt-2 pl-3.5 rounded-2.5 overflow-hidden items-start`,
+          tw`h-18 pt-2 pl-3.5 rounded-2.5 overflow-hidden items-start bg-[#070707bf]`,
           {
             zIndex: -1,
             width: containerWidth,
           },
         ]}>
-        <BlurView
-          blurType="dark"
-          blurAmount={1} //TODO:: Replace the magic number with a constant
-          reducedTransparencyFallbackColor={Color.Neutral.Sz900}
-          style={tw`absolute inset-0 rounded-2.5`}
-        />
         <Text variant={TextVariant.Body2Regular} color={Color.Tertiary.Sz900}>
           Hello,
         </Text>
