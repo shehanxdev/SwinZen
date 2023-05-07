@@ -7,8 +7,8 @@ import { Color } from '@sz/constants';
 import { VideoCountCard } from './components';
 
 interface UploadedVideoCountBannerProps {
-  VideoCount: number | string;
-  SwinZenUniVideoCount: number | string;
+  VideoCount: number; //refers to total uploaded video count from a specific month.
+  SwinZenUniVideoCount: number; //refers to total uploaded video count from all the times. Not just for a specific month.
 }
 
 export function UploadedVideoCountBanner({ VideoCount = 0, SwinZenUniVideoCount = 0 }: UploadedVideoCountBannerProps) {
