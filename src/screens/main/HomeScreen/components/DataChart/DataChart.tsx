@@ -23,6 +23,7 @@ export function DataChart({ sectionOne, sectionTwo, sectionThree, sectionFour }:
     const combinedChartData = [sectionOne, sectionTwo, sectionThree, sectionFour];
 
     return combinedChartData.map((data, index) => (
+      // TODO::might have to redirect to analysis screen upon clicking on these sections depending on the requirements
       <React.Fragment key={index}>
         <BaseResultsSection passes={data.passes} fails={data.fails} />
         {index !== 3 && <BaseResultSectionDivider />}

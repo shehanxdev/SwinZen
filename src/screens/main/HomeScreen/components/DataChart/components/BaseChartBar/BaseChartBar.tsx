@@ -41,7 +41,7 @@ const TOP_VALUE_INDICATOR_NOTCH_ERROR_POSITIONS = {
 type BaseChartBarType = 'pass' | 'fail';
 
 export interface BaseChartBarProps {
-  barValue: number; //TODO::shouldn't let any number. Need to restrict to less or equal than  10 as per the current requiment
+  barValue: number; //TODO::shouldn't let any number. Need to restrict to less or equal than THRESHOLD VALUE depenmdeing on the requirements. Current THRESHOLD VALUE is set to 10.
   chartBarType: BaseChartBarType;
 }
 
