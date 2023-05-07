@@ -5,11 +5,16 @@ import { Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
-export function SubscribeButton() {
+interface SubscribeButtonPropTypes {
+  onPress(): void;
+}
+
+export function SubscribeButton({ onPress }: SubscribeButtonPropTypes) {
   return (
-    //TODO:: To be refactored once the button is available in the design system
+    //TODO::Outlined button variant is not available within the design system. This is a temporary workaround use Outlined button.
     <TouchableOpacity
-      style={tw`border-[1px] border-[${Color.Neutral.White}] bg-[${Color.Transparency.full}] mt-[72px] w-[146px] rounded-[30px] py-[8px]`}>
+      onPress={onPress}
+      style={tw`border-[1px] border-[${Color.Neutral.White}] w-[146px] rounded-7.5 justify-center h-10`}>
       <Text variant={TextVariant.Body1SemiBold} textAlign={TextAlignment.Center} color={Color.Neutral.Sz100}>
         SUBSCRIBE
       </Text>

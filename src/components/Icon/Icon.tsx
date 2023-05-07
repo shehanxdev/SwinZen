@@ -177,6 +177,6 @@ export function PhoneIcon({ color = Color.Neutral.Sz500, width = 18, height = 18
   return <PhoneIconSvg width={width} height={height} fill={color} />;
 }
 
-export function SquareTickIcon({ width = 12, height = 11 }: SvgIconProps) {
-  return <SquareTickSvg width={width} height={height} fill="none" />;
+export function SquareTickIcon({ color = Color.Tertiary.Sz900, width = 12, height = 11 }: SvgIconProps) {
+  return <SquareTickSvg width={width} height={height} fill="none" stroke={color} />;
 }
