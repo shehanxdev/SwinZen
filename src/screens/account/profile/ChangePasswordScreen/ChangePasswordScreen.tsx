@@ -41,46 +41,50 @@ export function ChangePasswordScreen() {
     <BaseAccountScreen testID="ChangePasswordScreenTestID">
       <View style={tw`flex-1 justify-between`}>
         <View style={tw`flex-1 mx-5 mt-16`}>
-          <Controller
-            control={control}
-            name="currentPassword"
-            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
-              <PasswordField
-                ref={ref}
-                label="current password"
-                leftIcon={<AccountLockIcon />}
-                maxLength={20}
-                value={value}
-                onChangeText={onChange}
-                onSubmitEditing={() => setFocus('newPassword')}
-                onBlur={onBlur}
-                helperText={(isTouched || isSubmitted) && error?.message}
-                helperTextColor={Color.Error.SzMain}
-                error={(isTouched || isSubmitted) && error !== undefined}
-                returnKeyType={'done'}
-              />
-            )}
-          />
-          <Controller
-            control={control}
-            name="newPassword"
-            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
-              <PasswordField
-                ref={ref}
-                label="New password"
-                leftIcon={<AccountLockIcon />}
-                maxLength={20}
-                value={value}
-                onChangeText={onChange}
-                onSubmitEditing={() => setFocus('confirmNewPassword')}
-                onBlur={onBlur}
-                helperText={(isTouched || isSubmitted) && error?.message}
-                helperTextColor={Color.Error.SzMain}
-                error={(isTouched || isSubmitted) && error !== undefined}
-                returnKeyType={'done'}
-              />
-            )}
-          />
+          <View style={tw`mb-4`}>
+            <Controller
+              control={control}
+              name="currentPassword"
+              render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
+                <PasswordField
+                  ref={ref}
+                  label="current password"
+                  leftIcon={<AccountLockIcon />}
+                  maxLength={20}
+                  value={value}
+                  onChangeText={onChange}
+                  onSubmitEditing={() => setFocus('newPassword')}
+                  onBlur={onBlur}
+                  helperText={(isTouched || isSubmitted) && error?.message}
+                  helperTextColor={Color.Error.SzMain}
+                  error={(isTouched || isSubmitted) && error !== undefined}
+                  returnKeyType={'done'}
+                />
+              )}
+            />
+          </View>
+          <View style={tw`mb-4`}>
+            <Controller
+              control={control}
+              name="newPassword"
+              render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
+                <PasswordField
+                  ref={ref}
+                  label="New password"
+                  leftIcon={<AccountLockIcon />}
+                  maxLength={20}
+                  value={value}
+                  onChangeText={onChange}
+                  onSubmitEditing={() => setFocus('confirmNewPassword')}
+                  onBlur={onBlur}
+                  helperText={(isTouched || isSubmitted) && error?.message}
+                  helperTextColor={Color.Error.SzMain}
+                  error={(isTouched || isSubmitted) && error !== undefined}
+                  returnKeyType={'done'}
+                />
+              )}
+            />
+          </View>
           <Controller
             control={control}
             name="confirmNewPassword"

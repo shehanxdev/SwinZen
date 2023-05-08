@@ -33,7 +33,7 @@ type WithRNTextInputProps = Pick<
 >;
 
 export interface TextFieldProps extends WithRNTextInputProps {
-  label: string | React.ReactNode;
+  label?: string | React.ReactNode;
   innerTextInputStyles?: StyleProp<ViewStyle>;
   helperText?: string;
   leftIcon?: React.ReactNode;

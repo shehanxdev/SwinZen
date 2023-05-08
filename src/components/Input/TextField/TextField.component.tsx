@@ -149,7 +149,7 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
         returnKeyType={returnKeyType}
         returnKeyLabel={returnKeyLabel}
       />
-      {helperTextComponent}
+      {helperText && helperTextComponent}
     </View>
   );
 });
