@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SectionHeader Component should render SectionHeader component correctly 1`] = `
+<View
+  collapsable={false}
+  pointerEvents="box-none"
+  style={
+    {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "alignItems": "flex-start",
+        "marginBottom": 4,
+        "marginLeft": 20,
+        "marginRight": 20,
+        "marginTop": 32,
+      }
+    }
+    testID="SectionHeaderTestID"
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F0F7F0",
+            "lineHeight": 28,
+          },
+          {
+            "fontFamily": "SourceSansPro-SemiBold",
+            "fontSize": 21,
+            "fontWeight": "600",
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      test message
+    </Text>
+  </View>
+</View>
+`;

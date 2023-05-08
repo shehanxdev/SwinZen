@@ -2,22 +2,6 @@
 
 exports[`TextField Component should render correctly 1`] = `
 <View>
-  <Text
-    style={
-      [
-        {
-          "color": "#E9ECEF",
-          "lineHeight": 24,
-        },
-        {
-          "fontFamily": "SourceSansPro-SemiBold",
-          "fontSize": 16,
-          "fontWeight": "600",
-          "textAlign": "auto",
-        },
-      ]
-    }
-  />
   <View
     style={
       {
