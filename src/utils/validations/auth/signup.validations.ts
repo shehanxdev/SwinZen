@@ -6,7 +6,7 @@ export const signupFormErrorMessages = {
   'name:required': 'Please enter Name',
   'name:min': 'Username must be at least 2 letters long',
   'name:max': 'Username must not be 10 letters long',
-  'name:valid': 'The name cannot contain numerical and special characters.',
+  'name:valid': 'The name cannot contain numerical and special characters',
 
   'username:required': 'Please enter Email ID',
   'username:email': 'Invalid Email',
