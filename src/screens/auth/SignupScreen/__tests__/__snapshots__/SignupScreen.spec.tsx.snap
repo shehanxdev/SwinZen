@@ -1240,7 +1240,25 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                       ]
                     }
                   >
-                    Your promotion code (If Applicable)
+                    Your promotion code
+                    <Text
+                      style={
+                        [
+                          {
+                            "color": "#E9ECEF",
+                            "lineHeight": 24,
+                          },
+                          {
+                            "fontFamily": "SourceSansPro-Italic",
+                            "fontSize": 16,
+                            "fontWeight": "normal",
+                            "textAlign": "auto",
+                          },
+                        ]
+                      }
+                    >
+                       (If Applicable)
+                    </Text>
                   </Text>
                   <View
                     style={

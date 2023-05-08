@@ -11,14 +11,12 @@ type WithRNTextInputProps = Pick<
   | 'defaultValue'
   | 'value'
   | 'disabled'
-  | 'label'
   | 'placeholder'
   | 'onChangeText'
   | 'onBlur'
   | 'onFocus'
   | 'secureTextEntry'
   | 'maxLength'
-  | 'label'
   | 'keyboardType'
   | 'onSubmitEditing'
   | 'onEndEditing'
@@ -35,6 +33,7 @@ type WithRNTextInputProps = Pick<
 >;
 
 export interface TextFieldProps extends WithRNTextInputProps {
+  label: string | React.ReactNode;
   innerTextInputStyles?: StyleProp<ViewStyle>;
   helperText?: string;
   leftIcon?: React.ReactNode;
