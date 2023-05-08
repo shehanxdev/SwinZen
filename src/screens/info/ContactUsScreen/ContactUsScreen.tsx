@@ -29,7 +29,7 @@ export function ContactUsScreen() {
           </Text>
         </View>
         <View style={tw`mb-21`}>
-          <View style={tw`mb-[10px]`}>
+          <View style={tw`mb-2.5`}>
             <Controller
               control={control}
               name="name"
@@ -53,7 +53,7 @@ export function ContactUsScreen() {
               )}
             />
           </View>
-          <View style={tw`mb-[10px]`}>
+          <View style={tw`mb-2.5`}>
             <Controller
               control={control}
               name="username"
@@ -102,7 +102,7 @@ export function ContactUsScreen() {
               )}
             />
           </View>
-          <View style={tw`mb-[10px]`}>
+          <View style={tw`mb-2.5`}>
             <Controller
               control={control}
               name="message"
