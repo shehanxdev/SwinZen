@@ -1,23 +1,26 @@
-import jwt_decode from 'jwt-decode';
-
 import {
   ApiErrorResponse,
   ApiResponse,
+  BaseRequestHeaders,
   ChangePasswordData,
   ChangePasswordRequestData,
   ChangePasswordResponse,
+  DecodedJWTUserData,
 } from '@sz/models';
+import { JTWDecodeService } from '@sz/services';
 
 import { APIError, HttpServiceInstance } from './../../http-service';
 
 export class AccountService {
-  static async profileChangePassword(data: ChangePasswordData, headers: {}) {
+  static async profileChangePassword(
+    data: ChangePasswordData,
+    headers: Pick<BaseRequestHeaders, 'x-auth' | 'authorization'>,
+  ) {
     const { currentPassword, newPassword } = data;
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     const payload: ChangePasswordRequestData = {
-      //@ts-ignore
-      email: jwt_decode(headers['x-auth'])?.username, //TODO::refactor && add decode service
+      email: JTWDecodeService.decodeToken<DecodedJWTUserData>(headers['x-auth']).username,
       previousPassword: currentPassword,
       proposedPassword: newPassword,
     };
