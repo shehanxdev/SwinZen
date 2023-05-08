@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import React from 'react';

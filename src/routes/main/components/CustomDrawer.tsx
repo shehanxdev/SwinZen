@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { BlurView } from '@react-native-community/blur';
 import { DrawerContentScrollView } from '@react-navigation/drawer';
 import React from 'react';

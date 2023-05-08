@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import calendar from 'dayjs/plugin/calendar';
 
 import { customDayjsFn } from '@sz/config';
