@@ -174,8 +174,7 @@ export function SignupScreen() {
             />
           </View>
         </View>
-        <View style={tw`items-center  mb-5 mx-5`}>
-          {/* TODO:: get clarifications on adding the padding */}
+        <View style={tw`items-center  mb-5 mx-5 mt-18`}>
           <View style={tw`mb-6`}>
             <Button
               onPress={handleSubmit(onSignUpFormValid, onSignUpFormInvalid)}

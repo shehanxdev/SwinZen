@@ -78,7 +78,7 @@ export function ContactUsScreen() {
               )}
             />
           </View>
-          <View style={tw`mb-[10px]`}>
+          <View style={tw`mb-2.5`}>
             <Controller
               control={control}
               name="mobileNumber"

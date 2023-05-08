@@ -1410,6 +1410,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                     "marginBottom": 20,
                     "marginLeft": 20,
                     "marginRight": 20,
+                    "marginTop": 72,
                   }
                 }
               >
