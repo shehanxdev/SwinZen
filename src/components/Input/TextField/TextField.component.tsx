@@ -50,7 +50,7 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
   }: TextFieldProps,
   ref,
 ) {
-  const labelTextComponent = useMemo(
+  const labelComponent = useMemo(
     () => (
       <>
         {typeof label === 'object' ? (
@@ -100,7 +100,7 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
 
   return (
     <View>
-      {labelTextComponent}
+      {labelComponent}
       <TextInput
         style={innerTextInputStyles}
         ref={ref}
