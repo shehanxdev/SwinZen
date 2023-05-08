@@ -16,7 +16,7 @@ import {
   TextField,
 } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, Route, TextVariant } from '@sz/constants';
+import { Color, Route, TextAlignment, TextVariant } from '@sz/constants';
 import { SignupFormValues } from '@sz/models';
 import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
@@ -151,7 +151,14 @@ export function SignupScreen() {
             render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
               <TextField
                 ref={ref}
-                label="Your promotion code (If Applicable)"
+                label={
+                  <Text variant={TextVariant.Body2SemiBold} color={Color.Neutral.Sz200} textAlign={TextAlignment.Auto}>
+                    Your promotion code
+                    <Text variant={TextVariant.Body2Italic} color={Color.Neutral.Sz200} textAlign={TextAlignment.Auto}>
+                      {` (If Applicable)`}
+                    </Text>
+                  </Text>
+                }
                 leftIcon={<SecurityIcon />}
                 value={value}
                 onChangeText={onChange}
