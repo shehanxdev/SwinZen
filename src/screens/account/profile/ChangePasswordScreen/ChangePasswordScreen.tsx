@@ -7,8 +7,8 @@ import { AccountLockIcon, Button, PasswordField } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color } from '@sz/constants';
 import { ChangePasswordFormValues } from '@sz/models';
-import { ToastService } from '@sz/services';
-import { useSelector } from '@sz/stores';
+import { NavigationService, ToastService } from '@sz/services';
+import { useDispatch, useSelector } from '@sz/stores';
 import { changePasswordValidationSchema } from '@sz/utils';
 
 import { BaseAccountScreen } from '../../components';
@@ -23,6 +23,8 @@ export function ChangePasswordScreen() {
 
   const loading = useSelector(state => state.loading.effects.userStore.profileChangePassword);
 
+  const dispatch = useDispatch();
+
   const onChangePasswordFormInvalid: SubmitErrorHandler<ChangePasswordFormValues> = () => {
     console.log(errors);
     //TODO:: handle error
@@ -30,8 +32,10 @@ export function ChangePasswordScreen() {
 
   const onChangePasswordFormValid: SubmitHandler<ChangePasswordFormValues> = async formInput => {
     try {
-      //TODO::Implement
-      console.log(formInput);
+      await dispatch.userStore.profileChangePassword(formInput);
+
+      ToastService.success({ message: 'Success!', description: 'Password change successful!' });
+      NavigationService.goBack();
     } catch (error: any) {
       ToastService.error({ message: 'Failed!', description: error.data.message });
     }
