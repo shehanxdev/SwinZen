@@ -1,9 +1,12 @@
 import * as yup from 'yup';
 
+import { ValidNameRegex } from '@sz/constants';
+
 export const signupFormErrorMessages = {
   'name:required': 'Please enter Name',
   'name:min': 'Username must be at least 2 letters long',
   'name:max': 'Username must not be 10 letters long',
+  'name:valid': 'The name cannot contain numerical and special characters.',
 
   'username:required': 'Please enter Email ID',
   'username:email': 'Invalid Email',
@@ -24,7 +27,8 @@ export const signupValidationSchema = yup
       .trim()
       .required(signupFormErrorMessages['name:required'])
       .min(2, signupFormErrorMessages['name:min'])
-      .max(256, signupFormErrorMessages['name:max']),
+      .max(256, signupFormErrorMessages['name:max'])
+      .matches(ValidNameRegex, signupFormErrorMessages['name:valid']),
     username: yup
       .string()
       .required(signupFormErrorMessages['username:required'])
