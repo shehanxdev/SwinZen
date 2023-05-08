@@ -18,17 +18,17 @@ export abstract class ToastService {
    *
    * @param description {String|string[]}
    */
-  private static generateErrorMessage(description: string | string[]) {
+  private static generateCustomErrorDescription(description: string | string[]) {
     if (typeof description == 'string') return description;
     if (description.length === 1) return description[0];
 
-    let customDescription = '';
+    let customErrorDescription = '';
 
     for (let message of description) {
-      customDescription += `• ${message} \n`;
+      customErrorDescription += `• ${message} \n`;
     }
 
-    return customDescription;
+    return customErrorDescription;
   }
 
   /**
@@ -41,7 +41,7 @@ export abstract class ToastService {
   public static success({ message, description, otherConfigs }: ToastParams) {
     showMessage({
       message: message,
-      description: ToastService.generateErrorMessage(description),
+      description: ToastService.generateCustomErrorDescription(description),
       backgroundColor: Color.Primary.SzSuccess,
       ...otherConfigs,
     });
@@ -57,7 +57,7 @@ export abstract class ToastService {
   public static information({ message, description, otherConfigs }: ToastParams) {
     showMessage({
       message: message,
-      description: ToastService.generateErrorMessage(description),
+      description: ToastService.generateCustomErrorDescription(description),
       backgroundColor: Color.Primary.SzInfo,
       ...otherConfigs,
     });
@@ -73,7 +73,7 @@ export abstract class ToastService {
   public static error({ message, description, otherConfigs }: ToastParams) {
     showMessage({
       message: message,
-      description: ToastService.generateErrorMessage(description),
+      description: ToastService.generateCustomErrorDescription(description),
       backgroundColor: Color.Primary.SzError,
       ...otherConfigs,
     });
@@ -89,7 +89,7 @@ export abstract class ToastService {
   public static warning({ message, description, otherConfigs }: ToastParams) {
     showMessage({
       message: message,
-      description: ToastService.generateErrorMessage(description),
+      description: ToastService.generateCustomErrorDescription(description),
       backgroundColor: Color.Primary.SzWarning,
       ...otherConfigs,
     });
