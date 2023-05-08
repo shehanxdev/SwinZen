@@ -17,6 +17,7 @@ export interface UserState {
   accessToken: string | null;
   refreshToken: string | null;
   passwordResetToken: string | null;
+  userId: string | null;
   //TODO::fill other user related state here
 }
 
@@ -25,6 +26,7 @@ const initialState: UserState = {
   accessToken: null,
   refreshToken: null,
   passwordResetToken: null,
+  userId: null,
 };
 
 export const userStore = createModel<RootModel>()({
@@ -45,17 +47,22 @@ export const userStore = createModel<RootModel>()({
     clearPasswordResetToken(state: UserState) {
       return { ...state, passwordResetToken: null };
     },
+    setUserId(state: UserState, userId: string | null) {
+      return { ...state, userId };
+    },
   },
   effects: dispatch => ({
     async loginUserWithCredentials(payload: LoginUserData) {
       const data = await AuthService.loginUserWithCredentials(payload);
       dispatch.userStore.setAccessToken(data.accessToken);
       dispatch.userStore.setRefreshToken(data.refreshToken);
+      dispatch.userStore.setUserId(data.userId);
       dispatch.userStore.setIsAuthenticated(true);
     },
     async logoutUser() {
       dispatch.userStore.setAccessToken(null);
       dispatch.userStore.setRefreshToken(null);
+      dispatch.userStore.setUserId(null);
       dispatch.userStore.setIsAuthenticated(false);
     },
     async registerUser(payload: SignupUserData) {
