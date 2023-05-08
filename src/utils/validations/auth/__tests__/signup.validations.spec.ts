@@ -118,8 +118,8 @@ describe('signupValidationSchema', () => {
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['username:required']);
   });
 
-  it('should give an error if the userName(Email) contains more than 50 characters', async () => {
-    const userNameInput = 'johnwith_more_than_fifty_characters_in_email@example.com';
+  it('should give an error if the userName(Email) contains more than 256 characters', async () => {
+    const userNameInput = `${'a'.repeat(257)}@gmail.com`;
     let validationResult;
 
     try {
@@ -187,7 +187,7 @@ describe('signupValidationSchema', () => {
       validationResult = error;
     }
 
-    expect(validationResult.errors[0]).toBe(signupFormErrorMessages['confirmpassword:match']);
+    expect(validationResult.errors[0]).toBe(signupFormErrorMessages['confirmPassword:match']);
   });
 
   it('should not give an error if the promoCode input is empty', async () => {

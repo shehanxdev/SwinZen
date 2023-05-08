@@ -73,7 +73,7 @@ export function SignupScreen() {
                   ref={ref}
                   label="Your name"
                   leftIcon={<ProfileIcon />}
-                  maxLength={10}
+                  maxLength={256}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -95,7 +95,7 @@ export function SignupScreen() {
                   ref={ref}
                   label="Your email"
                   leftIcon={<MailIcon />}
-                  maxLength={50}
+                  maxLength={256}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -160,6 +160,7 @@ export function SignupScreen() {
               render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
                 <TextField
                   ref={ref}
+                  disabled //TODO:: Disabling until further clarifications
                   label={
                     <Text
                       variant={TextVariant.Body2SemiBold}
