@@ -1240,6 +1240,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                       ]
                     }
                   >
+                    Your promotion code
                     <Text
                       style={
                         [
@@ -1248,33 +1249,15 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                             "lineHeight": 24,
                           },
                           {
-                            "fontFamily": "SourceSansPro-SemiBold",
+                            "fontFamily": "SourceSansPro-Italic",
                             "fontSize": 16,
-                            "fontWeight": "600",
+                            "fontWeight": "normal",
                             "textAlign": "auto",
                           },
                         ]
                       }
                     >
-                      Your promotion code
-                      <Text
-                        style={
-                          [
-                            {
-                              "color": "#E9ECEF",
-                              "lineHeight": 24,
-                            },
-                            {
-                              "fontFamily": "SourceSansPro-Italic",
-                              "fontSize": 16,
-                              "fontWeight": "normal",
-                              "textAlign": "auto",
-                            },
-                          ]
-                        }
-                      >
-                         (If Applicable)
-                      </Text>
+                       (If Applicable)
                     </Text>
                   </Text>
                   <View

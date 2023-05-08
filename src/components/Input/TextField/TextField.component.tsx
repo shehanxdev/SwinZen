@@ -52,9 +52,15 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
 ) {
   const labelTextComponent = useMemo(
     () => (
-      <Text variant={TextVariant.Body2SemiBold} color={labelColor} textAlign={TextAlignment.Auto}>
-        {label}
-      </Text>
+      <>
+        {typeof label === 'object' ? (
+          <>{label}</>
+        ) : (
+          <Text variant={TextVariant.Body2SemiBold} color={labelColor} textAlign={TextAlignment.Auto}>
+            {label}
+          </Text>
+        )}
+      </>
     ),
     [labelColor, label, error],
   );
