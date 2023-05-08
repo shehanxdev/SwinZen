@@ -166,6 +166,16 @@ export class NavigationService {
           },
         };
         break;
+      case Route.ContactUs:
+        navRoute = Route.InfoStack;
+        navParams = {
+          screen: Route.ContactUs,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
       case Route.FAQ:
         navRoute = Route.InfoStack;
         navParams = {
