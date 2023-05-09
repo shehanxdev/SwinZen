@@ -145,8 +145,7 @@ describe('signupValidationSchema', () => {
   });
 
   it('should give an error for the password which has more than 256 characters', async () => {
-    const passwordInput =
-      'password_with_more_than_two_hundred_and_fifty_six_characters_is_not_allowed_212_FSFRLorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_sed_do_eiusmod_tempor_incididunt_ut labore_et_dolore_magna_aliqua_Ut_enim_ad_minim_veniam_quis_nostrud_exercitationullamc_ut_aliquip_%!$!_endpassword_with_more_than_twenty_character_is_not_allowed_212_FSFR_%!$!_end';
+    const passwordInput = `${'abcd'.repeat(65)}`;
     let validationResult;
 
     try {

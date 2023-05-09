@@ -94,7 +94,7 @@ export function LoginScreen() {
                   ref={ref}
                   label="Your password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={20}
+                  maxLength={256}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}

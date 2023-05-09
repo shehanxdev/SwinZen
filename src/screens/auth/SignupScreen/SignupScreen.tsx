@@ -118,7 +118,7 @@ export function SignupScreen() {
                   ref={ref}
                   label="Your password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={20}
+                  maxLength={256}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -140,7 +140,7 @@ export function SignupScreen() {
                   ref={ref}
                   label="Please confirm your password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={20}
+                  maxLength={256}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}

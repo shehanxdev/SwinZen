@@ -671,7 +671,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                           <TextInput
                             editable={true}
                             maxFontSizeMultiplier={1.5}
-                            maxLength={20}
+                            maxLength={256}
                             multiline={false}
                             onBlur={[Function]}
                             onChangeText={[Function]}
@@ -970,7 +970,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                           <TextInput
                             editable={true}
                             maxFontSizeMultiplier={1.5}
-                            maxLength={20}
+                            maxLength={256}
                             multiline={false}
                             onBlur={[Function]}
                             onChangeText={[Function]}
