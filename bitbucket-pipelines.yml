@@ -16,6 +16,8 @@ pipelines:
   branches:
     feature/*:
       - step: *sonar-cloud
+    dev:
+      - step: *sonar-cloud
   pull-requests:
     '**':
       - step: *sonar-cloud
