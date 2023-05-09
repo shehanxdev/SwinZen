@@ -374,22 +374,6 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                       </View>
                     </View>
                   </View>
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#E35F5F",
-                          "lineHeight": 24,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-Regular",
-                          "fontSize": 15,
-                          "fontWeight": "600",
-                          "textAlign": "auto",
-                        },
-                      ]
-                    }
-                  />
                 </View>
               </View>
               <View

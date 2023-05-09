@@ -1,6 +1,7 @@
 import {
   ApiErrorResponse,
   ApiResponse,
+  BaseRequestHeaders,
   EmailVerificationData,
   EmailVerificationResponse,
   ForgetPasswordData,
@@ -102,7 +103,7 @@ export class AuthService {
     }
   }
 
-  static async resetPassword(data: ResetPasswordData, headers: {}) {
+  static async resetPassword(data: ResetPasswordData, headers: Pick<BaseRequestHeaders, 'x-auth'>) {
     const { email, password } = data;
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
