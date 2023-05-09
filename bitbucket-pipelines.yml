@@ -11,6 +11,8 @@ definitions:
         name: SonarCloud Scan
         script:
           - pipe: sonarsource/sonarcloud-scan:1.4.0
+            variables:
+              EXTRA_ARGS: -Dsonar.java.binaries=\"target/classes\"
 
 pipelines:
   branches:
