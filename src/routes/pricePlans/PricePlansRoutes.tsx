@@ -1,4 +1,4 @@
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 
@@ -16,7 +16,7 @@ export type PricePlansStackParamList = {
   };
 };
 
-const Stack = createStackNavigator<PricePlansStackParamList>();
+const Stack = createNativeStackNavigator<PricePlansStackParamList>();
 
 export function PricePlansStack() {
   return (
