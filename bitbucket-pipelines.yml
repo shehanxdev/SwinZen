@@ -13,13 +13,10 @@ definitions:
           - pipe: sonarsource/sonarcloud-scan:1.4.0
             variables:
               EXTRA_ARGS: -Dsonar.inclusions='**/*.class'
-
+          - pipe: sonarsource/sonarcloud-quality-gate:0.1.6
 pipelines:
   branches:
     feature/*:
       - step: *sonar-cloud
     dev:
-      - step: *sonar-cloud
-  pull-requests:
-    '**':
       - step: *sonar-cloud
