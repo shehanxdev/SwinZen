@@ -57,26 +57,28 @@ export function ResetPasswordScreen({ route }) {
               </Text>
             </View>
           </View>
-          <Controller
-            control={control}
-            name="password"
-            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
-              <PasswordField
-                ref={ref}
-                label="Your new password"
-                leftIcon={<AccountLockIcon />}
-                maxLength={20}
-                value={value}
-                onChangeText={onChange}
-                onBlur={onBlur}
-                helperText={(isTouched || isSubmitted) && error?.message}
-                helperTextColor={Color.Error.SzMain}
-                error={(isTouched || isSubmitted) && error !== undefined}
-                returnKeyType={'next'}
-                onSubmitEditing={() => setFocus('confirmPassword')}
-              />
-            )}
-          />
+          <View style={tw`mb-4`}>
+            <Controller
+              control={control}
+              name="password"
+              render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
+                <PasswordField
+                  ref={ref}
+                  label="Your new password"
+                  leftIcon={<AccountLockIcon />}
+                  maxLength={20}
+                  value={value}
+                  onChangeText={onChange}
+                  onBlur={onBlur}
+                  helperText={(isTouched || isSubmitted) && error?.message}
+                  helperTextColor={Color.Error.SzMain}
+                  error={(isTouched || isSubmitted) && error !== undefined}
+                  returnKeyType={'next'}
+                  onSubmitEditing={() => setFocus('confirmPassword')}
+                />
+              )}
+            />
+          </View>
           <Controller
             control={control}
             name="confirmPassword"
