@@ -66,7 +66,7 @@ export function ResetPasswordScreen({ route }) {
                   ref={ref}
                   label="Your new password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={20}
+                  maxLength={256}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -87,7 +87,7 @@ export function ResetPasswordScreen({ route }) {
                 ref={ref}
                 label="Confirm your new password"
                 leftIcon={<AccountLockIcon />}
-                maxLength={20}
+                maxLength={256}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
