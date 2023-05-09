@@ -7,7 +7,12 @@ import { getSectionList } from '../notification.helpers';
 describe('notification helper test cases', () => {
   describe('getSectionList function', () => {
     const getModifiedResult = (dataArray: NotificationDataType[]) => renderHook(() => getSectionList(dataArray));
-    const mockDate = new Date();
+    // const mockDate = new Date();
+    const newDate = new Date();
+    const timeZoneName = new Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const options = { timeZone: timeZoneName };
+    const dateInTimeZone = newDate.toLocaleString('en-US', options);
+    const mockDate = new Date(dateInTimeZone);
 
     // avoiding seconds issue, when test cases execution
     mockDate.setSeconds(0);
