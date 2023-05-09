@@ -2,15 +2,15 @@ import React from 'react';
 import { ActivityIndicator, ScrollView, View } from 'react-native';
 
 import { tw } from '@sz/config';
-import { Color, Route } from '@sz/constants';
+import { Color, Route, SortDataType } from '@sz/constants';
 import { useFetch } from '@sz/hooks';
 import { PricePlansService } from '@sz/services';
 import { NavigationService } from '@sz/services';
 
-import { BasePricePlansScreen, CustomHeader, SubscriptionCard } from '../components';
+import { BasePricePlansScreen, CustomHeader, PlanSubscriptionCard } from '../components';
 
 export function PricePlansScreen({ route }) {
-  const { data, isLoading } = useFetch(PricePlansService.getPricePlans);
+  const { data, isLoading } = useFetch(() => PricePlansService.getPricePlans(SortDataType.PRICE));
 
   // TODO:: when user press the PricePlan screen button on profile settings screen, make sure to pass any dummy param in navigation
   // Registration flow PricePlan heander back button should be routed into MainStack and profile settings screen to PricePlan screen header back button should be riuted into profile settings screen
@@ -32,7 +32,7 @@ export function PricePlansScreen({ route }) {
           {data &&
             data.results.map((item, index) => (
               <View key={index} style={tw`my-2`}>
-                <SubscriptionCard
+                <PlanSubscriptionCard
                   title={item.name}
                   price={item.price}
                   frequency={item.frequency}

@@ -1,11 +1,10 @@
+import { render } from '@testing-library/react-native';
 import * as React from 'react';
 
-import { renderWithProviders } from '@sz/utils';
+import { PlanSubscriptionCard } from './../PlanSubscriptionCard';
 
-import { SubscriptionCard } from './../SubscriptionCard';
-
-describe('SubscriptionCard Component', () => {
-  const testID = 'SubscriptionCardTestID';
+describe('PlanSubscriptionCard Component', () => {
+  const testID = 'PlanSubscriptionCardTestID';
   const title = 'testTitle';
   const price = 99.99;
   const frequency = 'testFrequency';
@@ -13,8 +12,8 @@ describe('SubscriptionCard Component', () => {
   const mockOnCardPressFunction = jest.fn();
 
   const getRenderedComponent = () =>
-    renderWithProviders(
-      <SubscriptionCard
+    render(
+      <PlanSubscriptionCard
         testID={testID}
         title={title}
         price={price}
@@ -24,15 +23,15 @@ describe('SubscriptionCard Component', () => {
       />,
     );
 
-  it(`should render SubscriptionCard component correctly`, () => {
+  it(`should render PlanSubscription Card component correctly`, () => {
     const rendered = getRenderedComponent();
     const renderedTree = rendered.toJSON();
     expect(renderedTree).toMatchSnapshot();
   });
 
-  it('should find the SubscriptionCard component via testID', () => {
+  it('should find the PlanSubscription Card component via testID', () => {
     const { getByTestId } = getRenderedComponent();
-    const foundSubscriptionCardComponent = getByTestId(testID);
-    expect(foundSubscriptionCardComponent).toBeTruthy();
+    const foundPlanSubscriptionCardComponent = getByTestId(testID);
+    expect(foundPlanSubscriptionCardComponent).toBeTruthy();
   });
 });

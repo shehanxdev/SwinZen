@@ -22,6 +22,7 @@ export function CustomHeader({ testID = 'CustomHeaderTestID', title, onBackPress
       <Text variant={TextVariant.SubTitle2SemiBold} color={Color.Neutral.Sz100}>
         {title}
       </Text>
+      {/* width is equal to the left side icon width with padding />  */}
       <View style={tw`w-12`} />
     </View>
   );

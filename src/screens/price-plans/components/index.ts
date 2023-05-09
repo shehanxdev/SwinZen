@@ -1,3 +1,3 @@
 export * from './BasePricePlansScreen';
 export * from './CustomHeader';
-export * from './SubscriptionCard';
+export * from './PlanSubscriptionCard';

@@ -3,12 +3,12 @@ import { ApiErrorResponse, ApiResponse, PricePlansResponse } from '@sz/models';
 import { APIError, HttpServiceInstance } from '../../http-service';
 
 export class PricePlansService {
-  static async getPricePlans() {
+  static async getPricePlans(sort: string) {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     try {
       const response = await httpServiceInstance.get<ApiResponse<PricePlansResponse>, ApiErrorResponse>('/plans', {
-        sortBy: 'price:asc',
+        sortBy: sort,
       });
 
       if (!response?.data) {

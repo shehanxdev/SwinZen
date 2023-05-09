@@ -1,25 +1,24 @@
 import * as React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { Card } from 'react-native-paper';
-import tw from 'twrnc';
 
-import { PricePlanFeatureListTickIcon } from '@sz/components';
-import { Text } from '@sz/components';
+import { PricePlanFeatureListTickIcon, Text } from '@sz/components';
+import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
-export interface SubscriptionCardProps {
+export interface PlanSubscriptionCardProps {
   testID?: string;
   selected?: boolean;
   title: string;
   price: number;
-  frequency: string | null;
+  frequency?: string;
   featureList: string[];
   onCardPress?: () => void;
-  betterValue?: string | null;
+  betterValue?: string;
 }
 
-export function SubscriptionCard({
-  testID = 'SubscriptionCardTestID',
+export function PlanSubscriptionCard({
+  testID = 'PlanSubscriptionCardTestID',
   selected = false,
   title,
   price,
@@ -27,10 +26,10 @@ export function SubscriptionCard({
   featureList,
   onCardPress,
   betterValue = null,
-}: SubscriptionCardProps) {
+}: PlanSubscriptionCardProps) {
   return (
     <TouchableOpacity testID={testID} onPress={onCardPress}>
-      <Card style={tw`bg-[${Color.Primary.Sz700}]/50 rounded-2.5 shadow-[${Color.Primary.Sz700}]/20 content-center`}>
+      <Card style={tw`bg-[${Color.Primary.Sz700}]/50 shadow-[${Color.Primary.Sz700}]/20 rounded-2.5 content-center`}>
         {betterValue && (
           <View style={tw`bg-[${selected ? Color.Neutral.Sz600 : Color.Tertiary.Sz900}] h-6.25 rounded-t-2.5`}>
             <Text variant={TextVariant.Labels} color={Color.Primary.Sz900}>

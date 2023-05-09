@@ -1,6 +1,5 @@
+import { render } from '@testing-library/react-native';
 import * as React from 'react';
-
-import { renderWithProviders } from '@sz/utils';
 
 import { CustomHeader } from './../CustomHeader';
 
@@ -10,7 +9,7 @@ describe('CustomHeader Component', () => {
   const mockOnBackPressFunction = jest.fn();
 
   const getRenderedComponent = () =>
-    renderWithProviders(<CustomHeader testID={testID} title={title} onBackPress={mockOnBackPressFunction} />);
+    render(<CustomHeader testID={testID} title={title} onBackPress={mockOnBackPressFunction} />);
 
   it(`should render CustomHeader component correctly`, () => {
     const rendered = getRenderedComponent();

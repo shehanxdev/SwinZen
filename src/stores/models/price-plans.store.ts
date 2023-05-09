@@ -21,8 +21,8 @@ export const pricePlansStore = createModel<RootModel>()({
     },
   },
   effects: dispatch => ({
-    async getPricePlans() {
-      const data = await PricePlansService.getPricePlans();
+    async getPricePlans(sort: string) {
+      const data = await PricePlansService.getPricePlans(sort);
       dispatch.pricePlansStore.setPricePlans(data.results);
     },
   }),
