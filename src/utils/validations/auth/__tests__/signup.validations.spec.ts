@@ -33,6 +33,19 @@ describe('signupValidationSchema', () => {
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['name:required']);
   });
 
+  it('should give an error if the name contains numbers of special characters', async () => {
+    const nameInput = 'Name@123';
+    let validationResult;
+
+    try {
+      validationResult = await signupValidationSchema.validateAt('name', { name: nameInput });
+    } catch (error) {
+      validationResult = error;
+    }
+
+    expect(validationResult.errors[0]).toBe(signupFormErrorMessages['name:valid']);
+  });
+
   it('should give an error if the name input has less than 2 characters', async () => {
     const nameInput = 'J';
     let validationResult;
