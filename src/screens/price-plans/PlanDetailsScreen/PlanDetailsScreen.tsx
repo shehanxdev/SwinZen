@@ -37,9 +37,7 @@ export function PlanDetailsScreen({ route }) {
                 <View
                   style={tw`flex-row justify-center items-center gap-2 mt-2`}
                   key={`${TEST_ID_PREFIX}-Feature-${index}`}>
-                  <View style={tw`mb-0.5`}>
-                    <PricePlanFeatureListTickIcon />
-                  </View>
+                  <PricePlanFeatureListTickIcon />
                   <Text textAlign={TextAlignment.Center} variant={TextVariant.Labels} color={Color.Neutral.Sz100}>
                     {feature}
                   </Text>

@@ -53,9 +53,7 @@ export function PlanSubscriptionCard({
             {featureList.map((feature, index) => {
               return (
                 <View style={tw`flex-row justify-center items-center gap-2`} key={index}>
-                  <View style={tw`mb-0.5`}>
-                    <PricePlanFeatureListTickIcon color={selected ? Color.Neutral.Sz600 : Color.Tertiary.Sz900} />
-                  </View>
+                  <PricePlanFeatureListTickIcon color={selected ? Color.Neutral.Sz600 : Color.Tertiary.Sz900} />
                   <Text
                     textAlign={TextAlignment.Center}
                     variant={TextVariant.Labels}

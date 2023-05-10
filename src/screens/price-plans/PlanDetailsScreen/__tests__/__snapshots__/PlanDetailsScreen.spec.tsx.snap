@@ -197,19 +197,11 @@ exports[`Plan Details Screen screen should render Plan Details Screen correctly 
                     }
                   }
                 >
-                  <View
-                    style={
-                      {
-                        "marginBottom": 2,
-                      }
-                    }
-                  >
-                    <SvgMock
-                      fill="#A2FD2F"
-                      height={13}
-                      width={13}
-                    />
-                  </View>
+                  <SvgMock
+                    fill="#A2FD2F"
+                    height={13}
+                    width={13}
+                  />
                   <Text
                     style={
                       [
@@ -240,19 +232,11 @@ exports[`Plan Details Screen screen should render Plan Details Screen correctly 
                     }
                   }
                 >
-                  <View
-                    style={
-                      {
-                        "marginBottom": 2,
-                      }
-                    }
-                  >
-                    <SvgMock
-                      fill="#A2FD2F"
-                      height={13}
-                      width={13}
-                    />
-                  </View>
+                  <SvgMock
+                    fill="#A2FD2F"
+                    height={13}
+                    width={13}
+                  />
                   <Text
                     style={
                       [

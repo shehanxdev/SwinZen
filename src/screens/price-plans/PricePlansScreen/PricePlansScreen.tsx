@@ -11,11 +11,11 @@ import { NavigationService, PricePlansService } from '@sz/services';
 import { BasePricePlansScreen, PlanSubscriptionCard } from '../components';
 
 export function PricePlansScreen({ route }) {
-  const navigation = useNavigation();
   const { data, isLoading } = useFetch(() => PricePlansService.getPricePlans(SortDataType.PRICE));
 
-  // TODO:: when user press the PricePlan screen button on profile settings screen, make sure to pass any dummy param in navigation
-  // Registration flow PricePlan heander back button should be routed into MainStack and profile settings screen to PricePlan screen header back button should be riuted into profile settings screen
+  const navigation = useNavigation();
+
+  // TODO:: this param is use to identify navigation through the profile settings and login
   const params = route.params;
 
   // custom action for navigation header back button
