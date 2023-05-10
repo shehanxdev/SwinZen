@@ -71,7 +71,7 @@ export function LoginScreen() {
                   ref={ref}
                   label="Your email"
                   leftIcon={<MailIcon />}
-                  maxLength={50}
+                  maxLength={256}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -94,7 +94,7 @@ export function LoginScreen() {
                   ref={ref}
                   label="Your password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={20}
+                  maxLength={256}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -120,9 +120,9 @@ export function LoginScreen() {
             <Button onPress={handleSubmit(onLoginFormValid, onLoginFormInvalid)} title={'SIGN IN'} loading={loading} />
           </View>
           <Text variant={TextVariant.Labels}>
-            Don’t have an account?
+            {`Don’t have an account? `}
             <Link
-              text=" Sign up"
+              text="Sign up"
               onPress={() => {
                 NavigationService.navigate(Route.Signup);
               }}
