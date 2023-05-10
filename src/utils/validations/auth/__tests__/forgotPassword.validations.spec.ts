@@ -44,8 +44,8 @@ describe('forgot Password validation schema', () => {
       expect(validationResult.errors[0]).toBe(forgotPasswordErrorMessages['email:invalid']);
     }
   });
-  it('should throw an error when email with more than 50 characters is input', async () => {
-    const input = { email: `${'a'.repeat(56)}@gmail.com` };
+  it('should throw an error when email with more than 256 characters is input', async () => {
+    const input = { email: `${'a'.repeat(257)}@gmail.com` };
     let validationResult;
     try {
       await forgotPasswordValidationSchema.validateAt('email', input);

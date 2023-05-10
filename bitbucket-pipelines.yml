@@ -1,0 +1,22 @@
+image: maven:3-openjdk-11 # Or newer
+
+clone:
+  depth: full
+
+definitions:
+  caches:
+    sonar: ~/.sonar/cache
+  steps:
+    - step: &sonar-cloud
+        name: SonarCloud Scan
+        script:
+          - pipe: sonarsource/sonarcloud-scan:1.4.0
+            variables:
+              EXTRA_ARGS: -Dsonar.inclusions='**/*.class'
+          - pipe: sonarsource/sonarcloud-quality-gate:0.1.6
+pipelines:
+  branches:
+    feature/*:
+      - step: *sonar-cloud
+    dev:
+      - step: *sonar-cloud

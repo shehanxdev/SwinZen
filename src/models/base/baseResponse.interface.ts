@@ -10,7 +10,7 @@ export interface BaseResponse {
   /**
    * User readable status of the request
    */
-  message: string;
+  message: string | string[];
 }
 
 export interface ApiResponse<T> extends BaseResponse {
