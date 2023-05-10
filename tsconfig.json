@@ -16,6 +16,7 @@
     "skipDefaultLibCheck": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "@sz/assets": ["src/assets/index"],

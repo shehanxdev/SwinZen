@@ -82,8 +82,7 @@ export function CustomBottomTabBar({
                 } else {
                   onPress(isFocused, route, navigation);
                 }
-              }}
-              style={tw`p-1 bg-[${isFocused ? '#d9d9d90a' : `${Color.Transparency.full}`}]`}>
+              }}>
               {/* NOTE::#d9d9d90a isn't avaialble under the design system. */}
               {renderIcon(index, isFocused)}
             </TouchableOpacity>

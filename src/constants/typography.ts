@@ -17,6 +17,7 @@ export enum TextVariant {
   Body1Regular = 'Body1Regular',
 
   // Body 2
+  Body2Italic = 'Body2Italic',
   Body2SemiBold = 'Body2SemiBold',
   Body2Regular = 'Body2Regular',
 

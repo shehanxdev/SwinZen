@@ -29,93 +29,101 @@ export function ContactUsScreen() {
           </Text>
         </View>
         <View style={tw`mb-21`}>
-          <Controller
-            control={control}
-            name="name"
-            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
-              <TextField
-                ref={ref}
-                label="Your name"
-                leftIcon={<ProfileIcon />}
-                maxLength={10}
-                value={value}
-                onChangeText={onChange}
-                onBlur={onBlur}
-                helperText={(isTouched || isSubmitted) && error?.message}
-                helperTextColor={Color.Error.SzMain}
-                error={(isTouched || isSubmitted) && error !== undefined}
-                returnKeyType={'next'}
-                onSubmitEditing={() => {
-                  setFocus('username');
-                }}
-              />
-            )}
-          />
-          <Controller
-            control={control}
-            name="username"
-            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
-              <TextField
-                ref={ref}
-                label="Your email"
-                leftIcon={<MailIcon />}
-                maxLength={50}
-                value={value}
-                onChangeText={onChange}
-                onBlur={onBlur}
-                helperText={(isTouched || isSubmitted) && error?.message}
-                helperTextColor={Color.Error.SzMain}
-                error={(isTouched || isSubmitted) && error !== undefined}
-                returnKeyType={'next'}
-                onSubmitEditing={() => {
-                  setFocus('mobileNumber');
-                }}
-                autoCapitalize={'none'}
-              />
-            )}
-          />
-          <Controller
-            control={control}
-            name="mobileNumber"
-            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
-              <MobileNumberField
-                ref={ref}
-                label="Phone number(Optional)"
-                maxLength={14}
-                value={value}
-                onChangeText={onChange}
-                onBlur={onBlur}
-                helperText={(isTouched || isSubmitted) && error?.message}
-                helperTextColor={Color.Error.SzMain}
-                error={(isTouched || isSubmitted) && error !== undefined}
-                returnKeyType={'next'}
-                onSubmitEditing={() => {
-                  setFocus('message');
-                }}
-                autoCapitalize={'none'}
-              />
-            )}
-          />
-          <Controller
-            control={control}
-            name="message"
-            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
-              <TextArea
-                ref={ref}
-                label="Message"
-                maxLength={200}
-                value={value}
-                onChangeText={onChange}
-                onBlur={onBlur}
-                helperText={(isTouched || isSubmitted) && error?.message}
-                helperTextColor={Color.Error.SzMain}
-                error={(isTouched || isSubmitted) && error !== undefined}
-                returnKeyType={'next'}
-                onSubmitEditing={() => {}}
-                autoCapitalize={'none'}
-              />
-            )}
-          />
+          <View style={tw`mb-2.5`}>
+            <Controller
+              control={control}
+              name="name"
+              render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
+                <TextField
+                  ref={ref}
+                  label="Your name"
+                  leftIcon={<ProfileIcon />}
+                  maxLength={10}
+                  value={value}
+                  onChangeText={onChange}
+                  onBlur={onBlur}
+                  helperText={(isTouched || isSubmitted) && error?.message}
+                  helperTextColor={Color.Error.SzMain}
+                  error={(isTouched || isSubmitted) && error !== undefined}
+                  returnKeyType={'next'}
+                  onSubmitEditing={() => {
+                    setFocus('username');
+                  }}
+                />
+              )}
+            />
+          </View>
+          <View style={tw`mb-2.5`}>
+            <Controller
+              control={control}
+              name="username"
+              render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
+                <TextField
+                  ref={ref}
+                  label="Your email"
+                  leftIcon={<MailIcon />}
+                  maxLength={50}
+                  value={value}
+                  onChangeText={onChange}
+                  onBlur={onBlur}
+                  helperText={(isTouched || isSubmitted) && error?.message}
+                  helperTextColor={Color.Error.SzMain}
+                  error={(isTouched || isSubmitted) && error !== undefined}
+                  returnKeyType={'next'}
+                  onSubmitEditing={() => {
+                    setFocus('mobileNumber');
+                  }}
+                  autoCapitalize={'none'}
+                />
+              )}
+            />
+          </View>
+          <View style={tw`mb-2.5`}>
+            <Controller
+              control={control}
+              name="mobileNumber"
+              render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
+                <MobileNumberField
+                  ref={ref}
+                  label="Phone number(Optional)"
+                  maxLength={14}
+                  value={value}
+                  onChangeText={onChange}
+                  onBlur={onBlur}
+                  helperText={(isTouched || isSubmitted) && error?.message}
+                  helperTextColor={Color.Error.SzMain}
+                  error={(isTouched || isSubmitted) && error !== undefined}
+                  returnKeyType={'next'}
+                  onSubmitEditing={() => {
+                    setFocus('message');
+                  }}
+                  autoCapitalize={'none'}
+                />
+              )}
+            />
+          </View>
+          <View style={tw`mb-2.5`}>
+            <Controller
+              control={control}
+              name="message"
+              render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
+                <TextArea
+                  ref={ref}
+                  label="Message"
+                  maxLength={200}
+                  value={value}
+                  onChangeText={onChange}
+                  onBlur={onBlur}
+                  helperText={(isTouched || isSubmitted) && error?.message}
+                  helperTextColor={Color.Error.SzMain}
+                  error={(isTouched || isSubmitted) && error !== undefined}
+                  returnKeyType={'next'}
+                  onSubmitEditing={() => {}}
+                  autoCapitalize={'none'}
+                />
+              )}
+            />
+          </View>
         </View>
         <View style={tw`mb-4`}>
           <Button
