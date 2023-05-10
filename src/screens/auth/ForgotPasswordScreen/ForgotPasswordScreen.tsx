@@ -59,7 +59,7 @@ export function ForgotPasswordScreen() {
                 ref={ref}
                 label="Your email"
                 leftIcon={<MailIcon />}
-                maxLength={50}
+                maxLength={256}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
