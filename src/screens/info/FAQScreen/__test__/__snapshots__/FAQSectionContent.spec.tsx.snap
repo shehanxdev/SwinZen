@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FAQ section content should render FAQ Section content correctly 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#ADB5BD",
+        "lineHeight": 24,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 16,
+        "fontWeight": "normal",
+        "textAlign": "left",
+      },
+    ]
+  }
+  testID="FAQSectionContentTestID"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non dolor purus. Nunc semper sapien congue tortor
+</Text>
+`;
