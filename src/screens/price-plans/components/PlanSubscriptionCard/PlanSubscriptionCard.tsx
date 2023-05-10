@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { TouchableOpacity, View } from 'react-native';
-import { Card } from 'react-native-paper';
 
 import { PricePlanFeatureListTickIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
@@ -29,7 +28,7 @@ export function PlanSubscriptionCard({
 }: PlanSubscriptionCardProps) {
   return (
     <TouchableOpacity testID={testID} onPress={onCardPress}>
-      <Card style={tw`bg-[${Color.Primary.Sz700}]/50 shadow-[${Color.Primary.Sz700}]/20 rounded-2.5 content-center`}>
+      <View style={tw`bg-[${Color.Primary.Sz700}]/50 shadow-[${Color.Primary.Sz700}]/20 rounded-2.5 content-center`}>
         {betterValue && (
           <View style={tw`bg-[${selected ? Color.Neutral.Sz600 : Color.Tertiary.Sz900}] h-6.25 rounded-t-2.5`}>
             <Text variant={TextVariant.Labels} color={Color.Primary.Sz900}>
@@ -54,7 +53,7 @@ export function PlanSubscriptionCard({
             {featureList.map((feature, index) => {
               return (
                 <View style={tw`flex-row justify-center items-center gap-2`} key={index}>
-                  <View style={tw`mt-1`}>
+                  <View style={tw`mb-0.5`}>
                     <PricePlanFeatureListTickIcon color={selected ? Color.Neutral.Sz600 : Color.Tertiary.Sz900} />
                   </View>
                   <Text
@@ -68,7 +67,7 @@ export function PlanSubscriptionCard({
             })}
           </View>
         </View>
-      </Card>
+      </View>
     </TouchableOpacity>
   );
 }

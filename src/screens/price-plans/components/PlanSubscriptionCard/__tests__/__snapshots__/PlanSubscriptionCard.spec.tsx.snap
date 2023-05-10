@@ -37,83 +37,106 @@ exports[`PlanSubscriptionCard Component should render PlanSubscription Card comp
   testID="PlanSubscriptionCardTestID"
 >
   <View
-    collapsable={false}
     style={
       {
         "alignContent": "center",
         "backgroundColor": "rgba(22, 80, 29, 0.5)",
-        "borderColor": "rgba(0, 0, 0, 0.12)",
         "borderRadius": 10,
-        "elevation": 1,
         "shadowColor": "rgba(22, 80, 29, 0.2)",
-        "shadowOffset": {
-          "height": 0.5,
-          "width": 0,
-        },
-        "shadowOpacity": 0.24,
-        "shadowRadius": 0.75,
       }
     }
   >
     <View
-      accessibilityState={
-        {
-          "busy": undefined,
-          "checked": undefined,
-          "disabled": true,
-          "expanded": undefined,
-          "selected": undefined,
-        }
-      }
-      accessible={true}
-      focusable={false}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
         {
-          "flexGrow": 1,
-          "flexShrink": 1,
+          "marginBottom": 30,
+          "marginTop": 30,
         }
       }
     >
-      <View
-        index={1}
-        siblings={
+      <Text
+        style={
           [
-            "View",
+            {
+              "color": "#F0F7F0",
+              "lineHeight": 28,
+            },
+            {
+              "fontFamily": "SourceSansPro-SemiBold",
+              "fontSize": 21,
+              "fontWeight": "600",
+              "textAlign": "center",
+            },
           ]
         }
+      >
+        testTitle
+      </Text>
+      <View
         style={
           {
-            "marginBottom": 30,
-            "marginTop": 30,
+            "alignItems": "center",
+            "flexDirection": "row",
+            "gap": 8,
+            "justifyContent": "center",
           }
         }
-        total={2}
       >
         <Text
           style={
             [
               {
-                "color": "#F0F7F0",
-                "lineHeight": 28,
+                "color": "#A2FD2F",
+                "lineHeight": 48,
               },
               {
-                "fontFamily": "SourceSansPro-SemiBold",
-                "fontSize": 21,
-                "fontWeight": "600",
+                "fontFamily": "SourceSansPro-Regular",
+                "fontSize": 40,
+                "fontWeight": "normal",
                 "textAlign": "center",
               },
             ]
           }
         >
-          testTitle
+          $99.99
         </Text>
+        <Text
+          style={
+            [
+              {
+                "color": "#F8F9FA",
+                "lineHeight": 24,
+              },
+              {
+                "fontFamily": "SourceSansPro-Regular",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          /testFrequency
+        </Text>
+      </View>
+      <View
+        style={
+          {
+            "alignSelf": "center",
+            "backgroundColor": "#495057",
+            "height": 1,
+            "marginTop": 14,
+            "width": 244,
+          }
+        }
+      />
+      <View
+        style={
+          {
+            "marginTop": 15,
+          }
+        }
+      >
         <View
           style={
             {
@@ -124,24 +147,19 @@ exports[`PlanSubscriptionCard Component should render PlanSubscription Card comp
             }
           }
         >
-          <Text
+          <View
             style={
-              [
-                {
-                  "color": "#A2FD2F",
-                  "lineHeight": 48,
-                },
-                {
-                  "fontFamily": "SourceSansPro-Regular",
-                  "fontSize": 40,
-                  "fontWeight": "normal",
-                  "textAlign": "center",
-                },
-              ]
+              {
+                "marginBottom": 2,
+              }
             }
           >
-            $99.99
-          </Text>
+            <SvgMock
+              fill="#A2FD2F"
+              height={13}
+              width={13}
+            />
+          </View>
           <Text
             style={
               [
@@ -151,118 +169,57 @@ exports[`PlanSubscriptionCard Component should render PlanSubscription Card comp
                 },
                 {
                   "fontFamily": "SourceSansPro-Regular",
-                  "fontSize": 16,
-                  "fontWeight": "normal",
+                  "fontSize": 15,
+                  "fontWeight": "600",
                   "textAlign": "center",
                 },
               ]
             }
           >
-            /testFrequency
+            testFeature
           </Text>
         </View>
         <View
           style={
             {
-              "alignSelf": "center",
-              "backgroundColor": "#495057",
-              "height": 1,
-              "marginTop": 14,
-              "width": 244,
-            }
-          }
-        />
-        <View
-          style={
-            {
-              "marginTop": 15,
+              "alignItems": "center",
+              "flexDirection": "row",
+              "gap": 8,
+              "justifyContent": "center",
             }
           }
         >
           <View
             style={
               {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "gap": 8,
-                "justifyContent": "center",
+                "marginBottom": 2,
               }
             }
           >
-            <View
-              style={
-                {
-                  "marginTop": 4,
-                }
-              }
-            >
-              <SvgMock
-                fill="#A2FD2F"
-                height={13}
-                width={13}
-              />
-            </View>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#F8F9FA",
-                    "lineHeight": 24,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-Regular",
-                    "fontSize": 15,
-                    "fontWeight": "600",
-                    "textAlign": "center",
-                  },
-                ]
-              }
-            >
-              testFeature
-            </Text>
+            <SvgMock
+              fill="#A2FD2F"
+              height={13}
+              width={13}
+            />
           </View>
-          <View
+          <Text
             style={
-              {
-                "alignItems": "center",
-                "flexDirection": "row",
-                "gap": 8,
-                "justifyContent": "center",
-              }
+              [
+                {
+                  "color": "#F8F9FA",
+                  "lineHeight": 24,
+                },
+                {
+                  "fontFamily": "SourceSansPro-Regular",
+                  "fontSize": 15,
+                  "fontWeight": "600",
+                  "textAlign": "center",
+                },
+              ]
             }
           >
-            <View
-              style={
-                {
-                  "marginTop": 4,
-                }
-              }
-            >
-              <SvgMock
-                fill="#A2FD2F"
-                height={13}
-                width={13}
-              />
-            </View>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#F8F9FA",
-                    "lineHeight": 24,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-Regular",
-                    "fontSize": 15,
-                    "fontWeight": "600",
-                    "textAlign": "center",
-                  },
-                ]
-              }
-            >
-              testFeature
-            </Text>
-          </View>
+            testFeature
+          </Text>
         </View>
       </View>
     </View>

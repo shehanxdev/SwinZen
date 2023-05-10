@@ -1,9 +1,10 @@
+import { SortDataType } from '@sz/constants';
 import { ApiErrorResponse, ApiResponse, PricePlansResponse } from '@sz/models';
 
 import { APIError, HttpServiceInstance } from '../../http-service';
 
 export class PricePlansService {
-  static async getPricePlans(sort: string) {
+  static async getPricePlans(sort: SortDataType) {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     try {
