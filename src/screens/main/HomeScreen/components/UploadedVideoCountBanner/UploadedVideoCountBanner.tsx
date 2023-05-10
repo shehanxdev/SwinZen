@@ -7,14 +7,14 @@ import { Color } from '@sz/constants';
 import { VideoCountCard } from './components';
 
 interface UploadedVideoCountBannerProps {
-  VideoCount: number; //refers to total uploaded video count from a specific month.
+  _VideoCount: number; //refers to total uploaded video count from a specific month.
   SwinZenUniVideoCount: number; //refers to total uploaded video count from all the times. Not just for a specific month.
 }
 
-export function UploadedVideoCountBanner({ VideoCount = 0, SwinZenUniVideoCount = 0 }: UploadedVideoCountBannerProps) {
+export function UploadedVideoCountBanner({ _VideoCount = 0, SwinZenUniVideoCount = 0 }: UploadedVideoCountBannerProps) {
   return (
     <View style={[tw`flex flex-row justify-between min-h-15`]} testID="UploadedVideoCountBannerComponentTestID">
-      <VideoCountCard count={VideoCount} description={`Video\nUploads`} />
+      <VideoCountCard count={_VideoCount} description={`Video\nUploads`} />
       <View style={tw`w-2.5`} />
       <VideoCountCard
         count={SwinZenUniVideoCount}
