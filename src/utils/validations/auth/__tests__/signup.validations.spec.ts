@@ -33,6 +33,19 @@ describe('signupValidationSchema', () => {
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['name:required']);
   });
 
+  it('should give an error if the name contains numbers of special characters', async () => {
+    const nameInput = 'Name@123';
+    let validationResult;
+
+    try {
+      validationResult = await signupValidationSchema.validateAt('name', { name: nameInput });
+    } catch (error) {
+      validationResult = error;
+    }
+
+    expect(validationResult.errors[0]).toBe(signupFormErrorMessages['name:valid']);
+  });
+
   it('should give an error if the name input has less than 2 characters', async () => {
     const nameInput = 'J';
     let validationResult;
@@ -118,8 +131,8 @@ describe('signupValidationSchema', () => {
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['username:required']);
   });
 
-  it('should give an error if the userName(Email) contains more than 50 characters', async () => {
-    const userNameInput = 'johnwith_more_than_fifty_characters_in_email@example.com';
+  it('should give an error if the userName(Email) contains more than 256 characters', async () => {
+    const userNameInput = `${'a'.repeat(257)}@gmail.com`;
     let validationResult;
 
     try {
@@ -144,8 +157,8 @@ describe('signupValidationSchema', () => {
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['password:min']);
   });
 
-  it('should give an error for the password which has more than 20 characters', async () => {
-    const passwordInput = 'password_with_more_than_twenty_character_is_not_allowed_212_FSFR_%!$!_end';
+  it('should give an error for the password which has more than 256 characters', async () => {
+    const passwordInput = `${'abcd'.repeat(65)}`;
     let validationResult;
 
     try {
@@ -187,7 +200,7 @@ describe('signupValidationSchema', () => {
       validationResult = error;
     }
 
-    expect(validationResult.errors[0]).toBe(signupFormErrorMessages['confirmpassword:match']);
+    expect(validationResult.errors[0]).toBe(signupFormErrorMessages['confirmPassword:match']);
   });
 
   it('should not give an error if the promoCode input is empty', async () => {

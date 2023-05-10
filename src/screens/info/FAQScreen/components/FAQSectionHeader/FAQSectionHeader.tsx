@@ -17,7 +17,7 @@ export function FAQSectionHeader({ content, isActive }: FAQSectionHeaderPropType
     <View style={tw`flex-row justify-between`} testID="FAQSectionHeaderTestID">
       <View style={tw`max-w-[90%]`}>
         <Text variant={TextVariant.Body2SemiBold} color={Color.Neutral.Sz100} textAlign={TextAlignment.Left}>
-          {content.title}
+          {content.question}
         </Text>
       </View>
       {isActive ? <DownArrowIcon /> : <UpArrowIcon />}

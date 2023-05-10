@@ -11,7 +11,7 @@ export function FAQSectionContent(section: FaqSection) {
       color={Color.Neutral.Sz500}
       textAlign={TextAlignment.Left}
       testID="FAQSectionContentTestID">
-      {section.content}
+      {section.answer}
     </Text>
   );
 }
