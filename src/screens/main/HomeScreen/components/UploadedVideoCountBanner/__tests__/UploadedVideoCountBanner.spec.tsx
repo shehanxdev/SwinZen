@@ -9,7 +9,7 @@ describe('UploadedVideoCountBanner Component', () => {
   const swinZenUniVideoCount = 82;
 
   const getRenderedComponent = () =>
-    render(<UploadedVideoCountBanner _VideoCount={videoCount} SwinZenUniVideoCount={swinZenUniVideoCount} />);
+    render(<UploadedVideoCountBanner videoCount={videoCount} SwinZenUniVideoCount={swinZenUniVideoCount} />);
 
   it(`should render Component correctly`, () => {
     const renderer = getRenderedComponent();
