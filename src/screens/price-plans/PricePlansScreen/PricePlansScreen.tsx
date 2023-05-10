@@ -4,8 +4,7 @@ import { ActivityIndicator, ScrollView, View } from 'react-native';
 import { tw } from '@sz/config';
 import { Color, Route, SortDataType } from '@sz/constants';
 import { useFetch } from '@sz/hooks';
-import { PricePlansService } from '@sz/services';
-import { NavigationService } from '@sz/services';
+import { NavigationService, PricePlansService } from '@sz/services';
 
 import { BasePricePlansScreen, CustomHeader, PlanSubscriptionCard } from '../components';
 

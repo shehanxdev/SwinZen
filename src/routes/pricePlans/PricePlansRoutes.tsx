@@ -23,6 +23,7 @@ export function PricePlansStack() {
     <Stack.Navigator
       screenOptions={{
         headerTitleAlign: TextAlignment.Center,
+        headerBackVisible: false,
         headerBackTitleVisible: false,
         headerTransparent: true,
         headerTitle: ({ children }) => <Text variant={TextVariant.SubTitle2SemiBold}>{children}</Text>,

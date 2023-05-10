@@ -9,6 +9,7 @@ import { NavigationService } from '@sz/services';
 import { BasePricePlansScreen } from '../components';
 
 export function PlanDetailsScreen({ route }) {
+  const TEST_ID_PREFIX = 'PlanDetailsScreen';
   const data = route.params.params.item;
 
   const onProceed = () => {
@@ -33,7 +34,9 @@ export function PlanDetailsScreen({ route }) {
           <View style={tw`mt-4`}>
             {data.features.map((feature, index) => {
               return (
-                <View style={tw`flex-row justify-center items-center gap-2 mt-2`} key={index}>
+                <View
+                  style={tw`flex-row justify-center items-center gap-2 mt-2`}
+                  key={`${TEST_ID_PREFIX}-Feature-${index}`}>
                   <View style={tw`mt-1`}>
                     <PricePlanFeatureListTickIcon />
                   </View>
