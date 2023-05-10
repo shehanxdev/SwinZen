@@ -28,7 +28,7 @@ export function PricePlansScreen({ route }) {
         </TouchableOpacity>
       ),
     });
-  }, [navigation]);
+  }, [navigation, params]);
 
   return (
     <BasePricePlansScreen testID="PricePlansScreenTestID">
