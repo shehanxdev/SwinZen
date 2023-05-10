@@ -1,10 +1,10 @@
 import calendar from 'dayjs/plugin/calendar';
 
-import { customDayjsFn } from '@sz/config';
+import { szdayjs } from '@sz/config';
 import { NotificationDataType } from '@sz/models';
 
 // dayjs calendar plagin to calculate calendar date
-customDayjsFn.extend(calendar);
+szdayjs.extend(calendar);
 
 /**
  * Returns a sections array after categorising by the date
@@ -39,7 +39,7 @@ function getSectonsByDate(dataArray: NotificationDataType[]) {
  */
 function getMappedSectionsByCalendar(dataArray: NotificationDataType[]) {
   const sectionList = Object.keys(getSectonsByDate(dataArray)).map(date => ({
-    title: customDayjsFn(date).calendar(),
+    title: szdayjs(date).calendar(),
     data: getSectonsByDate(dataArray)[date],
   }));
 

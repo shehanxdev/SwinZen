@@ -1,10 +1,10 @@
-import date from 'date-and-time';
+import dayjs from 'dayjs';
 import React, { useMemo, useState } from 'react';
 import { View } from 'react-native';
 
 import { MoveLeftArrowIcon, MoveRightArrowIcon, Text } from '@sz/components';
-import { tw } from '@sz/config';
-import { Color, TextVariant } from '@sz/constants';
+import { szdayjs, tw } from '@sz/config';
+import { Color, TextVariant, dateFormats } from '@sz/constants';
 
 import { ArrowContainer } from './components/ArrowContainer';
 
@@ -15,28 +15,28 @@ interface MonthSelectorProps {
 }
 
 export function MonthSelector({ disabled = false, onNextPreviousIconPress, onNextNextIconPress }: MonthSelectorProps) {
-  const [visibleMonth, setVisibleMonth] = useState(new Date());
+  const [visibleMonth, setVisibleMonth] = useState(dayjs());
 
   const onNextPreviousIconPressInternal = () => {
-    setVisibleMonth(date.addMonths(visibleMonth, -1));
+    setVisibleMonth(visibleMonth.subtract(1, 'months'));
     if (onNextPreviousIconPress) {
       onNextPreviousIconPress();
     }
   };
 
   const onNextMonthIconPressInternal = () => {
-    setVisibleMonth(date.addMonths(visibleMonth, +1));
+    setVisibleMonth(visibleMonth.add(1, 'months'));
     if (onNextNextIconPress) {
       onNextNextIconPress();
     }
   };
 
   const renderMonthDate = useMemo(() => {
-    return visibleMonth.toLocaleString('default', { month: 'long' }) + ' ' + visibleMonth.getFullYear().toString();
+    return szdayjs(visibleMonth).format(dateFormats.calenderHeader);
   }, [visibleMonth]);
 
   //To handle the edge case :: cannot go beyond the current month.
-  const isLimitReached = useMemo(() => visibleMonth.getMonth() === new Date().getMonth(), [visibleMonth]);
+  const isLimitReached = useMemo(() => visibleMonth.get('month') === new Date().getMonth(), [visibleMonth]);
 
   return (
     <View style={tw`flex flex-row h-18 justify-between items-center px-4`} testID="MonthSelectorComponentTestID">
