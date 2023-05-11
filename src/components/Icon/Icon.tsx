@@ -156,7 +156,7 @@ export function PasswordRevealIcon({ color = Color.Neutral.Sz500, width = 20, he
   return <PasswordRevealEyeSvg width={width} height={height} fill={color} />;
 }
 
-export function PricePlanFeatureListTickIcon({ color = Color.Neutral.Sz500, width = 12, height = 12 }: SvgIconProps) {
+export function PricePlanFeatureListTickIcon({ color = Color.Tertiary.Sz900, width = 13, height = 13 }: SvgIconProps) {
   return <PricePlanFeatureListTick fill={color} width={width} height={height} />;
 }
 
