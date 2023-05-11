@@ -4,7 +4,7 @@ import * as React from 'react';
 import { PlanDetailsScreen } from '../PlanDetailsScreen';
 
 describe('Plan Details Screen screen', () => {
-  const testID = 'PlanDetailsScreenTestID';
+  const testID = 'PlanDetailsScreen';
   const mockRoute = {
     params: {
       params: {

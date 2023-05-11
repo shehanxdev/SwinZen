@@ -4,13 +4,15 @@ import { View } from 'react-native';
 import { Button, PricePlanFeatureListTickIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route, TextAlignment, TextVariant } from '@sz/constants';
+import { Plan } from '@sz/models';
 import { NavigationService } from '@sz/services';
 
 import { BasePricePlansScreen } from '../components';
 
+const TEST_ID_PREFIX = 'PlanDetailsScreen';
+
 export function PlanDetailsScreen({ route }) {
-  const TEST_ID_PREFIX = 'PlanDetailsScreen';
-  const data = route.params.params.item;
+  const data = route.params.params.item as Plan;
 
   const onProceed = () => {
     //TODO:: handle payment proceed and change routes later
@@ -19,7 +21,7 @@ export function PlanDetailsScreen({ route }) {
   };
 
   return (
-    <BasePricePlansScreen testID="PlanDetailsScreenTestID">
+    <BasePricePlansScreen testID={TEST_ID_PREFIX}>
       <View style={tw`flex-1 justify-between mx-4`}>
         <View style={tw`mx-5 flex-1`}>
           <View style={tw`mt-2`}>
@@ -53,12 +55,12 @@ export function PlanDetailsScreen({ route }) {
             </Text>
             <View style={tw`mt-6`}>
               <Text variant={TextVariant.Body2Regular} color={Color.Neutral.Sz100}>
-                {data.frequency && '/' + data.frequency}
+                {data.frequency !== undefined && '/' + data.frequency}
               </Text>
             </View>
           </View>
           <View style={tw`mt-16 mb-3`}>
-            <Button onPress={onProceed} title="PROCEED TO PAY" />
+            <Button onPress={onProceed} title="PROCEED TO PAY" testID={`${TEST_ID_PREFIX}-PayButton`} />
           </View>
         </View>
       </View>

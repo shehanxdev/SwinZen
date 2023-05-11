@@ -1,7 +1,9 @@
-import { DrawerActions } from '@react-navigation/native';
+import { DrawerActions, StackActions } from '@react-navigation/native';
 import React from 'react';
 
 import { Route } from '@sz/constants';
+//TODO: fix require cycle issue
+import { store } from '@sz/stores';
 
 export class NavigationService {
   public static navigationRef: any = React.createRef();
@@ -15,7 +17,14 @@ export class NavigationService {
   }
 
   public static goBack() {
-    NavigationService.navigationRef.current?.goBack();
+    if (NavigationService.navigationRef.current?.canGoBack()) {
+      NavigationService.navigationRef.current?.goBack();
+    } else {
+      const isAuthenticated = store.getState().userStore.isAuthenticated;
+      NavigationService.navigationRef.current?.dispatch(
+        StackActions.replace(isAuthenticated ? Route.MainStack : Route.AuthStack),
+      );
+    }
   }
 
   public static openDrawer() {

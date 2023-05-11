@@ -29,7 +29,6 @@ export function CustomDrawer() {
   const Logout = async () => {
     try {
       await dispatch.userStore.logoutUser();
-      NavigationService.navigate(Route.Login);
     } catch (error: any) {
       ToastService.error({ message: 'Failed!', description: error.data.message });
     }

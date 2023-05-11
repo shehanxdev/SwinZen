@@ -30,7 +30,7 @@ exports[`Plan Details Screen screen should render Plan Details Screen correctly 
       "position": "relative",
     }
   }
-  testID="PlanDetailsScreenTestID"
+  testID="PlanDetailsScreen"
 >
   <Image
     resizeMode="cover"
@@ -394,6 +394,7 @@ exports[`Plan Details Screen screen should render Plan Details Screen correctly 
                           },
                         ]
                       }
+                      testID="PlanDetailsScreen-PayButton"
                     >
                       <View
                         style={
