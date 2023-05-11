@@ -2,6 +2,7 @@ export * from './about-us';
 export * from './auth';
 export * from './colors';
 export * from './error';
+export * from './data-time';
 export * from './navigation-routes';
 export * from './pricePlan';
 export * from './regular-expressions';
