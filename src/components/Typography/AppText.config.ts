@@ -75,6 +75,11 @@ export const AppTextStyles: Record<TextVariant, React.CSSProperties> = {
   },
 
   // Body 2
+  [TextVariant.Body2Italic]: {
+    fontSize: '16px',
+    fontWeight: FontWeight.Normal,
+    lineHeight: '24px',
+  },
   [TextVariant.Body2SemiBold]: {
     fontSize: '16px',
     fontWeight: FontWeight.SemiBold,
@@ -139,6 +144,9 @@ export function getAppTextStyles(variant: TextVariant) {
     case TextVariant.Body1SemiBold:
     case TextVariant.Body2SemiBold:
       textStyles += ' font-SourceSansProSemiBold';
+      break;
+    case TextVariant.Body2Italic:
+      textStyles += ' font-SourceSansProItalic';
       break;
     case TextVariant.SubTitle2Bold:
       textStyles += ' font-SourceSansProBold';
