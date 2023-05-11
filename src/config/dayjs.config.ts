@@ -12,4 +12,4 @@ dayjs.updateLocale('en', {
   },
 });
 
-export { dayjs as customDayjsFn };
+export { dayjs as szdayjs };
