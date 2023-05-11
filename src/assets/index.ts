@@ -4,6 +4,8 @@ export { default as AccountLockSvg } from './icons/account/account-lock.svg';
 export { default as ArrowDown } from './icons/faq/arrow-down.svg';
 export { default as ArrowRightSvg } from './icons/main/arrow-right.svg';
 export { default as ArrowUp } from './icons/faq/arrow-up.svg';
+export { default as MoveLeftArrowSvg } from './icons/main/move-left-arrow.svg';
+export { default as MoveRightArrowSvg } from './icons/main/move-right-arrow.svg';
 export { default as BackIconSvg } from './icons/account//back-icon.svg';
 
 export { default as BottomTabHomeSvg } from './icons/bottom-tab/home-icon.svg';
