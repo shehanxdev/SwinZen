@@ -1,7 +1,7 @@
 import * as yup from 'yup';
 
 export const changePasswordErrorMessages = {
-  'password:min': 'Password must be between 8 and 20 characters length',
+  'password:min': 'Please enter at least 8 characters',
   'password:max': 'Password must be between 8 and 20 characters length',
 
   'currentPassword:required': 'Please enter your Current password',
