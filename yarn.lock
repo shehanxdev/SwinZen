@@ -3322,12 +3322,6 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.1.tgz#841b532c45c758ee546a11d5bd7b7b473c8c30b9"
   integrity sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==
 
-date-and-time@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/date-and-time/-/date-and-time-3.0.0.tgz#c4655424060cdb9494990a6d14a44d90be53b57d"
-  integrity sha512-uuzXp/mvv6jEMLiP5QzERSQPzHqYnv9i8NZ8BS5kYeB2sakv74EewQiCS4Ahxwq3In+9fYZhGztuDHRVzIOkFQ==
-
-dayjs@^1.8.15:
 dayjs@^1.11.7, dayjs@^1.8.15:
   version "1.11.7"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.7.tgz#4b296922642f70999544d1144a2c25730fce63e2"
