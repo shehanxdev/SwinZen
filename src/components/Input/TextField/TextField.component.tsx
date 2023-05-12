@@ -11,7 +11,7 @@ import { TextFieldProps } from './TextField.types';
 //TODO::handle scroll on focus
 export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTextField(
   {
-    innerTextInputStyles = tw`h-8 px-0 py-2 m-0`,
+    innerTextInputStyles = tw`h-8 px-0 py-2 m-0`, // NOTE: This vertical padding and height needed to avoid react native paper text input's ellipsis effect
     backgroundColor = Color.Primary.Sz700,
     defaultValue,
     value,
