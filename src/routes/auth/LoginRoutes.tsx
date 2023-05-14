@@ -37,6 +37,7 @@ export function LoginStack() {
         headerShown: true,
         headerBackTitleVisible: false,
         headerTransparent: true,
+        headerBackVisible: false,
         headerLeft: () => (
           <TouchableOpacity onPress={() => NavigationService.goBack()}>
             <BackIcon />

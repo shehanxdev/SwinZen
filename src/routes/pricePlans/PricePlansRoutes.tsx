@@ -16,7 +16,6 @@ export type PricePlansStackParamList = {
   };
 };
 
-//TODO:: revisit this and change this to createStackNavigatoe
 const Stack = createNativeStackNavigator<PricePlansStackParamList>();
 
 export function PricePlansStack() {
