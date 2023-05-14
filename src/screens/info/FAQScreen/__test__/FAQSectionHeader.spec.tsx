@@ -6,8 +6,8 @@ describe('FAQ section header', () => {
   const testID = 'FAQSectionHeaderTestID';
   const dummyFAQ = [
     {
-      title: 'Lorem ipsum dolor sit amet, consectetur',
-      content:
+      question: 'Lorem ipsum dolor sit amet, consectetur',
+      answer:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non dolor purus. Nunc semper sapien congue tortor',
     },
   ];

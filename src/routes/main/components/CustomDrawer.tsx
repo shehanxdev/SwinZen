@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { BlurView } from '@react-native-community/blur';
 import { DrawerContentScrollView } from '@react-navigation/drawer';
 import React from 'react';
@@ -30,7 +29,6 @@ export function CustomDrawer() {
   const Logout = async () => {
     try {
       await dispatch.userStore.logoutUser();
-      NavigationService.navigate(Route.Login);
     } catch (error: any) {
       ToastService.error({ message: 'Failed!', description: error.data.message });
     }

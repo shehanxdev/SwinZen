@@ -1,43 +1,47 @@
 import React from 'react';
-import { ScrollView, View } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 
 import { tw } from '@sz/config';
+import { Color, Route, SortDataType } from '@sz/constants';
+import { useFetch } from '@sz/hooks';
+import { NavigationService, PricePlansService } from '@sz/services';
 
-import { BasePricePlansScreen, SubscriptionCard } from '../components';
+import { BasePricePlansScreen, PlanSubscriptionCard } from '../components';
+
+const TEST_ID_PREFIX = 'PricePlansScreen';
 
 export function PricePlansScreen() {
+  const { data, isLoading } = useFetch(() => PricePlansService.getPricePlans(SortDataType.PRICE));
+
   return (
-    <BasePricePlansScreen testID="PricePlansScreenTestID">
-      <ScrollView style={tw`mt-4.5 mx-6.25`}>
-        <View style={tw`my-2`}>
-          {/* TODO:: API integration is pending */}
-          <SubscriptionCard
-            title="Swinzen Free"
-            subTitle="Start your account with a stunning profile & free features"
-            price={0}
-            pricingDescription="Absolutely free"
-            featureList={['Has ads', 'Only 5 uploads per month', 'Access to the analyzed video   playback and data']}
-          />
+    <BasePricePlansScreen testID={`${TEST_ID_PREFIX}`}>
+      {/* TODO:: added temporary loader, have to add proper loader */}
+      {isLoading ? (
+        <View style={tw`flex-1`}>
+          <ActivityIndicator size="small" color={Color.Neutral.White} />
         </View>
-        <View style={tw`my-2`}>
-          <SubscriptionCard
-            title="Monthly Plan"
-            subTitle="Start your account with pro features and analyzing activities"
-            price={9.99}
-            pricingDescription="Paid monthly"
-            featureList={['Unlimited video upload', 'analysis and playback', 'Store uploaded Video for 30 days']}
-          />
+      ) : (
+        <View style={tw`mt-4 mx-6.25`}>
+          {data &&
+            data.results.map(item => (
+              <View key={item.id} style={tw`my-2`}>
+                <PlanSubscriptionCard
+                  testID={`${TEST_ID_PREFIX}-SubscriptionCard`}
+                  title={item.name}
+                  price={item.price}
+                  frequency={item.frequency}
+                  featureList={item.features}
+                  betterValue={item.banner}
+                  onCardPress={
+                    item.frequency
+                      ? () => NavigationService.navigate(Route.PlanDetails, { item })
+                      : () => NavigationService.navigate(Route.MainStack)
+                  }
+                />
+              </View>
+            ))}
         </View>
-        <View style={tw`my-2`}>
-          <SubscriptionCard
-            title="Annual Plan"
-            subTitle="Start your account with pro features and analyzing activities"
-            price={99.99}
-            pricingDescription="per month, paid annually"
-            featureList={['Unlimited video upload', 'video analysis and playback', 'store uploaded Video for 365 days']}
-          />
-        </View>
-      </ScrollView>
+      )}
     </BasePricePlansScreen>
   );
 }

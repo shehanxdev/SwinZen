@@ -4,7 +4,7 @@ import { Color } from '@sz/constants';
 
 type ToastParams = {
   message: string;
-  description: string;
+  description: string | string[];
   otherConfigs?: Omit<MessageOptions, 'message' | 'description'>;
 };
 
@@ -13,6 +13,24 @@ type ToastParams = {
  * Further can be expand to have more variants
  */
 export abstract class ToastService {
+  /*
+   * Generates an final error message with bullet points only if the description message consists multiple errors(ex: array of errors)
+   *
+   * @param description {String|string[]}
+   */
+  private static generateCustomErrorDescription(description: string | string[]) {
+    if (typeof description == 'string') return description;
+    if (description.length === 1) return description[0];
+
+    let customErrorDescription = '';
+
+    for (let message of description) {
+      customErrorDescription += `• ${message} \n`;
+    }
+
+    return customErrorDescription;
+  }
+
   /**
    * Show success toast alert
    *
@@ -23,7 +41,7 @@ export abstract class ToastService {
   public static success({ message, description, otherConfigs }: ToastParams) {
     showMessage({
       message: message,
-      description: description,
+      description: ToastService.generateCustomErrorDescription(description),
       backgroundColor: Color.Primary.SzSuccess,
       ...otherConfigs,
     });
@@ -39,7 +57,7 @@ export abstract class ToastService {
   public static information({ message, description, otherConfigs }: ToastParams) {
     showMessage({
       message: message,
-      description: description,
+      description: ToastService.generateCustomErrorDescription(description),
       backgroundColor: Color.Primary.SzInfo,
       ...otherConfigs,
     });
@@ -55,7 +73,7 @@ export abstract class ToastService {
   public static error({ message, description, otherConfigs }: ToastParams) {
     showMessage({
       message: message,
-      description: description,
+      description: ToastService.generateCustomErrorDescription(description),
       backgroundColor: Color.Primary.SzError,
       ...otherConfigs,
     });
@@ -71,7 +89,7 @@ export abstract class ToastService {
   public static warning({ message, description, otherConfigs }: ToastParams) {
     showMessage({
       message: message,
-      description: description,
+      description: ToastService.generateCustomErrorDescription(description),
       backgroundColor: Color.Primary.SzWarning,
       ...otherConfigs,
     });
