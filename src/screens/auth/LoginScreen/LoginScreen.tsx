@@ -31,6 +31,7 @@ export function LoginScreen() {
   } = useForm<LoginFormValues>({ mode: 'onChange', resolver: yupResolver(loginValidationSchema) });
 
   const loading = useSelector(state => state.loading.effects.userStore.loginUserWithCredentials);
+  const loginState = useSelector(state => state.persistentUserStore.loginState);
 
   const dispatch = useDispatch();
 
@@ -42,7 +43,7 @@ export function LoginScreen() {
   const onLoginFormValid: SubmitHandler<LoginFormValues> = async formInput => {
     try {
       await dispatch.userStore.loginUserWithCredentials(formInput);
-      NavigationService.navigate(Route.PricePlansStack);
+      NavigationService.navigate(loginState === 'initial' ? Route.PricePlansStack : Route.MainStack);
     } catch (error: any) {
       ToastService.error({ message: 'Failed!', description: error.data.message });
     }

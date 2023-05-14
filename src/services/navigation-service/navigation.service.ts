@@ -20,7 +20,7 @@ export class NavigationService {
     if (NavigationService.navigationRef.current?.canGoBack()) {
       NavigationService.navigationRef.current?.goBack();
     } else {
-      const isAuthenticated = store.getState().userStore.isAuthenticated;
+      const isAuthenticated = store.getState().persistentUserStore.isAuthenticated;
       NavigationService.navigationRef.current?.dispatch(
         StackActions.replace(isAuthenticated ? Route.MainStack : Route.AuthStack),
       );

@@ -3,5 +3,6 @@ export * from './http-service';
 export * from './jwt-decode-service';
 export * from './linking-service';
 export * from './navigation-service';
+export * from './persistent-storage-service';
 export * from './rest-service';
 export * from './toast-service';

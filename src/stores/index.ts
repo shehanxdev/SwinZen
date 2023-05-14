@@ -1,6 +1,10 @@
 import { Plugin, RematchDispatch, RematchRootState, init } from '@rematch/core';
 import loadingPlugin, { ExtraModelsFromLoading } from '@rematch/loading';
+import persistPlugin from '@rematch/persist';
 import { TypedUseSelectorHook, useDispatch as useReduxDispatch, useSelector as useReduxSelector } from 'react-redux';
+
+import { getPersistPluginConfig } from '@sz/config';
+import { IS_JEST_RUNTIME } from '@sz/constants';
 
 import { RootModel, models } from './models';
 
@@ -13,6 +17,11 @@ export const initializeStore = () => {
 
   // Add plugins
   plugins.push(loadingPlugin());
+
+  // Add plugins not required for testing
+  if (!IS_JEST_RUNTIME) {
+    plugins.push(persistPlugin(getPersistPluginConfig()));
+  }
 
   const initializedStore = init<RootModel, FullModel>({
     models,
