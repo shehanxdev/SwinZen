@@ -1,6 +1,6 @@
 import { BlurView } from '@react-native-community/blur';
 import { DrawerContentScrollView } from '@react-navigation/drawer';
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 
 import { SwingZenLogoSvg } from '@sz/assets';
@@ -22,6 +22,23 @@ import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
 
 import { DrawerItem } from './DrawerItem';
+
+type DrawerContent = {
+  title: string;
+  icon: ReactElement;
+  route: Route;
+};
+
+const commonDrawerContents: DrawerContent[] = [
+  { title: 'Profile Settings', icon: <DrawerProfileSettingsIcon />, route: Route.ProfileSettings },
+  { title: 'Notification', icon: <DrawerNotificationIcon />, route: Route.Notification },
+  { title: 'Followers', icon: <DrawerFollowersIcon />, route: Route.Followers },
+  { title: 'About us', icon: <DrawerAboutIcon />, route: Route.AboutUs },
+  { title: 'FAQ', icon: <DrawerFAQIcon />, route: Route.FAQ },
+  { title: 'Privacy policy', icon: <DrawerPrivacyIcon />, route: Route.PrivacyPolicy },
+  { title: 'Terms of use', icon: <DrawerTermsIcon />, route: Route.TermsOfUse },
+  { title: 'Contact us', icon: <DrawerContactIcon />, route: Route.ContactUs },
+];
 
 export function CustomDrawer() {
   const dispatch = useDispatch();
@@ -48,42 +65,18 @@ export function CustomDrawer() {
               <CrossIcon />
             </TouchableOpacity>
           </View>
-          <DrawerItem
-            title="Profile Settings"
-            icon={<DrawerProfileSettingsIcon />}
-            onPress={() => NavigationService.navigate(Route.ProfileSettings)}
-          />
-          <DrawerItem
-            title="Notification"
-            icon={<DrawerNotificationIcon />}
-            onPress={() => NavigationService.navigate(Route.Notification)}
-          />
-          <DrawerItem
-            title="Followers"
-            icon={<DrawerFollowersIcon />}
-            onPress={() => NavigationService.navigate(Route.Followers)}
-          />
-          <DrawerItem
-            title="About us"
-            icon={<DrawerAboutIcon />}
-            onPress={() => NavigationService.navigate(Route.AboutUs)}
-          />
-          <DrawerItem title="FAQ" icon={<DrawerFAQIcon />} onPress={() => NavigationService.navigate(Route.FAQ)} />
-          <DrawerItem
-            title="Privacy policy"
-            icon={<DrawerPrivacyIcon />}
-            onPress={() => NavigationService.navigate(Route.PrivacyPolicy)}
-          />
-          <DrawerItem
-            title="Terms of use"
-            icon={<DrawerTermsIcon />}
-            onPress={() => NavigationService.navigate(Route.TermsOfUse)}
-          />
-          <DrawerItem
-            title="Contact us"
-            icon={<DrawerContactIcon />}
-            onPress={() => NavigationService.navigate(Route.ContactUs)}
-          />
+          {commonDrawerContents.map((content, index) => (
+            <DrawerItem
+              key={index}
+              title={content.title}
+              icon={content.icon}
+              onPress={() => {
+                NavigationService.closeDrawer();
+                NavigationService.navigate(content.route);
+              }}
+            />
+          ))}
+          {/* NOTE::Edge case for logout */}
           <DrawerItem title="Logout" icon={<DrawerLogoutIcon />} onPress={Logout} />
         </DrawerContentScrollView>
       </BlurView>
