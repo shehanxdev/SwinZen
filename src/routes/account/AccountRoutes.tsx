@@ -5,7 +5,7 @@ import { Text } from '@sz/components';
 import { Route, TextAlignment, TextVariant } from '@sz/constants';
 import { FollowersScreen, NotificationScreen } from '@sz/screens';
 
-import { HeaderLeft } from '../components';
+import { HeaderBackButton } from '../components';
 import { ProfileStack } from './ProfileRoutes';
 
 export type AccountStackParamList = {
@@ -31,7 +31,7 @@ export function AccountStack() {
         headerTransparent: true,
         headerBackVisible: false,
         headerTitle: ({ children }) => <Text variant={TextVariant.SubTitle2SemiBold}>{children}</Text>,
-        headerLeft: () => <HeaderLeft />,
+        headerLeft: () => <HeaderBackButton />,
       }}>
       <Stack.Screen name={Route.ProfileStack} component={ProfileStack} options={{ title: 'Profile Settings' }} />
       <Stack.Screen name={Route.Notification} component={NotificationScreen} options={{ title: 'Notifications' }} />

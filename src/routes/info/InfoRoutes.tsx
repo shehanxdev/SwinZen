@@ -5,7 +5,7 @@ import { Text } from '@sz/components';
 import { Route, TextAlignment, TextVariant } from '@sz/constants';
 import { AboutUsScreen, ContactUsScreen, FAQScreen, PrivacyPolicyScreen, TermsOfUseScreen } from '@sz/screens';
 
-import { HeaderLeft } from '../components';
+import { HeaderBackButton } from '../components';
 
 export type InfoStackParamList = {
   [Route.AboutUs]: {
@@ -36,7 +36,7 @@ export function InfoStack() {
         headerBackVisible: false,
         headerTransparent: true,
         headerTitle: ({ children }) => <Text variant={TextVariant.SubTitle2SemiBold}>{children}</Text>,
-        headerLeft: () => <HeaderLeft />,
+        headerLeft: () => <HeaderBackButton />,
       }}>
       <Stack.Screen name={Route.AboutUs} component={AboutUsScreen} options={{ title: 'What is SwingZen?' }} />
       <Stack.Screen name={Route.FAQ} component={FAQScreen} options={{ title: 'FAQ' }} />

@@ -5,7 +5,7 @@ import { BackIcon } from '@sz/components';
 import { tw } from '@sz/config';
 import { NavigationService } from '@sz/services';
 
-export function HeaderLeft() {
+export function HeaderBackButton() {
   return (
     <TouchableOpacity
       onPress={() => NavigationService.goBack()}
