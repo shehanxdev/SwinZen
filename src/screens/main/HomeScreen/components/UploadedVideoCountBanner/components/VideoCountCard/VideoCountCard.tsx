@@ -6,7 +6,7 @@ import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
 export interface VideoCountCardProps {
-  count: number | string;
+  count: number;
   description: string;
   backgroundColor?: Color;
   countTextColor?: Color;
@@ -33,5 +33,3 @@ export function VideoCountCard({
     </View>
   );
 }
-
-//Video {'\n'}Uploads
