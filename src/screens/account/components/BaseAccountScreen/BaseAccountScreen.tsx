@@ -14,8 +14,8 @@ interface BaseAccountScreenProps extends Partial<LinearGradientProps> {
 
 export function BaseAccountScreen({
   children,
+  colors = [Color.Primary.SZ650, Color.Primary.Sz800, Color.Primary.Sz900],
   wrapWithScrollView = true,
-  colors = ['#1A5C23', Color.Primary.Sz800, Color.Primary.Sz900], //TODO:: update, these colours are NOT available within the design system
   ...otherlinearGradientProps
 }: BaseAccountScreenProps) {
   const headerHeight = useHeaderHeight();
