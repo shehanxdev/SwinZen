@@ -1,8 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
 
-import { BackIcon } from '@sz/components';
 import { Route } from '@sz/constants';
 import {
   ForgotPasswordScreen,
@@ -10,7 +8,8 @@ import {
   ResetPasswordEmailVerificationScreen,
   ResetPasswordScreen,
 } from '@sz/screens';
-import { NavigationService } from '@sz/services';
+
+import { HeaderBackButton } from '../components';
 
 export type LoginStackParamList = {
   [Route.Login]: {
@@ -37,11 +36,8 @@ export function LoginStack() {
         headerShown: true,
         headerBackTitleVisible: false,
         headerTransparent: true,
-        headerLeft: () => (
-          <TouchableOpacity onPress={() => NavigationService.goBack()}>
-            <BackIcon />
-          </TouchableOpacity>
-        ),
+        headerBackVisible: false,
+        headerLeft: () => <HeaderBackButton />,
       }}>
       <Stack.Screen name={Route.Login} component={LoginScreen} options={{ headerShown: false }} />
       <Stack.Screen name={Route.ForgotPassword} component={ForgotPasswordScreen} options={{ headerShown: false }} />

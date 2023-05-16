@@ -1,14 +1,17 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
 
-import { BackIcon, Text } from '@sz/components';
+import { Text } from '@sz/components';
 import { Route, TextAlignment, TextVariant } from '@sz/constants';
-import { PricePlansScreen } from '@sz/screens';
-import { NavigationService } from '@sz/services';
+import { PlanDetailsScreen, PricePlansScreen } from '@sz/screens';
+
+import { HeaderBackButton } from '../components';
 
 export type PricePlansStackParamList = {
   [Route.PricePlans]: {
+    // Can be used for future props
+  };
+  [Route.PlanDetails]: {
     // Can be used for future props
   };
 };
@@ -20,20 +23,14 @@ export function PricePlansStack() {
     <Stack.Navigator
       screenOptions={{
         headerTitleAlign: TextAlignment.Center,
+        headerBackVisible: false,
         headerBackTitleVisible: false,
         headerTransparent: true,
         headerTitle: ({ children }) => <Text variant={TextVariant.SubTitle2SemiBold}>{children}</Text>,
-        headerLeft: () => (
-          <TouchableOpacity onPress={() => NavigationService.goBack()}>
-            <BackIcon />
-          </TouchableOpacity>
-        ),
+        headerLeft: () => <HeaderBackButton />,
       }}>
-      <Stack.Screen
-        name={Route.PricePlans}
-        component={PricePlansScreen}
-        options={{ title: 'Join us today!', headerLeft: () => null }}
-      />
+      <Stack.Screen name={Route.PricePlans} component={PricePlansScreen} options={{ title: 'Join us today!' }} />
+      <Stack.Screen name={Route.PlanDetails} component={PlanDetailsScreen} options={{ title: '' }} />
     </Stack.Navigator>
   );
 }
