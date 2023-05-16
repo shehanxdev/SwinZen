@@ -1,23 +1,17 @@
-import React, { ReactElement, useMemo, useState } from 'react';
-import { ActivityIndicator, View } from 'react-native';
+import React, { useState } from 'react';
+import { View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { ErrorIcon, Link, Text } from '@sz/components';
+import { ErrorIcon } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, TextVariant } from '@sz/constants';
 
+import { VideoUploadCardContent } from './VideoUploadCardContent';
 import { VideoUploadCardFooter } from './VideoUploadCardFooter';
-
-type RenderedData = {
-  icon?: ReactElement;
-  title: string;
-  linkText?: string;
-};
 
 export function VideoUploadCard() {
   //TODO:: Removed this once the upload logic gets implemented
   const [isLoading, setIsLoading] = useState(false);
-  const [isError] = useState(true);
+  const [isError] = useState(false);
 
   //TODO:: Removed this once the upload logic gets implemented
   const onUpload = () => {
@@ -27,43 +21,6 @@ export function VideoUploadCard() {
     }, 2000);
   };
 
-  const getRenderedData: RenderedData = useMemo(() => {
-    if (isLoading) {
-      return {
-        icon: <ActivityIndicator size="large" />,
-        title: 'Uploading.. Please wait!',
-      };
-    } else if (isError) {
-      return {
-        icon: <ErrorIcon color={Color.Secondary.Sz900} />,
-        title: 'Your video failed to upload!',
-        linkText: 'Find out why',
-      };
-    } else {
-      return {
-        title: 'No Data to Report. Get Started!',
-        linkText: 'Upload a video',
-      };
-    }
-  }, [isLoading, isError]);
-
-  const cardContent: ReactElement = useMemo((): ReactElement => {
-    return (
-      <View style={tw`items-center justify-center flex-1 gap-0.25 h-48`}>
-        {getRenderedData.icon ? getRenderedData.icon : null}
-        <Text variant={TextVariant.Body2Regular}>{getRenderedData.title}</Text>
-        <View style={tw`mt-1`}>
-          <Link
-            textColor={isError ? Color.Neutral.White : Color.Tertiary.Sz900}
-            text={getRenderedData?.linkText}
-            onPress={onUpload}
-            underline
-          />
-        </View>
-      </View>
-    );
-  }, []);
-
   return (
     <View style={tw`rounded-2.5 overflow-hidden`}>
       <View
@@ -72,10 +29,23 @@ export function VideoUploadCard() {
         }`}>
         {isError ? (
           <LinearGradient colors={['#F6581500', '#F65815']} locations={[0, 0.5433]} style={tw`inset-0`}>
-            {cardContent}
+            <VideoUploadCardContent
+              title={'Your video failed to upload!'}
+              linkText="Find out why"
+              onLinkPress={() => {}}
+              isError
+              icon={ErrorIcon}
+            />
           </LinearGradient>
         ) : (
-          <View style={tw`bg-Neutral-Black/33`}>{cardContent}</View>
+          <View style={tw`bg-Neutral-Black/33`}>
+            <VideoUploadCardContent
+              title="No Data to Report. Get Started!"
+              linkText="Upload a video"
+              onLinkPress={onUpload}
+              loading={isLoading}
+            />
+          </View>
         )}
       </View>
       {isError && (
