@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
 /**
  * @format
  */
@@ -11,6 +9,7 @@ import Main from './src/main';
 
 // Register background handler for messaging
 messaging().setBackgroundMessageHandler(async remoteMessage => {
+  //TODO:: handle the background message later
   console.log('Message handled in the background!', remoteMessage);
 });
 

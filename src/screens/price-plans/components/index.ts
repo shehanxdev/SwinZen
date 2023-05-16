@@ -1,2 +1,2 @@
 export * from './BasePricePlansScreen';
-export * from './SubscriptionCard';
+export * from './PlanSubscriptionCard';

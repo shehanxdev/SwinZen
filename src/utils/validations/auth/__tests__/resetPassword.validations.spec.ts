@@ -19,8 +19,8 @@ describe('resetPasswordValidationSchema', () => {
 
   it('should return an error message for a password that is too long', async () => {
     const input = {
-      password: 'verylongpassword1234567890',
-      confirmPassword: 'verylongpassword1234567890',
+      password: `${'abcd'.repeat(65)}`,
+      confirmPassword: `${'abcd'.repeat(65)}`,
     };
     const error = await resetPasswordValidationSchema.validateAt('password', input).catch(err => err);
     expect(error).toBeInstanceOf(ValidationError);

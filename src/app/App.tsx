@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import messaging from '@react-native-firebase/messaging';
 import React, { useEffect } from 'react';
 import { StatusBar, View } from 'react-native';

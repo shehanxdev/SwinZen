@@ -135,7 +135,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                   "time": 2023-05-05T11:10:30.087Z,
                 },
               ],
-              "title": "Last Week",
+              "title": "05/05/2023",
             },
             {
               "data": [
@@ -155,7 +155,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                   "time": 2023-05-04T10:10:30.087Z,
                 },
               ],
-              "title": "Last Week",
+              "title": "05/04/2023",
             },
             {
               "data": [
@@ -231,7 +231,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                   ]
                 }
               >
-                Last Week
+                05/05/2023
               </Text>
             </View>
           </View>
@@ -368,7 +368,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                       ]
                     }
                   >
-                    4 days ago
+                    11 days ago
                   </Text>
                 </View>
               </View>
@@ -516,7 +516,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                     ]
                   }
                 >
-                  4 days ago
+                  11 days ago
                 </Text>
               </View>
             </View>
@@ -558,7 +558,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                   ]
                 }
               >
-                Last Week
+                05/04/2023
               </Text>
             </View>
           </View>
@@ -695,7 +695,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                       ]
                     }
                   >
-                    5 days ago
+                    12 days ago
                   </Text>
                 </View>
               </View>
@@ -844,7 +844,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                       ]
                     }
                   >
-                    5 days ago
+                    12 days ago
                   </Text>
                 </View>
               </View>
@@ -992,7 +992,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                     ]
                   }
                 >
-                  5 days ago
+                  12 days ago
                 </Text>
               </View>
             </View>

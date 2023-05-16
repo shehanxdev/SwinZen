@@ -199,10 +199,10 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                           "marginLeft": 0,
                           "marginRight": 0,
                           "marginTop": 0,
-                          "paddingBottom": 0,
+                          "paddingBottom": 8,
                           "paddingLeft": 0,
                           "paddingRight": 0,
-                          "paddingTop": 0,
+                          "paddingTop": 8,
                         }
                       }
                     >
@@ -235,7 +235,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                                 "paddingBottom": 0,
                               },
                               {
-                                "minHeight": 48,
+                                "minHeight": 32,
                                 "paddingTop": 8,
                               },
                             ]
@@ -245,7 +245,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                             autoCapitalize="none"
                             editable={true}
                             maxFontSizeMultiplier={1.5}
-                            maxLength={50}
+                            maxLength={256}
                             multiline={false}
                             onBlur={[Function]}
                             onChangeText={[Function]}
@@ -263,11 +263,11 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                                   "zIndex": 1,
                                 },
                                 {
-                                  "height": 48,
+                                  "height": 32,
                                 },
                                 {
-                                  "paddingBottom": 16,
-                                  "paddingTop": 16,
+                                  "paddingBottom": 8,
+                                  "paddingTop": 8,
                                 },
                                 {
                                   "color": "#DEE2E6",
@@ -305,7 +305,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                               },
                               {
                                 "left": 12,
-                                "top": 15,
+                                "top": 7,
                               },
                             ]
                           }
@@ -413,10 +413,10 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                           "marginLeft": 0,
                           "marginRight": 0,
                           "marginTop": 0,
-                          "paddingBottom": 0,
+                          "paddingBottom": 8,
                           "paddingLeft": 0,
                           "paddingRight": 0,
-                          "paddingTop": 0,
+                          "paddingTop": 8,
                         }
                       }
                     >
@@ -449,7 +449,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                                 "paddingBottom": 0,
                               },
                               {
-                                "minHeight": 48,
+                                "minHeight": 32,
                                 "paddingTop": 8,
                               },
                             ]
@@ -458,7 +458,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                           <TextInput
                             editable={true}
                             maxFontSizeMultiplier={1.5}
-                            maxLength={20}
+                            maxLength={256}
                             multiline={false}
                             onBlur={[Function]}
                             onChangeText={[Function]}
@@ -476,11 +476,11 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                                   "zIndex": 1,
                                 },
                                 {
-                                  "height": 48,
+                                  "height": 32,
                                 },
                                 {
-                                  "paddingBottom": 16,
-                                  "paddingTop": 16,
+                                  "paddingBottom": 8,
+                                  "paddingTop": 8,
                                 },
                                 {
                                   "color": "#DEE2E6",
@@ -520,7 +520,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                               },
                               {
                                 "left": 12,
-                                "top": 15,
+                                "top": 7,
                               },
                             ]
                           }
@@ -603,7 +603,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                               },
                               {
                                 "right": 12,
-                                "top": 15,
+                                "top": 7,
                               },
                             ]
                           }
@@ -884,7 +884,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                     ]
                   }
                 >
-                  Don’t have an account?
+                  Don’t have an account? 
                   <Text
                     onPress={[Function]}
                     style={
@@ -903,7 +903,7 @@ exports[`login screen should render LoginScreen correctly 1`] = `
                       ]
                     }
                   >
-                     Sign up
+                    Sign up
                   </Text>
                 </Text>
               </View>
