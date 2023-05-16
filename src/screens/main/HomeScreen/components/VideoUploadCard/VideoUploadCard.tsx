@@ -62,7 +62,7 @@ export function VideoUploadCard() {
           colors={isError ? ['#F6581500', '#F65815'] : [blackColorWithAlpha, blackColorWithAlpha]}
           locations={[0, 0.5433]}
           style={tw`inset-0`}>
-          <View style={tw`items-center justify-center flex-1 gap-1 ${isError ? `mt-10.25 mb-13` : `mt-19.5 mb-22`} `}>
+          <View style={tw`items-center justify-center flex-1 gap-1 ${isError ? 'mt-10.25 mb-13 ' : ' mt-19.5 mb-22'} `}>
             {getRenderedData.icon}
             <Text variant={TextVariant.Body2Regular}>{getRenderedData.title}</Text>
             <View>
