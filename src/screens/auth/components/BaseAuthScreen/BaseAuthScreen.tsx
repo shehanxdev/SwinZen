@@ -13,7 +13,7 @@ interface BaseAuthScreenProps extends Partial<LinearGradientProps> {
 
 export function BaseAuthScreen({
   children,
-  colors = ['#1A5C23', Color.Primary.Sz800, Color.Primary.Sz900], //TODO:: update, these colours are NOT available within the design system
+  colors = [Color.Primary.SZ650, Color.Primary.Sz800, Color.Primary.Sz900],
   ...otherlinearGradientProps
 }: BaseAuthScreenProps) {
   return (

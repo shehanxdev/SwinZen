@@ -1,5 +1,5 @@
 import { NavigationContainer, NavigationState } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { Text } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
@@ -14,7 +14,7 @@ import { InfoStack } from './info';
 import { MainStack } from './main';
 import { PricePlansStack } from './pricePlans';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export function Routes() {
   const routeNameRef = React.useRef();
@@ -57,6 +57,7 @@ export function Routes() {
         initialRouteName={isAuthenticated ? Route.MainStack : Route.AuthStack}
         screenOptions={{
           headerShown: false,
+          headerBackVisible: false,
         }}>
         {isAuthenticated ? (
           <Stack.Group>

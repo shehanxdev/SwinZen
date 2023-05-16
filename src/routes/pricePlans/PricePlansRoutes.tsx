@@ -1,11 +1,11 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
 
-import { BackIcon, Text } from '@sz/components';
+import { Text } from '@sz/components';
 import { Route, TextAlignment, TextVariant } from '@sz/constants';
 import { PlanDetailsScreen, PricePlansScreen } from '@sz/screens';
-import { NavigationService } from '@sz/services';
+
+import { HeaderBackButton } from '../components';
 
 export type PricePlansStackParamList = {
   [Route.PricePlans]: {
@@ -16,7 +16,6 @@ export type PricePlansStackParamList = {
   };
 };
 
-//TODO:: revisit this and change this to createStackNavigatoe
 const Stack = createNativeStackNavigator<PricePlansStackParamList>();
 
 export function PricePlansStack() {
@@ -28,11 +27,7 @@ export function PricePlansStack() {
         headerBackTitleVisible: false,
         headerTransparent: true,
         headerTitle: ({ children }) => <Text variant={TextVariant.SubTitle2SemiBold}>{children}</Text>,
-        headerLeft: () => (
-          <TouchableOpacity onPress={() => NavigationService.goBack()}>
-            <BackIcon />
-          </TouchableOpacity>
-        ),
+        headerLeft: () => <HeaderBackButton />,
       }}>
       <Stack.Screen name={Route.PricePlans} component={PricePlansScreen} options={{ title: 'Join us today!' }} />
       <Stack.Screen name={Route.PlanDetails} component={PlanDetailsScreen} options={{ title: '' }} />

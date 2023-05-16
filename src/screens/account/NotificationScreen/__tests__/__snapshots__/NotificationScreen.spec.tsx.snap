@@ -33,7 +33,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
   testID="NotificationScreenTestID"
 >
   <Image
-    resizeMode="repeat"
+    resizeMode="cover"
     source={
       {
         "testUri": "../../../src/assets/images/grassBackground.jpg",
@@ -41,9 +41,6 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
     }
     style={
       {
-        "flexBasis": "0%",
-        "flexGrow": 1,
-        "flexShrink": 1,
         "opacity": 0.1,
         "position": "absolute",
       }
@@ -368,7 +365,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                       ]
                     }
                   >
-                    9 days ago
+                    11 days ago
                   </Text>
                 </View>
               </View>
@@ -516,7 +513,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                     ]
                   }
                 >
-                  9 days ago
+                  11 days ago
                 </Text>
               </View>
             </View>
@@ -695,7 +692,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                       ]
                     }
                   >
-                    10 days ago
+                    12 days ago
                   </Text>
                 </View>
               </View>
@@ -844,7 +841,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                       ]
                     }
                   >
-                    10 days ago
+                    12 days ago
                   </Text>
                 </View>
               </View>
@@ -992,7 +989,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                     ]
                   }
                 >
-                  10 days ago
+                  12 days ago
                 </Text>
               </View>
             </View>
