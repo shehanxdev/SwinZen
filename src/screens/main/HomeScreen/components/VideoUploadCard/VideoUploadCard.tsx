@@ -22,7 +22,7 @@ export function VideoUploadCard() {
   //TODO:: Removed this once the upload logic gets implemented
 
   const [isLoading, setIsLoading] = useState(false);
-  const [isError] = useState(true);
+  const [isError] = useState(false);
 
   //TODO:: Removed this once the upload logic gets implemented
   const onUpload = () => {
@@ -52,31 +52,39 @@ export function VideoUploadCard() {
     }
   }, [isLoading, isError]);
 
+  const cardContent: ReactElement = useMemo((): ReactElement => {
+    return (
+      <View style={tw`items-center justify-center flex-1 gap-1 ${isError ? 'mt-10.25 mb-13' : 'mt-19.5 mb-22'}`}>
+        {getRenderedData.icon ? getRenderedData.icon : null}
+        <Text variant={TextVariant.Body2Regular}>{getRenderedData.title}</Text>
+        <View>
+          <Link
+            textColor={isError ? Color.Neutral.White : Color.Tertiary.Sz900}
+            text={getRenderedData?.linkText}
+            onPress={onUpload}
+            underline
+          />
+        </View>
+      </View>
+    );
+  }, [getRenderedData]);
+
   return (
-    <View style={tw`rounded-2.5 overflow-hidden `}>
+    <View style={tw`rounded-2.5 overflow-hidden`}>
       <View
         style={tw`flex-1 rounded-2.5 overflow-hidden border border-[${
           isError ? orangeColorWithAlpha : Color.Tertiary.Sz900
         }]`}>
-        <LinearGradient
-          colors={isError ? ['#F6581500', '#F65815'] : [blackColorWithAlpha, blackColorWithAlpha]}
-          locations={[0, 0.5433]}
-          style={tw`inset-0`}>
-          <View style={tw`items-center justify-center flex-1 gap-1 ${isError ? 'mt-10.25 mb-13 ' : ' mt-19.5 mb-22'} `}>
-            {getRenderedData.icon}
-            <Text variant={TextVariant.Body2Regular}>{getRenderedData.title}</Text>
-            <View>
-              <Link
-                textColor={isError ? Color.Neutral.White : Color.Tertiary.Sz900}
-                text={getRenderedData?.linkText}
-                onPress={onUpload}
-                underline
-              />
-            </View>
-          </View>
-        </LinearGradient>
+        {isError ? (
+          <LinearGradient colors={['#F6581500', '#F65815']} locations={[0, 0.5433]} style={tw`inset-0`}>
+            {cardContent}
+          </LinearGradient>
+        ) : (
+          <View style={tw`bg-[${blackColorWithAlpha}]`}>{cardContent}</View>
+        )}
       </View>
       {isError && (
+        //TODO:: replace static prop values
         <VideoUploadCardFooter isError date="04 JUN 2022" cameraAngle="Down the line" results="All failed videos" />
       )}
     </View>
