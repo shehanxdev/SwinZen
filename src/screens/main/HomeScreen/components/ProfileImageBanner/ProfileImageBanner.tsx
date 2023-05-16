@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
-import { Dimensions, Image, TouchableOpacity, View } from 'react-native';
+import { Dimensions, TouchableOpacity, View } from 'react-native';
+import FastImage from 'react-native-fast-image';
 
 import { SettingsMiniIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
@@ -41,7 +42,7 @@ export function ProfileImageBanner() {
           <Text variant={TextVariant.SubTitle1}>MW</Text>
         </View>
       ) : (
-        <Image
+        <FastImage
           style={PROFILE_IMAGE_COMMON_STYLES}
           source={{
             uri: 'https://ymw.edu.in/wp-content/uploads/2022/02/dummy-profile-01.png', //TODO::remove this dummy URL when intergration with the APIs
@@ -77,8 +78,10 @@ export function ProfileImageBanner() {
         <Text variant={TextVariant.Body2Regular} color={Color.Tertiary.Sz900}>
           Hello,
         </Text>
-        {/* TODO::remove this dummy data */}
-        <Text variant={TextVariant.SubTitle2SemiBold}>Marshall Williams</Text>
+        <View style={tw`mt-0.5`}>
+          {/* TODO::remove this dummy data */}
+          <Text variant={TextVariant.SubTitle2SemiBold}>Marshall Williams</Text>
+        </View>
       </View>
     </View>
   );
