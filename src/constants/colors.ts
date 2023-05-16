@@ -90,31 +90,8 @@ const SwingZenThemePalette = {
   Error,
 };
 
-const makeTransparent = (color: string, transparency: TransparencyIndex): string => {
-  if (transparency == 80) {
-    return color + 'cc';
-  } else if (transparency === 64) {
-    return color + 'a3';
-  } else if (transparency === 50) {
-    return color + '8f';
-  } else if (transparency === 40) {
-    return color + '66';
-  } else if (transparency === 24) {
-    return color + '3d';
-  } else if (transparency === 16) {
-    return color + '29';
-  } else if (transparency === 8) {
-    return color + '14';
-  } else if (transparency === 4) {
-    return color + '0a';
-  }
-};
-
-export type TransparencyIndex = 80 | 64 | 50 | 40 | 24 | 16 | 8 | 4;
-
 export type Color = Primary | Neutral | Secondary | Tertiary | Transparency | Error;
 
 export const Color = {
   ...SwingZenThemePalette,
-  makeTransparent,
 };
