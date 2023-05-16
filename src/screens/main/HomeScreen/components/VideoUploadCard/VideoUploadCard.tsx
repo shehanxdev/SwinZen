@@ -14,15 +14,10 @@ type RenderedData = {
   linkText?: string;
 };
 
-//*NOTE:: Following color are colors in the design system but with custom alpha values
-const blackColorWithAlpha = Color.Neutral.Black + '33';
-const orangeColorWithAlpha = Color.Secondary.Sz900 + '57';
-
 export function VideoUploadCard() {
   //TODO:: Removed this once the upload logic gets implemented
-
   const [isLoading, setIsLoading] = useState(false);
-  const [isError] = useState(false);
+  const [isError] = useState(true);
 
   //TODO:: Removed this once the upload logic gets implemented
   const onUpload = () => {
@@ -54,10 +49,10 @@ export function VideoUploadCard() {
 
   const cardContent: ReactElement = useMemo((): ReactElement => {
     return (
-      <View style={tw`items-center justify-center flex-1 gap-1 ${isError ? 'mt-10.25 mb-13' : 'mt-19.5 mb-22'}`}>
+      <View style={tw`items-center justify-center flex-1 gap-0.25 h-48`}>
         {getRenderedData.icon ? getRenderedData.icon : null}
         <Text variant={TextVariant.Body2Regular}>{getRenderedData.title}</Text>
-        <View>
+        <View style={tw`mt-1`}>
           <Link
             textColor={isError ? Color.Neutral.White : Color.Tertiary.Sz900}
             text={getRenderedData?.linkText}
@@ -67,20 +62,20 @@ export function VideoUploadCard() {
         </View>
       </View>
     );
-  }, [getRenderedData]);
+  }, []);
 
   return (
     <View style={tw`rounded-2.5 overflow-hidden`}>
       <View
-        style={tw`flex-1 rounded-2.5 overflow-hidden border border-[${
-          isError ? orangeColorWithAlpha : Color.Tertiary.Sz900
-        }]`}>
+        style={tw`flex-1 rounded-2.5 overflow-hidden border ${
+          isError ? 'border-Secondary-Sz900/57' : 'border-Tertiary-Sz900'
+        }`}>
         {isError ? (
           <LinearGradient colors={['#F6581500', '#F65815']} locations={[0, 0.5433]} style={tw`inset-0`}>
             {cardContent}
           </LinearGradient>
         ) : (
-          <View style={tw`bg-[${blackColorWithAlpha}]`}>{cardContent}</View>
+          <View style={tw`bg-Neutral-Black/33`}>{cardContent}</View>
         )}
       </View>
       {isError && (
