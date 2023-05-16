@@ -5,14 +5,15 @@ import { DataChart } from './../../DataChart';
 
 describe('DataChart component', () => {
   const testID = 'DataChartTestID';
-  const initialChartData = {
-    sectionOne: { passes: 8, fails: 5 },
-    sectionTwo: { passes: 10, fails: 6 },
-    sectionThree: { passes: 4, fails: 2 },
-    sectionFour: { passes: 2, fails: 8 },
-  };
 
-  const getRenderedComponent = () => render(<DataChart {...initialChartData} />);
+  const initialSectionsData = [
+    { passes: 10, fails: 5, label: 'Overall' },
+    { passes: 4, fails: 2, label: 'Setup' },
+    { passes: 9, fails: 5, label: 'Backswing' },
+    { passes: 1, fails: 6, label: 'Downswing' },
+  ] as any;
+
+  const getRenderedComponent = () => render(<DataChart sections={initialSectionsData} />);
 
   it(`should render DataChart component correctly`, () => {
     const renderer = getRenderedComponent();

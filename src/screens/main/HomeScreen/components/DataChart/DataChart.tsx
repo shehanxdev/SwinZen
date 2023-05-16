@@ -9,23 +9,28 @@ import { BaseResultsSection } from './components/BaseResultsSection';
 interface BarSectionData {
   passes: number;
   fails: number;
+  label: string;
 }
 
 interface DataChartProps {
-  sectionOne: BarSectionData; // aggregates the total data of passes and fails for "Set Up", "Back Swing", and "Down Swing" for that month.
-  sectionTwo: BarSectionData; // aggregates the total data of passes and fails for "Set Up "for that month.
-  sectionThree: BarSectionData; // aggregates the total data of passes and fails for "Back Swing" for that month.
-  sectionFour: BarSectionData; // aggregates the total data of passes and fails for "Down Swing" for that month.
+  sections: [
+    sectionOne: BarSectionData, // aggregates the total data of passes and fails for "Set Up", "Back Swing", and "Down Swing" for that month.
+    sectionTwo: BarSectionData, // aggregates the total data of passes and fails for "Set Up "for that month.
+    sectionThree: BarSectionData, // aggregates the total data of passes and fails for "Back Swing" for that month.
+    sectionFour: BarSectionData, // aggregates the total data of passes and fails for "Down Swing" for that month.
+  ];
 }
 
-export function DataChart({ sectionOne, sectionTwo, sectionThree, sectionFour }: DataChartProps) {
+export function DataChart({ sections }: DataChartProps) {
+  const [sectionOne, sectionTwo, sectionThree, sectionFour] = sections;
+
   const renderChartData = useMemo(() => {
     const combinedChartData = [sectionOne, sectionTwo, sectionThree, sectionFour];
 
     return combinedChartData.map((data, index) => (
       // TODO::might have to redirect to analysis screen upon clicking on these sections depending on the requirements
       <React.Fragment key={index}>
-        <BaseResultsSection passes={data.passes} fails={data.fails} />
+        <BaseResultsSection passes={data.passes} fails={data.fails} label={data.label} />
         {index !== 3 && <BaseResultSectionDivider />}
       </React.Fragment>
     ));

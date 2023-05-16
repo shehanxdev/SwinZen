@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BaseResultsSection component should render correctly should render correctly with {"passes":1,"fails":3} 1`] = `
+exports[`BaseResultsSection component should render correctly should render correctly with {"passes":1,"fails":3,"label":"Backswing"} 1`] = `
 <View
   style={
     {
@@ -103,7 +103,7 @@ exports[`BaseResultsSection component should render correctly should render corr
         style={
           [
             {
-              "backgroundColor": "#FFFFFF",
+              "backgroundColor": "#A2FD2F",
               "borderRadius": 9999,
               "justifyContent": "center",
               "position": "absolute",
@@ -274,10 +274,345 @@ exports[`BaseResultsSection component should render correctly should render corr
       </View>
     </View>
   </View>
+  <View
+    style={
+      {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": -48,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#FFFFFF",
+            "lineHeight": 24,
+          },
+          {
+            "fontFamily": "SourceSansPro-Regular",
+            "fontSize": 15,
+            "fontWeight": "600",
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Backswing
+    </Text>
+  </View>
 </View>
 `;
 
-exports[`BaseResultsSection component should render correctly should render correctly with {"passes":8,"fails":2} 1`] = `
+exports[`BaseResultsSection component should render correctly should render correctly with {"passes":2,"fails":5,"label":"Downswing"} 1`] = `
+<View
+  style={
+    {
+      "display": "flex",
+      "flexDirection": "row",
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <View
+    animatedStyle={
+      {
+        "value": {},
+      }
+    }
+    collapsable={false}
+    entering={
+      FadeInDown {
+        "build": [Function],
+        "callbackV": undefined,
+        "dampingV": undefined,
+        "delayV": undefined,
+        "durationV": 500,
+        "easingV": undefined,
+        "initialValues": undefined,
+        "massV": undefined,
+        "overshootClampingV": undefined,
+        "randomizeDelay": false,
+        "restDisplacementThresholdV": undefined,
+        "restSpeedThresholdV": undefined,
+        "rotateV": undefined,
+        "stiffnessV": undefined,
+        "type": undefined,
+      }
+    }
+    exiting={
+      FadeOutDown {
+        "build": [Function],
+        "callbackV": undefined,
+        "dampingV": undefined,
+        "delayV": undefined,
+        "durationV": 500,
+        "easingV": undefined,
+        "initialValues": undefined,
+        "massV": undefined,
+        "overshootClampingV": undefined,
+        "randomizeDelay": false,
+        "restDisplacementThresholdV": undefined,
+        "restSpeedThresholdV": undefined,
+        "rotateV": undefined,
+        "stiffnessV": undefined,
+        "type": undefined,
+      }
+    }
+    onLayout={[Function]}
+    style={
+      {
+        "alignItems": "flex-end",
+        "justifyContent": "flex-end",
+      }
+    }
+    testID="BaseChartBarComponentTestID"
+  >
+    <View>
+      <BVLinearGradient
+        colors={
+          [
+            4288871727,
+            1419967791,
+            10681647,
+          ]
+        }
+        endPoint={
+          {
+            "x": 0.5,
+            "y": 1,
+          }
+        }
+        locations={
+          [
+            0,
+            0.48,
+            1,
+          ]
+        }
+        startPoint={
+          {
+            "x": 0.5,
+            "y": 0,
+          }
+        }
+        style={
+          {
+            "height": 47,
+            "width": 36,
+          }
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "backgroundColor": "#A2FD2F",
+              "borderRadius": 9999,
+              "justifyContent": "center",
+              "position": "absolute",
+            },
+            {},
+            {
+              "height": 36,
+              "top": -18,
+              "width": 36,
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "#16501D",
+                "lineHeight": 24,
+              },
+              {
+                "fontFamily": "SourceSansPro-SemiBold",
+                "fontSize": 16,
+                "fontWeight": "600",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          2
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    animatedStyle={
+      {
+        "value": {},
+      }
+    }
+    collapsable={false}
+    entering={
+      FadeInDown {
+        "build": [Function],
+        "callbackV": undefined,
+        "dampingV": undefined,
+        "delayV": undefined,
+        "durationV": 500,
+        "easingV": undefined,
+        "initialValues": undefined,
+        "massV": undefined,
+        "overshootClampingV": undefined,
+        "randomizeDelay": false,
+        "restDisplacementThresholdV": undefined,
+        "restSpeedThresholdV": undefined,
+        "rotateV": undefined,
+        "stiffnessV": undefined,
+        "type": undefined,
+      }
+    }
+    exiting={
+      FadeOutDown {
+        "build": [Function],
+        "callbackV": undefined,
+        "dampingV": undefined,
+        "delayV": undefined,
+        "durationV": 500,
+        "easingV": undefined,
+        "initialValues": undefined,
+        "massV": undefined,
+        "overshootClampingV": undefined,
+        "randomizeDelay": false,
+        "restDisplacementThresholdV": undefined,
+        "restSpeedThresholdV": undefined,
+        "rotateV": undefined,
+        "stiffnessV": undefined,
+        "type": undefined,
+      }
+    }
+    onLayout={[Function]}
+    style={
+      {
+        "alignItems": "flex-end",
+        "justifyContent": "flex-end",
+      }
+    }
+    testID="BaseChartBarComponentTestID"
+  >
+    <View>
+      <BVLinearGradient
+        colors={
+          [
+            4294334485,
+            1307990037,
+            16144405,
+          ]
+        }
+        endPoint={
+          {
+            "x": 0.5,
+            "y": 1,
+          }
+        }
+        locations={
+          [
+            0,
+            0.48,
+            1,
+          ]
+        }
+        startPoint={
+          {
+            "x": 0.5,
+            "y": 0,
+          }
+        }
+        style={
+          {
+            "height": 117.5,
+            "width": 36,
+          }
+        }
+      />
+      <View
+        style={
+          [
+            {
+              "backgroundColor": "#F65815",
+              "borderRadius": 9999,
+              "justifyContent": "center",
+              "position": "absolute",
+            },
+            {
+              "shadowColor": "#000000",
+              "shadowOffset": {
+                "height": 4,
+                "width": 0,
+              },
+              "shadowOpacity": 0.25,
+              "shadowRadius": 3,
+            },
+            {
+              "height": 36,
+              "top": -18,
+              "width": 36,
+            },
+          ]
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "#FFFFFF",
+                "lineHeight": 24,
+              },
+              {
+                "fontFamily": "SourceSansPro-SemiBold",
+                "fontSize": 16,
+                "fontWeight": "600",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          5
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": -48,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#FFFFFF",
+            "lineHeight": 24,
+          },
+          {
+            "fontFamily": "SourceSansPro-Regular",
+            "fontSize": 15,
+            "fontWeight": "600",
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Downswing
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`BaseResultsSection component should render correctly should render correctly with {"passes":8,"fails":2,"label":"Setup"} 1`] = `
 <View
   style={
     {
@@ -380,7 +715,7 @@ exports[`BaseResultsSection component should render correctly should render corr
         style={
           [
             {
-              "backgroundColor": "#FFFFFF",
+              "backgroundColor": "#A2FD2F",
               "borderRadius": 9999,
               "justifyContent": "center",
               "position": "absolute",
@@ -551,10 +886,39 @@ exports[`BaseResultsSection component should render correctly should render corr
       </View>
     </View>
   </View>
+  <View
+    style={
+      {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": -48,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#FFFFFF",
+            "lineHeight": 24,
+          },
+          {
+            "fontFamily": "SourceSansPro-Regular",
+            "fontSize": 15,
+            "fontWeight": "600",
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Setup
+    </Text>
+  </View>
 </View>
 `;
 
-exports[`BaseResultsSection component should render correctly should render correctly with {"passes":10,"fails":5} 1`] = `
+exports[`BaseResultsSection component should render correctly should render correctly with {"passes":10,"fails":5,"label":"Overall"} 1`] = `
 <View
   style={
     {
@@ -657,7 +1021,7 @@ exports[`BaseResultsSection component should render correctly should render corr
         style={
           [
             {
-              "backgroundColor": "#FFFFFF",
+              "backgroundColor": "#A2FD2F",
               "borderRadius": 9999,
               "justifyContent": "center",
               "position": "absolute",
@@ -827,6 +1191,35 @@ exports[`BaseResultsSection component should render correctly should render corr
         </Text>
       </View>
     </View>
+  </View>
+  <View
+    style={
+      {
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": -48,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#FFFFFF",
+            "lineHeight": 24,
+          },
+          {
+            "fontFamily": "SourceSansPro-Regular",
+            "fontSize": 15,
+            "fontWeight": "600",
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Overall
+    </Text>
   </View>
 </View>
 `;

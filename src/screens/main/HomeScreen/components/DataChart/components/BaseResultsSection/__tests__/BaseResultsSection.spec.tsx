@@ -5,9 +5,10 @@ import { BaseResultsSection } from '../BaseResultsSection';
 
 describe('BaseResultsSection component', () => {
   const propsSet = [
-    { passes: 10, fails: 5 },
-    { passes: 8, fails: 2 },
-    { passes: 1, fails: 3 },
+    { passes: 10, fails: 5, label: 'Overall' },
+    { passes: 8, fails: 2, label: 'Setup' },
+    { passes: 1, fails: 3, label: 'Backswing' },
+    { passes: 2, fails: 5, label: 'Downswing' },
   ];
 
   describe('should render correctly', () => {

@@ -79,7 +79,7 @@ export function BaseChartBar({ barValue, chartBarType }: BaseChartBarProps) {
         <View
           style={[
             tw`rounded-full justify-center absolute ${
-              chartBarType === 'pass' ? 'bg-Neutral-White' : 'bg-Secondary-Sz900'
+              chartBarType === 'pass' ? 'bg-Tertiary-Sz900' : 'bg-Secondary-Sz900'
             }`,
             {
               ...(chartBarType === 'fail' && {
