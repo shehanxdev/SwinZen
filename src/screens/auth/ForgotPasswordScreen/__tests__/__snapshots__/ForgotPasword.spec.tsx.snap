@@ -196,10 +196,10 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                         "marginLeft": 0,
                         "marginRight": 0,
                         "marginTop": 0,
-                        "paddingBottom": 0,
+                        "paddingBottom": 8,
                         "paddingLeft": 0,
                         "paddingRight": 0,
-                        "paddingTop": 0,
+                        "paddingTop": 8,
                       }
                     }
                   >
@@ -232,7 +232,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                               "paddingBottom": 0,
                             },
                             {
-                              "minHeight": 48,
+                              "minHeight": 32,
                               "paddingTop": 8,
                             },
                           ]
@@ -259,11 +259,11 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                                 "zIndex": 1,
                               },
                               {
-                                "height": 48,
+                                "height": 32,
                               },
                               {
-                                "paddingBottom": 16,
-                                "paddingTop": 16,
+                                "paddingBottom": 8,
+                                "paddingTop": 8,
                               },
                               {
                                 "color": "#DEE2E6",
@@ -301,7 +301,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                             },
                             {
                               "left": 12,
-                              "top": 15,
+                              "top": 7,
                             },
                           ]
                         }
