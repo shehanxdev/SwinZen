@@ -1,7 +1,6 @@
 import React from 'react';
 import { Image, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
-import { LinearGradientProps } from 'react-native-linear-gradient';
+import LinearGradient, { LinearGradientProps } from 'react-native-linear-gradient';
 
 import { images } from '@sz/assets';
 import { tw } from '@sz/config';
@@ -31,7 +30,7 @@ export function BaseAccountScreen({
 
   return (
     <LinearGradient {...otherlinearGradientProps} colors={colors} style={tw`relative flex-1`}>
-      <Image source={images.grassBackground} style={tw`absolute flex-1 opacity-10`} resizeMode="repeat" />
+      <Image source={images.grassBackground} style={tw`absolute opacity-10 h-screen w-screen`} resizeMode="cover" />
       <SafeAreaView style={tw`h-full pt-[${headerHeight}px]`}>
         <KeyboardAvoidingView style={tw`flex-1`} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
           {renderChildren}

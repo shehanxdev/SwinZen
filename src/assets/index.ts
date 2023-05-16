@@ -4,6 +4,8 @@ export { default as AccountLockSvg } from './icons/account/account-lock.svg';
 export { default as ArrowDown } from './icons/faq/arrow-down.svg';
 export { default as ArrowRightSvg } from './icons/main/arrow-right.svg';
 export { default as ArrowUp } from './icons/faq/arrow-up.svg';
+export { default as MoveLeftArrowSvg } from './icons/main/move-left-arrow.svg';
+export { default as MoveRightArrowSvg } from './icons/main/move-right-arrow.svg';
 export { default as BackIconSvg } from './icons/account//back-icon.svg';
 
 export { default as BottomTabHomeSvg } from './icons/bottom-tab/home-icon.svg';
@@ -40,3 +42,4 @@ export { default as SecurityIconSvg } from './icons/account/security_icon.svg';
 export { default as SwingZenLogoSvg } from './logo/swingzen-logo.svg';
 export { default as UploadSvg } from './icons/main/document-upload.svg';
 export { default as PhoneSvg } from './icons/contact-us/phone-icon.svg';
+export { default as SquareTickSvg } from './icons/main/square-tick.svg';

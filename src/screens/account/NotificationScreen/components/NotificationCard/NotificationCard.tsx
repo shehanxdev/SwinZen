@@ -4,7 +4,7 @@ import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 
 import { NotificationDotIcon, NotificationTimerIcon, Text } from '@sz/components';
-import { customDayjsFn, tw } from '@sz/config';
+import { szdayjs, tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
 interface NotificationCardProps {
@@ -44,7 +44,7 @@ export function NotificationCard({ testID, readStatus = false, message, time }: 
           color={readStatus ? Color.Neutral.Sz600 : Color.Neutral.Sz100}
           variant={TextVariant.Body2Regular}
           textAlign={TextAlignment.Auto}>
-          {customDayjsFn(time).fromNow()}
+          {szdayjs(time).fromNow()}
         </Text>
       </View>
     </TouchableOpacity>

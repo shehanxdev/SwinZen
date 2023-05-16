@@ -16,6 +16,7 @@ export enum Route {
   MainDrawerRoutesStack = 'main-drawer-routes-stack',
   MainStack = 'main-stack',
   Notification = 'notification',
+  PlanDetails = 'plan-details',
   PricePlans = 'price-plans',
   PricePlansStack = 'price-plans-stack',
   PrivacyPolicy = 'privacy-policy',
