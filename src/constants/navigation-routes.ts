@@ -16,6 +16,9 @@ export enum Route {
   MainDrawerRoutesStack = 'main-drawer-routes-stack',
   MainStack = 'main-stack',
   Notification = 'notification',
+  PlanDetails = 'plan-details',
+  PricePlans = 'price-plans',
+  PricePlansStack = 'price-plans-stack',
   PrivacyPolicy = 'privacy-policy',
   ProfileSettings = 'profile-settings',
   RegisterEmailVerification = 'register-email-verification',
@@ -26,4 +29,6 @@ export enum Route {
   TermsOfUse = 'terms-of-use',
   UploadVideoTab = 'upload-video-tab',
   VideosTab = 'videos-tab',
+  ProfileStack = 'profile-stack',
+  ChangePassword = 'change-password',
 }

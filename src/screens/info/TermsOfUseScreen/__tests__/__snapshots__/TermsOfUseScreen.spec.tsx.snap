@@ -1,84 +1,88 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Terms Of Use Screen Screen should render Terms Of Use Screen correctly 1`] = `
-<View
-  accessibilityIgnoresInvertColors={true}
+<BVLinearGradient
+  colors={
+    [
+      4279917603,
+      4278984207,
+      4278650631,
+    ]
+  }
+  endPoint={
+    {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
   style={
     {
       "flexBasis": "0%",
       "flexGrow": 1,
       "flexShrink": 1,
-      "paddingTop": 50,
+      "position": "relative",
     }
   }
 >
   <Image
+    resizeMode="cover"
     source={
       {
-        "testUri": "../../../src/assets/images/gradientBackground.png",
+        "testUri": "../../../src/assets/images/grassBackground.jpg",
       }
     }
     style={
-      [
-        {
-          "bottom": 0,
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-        },
-        {
-          "height": undefined,
-          "width": undefined,
-        },
-        undefined,
-      ]
+      {
+        "opacity": 0.1,
+        "position": "absolute",
+      }
     }
   />
-  <RCTSafeAreaView>
-    <RCTScrollView>
-      <View>
-        <BVLinearGradient
-          angle={90}
-          colors={
-            [
-              311361280,
-              100663295,
-              50331647,
-            ]
+  <RCTSafeAreaView
+    style={
+      {
+        "height": "100%",
+        "paddingTop": 50,
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "paddingBottom": 0,
+          },
+        ]
+      }
+    >
+      <RCTScrollView
+        contentContainerStyle={
+          {
+            "flexGrow": 1,
           }
-          endPoint={
-            {
-              "x": 0.5,
-              "y": 1,
-            }
-          }
-          locations={null}
-          startPoint={
-            {
-              "x": 0.5,
-              "y": 0,
-            }
-          }
-          style={
-            {
-              "borderColor": "#404040",
-              "borderRadius": 10,
-              "borderWidth": 1,
-              "marginBottom": 20,
-              "marginLeft": 20,
-              "marginRight": 20,
-              "marginTop": 34,
-            }
-          }
-          useAngle={true}
-        >
+        }
+        keyboardShouldPersistTaps="handled"
+      >
+        <View>
           <View
             style={
               {
                 "paddingBottom": 24,
-                "paddingLeft": 24,
-                "paddingRight": 24,
+                "paddingLeft": 16,
+                "paddingRight": 16,
                 "paddingTop": 24,
               }
             }
@@ -474,15 +478,15 @@ The Terms of Use and our Privacy Policy constitute the sole and entire agreement
  
 Your Comments and Concerns
                 
-This website is operated by 9805 NE Hilltop Dr. Bainbridge Island, WA 98110. 
+This website is operated by 423 S Margin St Franklin TN 37064. 
 All notices of copyright infringement claims should be sent to the copyright agent designated by contacting 
                 
 All other feedback, comments, requests for technical support and other communications relating to the Website should be directed to Sports Zoom LLC 6601 Edgemoore Dr College Grove TN 37046.
             </Text>
           </View>
-        </BVLinearGradient>
-      </View>
-    </RCTScrollView>
+        </View>
+      </RCTScrollView>
+    </View>
   </RCTSafeAreaView>
-</View>
+</BVLinearGradient>
 `;

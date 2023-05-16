@@ -10,6 +10,7 @@ interface UseFetchInternalState<TQueryFnData, TQueryFnError> {
   isError: boolean;
 }
 
+// TODO:: should handle pagination response later
 export function useFetch<TQueryFnData = unknown, TQueryFnError = unknown>(
   fetchQuery: QueryFn<TQueryFnData>,
   disableAutoFetch?: boolean,

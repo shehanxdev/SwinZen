@@ -1,7 +1,9 @@
-import { DrawerActions } from '@react-navigation/native';
+import { DrawerActions, StackActions } from '@react-navigation/native';
 import React from 'react';
 
 import { Route } from '@sz/constants';
+//TODO: fix require cycle issue
+import { store } from '@sz/stores';
 
 export class NavigationService {
   public static navigationRef: any = React.createRef();
@@ -15,7 +17,14 @@ export class NavigationService {
   }
 
   public static goBack() {
-    NavigationService.navigationRef.current?.goBack();
+    if (NavigationService.navigationRef.current?.canGoBack()) {
+      NavigationService.navigationRef.current?.goBack();
+    } else {
+      const isAuthenticated = store.getState().userStore.isAuthenticated;
+      NavigationService.navigationRef.current?.dispatch(
+        StackActions.replace(isAuthenticated ? Route.MainStack : Route.AuthStack),
+      );
+    }
   }
 
   public static openDrawer() {
@@ -113,10 +122,26 @@ export class NavigationService {
       case Route.ProfileSettings:
         navRoute = Route.AccountStack;
         navParams = {
-          screen: Route.ProfileSettings,
+          screen: Route.ProfileStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.ProfileSettings,
+            params: {
+              screen: route,
+              params: params,
+            },
+          },
+        };
+        break;
+      case Route.ChangePassword:
+        navRoute = Route.AccountStack;
+        navParams = {
+          screen: Route.ProfileStack,
+          params: {
+            screen: Route.ChangePassword,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
@@ -144,6 +169,16 @@ export class NavigationService {
         navRoute = Route.InfoStack;
         navParams = {
           screen: Route.AboutUs,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+      case Route.ContactUs:
+        navRoute = Route.InfoStack;
+        navParams = {
+          screen: Route.ContactUs,
           params: {
             screen: route,
             params: params,
@@ -180,10 +215,20 @@ export class NavigationService {
           },
         };
         break;
-      case Route.ContactUs:
-        navRoute = Route.InfoStack;
+      case Route.PricePlans:
+        navRoute = Route.PricePlansStack;
         navParams = {
-          screen: Route.ContactUs,
+          screen: Route.PricePlans,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+      case Route.PlanDetails:
+        navRoute = Route.PricePlansStack;
+        navParams = {
+          screen: Route.PlanDetails,
           params: {
             screen: route,
             params: params,

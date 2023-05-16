@@ -1,23 +1,25 @@
 import { NavigationContainer, NavigationState } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { Text } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 
 import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
-import { useDispatch } from '@sz/stores';
+import { useDispatch, useSelector } from '@sz/stores';
 
 import { AccountStack } from './account';
 import { AuthStack } from './auth';
 import { InfoStack } from './info';
 import { MainStack } from './main';
+import { PricePlansStack } from './pricePlans';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export function Routes() {
   const routeNameRef = React.useRef();
   const setCurrentRoute = useDispatch().appStore.setCurrentRoute;
+  const isAuthenticated = useSelector(state => state.userStore.isAuthenticated);
 
   function getActiveRouteName(navigationState: NavigationState): any {
     if (!navigationState) {
@@ -50,13 +52,22 @@ export function Routes() {
       fallback={<Text>Loading...</Text>} //TODO:: update to an actual loading indicator
       onStateChange={onStateChange}>
       <Stack.Navigator
-        initialRouteName={Route.AuthStack}
+        initialRouteName={isAuthenticated ? Route.MainStack : Route.AuthStack}
         screenOptions={{
           headerShown: false,
+          headerBackVisible: false,
         }}>
-        <Stack.Screen name={Route.AuthStack} component={AuthStack} />
-        <Stack.Screen name={Route.MainStack} component={MainStack} />
-        <Stack.Screen name={Route.AccountStack} component={AccountStack} />
+        {isAuthenticated ? (
+          <Stack.Group>
+            <Stack.Screen name={Route.PricePlansStack} component={PricePlansStack} />
+            <Stack.Screen name={Route.MainStack} component={MainStack} />
+            <Stack.Screen name={Route.AccountStack} component={AccountStack} />
+          </Stack.Group>
+        ) : (
+          <Stack.Group>
+            <Stack.Screen name={Route.AuthStack} component={AuthStack} />
+          </Stack.Group>
+        )}
         <Stack.Screen name={Route.InfoStack} component={InfoStack} />
       </Stack.Navigator>
     </NavigationContainer>

@@ -8,4 +8,4 @@ export interface RootModel extends Models<RootModel> {
   userStore: typeof userStore;
 }
 
-export const models: RootModel = { userStore, appStore };
+export const models: RootModel = { appStore, userStore };

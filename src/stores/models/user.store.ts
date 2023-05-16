@@ -1,6 +1,7 @@
 import { createModel } from '@rematch/core';
 
 import {
+  ChangePasswordData,
   EmailVerificationData,
   ForgetPasswordData,
   LoginUserData,
@@ -8,7 +9,7 @@ import {
   ResetPasswordData,
   SignupUserData,
 } from '@sz/models';
-import { AuthService } from '@sz/services';
+import { AccountService, AuthService } from '@sz/services';
 
 import { RootModel } from './';
 
@@ -79,6 +80,16 @@ export const userStore = createModel<RootModel>()({
     async resetPassword(payload: ResetPasswordData, state) {
       const { passwordResetToken } = state.userStore;
       await AuthService.resetPassword(payload, { 'x-auth': passwordResetToken });
+    },
+    async profileChangePassword(payload: ChangePasswordData, state) {
+      const { accessToken, refreshToken } = state.userStore;
+      const data = await AccountService.profileChangePassword(payload, {
+        'x-auth': accessToken,
+        authorization: `Bearer ${refreshToken}`,
+      });
+
+      dispatch.userStore.setAccessToken(data.accessToken);
+      dispatch.userStore.setRefreshToken(data.refreshToken);
     },
   }),
 });

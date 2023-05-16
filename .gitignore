@@ -64,3 +64,6 @@ yarn-error.log
 
 #vscode setting
 .vscode/
+
+# Android Signing
+android/keystore.properties

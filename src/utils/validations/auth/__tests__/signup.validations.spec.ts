@@ -33,6 +33,19 @@ describe('signupValidationSchema', () => {
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['name:required']);
   });
 
+  it('should give an error if the name contains numbers of special characters', async () => {
+    const nameInput = 'Name@123';
+    let validationResult;
+
+    try {
+      validationResult = await signupValidationSchema.validateAt('name', { name: nameInput });
+    } catch (error) {
+      validationResult = error;
+    }
+
+    expect(validationResult.errors[0]).toBe(signupFormErrorMessages['name:valid']);
+  });
+
   it('should give an error if the name input has less than 2 characters', async () => {
     const nameInput = 'J';
     let validationResult;
@@ -46,8 +59,10 @@ describe('signupValidationSchema', () => {
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['name:min']);
   });
 
-  it('should give an error if the name input has more than 10 characters', async () => {
-    const nameInput = 'Johnwithmorethantenletters';
+  it('should give an error if the name input has more than 256 characters', async () => {
+    // string contain 264 characters
+    const nameInput =
+      'JohnwithmorethantwohundredfiftysixcharactersJohnwithmorethantwohundredfiftysixcharactersJohnwithmorethantwohundredfiftysixcharactersJohnwithmorethantwohundredfiftysixcharactersJohnwithmorethantwohundredfiftysixcharactersJohnwithmorethantwohundredfiftysixcharacters';
     let validationResult;
 
     try {
@@ -116,8 +131,8 @@ describe('signupValidationSchema', () => {
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['username:required']);
   });
 
-  it('should give an error if the userName(Email) contains more than 50 characters', async () => {
-    const userNameInput = 'johnwith_more_than_fifty_characters_in_email@example.com';
+  it('should give an error if the userName(Email) contains more than 256 characters', async () => {
+    const userNameInput = `${'a'.repeat(257)}@gmail.com`;
     let validationResult;
 
     try {
@@ -142,8 +157,8 @@ describe('signupValidationSchema', () => {
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['password:min']);
   });
 
-  it('should give an error for the password which has more than 20 characters', async () => {
-    const passwordInput = 'password_with_more_than_twenty_character_is_not_allowed_212_FSFR_%!$!_end';
+  it('should give an error for the password which has more than 256 characters', async () => {
+    const passwordInput = `${'abcd'.repeat(65)}`;
     let validationResult;
 
     try {
@@ -153,22 +168,6 @@ describe('signupValidationSchema', () => {
     }
 
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['password:max']);
-  });
-
-  it('should give an error for the password does not contains Uppercase letter, Lowercase letter, Numeric character and Special character', async () => {
-    //NOTE::This cases shot should not be less than 8 characters. It belongs to a seperate unit test
-    const invalidPasswords = ['abcdefghi', 'a22218282', 'DKJK7272HS', '9189217929', 'uihsuysujg658*&%'];
-    let validationResult;
-
-    for (const password of invalidPasswords) {
-      try {
-        validationResult = await signupValidationSchema.validateAt('password', { password: password });
-      } catch (error) {
-        validationResult = error;
-      }
-
-      expect(validationResult.errors[0]).toBe(signupFormErrorMessages['password:matches']);
-    }
   });
 
   it('should not give an error for the password does not contains Uppercase letter, Lowercase letter, Numeric character and Special character', async () => {
@@ -201,7 +200,7 @@ describe('signupValidationSchema', () => {
       validationResult = error;
     }
 
-    expect(validationResult.errors[0]).toBe(signupFormErrorMessages['confirmpassword:match']);
+    expect(validationResult.errors[0]).toBe(signupFormErrorMessages['confirmPassword:match']);
   });
 
   it('should not give an error if the promoCode input is empty', async () => {

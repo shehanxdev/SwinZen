@@ -2,7 +2,9 @@ import React from 'react';
 
 import {
   AccountLockSvg,
+  ArrowDown,
   ArrowRightSvg,
+  ArrowUp,
   BackIconSvg,
   BottomTabAnalysisSvg,
   BottomTabHomeSvg,
@@ -23,12 +25,18 @@ import {
   DrawerTermsSvg,
   ErrorIconSvg,
   MailIconSvg,
+  MoveLeftArrowSvg,
+  MoveRightArrowSvg,
+  NotificationDotSvg,
+  NotificationTimerSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
+  PhoneIconSvg,
   PlayButtonSvg,
   PricePlanFeatureListTick,
   ProfileIconSvg,
   SecurityIconSvg,
+  SquareTickSvg,
   SwingZenLogoSvg,
   UploadSvg,
 } from '@sz/assets';
@@ -133,6 +141,14 @@ export function MailIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 
   return <MailIconSvg width={width} height={height} fill={color} />;
 }
 
+export function NotificationDotIcon({ color = Color.Tertiary.Sz900, width = 8, height = 8 }: SvgIconProps) {
+  return <NotificationDotSvg width={width} height={height} fill={color} />;
+}
+
+export function NotificationTimerIcon({ color = Color.Neutral.Sz100, width = 17, height = 17 }: SvgIconProps) {
+  return <NotificationTimerSvg width={width} height={height} fill={color} />;
+}
+
 export function PasswordHideIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
   return <PasswordHideEyeSvg width={width} height={height} fill={color} />;
 }
@@ -141,7 +157,7 @@ export function PasswordRevealIcon({ color = Color.Neutral.Sz500, width = 20, he
   return <PasswordRevealEyeSvg width={width} height={height} fill={color} />;
 }
 
-export function PricePlanFeatureListTickIcon({ color = Color.Neutral.Sz500, width = 12, height = 12 }: SvgIconProps) {
+export function PricePlanFeatureListTickIcon({ color = Color.Tertiary.Sz900, width = 13, height = 13 }: SvgIconProps) {
   return <PricePlanFeatureListTick fill={color} width={width} height={height} />;
 }
 
@@ -153,10 +169,34 @@ export function RightArrowIcon({ color = Color.Neutral.Sz100, width = 7.75, heig
   return <ArrowRightSvg width={width} height={height} fill={color} />;
 }
 
+export function UpArrowIcon({ color = Color.Neutral.White, width = 24, height = 24 }: SvgIconProps) {
+  return <ArrowUp width={width} height={height} fill={color} />;
+}
+
+export function DownArrowIcon({ color = Color.Neutral.White, width = 24, height = 24 }: SvgIconProps) {
+  return <ArrowDown width={width} height={height} fill={color} />;
+}
+
 export function SecurityIcon({ color = Color.Neutral.Sz500, width = 20, height = 20 }: SvgIconProps) {
   return <SecurityIconSvg width={width} height={height} fill={color} />;
 }
 
 export function SwingZenLogoIcon({ color, width = 108, height = 55 }: SvgIconProps) {
   return <SwingZenLogoSvg width={width} height={height} fill={color} />;
+}
+
+export function PhoneIcon({ color = Color.Neutral.Sz500, width = 18, height = 18 }: SvgIconProps) {
+  return <PhoneIconSvg width={width} height={height} fill={color} />;
+}
+
+export function SquareTickIcon({ color = Color.Tertiary.Sz900, width = 12, height = 11 }: SvgIconProps) {
+  return <SquareTickSvg width={width} height={height} fill="none" stroke={color} />;
+}
+
+export function MoveLeftArrowIcon({ color = Color.Neutral.White, width = 15, height = 15 }: SvgIconProps) {
+  return <MoveLeftArrowSvg width={width} height={height} fill={color} />;
+}
+
+export function MoveRightArrowIcon({ color = Color.Neutral.White, width = 15, height = 15 }: SvgIconProps) {
+  return <MoveRightArrowSvg width={width} height={height} fill={color} />;
 }

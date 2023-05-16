@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
@@ -43,7 +42,7 @@ export function LoginScreen() {
   const onLoginFormValid: SubmitHandler<LoginFormValues> = async formInput => {
     try {
       await dispatch.userStore.loginUserWithCredentials(formInput);
-      NavigationService.navigate(Route.MainStack);
+      NavigationService.navigate(Route.PricePlansStack);
     } catch (error: any) {
       ToastService.error({ message: 'Failed!', description: error.data.message });
     }
@@ -63,47 +62,51 @@ export function LoginScreen() {
           </View>
         </View>
         <View style={tw`flex-1 mx-5`}>
-          <Controller
-            control={control}
-            name="username"
-            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
-              <TextField
-                ref={ref}
-                label="Your email"
-                leftIcon={<MailIcon />}
-                maxLength={50}
-                value={value}
-                onChangeText={onChange}
-                onBlur={onBlur}
-                helperText={(isTouched || isSubmitted) && error?.message}
-                helperTextColor={Color.Error.SzMain}
-                error={(isTouched || isSubmitted) && error !== undefined}
-                returnKeyType={'next'}
-                onSubmitEditing={() => setFocus('password')}
-                autoCapitalize={'none'}
-              />
-            )}
-          />
-          <Controller
-            control={control}
-            name="password"
-            render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
-              <PasswordField
-                ref={ref}
-                label="Your password"
-                leftIcon={<AccountLockIcon />}
-                maxLength={20}
-                value={value}
-                onChangeText={onChange}
-                onBlur={onBlur}
-                helperText={(isTouched || isSubmitted) && error?.message}
-                helperTextColor={Color.Error.SzMain}
-                error={(isTouched || isSubmitted) && error !== undefined}
-                returnKeyType={'done'}
-              />
-            )}
-          />
-          <View style={tw`items-end mt-3`}>
+          <View style={tw`mb-4`}>
+            <Controller
+              control={control}
+              name="username"
+              render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
+                <TextField
+                  ref={ref}
+                  label="Your email"
+                  leftIcon={<MailIcon />}
+                  maxLength={256}
+                  value={value}
+                  onChangeText={onChange}
+                  onBlur={onBlur}
+                  helperText={(isTouched || isSubmitted) && error?.message}
+                  helperTextColor={Color.Error.SzMain}
+                  error={(isTouched || isSubmitted) && error !== undefined}
+                  returnKeyType={'next'}
+                  onSubmitEditing={() => setFocus('password')}
+                  autoCapitalize={'none'}
+                />
+              )}
+            />
+          </View>
+          <View style={tw`mb-6`}>
+            <Controller
+              control={control}
+              name="password"
+              render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
+                <PasswordField
+                  ref={ref}
+                  label="Your password"
+                  leftIcon={<AccountLockIcon />}
+                  maxLength={256}
+                  value={value}
+                  onChangeText={onChange}
+                  onBlur={onBlur}
+                  helperText={(isTouched || isSubmitted) && error?.message}
+                  helperTextColor={Color.Error.SzMain}
+                  error={(isTouched || isSubmitted) && error !== undefined}
+                  returnKeyType={'done'}
+                />
+              )}
+            />
+          </View>
+          <View style={tw`items-end`}>
             <Link
               text="Forgot password?"
               onPress={() => {
@@ -117,9 +120,9 @@ export function LoginScreen() {
             <Button onPress={handleSubmit(onLoginFormValid, onLoginFormInvalid)} title={'SIGN IN'} loading={loading} />
           </View>
           <Text variant={TextVariant.Labels}>
-            Don’t have an account?
+            {`Don’t have an account? `}
             <Link
-              text=" Sign up"
+              text="Sign up"
               onPress={() => {
                 NavigationService.navigate(Route.Signup);
               }}
