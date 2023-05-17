@@ -1,0 +1,394 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseChartBar component should render correctly should render correctly with {"barValue":2,"chartBarType":"fail"} 1`] = `
+<View
+  animatedStyle={
+    {
+      "value": {},
+    }
+  }
+  collapsable={false}
+  entering={
+    FadeInDown {
+      "build": [Function],
+      "callbackV": undefined,
+      "dampingV": undefined,
+      "delayV": undefined,
+      "durationV": 500,
+      "easingV": undefined,
+      "initialValues": undefined,
+      "massV": undefined,
+      "overshootClampingV": undefined,
+      "randomizeDelay": false,
+      "restDisplacementThresholdV": undefined,
+      "restSpeedThresholdV": undefined,
+      "rotateV": undefined,
+      "stiffnessV": undefined,
+      "type": undefined,
+    }
+  }
+  exiting={
+    FadeOutDown {
+      "build": [Function],
+      "callbackV": undefined,
+      "dampingV": undefined,
+      "delayV": undefined,
+      "durationV": 500,
+      "easingV": undefined,
+      "initialValues": undefined,
+      "massV": undefined,
+      "overshootClampingV": undefined,
+      "randomizeDelay": false,
+      "restDisplacementThresholdV": undefined,
+      "restSpeedThresholdV": undefined,
+      "rotateV": undefined,
+      "stiffnessV": undefined,
+      "type": undefined,
+    }
+  }
+  onLayout={[Function]}
+  style={
+    {
+      "alignItems": "flex-end",
+      "justifyContent": "flex-end",
+    }
+  }
+  testID="BaseChartBarComponentTestID"
+>
+  <View>
+    <BVLinearGradient
+      colors={
+        [
+          4288871727,
+          1419967791,
+          10681647,
+        ]
+      }
+      endPoint={
+        {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={
+        [
+          0,
+          0.48,
+          1,
+        ]
+      }
+      startPoint={
+        {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
+      style={
+        {
+          "height": 117.5,
+          "width": 36,
+        }
+      }
+    />
+    <View
+      style={
+        [
+          {
+            "backgroundColor": "#A2FD2F",
+            "borderRadius": 9999,
+            "justifyContent": "center",
+            "position": "absolute",
+          },
+          {},
+          {
+            "height": 36,
+            "top": -18,
+            "width": 36,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#16501D",
+              "lineHeight": 24,
+            },
+            {
+              "fontFamily": "SourceSansPro-SemiBold",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        5
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`BaseChartBar component should render correctly should render correctly with {"barValue":5,"chartBarType":"pass"} 1`] = `
+<View
+  animatedStyle={
+    {
+      "value": {},
+    }
+  }
+  collapsable={false}
+  entering={
+    FadeInDown {
+      "build": [Function],
+      "callbackV": undefined,
+      "dampingV": undefined,
+      "delayV": undefined,
+      "durationV": 500,
+      "easingV": undefined,
+      "initialValues": undefined,
+      "massV": undefined,
+      "overshootClampingV": undefined,
+      "randomizeDelay": false,
+      "restDisplacementThresholdV": undefined,
+      "restSpeedThresholdV": undefined,
+      "rotateV": undefined,
+      "stiffnessV": undefined,
+      "type": undefined,
+    }
+  }
+  exiting={
+    FadeOutDown {
+      "build": [Function],
+      "callbackV": undefined,
+      "dampingV": undefined,
+      "delayV": undefined,
+      "durationV": 500,
+      "easingV": undefined,
+      "initialValues": undefined,
+      "massV": undefined,
+      "overshootClampingV": undefined,
+      "randomizeDelay": false,
+      "restDisplacementThresholdV": undefined,
+      "restSpeedThresholdV": undefined,
+      "rotateV": undefined,
+      "stiffnessV": undefined,
+      "type": undefined,
+    }
+  }
+  onLayout={[Function]}
+  style={
+    {
+      "alignItems": "flex-end",
+      "justifyContent": "flex-end",
+    }
+  }
+  testID="BaseChartBarComponentTestID"
+>
+  <View>
+    <BVLinearGradient
+      colors={
+        [
+          4288871727,
+          1419967791,
+          10681647,
+        ]
+      }
+      endPoint={
+        {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={
+        [
+          0,
+          0.48,
+          1,
+        ]
+      }
+      startPoint={
+        {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
+      style={
+        {
+          "height": 117.5,
+          "width": 36,
+        }
+      }
+    />
+    <View
+      style={
+        [
+          {
+            "backgroundColor": "#A2FD2F",
+            "borderRadius": 9999,
+            "justifyContent": "center",
+            "position": "absolute",
+          },
+          {},
+          {
+            "height": 36,
+            "top": -18,
+            "width": 36,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#16501D",
+              "lineHeight": 24,
+            },
+            {
+              "fontFamily": "SourceSansPro-SemiBold",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        5
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`BaseChartBar component should render correctly should render correctly with {"barValue":9,"chartBarType":"pass"} 1`] = `
+<View
+  animatedStyle={
+    {
+      "value": {},
+    }
+  }
+  collapsable={false}
+  entering={
+    FadeInDown {
+      "build": [Function],
+      "callbackV": undefined,
+      "dampingV": undefined,
+      "delayV": undefined,
+      "durationV": 500,
+      "easingV": undefined,
+      "initialValues": undefined,
+      "massV": undefined,
+      "overshootClampingV": undefined,
+      "randomizeDelay": false,
+      "restDisplacementThresholdV": undefined,
+      "restSpeedThresholdV": undefined,
+      "rotateV": undefined,
+      "stiffnessV": undefined,
+      "type": undefined,
+    }
+  }
+  exiting={
+    FadeOutDown {
+      "build": [Function],
+      "callbackV": undefined,
+      "dampingV": undefined,
+      "delayV": undefined,
+      "durationV": 500,
+      "easingV": undefined,
+      "initialValues": undefined,
+      "massV": undefined,
+      "overshootClampingV": undefined,
+      "randomizeDelay": false,
+      "restDisplacementThresholdV": undefined,
+      "restSpeedThresholdV": undefined,
+      "rotateV": undefined,
+      "stiffnessV": undefined,
+      "type": undefined,
+    }
+  }
+  onLayout={[Function]}
+  style={
+    {
+      "alignItems": "flex-end",
+      "justifyContent": "flex-end",
+    }
+  }
+  testID="BaseChartBarComponentTestID"
+>
+  <View>
+    <BVLinearGradient
+      colors={
+        [
+          4288871727,
+          1419967791,
+          10681647,
+        ]
+      }
+      endPoint={
+        {
+          "x": 0.5,
+          "y": 1,
+        }
+      }
+      locations={
+        [
+          0,
+          0.48,
+          1,
+        ]
+      }
+      startPoint={
+        {
+          "x": 0.5,
+          "y": 0,
+        }
+      }
+      style={
+        {
+          "height": 117.5,
+          "width": 36,
+        }
+      }
+    />
+    <View
+      style={
+        [
+          {
+            "backgroundColor": "#A2FD2F",
+            "borderRadius": 9999,
+            "justifyContent": "center",
+            "position": "absolute",
+          },
+          {},
+          {
+            "height": 36,
+            "top": -18,
+            "width": 36,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#16501D",
+              "lineHeight": 24,
+            },
+            {
+              "fontFamily": "SourceSansPro-SemiBold",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        5
+      </Text>
+    </View>
+  </View>
+</View>
+`;
