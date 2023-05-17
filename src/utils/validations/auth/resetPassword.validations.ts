@@ -2,8 +2,8 @@ import * as yup from 'yup';
 
 export const resetPasswordErrorMessages = {
   'password:required': 'Please enter New password',
-  'password:min': 'Password must be between 8 and 256 characters length',
-  'password:max': 'Password must be between 8 and 256 characters length',
+  'password:min': 'Please enter at least 8 characters',
+  'password:max': 'Only 256 characters are allowed for the Password',
 
   'confirmPassword:required': 'Please enter Password confirmation',
   'confirmPassword:match': 'Your passwords do not match',
