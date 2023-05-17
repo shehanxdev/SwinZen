@@ -46,14 +46,14 @@ export function OTPInput({ testID, value, onChangeValue, onSubmitEditing }: OTPI
   /*
    * There is an issue with the margin of the edges in OTP cell input component in smaller devices.
    * In order to avoid this we must give an dynamic cell width depending on the window size.
-   * NOTE::There is one edge cases for this calulation
+   * NOTE::There is one edge case for this calulation
    * => If the DEFAULT_OTP_INPUT_CONTAINER_WIDTH(6 cell width + 5 margins) less than or equal to parent component width we don't need to reduce the cell width.
    */
   const cellWidth = useMemo(() => {
     if (DEFAULT_OTP_INPUT_CONTAINER_WIDTH <= parentContainerWidth) return DEFAULT_CELL_WIDTH;
 
-    const remainingWdithForCells = parentContainerWidth - SPACE_BETWEEN_CELLS * 5;
-    return remainingWdithForCells / 6;
+    const remainingWidthForCells = parentContainerWidth - SPACE_BETWEEN_CELLS * 5;
+    return remainingWidthForCells / 6;
   }, [parentContainerWidth]);
 
   return (
