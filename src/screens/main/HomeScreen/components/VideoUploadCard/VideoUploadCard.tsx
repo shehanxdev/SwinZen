@@ -1,18 +1,12 @@
-import { BlurView } from '@react-native-community/blur';
-import React, { ReactElement, useMemo, useState } from 'react';
-import { ActivityIndicator, View } from 'react-native';
+import React, { useState } from 'react';
+import { View } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
-import { ErrorIcon, Link, Text, UploadIcon } from '@sz/components';
+import { ErrorIcon } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, TextVariant } from '@sz/constants';
 
+import { VideoUploadCardContent } from './VideoUploadCardContent';
 import { VideoUploadCardFooter } from './VideoUploadCardFooter';
-
-type RenderedData = {
-  icon: ReactElement;
-  title: string;
-  linkText?: string;
-};
 
 export function VideoUploadCard() {
   //TODO:: Removed this once the upload logic gets implemented
@@ -27,52 +21,37 @@ export function VideoUploadCard() {
     }, 2000);
   };
 
-  const getRenderedData: RenderedData = useMemo(() => {
-    if (isLoading) {
-      return {
-        icon: <ActivityIndicator size="large" />,
-        title: 'Uploading.. Please wait!',
-      };
-    } else if (isError) {
-      return {
-        icon: <ErrorIcon />,
-        title: 'Your video failed to upload!',
-        linkText: 'Find out why',
-      };
-    } else {
-      return {
-        icon: <UploadIcon />,
-        title: 'No Data to Report. Get Started!',
-        linkText: 'Upload a video',
-      };
-    }
-  }, [isLoading, isError]);
-
   return (
-    <View style={tw`h-54.5 rounded-2.5 overflow-hidden`}>
+    <View style={tw`rounded-2.5 overflow-hidden`}>
       <View
-        style={tw`flex-1 rounded-2.5 overflow-hidden  ${
-          !isError ? `border border-dashed border-[${Color.Neutral.Sz200}]` : 'border-0'
+        style={tw`flex-1 rounded-2.5 overflow-hidden border ${
+          isError ? 'border-Secondary-Sz900/57' : 'border-Tertiary-Sz900'
         }`}>
-        <BlurView
-          blurType="dark"
-          blurAmount={1} //TODO::extract these magic values to a common file
-          reducedTransparencyFallbackColor={Color.Neutral.Sz900}
-          style={tw`absolute inset-x-0 inset-y-0 rounded-2.5`}
-        />
-        <View style={tw`items-center flex-1 mt-[${isError ? '31.67px' : '90.67px'}]`}>
-          {getRenderedData.icon}
-          <View style={tw`mt-[16.67px]`}>
-            <Text variant={TextVariant.Body2Regular}>{getRenderedData.title}</Text>
-            <View style={tw`mt-1`}>
-              <Link text={getRenderedData?.linkText} onPress={onUpload} underline />
-            </View>
+        {isError ? (
+          <LinearGradient colors={['#F6581500', '#F65815']} locations={[0, 0.5433]} style={tw`inset-0`}>
+            <VideoUploadCardContent
+              title={'Your video failed to upload!'}
+              linkText="Find out why"
+              onLinkPress={() => {}}
+              isError
+              icon={ErrorIcon}
+            />
+          </LinearGradient>
+        ) : (
+          <View style={tw`bg-Neutral-Black/33`}>
+            <VideoUploadCardContent
+              title="No Data to Report. Get Started!"
+              linkText="Upload a video"
+              onLinkPress={onUpload}
+              loading={isLoading}
+            />
           </View>
-          {isError && (
-            <VideoUploadCardFooter isError date="04 JUN 2022" cameraAngle="Down the line" results="All failed videos" />
-          )}
-        </View>
+        )}
       </View>
+      {isError && (
+        //TODO:: replace static prop values
+        <VideoUploadCardFooter isError date="04 JUN 2022" cameraAngle="Down the line" results="All failed videos" />
+      )}
     </View>
   );
 }
