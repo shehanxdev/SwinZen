@@ -1,0 +1,482 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Plan Details Screen screen should render Plan Details Screen correctly 1`] = `
+<BVLinearGradient
+  colors={
+    [
+      4279917603,
+      4278984207,
+      4278650631,
+    ]
+  }
+  endPoint={
+    {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    {
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "position": "relative",
+    }
+  }
+  testID="PlanDetailsScreen"
+>
+  <Image
+    resizeMode="cover"
+    source={
+      {
+        "testUri": "../../../src/assets/images/grassBackground.jpg",
+      }
+    }
+    style={
+      {
+        "opacity": 0.1,
+        "position": "absolute",
+      }
+    }
+  />
+  <RCTSafeAreaView
+    style={
+      {
+        "height": "100%",
+        "paddingTop": 50,
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "paddingBottom": 0,
+          },
+        ]
+      }
+    >
+      <RCTScrollView
+        contentContainerStyle={
+          {
+            "flexGrow": 1,
+          }
+        }
+        keyboardShouldPersistTaps="handled"
+      >
+        <View>
+          <View
+            style={
+              {
+                "flexBasis": "0%",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "justifyContent": "space-between",
+                "marginLeft": 16,
+                "marginRight": 16,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "flexBasis": "0%",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "marginLeft": 20,
+                  "marginRight": 20,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "marginTop": 8,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#F8F9FA",
+                        "lineHeight": 24,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 15,
+                        "fontWeight": "600",
+                        "textAlign": "center",
+                      },
+                    ]
+                  }
+                >
+                  You have chosen the
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "marginTop": 4,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#F8F9FA",
+                        "lineHeight": 40,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 28,
+                        "fontWeight": "600",
+                        "textAlign": "center",
+                      },
+                    ]
+                  }
+                >
+                  testName
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "marginTop": 40,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#F8F9FA",
+                        "lineHeight": 24,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 16,
+                        "fontWeight": "normal",
+                        "textAlign": "center",
+                      },
+                    ]
+                  }
+                >
+                  testLongDescription
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "marginTop": 16,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "gap": 8,
+                      "justifyContent": "center",
+                      "marginTop": 8,
+                    }
+                  }
+                >
+                  <SvgMock
+                    fill="#A2FD2F"
+                    height={13}
+                    width={13}
+                  />
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 15,
+                          "fontWeight": "600",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    testFeatureOne
+                  </Text>
+                </View>
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "gap": 8,
+                      "justifyContent": "center",
+                      "marginTop": 8,
+                    }
+                  }
+                >
+                  <SvgMock
+                    fill="#A2FD2F"
+                    height={13}
+                    width={13}
+                  />
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 15,
+                          "fontWeight": "600",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    testFeatureTwo
+                  </Text>
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                  "marginBottom": 20,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "gap": 8,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#F8F9FA",
+                        "lineHeight": 72,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 60,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
+                  }
+                >
+                  $99
+                </Text>
+                <View
+                  style={
+                    {
+                      "marginTop": 24,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    /testFrequency
+                  </Text>
+                </View>
+              </View>
+              <View
+                style={
+                  {
+                    "marginBottom": 12,
+                    "marginTop": 64,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "flexDirection": "row",
+                    }
+                  }
+                >
+                  <View
+                    collapsable={false}
+                    onTouchEnd={[Function]}
+                    onTouchStart={[Function]}
+                    style={
+                      {
+                        "backgroundColor": "#A2FD2F",
+                        "borderColor": "#ffffff00",
+                        "borderRadius": 10,
+                        "borderStyle": "solid",
+                        "borderWidth": 1,
+                        "elevation": 0,
+                        "justifyContent": "center",
+                        "minWidth": "auto",
+                        "shadowColor": "#000",
+                        "shadowOffset": {
+                          "height": 0,
+                          "width": 0,
+                        },
+                        "shadowOpacity": 0,
+                        "shadowRadius": 0,
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <View
+                      accessibilityRole="button"
+                      accessibilityState={
+                        {
+                          "disabled": false,
+                        }
+                      }
+                      accessibilityValue={
+                        {
+                          "max": undefined,
+                          "min": undefined,
+                          "now": undefined,
+                          "text": undefined,
+                        }
+                      }
+                      accessible={true}
+                      focusable={true}
+                      onClick={[Function]}
+                      onResponderGrant={[Function]}
+                      onResponderMove={[Function]}
+                      onResponderRelease={[Function]}
+                      onResponderTerminate={[Function]}
+                      onResponderTerminationRequest={[Function]}
+                      onStartShouldSetResponder={[Function]}
+                      style={
+                        [
+                          {
+                            "overflow": "hidden",
+                          },
+                          {
+                            "borderRadius": 10,
+                          },
+                        ]
+                      }
+                      testID="PlanDetailsScreen-PayButton"
+                    >
+                      <View
+                        style={
+                          [
+                            {
+                              "alignItems": "center",
+                              "flexDirection": "row",
+                              "justifyContent": "center",
+                            },
+                            {
+                              "height": 48,
+                            },
+                          ]
+                        }
+                      >
+                        <Text
+                          numberOfLines={1}
+                          selectable={false}
+                          style={
+                            [
+                              {
+                                "color": "#000000",
+                                "fontFamily": "System",
+                                "fontWeight": "400",
+                              },
+                              {
+                                "textAlign": "left",
+                              },
+                              [
+                                {
+                                  "letterSpacing": 1,
+                                  "marginHorizontal": 16,
+                                  "marginVertical": 9,
+                                  "textAlign": "center",
+                                },
+                                {
+                                  "marginHorizontal": 8,
+                                },
+                                false,
+                                {
+                                  "color": "#6200ee",
+                                  "fontFamily": "System",
+                                  "fontWeight": "500",
+                                },
+                                {
+                                  "fontFamily": "System",
+                                  "fontWeight": "500",
+                                },
+                                undefined,
+                              ],
+                            ]
+                          }
+                        >
+                          <Text
+                            style={
+                              [
+                                {
+                                  "color": "#283E36",
+                                  "lineHeight": 28,
+                                },
+                                {
+                                  "fontFamily": "SourceSansPro-SemiBold",
+                                  "fontSize": 18,
+                                  "fontWeight": "bold",
+                                  "textAlign": "center",
+                                },
+                              ]
+                            }
+                          >
+                            PROCEED TO PAY
+                          </Text>
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+  </RCTSafeAreaView>
+</BVLinearGradient>
+`;

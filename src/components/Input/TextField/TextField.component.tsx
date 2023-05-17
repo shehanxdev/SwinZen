@@ -11,7 +11,7 @@ import { TextFieldProps } from './TextField.types';
 //TODO::handle scroll on focus
 export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTextField(
   {
-    innerTextInputStyles = tw`h-12 p-0 m-0`,
+    innerTextInputStyles = tw`h-8 px-0 py-2 m-0`, // NOTE: There is a known bug with react native paper text input's ellipsis effect. Adding vertical padding is required to get rid of this issue.
     backgroundColor = Color.Primary.Sz700,
     defaultValue,
     value,
@@ -50,11 +50,17 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
   }: TextFieldProps,
   ref,
 ) {
-  const labelTextComponent = useMemo(
+  const labelComponent = useMemo(
     () => (
-      <Text variant={TextVariant.Body2SemiBold} color={labelColor} textAlign={TextAlignment.Auto}>
-        {label}
-      </Text>
+      <>
+        {typeof label === 'string' ? (
+          <Text variant={TextVariant.Body2SemiBold} color={labelColor} textAlign={TextAlignment.Auto}>
+            {label}
+          </Text>
+        ) : (
+          <>{label}</>
+        )}
+      </>
     ),
     [labelColor, label, error],
   );
@@ -94,7 +100,7 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
 
   return (
     <View>
-      {labelTextComponent}
+      {labelComponent}
       <TextInput
         style={innerTextInputStyles}
         ref={ref}
@@ -134,16 +140,16 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
         autoCorrect={autoCorrect}
         multiline={multiline}
         numberOfLines={numberOfLines}
-        left={leftIcon && <TextInput.Icon name={() => leftIconComponent} style={{ marginTop: '50%' }} />}
+        left={leftIcon && <TextInput.Icon name={() => leftIconComponent} style={tw`mt-[50%]`} />}
         right={
           rightIcon && (
-            <TextInput.Icon name={() => rightIconComponent} onPress={onRightIconPress} style={{ marginTop: '50%' }} />
+            <TextInput.Icon name={() => rightIconComponent} onPress={onRightIconPress} style={tw`mt-[50%]`} />
           )
         }
         returnKeyType={returnKeyType}
         returnKeyLabel={returnKeyLabel}
       />
-      {helperTextComponent}
+      {helperText && helperTextComponent}
     </View>
   );
 });

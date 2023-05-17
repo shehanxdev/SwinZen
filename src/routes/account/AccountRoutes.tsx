@@ -1,12 +1,11 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
 
-import { BackIcon, Text } from '@sz/components';
+import { Text } from '@sz/components';
 import { Route, TextAlignment, TextVariant } from '@sz/constants';
 import { FollowersScreen, NotificationScreen } from '@sz/screens';
-import { NavigationService } from '@sz/services';
 
+import { HeaderBackButton } from '../components';
 import { ProfileStack } from './ProfileRoutes';
 
 export type AccountStackParamList = {
@@ -30,12 +29,9 @@ export function AccountStack() {
         headerTitleAlign: TextAlignment.Center,
         headerBackTitleVisible: false,
         headerTransparent: true,
+        headerBackVisible: false,
         headerTitle: ({ children }) => <Text variant={TextVariant.SubTitle2SemiBold}>{children}</Text>,
-        headerLeft: () => (
-          <TouchableOpacity onPress={() => NavigationService.goBack()}>
-            <BackIcon />
-          </TouchableOpacity>
-        ),
+        headerLeft: () => <HeaderBackButton />,
       }}>
       <Stack.Screen name={Route.ProfileStack} component={ProfileStack} options={{ title: 'Profile Settings' }} />
       <Stack.Screen name={Route.Notification} component={NotificationScreen} options={{ title: 'Notifications' }} />

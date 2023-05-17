@@ -8,17 +8,17 @@ import { tw } from '@sz/config';
 import { Color } from '@sz/constants';
 import { useHeaderHeight } from '@sz/hooks';
 
-interface BaseScreenProps extends Partial<LinearGradientProps> {
+interface BaseInfoScreenProps extends Partial<LinearGradientProps> {
   children: React.ReactNode;
   wrapWithScrollView?: boolean;
 }
 
 export function BaseInfoScreen({
   children,
+  colors = [Color.Primary.SZ650, Color.Primary.Sz800, Color.Primary.Sz900],
   wrapWithScrollView = true,
-  colors = ['#1A5C23', Color.Primary.Sz800, Color.Primary.Sz900], //TODO:: update, these colours are NOT available within the design system
   ...otherlinearGradientProps
-}: BaseScreenProps) {
+}: BaseInfoScreenProps) {
   const headerHeight = useHeaderHeight();
 
   const renderChildren = wrapWithScrollView ? (

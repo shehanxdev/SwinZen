@@ -33,7 +33,7 @@ export function UnexpectedErrorScreen({ resetError }: UnexpectedErrorScreenProps
             <Button onPress={resetError} title={'TRY AGAIN'} />
           </View>
           <Button
-            borderColor={'#1A5C23' as Color}
+            borderColor={Color.Primary.SZ650}
             backgroundColor={Color.Transparency.full}
             textColor={Color.Tertiary.Sz900}
             activeStateBackgroundColor={Color.Primary.Sz400} //NOTE::not defined within the design system.

@@ -2,22 +2,6 @@
 
 exports[`TextField Component should render correctly 1`] = `
 <View>
-  <Text
-    style={
-      [
-        {
-          "color": "#E9ECEF",
-          "lineHeight": 24,
-        },
-        {
-          "fontFamily": "SourceSansPro-SemiBold",
-          "fontSize": 16,
-          "fontWeight": "600",
-          "textAlign": "auto",
-        },
-      ]
-    }
-  />
   <View
     style={
       {
@@ -25,10 +9,10 @@ exports[`TextField Component should render correctly 1`] = `
         "marginLeft": 0,
         "marginRight": 0,
         "marginTop": 0,
-        "paddingBottom": 0,
+        "paddingBottom": 8,
         "paddingLeft": 0,
         "paddingRight": 0,
-        "paddingTop": 0,
+        "paddingTop": 8,
       }
     }
   >
@@ -61,7 +45,7 @@ exports[`TextField Component should render correctly 1`] = `
               "paddingBottom": 0,
             },
             {
-              "minHeight": 48,
+              "minHeight": 32,
               "paddingTop": 8,
             },
           ]
@@ -86,11 +70,11 @@ exports[`TextField Component should render correctly 1`] = `
                 "zIndex": 1,
               },
               {
-                "height": 48,
+                "height": 32,
               },
               {
-                "paddingBottom": 16,
-                "paddingTop": 16,
+                "paddingBottom": 8,
+                "paddingTop": 8,
               },
               {
                 "color": "#DEE2E6",
