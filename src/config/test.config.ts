@@ -30,3 +30,14 @@ jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 jest.mock('@react-navigation/elements', () => ({
   useHeaderHeight: jest.fn(() => 50), // Mock the useHeaderHeight hook
 }));
+
+jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
+
+jest.doMock('react-native-background-timer', () => {
+  return {
+    stopBackgroundTimer: jest.fn(),
+    runBackgroundTimer: jest.fn(),
+    setInterval: jest.fn(),
+    clearInterval: jest.fn(),
+  };
+});
