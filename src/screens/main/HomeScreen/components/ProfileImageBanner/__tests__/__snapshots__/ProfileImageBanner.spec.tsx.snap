@@ -100,12 +100,12 @@ exports[`ProfileImageBanner component should render ProfileImageBanner component
       [
         {
           "alignItems": "flex-start",
-          "backgroundColor": "#070707bf",
+          "backgroundColor": "rgba(7, 7, 7, 0.75)",
           "borderRadius": 10,
           "height": 72,
+          "justifyContent": "center",
           "overflow": "hidden",
           "paddingLeft": 14,
-          "paddingTop": 8,
         },
         {
           "width": 700,

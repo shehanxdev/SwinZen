@@ -69,7 +69,7 @@ export function ProfileImageBanner() {
       </TouchableOpacity>
       <View
         style={[
-          tw`h-18 pt-2 pl-3.5 rounded-2.5 overflow-hidden items-start bg-[#070707bf]`,
+          tw`h-18 pl-3.5 rounded-2.5 overflow-hidden items-start bg-Primary-Sz900/75 justify-center`,
           {
             zIndex: -1,
             width: containerWidth,
