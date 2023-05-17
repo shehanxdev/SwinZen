@@ -21,6 +21,7 @@ export function RegisterEmailVerificationScreen({ route }) {
     formState: { errors },
     getValues,
   } = useForm<OtpVerficationValue>({ mode: 'onChange', resolver: yupResolver(otpValidationSchema) });
+
   const username = route.params.params;
 
   const loading = useSelector(state => state.loading.effects.userStore.emailVerification);

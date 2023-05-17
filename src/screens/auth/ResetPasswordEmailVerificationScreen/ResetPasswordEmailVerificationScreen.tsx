@@ -22,6 +22,7 @@ export function ResetPasswordEmailVerificationScreen({ route }) {
     formState: { errors },
     getValues,
   } = useForm<OtpVerficationValue>({ mode: 'onChange', resolver: yupResolver(otpValidationSchema) });
+
   const email = route.params.params.email;
 
   const loading = useSelector(state => state.loading.effects.userStore.emailVerification);
