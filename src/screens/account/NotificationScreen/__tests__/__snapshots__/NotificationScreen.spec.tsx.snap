@@ -368,7 +368,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                       ]
                     }
                   >
-                    7 days ago
+                    12 days ago
                   </Text>
                 </View>
               </View>
@@ -516,7 +516,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                     ]
                   }
                 >
-                  7 days ago
+                  12 days ago
                 </Text>
               </View>
             </View>
@@ -695,7 +695,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                       ]
                     }
                   >
-                    8 days ago
+                    13 days ago
                   </Text>
                 </View>
               </View>
@@ -844,7 +844,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                       ]
                     }
                   >
-                    8 days ago
+                    13 days ago
                   </Text>
                 </View>
               </View>
@@ -992,7 +992,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                     ]
                   }
                 >
-                  8 days ago
+                  13 days ago
                 </Text>
               </View>
             </View>
