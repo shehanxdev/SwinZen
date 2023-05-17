@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfileImageBanner component should render ProfileImageBanner component correctly 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    {
+      "borderRadius": 10,
+      "height": 72,
+      "width": "100%",
+    }
+  }
+  testID="ProfileImageBannerComponentTestID"
+>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#1A5C23",
+        "borderRadius": 9999,
+        "bottom": 0,
+        "height": 100,
+        "justifyContent": "center",
+        "position": "absolute",
+        "right": 0,
+        "width": 100,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F8F9FA",
+            "lineHeight": 40,
+          },
+          {
+            "fontFamily": "SourceSansPro-Regular",
+            "fontSize": 28,
+            "fontWeight": "600",
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      MW
+    </Text>
+  </View>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#F8F9FA",
+        "borderRadius": 9999,
+        "bottom": 0,
+        "height": 24,
+        "justifyContent": "center",
+        "opacity": 1,
+        "position": "absolute",
+        "right": 0,
+        "width": 24,
+      }
+    }
+  >
+    <SvgMock
+      fill="#1A5C23"
+      height={13}
+      width={13.5}
+    />
+  </View>
+  <View
+    style={
+      [
+        {
+          "alignItems": "flex-start",
+          "backgroundColor": "rgba(7, 7, 7, 0.75)",
+          "borderRadius": 10,
+          "height": 72,
+          "justifyContent": "center",
+          "overflow": "hidden",
+          "paddingLeft": 14,
+        },
+        {
+          "width": 700,
+          "zIndex": -1,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#A2FD2F",
+            "lineHeight": 24,
+          },
+          {
+            "fontFamily": "SourceSansPro-Regular",
+            "fontSize": 16,
+            "fontWeight": "normal",
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Hello,
+    </Text>
+    <View
+      style={
+        {
+          "marginTop": 2,
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#F8F9FA",
+              "lineHeight": 28,
+            },
+            {
+              "fontFamily": "SourceSansPro-SemiBold",
+              "fontSize": 21,
+              "fontWeight": "600",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        Marshall Williams
+      </Text>
+    </View>
+  </View>
+</View>
+`;
