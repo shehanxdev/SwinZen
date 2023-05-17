@@ -1,7 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import React, { useState } from 'react';
+import React from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
-import { Dimensions, View } from 'react-native';
+import { View } from 'react-native';
 
 import { Button, Link, SwingZenLogoIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
@@ -21,9 +21,6 @@ export function RegisterEmailVerificationScreen({ route }) {
     formState: { errors },
     getValues,
   } = useForm<OtpVerficationValue>({ mode: 'onChange', resolver: yupResolver(otpValidationSchema) });
-  //TODO::remove this state once the withParentViewDimentions implementations completed && refactor to use withParentViewDimentions
-  const [OTPParentComponentWidth, setOTPParentComponentWidth] = useState(Dimensions.get('window').width);
-
   const username = route.params.params;
 
   const loading = useSelector(state => state.loading.effects.userStore.emailVerification);
@@ -65,12 +62,7 @@ export function RegisterEmailVerificationScreen({ route }) {
   return (
     <BaseAuthScreen>
       <View style={tw`flex-1 justify-between`} testID="RegisterEmailVerificationScreenContainerTestID">
-        <View
-          style={tw`mt-[35px] mx-5`}
-          onLayout={event => {
-            let { width } = event.nativeEvent.layout;
-            setOTPParentComponentWidth(width);
-          }}>
+        <View style={tw`mt-[35px] mx-5`}>
           <View style={tw`items-center`}>
             <SwingZenLogoIcon />
           </View>
@@ -92,7 +84,6 @@ export function RegisterEmailVerificationScreen({ route }) {
                 value={value}
                 onChangeValue={onChange}
                 onSubmitEditing={handleSubmit(onRegisterEmailFormValid, onRegisterEmailFormInvalid)}
-                parentContainerWidth={OTPParentComponentWidth}
               />
             )}
           />
