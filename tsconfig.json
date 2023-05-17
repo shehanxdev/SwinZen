@@ -23,6 +23,7 @@
       "@sz/components": ["src/components/index"],
       "@sz/config": ["src/config/index"],
       "@sz/constants": ["src/constants/index"],
+      "@sz/hoc": ["src/hoc/index"],
       "@sz/hooks": ["src/hooks/index"],
       "@sz/layout": ["src/layout/index"],
       "@sz/models": ["src/models/index"],

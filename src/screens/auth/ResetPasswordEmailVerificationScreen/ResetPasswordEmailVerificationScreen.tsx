@@ -1,7 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import React from 'react';
+import React, { useState } from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
-import { View } from 'react-native';
+import { Dimensions, View } from 'react-native';
 
 import { Button, Text } from '@sz/components';
 import { tw } from '@sz/config';
@@ -22,6 +22,8 @@ export function ResetPasswordEmailVerificationScreen({ route }) {
     formState: { errors },
     getValues,
   } = useForm<OtpVerficationValue>({ mode: 'onChange', resolver: yupResolver(otpValidationSchema) });
+  //TODO::remove this state once the withParentViewDimentions implementations completed && refactor to use withParentViewDimentions
+  const [OTPParentComponentWidth, setOTPParentComponentWidth] = useState(Dimensions.get('window').width);
 
   const email = route.params.params.email;
 
@@ -64,7 +66,12 @@ export function ResetPasswordEmailVerificationScreen({ route }) {
   return (
     <BaseAuthScreen>
       <View style={tw`flex-1`} testID="ResetPasswordEmailVerificationScreenContainerTestID">
-        <View style={tw`mx-5 flex-1`}>
+        <View
+          style={[tw`mx-4 flex-1`]}
+          onLayout={event => {
+            let { width } = event.nativeEvent.layout;
+            setOTPParentComponentWidth(width);
+          }}>
           <View style={tw`items-center`}>
             <View style={tw`mt-15 mb-2`}>
               <Text variant={TextVariant.SubTitle2SemiBold}>Email verification</Text>
@@ -84,6 +91,7 @@ export function ResetPasswordEmailVerificationScreen({ route }) {
                 value={value}
                 onChangeValue={onChange}
                 onSubmitEditing={handleSubmit(onResetEmailFormValid, onResetEmailFormInvalid)}
+                parentContainerWidth={OTPParentComponentWidth}
               />
             )}
           />

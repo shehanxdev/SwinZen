@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { View } from 'react-native';
 import { CodeField, Cursor, useBlurOnFulfill, useClearByFocusCell } from 'react-native-confirmation-code-field';
 
@@ -7,15 +7,19 @@ import { tw } from '@sz/config';
 import { TextVariant } from '@sz/constants';
 
 const CELL_COUNT = 6;
+const SPACE_BETWEEN_CELLS = 10; //px
 
 export interface OTPInputProps {
   testID?: string;
   value: string;
   onChangeValue: (text: string) => void;
   onSubmitEditing: () => void;
+
+  //This prop is needed to get rid of margin issue smaller screen. TODO::remove this prop and use a HOC to provide the parentContainerWidth
+  parentContainerWidth?: number;
 }
 
-export function OTPInput({ testID, value, onChangeValue, onSubmitEditing }: OTPInputProps) {
+export function OTPInput({ testID, value, onChangeValue, onSubmitEditing, parentContainerWidth }: OTPInputProps) {
   /*
    * This is an additional logic provided by the react-native-confirmation-code-field library
    * useBlurOnFulfill hook has the logic to blurring <TextInput/> when value all the cells get filled with a value
@@ -36,6 +40,12 @@ export function OTPInput({ testID, value, onChangeValue, onSubmitEditing }: OTPI
     value: value,
     setValue: onChangeValue,
   });
+
+  //TODO::Handle edge case :: screens does not contain this issue
+  const cellWidth = useMemo(() => {
+    const remainingWdithForCells = parentContainerWidth - SPACE_BETWEEN_CELLS * 5;
+    return remainingWdithForCells / 6;
+  }, [parentContainerWidth]);
 
   return (
     <View>
@@ -58,7 +68,7 @@ export function OTPInput({ testID, value, onChangeValue, onSubmitEditing }: OTPI
           <View
             onLayout={getCellOnLayoutHandler(index)}
             key={index}
-            style={tw`h-full rounded-2.5 w-13 justify-center items-center bg-Primary-Sz700 ${
+            style={tw`h-full rounded-2.5 w-[${cellWidth}px] justify-center items-center bg-Primary-Sz700 ${
               isFocused ? `border border-Neutral-Sz100` : 'border-0'
             } ${index !== 0 ? 'ml-2.5' : 'ml-0'}`}>
             <Text variant={TextVariant.SubTitle2SemiBold}>{symbol || (isFocused ? <Cursor /> : null)}</Text>
