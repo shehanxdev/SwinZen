@@ -13,19 +13,15 @@ interface BarSectionData {
 }
 
 interface DataChartProps {
-  sections: [
-    sectionOne: BarSectionData, // aggregates the total data of passes and fails for "Set Up", "Back Swing", and "Down Swing" for that month.
-    sectionTwo: BarSectionData, // aggregates the total data of passes and fails for "Set Up "for that month.
-    sectionThree: BarSectionData, // aggregates the total data of passes and fails for "Back Swing" for that month.
-    sectionFour: BarSectionData, // aggregates the total data of passes and fails for "Down Swing" for that month.
-  ];
+  overall: BarSectionData; // aggregates the total data of passes and fails for "Set Up", "Back Swing", and "Down Swing" for that month.
+  setup: BarSectionData; // aggregates the total data of passes and fails for "Set Up "for that month.
+  backswing: BarSectionData; // aggregates the total data of passes and fails for "Back Swing" for that month.
+  downswing: BarSectionData; // aggregates the total data of passes and fails for "Down Swing" for that month.
 }
 
-export function DataChart({ sections }: DataChartProps) {
-  const [sectionOne, sectionTwo, sectionThree, sectionFour] = sections;
-
+export function DataChart({ overall, setup, backswing, downswing }: DataChartProps) {
   const renderChartData = useMemo(() => {
-    const combinedChartData = [sectionOne, sectionTwo, sectionThree, sectionFour];
+    const combinedChartData = [overall, setup, backswing, downswing];
 
     return combinedChartData.map((data, index) => (
       // TODO::might have to redirect to analysis screen upon clicking on these sections depending on the requirements
@@ -34,7 +30,7 @@ export function DataChart({ sections }: DataChartProps) {
         {index !== 3 && <BaseResultSectionDivider />}
       </React.Fragment>
     ));
-  }, [sectionOne, sectionTwo, sectionThree, sectionFour]);
+  }, [overall, setup, backswing, downswing]);
   return (
     <View style={tw`flex flex-row h-58.75 justify-between`} testID="DataChartTestID">
       {renderChartData}
