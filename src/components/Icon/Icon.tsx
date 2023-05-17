@@ -101,7 +101,7 @@ export function PlayButtonIcon({ color = Color.Neutral.Sz100, width = 46, height
   return <PlayButtonSvg width={width} height={height} fill={color} />;
 }
 
-export function ErrorIcon({ color = Color.Neutral.Sz100, width = 38, height = 36 }: SvgIconProps) {
+export function ErrorIcon({ color = Color.Neutral.Sz100, width = 54, height = 54 }: SvgIconProps) {
   return <ErrorIconSvg width={width} height={height} fill={color} />;
 }
 
