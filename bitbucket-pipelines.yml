@@ -25,7 +25,7 @@ definitions:
                 -Dsonar.sources=src
                 -Dsonar.javascript.node.maxspace=4096
                 -Dsonar.javascript.coveragePlugin=jest
-                -Dsonar.javascript.lcov.reportPaths=coverage/lcov-report/*.lcov
+                -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
           - pipe: sonarsource/sonarcloud-quality-gate:0.1.6
   services:
     docker:
