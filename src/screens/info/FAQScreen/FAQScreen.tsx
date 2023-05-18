@@ -43,7 +43,7 @@ export function FAQScreen() {
       );
     } else {
       //TODO:: to be replaced with a proper UI
-      <Text variant={TextVariant.Body1Regular}>No FAQ's available</Text>;
+      return <Text variant={TextVariant.Body1Regular}>No FAQ's available</Text>;
     }
   }, [isLoading, data, activeSections]);
 
