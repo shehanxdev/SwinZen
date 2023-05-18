@@ -13,6 +13,7 @@ definitions:
           - pipe: sonarsource/sonarcloud-scan:1.4.0
             variables:
               EXTRA_ARGS: -Dsonar.sources=src
+              SONAR_SCANNER_OPTS: -Dsonar.javascript.node.maxspace=8192
           - pipe: sonarsource/sonarcloud-quality-gate:0.1.6
 pipelines:
   pull-requests:
