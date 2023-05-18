@@ -8,12 +8,12 @@ definitions:
     sonar: ~/.sonar/cache
   steps:
     - step: &unit-tests
-      name: Run Unit Tests
-      script:
-        - yarn
-        - yarn test
-      artifacts:
-        - coverage/**
+        name: Run Unit Tests
+        script:
+          - yarn
+          - yarn test
+        artifacts:
+          - coverage/**
     - step: &sonar-cloud
         size: 2x
         name: SonarCloud Scan
@@ -30,8 +30,8 @@ definitions:
 pipelines:
   pull-requests:
     '**':
-    - step: *unit-tests
-    - step: *sonar-cloud
+      - step: *unit-tests
+      - step: *sonar-cloud
   branches:
     dev:
       - step: *unit-tests
