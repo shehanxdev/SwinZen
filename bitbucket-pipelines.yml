@@ -23,7 +23,6 @@ definitions:
             variables:
               SONAR_SCANNER_OPTS: >
                 -Dsonar.sources=src
-                -Dsonar.exclusions=**/*.spec.ts, **/*.spec.tsx, **/*.spec.tsx.snap
                 -Dsonar.javascript.node.maxspace=4096
                 -Dsonar.javascript.coveragePlugin=jest
                 -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
