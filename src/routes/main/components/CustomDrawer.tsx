@@ -18,7 +18,7 @@ import {
 } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route } from '@sz/constants';
-import { NavigationService } from '@sz/services';
+import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
 
 import { DrawerItem } from './DrawerItem';
@@ -42,6 +42,12 @@ const commonDrawerContents: DrawerContent[] = [
 
 export function CustomDrawer() {
   const dispatch = useDispatch();
+
+  const Logout = (): void => {
+    dispatch.userStore
+      .logoutUser()
+      .catch((error: any) => ToastService.error({ message: 'Failed!', description: error.data.message }));
+  };
 
   return (
     <View style={tw`overflow-hidden absolute inset-0 rounded-r-8`}>
@@ -69,13 +75,7 @@ export function CustomDrawer() {
             />
           ))}
           {/* NOTE::Edge case for logout */}
-          <DrawerItem
-            title="Logout"
-            icon={<DrawerLogoutIcon />}
-            onPress={() => {
-              dispatch.userStore.logoutUser();
-            }}
-          />
+          <DrawerItem title="Logout" icon={<DrawerLogoutIcon />} onPress={Logout} />
         </DrawerContentScrollView>
       </BlurView>
     </View>
