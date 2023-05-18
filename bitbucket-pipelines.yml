@@ -12,11 +12,14 @@ definitions:
         script:
           - pipe: sonarsource/sonarcloud-scan:1.4.0
             variables:
-              EXTRA_ARGS: -Dsonar.inclusions='**/*.class'
+              EXTRA_ARGS: -Dsonar.sources=src
           - pipe: sonarsource/sonarcloud-quality-gate:0.1.6
 pipelines:
-  branches:
-    feature/*:
+  pull-requests:
+    '**':
       - step: *sonar-cloud
+  branches:
     dev:
+      - step: *sonar-cloud
+    main:
       - step: *sonar-cloud
