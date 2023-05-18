@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { ActivityIndicator, TouchableOpacity, View } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
 
@@ -14,8 +14,17 @@ import { FAQSectionContent, FAQSectionHeader } from './components';
 
 export function FAQScreen() {
   const [activeSections, setActiveSections] = useState([]);
-
+  const [sortedData, setSortedData] = useState<FaqSection[]>();
   const { isLoading, data } = useFetch(InfoService.getFAQ);
+
+  useEffect(() => {
+    function sortData() {
+      if (!isLoading && data) {
+        setSortedData([...data].sort((a, b) => a.questionNumber - b.questionNumber));
+      }
+    }
+    sortData();
+  }, [isLoading, data]);
 
   const setSections = (sections: number[]) => {
     setActiveSections(sections.includes(undefined) ? [] : sections);
@@ -24,11 +33,11 @@ export function FAQScreen() {
   const renderFAQ = useMemo(() => {
     if (isLoading) {
       return <ActivityIndicator size="large" />; //TODO:: to be replaced with a proper loader
-    } else if (data?.length) {
+    } else if (sortedData?.length) {
       return (
         //TODO::handle pagination
         <Accordion
-          sections={data ?? []}
+          sections={sortedData ?? []}
           activeSections={activeSections}
           renderHeader={(content: FaqSection, index: number, isActive: boolean) => (
             <FAQSectionHeader content={content} index={index} isActive={isActive} />
@@ -45,7 +54,7 @@ export function FAQScreen() {
       //TODO:: to be replaced with a proper UI
       <Text variant={TextVariant.Body1Regular}>No FAQ's available</Text>;
     }
-  }, [isLoading, data, activeSections]);
+  }, [isLoading, sortedData, activeSections]);
 
   return (
     <BaseInfoScreen wrapWithScrollView={false}>
