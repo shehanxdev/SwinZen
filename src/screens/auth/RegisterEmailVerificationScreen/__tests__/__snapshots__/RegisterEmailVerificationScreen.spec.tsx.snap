@@ -100,8 +100,8 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
               <View
                 style={
                   {
-                    "marginLeft": 20,
-                    "marginRight": 20,
+                    "marginLeft": 16,
+                    "marginRight": 16,
                     "marginTop": 35,
                   }
                 }
@@ -179,7 +179,9 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                     </Text>
                   </View>
                 </View>
-                <View>
+                <View
+                  onLayout={[Function]}
+                >
                   <View
                     style={
                       [
@@ -197,16 +199,20 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                     <View
                       onLayout={[Function]}
                       style={
-                        {
-                          "alignItems": "center",
-                          "backgroundColor": "#16501D",
-                          "borderRadius": 10,
-                          "borderWidth": 0,
-                          "height": "100%",
-                          "justifyContent": "center",
-                          "marginLeft": 0,
-                          "width": 52,
-                        }
+                        [
+                          {
+                            "alignItems": "center",
+                            "backgroundColor": "#16501D",
+                            "borderRadius": 10,
+                            "borderWidth": 0,
+                            "height": "100%",
+                            "justifyContent": "center",
+                            "width": 51,
+                          },
+                          {
+                            "marginLeft": 0,
+                          },
+                        ]
                       }
                     >
                       <Text
@@ -240,16 +246,20 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                     <View
                       onLayout={[Function]}
                       style={
-                        {
-                          "alignItems": "center",
-                          "backgroundColor": "#16501D",
-                          "borderRadius": 10,
-                          "borderWidth": 0,
-                          "height": "100%",
-                          "justifyContent": "center",
-                          "marginLeft": 10,
-                          "width": 52,
-                        }
+                        [
+                          {
+                            "alignItems": "center",
+                            "backgroundColor": "#16501D",
+                            "borderRadius": 10,
+                            "borderWidth": 0,
+                            "height": "100%",
+                            "justifyContent": "center",
+                            "width": 51,
+                          },
+                          {
+                            "marginLeft": 10,
+                          },
+                        ]
                       }
                     >
                       <Text
@@ -283,16 +293,20 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                     <View
                       onLayout={[Function]}
                       style={
-                        {
-                          "alignItems": "center",
-                          "backgroundColor": "#16501D",
-                          "borderRadius": 10,
-                          "borderWidth": 0,
-                          "height": "100%",
-                          "justifyContent": "center",
-                          "marginLeft": 10,
-                          "width": 52,
-                        }
+                        [
+                          {
+                            "alignItems": "center",
+                            "backgroundColor": "#16501D",
+                            "borderRadius": 10,
+                            "borderWidth": 0,
+                            "height": "100%",
+                            "justifyContent": "center",
+                            "width": 51,
+                          },
+                          {
+                            "marginLeft": 10,
+                          },
+                        ]
                       }
                     >
                       <Text
@@ -326,16 +340,20 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                     <View
                       onLayout={[Function]}
                       style={
-                        {
-                          "alignItems": "center",
-                          "backgroundColor": "#16501D",
-                          "borderRadius": 10,
-                          "borderWidth": 0,
-                          "height": "100%",
-                          "justifyContent": "center",
-                          "marginLeft": 10,
-                          "width": 52,
-                        }
+                        [
+                          {
+                            "alignItems": "center",
+                            "backgroundColor": "#16501D",
+                            "borderRadius": 10,
+                            "borderWidth": 0,
+                            "height": "100%",
+                            "justifyContent": "center",
+                            "width": 51,
+                          },
+                          {
+                            "marginLeft": 10,
+                          },
+                        ]
                       }
                     >
                       <Text
@@ -369,16 +387,20 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                     <View
                       onLayout={[Function]}
                       style={
-                        {
-                          "alignItems": "center",
-                          "backgroundColor": "#16501D",
-                          "borderRadius": 10,
-                          "borderWidth": 0,
-                          "height": "100%",
-                          "justifyContent": "center",
-                          "marginLeft": 10,
-                          "width": 52,
-                        }
+                        [
+                          {
+                            "alignItems": "center",
+                            "backgroundColor": "#16501D",
+                            "borderRadius": 10,
+                            "borderWidth": 0,
+                            "height": "100%",
+                            "justifyContent": "center",
+                            "width": 51,
+                          },
+                          {
+                            "marginLeft": 10,
+                          },
+                        ]
                       }
                     >
                       <Text
@@ -412,16 +434,20 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                     <View
                       onLayout={[Function]}
                       style={
-                        {
-                          "alignItems": "center",
-                          "backgroundColor": "#16501D",
-                          "borderRadius": 10,
-                          "borderWidth": 0,
-                          "height": "100%",
-                          "justifyContent": "center",
-                          "marginLeft": 10,
-                          "width": 52,
-                        }
+                        [
+                          {
+                            "alignItems": "center",
+                            "backgroundColor": "#16501D",
+                            "borderRadius": 10,
+                            "borderWidth": 0,
+                            "height": "100%",
+                            "justifyContent": "center",
+                            "width": 51,
+                          },
+                          {
+                            "marginLeft": 10,
+                          },
+                        ]
                       }
                     >
                       <Text
