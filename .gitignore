@@ -67,3 +67,5 @@ yarn-error.log
 
 # Android Signing
 android/keystore.properties
+
+coverage/
