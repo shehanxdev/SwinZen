@@ -112,7 +112,7 @@ export function ChangePasswordScreen() {
         <View style={tw`items-center mt-10 mb-5 mx-5`}>
           <Button
             onPress={handleSubmit(onChangePasswordFormValid, onChangePasswordFormInvalid)}
-            title={'SAVE NEW PASSWORD'}
+            title={'save new password'}
             loading={loading}
           />
         </View>
