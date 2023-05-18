@@ -24,7 +24,6 @@ definitions:
               EXTRA_ARGS: -Dsonar.sources=src
               SONAR_SCANNER_OPTS: >
                 -Dsonar.javascript.node.maxspace=4096
-                -Dsonar.tests=src
                 -Dsonar.javascript.coveragePlugin=jest
                 -Dsonar.testExecutionReportPaths=coverage/clover.xml
           - pipe: sonarsource/sonarcloud-quality-gate:0.1.6
