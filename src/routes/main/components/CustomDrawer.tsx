@@ -43,14 +43,6 @@ const commonDrawerContents: DrawerContent[] = [
 export function CustomDrawer() {
   const dispatch = useDispatch();
 
-  const Logout = async () => {
-    try {
-      await dispatch.userStore.logoutUser();
-    } catch (error: any) {
-      ToastService.error({ message: 'Failed!', description: error.data.message });
-    }
-  };
-
   return (
     <View style={tw`overflow-hidden absolute inset-0 rounded-r-8`}>
       <BlurView
@@ -77,7 +69,17 @@ export function CustomDrawer() {
             />
           ))}
           {/* NOTE::Edge case for logout */}
-          <DrawerItem title="Logout" icon={<DrawerLogoutIcon />} onPress={Logout} />
+          <DrawerItem
+            title="Logout"
+            icon={<DrawerLogoutIcon />}
+            onPress={async () => {
+              try {
+                await dispatch.userStore.logoutUser();
+              } catch (error: any) {
+                ToastService.error({ message: 'Failed!', description: error.data.message });
+              }
+            }}
+          />
         </DrawerContentScrollView>
       </BlurView>
     </View>

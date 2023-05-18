@@ -9,7 +9,7 @@ import { BaseMainScreen } from '../components';
 export function HomeScreen() {
   // To request notifications permissions
   useEffect(() => {
-    PermissionService.requestNotificationsPermission();
+    PermissionService.requestNotificationsPermission().catch(console.error);
   }, []);
 
   return (
