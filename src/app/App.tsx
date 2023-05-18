@@ -1,4 +1,5 @@
-import React from 'react';
+import messaging from '@react-native-firebase/messaging';
+import React, { useEffect } from 'react';
 import { StatusBar, View } from 'react-native';
 import 'react-native-gesture-handler';
 
@@ -7,6 +8,15 @@ import { tw } from '@sz/config';
 import { Routes } from '@sz/routes';
 
 export function App() {
+  // Subscribe foreground state messages handler
+  useEffect(() => {
+    const unsubscribe = messaging().onMessage(async remoteMessage => {
+      //TODO:: should save these notifications in local storage
+      console.log('A new FCM message arrived!', JSON.stringify(remoteMessage));
+    });
+    return unsubscribe;
+  }, []);
+
   return (
     <>
       <StatusBar barStyle="light-content" />
