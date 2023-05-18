@@ -8,12 +8,13 @@ definitions:
     sonar: ~/.sonar/cache
   steps:
     - step: &sonar-cloud
+        size: 2x
         name: SonarCloud Scan
         script:
           - pipe: sonarsource/sonarcloud-scan:1.4.0
             variables:
               EXTRA_ARGS: -Dsonar.sources=src
-              SONAR_SCANNER_OPTS: -Dsonar.javascript.node.maxspace=8192
+              SONAR_SCANNER_OPTS: -Dsonar.javascript.node.maxspace=4096
           - pipe: sonarsource/sonarcloud-quality-gate:0.1.6
 pipelines:
   pull-requests:
