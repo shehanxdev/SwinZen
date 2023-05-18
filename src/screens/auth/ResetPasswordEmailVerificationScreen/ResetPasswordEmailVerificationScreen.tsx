@@ -64,7 +64,7 @@ export function ResetPasswordEmailVerificationScreen({ route }) {
   return (
     <BaseAuthScreen>
       <View style={tw`flex-1`} testID="ResetPasswordEmailVerificationScreenContainerTestID">
-        <View style={tw`mx-5 flex-1`}>
+        <View style={tw`mx-4 flex-1`}>
           <View style={tw`items-center`}>
             <View style={tw`mt-15 mb-2`}>
               <Text variant={TextVariant.SubTitle2SemiBold}>Email verification</Text>

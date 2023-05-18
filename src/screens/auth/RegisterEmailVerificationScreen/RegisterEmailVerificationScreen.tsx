@@ -63,7 +63,7 @@ export function RegisterEmailVerificationScreen({ route }) {
   return (
     <BaseAuthScreen>
       <View style={tw`flex-1 justify-between`} testID="RegisterEmailVerificationScreenContainerTestID">
-        <View style={tw`mt-[35px] mx-5`}>
+        <View style={tw`mt-8.75 mx-4`}>
           <View style={tw`items-center`}>
             <SwingZenLogoIcon />
           </View>
