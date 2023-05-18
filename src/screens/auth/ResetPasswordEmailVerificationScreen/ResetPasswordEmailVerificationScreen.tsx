@@ -93,7 +93,7 @@ export function ResetPasswordEmailVerificationScreen({ route }) {
         </View>
         <View style={tw`items-center mb-5 mx-5`}>
           <View style={tw`mb-3`}>
-            <Button loading={loading} onPress={onVerify} title={'Verify'} />
+            <Button loading={loading} onPress={onVerify} title={'verify'} />
           </View>
         </View>
       </View>
