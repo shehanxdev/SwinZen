@@ -8,7 +8,7 @@ definitions:
     sonar: ~/.sonar/cache
   steps:
     - step: &sonar-cloud
-      size: 2x
+        size: 2x
         name: SonarCloud Scan
         script:
           - pipe: sonarsource/sonarcloud-scan:1.4.0
