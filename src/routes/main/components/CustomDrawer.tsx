@@ -18,7 +18,7 @@ import {
 } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route } from '@sz/constants';
-import { NavigationService, ToastService } from '@sz/services';
+import { NavigationService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
 
 import { DrawerItem } from './DrawerItem';
@@ -72,12 +72,8 @@ export function CustomDrawer() {
           <DrawerItem
             title="Logout"
             icon={<DrawerLogoutIcon />}
-            onPress={async () => {
-              try {
-                await dispatch.userStore.logoutUser();
-              } catch (error: any) {
-                ToastService.error({ message: 'Failed!', description: error.data.message });
-              }
+            onPress={() => {
+              dispatch.userStore.logoutUser();
             }}
           />
         </DrawerContentScrollView>

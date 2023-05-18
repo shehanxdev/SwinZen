@@ -46,6 +46,9 @@ export const userStore = createModel<RootModel>()({
     clearPasswordResetToken(state: UserState) {
       return { ...state, passwordResetToken: null };
     },
+    logoutUser(state: UserState) {
+      return { ...state, accessToken: null, refreshToken: null, isAuthenticated: false };
+    },
   },
   effects: dispatch => ({
     async loginUserWithCredentials(payload: LoginUserData) {
@@ -53,11 +56,6 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setAccessToken(data.accessToken);
       dispatch.userStore.setRefreshToken(data.refreshToken);
       dispatch.userStore.setIsAuthenticated(true);
-    },
-    async logoutUser() {
-      dispatch.userStore.setAccessToken(null);
-      dispatch.userStore.setRefreshToken(null);
-      dispatch.userStore.setIsAuthenticated(false);
     },
     async registerUser(payload: SignupUserData) {
       await AuthService.registerUser(payload);
