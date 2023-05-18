@@ -433,7 +433,9 @@ exports[`Plan Details Screen screen should render Plan Details Screen correctly 
                                 {
                                   "marginHorizontal": 8,
                                 },
-                                false,
+                                {
+                                  "textTransform": "uppercase",
+                                },
                                 {
                                   "color": "#6200ee",
                                   "fontFamily": "System",
@@ -464,7 +466,7 @@ exports[`Plan Details Screen screen should render Plan Details Screen correctly 
                               ]
                             }
                           >
-                            PROCEED TO PAY
+                            proceed to pay
                           </Text>
                         </Text>
                       </View>

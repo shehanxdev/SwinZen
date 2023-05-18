@@ -103,7 +103,7 @@ export function ResetPasswordScreen({ route }) {
           <View style={tw`mb-3`}>
             <Button
               onPress={handleSubmit(onResetPasswordFormValid, onResetPasswordFormInvalid)}
-              title="SAVE NEW PASSWORD"
+              title="save new password"
             />
           </View>
         </View>
