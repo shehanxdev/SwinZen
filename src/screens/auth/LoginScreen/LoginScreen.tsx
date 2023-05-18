@@ -117,7 +117,7 @@ export function LoginScreen() {
         </View>
         <View style={tw`items-center mt-10 mb-5 mx-5`}>
           <View style={tw`mb-6`}>
-            <Button onPress={handleSubmit(onLoginFormValid, onLoginFormInvalid)} title={'SIGN IN'} loading={loading} />
+            <Button onPress={handleSubmit(onLoginFormValid, onLoginFormInvalid)} title={'sign in'} loading={loading} />
           </View>
           <Text variant={TextVariant.Labels}>
             {`Don’t have an account? `}
