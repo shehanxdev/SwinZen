@@ -8,8 +8,10 @@ import {
   ResendOtpData,
   ResetPasswordData,
   SignupUserData,
+  UserData,
+  UserResponse,
 } from '@sz/models';
-import { AccountService, AuthService } from '@sz/services';
+import { AccountService, AuthService, UserService } from '@sz/services';
 
 import { RootModel } from './';
 
@@ -19,6 +21,7 @@ export interface UserState {
   refreshToken: string | null;
   passwordResetToken: string | null;
   userId: string | null;
+  userData: UserData;
   //TODO::fill other user related state here
 }
 
@@ -28,6 +31,7 @@ const initialState: UserState = {
   refreshToken: null,
   passwordResetToken: null,
   userId: null,
+  userData: null,
 };
 
 export const userStore = createModel<RootModel>()({
@@ -50,6 +54,9 @@ export const userStore = createModel<RootModel>()({
     },
     setUserId(state: UserState, userId: string | null) {
       return { ...state, userId };
+    },
+    setUserData(state: UserState, userData: UserData | null) {
+      return { ...state, userData };
     },
   },
   effects: dispatch => ({
@@ -97,6 +104,21 @@ export const userStore = createModel<RootModel>()({
 
       dispatch.userStore.setAccessToken(data.accessToken);
       dispatch.userStore.setRefreshToken(data.refreshToken);
+    },
+    async patchUserData(payload: UserResponse) {
+      const data = await UserService.patchUserData(payload);
+      const modifiedUserData: UserData = {
+        name: data.name,
+        email: data.email,
+        username: data.username,
+        profilePicture: data.profilePicture,
+        gender: data.gender,
+        city: data.city,
+        deviceId: data.deviceId,
+        isActive: data.isActive,
+        fcmTokens: data.fcmTokens,
+      };
+      dispatch.userStore.setUserData(modifiedUserData);
     },
   }),
 });

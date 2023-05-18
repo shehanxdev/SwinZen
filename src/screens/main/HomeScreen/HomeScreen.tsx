@@ -3,11 +3,15 @@ import React, { useEffect } from 'react';
 import { Text, View } from 'react-native';
 
 import { tw } from '@sz/config';
-import { PermissionService } from '@sz/services';
+import { useFetch } from '@sz/hooks';
+import { PermissionService, UserService } from '@sz/services';
 
 import { BaseMainScreen } from '../components';
 
 export function HomeScreen() {
+  const { data } = useFetch(() => UserService.patchUserData({}));
+  console.log('#######USERDATA#####', data);
+
   // firebase device registration and store fcm token
   const registerAppWithFCM = async () => {
     await messaging().registerDeviceForRemoteMessages();
