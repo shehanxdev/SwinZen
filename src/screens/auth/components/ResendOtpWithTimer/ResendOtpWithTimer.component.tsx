@@ -54,8 +54,8 @@ export function ResendOtpWithTimer({
     <Link
       testID={testID}
       text={linkText}
-      onPress={() => {
-        onResend();
+      onPress={async () => {
+        await onResend();
         resetTimers();
       }}
       disabled={!(minutes === 0 && seconds === 0)}

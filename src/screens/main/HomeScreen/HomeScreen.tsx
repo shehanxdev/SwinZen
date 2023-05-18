@@ -9,7 +9,8 @@ import { BaseMainScreen } from '../components';
 export function HomeScreen() {
   // To request notifications permissions
   useEffect(() => {
-    PermissionService.requestNotificationsPermission();
+    //TODO::add proper error pop up to the user
+    PermissionService.requestNotificationsPermission().catch(console.error);
   }, []);
 
   return (

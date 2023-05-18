@@ -192,7 +192,7 @@ export function SignupScreen() {
           <View style={tw`mb-6`}>
             <Button
               onPress={handleSubmit(onSignUpFormValid, onSignUpFormInvalid)}
-              title={'REGISTER'}
+              title={'register'}
               loading={loading}
             />
           </View>
