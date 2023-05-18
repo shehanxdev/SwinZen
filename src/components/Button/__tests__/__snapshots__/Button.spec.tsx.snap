@@ -106,7 +106,9 @@ exports[`Button Component should render correctly should render correctly with [
                 {
                   "marginHorizontal": 8,
                 },
-                false,
+                {
+                  "textTransform": "uppercase",
+                },
                 {
                   "color": "#6200ee",
                   "fontFamily": "System",
@@ -252,7 +254,9 @@ exports[`Button Component should render correctly should render correctly with [
                 {
                   "marginHorizontal": 8,
                 },
-                false,
+                {
+                  "textTransform": "uppercase",
+                },
                 {
                   "color": "#6200ee",
                   "fontFamily": "System",
@@ -398,7 +402,9 @@ exports[`Button Component should render correctly should render correctly with [
                 {
                   "marginHorizontal": 8,
                 },
-                false,
+                {
+                  "textTransform": "uppercase",
+                },
                 {
                   "color": "#6200ee",
                   "fontFamily": "System",

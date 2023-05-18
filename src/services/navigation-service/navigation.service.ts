@@ -6,7 +6,7 @@ import { Route } from '@sz/constants';
 export class NavigationService {
   public static navigationRef: any = React.createRef();
 
-  public static async navigate(requestedRouteName: Route, params?: any) {
+  public static navigate(requestedRouteName: Route, params?: any) {
     let routeName = requestedRouteName;
 
     const navigation = NavigationService.getNavigation(routeName, params);
