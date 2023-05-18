@@ -21,11 +21,11 @@ definitions:
         script:
           - pipe: sonarsource/sonarcloud-scan:1.4.0
             variables:
-              EXTRA_ARGS: -Dsonar.sources=src
               SONAR_SCANNER_OPTS: >
+                -Dsonar.sources=src
                 -Dsonar.javascript.node.maxspace=4096
                 -Dsonar.javascript.coveragePlugin=jest
-                -Dsonar.testExecutionReportPaths=coverage/clover.xml
+                -Dsonar.javascript.lcov.reportPaths=coverage/lcov-report/*.lcov
           - pipe: sonarsource/sonarcloud-quality-gate:0.1.6
 pipelines:
   pull-requests:
