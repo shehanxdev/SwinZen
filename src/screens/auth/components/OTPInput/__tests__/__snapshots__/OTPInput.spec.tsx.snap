@@ -21,16 +21,20 @@ exports[`OTPInput Component should render correctly 1`] = `
     <View
       onLayout={[Function]}
       style={
-        {
-          "alignItems": "center",
-          "backgroundColor": "#16501D",
-          "borderRadius": 10,
-          "borderWidth": 0,
-          "height": "100%",
-          "justifyContent": "center",
-          "marginLeft": 0,
-          "width": 51,
-        }
+        [
+          {
+            "alignItems": "center",
+            "backgroundColor": "#16501D",
+            "borderRadius": 10,
+            "borderWidth": 0,
+            "height": "100%",
+            "justifyContent": "center",
+            "width": 51,
+          },
+          {
+            "marginLeft": 0,
+          },
+        ]
       }
     >
       <Text
@@ -55,16 +59,20 @@ exports[`OTPInput Component should render correctly 1`] = `
     <View
       onLayout={[Function]}
       style={
-        {
-          "alignItems": "center",
-          "backgroundColor": "#16501D",
-          "borderRadius": 10,
-          "borderWidth": 0,
-          "height": "100%",
-          "justifyContent": "center",
-          "marginLeft": 10,
-          "width": 51,
-        }
+        [
+          {
+            "alignItems": "center",
+            "backgroundColor": "#16501D",
+            "borderRadius": 10,
+            "borderWidth": 0,
+            "height": "100%",
+            "justifyContent": "center",
+            "width": 51,
+          },
+          {
+            "marginLeft": 10,
+          },
+        ]
       }
     >
       <Text
@@ -89,16 +97,20 @@ exports[`OTPInput Component should render correctly 1`] = `
     <View
       onLayout={[Function]}
       style={
-        {
-          "alignItems": "center",
-          "backgroundColor": "#16501D",
-          "borderRadius": 10,
-          "borderWidth": 0,
-          "height": "100%",
-          "justifyContent": "center",
-          "marginLeft": 10,
-          "width": 51,
-        }
+        [
+          {
+            "alignItems": "center",
+            "backgroundColor": "#16501D",
+            "borderRadius": 10,
+            "borderWidth": 0,
+            "height": "100%",
+            "justifyContent": "center",
+            "width": 51,
+          },
+          {
+            "marginLeft": 10,
+          },
+        ]
       }
     >
       <Text
@@ -123,16 +135,20 @@ exports[`OTPInput Component should render correctly 1`] = `
     <View
       onLayout={[Function]}
       style={
-        {
-          "alignItems": "center",
-          "backgroundColor": "#16501D",
-          "borderRadius": 10,
-          "borderWidth": 0,
-          "height": "100%",
-          "justifyContent": "center",
-          "marginLeft": 10,
-          "width": 51,
-        }
+        [
+          {
+            "alignItems": "center",
+            "backgroundColor": "#16501D",
+            "borderRadius": 10,
+            "borderWidth": 0,
+            "height": "100%",
+            "justifyContent": "center",
+            "width": 51,
+          },
+          {
+            "marginLeft": 10,
+          },
+        ]
       }
     >
       <Text
@@ -157,16 +173,20 @@ exports[`OTPInput Component should render correctly 1`] = `
     <View
       onLayout={[Function]}
       style={
-        {
-          "alignItems": "center",
-          "backgroundColor": "#16501D",
-          "borderRadius": 10,
-          "borderWidth": 0,
-          "height": "100%",
-          "justifyContent": "center",
-          "marginLeft": 10,
-          "width": 51,
-        }
+        [
+          {
+            "alignItems": "center",
+            "backgroundColor": "#16501D",
+            "borderRadius": 10,
+            "borderWidth": 0,
+            "height": "100%",
+            "justifyContent": "center",
+            "width": 51,
+          },
+          {
+            "marginLeft": 10,
+          },
+        ]
       }
     >
       <Text
@@ -191,16 +211,20 @@ exports[`OTPInput Component should render correctly 1`] = `
     <View
       onLayout={[Function]}
       style={
-        {
-          "alignItems": "center",
-          "backgroundColor": "#16501D",
-          "borderRadius": 10,
-          "borderWidth": 0,
-          "height": "100%",
-          "justifyContent": "center",
-          "marginLeft": 10,
-          "width": 51,
-        }
+        [
+          {
+            "alignItems": "center",
+            "backgroundColor": "#16501D",
+            "borderRadius": 10,
+            "borderWidth": 0,
+            "height": "100%",
+            "justifyContent": "center",
+            "width": 51,
+          },
+          {
+            "marginLeft": 10,
+          },
+        ]
       }
     >
       <Text

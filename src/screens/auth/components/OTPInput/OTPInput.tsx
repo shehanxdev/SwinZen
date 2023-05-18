@@ -10,7 +10,10 @@ const CELL_COUNT = 6;
 //NOTE::below values are in PX
 const SPACE_BETWEEN_CELLS = 10;
 const DEFAULT_CELL_WIDTH = 51;
+const DEFAULT_CELL_HEIGHT = 72;
+const DEFAULT_CELL_FOCUS_LINE_WIDTH = 28;
 const DEFAULT_OTP_INPUT_CONTAINER_WIDTH = DEFAULT_CELL_WIDTH * 6 + SPACE_BETWEEN_CELLS * 5;
+const CELL_DIMENTION_MULTIPLIER = 0.75;
 
 export interface OTPInputProps {
   testID?: string;
@@ -47,13 +50,27 @@ export function OTPInput({ testID, value, onChangeValue, onSubmitEditing }: OTPI
    * There is an issue with the margin of the edges in OTP cell input component in smaller devices.
    * In order to avoid this we must give an dynamic cell width depending on the window size.
    * NOTE::There is one edge case for this calulation
-   * => If the DEFAULT_OTP_INPUT_CONTAINER_WIDTH(6 cell width + 5 margins) less than or equal to parent component width we don't need to reduce the cell width.
+   * => If the DEFAULT_OTP_INPUT_CONTAINER_WIDTH(6 cell width + 5 margins) less than or equal to parent component width we don't need to reduce the cell dimentions.
    */
-  const cellWidth = useMemo(() => {
-    if (DEFAULT_OTP_INPUT_CONTAINER_WIDTH <= parentContainerWidth) return DEFAULT_CELL_WIDTH;
+  const cellDimentions = useMemo(() => {
+    const dimentions = {
+      cellWidth: DEFAULT_CELL_WIDTH,
+      cellHeight: DEFAULT_CELL_HEIGHT,
+      cellFocusLineWidth: DEFAULT_CELL_FOCUS_LINE_WIDTH,
+    };
+
+    //Edge case
+    if (DEFAULT_OTP_INPUT_CONTAINER_WIDTH <= parentContainerWidth) return dimentions;
 
     const remainingWidthForCells = parentContainerWidth - SPACE_BETWEEN_CELLS * 5;
-    return remainingWidthForCells / 6;
+    const newCellWidth = remainingWidthForCells / 6;
+    const reducedCellWidth = DEFAULT_CELL_WIDTH - newCellWidth;
+
+    return {
+      cellWidth: newCellWidth,
+      cellHeight: DEFAULT_CELL_HEIGHT - reducedCellWidth * CELL_DIMENTION_MULTIPLIER,
+      cellFocusLineWidth: DEFAULT_CELL_FOCUS_LINE_WIDTH - reducedCellWidth * CELL_DIMENTION_MULTIPLIER,
+    };
   }, [parentContainerWidth]);
 
   return (
@@ -72,7 +89,7 @@ export function OTPInput({ testID, value, onChangeValue, onSubmitEditing }: OTPI
         }}
         cellCount={CELL_COUNT}
         testID={testID}
-        rootStyle={tw`h-18 self-center`}
+        rootStyle={tw`h-[${cellDimentions.cellHeight}px] self-center`}
         keyboardType="number-pad"
         returnKeyType={'done'}
         onSubmitEditing={onSubmitEditing}
@@ -81,11 +98,16 @@ export function OTPInput({ testID, value, onChangeValue, onSubmitEditing }: OTPI
           <View
             onLayout={getCellOnLayoutHandler(index)}
             key={index}
-            style={tw`h-full rounded-2.5 w-[${cellWidth}px] justify-center items-center bg-Primary-Sz700 ${
-              isFocused ? `border border-Neutral-Sz100` : 'border-0'
-            } ${index !== 0 ? `ml-[${SPACE_BETWEEN_CELLS}px]` : 'ml-0'}`}>
+            style={[
+              tw`h-full rounded-2.5 w-[${cellDimentions.cellWidth}px] justify-center items-center bg-Primary-Sz700 ${
+                isFocused ? `border border-Neutral-Sz100` : 'border-0'
+              } `,
+              index !== 0 ? tw`ml-[${SPACE_BETWEEN_CELLS}px]` : tw`ml-0`,
+            ]}>
             <Text variant={TextVariant.SubTitle2SemiBold}>{symbol || (isFocused ? <Cursor /> : null)}</Text>
-            {!symbol && <View style={tw`absolute w-7 h-px bg-Neutral-Sz600 bottom-3.5`} />}
+            {!symbol && (
+              <View style={tw`absolute w-[${cellDimentions.cellFocusLineWidth}px] h-px bg-Neutral-Sz600 bottom-3.5`} />
+            )}
           </View>
         )}
       />
