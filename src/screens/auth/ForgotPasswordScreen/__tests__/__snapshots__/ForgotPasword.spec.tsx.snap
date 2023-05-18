@@ -497,7 +497,9 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                                   {
                                     "marginHorizontal": 8,
                                   },
-                                  false,
+                                  {
+                                    "textTransform": "uppercase",
+                                  },
                                   {
                                     "color": "#6200ee",
                                     "fontFamily": "SourceSansPro-SemiBold",
@@ -528,7 +530,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                                 ]
                               }
                             >
-                              RESET PASSWORD
+                              reset password
                             </Text>
                           </Text>
                         </View>
