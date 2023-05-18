@@ -27,10 +27,9 @@ definitions:
                 -Dsonar.javascript.coveragePlugin=jest
                 -Dsonar.javascript.lcov.reportPaths=coverage/lcov-report/*.lcov
           - pipe: sonarsource/sonarcloud-quality-gate:0.1.6
-
-services:
-  docker:
-    memory: 4048
+  services:
+    docker:
+      memory: 4048
 
 pipelines:
   pull-requests:
