@@ -9,6 +9,7 @@ definitions:
   steps:
     - step: &unit-tests
         name: Run Unit Tests
+        image: node:16
         script:
           - yarn
           - yarn test
@@ -25,7 +26,7 @@ definitions:
                 -Dsonar.javascript.node.maxspace=4096
                 -Dsonar.tests=src
                 -Dsonar.javascript.coveragePlugin=jest
-                -Dsonar.testExecutionReportPaths=coverage/test-reporter.xml
+                -Dsonar.testExecutionReportPaths=coverage/clover.xml
           - pipe: sonarsource/sonarcloud-quality-gate:0.1.6
 pipelines:
   pull-requests:
