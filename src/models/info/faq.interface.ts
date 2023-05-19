@@ -1,7 +1,7 @@
 export interface FaqSection {
   question: string;
   answer: string;
-  questionNumber?: number;
+  questionNumber: number;
 }
 
 export interface FaqResponse {

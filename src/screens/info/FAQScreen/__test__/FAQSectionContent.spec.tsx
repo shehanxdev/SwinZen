@@ -16,7 +16,13 @@ describe('FAQ section content', () => {
   };
 
   const getRenderedComponent = () =>
-    render(<FAQSectionContent question={dummyFAQ.question} answer={dummyFAQ.answer} />);
+    render(
+      <FAQSectionContent
+        question={dummyFAQ.question}
+        answer={dummyFAQ.answer}
+        questionNumber={dummyFAQ.questionNumber}
+      />,
+    );
 
   it(`should render FAQ Section content correctly`, () => {
     const renderer = getRenderedComponent();
