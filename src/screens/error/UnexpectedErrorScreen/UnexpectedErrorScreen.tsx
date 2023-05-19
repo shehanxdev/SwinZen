@@ -30,14 +30,14 @@ export function UnexpectedErrorScreen({ resetError }: UnexpectedErrorScreenProps
         </View>
         <View style={tw`mb-5`}>
           <View style={tw`mb-4`}>
-            <Button onPress={resetError} title={'TRY AGAIN'} />
+            <Button onPress={resetError} title={'try again'} />
           </View>
           <Button
             borderColor={Color.Primary.Sz650}
             backgroundColor={Color.Transparency.full}
             textColor={Color.Tertiary.Sz900}
             activeStateBackgroundColor={Color.Primary.Sz400} //NOTE::not defined within the design system.
-            title={'RELOAD APP'}
+            title={'reload app'}
             onPress={() => {
               RNRestart.restart();
             }}

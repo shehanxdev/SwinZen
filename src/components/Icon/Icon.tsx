@@ -37,6 +37,7 @@ import {
   ProfileIconSvg,
   ProfileImageChangeCameraSvg,
   SecurityIconSvg,
+  SettingsMiniSvg,
   SquareTickSvg,
   SwingZenLogoSvg,
   UploadSvg,
@@ -188,6 +189,11 @@ export function SwingZenLogoIcon({ color, width = 108, height = 55 }: SvgIconPro
 
 export function PhoneIcon({ color = Color.Neutral.Sz500, width = 18, height = 18 }: SvgIconProps) {
   return <PhoneIconSvg width={width} height={height} fill={color} />;
+}
+
+//#1A5C23 not available within the design system
+export function SettingsMiniIcon({ color = '#1A5C23' as Color, width = 13.5, height = 13 }: SvgIconProps) {
+  return <SettingsMiniSvg width={width} height={height} fill={color} />;
 }
 
 export function SquareTickIcon({ color = Color.Tertiary.Sz900, width = 12, height = 11 }: SvgIconProps) {

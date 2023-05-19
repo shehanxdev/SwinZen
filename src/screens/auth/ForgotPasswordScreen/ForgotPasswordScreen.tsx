@@ -77,7 +77,7 @@ export function ForgotPasswordScreen() {
             <Button
               loading={loading}
               onPress={handleSubmit(onForgotPasswordFormValid, onForgotPasswordFormInvalid)}
-              title="RESET PASSWORD"
+              title="reset password"
             />
           </View>
           <Link

@@ -128,7 +128,7 @@ export function ContactUsScreen() {
         <View style={tw`mb-4`}>
           <Button
             onPress={handleSubmit(() => {})} //todo input proper method to handleSubmit
-            title={'SUBMIT'}
+            title={'submit'}
             // todo change false to a variable
             loading={false}
           />

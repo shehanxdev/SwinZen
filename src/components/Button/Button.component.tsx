@@ -22,7 +22,7 @@ export function Button({
   disabledTextColor = Color.Neutral.Sz700,
   disabledBorderColor = Color.Neutral.Sz700,
   disabled = false,
-  uppercase = false,
+  uppercase = true,
   fullWidth = true,
   loading = false,
 }: ButtonProps) {

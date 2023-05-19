@@ -1543,7 +1543,9 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                                   {
                                     "marginHorizontal": 8,
                                   },
-                                  false,
+                                  {
+                                    "textTransform": "uppercase",
+                                  },
                                   {
                                     "color": "#6200ee",
                                     "fontFamily": "SourceSansPro-SemiBold",
@@ -1574,7 +1576,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                                 ]
                               }
                             >
-                              REGISTER
+                              register
                             </Text>
                           </Text>
                         </View>

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseResultSectionDivider component should render BaseResultSectionDivider component correctly 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#DEE2E6",
+      "height": "100%",
+      "width": 0.75,
+    }
+  }
+/>
+`;
