@@ -13,6 +13,7 @@ import { AuthStack } from './auth';
 import { InfoStack } from './info';
 import { MainStack } from './main';
 import { PricePlansStack } from './pricePlans';
+import { VideoUploadStack } from './videoUpload';
 
 const Stack = createNativeStackNavigator();
 
@@ -62,6 +63,7 @@ export function Routes() {
             <Stack.Screen name={Route.PricePlansStack} component={PricePlansStack} />
             <Stack.Screen name={Route.MainStack} component={MainStack} />
             <Stack.Screen name={Route.AccountStack} component={AccountStack} />
+            <Stack.Screen name={Route.VideoUploadStack} component={VideoUploadStack} />
           </Stack.Group>
         ) : (
           <Stack.Group>

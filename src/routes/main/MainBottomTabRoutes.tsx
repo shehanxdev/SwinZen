@@ -7,10 +7,11 @@ import { CustomMenuIcon, SwingZenLogoIcon } from '@sz/components';
 import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
 import { CustomBottomTabBar } from '@sz/layout';
-import { AnalysisScreen, HomeScreen, LibraryScreen, UploadScreen, VideosScreen } from '@sz/screens';
+import { AnalysisScreen, HomeScreen, LibraryScreen, VideosScreen } from '@sz/screens';
 import { NavigationService } from '@sz/services';
 
 import { commonScreenOptions } from '../configs';
+import { VideoUploadStack } from '../videoUpload';
 
 const Tab = createBottomTabNavigator();
 
@@ -46,7 +47,8 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
         <CustomBottomTabBar
           {...props}
           onCustomUploadButtonClicked={() => {
-            Alert.alert('Custom bottom tab upload icon clicked.'); //TODO::replace with a relevant callback
+            NavigationService.navigate(Route.VideoUploadStack);
+            // Alert.alert('Custom bottom tab upload icon clicked.'); //TODO::replace with a relevant callback
           }}
         />
       )}
@@ -66,7 +68,8 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
       }}>
       <Tab.Screen name={Route.HomeTab} component={HomeScreen} />
       <Tab.Screen name={Route.VideosTab} component={VideosScreen} />
-      <Tab.Screen name={Route.UploadVideoTab} component={UploadScreen} />
+      {/* TODO:: commenting this line gives layout issues */}
+      <Tab.Screen name={Route.VideoUploadStack} component={VideoUploadStack} />
       <Tab.Screen name={Route.AnalysisTab} component={AnalysisScreen} />
       <Tab.Screen name={Route.LibraryTab} component={LibraryScreen} />
     </Tab.Navigator>
