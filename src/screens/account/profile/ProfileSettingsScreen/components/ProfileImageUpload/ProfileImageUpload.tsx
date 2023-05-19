@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Alert, TouchableOpacity, View } from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {
@@ -46,17 +46,11 @@ const GALLERY_OPTIONS: ImageLibraryOptions = {
 type ImagePickType = 'capture' | 'library';
 
 export function ProfileImageUpload() {
-  const [profileImageData, setProfileImageData] = useState<ImagePickerResponse>(null);
+  const [newProfileImageData, setNewProfileImageData] = useState<ImagePickerResponse>(null);
 
   const loading = useSelector(state => state.loading.effects.userStore.changeProfilePicture);
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (profileImageData?.errorMessage) {
-      ToastService.error({ message: 'Failed!', description: profileImageData?.errorMessage });
-    }
-  }, [profileImageData]);
 
   const onButtonPress = async (type?: ImagePickType) => {
     let result: ImagePickerResponse;
@@ -64,16 +58,24 @@ export function ProfileImageUpload() {
     if (type === 'capture') {
       result = await launchCamera(CAMERA_OPTIONS);
     } else {
-      result = await launchImageLibrary(GALLERY_OPTIONS, setProfileImageData);
+      result = await launchImageLibrary(GALLERY_OPTIONS, setNewProfileImageData);
+    }
+
+    if (result.didCancel) return;
+
+    if (result.errorMessage) {
+      ToastService.error({ message: 'Failed!', description: newProfileImageData?.errorMessage });
+      return;
     }
 
     await dispatch.userStore.changeProfilePicture(result);
-    setProfileImageData(result);
+    setNewProfileImageData(result);
   };
 
+  //TODO::fetch and display user data
   const renderProfileImage = useMemo(
     () =>
-      profileImageData === null || profileImageData?.assets?.length === 0 || loading ? (
+      newProfileImageData?.assets === undefined || loading ? (
         <View style={PROFILE_IMAGE_COMMON_STYLES}>
           {/* TODO::Create a helper function to get the first characters from full name when intergration with the APIs*/}
           {/* TODO::add a proper loading indicator */}
@@ -83,18 +85,16 @@ export function ProfileImageUpload() {
         <FastImage
           style={PROFILE_IMAGE_COMMON_STYLES}
           source={{
-            uri: profileImageData.assets[0].uri,
+            uri: newProfileImageData?.assets[0]?.uri,
           }}
         />
       ),
-    [profileImageData, loading],
+    [newProfileImageData, loading],
   );
 
   return (
     <View testID="ProfileImageComponentTestID" style={tw`m-auto`}>
-      {renderProfileImage}
       <TouchableOpacity
-        style={tw`w-[${CAMERA_ICON_DIMENTIONS.width}px] h-[${CAMERA_ICON_DIMENTIONS.height}px] rounded-full absolute right-[${CAMERA_ICON_POSITION.right}px] top-[${CAMERA_ICON_POSITION.top}px] justify-center items-center bg-Neutral-Sz100`}
         onPress={() => {
           //TODO::provide a proper choose UI to the end user
           Alert.alert('Choose option', '', [
@@ -112,7 +112,11 @@ export function ProfileImageUpload() {
             },
           ]);
         }}>
-        <ProfileImageChangeCameraIcon />
+        {renderProfileImage}
+        <View
+          style={tw`w-[${CAMERA_ICON_DIMENTIONS.width}px] h-[${CAMERA_ICON_DIMENTIONS.height}px] rounded-full absolute right-[${CAMERA_ICON_POSITION.right}px] top-[${CAMERA_ICON_POSITION.top}px] justify-center items-center bg-Neutral-Sz100`}>
+          <ProfileImageChangeCameraIcon />
+        </View>
       </TouchableOpacity>
     </View>
   );
