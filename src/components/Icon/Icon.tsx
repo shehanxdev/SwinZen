@@ -35,6 +35,7 @@ import {
   PlayButtonSvg,
   PricePlanFeatureListTick,
   ProfileIconSvg,
+  ProfileImageChangeCameraSvg,
   SecurityIconSvg,
   SquareTickSvg,
   SwingZenLogoSvg,
@@ -199,4 +200,8 @@ export function MoveLeftArrowIcon({ color = Color.Neutral.White, width = 15, hei
 
 export function MoveRightArrowIcon({ color = Color.Neutral.White, width = 15, height = 15 }: SvgIconProps) {
   return <MoveRightArrowSvg width={width} height={height} fill={color} />;
+}
+
+export function ProfileImageChangeCameraIcon({ color = '#3C563E' as Color, width = 14, height = 10 }: SvgIconProps) {
+  return <ProfileImageChangeCameraSvg width={width} height={height} fill={color} />;
 }

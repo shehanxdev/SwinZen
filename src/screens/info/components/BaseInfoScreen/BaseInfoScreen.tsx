@@ -15,7 +15,7 @@ interface BaseInfoScreenProps extends Partial<LinearGradientProps> {
 
 export function BaseInfoScreen({
   children,
-  colors = [Color.Primary.SZ650, Color.Primary.Sz800, Color.Primary.Sz900],
+  colors = [Color.Primary.Sz650, Color.Primary.Sz800, Color.Primary.Sz900],
   wrapWithScrollView = true,
   ...otherlinearGradientProps
 }: BaseInfoScreenProps) {
