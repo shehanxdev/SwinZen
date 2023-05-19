@@ -54,7 +54,7 @@ export function ChangePasswordScreen() {
                   ref={ref}
                   label="current password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={250}
+                  maxLength={256}
                   value={value}
                   onChangeText={onChange}
                   onSubmitEditing={() => setFocus('newPassword')}
@@ -76,7 +76,7 @@ export function ChangePasswordScreen() {
                   ref={ref}
                   label="New password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={250}
+                  maxLength={256}
                   value={value}
                   onChangeText={onChange}
                   onSubmitEditing={() => setFocus('confirmNewPassword')}

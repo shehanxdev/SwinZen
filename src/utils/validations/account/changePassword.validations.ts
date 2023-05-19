@@ -18,12 +18,12 @@ export const changePasswordValidationSchema = yup
       .string()
       .required(changePasswordErrorMessages['newPassword:required'])
       .min(8, changePasswordErrorMessages['password:min'])
-      .max(250, changePasswordErrorMessages['password:max']),
+      .max(256, changePasswordErrorMessages['password:max']),
     confirmNewPassword: yup
       .string()
       .required(changePasswordErrorMessages['confirmNewPassword:required'])
       .min(8, changePasswordErrorMessages['password:min'])
-      .max(250, changePasswordErrorMessages['password:max'])
+      .max(256, changePasswordErrorMessages['password:max'])
       .oneOf([yup.ref('newPassword')], changePasswordErrorMessages['confirmPassword:match']),
   })
   .required();

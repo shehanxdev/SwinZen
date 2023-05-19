@@ -31,8 +31,8 @@ describe('changePasswordValidationSchema', () => {
   it('should return an error message for a new password that is too long', async () => {
     const input: ChangePasswordFormValues = {
       currentPassword: '',
-      newPassword: 'v'.repeat(251),
-      confirmNewPassword: 'v'.repeat(251),
+      newPassword: 'v'.repeat(257),
+      confirmNewPassword: 'v'.repeat(257),
     };
     const error = await changePasswordValidationSchema.validateAt('newPassword', input).catch(err => err);
 
