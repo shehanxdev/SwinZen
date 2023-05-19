@@ -7,7 +7,7 @@ export class UserService {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     const token = useSelector(state => state.userStore.accessToken);
-    const userId = JTWDecodeService.decodeToken<DecodedJWTUserData>(token).username;
+    const userId = JTWDecodeService.decodeToken<DecodedJWTUserData>(token).sub;
 
     try {
       const response = await httpServiceInstance.patch<ApiResponse<UserResponse>, ApiErrorResponse>(

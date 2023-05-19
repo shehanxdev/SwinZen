@@ -9,7 +9,6 @@ import {
   ResetPasswordData,
   SignupUserData,
   UserData,
-  UserResponse,
 } from '@sz/models';
 import { AccountService, AuthService, UserService } from '@sz/services';
 
@@ -105,7 +104,7 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setAccessToken(data.accessToken);
       dispatch.userStore.setRefreshToken(data.refreshToken);
     },
-    async patchUserData(payload: UserResponse) {
+    async patchUserData(payload: UserData) {
       const data = await UserService.patchUserData(payload);
       const modifiedUserData: UserData = {
         name: data.name,
