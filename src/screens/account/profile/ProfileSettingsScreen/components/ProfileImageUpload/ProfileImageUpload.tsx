@@ -100,14 +100,14 @@ export function ProfileImageUpload() {
           Alert.alert('Choose option', '', [
             {
               text: 'Camera',
-              onPress: () => {
-                onButtonPress('capture');
+              onPress: async () => {
+                await onButtonPress('capture');
               },
             },
             {
               text: 'Gallery',
-              onPress: () => {
-                onButtonPress();
+              onPress: async () => {
+                await onButtonPress();
               },
             },
           ]);
