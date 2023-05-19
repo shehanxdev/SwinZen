@@ -42,9 +42,24 @@ export function LoginScreen() {
   const onLoginFormValid: SubmitHandler<LoginFormValues> = async formInput => {
     try {
       await dispatch.userStore.loginUserWithCredentials(formInput);
+      dispatch.userStore.clearNextActionToken();
       NavigationService.navigate(Route.PricePlansStack);
     } catch (error: any) {
-      ToastService.error({ message: 'Failed!', description: error.data.message });
+      const { errorCode, message, nextActionToken } = error.data;
+      //TODO::Currently getting different messages from BE. Needs a refactoring in order to get consistant messages.
+      if (errorCode === 'INACTIVE_USER') {
+        ToastService.information({ message: 'Alert!', description: message });
+        NavigationService.navigate(Route.RegisterEmailVerification, formInput.username);
+      } else if (errorCode === 'OTP_TO_MANY_REQUEST') {
+        ToastService.information({
+          message: 'Alert!',
+          description: 'The user account is in in-activated status, Please verify the email address first to sign in',
+        });
+        dispatch.userStore.setNextActionToken(nextActionToken);
+        NavigationService.navigate(Route.RegisterEmailVerification, formInput.username);
+      } else {
+        ToastService.error({ message: 'Failed!', description: error.data.message });
+      }
     }
   };
 

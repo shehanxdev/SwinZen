@@ -15,21 +15,22 @@ export interface SignupUserData {
 
 export interface SignupResponse {
   user: User;
+  nextActionToken: string;
 }
 
 export interface User {
   id: string;
-  firstName: string;
-  lastName: string;
+  name: string;
   email: string;
   username: string;
+  fcmTokens: any[]; //TODO::update the type after sync with the BE
   retryAttempts: number;
-  profilePicture: string;
-  gender: string;
-  city: string;
-  isActive: boolean;
-  lastLogin: string;
-  deviceId: string;
+  profilePicture: string | null;
+  gender: string | null;
+  city: string | null;
+  userStatus: string;
+  lastLogin: string | null;
+  deviceId: string | null;
   createdAt: string;
   updatedAt: string;
 }

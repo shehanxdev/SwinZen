@@ -37,7 +37,6 @@ export function ResetPasswordScreen({ route }) {
       });
 
       ToastService.success({ message: 'Success!', description: 'Password reset successfullly.' });
-      dispatch.userStore.clearPasswordResetToken();
       NavigationService.navigate(Route.Login);
     } catch (error: any) {
       ToastService.error({ message: 'Failed!', description: error.data.message });

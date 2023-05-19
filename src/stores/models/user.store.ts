@@ -17,7 +17,7 @@ export interface UserState {
   isAuthenticated: boolean;
   accessToken: string | null;
   refreshToken: string | null;
-  passwordResetToken: string | null;
+  nextActionToken: string | null; //TODO::persist this state
   //TODO::fill other user related state here
 }
 
@@ -25,7 +25,7 @@ const initialState: UserState = {
   isAuthenticated: false,
   accessToken: null,
   refreshToken: null,
-  passwordResetToken: null,
+  nextActionToken: null,
 };
 
 export const userStore = createModel<RootModel>()({
@@ -40,11 +40,11 @@ export const userStore = createModel<RootModel>()({
     setRefreshToken(state: UserState, refreshToken: string | null) {
       return { ...state, refreshToken };
     },
-    setPasswordResetToken(state: UserState, passwordResetToken: string) {
-      return { ...state, passwordResetToken };
+    setNextActionToken(state: UserState, nextActionToken: string) {
+      return { ...state, nextActionToken };
     },
-    clearPasswordResetToken(state: UserState) {
-      return { ...state, passwordResetToken: null };
+    clearNextActionToken(state: UserState) {
+      return { ...state, nextActionToken: null };
     },
   },
   effects: dispatch => ({
@@ -60,26 +60,27 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setIsAuthenticated(false);
     },
     async registerUser(payload: SignupUserData) {
-      await AuthService.registerUser(payload);
-      //TODO::save required user data to the store and persistence storage if required
+      const { nextActionToken } = await AuthService.registerUser(payload);
+      dispatch.userStore.setNextActionToken(nextActionToken);
     },
     /*
      * NOTE:These function is being shared between registeration and forget password flows since it's the default BE behaviour
      * api/v1/auth/resend-otp
      */
-    async emailVerification(payload: EmailVerificationData) {
-      const data = await AuthService.emailVerification(payload);
-      dispatch.userStore.setPasswordResetToken(data?.resetPasswordToken);
+    async emailVerification(payload: EmailVerificationData, state) {
+      const { nextActionToken } = state.userStore;
+      await AuthService.emailVerification(payload, { 'x-auth': nextActionToken });
     },
     async resendOtp(payload: ResendOtpData) {
       await AuthService.resendOtp(payload);
     },
     async forgetPassword(payload: ForgetPasswordData) {
-      await AuthService.forgetPassword(payload);
+      const { nextActionToken } = await AuthService.forgetPassword(payload);
+      dispatch.userStore.setNextActionToken(nextActionToken);
     },
     async resetPassword(payload: ResetPasswordData, state) {
-      const { passwordResetToken } = state.userStore;
-      await AuthService.resetPassword(payload, { 'x-auth': passwordResetToken });
+      const { nextActionToken } = state.userStore;
+      await AuthService.resetPassword(payload, { 'x-auth': nextActionToken });
     },
     async profileChangePassword(payload: ChangePasswordData, state) {
       const { accessToken, refreshToken } = state.userStore;

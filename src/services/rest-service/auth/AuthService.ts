@@ -58,14 +58,14 @@ export class AuthService {
     }
   }
 
-  static async emailVerification(data: EmailVerificationData) {
+  static async emailVerification(payload: EmailVerificationData, headers: Pick<BaseRequestHeaders, 'x-auth'>) {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     try {
       const response = await httpServiceInstance.postAnonymous<
         ApiResponse<EmailVerificationResponse>,
         ApiErrorResponse
-      >('/auth/verify-otp', data);
+      >('/auth/verify-otp', { ...headers }, payload);
 
       return response.data;
     } catch (error) {
