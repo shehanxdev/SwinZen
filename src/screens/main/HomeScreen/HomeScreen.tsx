@@ -36,12 +36,10 @@ export function HomeScreen() {
 
   // To check avaiable tokens and add non existing tokens
   useEffect(() => {
-    if (data) {
-      const userData = data.fcmTokens &&
-        !data.fcmTokens.includes(fcmToken) && { fcmTokens: [...data.fcmTokens, fcmToken] };
-      dispatch.userStore.patchUserData(userData);
+    if (data && fcmToken && !data.fcmTokens.includes(fcmToken)) {
+      dispatch.userStore.patchUserData({ fcmTokens: fcmToken });
     }
-  }, [data]);
+  }, [fcmToken]);
 
   return (
     // TODO::remove this BaseAuthScreen and wrap with relative component
