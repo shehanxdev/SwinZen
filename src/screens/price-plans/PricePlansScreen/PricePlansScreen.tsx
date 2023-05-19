@@ -33,9 +33,9 @@ export function PricePlansScreen() {
                   featureList={item.features}
                   betterValue={item.banner}
                   onCardPress={
-                    item.frequency
-                      ? () => NavigationService.navigate(Route.PlanDetails, { item })
-                      : () => NavigationService.navigate(Route.MainStack)
+                    item.price === 0
+                      ? () => NavigationService.navigate(Route.MainStack)
+                      : () => NavigationService.navigate(Route.PlanDetails, { item })
                   }
                 />
               </View>

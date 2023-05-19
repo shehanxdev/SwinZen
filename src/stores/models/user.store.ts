@@ -104,8 +104,24 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setAccessToken(data.accessToken);
       dispatch.userStore.setRefreshToken(data.refreshToken);
     },
-    async patchUserData(payload: UserData) {
-      const data = await UserService.patchUserData(payload);
+    async getUserData(accessToken: string) {
+      const data = await UserService.getUserData(accessToken);
+      const modifiedUserData: UserData = {
+        name: data.name,
+        email: data.email,
+        username: data.username,
+        profilePicture: data.profilePicture,
+        gender: data.gender,
+        city: data.city,
+        deviceId: data.deviceId,
+        isActive: data.isActive,
+        fcmTokens: data.fcmTokens,
+      };
+      dispatch.userStore.setUserData(modifiedUserData);
+    },
+    async patchUserData(payload: UserData, state) {
+      const { accessToken } = state.userStore;
+      const data = await UserService.patchUserData(payload, accessToken);
       const modifiedUserData: UserData = {
         name: data.name,
         email: data.email,
