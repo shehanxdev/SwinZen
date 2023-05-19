@@ -6,9 +6,9 @@
  * @param {string=} mask - The character to use as the mask (default "*").
  * @returns {string} The masked email address.
  */
-export function getMaskedMail(email: string, mask?: string) {
-  mask = mask || '*';
-  return email.replace(/^(.)(.*)(.@.*)$/, function (_, a, b, c) {
+export function getMaskedMail(email: string, mask: string = '*') {
+  const pattern = /^(.)(.*)(.@.*)$/;
+  return email.replace(pattern, function (_, a, b, c) {
     return a + b.replace(/./g, mask) + c;
   });
 }
