@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "979369879760",
+    "project_id": "swingzen-75201",
+    "storage_bucket": "swingzen-75201.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979369879760:android:ee36d66e5f1dafb71816d5",
+        "android_client_info": {
+          "package_name": "com.sportszoom.swingzen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979369879760-6h0thd9dv0ufqs8qf7po5mr8r2j6l96q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB64NUnryJNuX1zlOhGOOiyi7rox0BaLCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979369879760-6h0thd9dv0ufqs8qf7po5mr8r2j6l96q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

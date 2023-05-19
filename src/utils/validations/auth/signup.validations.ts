@@ -13,8 +13,8 @@ export const signupFormErrorMessages = {
   'username:max': 'Email must not be 256 letters long',
 
   'password:required': 'Please enter Password',
-  'password:min': 'Password must be between 8 and 256 characters length',
-  'password:max': 'Password must be between 8 and 256 characters length',
+  'password:min': 'Please enter at least 8 characters',
+  'password:max': 'Only 256 characters are allowed for the Password',
 
   'confirmPassword:required': 'Please confirm Password',
   'confirmPassword:match': 'Your passwords do not match',

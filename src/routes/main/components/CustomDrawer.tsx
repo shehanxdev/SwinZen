@@ -43,12 +43,10 @@ const commonDrawerContents: DrawerContent[] = [
 export function CustomDrawer() {
   const dispatch = useDispatch();
 
-  const Logout = async () => {
-    try {
-      await dispatch.userStore.logoutUser();
-    } catch (error: any) {
-      ToastService.error({ message: 'Failed!', description: error.data.message });
-    }
+  const Logout = (): void => {
+    dispatch.userStore
+      .logoutUser()
+      .catch((error: any) => ToastService.error({ message: 'Failed!', description: error.data.message }));
   };
 
   return (

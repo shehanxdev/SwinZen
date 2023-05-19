@@ -29,13 +29,13 @@ export function PlanSubscriptionCard({
   return (
     <TouchableOpacity testID={testID} onPress={onCardPress}>
       <View style={tw`bg-[${Color.Primary.Sz700}]/50 shadow-[${Color.Primary.Sz700}]/20 rounded-2.5 content-center`}>
-        {betterValue && (
+        {betterValue ? (
           <View style={tw`bg-[${selected ? Color.Neutral.Sz600 : Color.Tertiary.Sz900}] h-6.25 rounded-t-2.5`}>
             <Text variant={TextVariant.Labels} color={Color.Primary.Sz900}>
               {betterValue}
             </Text>
           </View>
-        )}
+        ) : null}
         <View style={tw`my-7.5`}>
           <Text variant={TextVariant.SubTitle2SemiBold} color={selected ? Color.Neutral.Sz600 : Color.Primary.Sz100}>
             {title}
@@ -45,7 +45,7 @@ export function PlanSubscriptionCard({
               {`$${price}`}
             </Text>
             <Text variant={TextVariant.Body2Regular} color={selected ? Color.Neutral.Sz600 : Color.Neutral.Sz100}>
-              {frequency && '/' + frequency}
+              {frequency ? `/${frequency}` : null}
             </Text>
           </View>
           <View style={tw`bg-[${Color.Neutral.Sz700}] self-center mt-3.5 h-0.25 w-61`} />

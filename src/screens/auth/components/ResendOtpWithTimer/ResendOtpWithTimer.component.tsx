@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import BackgroundTimer from 'react-native-background-timer';
 
 import { Link } from '@sz/components';
 import { DEFAULT_OTP_RESEND_TIMER_MINUTES, DEFAULT_OTP_RESEND_TIMER_SECONDS } from '@sz/constants';
@@ -15,7 +16,7 @@ export function ResendOtpWithTimer({
   const [seconds, setSeconds] = useState<OtpSeconds>(initialSeconds);
 
   useEffect(() => {
-    let otpInterval = setInterval(() => {
+    const otpInterval = BackgroundTimer.setInterval(() => {
       //Reduce value of seconds by 1 during each second if current remaining seconds is greater than 0
       if (seconds > 0) {
         setSeconds((seconds - 1) as OtpMinutes);
@@ -35,7 +36,7 @@ export function ResendOtpWithTimer({
     }, 1000);
 
     return () => {
-      clearInterval(otpInterval);
+      BackgroundTimer.clearInterval(otpInterval);
     };
   }, [seconds, minutes]);
 
@@ -53,8 +54,8 @@ export function ResendOtpWithTimer({
     <Link
       testID={testID}
       text={linkText}
-      onPress={() => {
-        onResend();
+      onPress={async () => {
+        await onResend();
         resetTimers();
       }}
       disabled={!(minutes === 0 && seconds === 0)}

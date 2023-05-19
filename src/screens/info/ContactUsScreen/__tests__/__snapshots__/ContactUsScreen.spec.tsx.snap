@@ -1013,7 +1013,9 @@ exports[`ContactUs Screen should render ContactUsScreen correctly 1`] = `
                                 {
                                   "marginHorizontal": 8,
                                 },
-                                false,
+                                {
+                                  "textTransform": "uppercase",
+                                },
                                 {
                                   "color": "#6200ee",
                                   "fontFamily": "SourceSansPro-SemiBold",
@@ -1044,7 +1046,7 @@ exports[`ContactUs Screen should render ContactUsScreen correctly 1`] = `
                               ]
                             }
                           >
-                            SUBMIT
+                            submit
                           </Text>
                         </Text>
                       </View>

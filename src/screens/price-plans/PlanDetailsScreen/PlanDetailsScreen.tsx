@@ -60,7 +60,7 @@ export function PlanDetailsScreen({ route }) {
             </View>
           </View>
           <View style={tw`mt-16 mb-3`}>
-            <Button onPress={onProceed} title="PROCEED TO PAY" testID={`${TEST_ID_PREFIX}-PayButton`} />
+            <Button onPress={onProceed} title="proceed to pay" testID={`${TEST_ID_PREFIX}-PayButton`} />
           </View>
         </View>
       </View>
