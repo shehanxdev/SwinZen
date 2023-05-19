@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { ActivityIndicator, TouchableOpacity, View } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
 
@@ -14,17 +14,13 @@ import { FAQSectionContent, FAQSectionHeader } from './components';
 
 export function FAQScreen() {
   const [activeSections, setActiveSections] = useState([]);
-  const [sortedData, setSortedData] = useState<FaqSection[]>();
+
   const { isLoading, data } = useFetch(InfoService.getFAQ);
 
-  useEffect(() => {
-    function sortData() {
-      if (!isLoading && data) {
-        setSortedData([...data].sort((a, b) => a.questionNumber - b.questionNumber));
-      }
-    }
-    sortData();
-  }, [isLoading, data]);
+  const sortedData = useMemo(() => {
+    if (data) return data.sort((a, b) => a.questionNumber - b.questionNumber);
+    return [];
+  }, [data]);
 
   const setSections = (sections: number[]) => {
     setActiveSections(sections.includes(undefined) ? [] : sections);
