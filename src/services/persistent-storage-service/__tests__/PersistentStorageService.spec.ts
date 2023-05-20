@@ -54,6 +54,54 @@ describe('PersistentStorage Service', () => {
     }
   });
 
+  it('should log an error if throws an error during SETTING an item to the persistent storage', async () => {
+    const error = new Error('AsyncStorage error');
+    (AsyncStorage.setItem as jest.Mock).mockRejectedValue(error);
+
+    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    for (let data of dummyData) {
+      await PersistentStorageService.getStorage().setItem(data.key, data.value);
+
+      expect(consoleErrorSpy).toHaveBeenCalledWith(
+        `Could not save item to persistent storage: [key:${data.key}]`,
+        error.message,
+      );
+    }
+  });
+
+  it('should log an error if throws an error during GETTING an item to the persistent storage', async () => {
+    const error = new Error('AsyncStorage error');
+    (AsyncStorage.getItem as jest.Mock).mockRejectedValue(error);
+
+    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    for (let data of dummyData) {
+      await PersistentStorageService.getStorage().getItem(data.key);
+
+      expect(consoleErrorSpy).toHaveBeenCalledWith(
+        `Could not get item from persistent storage: [key:${data.key}]`,
+        error.message,
+      );
+    }
+  });
+
+  it('should log an error if throws an error during REMOVING an item to the persistent storage', async () => {
+    const error = new Error('AsyncStorage error');
+    (AsyncStorage.removeItem as jest.Mock).mockRejectedValue(error);
+
+    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    for (let data of dummyData) {
+      await PersistentStorageService.getStorage().removeItem(data.key);
+
+      expect(consoleErrorSpy).toHaveBeenCalledWith(
+        `Could not remove item from persistent storage: [key:${data.key}]`,
+        error.message,
+      );
+    }
+  });
+
   it('should NOT throw an error if storage callbacks are set properly', () => {
     PersistentStorageService.setStorage(storageCallbacks.valid);
 
