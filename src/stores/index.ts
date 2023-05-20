@@ -8,7 +8,7 @@ import { IS_JEST_RUNTIME } from '@sz/constants';
 
 import { RootModel, models } from './models';
 
-type FullModel = ExtraModelsFromLoading<RootModel>;
+export type FullModel = ExtraModelsFromLoading<RootModel>;
 
 export let store: ReturnType<typeof initializeStore>;
 
