@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // PersistentStorageService storage callbacks for Rematch persistentPlugin
 // https://rematchjs.org/docs/plugins/persist/
-interface Storage {
+export interface Storage {
   getItem<T = string>(key: string, ...args: Array<any>): Promise<T>;
   setItem<T = string>(key: string, value: NonNullable<T>, ...args: Array<any>): Promise<void>;
   removeItem(key: string, ...args: Array<any>): Promise<void>;
@@ -43,8 +43,21 @@ export abstract class PersistentStorageService {
     }
   }
 
+  //NOTE::This setter can be use to pass custom PersistentStorageService storage callbacks for Rematch persistentPlugin
+  public static setStorage(storage: Storage) {
+    PersistentStorageService.storage = {
+      setItem: storage.setItem,
+      getItem: storage.getItem,
+      removeItem: storage.removeItem,
+    };
+  }
+
   public static getStorage() {
-    if (!PersistentStorageService.storage) {
+    if (
+      !PersistentStorageService.storage.getItem ||
+      !PersistentStorageService.storage.setItem ||
+      !PersistentStorageService.storage.removeItem
+    ) {
       throw new Error('PersistentStorageService storage callbacks for Rematch persistentPlugin are not set properly');
     }
 
