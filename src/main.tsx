@@ -1,8 +1,10 @@
+import { getPersistor } from '@rematch/persist';
 import React from 'react';
 import ErrorBoundary from 'react-native-error-boundary';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/lib/integration/react';
 import { useDeviceContext } from 'twrnc';
 
 import { paperTheme, tw } from '@sz/config';
@@ -23,11 +25,13 @@ export function Main() {
   return (
     <ErrorBoundary FallbackComponent={UnexpectedErrorScreen} onError={errorHandler}>
       <Provider store={store}>
-        <PaperProvider theme={paperTheme}>
-          <SafeAreaProvider>
-            <App />
-          </SafeAreaProvider>
-        </PaperProvider>
+        <PersistGate persistor={getPersistor()}>
+          <PaperProvider theme={paperTheme}>
+            <SafeAreaProvider>
+              <App />
+            </SafeAreaProvider>
+          </PaperProvider>
+        </PersistGate>
       </Provider>
     </ErrorBoundary>
   );
