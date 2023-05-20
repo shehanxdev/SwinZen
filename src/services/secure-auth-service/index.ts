@@ -1,2 +1,3 @@
-export * from './secure-auth.service';
-export * from './secure-auth-error';
+export * from './SecureAuthService';
+export * from './secureAuthError';
+export * from './SecureAuthServiceInstance';

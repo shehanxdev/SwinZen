@@ -3,11 +3,19 @@
  */
 import Config from 'react-native-config';
 
-import { ConfigService, HttpService, HttpServiceInstance } from '@sz/services';
+import {
+  ConfigService,
+  HttpService,
+  HttpServiceInstance,
+  SecureAuthService,
+  SecureAuthServiceInstance,
+} from '@sz/services';
 import { initializeStore, store } from '@sz/stores';
 
+//Config service
 ConfigService.setCallback(key => Config[key]);
 
+//rematch store
 initializeStore();
 
 const getAccessToken = () => {
@@ -25,6 +33,7 @@ const onTokenUpdate = (accessToken: string, refreshToken: string) => {
   //TODO::update auth state in secure storage
 };
 
+//Http service
 const httpService = new HttpService(
   ConfigService.getConfig('BASE_URL'),
   getAccessToken,
@@ -33,3 +42,12 @@ const httpService = new HttpService(
 );
 
 HttpServiceInstance.setHttpServiceInstance(httpService);
+
+//Secure auth service
+const secureAuthService = new SecureAuthService(
+  //NOTE::Current secure auth service implementation uses SECRET_PASSPHRASE which defined as an environment variable as secret passphrase.
+  //This is being used as secret passphrase for the AES symmetric encryption standard.
+  ConfigService.getConfig('SECRET_PASSPHRASE_FOR_ENCRYPT_TOKENS'),
+);
+
+SecureAuthServiceInstance.setSecureAuthServiceInstance(secureAuthService);
