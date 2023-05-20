@@ -63,7 +63,7 @@ export function RegisterEmailVerificationScreen({ route }) {
   return (
     <BaseAuthScreen>
       <View style={tw`flex-1 justify-between`} testID="RegisterEmailVerificationScreenContainerTestID">
-        <View style={tw`mt-[35px] mx-5`}>
+        <View style={tw`mt-8.75 mx-4`}>
           <View style={tw`items-center`}>
             <SwingZenLogoIcon />
           </View>
@@ -94,7 +94,7 @@ export function RegisterEmailVerificationScreen({ route }) {
         </View>
         <View style={tw`items-center mb-5 items-center mx-5 mt-15`}>
           <View style={tw`mb-6`}>
-            <Button onPress={onVerify} title="Verify" loading={loading} />
+            <Button onPress={onVerify} title="verify" loading={loading} />
           </View>
           <Text variant={TextVariant.Body2Regular}>
             By continuing, you agree to our{' '}

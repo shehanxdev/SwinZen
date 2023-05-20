@@ -44,6 +44,19 @@ export function Routes() {
     setCurrentRoute(currentRouteName);
   };
 
+  const handleUnhandledAction = (
+    action: Readonly<{
+      type: string;
+      payload?: object;
+      source?: string;
+      target?: string;
+    }>,
+  ) => {
+    if (action.type === 'GO_BACK') {
+      NavigationService.navigate(isAuthenticated ? Route.MainStack : Route.AuthStack);
+    }
+  };
+
   return (
     <NavigationContainer
       ref={NavigationService.navigationRef}
@@ -52,6 +65,7 @@ export function Routes() {
         routeNameRef.current = NavigationService.navigationRef.current.getCurrentRoute().name;
       }}
       fallback={<Text>Loading...</Text>} //TODO:: update to an actual loading indicator
+      onUnhandledAction={handleUnhandledAction}
       onStateChange={onStateChange}>
       <Stack.Navigator
         initialRouteName={isAuthenticated ? Route.MainStack : Route.AuthStack}
@@ -70,6 +84,7 @@ export function Routes() {
             <Stack.Screen name={Route.AuthStack} component={AuthStack} />
           </Stack.Group>
         )}
+
         <Stack.Screen name={Route.InfoStack} component={InfoStack} />
       </Stack.Navigator>
     </NavigationContainer>

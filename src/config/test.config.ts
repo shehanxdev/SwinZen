@@ -44,3 +44,23 @@ jest.mock('redux-persist', () => {
     persistReducer: jest.fn().mockImplementation((config, reducers) => reducers),
   };
 });
+jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
+
+jest.doMock('react-native-background-timer', () => {
+  return {
+    stopBackgroundTimer: jest.fn(),
+    runBackgroundTimer: jest.fn(),
+    setInterval: jest.fn(),
+    clearInterval: jest.fn(),
+  };
+});
+
+jest.mock('@react-native-firebase/messaging', () => ({
+  messaging: jest.fn(() => ({
+    hasPermission: jest.fn(() => Promise.resolve(true)),
+    subscribeToTopic: jest.fn(),
+    unsubscribeFromTopic: jest.fn(),
+    requestPermission: jest.fn(() => Promise.resolve(true)),
+    getToken: jest.fn(() => Promise.resolve('myMockToken')),
+  })),
+}));
