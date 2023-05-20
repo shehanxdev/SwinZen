@@ -6,7 +6,7 @@ type LoginState = 'initial' | 'subsequent';
 
 interface PersistentUserState {
   isAuthenticated: boolean;
-  loginState: LoginState;
+  loginState: LoginState; //this state can be use to identify user's login status('initial login' or 'subsequent login')
 }
 
 const initialPersistentUserState: PersistentUserState = {
