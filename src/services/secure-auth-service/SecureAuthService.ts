@@ -106,7 +106,7 @@ export class SecureAuthService {
   /**
    * Removes pin has and tokens from the keychain
    */
-  static async signOut(): Promise<void> {
+  async signOut(): Promise<void> {
     await Keychain.resetGenericPassword({ service: TOKENS_KEYCHAIN_KEY });
   }
 }
