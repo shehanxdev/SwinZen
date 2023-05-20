@@ -63,7 +63,7 @@ export function VideoSetupScreen() {
   console.log('setupValues', setupValues);
 
   return (
-    <BaseUploadScreen isSetupScreen>
+    <BaseUploadScreen isSetupScreen testID="VideoSetupScreenTestID">
       <View style={tw`mx-4 flex-1 justify-between`}>
         <View>
           <View style={tw`pt-8.5 mb-6.25`}>
@@ -88,7 +88,11 @@ export function VideoSetupScreen() {
               Shooting method
             </Text>
           </View>
-          <SelectableGrid options={clubTypeOptions} onChange={value => getSelectedValue('clubType', value)} />
+          <SelectableGrid
+            options={clubTypeOptions}
+            onChange={value => getSelectedValue('clubType', value)}
+            testID="SelectableGridTestID"
+          />
         </View>
         <View style={tw`mb-5`}>
           {/* TODO:: handle the navigation once the next page is ready */}

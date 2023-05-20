@@ -6,11 +6,12 @@ import { tw } from '@sz/config';
 import { Color, TextVariant } from '@sz/constants';
 
 interface SelectableGridProps {
+  testID?: string;
   options: { label: string; value: string }[];
   onChange: (value: string) => void;
 }
 
-export function SelectableGrid({ options, onChange }: SelectableGridProps) {
+export function SelectableGrid({ options, onChange, testID }: SelectableGridProps) {
   const [selectedCellIndex, setSelectedCellIndex] = useState(0);
 
   const onPress = (index: number, value: string) => {
@@ -19,10 +20,11 @@ export function SelectableGrid({ options, onChange }: SelectableGridProps) {
   };
 
   return (
-    <View style={tw`flex-row flex-wrap justify-between gap-2`}>
+    <View style={tw`flex-row flex-wrap justify-between gap-2`} testID={testID}>
       {options.map((option, index) => {
         return (
           <Pressable
+            testID="grid-option"
             key={index}
             onPress={() => onPress(index, option.value)}
             style={tw`grow w-27.5 h-9  rounded-2 justify-center  ${

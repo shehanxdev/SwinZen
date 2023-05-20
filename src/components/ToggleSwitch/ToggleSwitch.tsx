@@ -5,13 +5,15 @@ import { tw } from '@sz/config';
 import { Color } from '@sz/constants';
 
 interface ToggleSwitchProps {
+  testID?: string;
   options: { label: string; value: string }[];
   onChange: (value: string) => void;
 }
 
-export function ToggleSwitch({ options, onChange }: ToggleSwitchProps) {
+export function ToggleSwitch({ options, onChange, testID }: ToggleSwitchProps) {
   return (
     <SwitchSelector
+      testID={testID}
       options={options}
       initial={0}
       onPress={value => onChange(value)}
