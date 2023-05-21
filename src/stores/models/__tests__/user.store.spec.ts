@@ -4,8 +4,8 @@ import { RematchStore } from '@rematch/core';
 import { LoginUserData, SignupUserData } from '@sz/models';
 import { AuthService } from '@sz/services';
 
-import { RootModel } from '.';
-import { FullModel, initializeStore } from '..';
+import { RootModel } from '..';
+import { FullModel, initializeStore } from '../..';
 
 // Mock AuthService
 jest.spyOn(AuthService, 'loginUserWithCredentials');
