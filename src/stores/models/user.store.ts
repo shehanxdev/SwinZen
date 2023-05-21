@@ -15,30 +15,23 @@ import { AccountService, AuthService, UserService } from '@sz/services';
 import { RootModel } from './';
 
 export interface UserState {
-  isAuthenticated: boolean;
   accessToken: string | null;
   refreshToken: string | null;
   passwordResetToken: string | null;
-  userId: string | null;
   userData: UserData;
   //TODO::fill other user related state here
 }
 
 const initialState: UserState = {
-  isAuthenticated: false,
   accessToken: null,
   refreshToken: null,
   passwordResetToken: null,
-  userId: null,
   userData: null,
 };
 
 export const userStore = createModel<RootModel>()({
   state: { ...initialState } as UserState,
   reducers: {
-    setIsAuthenticated(state: UserState, payload: boolean) {
-      return { ...state, isAuthenticated: payload };
-    },
     setAccessToken(state: UserState, accessToken: string | null) {
       return { ...state, accessToken };
     },
@@ -51,9 +44,6 @@ export const userStore = createModel<RootModel>()({
     clearPasswordResetToken(state: UserState) {
       return { ...state, passwordResetToken: null };
     },
-    setUserId(state: UserState, userId: string | null) {
-      return { ...state, userId };
-    },
     setUserData(state: UserState, userData: UserData | null) {
       return { ...state, userData };
     },
@@ -63,17 +53,17 @@ export const userStore = createModel<RootModel>()({
       const data = await AuthService.loginUserWithCredentials(payload);
       dispatch.userStore.setAccessToken(data.accessToken);
       dispatch.userStore.setRefreshToken(data.refreshToken);
-      dispatch.userStore.setUserId(data.userId);
-      dispatch.userStore.setIsAuthenticated(true);
+      dispatch.persistentUserStore.setIsAuthenticate(true);
+      dispatch.persistentUserStore.setLoginState('subsequent');
     },
     async logoutUser() {
       dispatch.userStore.setAccessToken(null);
       dispatch.userStore.setRefreshToken(null);
-      dispatch.userStore.setUserId(null);
-      dispatch.userStore.setIsAuthenticated(false);
+      dispatch.persistentUserStore.setIsAuthenticate(false);
     },
     async registerUser(payload: SignupUserData) {
       await AuthService.registerUser(payload);
+      dispatch.persistentUserStore.setLoginState('initial');
       //TODO::save required user data to the store and persistence storage if required
     },
     /*

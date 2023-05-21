@@ -31,6 +31,19 @@ jest.mock('@react-navigation/elements', () => ({
   useHeaderHeight: jest.fn(() => 50), // Mock the useHeaderHeight hook
 }));
 
+jest.mock('@react-native-async-storage/async-storage', () => {
+  const asyncStorage = jest.requireActual('@react-native-async-storage/async-storage/jest/async-storage-mock');
+  jest.requireActual('./../services/persistent-storage-service');
+  return asyncStorage;
+});
+
+jest.mock('redux-persist', () => {
+  const real = jest.requireActual('redux-persist');
+  return {
+    ...real,
+    persistReducer: jest.fn().mockImplementation((config, reducers) => reducers),
+  };
+});
 jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
 
 jest.doMock('react-native-background-timer', () => {

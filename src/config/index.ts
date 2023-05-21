@@ -1,6 +1,7 @@
 import { create } from 'twrnc';
 
-export * from './paper.config';
 export * from './dayjs.config';
+export * from './paper.config';
+export * from './persist-plugin.config';
 
 export const tw = create(require('./tailwind.config'));
