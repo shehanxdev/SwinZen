@@ -98,5 +98,15 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setAccessToken(data.accessToken);
       dispatch.userStore.setRefreshToken(data.refreshToken);
     },
+    async getAuthTokensFromSecureStorage() {
+      try {
+        const tokens = await SecureAuthService.getAuthTokens();
+
+        dispatch.userStore.setAccessToken(tokens.accessToken);
+        dispatch.userStore.setRefreshToken(tokens.refreshToken);
+      } catch (_) {
+        dispatch.userStore.logoutUser();
+      }
+    },
   }),
 });
