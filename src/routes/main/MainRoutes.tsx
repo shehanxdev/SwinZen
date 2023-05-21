@@ -1,8 +1,10 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
+import { SecureAuthService } from '@sz/services';
+import { useDispatch } from '@sz/stores';
 
 import { MainBottomTabRoutes } from './MainBottomTabRoutes';
 import { CustomDrawer } from './components';
@@ -17,6 +19,19 @@ export type MainStackParamList = {
 const Drawer = createDrawerNavigator<MainStackParamList>();
 
 export function MainStack() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    async function grantTokenAccess() {
+      const tokens = await SecureAuthService.getAuthTokens();
+
+      dispatch.userStore.setAccessToken(tokens.accessToken);
+      dispatch.userStore.setRefreshToken(tokens.refreshToken);
+    }
+
+    grantTokenAccess().catch(console.log);
+  }, []);
+
   return (
     <Drawer.Navigator
       screenOptions={{

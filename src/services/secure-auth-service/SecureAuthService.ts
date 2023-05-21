@@ -1,6 +1,3 @@
-// NOTE: react-native-get-random-values needs to be imported before crypto-js
-import CryptoJS from 'crypto-js';
-import 'react-native-get-random-values';
 import * as Keychain from 'react-native-keychain';
 
 import { SecureAuthError } from './secureAuthError';
@@ -12,14 +9,7 @@ interface AuthTokens {
   refreshToken: string;
 }
 
-export class SecureAuthService {
-  //NOTE::secretPassphrase should be a attribute of SecureAuthService since config service cannot directly use inside SecureAuthService. It brings circular dependancy issue and cause unit test failures.
-  private secretPassphrase: string;
-
-  constructor(secretPassphrase: string) {
-    this.secretPassphrase = secretPassphrase;
-  }
-
+export abstract class SecureAuthService {
   /**
    * Stores the given value in the keychain
    */
@@ -63,38 +53,23 @@ export class SecureAuthService {
   }
 
   /**
-   * Encrypts the given tokens using the secret passphrase and stores in the keychain when authenticated user presence
+   * Returns auth tokens(access/refresh) stored in keychain
    */
-  async registerForQuickSignInWhenAuthenticatedUserPresence(tokens: AuthTokens): Promise<false | Keychain.Result> {
-    const encryptedToken = CryptoJS.AES.encrypt(JSON.stringify(tokens), this.secretPassphrase).toString();
+  public static async getAuthTokens(): Promise<AuthTokens> {
+    const token = await SecureAuthService.getItem<string>(TOKENS_KEYCHAIN_KEY);
 
-    const result = await SecureAuthService.setItem<string>(TOKENS_KEYCHAIN_KEY, encryptedToken);
-
-    return result;
-  }
-
-  /**
-   * Returns decrypts the encrypted tokens when authenticated user presence
-   */
-  async quickSignInWhenAuthenticatedUserPresence(): Promise<AuthTokens> {
-    const encryptedToken = await SecureAuthService.getItem<string>(TOKENS_KEYCHAIN_KEY);
-
-    if (!encryptedToken) {
-      throw new SecureAuthError('UNEXPECTED_ERROR');
+    if (!token) {
+      throw new SecureAuthError('GET_TOKENS_FAILED');
     }
 
-    const tokensString = CryptoJS.AES.decrypt(encryptedToken, this.secretPassphrase).toString(CryptoJS.enc.Utf8);
-    const tokens = JSON.parse(tokensString) as AuthTokens;
-
-    return tokens;
+    return JSON.parse(token) as AuthTokens;
   }
 
   /**
-   * Updates the tokens stored in keychain
+   * Updates auth tokens(access/refresh) stored in keychain
    */
-  async updateTokens(tokens: AuthTokens) {
-    const encryptedToken = CryptoJS.AES.encrypt(JSON.stringify(tokens), this.secretPassphrase).toString();
-    const result = await SecureAuthService.setItem<string>(TOKENS_KEYCHAIN_KEY, encryptedToken);
+  public static async updateAuthTokens(tokens: AuthTokens) {
+    const result = await SecureAuthService.setItem<string>(TOKENS_KEYCHAIN_KEY, JSON.stringify(tokens));
 
     if (!result) {
       throw new SecureAuthError('UPDATE_TOKENS_FAILED');
@@ -106,7 +81,7 @@ export class SecureAuthService {
   /**
    * Removes pin has and tokens from the keychain
    */
-  async signOut(): Promise<void> {
+  public static async clearSecureStorage(): Promise<void> {
     await Keychain.resetGenericPassword({ service: TOKENS_KEYCHAIN_KEY });
   }
 }
