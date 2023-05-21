@@ -18,6 +18,7 @@ export function NotificationScreen() {
   const accessToken = useSelector(state => state.userStore.accessToken);
   const { isLoading, data, refetch } = useFetch(() => NotifcationsService.getUserNotifications({}, accessToken));
   const unreadCount = data ? data.results.filter(item => item.isRead === false).length : 0;
+  const { results } = data || {};
 
   // handle notification read status and refetchng notifications
   const handleOnPressNotification = async (item: Notification) => {
@@ -28,6 +29,16 @@ export function NotificationScreen() {
     // refetching updated notifications data
     refetch();
   };
+
+  const renderItem = ({ item }) => (
+    <NotificationCard
+      time={item.createdAt}
+      title={item.title}
+      message={item.payload}
+      readStatus={item.isRead}
+      handleOnPress={() => handleOnPressNotification(item)}
+    />
+  );
 
   return (
     <BaseAccountScreen testID="NotificationScreenTestID" wrapWithScrollView={false}>
@@ -47,18 +58,10 @@ export function NotificationScreen() {
           </View>
           <SectionList
             stickySectionHeadersEnabled={false}
-            sections={getSectionList(data?.results ?? [])}
+            sections={getSectionList(results ?? [])}
             keyExtractor={(item, index) => item.id + index}
             ItemSeparatorComponent={() => <View style={tw`mx-4 h-0.25 bg-Neutral-Sz600`} />}
-            renderItem={({ item }) => (
-              <NotificationCard
-                time={item.createdAt}
-                title={item.title}
-                message={item.payload}
-                readStatus={item.isRead}
-                handleOnPress={() => handleOnPressNotification(item)}
-              />
-            )}
+            renderItem={renderItem}
             renderSectionHeader={({ section: { title } }) => <SectionHeader title={title} />}
           />
         </>

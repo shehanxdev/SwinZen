@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
 
 import { tw } from '@sz/config';
-import { PermissionService } from '@sz/services';
+import { PermissionService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 
 import { BaseMainScreen } from '../components';
@@ -18,19 +18,31 @@ export function HomeScreen() {
 
   // firebase device registration and store fcm token
   const registerAppWithFCM = async () => {
-    await messaging()
-      .getToken()
-      .then(token => {
-        if (token) {
-          setFcmToken(token);
-        }
+    try {
+      const token = await messaging().getToken();
+      if (token) {
+        setFcmToken(token);
+      }
+    } catch (error) {
+      ToastService.error({ message: 'Failed!', description: 'Failed to register app with FCM' });
+    }
+  };
+
+  const requestNotificationsPermission = async () => {
+    try {
+      await PermissionService.requestNotificationsPermission();
+    } catch (error) {
+      ToastService.error({
+        message: 'Failed!',
+        description:
+          'Failed to request notifications permission, please grant permnission if you interested to get notifications',
       });
+    }
   };
 
   // To request notifications permissions
   useEffect(() => {
-    //TODO::add proper error pop up to the user
-    PermissionService.requestNotificationsPermission().catch(console.error);
+    requestNotificationsPermission();
     dispatch.userStore.getUserData(accessToken);
     registerAppWithFCM();
   }, []);
