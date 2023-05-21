@@ -23,7 +23,7 @@ export interface User {
   name: string;
   email: string;
   username: string;
-  fcmTokens: any[]; //TODO::update the type after sync with the BE
+  fcmTokens: string[];
   retryAttempts: number;
   profilePicture: string | null;
   gender: string | null;

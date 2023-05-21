@@ -46,16 +46,19 @@ export function LoginScreen() {
       NavigationService.navigate(Route.PricePlansStack);
     } catch (error: any) {
       const { errorCode, message, nextActionToken } = error.data;
-      //TODO::Currently getting different messages from BE. Needs a refactoring in order to get consistant messages.
+
       if (errorCode === 'INACTIVE_USER') {
         ToastService.information({ message: 'Alert!', description: message });
+
+        dispatch.userStore.setNextActionToken(nextActionToken);
+
         NavigationService.navigate(Route.RegisterEmailVerification, formInput.username);
       } else if (errorCode === 'OTP_TO_MANY_REQUEST') {
         ToastService.information({
           message: 'Alert!',
-          description: 'The user account is in in-activated status, Please verify the email address first to sign in',
+          description: 'The user account is in in-activated status, Please verify the email address first to sign in', //This same message should come from the BE side.
         });
-        dispatch.userStore.setNextActionToken(nextActionToken);
+
         NavigationService.navigate(Route.RegisterEmailVerification, formInput.username);
       } else {
         ToastService.error({ message: 'Failed!', description: error.data.message });

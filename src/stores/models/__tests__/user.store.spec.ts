@@ -53,24 +53,24 @@ describe('Unit testing user store', () => {
       promoCode: faker.lorem.word(),
     };
 
-    // TODO: update return value once auth is refactored
     jest.spyOn(AuthService, 'registerUser').mockResolvedValueOnce({
       user: {
         id: 'mockId',
-        firstName: 'John',
-        lastName: 'Doe',
+        name: 'John',
         email: 'john.doe@example.com',
         username: 'johndoe',
+        fcmTokens: [],
         retryAttempts: 0,
         profilePicture: 'https://example.com/profile.jpg',
         gender: 'male',
         city: 'New York',
-        isActive: true,
+        userStatus: '',
         lastLogin: '2023-05-20T10:00:00Z',
         deviceId: 'mockDeviceId',
         createdAt: '2023-05-19T08:00:00Z',
         updatedAt: '2023-05-20T12:00:00Z',
       },
+      nextActionToken: 'next action token',
     });
 
     await store.dispatch.userStore.registerUser(payload);

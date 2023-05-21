@@ -6,7 +6,7 @@ import { View } from 'react-native';
 import { Button, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { OtpType, Route, TextVariant } from '@sz/constants';
-import { OtpVerficationValue } from '@sz/models';
+import { EmailVerificationData, OtpVerficationValue } from '@sz/models';
 import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { getMaskedMail, otpValidationSchema } from '@sz/utils';
@@ -48,13 +48,14 @@ export function ResetPasswordEmailVerificationScreen({ route }) {
   };
 
   const onVerify = async () => {
-    const otpData = {
-      username: email,
+    const otpData: EmailVerificationData = {
       otpType: OtpType.FORGOT_PASSWORD,
       otp: getValues('otp'),
     };
+
     try {
       await dispatch.userStore.emailVerification(otpData);
+
       NavigationService.navigate(Route.ResetPassword, { email: email });
     } catch (error: any) {
       ToastService.error({ message: 'Failed!', description: error.data.message });

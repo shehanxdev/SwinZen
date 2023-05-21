@@ -17,8 +17,7 @@ import { RootModel } from './';
 export interface UserState {
   accessToken: string | null;
   refreshToken: string | null;
-  nextActionToken: string | null; //TODO::persist this state
-  //TODO::fill other user related state here
+  nextActionToken: string | null;
 }
 
 const initialState: UserState = {
@@ -72,10 +71,17 @@ export const userStore = createModel<RootModel>()({
     /*
      * NOTE:These function is being shared between registeration and forget password flows since it's the default BE behaviour
      * api/v1/auth/resend-otp
+     *
+     * TODO::add proper description regarding the next action token logic for the future reference
      */
     async emailVerification(payload: EmailVerificationData, state) {
+      //current next action token
       const { nextActionToken } = state.userStore;
-      await AuthService.emailVerification(payload, { 'x-auth': nextActionToken });
+
+      const emailVerificationData = await AuthService.emailVerification(payload, { 'x-auth': nextActionToken });
+
+      //setting up the new action token provided by the email verification API
+      dispatch.userStore.setNextActionToken(emailVerificationData.nextActionToken);
     },
     async resendOtp(payload: ResendOtpData) {
       await AuthService.resendOtp(payload);
@@ -106,6 +112,7 @@ export const userStore = createModel<RootModel>()({
         dispatch.userStore.setRefreshToken(tokens.refreshToken);
       } catch (_) {
         dispatch.userStore.logoutUser();
+        await SecureAuthService.clearSecureStorage();
       }
     },
   }),

@@ -62,7 +62,7 @@ export class AuthService {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     try {
-      const response = await httpServiceInstance.postAnonymous<
+      const response = await httpServiceInstance.postAnonymousWithCustomHeaders<
         ApiResponse<EmailVerificationResponse>,
         ApiErrorResponse
       >('/auth/verify-otp', { ...headers }, payload);

@@ -6,7 +6,7 @@ import { View } from 'react-native';
 import { Button, Link, SwingZenLogoIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { OtpType, Route, TextVariant } from '@sz/constants';
-import { OtpVerficationValue } from '@sz/models';
+import { EmailVerificationData, OtpVerficationValue } from '@sz/models';
 import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { getMaskedMail, otpValidationSchema } from '@sz/utils';
@@ -47,13 +47,18 @@ export function RegisterEmailVerificationScreen({ route }) {
   };
 
   const onVerify = async () => {
-    const otpData = {
-      username: username,
+    const otpData: EmailVerificationData = {
       otpType: OtpType.VERIFICATION,
       otp: getValues('otp'),
     };
+
     try {
       await dispatch.userStore.emailVerification(otpData);
+
+      //TODO::This toast is not avaialbel in the requirements. User should redirect to the price plan screen open successfull verification.
+      //rafactor this once the requirements clarified
+      ToastService.success({ message: 'Success!', description: 'OTP verified successfully.' });
+
       NavigationService.navigate(Route.Login);
     } catch (error: any) {
       ToastService.error({ message: 'Failed!', description: error.data.message });
