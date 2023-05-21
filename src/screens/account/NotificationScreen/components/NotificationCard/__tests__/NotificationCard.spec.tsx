@@ -7,10 +7,13 @@ import { NotificationCard } from './../NotificationCard';
 describe('NotificationCard Component', () => {
   const testID = 'NotificationCardTestID';
   const mackTime = new Date();
+  const dummtTitle = 'Title One';
   const dummyMessage = 'test message';
 
   const getRenderedComponent = () =>
-    renderWithProviders(<NotificationCard testID={testID} time={mackTime} readStatus={true} message={dummyMessage} />);
+    renderWithProviders(
+      <NotificationCard testID={testID} time={mackTime} readStatus={true} title={dummtTitle} message={dummyMessage} />,
+    );
 
   it(`should render NotificationCard component correctly`, () => {
     const rendered = getRenderedComponent();

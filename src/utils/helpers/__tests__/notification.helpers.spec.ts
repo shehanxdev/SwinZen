@@ -1,15 +1,18 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { NotificationDataType } from '@sz/models';
+import { Notification } from '@sz/models';
 
 import { getSectionList } from '../notification.helpers';
 
 describe('notification helper test cases', () => {
   describe('getSectionList function', () => {
-    const getModifiedResult = (dataArray: NotificationDataType[]) => renderHook(() => getSectionList(dataArray));
-    const newDate = new Date();
+    const getModifiedResult = (dataArray: Notification[]) => renderHook(() => getSectionList(dataArray));
+    const mockId = '12345';
+    const mockUserId = '12345';
+    const mockType = 'NOTIFICATION';
     const timeZoneName = new Intl.DateTimeFormat().resolvedOptions().timeZone;
     const options = { timeZone: timeZoneName };
+    const newDate = new Date();
     const dateInTimeZone = newDate.toLocaleString('en-US', options);
     const mockDate = new Date(dateInTimeZone);
 
@@ -19,14 +22,24 @@ describe('notification helper test cases', () => {
     it('should return a array with a object, Today as title property and dataArray as the data property', async () => {
       const dataArray = [
         {
-          time: mockDate,
-          message: 'test message one',
-          read: false,
+          id: mockId,
+          userId: mockUserId,
+          notificationType: mockType,
+          payload: 'test message one',
+          title: 'Title One',
+          isRead: false,
+          createdAt: mockDate.toISOString(),
+          updatedAt: mockDate.toISOString(),
         },
         {
-          time: mockDate,
-          message: 'test message two',
-          read: true,
+          id: mockId,
+          userId: mockUserId,
+          notificationType: mockType,
+          payload: 'test message two',
+          title: 'Title Two',
+          isRead: true,
+          createdAt: mockDate.toISOString(),
+          updatedAt: mockDate.toISOString(),
         },
       ];
       const { result } = getModifiedResult(dataArray);
@@ -36,14 +49,24 @@ describe('notification helper test cases', () => {
           title: 'Today',
           data: [
             {
-              time: mockDate,
-              message: 'test message one',
-              read: false,
+              id: mockId,
+              userId: mockUserId,
+              notificationType: mockType,
+              payload: 'test message one',
+              title: 'Title One',
+              isRead: false,
+              createdAt: mockDate.toISOString(),
+              updatedAt: mockDate.toISOString(),
             },
             {
-              time: mockDate,
-              message: 'test message two',
-              read: true,
+              id: mockId,
+              userId: mockUserId,
+              notificationType: mockType,
+              payload: 'test message two',
+              title: 'Title Two',
+              isRead: true,
+              createdAt: mockDate.toISOString(),
+              updatedAt: mockDate.toISOString(),
             },
           ],
         },
@@ -58,14 +81,24 @@ describe('notification helper test cases', () => {
 
       const dataArray = [
         {
-          time: mockDate,
-          message: 'test message one',
-          read: false,
+          id: mockId,
+          userId: mockUserId,
+          notificationType: mockType,
+          payload: 'test message one',
+          title: 'Title One',
+          isRead: false,
+          createdAt: mockDate.toISOString(),
+          updatedAt: mockDate.toISOString(),
         },
         {
-          time: mockYesterday,
-          message: 'test message two',
-          read: true,
+          id: mockId,
+          userId: mockUserId,
+          notificationType: mockType,
+          payload: 'test message two',
+          title: 'Title Two',
+          isRead: true,
+          createdAt: mockYesterday.toISOString(),
+          updatedAt: mockYesterday.toISOString(),
         },
       ];
       const { result } = getModifiedResult(dataArray);
@@ -75,9 +108,14 @@ describe('notification helper test cases', () => {
           title: 'Today',
           data: [
             {
-              time: mockDate,
-              message: 'test message one',
-              read: false,
+              id: mockId,
+              userId: mockUserId,
+              notificationType: mockType,
+              payload: 'test message one',
+              title: 'Title One',
+              isRead: false,
+              createdAt: mockDate.toISOString(),
+              updatedAt: mockDate.toISOString(),
             },
           ],
         },
@@ -85,9 +123,14 @@ describe('notification helper test cases', () => {
           title: 'Yesterday',
           data: [
             {
-              time: mockYesterday,
-              message: 'test message two',
-              read: true,
+              id: mockId,
+              userId: mockUserId,
+              notificationType: mockType,
+              payload: 'test message two',
+              title: 'Title Two',
+              isRead: true,
+              createdAt: mockYesterday.toISOString(),
+              updatedAt: mockYesterday.toISOString(),
             },
           ],
         },

@@ -7,7 +7,6 @@ export class UserService {
 
     try {
       const userId = JTWDecodeService.decodeToken<DecodedJWTUserData>(token).sub;
-
       const response = await httpServiceInstance.get<ApiResponse<UserResponse>, ApiErrorResponse>(`/users/${userId}`);
 
       if (!response?.data) {
@@ -26,7 +25,6 @@ export class UserService {
 
     try {
       const userId = JTWDecodeService.decodeToken<DecodedJWTUserData>(token).sub;
-
       const response = await httpServiceInstance.patch<ApiResponse<UserResponse>, ApiErrorResponse>(
         `/users/${userId}`,
         data,

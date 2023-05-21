@@ -10,6 +10,7 @@ import { BaseMainScreen } from '../components';
 
 export function HomeScreen() {
   const [fcmToken, setFcmToken] = useState(null);
+
   const dispatch = useDispatch();
 
   const accessToken = useSelector(state => state.userStore.accessToken);

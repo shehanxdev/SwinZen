@@ -10,11 +10,12 @@ import { Color, TextAlignment, TextVariant } from '@sz/constants';
 interface NotificationCardProps {
   testID?: string;
   readStatus: boolean;
+  title: string;
   message: string;
   time: Date;
 }
 
-export function NotificationCard({ testID, readStatus = false, message, time }: NotificationCardProps) {
+export function NotificationCard({ testID, readStatus = false, title, message, time }: NotificationCardProps) {
   // TODO:: API integration should be implemented, notification handleOnPress event should be handled later
   const handleOnPress = () => {};
 
@@ -32,6 +33,12 @@ export function NotificationCard({ testID, readStatus = false, message, time }: 
             color={readStatus ? Color.Neutral.Sz600 : Color.Neutral.Sz200}
             variant={TextVariant.Body2Regular}
             textAlign={TextAlignment.Auto}>
+            {title.length > 90 ? title.substring(0, 87) + '...' : title}
+          </Text>
+          <Text
+            color={readStatus ? Color.Neutral.Sz600 : Color.Neutral.Sz200}
+            variant={TextVariant.Body2Regular}
+            textAlign={TextAlignment.Auto}>
             {message.length > 90 ? message.substring(0, 87) + '...' : message}
           </Text>
         </View>
@@ -44,7 +51,7 @@ export function NotificationCard({ testID, readStatus = false, message, time }: 
           color={readStatus ? Color.Neutral.Sz600 : Color.Neutral.Sz100}
           variant={TextVariant.Body2Regular}
           textAlign={TextAlignment.Auto}>
-          {szdayjs(time).fromNow()}
+          {szdayjs(new Date(time)).fromNow()}
         </Text>
       </View>
     </TouchableOpacity>

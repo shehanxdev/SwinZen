@@ -1,7 +1,6 @@
 import { SortDataType } from '@sz/constants';
 import { ApiErrorResponse, ApiResponse, PricePlansResponse } from '@sz/models';
-
-import { APIError, HttpServiceInstance } from '../../http-service';
+import { APIError, HttpServiceInstance } from '@sz/services';
 
 export class PricePlansService {
   static async getPricePlans(sort: SortDataType) {
