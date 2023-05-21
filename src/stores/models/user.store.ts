@@ -5,12 +5,13 @@ import {
   EmailVerificationData,
   ForgetPasswordData,
   LoginUserData,
+  Notification,
   ResendOtpData,
   ResetPasswordData,
   SignupUserData,
   UserData,
 } from '@sz/models';
-import { AccountService, AuthService, UserService } from '@sz/services';
+import { AccountService, AuthService, NotifcationsService, UserService } from '@sz/services';
 
 import { RootModel } from './';
 
@@ -124,6 +125,10 @@ export const userStore = createModel<RootModel>()({
         fcmTokens: data.fcmTokens,
       };
       dispatch.userStore.setUserData(modifiedUserData);
+    },
+    async patchUserNotification(payload: Notification, state) {
+      const { accessToken } = state.userStore;
+      await NotifcationsService.patchUserNotification(payload, accessToken);
     },
   }),
 });

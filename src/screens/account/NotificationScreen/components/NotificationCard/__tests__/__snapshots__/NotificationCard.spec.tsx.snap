@@ -30,7 +30,7 @@ exports[`NotificationCard Component should render NotificationCard component cor
     }
     accessible={true}
     collapsable={false}
-    focusable={true}
+    focusable={false}
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}

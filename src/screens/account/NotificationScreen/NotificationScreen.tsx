@@ -5,17 +5,29 @@ import { Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 import { useFetch } from '@sz/hooks';
-import { AccountService } from '@sz/services';
-import { useSelector } from '@sz/stores';
+import { Notification } from '@sz/models';
+import { NotifcationsService } from '@sz/services';
+import { useDispatch, useSelector } from '@sz/stores';
 import { getSectionList } from '@sz/utils';
 
 import { BaseAccountScreen } from '../components';
 import { NotificationCard, SectionHeader } from './components';
 
 export function NotificationScreen() {
+  const dispatch = useDispatch();
   const accessToken = useSelector(state => state.userStore.accessToken);
-  const { isLoading, data } = useFetch(() => AccountService.getNotifications({}, accessToken));
+  const { isLoading, data, refetch } = useFetch(() => NotifcationsService.getUserNotifications({}, accessToken));
   const unreadCount = data ? data.results.filter(item => item.isRead === false).length : 0;
+
+  // handle notification read status and refetchng notifications
+  const handleOnPressNotification = async (item: Notification) => {
+    // change notification read status
+    const NotificationData: Notification = { ...item, isRead: true };
+    await dispatch.userStore.patchUserNotification(NotificationData);
+
+    // refetching updated notifications data
+    refetch();
+  };
 
   return (
     <BaseAccountScreen testID="NotificationScreenTestID" wrapWithScrollView={false}>
@@ -44,6 +56,7 @@ export function NotificationScreen() {
                 title={item.title}
                 message={item.payload}
                 readStatus={item.isRead}
+                handleOnPress={() => handleOnPressNotification(item)}
               />
             )}
             renderSectionHeader={({ section: { title } }) => <SectionHeader title={title} />}

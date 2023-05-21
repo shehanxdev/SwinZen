@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import React from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { GestureResponderEvent, TouchableOpacity, View } from 'react-native';
 
 import { NotificationDotIcon, NotificationTimerIcon, Text } from '@sz/components';
 import { szdayjs, tw } from '@sz/config';
@@ -13,12 +13,17 @@ interface NotificationCardProps {
   title: string;
   message: string;
   time: Date;
+  handleOnPress: (event: GestureResponderEvent) => void;
 }
 
-export function NotificationCard({ testID, readStatus = false, title, message, time }: NotificationCardProps) {
-  // TODO:: API integration should be implemented, notification handleOnPress event should be handled later
-  const handleOnPress = () => {};
-
+export function NotificationCard({
+  testID,
+  readStatus = false,
+  title,
+  message,
+  time,
+  handleOnPress,
+}: NotificationCardProps) {
   // dayjs plagin for relative time calculation
   dayjs.extend(relativeTime);
 

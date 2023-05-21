@@ -26,7 +26,7 @@ export interface NotificationResponse {
 export interface Notification {
   id: string;
   userId: string;
-  notificationType: string;
+  notificationType: NotificationsType;
   payload: string;
   title: string;
   isRead: boolean;
