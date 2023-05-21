@@ -4,6 +4,7 @@ export enum Route {
   AnalysisTab = 'analysis-tab',
   AuthStack = 'auth-stack',
   ContactUs = 'contact-us',
+  DummyRoute = 'dummy-route',
   FAQ = 'faq',
   Followers = 'followers',
   ForgotPassword = 'forgot-password',

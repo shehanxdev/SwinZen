@@ -94,7 +94,7 @@ export function VideoSetupScreen() {
             testID="SelectableGridTestID"
           />
         </View>
-        <View style={tw`mb-5`}>
+        <View style={tw`mb-5 mt-32.25`}>
           {/* TODO:: handle the navigation once the next page is ready */}
           <Button backgroundColor={Color.Primary.SZ650} textColor={Color.Neutral.Sz100} title="NEXT" />
         </View>
