@@ -14,7 +14,6 @@ import { AccountService, AuthService } from '@sz/services';
 import { RootModel } from './';
 
 export interface UserState {
-  isAuthenticated: boolean;
   accessToken: string | null;
   refreshToken: string | null;
   passwordResetToken: string | null;
@@ -22,7 +21,6 @@ export interface UserState {
 }
 
 const initialState: UserState = {
-  isAuthenticated: false,
   accessToken: null,
   refreshToken: null,
   passwordResetToken: null,
@@ -31,9 +29,6 @@ const initialState: UserState = {
 export const userStore = createModel<RootModel>()({
   state: { ...initialState } as UserState,
   reducers: {
-    setIsAuthenticated(state: UserState, payload: boolean) {
-      return { ...state, isAuthenticated: payload };
-    },
     setAccessToken(state: UserState, accessToken: string | null) {
       return { ...state, accessToken };
     },
@@ -52,15 +47,20 @@ export const userStore = createModel<RootModel>()({
       const data = await AuthService.loginUserWithCredentials(payload);
       dispatch.userStore.setAccessToken(data.accessToken);
       dispatch.userStore.setRefreshToken(data.refreshToken);
-      dispatch.userStore.setIsAuthenticated(true);
+
+      dispatch.persistentUserStore.setIsAuthenticate(true);
+      dispatch.persistentUserStore.setLoginState('subsequent');
     },
     async logoutUser() {
       dispatch.userStore.setAccessToken(null);
       dispatch.userStore.setRefreshToken(null);
-      dispatch.userStore.setIsAuthenticated(false);
+
+      dispatch.persistentUserStore.setIsAuthenticate(false);
     },
     async registerUser(payload: SignupUserData) {
       await AuthService.registerUser(payload);
+
+      dispatch.persistentUserStore.setLoginState('initial');
       //TODO::save required user data to the store and persistence storage if required
     },
     /*
