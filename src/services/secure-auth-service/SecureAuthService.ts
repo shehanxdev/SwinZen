@@ -4,7 +4,7 @@ import { SecureAuthError } from './secureAuthError';
 
 const TOKENS_KEYCHAIN_KEY = 'auth-tokens';
 
-interface AuthTokens {
+export interface AuthTokens {
   accessToken: string;
   refreshToken: string;
 }
