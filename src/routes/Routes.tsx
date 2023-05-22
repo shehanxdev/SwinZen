@@ -19,8 +19,10 @@ const Stack = createNativeStackNavigator();
 
 export function Routes() {
   const routeNameRef = React.useRef();
+
   const setCurrentRoute = useDispatch().appStore.setCurrentRoute;
-  const isAuthenticated = useSelector(state => state.userStore.isAuthenticated);
+
+  const isAuthenticated = useSelector(state => state.persistentUserStore.isAuthenticated);
 
   function getActiveRouteName(navigationState: NavigationState): any {
     if (!navigationState) {
