@@ -33,7 +33,7 @@ export function AccountStack() {
         headerTitle: ({ children }) => <Text variant={TextVariant.SubTitle2SemiBold}>{children}</Text>,
         headerLeft: () => <HeaderBackButton />,
       }}>
-      <Stack.Screen name={Route.ProfileStack} component={ProfileStack} options={{ title: 'Profile Settings' }} />
+      <Stack.Screen name={Route.ProfileStack} component={ProfileStack} options={{ headerShown: false }} />
       <Stack.Screen name={Route.Notification} component={NotificationScreen} options={{ title: 'Notifications' }} />
       <Stack.Screen name={Route.Followers} component={FollowersScreen} options={{ title: 'Followers' }} />
     </Stack.Navigator>

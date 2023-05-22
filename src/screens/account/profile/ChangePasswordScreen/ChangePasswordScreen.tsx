@@ -52,7 +52,7 @@ export function ChangePasswordScreen() {
               render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
                 <PasswordField
                   ref={ref}
-                  label="current password"
+                  label="Current password"
                   leftIcon={<AccountLockIcon />}
                   maxLength={20}
                   value={value}
