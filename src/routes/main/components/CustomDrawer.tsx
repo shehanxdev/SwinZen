@@ -18,7 +18,7 @@ import {
 } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route } from '@sz/constants';
-import { NavigationService, ToastService } from '@sz/services';
+import { NavigationService, SecureAuthService, ToastService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
 
 import { DrawerItem } from './DrawerItem';
@@ -43,10 +43,13 @@ const commonDrawerContents: DrawerContent[] = [
 export function CustomDrawer() {
   const dispatch = useDispatch();
 
-  const Logout = (): void => {
-    dispatch.userStore
-      .logoutUser()
-      .catch((error: any) => ToastService.error({ message: 'Failed!', description: error.data.message }));
+  const Logout = async (): Promise<void> => {
+    try {
+      await dispatch.userStore.logoutUser();
+      await SecureAuthService.clearSecureStorage();
+    } catch (error) {
+      ToastService.error({ message: 'Failed!', description: error.data.message });
+    }
   };
 
   return (

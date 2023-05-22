@@ -42,7 +42,7 @@ export function LoginScreen() {
   const onLoginFormValid: SubmitHandler<LoginFormValues> = async formInput => {
     try {
       await dispatch.userStore.loginUserWithCredentials(formInput);
-      NavigationService.navigate(Route.PricePlansStack);
+      NavigationService.navigate(Route.PricePlansStack); //TODO::redundant navigation check and remove.
     } catch (error: any) {
       ToastService.error({ message: 'Failed!', description: error.data.message });
     }

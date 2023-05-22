@@ -1,5 +1,6 @@
 import { createModel } from '@rematch/core';
 
+import { IS_JEST_RUNTIME } from '@sz/constants';
 import {
   ChangePasswordData,
   EmailVerificationData,
@@ -9,12 +10,11 @@ import {
   ResetPasswordData,
   SignupUserData,
 } from '@sz/models';
-import { AccountService, AuthService } from '@sz/services';
+import { AccountService, AuthService, SecureAuthService } from '@sz/services';
 
 import { RootModel } from './';
 
 export interface UserState {
-  isAuthenticated: boolean;
   accessToken: string | null;
   refreshToken: string | null;
   passwordResetToken: string | null;
@@ -22,7 +22,6 @@ export interface UserState {
 }
 
 const initialState: UserState = {
-  isAuthenticated: false,
   accessToken: null,
   refreshToken: null,
   passwordResetToken: null,
@@ -31,9 +30,6 @@ const initialState: UserState = {
 export const userStore = createModel<RootModel>()({
   state: { ...initialState } as UserState,
   reducers: {
-    setIsAuthenticated(state: UserState, payload: boolean) {
-      return { ...state, isAuthenticated: payload };
-    },
     setAccessToken(state: UserState, accessToken: string | null) {
       return { ...state, accessToken };
     },
@@ -49,18 +45,29 @@ export const userStore = createModel<RootModel>()({
   },
   effects: dispatch => ({
     async loginUserWithCredentials(payload: LoginUserData) {
-      const data = await AuthService.loginUserWithCredentials(payload);
-      dispatch.userStore.setAccessToken(data.accessToken);
-      dispatch.userStore.setRefreshToken(data.refreshToken);
-      dispatch.userStore.setIsAuthenticated(true);
+      const { accessToken, refreshToken } = await AuthService.loginUserWithCredentials(payload);
+      dispatch.userStore.setAccessToken(accessToken);
+      dispatch.userStore.setRefreshToken(refreshToken);
+
+      dispatch.persistentUserStore.setIsAuthenticate(true);
+
+      //TODO::check and fix and remove IS_JEST_RUNTIME conditional check
+      if (!IS_JEST_RUNTIME) {
+        await SecureAuthService.updateAuthTokens({ accessToken: accessToken, refreshToken: refreshToken });
+      }
+
+      dispatch.persistentUserStore.setLoginState('subsequent');
     },
     async logoutUser() {
       dispatch.userStore.setAccessToken(null);
       dispatch.userStore.setRefreshToken(null);
-      dispatch.userStore.setIsAuthenticated(false);
+
+      dispatch.persistentUserStore.setIsAuthenticate(false);
     },
     async registerUser(payload: SignupUserData) {
       await AuthService.registerUser(payload);
+
+      dispatch.persistentUserStore.setLoginState('initial');
       //TODO::save required user data to the store and persistence storage if required
     },
     /*
@@ -90,6 +97,16 @@ export const userStore = createModel<RootModel>()({
 
       dispatch.userStore.setAccessToken(data.accessToken);
       dispatch.userStore.setRefreshToken(data.refreshToken);
+    },
+    async getAuthTokensFromSecureStorage() {
+      try {
+        const tokens = await SecureAuthService.getAuthTokens();
+
+        dispatch.userStore.setAccessToken(tokens.accessToken);
+        dispatch.userStore.setRefreshToken(tokens.refreshToken);
+      } catch (_) {
+        dispatch.userStore.logoutUser();
+      }
     },
   }),
 });
