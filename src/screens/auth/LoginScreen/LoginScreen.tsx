@@ -41,14 +41,13 @@ export function LoginScreen() {
   };
 
   useFocusEffect(() => {
-    dispatch.userStore.getnextActionFromSecureStorage();
+    dispatch.userStore.getNextActionFromSecureStorage();
   });
 
   const onLoginFormValid: SubmitHandler<LoginFormValues> = async formInput => {
     try {
       await dispatch.userStore.loginUserWithCredentials(formInput);
       dispatch.userStore.clearNextActionToken();
-      NavigationService.navigate(Route.PricePlansStack);
     } catch (error: any) {
       const { errorCode, message, nextActionToken } = error.data;
 

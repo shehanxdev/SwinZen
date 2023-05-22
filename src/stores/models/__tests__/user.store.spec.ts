@@ -107,5 +107,16 @@ describe('Unit testing user store', () => {
     expect(state.persistentUserStore.isAuthenticated).toBe(false);
   });
 
+  it('should set next action token when getAuthTokensFromSecureStorage is called', async () => {
+    const nextActionToken = 'dummyNextActionToken';
+
+    jest.spyOn(SecureAuthService, 'getNextActionToken').mockResolvedValueOnce(nextActionToken);
+
+    await store.dispatch.userStore.getNextActionFromSecureStorage();
+
+    const state = store.getState();
+    expect(state.userStore.nextActionToken).toBe(nextActionToken);
+  });
+
   //TODO: Add more tests for other effects and reducers
 });

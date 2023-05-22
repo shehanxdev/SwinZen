@@ -134,7 +134,7 @@ export const userStore = createModel<RootModel>()({
       }
     },
 
-    async getnextActionFromSecureStorage() {
+    async getNextActionFromSecureStorage() {
       let nextActionToken = null;
       try {
         const token = await SecureAuthService.getNextActionToken();
