@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-import { InputFieldConstraints, ValidNameRegex } from '@sz/constants';
+import { DEFAULT_TEXTFIELD_MAX_LENGTH, NAME_MIN_LENGTH, PASSWORD_MIN_LENGTH, ValidNameRegex } from '@sz/constants';
 
 export const signupFormErrorMessages = {
   'name:required': 'Please enter Name',
@@ -26,19 +26,19 @@ export const signupValidationSchema = yup
       .string()
       .trim()
       .required(signupFormErrorMessages['name:required'])
-      .min(InputFieldConstraints.nameMinLength, signupFormErrorMessages['name:min'])
-      .max(InputFieldConstraints.nameMaxLength, signupFormErrorMessages['name:max'])
+      .min(NAME_MIN_LENGTH, signupFormErrorMessages['name:min'])
+      .max(DEFAULT_TEXTFIELD_MAX_LENGTH, signupFormErrorMessages['name:max'])
       .matches(ValidNameRegex, signupFormErrorMessages['name:valid']),
     username: yup
       .string()
       .required(signupFormErrorMessages['username:required'])
       .email(signupFormErrorMessages['username:email'])
-      .max(InputFieldConstraints.nameMaxLength, signupFormErrorMessages['username:max']),
+      .max(DEFAULT_TEXTFIELD_MAX_LENGTH, signupFormErrorMessages['username:max']),
     password: yup
       .string()
       .required(signupFormErrorMessages['password:required'])
-      .min(8, signupFormErrorMessages['password:min'])
-      .max(InputFieldConstraints.nameMaxLength, signupFormErrorMessages['password:max']),
+      .min(PASSWORD_MIN_LENGTH, signupFormErrorMessages['password:min'])
+      .max(DEFAULT_TEXTFIELD_MAX_LENGTH, signupFormErrorMessages['password:max']),
     confirmPassword: yup
       .string()
       .required(signupFormErrorMessages['confirmPassword:required'])

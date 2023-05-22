@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-import { InputFieldConstraints } from '@sz/constants';
+import { DEFAULT_TEXTFIELD_MAX_LENGTH } from '@sz/constants';
 
 export const forgotPasswordErrorMessages = {
   'email:required': 'Please enter Email ID',
@@ -14,6 +14,6 @@ export const forgotPasswordValidationSchema = yup
       .string()
       .required(forgotPasswordErrorMessages['email:required'])
       .email(forgotPasswordErrorMessages['email:invalid'])
-      .max(InputFieldConstraints.emailMaxLength, forgotPasswordErrorMessages['email:max']),
+      .max(DEFAULT_TEXTFIELD_MAX_LENGTH, forgotPasswordErrorMessages['email:max']),
   })
   .required();

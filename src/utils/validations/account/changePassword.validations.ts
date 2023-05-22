@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-import { InputFieldConstraints } from '@sz/constants';
+import { DEFAULT_TEXTFIELD_MAX_LENGTH, PASSWORD_MIN_LENGTH } from '@sz/constants';
 
 export const changePasswordErrorMessages = {
   'password:min': 'Please enter at least 8 characters',
@@ -19,13 +19,13 @@ export const changePasswordValidationSchema = yup
     newPassword: yup
       .string()
       .required(changePasswordErrorMessages['newPassword:required'])
-      .min(InputFieldConstraints.passwordMinLength, changePasswordErrorMessages['password:min'])
-      .max(InputFieldConstraints.passwordMaxLength, changePasswordErrorMessages['password:max']),
+      .min(PASSWORD_MIN_LENGTH, changePasswordErrorMessages['password:min'])
+      .max(DEFAULT_TEXTFIELD_MAX_LENGTH, changePasswordErrorMessages['password:max']),
     confirmNewPassword: yup
       .string()
       .required(changePasswordErrorMessages['confirmNewPassword:required'])
-      .min(InputFieldConstraints.passwordMinLength, changePasswordErrorMessages['password:min'])
-      .max(InputFieldConstraints.passwordMaxLength, changePasswordErrorMessages['password:max'])
+      .min(PASSWORD_MIN_LENGTH, changePasswordErrorMessages['password:min'])
+      .max(DEFAULT_TEXTFIELD_MAX_LENGTH, changePasswordErrorMessages['password:max'])
       .oneOf([yup.ref('newPassword')], changePasswordErrorMessages['confirmPassword:match']),
   })
   .required();

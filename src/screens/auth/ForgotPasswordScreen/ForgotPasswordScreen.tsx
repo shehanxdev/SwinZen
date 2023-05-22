@@ -5,7 +5,7 @@ import { View } from 'react-native';
 
 import { Button, Link, MailIcon, Text, TextField } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, InputFieldConstraints, Route, TextVariant } from '@sz/constants';
+import { Color, DEFAULT_TEXTFIELD_MAX_LENGTH, Route, TextVariant } from '@sz/constants';
 import { ForgotPasswordFormValues } from '@sz/models';
 import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
@@ -59,7 +59,7 @@ export function ForgotPasswordScreen() {
                 ref={ref}
                 label="Your email"
                 leftIcon={<MailIcon />}
-                maxLength={InputFieldConstraints.nameMaxLength}
+                maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}

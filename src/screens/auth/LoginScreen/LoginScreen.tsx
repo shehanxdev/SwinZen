@@ -14,7 +14,7 @@ import {
   TextField,
 } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, InputFieldConstraints, Route, TextVariant } from '@sz/constants';
+import { Color, DEFAULT_TEXTFIELD_MAX_LENGTH, Route, TextVariant } from '@sz/constants';
 import { LoginFormValues } from '@sz/models';
 import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
@@ -71,7 +71,7 @@ export function LoginScreen() {
                   ref={ref}
                   label="Your email"
                   leftIcon={<MailIcon />}
-                  maxLength={InputFieldConstraints.emailMaxLength}
+                  maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -94,7 +94,7 @@ export function LoginScreen() {
                   ref={ref}
                   label="Your password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={InputFieldConstraints.nameMaxLength}
+                  maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}

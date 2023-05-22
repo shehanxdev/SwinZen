@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-import { InputFieldConstraints } from '@sz/constants';
+import { DEFAULT_TEXTFIELD_MAX_LENGTH, PASSWORD_MIN_LENGTH } from '@sz/constants';
 
 export const loginErrorMessages = {
   'username:required': 'Please enter Email ID',
@@ -18,11 +18,11 @@ export const loginValidationSchema = yup
       .string()
       .required(loginErrorMessages['username:required'])
       .email(loginErrorMessages['username:invalid'])
-      .max(InputFieldConstraints.emailMaxLength, loginErrorMessages['username:max']),
+      .max(DEFAULT_TEXTFIELD_MAX_LENGTH, loginErrorMessages['username:max']),
     password: yup
       .string()
       .required(loginErrorMessages['password:required'])
-      .min(InputFieldConstraints.passwordMinLength, loginErrorMessages['password:min'])
-      .max(InputFieldConstraints.passwordMaxLength, loginErrorMessages['password:max']),
+      .min(PASSWORD_MIN_LENGTH, loginErrorMessages['password:min'])
+      .max(DEFAULT_TEXTFIELD_MAX_LENGTH, loginErrorMessages['password:max']),
   })
   .required();

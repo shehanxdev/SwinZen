@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-import { InputFieldConstraints } from '@sz/constants';
+import { DEFAULT_TEXTFIELD_MAX_LENGTH, PASSWORD_MIN_LENGTH } from '@sz/constants';
 
 export const resetPasswordErrorMessages = {
   'password:required': 'Please enter New password',
@@ -16,8 +16,8 @@ export const resetPasswordValidationSchema = yup
     password: yup
       .string()
       .required(resetPasswordErrorMessages['password:required'])
-      .min(InputFieldConstraints.passwordMinLength, resetPasswordErrorMessages['password:min'])
-      .max(InputFieldConstraints.passwordMaxLength, resetPasswordErrorMessages['password:max']),
+      .min(PASSWORD_MIN_LENGTH, resetPasswordErrorMessages['password:min'])
+      .max(DEFAULT_TEXTFIELD_MAX_LENGTH, resetPasswordErrorMessages['password:max']),
     confirmPassword: yup
       .string()
       .required(resetPasswordErrorMessages['confirmPassword:required'])
