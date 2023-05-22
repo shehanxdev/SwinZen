@@ -148,7 +148,7 @@ export function LoginScreen() {
             <Link
               text="Sign up"
               onPress={() => {
-                NavigationService.navigate(Route.FAQ);
+                NavigationService.navigate(Route.Signup);
               }}
             />
           </Text>
