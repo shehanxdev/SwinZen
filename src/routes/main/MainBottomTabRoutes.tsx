@@ -7,10 +7,11 @@ import { CustomMenuIcon, SwingZenLogoIcon } from '@sz/components';
 import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
 import { CustomBottomTabBar } from '@sz/layout';
-import { AnalysisScreen, HomeScreen, LibraryScreen, VideosScreen } from '@sz/screens';
+import { AnalysisScreen, HomeScreen, VideosScreen } from '@sz/screens';
 import { NavigationService } from '@sz/services';
 
 import { commonScreenOptions } from '../configs';
+import { LibraryStack } from '../library';
 import { VideoUploadStack } from '../videoUpload';
 
 const Tab = createBottomTabNavigator();
@@ -71,7 +72,13 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
       {/* TODO:: commenting this line gives layout issues */}
       <Tab.Screen name={Route.VideoUploadStack} component={VideoUploadStack} />
       <Tab.Screen name={Route.AnalysisTab} component={AnalysisScreen} />
-      <Tab.Screen name={Route.LibraryTab} component={LibraryScreen} />
+      <Tab.Screen
+        name={Route.LibraryStack}
+        component={LibraryStack}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Tab.Navigator>
   );
 }
