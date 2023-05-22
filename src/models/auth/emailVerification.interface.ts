@@ -5,11 +5,10 @@ import { OtpType } from '@sz/constants';
  * api/v1/auth/verify-otp
  */
 export interface EmailVerificationData {
-  username: string;
   otpType: OtpType;
   otp: string;
 }
 
 export interface EmailVerificationResponse {
-  resetPasswordToken?: string;
+  nextActionToken?: string;
 }
