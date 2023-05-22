@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UTAInfoEleven Screen should render UTAInfoEleven Screen correctly 1`] = `
+<BVLinearGradient
+  colors={
+    [
+      4279917603,
+      4278984207,
+      4278650631,
+    ]
+  }
+  endPoint={
+    {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    {
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "position": "relative",
+    }
+  }
+>
+  <Image
+    resizeMode="cover"
+    source={
+      {
+        "testUri": "../../../src/assets/images/grassBackground.jpg",
+      }
+    }
+    style={
+      {
+        "opacity": 0.1,
+        "position": "absolute",
+      }
+    }
+  />
+  <RCTSafeAreaView
+    style={
+      {
+        "height": "100%",
+        "paddingTop": 50,
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "paddingBottom": 0,
+          },
+        ]
+      }
+    >
+      <RCTScrollView
+        contentContainerStyle={
+          {
+            "flexGrow": 1,
+          }
+        }
+        keyboardShouldPersistTaps="handled"
+      >
+        <View>
+          <View
+            style={
+              {
+                "marginLeft": 16,
+                "marginRight": 16,
+                "marginTop": 32,
+              }
+            }
+            testID="UTAInfoElevenScreenTestID"
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              SwingZen scores pass/fail and help you track your progress.
+          
+If you fail a certain checkpoint, you can progress to view the instructions on how to improve that portion of the swing. If your position is good, then great! If not, you will then have the information through AI Pro Tips, Pro vs you, PGA instruction videos, and drills to correct that specific swing fault.
+            </Text>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+  </RCTSafeAreaView>
+</BVLinearGradient>
+`;

@@ -1,4 +1,4 @@
-export * from './about-us';
+export * from './static-content';
 export * from './auth';
 export * from './colors';
 export * from './error';

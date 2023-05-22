@@ -1,0 +1,455 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UTAInfoEight Screen should render UTAInfoEight Screen correctly 1`] = `
+<BVLinearGradient
+  colors={
+    [
+      4279917603,
+      4278984207,
+      4278650631,
+    ]
+  }
+  endPoint={
+    {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    {
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "position": "relative",
+    }
+  }
+>
+  <Image
+    resizeMode="cover"
+    source={
+      {
+        "testUri": "../../../src/assets/images/grassBackground.jpg",
+      }
+    }
+    style={
+      {
+        "opacity": 0.1,
+        "position": "absolute",
+      }
+    }
+  />
+  <RCTSafeAreaView
+    style={
+      {
+        "height": "100%",
+        "paddingTop": 50,
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "paddingBottom": 0,
+          },
+        ]
+      }
+    >
+      <RCTScrollView
+        contentContainerStyle={
+          {
+            "flexGrow": 1,
+          }
+        }
+        keyboardShouldPersistTaps="handled"
+      >
+        <View>
+          <View
+            style={
+              {
+                "marginLeft": 16,
+                "marginRight": 16,
+                "marginTop": 32,
+              }
+            }
+            testID="UTAInfoEightScreenTestID"
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              The key components of your swing analysis are:
+
+            </Text>
+            <View
+              style={
+                {
+                  "flexBasis": "0%",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "marginLeft": 8,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "gap": 12,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  1
+                  .
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  Visual reference on video playback
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "marginLeft": 24,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  These are static and dynamic tracking lines that provide helpful reference frame-by-frame. From clubhead tracking to spine angle static/dynamic lines, these show how you are moving throughout the swing. See Down the Line and Face On visual reference for more information.
+                  
+
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                {
+                  "flexBasis": "0%",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "marginLeft": 8,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "gap": 12,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  2
+                  .
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  Swing Data
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "marginLeft": 24,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  SwingZen is the only system that delivers accurate measurements of club speed/ball speed in the world with only the use of your phone. There’s been extensive testing comparing our data to doppler systems with minimal variation.
+                  
+
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                {
+                  "flexBasis": "0%",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "marginLeft": 8,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "gap": 12,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  3
+                  .
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  AI Pro Analysis (available with paid subscription)
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "marginLeft": 24,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  Our AI analysis system has been designed by experienced PGA qualified professionals to break down the swing into multiple segments. Each checkpoint determines a specific frame in the swing that is relevant to that checkpoint and compares to the standard set by our instruction pros. If your position is good then great! If not, you will then have the information through Pro tips, Pro vs you, PGA instruction videos, and drills to correct that specific swing fault. 
+                  
+
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                {
+                  "flexBasis": "0%",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "marginLeft": 8,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "gap": 12,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  4
+                  .
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  AI-Enhanced Pro Lessons
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "marginLeft": 24,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  Our concept at SwingZen is not to replace the Pro instructor. Quite the opposite. We want to partner with PGA/LPGA pro instructors to provide a complete offering of tools to help you improve your game. Our goal is to provide a system that will allow the Pro to be able to teach through the app. They will then have all of the data and feedback that you have at your fingertips and much more.
+                  
+
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+  </RCTSafeAreaView>
+</BVLinearGradient>
+`;
