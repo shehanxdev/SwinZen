@@ -7,3 +7,4 @@ export * from './persistent-storage-service';
 export * from './permission-service';
 export * from './rest-service';
 export * from './toast-service';
+export * from './secure-auth-service';

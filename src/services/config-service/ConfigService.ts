@@ -24,8 +24,9 @@ export class ConfigService {
     return value;
   }
 
-  /** Reads an optional configuration parameter. If it is not configured, no error
-   *  will be thrown. */
+  /**
+   * Reads an optional configuration parameter. If it is not configured, no error will be thrown.
+   */
   public static getOptionalConfig<T = string>(key: string): T | undefined {
     return this.getConfigCallback?.(key) as T | undefined;
   }
