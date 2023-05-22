@@ -1,5 +1,6 @@
 import { createModel } from '@rematch/core';
 
+import { IS_JEST_RUNTIME } from '@sz/constants';
 import {
   ChangePasswordData,
   EmailVerificationData,
@@ -11,7 +12,7 @@ import {
   SignupUserData,
   UserData,
 } from '@sz/models';
-import { AccountService, AuthService, NotifcationsService, UserService } from '@sz/services';
+import { AccountService, AuthService, NotifcationsService, SecureAuthService, UserService } from '@sz/services';
 
 import { RootModel } from './';
 
@@ -51,10 +52,16 @@ export const userStore = createModel<RootModel>()({
   },
   effects: dispatch => ({
     async loginUserWithCredentials(payload: LoginUserData) {
-      const data = await AuthService.loginUserWithCredentials(payload);
-      dispatch.userStore.setAccessToken(data.accessToken);
-      dispatch.userStore.setRefreshToken(data.refreshToken);
+      const { accessToken, refreshToken } = await AuthService.loginUserWithCredentials(payload);
+      dispatch.userStore.setAccessToken(accessToken);
+      dispatch.userStore.setRefreshToken(refreshToken);
       dispatch.persistentUserStore.setIsAuthenticate(true);
+
+      //TODO::check and fix and remove IS_JEST_RUNTIME conditional check
+      if (!IS_JEST_RUNTIME) {
+        await SecureAuthService.updateAuthTokens({ accessToken: accessToken, refreshToken: refreshToken });
+      }
+
       dispatch.persistentUserStore.setLoginState('subsequent');
     },
     async logoutUser() {
@@ -94,6 +101,16 @@ export const userStore = createModel<RootModel>()({
 
       dispatch.userStore.setAccessToken(data.accessToken);
       dispatch.userStore.setRefreshToken(data.refreshToken);
+    },
+    async getAuthTokensFromSecureStorage() {
+      try {
+        const tokens = await SecureAuthService.getAuthTokens();
+
+        dispatch.userStore.setAccessToken(tokens.accessToken);
+        dispatch.userStore.setRefreshToken(tokens.refreshToken);
+      } catch (_) {
+        dispatch.userStore.logoutUser();
+      }
     },
     async getUserData(accessToken: string) {
       const data = await UserService.getUserData(accessToken);

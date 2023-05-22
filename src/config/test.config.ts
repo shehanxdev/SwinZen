@@ -64,3 +64,11 @@ jest.mock('@react-native-firebase/messaging', () => ({
     getToken: jest.fn(() => Promise.resolve('myMockToken')),
   })),
 }));
+
+jest.mock('react-native-keychain', () => {
+  return {
+    setGenericPassword: jest.fn(),
+    getGenericPassword: jest.fn(),
+    resetGenericPassword: jest.fn(),
+  };
+});
