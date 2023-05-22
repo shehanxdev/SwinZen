@@ -17,7 +17,7 @@ import {
 import { tw } from '@sz/config';
 import { Color, LoginErrorCodes, Route, TextVariant } from '@sz/constants';
 import { LoginFormValues } from '@sz/models';
-import { NavigationService, ToastService } from '@sz/services';
+import { NavigationService, SecureAuthService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { loginValidationSchema } from '@sz/utils';
 
@@ -55,6 +55,7 @@ export function LoginScreen() {
         ToastService.information({ message: 'Alert!', description: message });
 
         dispatch.userStore.setNextActionToken(nextActionToken);
+        await SecureAuthService.updateNextActionToken(nextActionToken);
 
         NavigationService.navigate(Route.RegisterEmailVerification, formInput.username);
       } else if (errorCode === LoginErrorCodes.OTPTooManyRequests) {
