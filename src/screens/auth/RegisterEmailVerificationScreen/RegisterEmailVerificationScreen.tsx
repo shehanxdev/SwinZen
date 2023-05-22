@@ -39,7 +39,7 @@ export function RegisterEmailVerificationScreen({ route }) {
 
   const onResend = async () => {
     try {
-      await dispatch.userStore.resendOtp({ username: username });
+      await dispatch.userStore.resendOtp({ username: username, otpType: OtpType.VERIFICATION });
       ToastService.success({ message: 'Success!', description: 'OTP resent successfully.' });
     } catch (error: any) {
       ToastService.error({ message: 'Failed!', description: error.data.message });

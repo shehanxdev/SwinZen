@@ -73,14 +73,14 @@ export class AuthService {
     }
   }
 
-  static async resendOtp(data: ResendOtpData) {
+  static async resendOtp(payload: ResendOtpData, headers: Pick<BaseRequestHeaders, 'x-auth'>) {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     try {
-      const response = await httpServiceInstance.postAnonymous<ApiResponse<ResendOtpResponse>, ApiErrorResponse>(
-        '/auth/resend-otp',
-        data,
-      );
+      const response = await httpServiceInstance.postAnonymousWithCustomHeaders<
+        ApiResponse<ResendOtpResponse>,
+        ApiErrorResponse
+      >('/auth/resend-otp', { ...headers }, payload);
 
       return response.data;
     } catch (error) {

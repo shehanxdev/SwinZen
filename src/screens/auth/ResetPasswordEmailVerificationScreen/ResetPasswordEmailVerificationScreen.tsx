@@ -40,7 +40,7 @@ export function ResetPasswordEmailVerificationScreen({ route }) {
 
   const onResend = async () => {
     try {
-      await dispatch.userStore.resendOtp({ username: email });
+      await dispatch.userStore.resendOtp({ username: email, otpType: OtpType.FORGOT_PASSWORD });
       ToastService.success({ message: 'Success!', description: 'OTP resent successfully.' });
     } catch (error: any) {
       ToastService.error({ message: 'Failed!', description: error.data.message });

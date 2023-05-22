@@ -1,6 +1,6 @@
 import { createModel } from '@rematch/core';
 
-import { IS_JEST_RUNTIME } from '@sz/constants';
+import { IS_JEST_RUNTIME, OtpType } from '@sz/constants';
 import {
   ChangePasswordData,
   EmailVerificationData,
@@ -65,6 +65,12 @@ export const userStore = createModel<RootModel>()({
     },
     async registerUser(payload: SignupUserData) {
       const { nextActionToken } = await AuthService.registerUser(payload);
+
+      //TODO::check and fix and remove IS_JEST_RUNTIME conditional check
+      if (!IS_JEST_RUNTIME) {
+        await SecureAuthService.updateNextActionToken(nextActionToken);
+      }
+
       dispatch.userStore.setNextActionToken(nextActionToken);
       dispatch.persistentUserStore.setLoginState('initial');
     },
@@ -82,9 +88,23 @@ export const userStore = createModel<RootModel>()({
 
       //setting up the new action token provided by the email verification API
       dispatch.userStore.setNextActionToken(emailVerificationData.nextActionToken);
+
+      //Wo don't have to store new action token provided by the email verification API in forget password flow in secure storage
+      if (payload.otpType === OtpType.VERIFICATION)
+        await SecureAuthService.updateNextActionToken(emailVerificationData.nextActionToken);
     },
-    async resendOtp(payload: ResendOtpData) {
-      await AuthService.resendOtp(payload);
+    async resendOtp(payload: ResendOtpData, state) {
+      //current next action token
+      const { nextActionToken } = state.userStore;
+
+      const resentOTPData = await AuthService.resendOtp(payload, { 'x-auth': nextActionToken });
+
+      //setting up the new action token provided by the resend OTP API
+      dispatch.userStore.setNextActionToken(resentOTPData.nextActionToken);
+
+      //Wo don't have to store new action token provided by the resend token API in forget password flow in secure storage
+      if (payload.otpType === OtpType.VERIFICATION)
+        await SecureAuthService.updateNextActionToken(resentOTPData.nextActionToken);
     },
     async forgetPassword(payload: ForgetPasswordData) {
       const { nextActionToken } = await AuthService.forgetPassword(payload);
@@ -113,6 +133,17 @@ export const userStore = createModel<RootModel>()({
       } catch (_) {
         dispatch.userStore.logoutUser();
         await SecureAuthService.clearSecureStorage();
+      }
+    },
+
+    async getnextActionFromSecureStorage() {
+      let nextActionToken = null;
+      try {
+        const token = await SecureAuthService.getNextActionToken();
+        dispatch.userStore.setNextActionToken(token);
+        nextActionToken = token;
+      } catch (_) {
+        dispatch.userStore.setNextActionToken(nextActionToken ?? null);
       }
     },
   }),

@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { View } from 'react-native';
 
@@ -14,7 +14,7 @@ import {
   TextField,
 } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, Route, TextVariant } from '@sz/constants';
+import { Color, LoginErrorCodes, Route, TextVariant } from '@sz/constants';
 import { LoginFormValues } from '@sz/models';
 import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
@@ -39,6 +39,10 @@ export function LoginScreen() {
     //TODO:: handle error
   };
 
+  useEffect(() => {
+    dispatch.userStore.getnextActionFromSecureStorage();
+  }, []);
+
   const onLoginFormValid: SubmitHandler<LoginFormValues> = async formInput => {
     try {
       await dispatch.userStore.loginUserWithCredentials(formInput);
@@ -47,13 +51,13 @@ export function LoginScreen() {
     } catch (error: any) {
       const { errorCode, message, nextActionToken } = error.data;
 
-      if (errorCode === 'INACTIVE_USER') {
+      if (errorCode === LoginErrorCodes.InactiveUser) {
         ToastService.information({ message: 'Alert!', description: message });
 
         dispatch.userStore.setNextActionToken(nextActionToken);
 
         NavigationService.navigate(Route.RegisterEmailVerification, formInput.username);
-      } else if (errorCode === 'OTP_TO_MANY_REQUEST') {
+      } else if (errorCode === LoginErrorCodes.OTPTooManyRequests) {
         ToastService.information({
           message: 'Alert!',
           description: 'The user account is in in-activated status, Please verify the email address first to sign in', //This same message should come from the BE side.

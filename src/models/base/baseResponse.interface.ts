@@ -1,3 +1,5 @@
+import { LoginErrorCodes } from '@sz/constants';
+
 /**
  * The common structure for all API responses.
  */
@@ -27,6 +29,6 @@ export interface ApiErrorResponse<T = string> extends BaseResponse {
   error: T;
 
   //TODO::These error related data will be recieved only within the auth flow requiests. Create domain specific ApiErrorResponse
-  errorCode?: 'INACTIVE_USER' | 'OTP_TO_MANY_REQUEST'; //TODO::extract to a model
+  errorCode?: LoginErrorCodes;
   nextActionToken?: string;
 }
