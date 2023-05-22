@@ -104,11 +104,10 @@ export class AuthService {
   }
 
   static async resetPassword(data: ResetPasswordData, headers: Pick<BaseRequestHeaders, 'x-auth'>) {
-    const { email, password } = data;
+    const { password } = data;
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     const payload: ResetPasswordRequestData = {
-      email: email,
       password: password,
     };
 

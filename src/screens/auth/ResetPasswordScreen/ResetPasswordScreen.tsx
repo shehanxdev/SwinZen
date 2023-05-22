@@ -13,15 +13,13 @@ import { resetPasswordValidationSchema } from '@sz/utils';
 
 import { BaseAuthScreen } from '../components/BaseAuthScreen';
 
-export function ResetPasswordScreen({ route }) {
+export function ResetPasswordScreen() {
   const {
     control,
     handleSubmit,
     setFocus,
     formState: { isSubmitted, errors },
   } = useForm<ResetPasswordFormValues>({ mode: 'onChange', resolver: yupResolver(resetPasswordValidationSchema) });
-  const email = route.params.params.email;
-
   const dispatch = useDispatch();
 
   const onResetPasswordFormInvalid: SubmitErrorHandler<ResetPasswordFormValues> = () => {
@@ -32,7 +30,6 @@ export function ResetPasswordScreen({ route }) {
   const onResetPasswordFormValid: SubmitHandler<ResetPasswordFormValues> = async formInput => {
     try {
       await dispatch.userStore.resetPassword({
-        email: email,
         password: formInput.password,
       });
 
