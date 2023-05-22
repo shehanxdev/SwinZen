@@ -5,7 +5,7 @@ import { View } from 'react-native';
 
 import { AccountLockIcon, Button, PasswordField } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color } from '@sz/constants';
+import { Color, InputFieldConstraints } from '@sz/constants';
 import { ChangePasswordFormValues } from '@sz/models';
 import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
@@ -54,7 +54,7 @@ export function ChangePasswordScreen() {
                   ref={ref}
                   label="current password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={256}
+                  maxLength={InputFieldConstraints.passwordMaxLength}
                   value={value}
                   onChangeText={onChange}
                   onSubmitEditing={() => setFocus('newPassword')}
@@ -76,7 +76,7 @@ export function ChangePasswordScreen() {
                   ref={ref}
                   label="New password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={256}
+                  maxLength={InputFieldConstraints.passwordMaxLength}
                   value={value}
                   onChangeText={onChange}
                   onSubmitEditing={() => setFocus('confirmNewPassword')}
@@ -97,7 +97,7 @@ export function ChangePasswordScreen() {
                 ref={ref}
                 label="Confirm password"
                 leftIcon={<AccountLockIcon />}
-                maxLength={250}
+                maxLength={InputFieldConstraints.passwordMaxLength}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
