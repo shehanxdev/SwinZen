@@ -16,7 +16,7 @@ import {
   TextField,
 } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, Route, TextAlignment, TextVariant } from '@sz/constants';
+import { Color, InputFieldConstraints, Route, TextAlignment, TextVariant } from '@sz/constants';
 import { SignupFormValues } from '@sz/models';
 import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
@@ -73,7 +73,7 @@ export function SignupScreen() {
                   ref={ref}
                   label="Your name"
                   leftIcon={<ProfileIcon />}
-                  maxLength={256}
+                  maxLength={InputFieldConstraints.nameMaxLength}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -95,7 +95,7 @@ export function SignupScreen() {
                   ref={ref}
                   label="Your email"
                   leftIcon={<MailIcon />}
-                  maxLength={256}
+                  maxLength={InputFieldConstraints.nameMaxLength}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -118,7 +118,7 @@ export function SignupScreen() {
                   ref={ref}
                   label="Your password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={256}
+                  maxLength={InputFieldConstraints.passwordMaxLength}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -140,7 +140,7 @@ export function SignupScreen() {
                   ref={ref}
                   label="Please confirm your password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={256}
+                  maxLength={InputFieldConstraints.passwordMaxLength}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}

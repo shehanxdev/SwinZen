@@ -5,7 +5,7 @@ import { View } from 'react-native';
 
 import { AccountLockIcon, Button, PasswordField, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, Route, TextVariant } from '@sz/constants';
+import { Color, InputFieldConstraints, Route, TextVariant } from '@sz/constants';
 import { ResetPasswordFormValues } from '@sz/models';
 import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
@@ -66,7 +66,7 @@ export function ResetPasswordScreen({ route }) {
                   ref={ref}
                   label="Your new password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={256}
+                  maxLength={InputFieldConstraints.passwordMaxLength}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -87,7 +87,7 @@ export function ResetPasswordScreen({ route }) {
                 ref={ref}
                 label="Confirm your new password"
                 leftIcon={<AccountLockIcon />}
-                maxLength={256}
+                maxLength={InputFieldConstraints.passwordMaxLength}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
