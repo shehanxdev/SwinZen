@@ -8,6 +8,7 @@ definitions:
     sonar: ~/.sonar/cache
   steps:
     - step: &unit-tests
+        size: 2x
         name: Run Unit Tests
         image: node:16
         script:
