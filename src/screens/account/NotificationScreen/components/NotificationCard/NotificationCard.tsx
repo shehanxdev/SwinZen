@@ -1,5 +1,3 @@
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
 import React from 'react';
 import { GestureResponderEvent, TouchableOpacity, View } from 'react-native';
 
@@ -24,9 +22,6 @@ export function NotificationCard({
   time,
   handleOnPress,
 }: NotificationCardProps) {
-  // dayjs plagin for relative time calculation
-  dayjs.extend(relativeTime);
-
   return (
     <TouchableOpacity testID={testID} style={tw`mx-4`} onPress={handleOnPress}>
       <View style={tw`flex-row mt-4 gap-3`}>
