@@ -1,5 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import React, { useEffect } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
+import React from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { View } from 'react-native';
 
@@ -39,9 +40,9 @@ export function LoginScreen() {
     //TODO:: handle error
   };
 
-  useEffect(() => {
+  useFocusEffect(() => {
     dispatch.userStore.getnextActionFromSecureStorage();
-  }, []);
+  });
 
   const onLoginFormValid: SubmitHandler<LoginFormValues> = async formInput => {
     try {

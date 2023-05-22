@@ -86,12 +86,10 @@ export const userStore = createModel<RootModel>()({
 
       const emailVerificationData = await AuthService.emailVerification(payload, { 'x-auth': nextActionToken });
 
-      //setting up the new action token provided by the email verification API
-      dispatch.userStore.setNextActionToken(emailVerificationData.nextActionToken);
-
       //Wo don't have to store new action token provided by the email verification API in forget password flow in secure storage
-      if (payload.otpType === OtpType.VERIFICATION)
-        await SecureAuthService.updateNextActionToken(emailVerificationData.nextActionToken);
+      if (payload.otpType === OtpType.FORGOT_PASSWORD)
+        //setting up the new action token provided by the email verification API
+        dispatch.userStore.setNextActionToken(emailVerificationData.nextActionToken);
     },
     async resendOtp(payload: ResendOtpData, state) {
       //current next action token
