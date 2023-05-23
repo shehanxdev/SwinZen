@@ -27,6 +27,7 @@ import {
   MailIconSvg,
   MoveLeftArrowSvg,
   MoveRightArrowSvg,
+  NextIconSvg,
   NotificationDotSvg,
   NotificationTimerSvg,
   PasswordHideEyeSvg,
@@ -205,4 +206,8 @@ export function MoveLeftArrowIcon({ color = Color.Neutral.White, width = 15, hei
 
 export function MoveRightArrowIcon({ color = Color.Neutral.White, width = 15, height = 15 }: SvgIconProps) {
   return <MoveRightArrowSvg width={width} height={height} fill={color} />;
+}
+
+export function NextIcon({ color = Color.Neutral.Sz100, width = 12, height = 20 }: SvgIconProps) {
+  return <NextIconSvg width={width} height={height} fill={color} />;
 }
