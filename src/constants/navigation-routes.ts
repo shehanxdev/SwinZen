@@ -1,4 +1,13 @@
 export enum Route {
+  AboutSwignzenInfoEight = 'about-swignzen-info-eight',
+  AboutSwignzenInfoFive = 'about-swignzen-info-five',
+  AboutSwignzenInfoFour = 'about-swignzen-info-four',
+  AboutSwignzenInfoOne = 'about-swignzen-info-one',
+  AboutSwignzenInfoSeven = 'about-swignzen-info-seven',
+  AboutSwignzenInfoSix = 'about-swignzen-info-six',
+  AboutSwignzenInfoThree = 'about-swignzen-info-three',
+  AboutSwignzenInfoTwo = 'about-swignzen-info-two',
+
   AboutUs = 'about-us',
   AccountStack = 'account-stack',
   AnalysisTab = 'analysis-tab',

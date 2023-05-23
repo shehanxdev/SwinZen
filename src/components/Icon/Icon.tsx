@@ -39,6 +39,9 @@ import {
   SecurityIconSvg,
   SettingsMiniSvg,
   SquareTickSvg,
+  StepsOneIconSvg,
+  StepsTwoFirstSvg,
+  StepsTwoSecondSvg,
   SwingZenLogoSvg,
   UploadSvg,
 } from '@sz/assets';
@@ -210,4 +213,16 @@ export function MoveRightArrowIcon({ color = Color.Neutral.White, width = 15, he
 
 export function NextIcon({ color = Color.Neutral.Sz100, width = 12, height = 20 }: SvgIconProps) {
   return <NextIconSvg width={width} height={height} fill={color} />;
+}
+
+export function StepsOneIcon({ color = Color.Neutral.White, width = 358, height = 193 }: SvgIconProps) {
+  return <StepsOneIconSvg width={width} height={height} fill={color} />;
+}
+
+export function StepsTwoFirstIcon({ color = Color.Neutral.White, width = 358, height = 215 }: SvgIconProps) {
+  return <StepsTwoFirstSvg width={width} height={height} fill={color} />;
+}
+
+export function StepsTwoSecondIcon({ color = Color.Neutral.White, width = 358, height = 215 }: SvgIconProps) {
+  return <StepsTwoSecondSvg width={width} height={height} fill={color} />;
 }

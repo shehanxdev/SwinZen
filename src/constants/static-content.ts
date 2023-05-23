@@ -25,6 +25,150 @@ export const LibrarySliderData = {
   ],
 };
 
+export const AboutSZInfoFourPoints = [
+  {
+    title: 'Swing Plane Line:',
+    body: 'Provides a visual reference to your club shaft at ½ backswing and downswing.',
+  },
+  {
+    title: 'Spine Angle:',
+    body: 'Compares the blue static line that is set at the address to the dynamic white line that moves with your spine as you progress through the swing.',
+  },
+  {
+    title: 'Clubhead Tracking:',
+    body: 'Shows the club path throughout the swing. Changes colors if your clubhead crosses the target line which causes many problems, such as a slice.',
+  },
+  {
+    title: 'Target Line:',
+    body: 'Provides a visual reference to the target line. This is set by the phone position as it relates to the ball position. This is why being properly positioned when filming is necessary.',
+  },
+  {
+    title: 'Ball Tracking:',
+    body: 'Shows ball path as related to the target line.',
+  },
+];
+
+export const AboutSZInfoFivePoints = [
+  {
+    title: 'Setup/Back Knee Angle:',
+    body: 'Measures angle of back knee. If too straight or too bent at address.',
+  },
+  {
+    title: 'Setup/Wrist Angle:',
+    body: 'Measures angle of arms and club shaft at address.',
+  },
+  {
+    title: 'Setup/Posture:',
+    body: 'Measures angle of proper posture and spine tilt at address.',
+  },
+  {
+    title: 'Backswing/Swing Plane:',
+    body: 'Determines if the club shaft is on the proper plane at ½ backswing.',
+  },
+  {
+    title: 'Backswing/Stable Back Leg:',
+    body: 'Tracks the angle of the back leg thru backswing to determine if excessive change.',
+  },
+  {
+    title: 'Backswing/Stable Spine:',
+    body: 'Tracks the spine angle thru backswing to determine if excessive change.',
+  },
+  {
+    title: 'Backswing/Shoulder Tilt:',
+    body: 'Tracks the shoulder tilt thru backswing to determine if shoulders are at proper angle and not too steep.',
+  },
+  {
+    title: 'Downswing/Swing Plane:',
+    body: 'Determines if the club shaft is on the proper plane at ½ downswing.',
+  },
+  {
+    title: 'Downswing/Club Path:',
+    body: 'Tracks clubhead path thru impact to determine if inside out or outside in.',
+  },
+  {
+    title: 'Downswing/Stable Spine:',
+    body: 'Tracks the spine angle thru downswing to determine if excessive change.',
+  },
+];
+
+export const AboutSZInfoSixPoints = [
+  {
+    title: 'Weight Transfer Reference Lines:',
+    body: 'Static blue lines that are set to address ankle positions and head positions. Allows users to see how their weight transfer and head movement is happening throughout the swing.',
+  },
+  {
+    title: 'Ball Position Line:',
+    body: 'Static line at ball position. Shows ball position at address. The position will vary depending on the position of the camera. This is why your camera position should be directly in front of and square to the golfer.',
+  },
+  {
+    title: 'Clubhead Tracking:',
+    body: 'Shows the club path throughout the swing.',
+  },
+  {
+    title: 'Head Position:',
+    body: 'Dynamic white circle that shows the position of the head throughout the swing.',
+  },
+];
+
+export const AboutSZInfoSevenPoints = [
+  {
+    title: 'Setup/Hips Centered:',
+    body: 'Determines if hips are properly positioned in setup between your feet positions at address.',
+  },
+  {
+    title: 'Setup/Spine Tilt:',
+    body: 'Measures proper spine tilt away from the target based on driver or iron shot at address.',
+  },
+  {
+    title: 'Setup/Shoulder Tilt:',
+    body: 'Measures proper shoulder tilt away from target at address position.',
+  },
+  {
+    title: 'Backswing/Takeaway:',
+    body: 'Determines if the club and arms are taken back in one piece during initial movement in backswing.',
+  },
+  {
+    title: 'Backswing/Lead Arm:',
+    body: 'Tracks the angle of lead arm bend during the backswing to determine if excessive bend.',
+  },
+  {
+    title: 'Backswing/Hip Sway:',
+    body: 'Tracks position of hips thru backswing to determine proper and efficient movement.',
+  },
+  {
+    title: 'Backswing/Vertical Head Movement:',
+    body: 'Tracks position of head thru backswing to determine proper vertical movement.',
+  },
+  {
+    title: 'Backswing/Lateral Head Movement:',
+    body: 'Tracks position of head thru backswing to determine proper lateral movement.',
+  },
+  {
+    title: 'Backswing/Shoulder Tilt:',
+    body: 'Tracks shoulder tilt thru backswing to determine proper and efficient movement.',
+  },
+  {
+    title: 'Backswing/Full Backswing:',
+    body: 'Tracks clubhead to determine if too far rotation in backswing.',
+  },
+  {
+    title: 'Downswing/Club Lag Release Point:',
+    body: 'Tracks the club lag angle to determine when the angle is released at the most efficient point for power and consistency.',
+  },
+  {
+    title: 'Downswing/Vertical Head Movement:',
+    body: 'Tracks position of head thru downswing to determine proper vertical movement.',
+  },
+  {
+    title: 'Downswing/Lateral Head Movement:',
+    body: 'Tracks position of head thru downswing to determine proper lateral movement.',
+  },
+  {
+    title: 'Downswing/Weight Transfer:',
+    body: 'Tracks the body movement thru impact to determine proper and efficient movement.',
+  },
+];
+
 export const UTAInfoSevenPoints = [
   {
     title: 'Multiple Persons Detected in the Frame:',
@@ -63,7 +207,7 @@ export const UTAInfoEightPoints = [
   },
   {
     title: 'AI Pro Analysis (available with paid subscription)',
-    body: 'Our AI analysis system has been designed by experienced PGA qualified professionals to break down the swing into multiple segments. Each checkpoint determines a specific frame in the swing that is relevant to that checkpoint and compares to the standard set by our instruction pros. If your position is good then great! If not, you will then have the information through Pro tips, Pro vs you, PGA instruction videos, and drills to correct that specific swing fault. ',
+    body: 'Our AI analysis system has been designed by experienced PGA qualified professionals to break down the swing into multiple segments. Each checkpoint determines a specific frame in the swing that is relevant to that checkpoint and compares to the standard set by our instruction pros. If your position is good then great! If not, you will then have the information through Pro tips, Pro vs you, PGA instruction videos, and drills to correct that specific swing fault.',
   },
   {
     title: 'AI-Enhanced Pro Lessons',

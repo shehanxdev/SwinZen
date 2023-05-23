@@ -1,0 +1,499 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ASZInfoFive Screen should render ASZInfoFive Screen correctly 1`] = `
+<BVLinearGradient
+  colors={
+    [
+      4279917603,
+      4278984207,
+      4278650631,
+    ]
+  }
+  endPoint={
+    {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    {
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "position": "relative",
+    }
+  }
+>
+  <Image
+    resizeMode="cover"
+    source={
+      {
+        "testUri": "../../../src/assets/images/grassBackground.jpg",
+      }
+    }
+    style={
+      {
+        "opacity": 0.1,
+        "position": "absolute",
+      }
+    }
+  />
+  <RCTSafeAreaView
+    style={
+      {
+        "height": "100%",
+        "paddingTop": 50,
+      }
+    }
+  >
+    <RCTScrollView
+      contentContainerStyle={
+        {
+          "flexGrow": 1,
+        }
+      }
+      keyboardShouldPersistTaps="handled"
+    >
+      <View>
+        <View
+          style={
+            {
+              "marginLeft": 16,
+              "marginRight": 16,
+              "marginTop": 32,
+            }
+          }
+          testID="ASZInfoFiveScreenTestID"
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#FFFFFF",
+                  "lineHeight": 28,
+                },
+                {
+                  "fontFamily": "SourceSansPro-SemiBold",
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                  "textAlign": "auto",
+                },
+              ]
+            }
+          >
+            Note this is available only with paid subscription.
+
+          </Text>
+          <View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Setup/Back Knee Angle:
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Measures angle of back knee. If too straight or too bent at address.
+              
+
+            </Text>
+          </View>
+          <View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Setup/Wrist Angle:
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Measures angle of arms and club shaft at address.
+              
+
+            </Text>
+          </View>
+          <View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Setup/Posture:
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Measures angle of proper posture and spine tilt at address.
+              
+
+            </Text>
+          </View>
+          <View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Backswing/Swing Plane:
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Determines if the club shaft is on the proper plane at ½ backswing.
+              
+
+            </Text>
+          </View>
+          <View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Backswing/Stable Back Leg:
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Tracks the angle of the back leg thru backswing to determine if excessive change.
+              
+
+            </Text>
+          </View>
+          <View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Backswing/Stable Spine:
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Tracks the spine angle thru backswing to determine if excessive change.
+              
+
+            </Text>
+          </View>
+          <View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Backswing/Shoulder Tilt:
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Tracks the shoulder tilt thru backswing to determine if shoulders are at proper angle and not too steep.
+              
+
+            </Text>
+          </View>
+          <View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Downswing/Swing Plane:
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Determines if the club shaft is on the proper plane at ½ downswing.
+              
+
+            </Text>
+          </View>
+          <View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Downswing/Club Path:
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Tracks clubhead path thru impact to determine if inside out or outside in.
+              
+
+            </Text>
+          </View>
+          <View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Downswing/Stable Spine:
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Tracks the spine angle thru downswing to determine if excessive change.
+              
+
+            </Text>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </RCTSafeAreaView>
+</BVLinearGradient>
+`;

@@ -14,6 +14,30 @@ interface LinksSliderProps {
 export function LinksSlider({ sliderData }: LinksSliderProps) {
   const onTopicPress = data => {
     switch (data) {
+      case LibrarySliderData.aboutSwingZen[0][0]:
+        NavigationService.navigate(Route.AboutSwignzenInfoOne);
+        break;
+      case LibrarySliderData.aboutSwingZen[0][1]:
+        NavigationService.navigate(Route.AboutSwignzenInfoTwo);
+        break;
+      case LibrarySliderData.aboutSwingZen[0][2]:
+        NavigationService.navigate(Route.AboutSwignzenInfoThree);
+        break;
+      case LibrarySliderData.aboutSwingZen[0][3]:
+        NavigationService.navigate(Route.AboutSwignzenInfoFour);
+        break;
+      case LibrarySliderData.aboutSwingZen[0][4]:
+        NavigationService.navigate(Route.AboutSwignzenInfoFive);
+        break;
+      case LibrarySliderData.aboutSwingZen[1][0]:
+        NavigationService.navigate(Route.AboutSwignzenInfoSix);
+        break;
+      case LibrarySliderData.aboutSwingZen[1][1]:
+        NavigationService.navigate(Route.AboutSwignzenInfoSeven);
+        break;
+      case LibrarySliderData.aboutSwingZen[1][2]:
+        NavigationService.navigate(Route.AboutSwignzenInfoEight);
+        break;
       case LibrarySliderData.usingTheApp[0][0]:
         NavigationService.navigate(Route.UsingTheAppInfoOne);
         break;
