@@ -5,9 +5,15 @@ import { NotificationDataType } from '@sz/models';
 import { getSectionList } from '../notification.helpers';
 
 describe('notification helper test cases', () => {
+  const mockDateString = '2023-05-15';
+
+  beforeEach(() => {
+    jest.useFakeTimers().setSystemTime(new Date(mockDateString));
+  });
+
   describe('getSectionList function', () => {
     const getModifiedResult = (dataArray: NotificationDataType[]) => renderHook(() => getSectionList(dataArray));
-    const newDate = new Date();
+    const newDate = new Date(mockDateString);
     const timeZoneName = new Intl.DateTimeFormat().resolvedOptions().timeZone;
     const options = { timeZone: timeZoneName };
     const dateInTimeZone = newDate.toLocaleString('en-US', options);

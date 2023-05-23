@@ -43,7 +43,7 @@ const commonDrawerContents: DrawerContent[] = [
 export function CustomDrawer() {
   const dispatch = useDispatch();
 
-  const Logout = async (): Promise<void> => {
+  const logout = async (): Promise<void> => {
     try {
       await dispatch.userStore.logoutUser();
       await SecureAuthService.clearSecureStorage();
@@ -66,9 +66,9 @@ export function CustomDrawer() {
               <CrossIcon />
             </TouchableOpacity>
           </View>
-          {commonDrawerContents.map((content, index) => (
+          {commonDrawerContents.map(content => (
             <DrawerItem
-              key={index}
+              key={content.route}
               title={content.title}
               icon={content.icon}
               onPress={() => {
@@ -78,7 +78,7 @@ export function CustomDrawer() {
             />
           ))}
           {/* NOTE::Edge case for logout */}
-          <DrawerItem title="Logout" icon={<DrawerLogoutIcon />} onPress={Logout} />
+          <DrawerItem title="Logout" icon={<DrawerLogoutIcon />} onPress={logout} />
         </DrawerContentScrollView>
       </BlurView>
     </View>
