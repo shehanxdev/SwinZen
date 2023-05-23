@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UTAInfoSix Screen should render UTAInfoSix Screen correctly 1`] = `
+<BVLinearGradient
+  colors={
+    [
+      4279917603,
+      4278984207,
+      4278650631,
+    ]
+  }
+  endPoint={
+    {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    {
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "position": "relative",
+    }
+  }
+>
+  <Image
+    resizeMode="cover"
+    source={
+      {
+        "testUri": "../../../src/assets/images/grassBackground.jpg",
+      }
+    }
+    style={
+      {
+        "opacity": 0.1,
+        "position": "absolute",
+      }
+    }
+  />
+  <RCTSafeAreaView
+    style={
+      {
+        "height": "100%",
+        "paddingTop": 50,
+      }
+    }
+  >
+    <RCTScrollView
+      contentContainerStyle={
+        {
+          "flexGrow": 1,
+        }
+      }
+      keyboardShouldPersistTaps="handled"
+    >
+      <View>
+        <View
+          style={
+            {
+              "marginLeft": 16,
+              "marginRight": 16,
+              "marginTop": 32,
+            }
+          }
+          testID="UTAInfoSixScreenTestID"
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#FFFFFF",
+                  "lineHeight": 28,
+                },
+                {
+                  "fontFamily": "SourceSansPro-Regular",
+                  "fontSize": 18,
+                  "fontWeight": "normal",
+                  "textAlign": "auto",
+                },
+              ]
+            }
+          >
+            Did your video come back as successfully reviewed?
+          
+From the Home Page of the app, you can select the dark green button toward the bottom of the screen that says “Video Uploads.”
+          
+Each successful review will show a green overlay, indicating that our system has properly analyzed the video and has feedback for you to review.
+          
+Simply tap on the center of the video, and it will take you to the video’s swing feedback report.
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
+  </RCTSafeAreaView>
+</BVLinearGradient>
+`;

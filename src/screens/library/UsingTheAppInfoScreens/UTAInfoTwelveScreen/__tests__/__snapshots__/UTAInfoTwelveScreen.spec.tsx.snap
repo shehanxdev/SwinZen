@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UTAInfoTwelve Screen should render UTAInfoTwelve Screen correctly 1`] = `
+<BVLinearGradient
+  colors={
+    [
+      4279917603,
+      4278984207,
+      4278650631,
+    ]
+  }
+  endPoint={
+    {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    {
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "position": "relative",
+    }
+  }
+>
+  <Image
+    resizeMode="cover"
+    source={
+      {
+        "testUri": "../../../src/assets/images/grassBackground.jpg",
+      }
+    }
+    style={
+      {
+        "opacity": 0.1,
+        "position": "absolute",
+      }
+    }
+  />
+  <RCTSafeAreaView
+    style={
+      {
+        "height": "100%",
+        "paddingTop": 50,
+      }
+    }
+  >
+    <RCTScrollView
+      contentContainerStyle={
+        {
+          "flexGrow": 1,
+        }
+      }
+      keyboardShouldPersistTaps="handled"
+    >
+      <View>
+        <View
+          style={
+            {
+              "marginLeft": 16,
+              "marginRight": 16,
+              "marginTop": 32,
+            }
+          }
+          testID="UTAInfoTwelveScreenTestID"
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#FFFFFF",
+                  "lineHeight": 28,
+                },
+                {
+                  "fontFamily": "SourceSansPro-Regular",
+                  "fontSize": 18,
+                  "fontWeight": "normal",
+                  "textAlign": "auto",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              AI Pro Analysis
+               
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                (available with paid subscription)
+              </Text>
+            </Text>
+            
+Our AI analysis system has been designed by experienced PGA qualified professionals to break down the swing into multiple segments. Each checkpoint determines a specific frame in the swing that is relevant to that checkpoint and compares it to the standard set by our Instruction Pros. If your position is good, then great! If not, you will then have the information through AI Pro Tips, Pro vs You, PGA instruction videos, and drills to correct that specific swing fault.
+
+
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              AI-Pro Tip Video Instructions
+            </Text>
+            
+There’s an extensive library of video tutorials that go into all aspects of the game from the mental game, putting, and short game.
+          
+Check it out to improve your scores on the course.
+
+
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              AI-Pro Tip Comparison - You versus Pro
+            </Text>
+            
+It is great to be able to see what a correct position would look like.
+          
+SwingZen delivers a comparison screenshot of what a pro’s position looks like at that particular point in the swing.
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
+  </RCTSafeAreaView>
+</BVLinearGradient>
+`;

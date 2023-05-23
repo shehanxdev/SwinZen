@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UTAInfoTwo Screen should render UTAInfoTwo Screen correctly 1`] = `
+<BVLinearGradient
+  colors={
+    [
+      4279917603,
+      4278984207,
+      4278650631,
+    ]
+  }
+  endPoint={
+    {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    {
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "position": "relative",
+    }
+  }
+>
+  <Image
+    resizeMode="cover"
+    source={
+      {
+        "testUri": "../../../src/assets/images/grassBackground.jpg",
+      }
+    }
+    style={
+      {
+        "opacity": 0.1,
+        "position": "absolute",
+      }
+    }
+  />
+  <RCTSafeAreaView
+    style={
+      {
+        "height": "100%",
+        "paddingTop": 50,
+      }
+    }
+  >
+    <RCTScrollView
+      contentContainerStyle={
+        {
+          "flexGrow": 1,
+        }
+      }
+      keyboardShouldPersistTaps="handled"
+    >
+      <View>
+        <View
+          style={
+            {
+              "marginLeft": 16,
+              "marginRight": 16,
+              "marginTop": 32,
+            }
+          }
+          testID="UTAInfoTwoScreenTestID"
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#FFFFFF",
+                  "lineHeight": 28,
+                },
+                {
+                  "fontFamily": "SourceSansPro-Regular",
+                  "fontSize": 18,
+                  "fontWeight": "normal",
+                  "textAlign": "auto",
+                },
+              ]
+            }
+          >
+            Our AI programming requires the system to be able to identify and differentiate a golfer, club, and ball from the surrounding environment.
+          
+Usually, the driving range or course provides the least amount of background distractions and usually has better lighting conditions than indoors.
+          
+You can have good results outdoors and not be at a course or driving range. The only thing that is necessary is to minimize the amount of clutter in the background and shoot in good lighting conditions.
+
+
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Ideal Outdoor Shooting
+            </Text>
+            
+An example of an ideal shooting condition outdoors would be in a wide-open green space with nothing behind the golfer, ideally with no other people or balls in the shot. That being said, in life few things are ideal, so the system is trained to ignore the distant background.
+
+
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Ideal Indoor Shooting
+            </Text>
+            
+You can similarly shoot indoors, but a major problem with indoor environments can be the lack of space to shoot the proper distance from the ball. Not having the proper distance from the ball cuts off the range of motion of a full swing, which means our system cannot pick up those frames when the ball and club leave the perimeters of the camera shot.
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
+  </RCTSafeAreaView>
+</BVLinearGradient>
+`;

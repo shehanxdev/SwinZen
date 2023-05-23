@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UTAInfoThree Screen should render UTAInfoThree Screen correctly 1`] = `
+<BVLinearGradient
+  colors={
+    [
+      4279917603,
+      4278984207,
+      4278650631,
+    ]
+  }
+  endPoint={
+    {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    {
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "position": "relative",
+    }
+  }
+>
+  <Image
+    resizeMode="cover"
+    source={
+      {
+        "testUri": "../../../src/assets/images/grassBackground.jpg",
+      }
+    }
+    style={
+      {
+        "opacity": 0.1,
+        "position": "absolute",
+      }
+    }
+  />
+  <RCTSafeAreaView
+    style={
+      {
+        "height": "100%",
+        "paddingTop": 50,
+      }
+    }
+  >
+    <RCTScrollView
+      contentContainerStyle={
+        {
+          "flexGrow": 1,
+        }
+      }
+      keyboardShouldPersistTaps="handled"
+    >
+      <View>
+        <View
+          style={
+            {
+              "marginLeft": 16,
+              "marginRight": 16,
+              "marginTop": 32,
+            }
+          }
+          testID="UTAInfoThreeScreenTestID"
+        >
+          <Text
+            style={
+              [
+                {
+                  "color": "#FFFFFF",
+                  "lineHeight": 28,
+                },
+                {
+                  "fontFamily": "SourceSansPro-Regular",
+                  "fontSize": 18,
+                  "fontWeight": "normal",
+                  "textAlign": "auto",
+                },
+              ]
+            }
+          >
+            Vibrant colors also can help with indoor (and even outdoor) shooting.
+          
+We have provided a “hack” that can help improve the results by training the system to recognize bright fluorescent colors on the clubhead and ball.
+          
+If you use vibrant tape on the clubhead and a vibrant colored ball you can get better results in marginal conditions, such as bad lighting. In most situations this isn’t necessary.
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
+  </RCTSafeAreaView>
+</BVLinearGradient>
+`;
