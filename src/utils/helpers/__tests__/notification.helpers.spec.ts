@@ -6,12 +6,6 @@ import { Notification } from '@sz/models';
 import { getSectionList } from '../notification.helpers';
 
 describe('notification helper test cases', () => {
-  const mockDateString = '2023-05-15';
-
-  beforeEach(() => {
-    jest.useFakeTimers().setSystemTime(new Date(mockDateString));
-  });
-
   describe('getSectionList function', () => {
     const getModifiedResult = (dataArray: Notification[]) => renderHook(() => getSectionList(dataArray));
     const mockId = '12345';
