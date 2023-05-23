@@ -206,8 +206,18 @@ export class NavigationService {
           },
         };
         break;
+      case Route.GolfTips:
+        navRoute = Route.LibraryStack;
+        navParams = {
+          screen: Route.GolfTips,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
       case Route.UsingTheAppInfoOne:
-        navRoute = Route.InfoStack;
+        navRoute = Route.LibraryStack;
         navParams = {
           screen: Route.UsingTheAppInfoOne,
           params: {
@@ -217,7 +227,7 @@ export class NavigationService {
         };
         break;
       case Route.UsingTheAppInfoTwo:
-        navRoute = Route.InfoStack;
+        navRoute = Route.LibraryStack;
         navParams = {
           screen: Route.UsingTheAppInfoTwo,
           params: {
@@ -227,7 +237,7 @@ export class NavigationService {
         };
         break;
       case Route.UsingTheAppInfoThree:
-        navRoute = Route.InfoStack;
+        navRoute = Route.LibraryStack;
         navParams = {
           screen: Route.UsingTheAppInfoThree,
           params: {
@@ -237,7 +247,7 @@ export class NavigationService {
         };
         break;
       case Route.UsingTheAppInfoFour:
-        navRoute = Route.InfoStack;
+        navRoute = Route.LibraryStack;
         navParams = {
           screen: Route.UsingTheAppInfoFour,
           params: {
@@ -247,7 +257,7 @@ export class NavigationService {
         };
         break;
       case Route.UsingTheAppInfoFive:
-        navRoute = Route.InfoStack;
+        navRoute = Route.LibraryStack;
         navParams = {
           screen: Route.UsingTheAppInfoFive,
           params: {
@@ -257,7 +267,7 @@ export class NavigationService {
         };
         break;
       case Route.UsingTheAppInfoSix:
-        navRoute = Route.InfoStack;
+        navRoute = Route.LibraryStack;
         navParams = {
           screen: Route.UsingTheAppInfoSix,
           params: {
@@ -267,7 +277,7 @@ export class NavigationService {
         };
         break;
       case Route.UsingTheAppInfoSeven:
-        navRoute = Route.InfoStack;
+        navRoute = Route.LibraryStack;
         navParams = {
           screen: Route.UsingTheAppInfoSeven,
           params: {
@@ -277,7 +287,7 @@ export class NavigationService {
         };
         break;
       case Route.UsingTheAppInfoEight:
-        navRoute = Route.InfoStack;
+        navRoute = Route.LibraryStack;
         navParams = {
           screen: Route.UsingTheAppInfoEight,
           params: {
@@ -287,7 +297,7 @@ export class NavigationService {
         };
         break;
       case Route.UsingTheAppInfoNine:
-        navRoute = Route.InfoStack;
+        navRoute = Route.LibraryStack;
         navParams = {
           screen: Route.UsingTheAppInfoNine,
           params: {
@@ -297,7 +307,7 @@ export class NavigationService {
         };
         break;
       case Route.UsingTheAppInfoTen:
-        navRoute = Route.InfoStack;
+        navRoute = Route.LibraryStack;
         navParams = {
           screen: Route.UsingTheAppInfoTen,
           params: {
@@ -307,7 +317,7 @@ export class NavigationService {
         };
         break;
       case Route.UsingTheAppInfoEleven:
-        navRoute = Route.InfoStack;
+        navRoute = Route.LibraryStack;
         navParams = {
           screen: Route.UsingTheAppInfoEleven,
           params: {
@@ -317,7 +327,7 @@ export class NavigationService {
         };
         break;
       case Route.UsingTheAppInfoTwelve:
-        navRoute = Route.InfoStack;
+        navRoute = Route.LibraryStack;
         navParams = {
           screen: Route.UsingTheAppInfoTwelve,
           params: {
@@ -327,7 +337,7 @@ export class NavigationService {
         };
         break;
       case Route.UsingTheAppInfoThirteen:
-        navRoute = Route.InfoStack;
+        navRoute = Route.LibraryStack;
         navParams = {
           screen: Route.UsingTheAppInfoThirteen,
           params: {

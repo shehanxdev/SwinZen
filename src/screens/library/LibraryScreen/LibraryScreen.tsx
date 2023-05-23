@@ -3,11 +3,11 @@ import { View } from 'react-native';
 
 import { Text, ToggleSwitch } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, Route, TextVariant } from '@sz/constants';
+import { Color, LibrarySliderData, Route, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
 import { BaseLibraryScreen } from '../components';
-import { golfTips, sliderData, toggleSwitchOptions } from './LibraryData';
+import { golfTips, toggleSwitchOptions } from './LibraryData';
 import { GolfTipsWrapper, LinksSlider } from './components';
 
 export function LibraryScreen() {
@@ -23,7 +23,9 @@ export function LibraryScreen() {
           }}
         />
         <View style={tw`mt-6.25`}>
-          <LinksSlider sliderData={switchValue === 'usingTheApp' ? sliderData.usingTheApp : sliderData.aboutSwingZen} />
+          <LinksSlider
+            sliderData={switchValue === 'usingTheApp' ? LibrarySliderData.usingTheApp : LibrarySliderData.aboutSwingZen}
+          />
         </View>
         <View style={tw`flex-row justify-between items-center pb-3`}>
           <Text variant={TextVariant.SubTitle2SemiBold} color={Color.Neutral.Sz100}>
