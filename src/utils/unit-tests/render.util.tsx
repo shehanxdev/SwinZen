@@ -1,3 +1,4 @@
+import { NavigationContext } from '@react-navigation/native';
 import { render } from '@testing-library/react-native';
 import { ReactNode } from 'react';
 import React from 'react';
@@ -16,7 +17,14 @@ export function renderWithProviders(ui: RenderParams[0], options?: RenderParams[
 
   const BaseProviders = ({ children }: { children: ReactNode }) => (
     <Provider store={store}>
-      <PaperProvider theme={paperTheme}>{children}</PaperProvider>
+      <NavigationContext.Provider
+        //@ts-ignore
+        value={{
+          isFocused: () => true,
+          addListener: jest.fn(() => jest.fn()),
+        }}>
+        <PaperProvider theme={paperTheme}>{children}</PaperProvider>
+      </NavigationContext.Provider>
     </Provider>
   );
 

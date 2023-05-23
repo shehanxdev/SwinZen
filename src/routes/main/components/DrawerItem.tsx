@@ -9,13 +9,13 @@ export interface DrawerItemProps {
   active?: boolean;
   title: string;
   icon: ReactElement;
-  onPress: (event: GestureResponderEvent) => void;
+  onPress: (event: GestureResponderEvent) => Promise<void> | void;
 }
 
 export function DrawerItem({ active, title, icon, onPress }: DrawerItemProps) {
   const renderIcon = useMemo(
     () =>
-      React.cloneElement(icon as ReactElement, {
+      React.cloneElement(icon, {
         ...(active && { color: Color.Tertiary.Sz900 }),
       }),
     [icon, active],

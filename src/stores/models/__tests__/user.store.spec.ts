@@ -53,24 +53,24 @@ describe('Unit testing user store', () => {
       promoCode: faker.lorem.word(),
     };
 
-    // TODO: update return value once auth is refactored
     jest.spyOn(AuthService, 'registerUser').mockResolvedValueOnce({
       user: {
         id: 'mockId',
-        firstName: 'John',
-        lastName: 'Doe',
+        name: 'John',
         email: 'john.doe@example.com',
         username: 'johndoe',
+        fcmTokens: [],
         retryAttempts: 0,
         profilePicture: 'https://example.com/profile.jpg',
         gender: 'male',
         city: 'New York',
-        isActive: true,
+        userStatus: '',
         lastLogin: '2023-05-20T10:00:00Z',
         deviceId: 'mockDeviceId',
         createdAt: '2023-05-19T08:00:00Z',
         updatedAt: '2023-05-20T12:00:00Z',
       },
+      nextActionToken: 'next action token',
     });
 
     await store.dispatch.userStore.registerUser(payload);
@@ -105,6 +105,17 @@ describe('Unit testing user store', () => {
     expect(state.userStore.accessToken).toBe(null);
     expect(state.userStore.refreshToken).toBe(null);
     expect(state.persistentUserStore.isAuthenticated).toBe(false);
+  });
+
+  it('should set next action token when getAuthTokensFromSecureStorage is called', async () => {
+    const nextActionToken = 'dummyNextActionToken';
+
+    jest.spyOn(SecureAuthService, 'getNextActionToken').mockResolvedValueOnce(nextActionToken);
+
+    await store.dispatch.userStore.getNextActionFromSecureStorage();
+
+    const state = store.getState();
+    expect(state.userStore.nextActionToken).toBe(nextActionToken);
   });
 
   //TODO: Add more tests for other effects and reducers
