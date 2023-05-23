@@ -1,5 +1,6 @@
 import { ValidationError } from 'yup';
 
+import { DEFAULT_TEXTFIELD_MAX_LENGTH, PASSWORD_MIN_LENGTH } from '@sz/constants';
 import { ChangePasswordFormValues } from '@sz/models';
 import { changePasswordErrorMessages, changePasswordValidationSchema } from '@sz/utils';
 
@@ -19,8 +20,8 @@ describe('changePasswordValidationSchema', () => {
   it('should return an error message for a current password that is too short', async () => {
     const input: ChangePasswordFormValues = {
       currentPassword: 'currentPassword',
-      newPassword: 'new',
-      confirmNewPassword: 'new',
+      newPassword: 'a'.repeat(PASSWORD_MIN_LENGTH - 1),
+      confirmNewPassword: 'a'.repeat(PASSWORD_MIN_LENGTH - 1),
     };
     const error = await changePasswordValidationSchema.validateAt('newPassword', input).catch(err => err);
 
@@ -31,8 +32,8 @@ describe('changePasswordValidationSchema', () => {
   it('should return an error message for a new password that is too long', async () => {
     const input: ChangePasswordFormValues = {
       currentPassword: '',
-      newPassword: 'verylongpassword1234567890',
-      confirmNewPassword: 'verylongpassword1234567890',
+      newPassword: 'v'.repeat(DEFAULT_TEXTFIELD_MAX_LENGTH + 1),
+      confirmNewPassword: 'v'.repeat(DEFAULT_TEXTFIELD_MAX_LENGTH + 1),
     };
     const error = await changePasswordValidationSchema.validateAt('newPassword', input).catch(err => err);
 
@@ -58,6 +59,8 @@ describe('changePasswordValidationSchema', () => {
       newPassword: 'newpassword',
       confirmNewPassword: 'newpassword',
     };
-    await changePasswordValidationSchema.validate(input);
+    const validationResult = await changePasswordValidationSchema.validate(input);
+
+    expect(validationResult).toBe(input);
   });
 });

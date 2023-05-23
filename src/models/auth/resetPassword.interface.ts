@@ -4,12 +4,10 @@ export interface ResetPasswordFormValues {
 }
 
 export interface ResetPasswordRequestData {
-  email: string;
   password: string;
 }
 
 export interface ResetPasswordData {
-  email: string;
   password: string;
 }
 

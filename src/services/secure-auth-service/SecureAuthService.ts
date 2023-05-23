@@ -3,6 +3,7 @@ import * as Keychain from 'react-native-keychain';
 import { SecureAuthError } from './secureAuthError';
 
 const TOKENS_KEYCHAIN_KEY = 'auth-tokens';
+const NEXT_ACTION_TOKEN_KEYCHAIN_KEY = 'next-action-token';
 
 export interface AuthTokens {
   accessToken: string;
@@ -79,9 +80,36 @@ export abstract class SecureAuthService {
   }
 
   /**
-   * Removes pin has and tokens from the keychain
+   * Updates next action token stored in keychain
+   */
+  public static async updateNextActionToken(token: string) {
+    const result = await SecureAuthService.setItem<string>(NEXT_ACTION_TOKEN_KEYCHAIN_KEY, JSON.stringify(token));
+
+    if (!result) {
+      throw new SecureAuthError('UPDATE_NEXT_ACTION_TOKENS_FAILED');
+    }
+
+    return result;
+  }
+
+  /**
+   * Returns next action token stored in keychain
+   */
+  public static async getNextActionToken(): Promise<string> {
+    const token = await SecureAuthService.getItem<string>(NEXT_ACTION_TOKEN_KEYCHAIN_KEY);
+
+    if (!token) {
+      throw new SecureAuthError('GET_NEXT_ACTION_TOKENS_FAILED');
+    }
+
+    return JSON.parse(token);
+  }
+
+  /**
+   * Removes tokens from the keychain
    */
   public static async clearSecureStorage(): Promise<void> {
     await Keychain.resetGenericPassword({ service: TOKENS_KEYCHAIN_KEY });
+    await Keychain.resetGenericPassword({ service: NEXT_ACTION_TOKEN_KEYCHAIN_KEY });
   }
 }

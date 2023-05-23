@@ -1,3 +1,5 @@
+import { DEFAULT_TEXTFIELD_MAX_LENGTH, NAME_MIN_LENGTH, PASSWORD_MIN_LENGTH } from '@sz/constants';
+
 import { signupFormErrorMessages, signupValidationSchema } from '../signup.validations';
 
 describe('signupValidationSchema', () => {
@@ -8,13 +10,7 @@ describe('signupValidationSchema', () => {
       password: 'Password1!',
       confirmPassword: 'Password1!',
     };
-    let validationResult;
-
-    try {
-      validationResult = await signupValidationSchema.validate(validFullInput);
-    } catch (error) {
-      validationResult = error;
-    }
+    const validationResult = await signupValidationSchema.validate(validFullInput).catch(err => err);
 
     expect(validationResult).toBe(validFullInput);
     expect(validationResult.errors).toBe(undefined);
@@ -22,54 +18,28 @@ describe('signupValidationSchema', () => {
 
   it('should give an error if the name field is empty', async () => {
     const nameInput = '';
-    let validationResult;
-
-    try {
-      validationResult = await signupValidationSchema.validateAt('name', { name: nameInput });
-    } catch (error) {
-      validationResult = error;
-    }
+    const validationResult = await signupValidationSchema.validateAt('name', { name: nameInput }).catch(err => err);
 
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['name:required']);
   });
 
   it('should give an error if the name contains numbers of special characters', async () => {
     const nameInput = 'Name@123';
-    let validationResult;
-
-    try {
-      validationResult = await signupValidationSchema.validateAt('name', { name: nameInput });
-    } catch (error) {
-      validationResult = error;
-    }
+    const validationResult = await signupValidationSchema.validateAt('name', { name: nameInput }).catch(err => err);
 
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['name:valid']);
   });
 
-  it('should give an error if the name input has less than 2 characters', async () => {
-    const nameInput = 'J';
-    let validationResult;
-
-    try {
-      validationResult = await signupValidationSchema.validateAt('name', { name: nameInput });
-    } catch (error) {
-      validationResult = error;
-    }
+  it(`should give an error if the name input has less than ${NAME_MIN_LENGTH} characters`, async () => {
+    const nameInput = 'J'.repeat(NAME_MIN_LENGTH - 1);
+    const validationResult = await signupValidationSchema.validateAt('name', { name: nameInput }).catch(err => err);
 
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['name:min']);
   });
 
-  it('should give an error if the name input has more than 256 characters', async () => {
-    // string contain 264 characters
-    const nameInput =
-      'JohnwithmorethantwohundredfiftysixcharactersJohnwithmorethantwohundredfiftysixcharactersJohnwithmorethantwohundredfiftysixcharactersJohnwithmorethantwohundredfiftysixcharactersJohnwithmorethantwohundredfiftysixcharactersJohnwithmorethantwohundredfiftysixcharacters';
-    let validationResult;
-
-    try {
-      validationResult = await signupValidationSchema.validateAt('name', { name: nameInput });
-    } catch (error) {
-      validationResult = error;
-    }
+  it(`should give an error if the name input has more than ${DEFAULT_TEXTFIELD_MAX_LENGTH} characters`, async () => {
+    const nameInput = 'a'.repeat(DEFAULT_TEXTFIELD_MAX_LENGTH + 1);
+    const validationResult = await signupValidationSchema.validateAt('name', { name: nameInput }).catch(err => err);
 
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['name:max']);
   });
@@ -85,15 +55,13 @@ describe('signupValidationSchema', () => {
       'example-indeed@strange-example.com',
       'example@s.solutions',
     ];
-    let validationResult;
 
     for (const email of validEmails) {
-      try {
-        validationResult = await signupValidationSchema.validateAt('username', { username: email });
-      } catch (error) {
-        validationResult = error;
-      }
-      expect(validationResult.errors).toBe(undefined);
+      const validationResult = await signupValidationSchema
+        .validateAt('username', { username: email })
+        .catch(err => err);
+
+      expect(validationResult).toBe(email);
     }
   });
 
@@ -106,66 +74,49 @@ describe('signupValidationSchema', () => {
       'this is"notallowed@example.com',
       'this still"notallowed@example.com',
     ];
-    let validationResult;
 
     for (const email of invalidEmails) {
-      try {
-        validationResult = await signupValidationSchema.validateAt('username', { username: email });
-      } catch (error) {
-        validationResult = error;
-      }
+      const validationResult = await signupValidationSchema
+        .validateAt('username', { username: email })
+        .catch(err => err);
+
       expect(validationResult.errors[0]).toBe(signupFormErrorMessages['username:email']);
     }
   });
 
   it('should give an error if the userName(Email) input is empty', async () => {
     const userNameInput = '';
-    let validationResult;
-
-    try {
-      validationResult = await signupValidationSchema.validateAt('username', { username: userNameInput });
-    } catch (error) {
-      validationResult = error;
-    }
+    const validationResult = await signupValidationSchema
+      .validateAt('username', { username: userNameInput })
+      .catch(err => err);
 
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['username:required']);
   });
 
   it('should give an error if the userName(Email) contains more than 256 characters', async () => {
     const userNameInput = `${'a'.repeat(257)}@gmail.com`;
-    let validationResult;
-
-    try {
-      validationResult = await signupValidationSchema.validateAt('username', { username: userNameInput });
-    } catch (error) {
-      validationResult = error;
-    }
+    const validationResult = await signupValidationSchema
+      .validateAt('username', { username: userNameInput })
+      .catch(err => err);
 
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['username:max']);
   });
 
-  it('should give an error for the weak the password(contains less than 8 characters)', async () => {
-    const passwordInput = 'weak';
-    let validationResult;
-
-    try {
-      validationResult = await signupValidationSchema.validateAt('password', { password: passwordInput });
-    } catch (error) {
-      validationResult = error;
-    }
+  it(`should give an error for the weak the password(contains less than ${PASSWORD_MIN_LENGTH} characters)`, async () => {
+    const passwordInput = 'a'.repeat(PASSWORD_MIN_LENGTH - 1);
+    const validationResult = await signupValidationSchema
+      .validateAt('password', { password: passwordInput })
+      .catch(err => err);
 
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['password:min']);
   });
 
-  it('should give an error for the password which has more than 256 characters', async () => {
-    const passwordInput = `${'abcd'.repeat(65)}`;
-    let validationResult;
+  it(`should give an error for the password which has more than ${DEFAULT_TEXTFIELD_MAX_LENGTH} characters`, async () => {
+    const passwordInput = `${'abcd'.repeat(DEFAULT_TEXTFIELD_MAX_LENGTH + 1)}`;
 
-    try {
-      validationResult = await signupValidationSchema.validateAt('password', { password: passwordInput });
-    } catch (error) {
-      validationResult = error;
-    }
+    const validationResult = await signupValidationSchema
+      .validateAt('password', { password: passwordInput })
+      .catch(err => err);
 
     expect(validationResult.errors[0]).toBe(signupFormErrorMessages['password:max']);
   });
@@ -210,6 +161,8 @@ describe('signupValidationSchema', () => {
       password: 'Password!1',
       confirmPassword: 'Password!1',
     };
-    expect(signupValidationSchema.validate(validInputWithoutPromoCode)).resolves.toBe(validInputWithoutPromoCode);
+
+    const validationResult = await signupValidationSchema.validate(validInputWithoutPromoCode);
+    expect(validationResult).toStrictEqual(validInputWithoutPromoCode);
   });
 });

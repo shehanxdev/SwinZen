@@ -5,7 +5,7 @@ import { View } from 'react-native';
 
 import { AccountLockIcon, Button, PasswordField, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, Route, TextVariant } from '@sz/constants';
+import { Color, DEFAULT_TEXTFIELD_MAX_LENGTH, Route, TextVariant } from '@sz/constants';
 import { ResetPasswordFormValues } from '@sz/models';
 import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
@@ -13,15 +13,13 @@ import { resetPasswordValidationSchema } from '@sz/utils';
 
 import { BaseAuthScreen } from '../components/BaseAuthScreen';
 
-export function ResetPasswordScreen({ route }) {
+export function ResetPasswordScreen() {
   const {
     control,
     handleSubmit,
     setFocus,
     formState: { isSubmitted, errors },
   } = useForm<ResetPasswordFormValues>({ mode: 'onChange', resolver: yupResolver(resetPasswordValidationSchema) });
-  const email = route.params.params.email;
-
   const dispatch = useDispatch();
 
   const onResetPasswordFormInvalid: SubmitErrorHandler<ResetPasswordFormValues> = () => {
@@ -32,12 +30,10 @@ export function ResetPasswordScreen({ route }) {
   const onResetPasswordFormValid: SubmitHandler<ResetPasswordFormValues> = async formInput => {
     try {
       await dispatch.userStore.resetPassword({
-        email: email,
         password: formInput.password,
       });
 
       ToastService.success({ message: 'Success!', description: 'Password reset successfullly.' });
-      dispatch.userStore.clearPasswordResetToken();
       NavigationService.navigate(Route.Login);
     } catch (error: any) {
       ToastService.error({ message: 'Failed!', description: error.data.message });
@@ -66,7 +62,7 @@ export function ResetPasswordScreen({ route }) {
                   ref={ref}
                   label="Your new password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={256}
+                  maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -87,7 +83,7 @@ export function ResetPasswordScreen({ route }) {
                 ref={ref}
                 label="Confirm your new password"
                 leftIcon={<AccountLockIcon />}
-                maxLength={256}
+                maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
