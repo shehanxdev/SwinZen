@@ -14,7 +14,7 @@ export function LibraryScreen() {
   const [switchValue, setSwitchValue] = useState('usingTheApp');
 
   return (
-    <BaseLibraryScreen wrapWithScrollView={false}>
+    <BaseLibraryScreen>
       <View style={tw`flex-1 mx-4 mt-6.25`}>
         <ToggleSwitch
           options={toggleSwitchOptions}

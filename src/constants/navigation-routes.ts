@@ -5,6 +5,7 @@ export enum Route {
   AuthStack = 'auth-stack',
   GolfTips = 'golf-tips',
   ContactUs = 'contact-us',
+  DummyRoute = 'dummy-route',
   FAQ = 'faq',
   Followers = 'followers',
   ForgotPassword = 'forgot-password',

@@ -12,9 +12,11 @@ import { NavigationService } from '@sz/services';
 
 import { commonScreenOptions } from '../configs';
 import { LibraryStack } from '../library';
-import { VideoUploadStack } from '../videoUpload';
 
 const Tab = createBottomTabNavigator();
+
+// This dummy component is required to prevent breaking the tab bar layout
+const DummyComponent = () => <></>;
 
 export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamListBase>) {
   //TODO::check any conflicts with the logout bahaviour with this implemenatation
@@ -69,8 +71,8 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
       }}>
       <Tab.Screen name={Route.HomeTab} component={HomeScreen} />
       <Tab.Screen name={Route.VideosTab} component={VideosScreen} />
-      {/* TODO:: commenting this line gives layout issues */}
-      <Tab.Screen name={Route.VideoUploadStack} component={VideoUploadStack} />
+      {/* A dummy route and a dummy component is used here in order to prevent the tab bar from breaking*/}
+      <Tab.Screen name={Route.DummyRoute} component={DummyComponent} />
       <Tab.Screen name={Route.AnalysisTab} component={AnalysisScreen} />
       <Tab.Screen
         name={Route.LibraryStack}

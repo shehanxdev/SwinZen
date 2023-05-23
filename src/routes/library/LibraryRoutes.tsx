@@ -5,6 +5,8 @@ import { Text } from '@sz/components';
 import { Route, TextAlignment, TextVariant } from '@sz/constants';
 import { GolfTipsScreen, LibraryScreen } from '@sz/screens';
 
+import { HeaderBackButton } from '../components';
+
 export type LibraryStackParamList = {
   [Route.LibraryTab]: {
     // Can be used for future props
@@ -28,7 +30,11 @@ export function LibraryStack() {
         headerTitle: ({ children }) => <Text variant={TextVariant.SubTitle2SemiBold}>{children}</Text>,
       }}>
       <Stack.Screen name={Route.LibraryTab} component={LibraryScreen} options={{ title: 'SwingZen University' }} />
-      <Stack.Screen name={Route.GolfTips} component={GolfTipsScreen} options={{ title: 'Golf tips' }} />
+      <Stack.Screen
+        name={Route.GolfTips}
+        component={GolfTipsScreen}
+        options={{ title: 'Golf tips', headerLeft: () => <HeaderBackButton /> }}
+      />
     </Stack.Navigator>
   );
 }
