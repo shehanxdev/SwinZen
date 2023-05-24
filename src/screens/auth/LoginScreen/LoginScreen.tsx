@@ -15,7 +15,6 @@ import {
   TextField,
 } from '@sz/components';
 import { tw } from '@sz/config';
-import '@sz/constants';
 import { Color, DEFAULT_TEXTFIELD_MAX_LENGTH, LoginErrorCodes, Route, TextVariant } from '@sz/constants';
 import { LoginFormValues } from '@sz/models';
 import { NavigationService, SecureAuthService, ToastService } from '@sz/services';
