@@ -22,7 +22,7 @@ export function MainStack() {
       screenOptions={{
         headerShown: false,
         drawerType: 'front',
-        drawerStyle: tw`bg-transparent rounded-r-8 border-neutral-500 border-r-2`,
+        drawerStyle: tw`bg-transparent rounded-r-8 border-r border-[#1B5E24]`,
       }}
       drawerContent={() => <CustomDrawer />}>
       <Drawer.Screen
