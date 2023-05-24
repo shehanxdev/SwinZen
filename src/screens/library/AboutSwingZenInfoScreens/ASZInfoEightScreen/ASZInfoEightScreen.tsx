@@ -85,20 +85,6 @@ export function ASZInfoEightScreen() {
     );
   };
 
-  const StepFourContent = () => {
-    return (
-      <View>
-        <Text color={Color.Primary.Sz200} variant={TextVariant.Body1SemiBold} textAlign={TextAlignment.Auto}>
-          {`Tip Number Four:\n`}
-        </Text>
-        <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
-          If possible, shoot at a time when you have adequate lighting (not at dawn or dusk), however, the system is
-          trained to compensate for shadows as we know this is sometimes unavoidable.
-        </Text>
-      </View>
-    );
-  };
-
   const renderBody = () => {
     switch (count) {
       case 0:
@@ -107,8 +93,6 @@ export function ASZInfoEightScreen() {
         return <StepTwoContent />;
       case 2:
         return <StepThreeContent />;
-      case 3:
-        return <StepFourContent />;
       default:
         return null;
     }
@@ -121,14 +105,14 @@ export function ASZInfoEightScreen() {
         <View style={tw`mt-25 mb-3`}>
           <Button
             onPress={() => {
-              if (count === 3) {
+              if (count === 2) {
                 setCount(0);
                 NavigationService.goBack();
               } else {
                 setCount(count + 1);
               }
             }}
-            title={count === 3 ? 'Done' : 'Next'}
+            title={count === 2 ? 'Done' : 'Next'}
           />
         </View>
       </View>
