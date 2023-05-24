@@ -9,7 +9,6 @@
     "start": "react-native start",
     "test": "jest --coverage",
     "prepare": "husky install",
-    "postinstall": "patch-package",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -87,7 +86,6 @@
     "jest-svg-transformer": "^1.0.0",
     "lint-staged": "^13.1.2",
     "metro-react-native-babel-preset": "^0.75.1",
-    "patch-package": "^6.5.1",
     "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.4.1",
     "react-native-svg-transformer": "^1.0.0",
