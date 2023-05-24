@@ -6,10 +6,12 @@ import { RootModel } from '.';
 
 interface AppState {
   currentRoute?: Route;
+  isAppReady: boolean;
 }
 
 const initialAppState: AppState = {
   currentRoute: Route.AuthStack,
+  isAppReady: false,
 };
 
 export const appStore = createModel<RootModel>()({
@@ -18,7 +20,18 @@ export const appStore = createModel<RootModel>()({
     setCurrentRoute(state: AppState, payload: Route) {
       return { ...state, currentRoute: payload };
     },
+    setIsAppReady(state: AppState, payload: boolean) {
+      return { ...state, isAppReady: payload };
+    },
   },
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  effects: dispatch => ({}),
+
+  effects: dispatch => ({
+    async initializeApp(_: void, state) {
+      if (state.persistentUserStore.isAuthenticated) {
+        await dispatch.userStore.getAuthTokensFromSecureStorage();
+      }
+
+      dispatch.appStore.setIsAppReady(true);
+    },
+  }),
 });

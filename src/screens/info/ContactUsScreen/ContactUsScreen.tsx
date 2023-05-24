@@ -6,7 +6,7 @@ import { ContactUsFormValues } from 'src/models/info/contactUs.interface';
 
 import { Button, MailIcon, MobileNumberField, ProfileIcon, Text, TextArea, TextField } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, TextAlignment, TextVariant } from '@sz/constants';
+import { Color, DEFAULT_TEXTFIELD_MAX_LENGTH, TextAlignment, TextVariant } from '@sz/constants';
 import { contactUsValidationSchema } from '@sz/utils';
 
 import { BaseInfoScreen } from '../components';
@@ -38,7 +38,7 @@ export function ContactUsScreen() {
                   ref={ref}
                   label="Your name"
                   leftIcon={<ProfileIcon />}
-                  maxLength={10}
+                  maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -62,7 +62,7 @@ export function ContactUsScreen() {
                   ref={ref}
                   label="Your email"
                   leftIcon={<MailIcon />}
-                  maxLength={50}
+                  maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}

@@ -22,6 +22,7 @@ export function AuthStack() {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+        animation: 'slide_from_right',
       }}>
       <Stack.Screen name={Route.LoginStack} component={LoginStack} />
       <Stack.Screen name={Route.SignupStack} component={SignupStack} />

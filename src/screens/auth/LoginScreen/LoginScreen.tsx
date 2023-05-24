@@ -1,4 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useFocusEffect } from '@react-navigation/native';
 import React from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { View } from 'react-native';
@@ -14,9 +15,9 @@ import {
   TextField,
 } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, Route, TextVariant } from '@sz/constants';
+import { Color, DEFAULT_TEXTFIELD_MAX_LENGTH, LoginErrorCodes, Route, TextVariant } from '@sz/constants';
 import { LoginFormValues } from '@sz/models';
-import { NavigationService, ToastService } from '@sz/services';
+import { NavigationService, SecureAuthService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { loginValidationSchema } from '@sz/utils';
 
@@ -39,12 +40,34 @@ export function LoginScreen() {
     //TODO:: handle error
   };
 
+  useFocusEffect(() => {
+    dispatch.userStore.getNextActionFromSecureStorage();
+  });
+
   const onLoginFormValid: SubmitHandler<LoginFormValues> = async formInput => {
     try {
       await dispatch.userStore.loginUserWithCredentials(formInput);
-      NavigationService.navigate(Route.PricePlansStack);
+      dispatch.userStore.clearNextActionToken();
     } catch (error: any) {
-      ToastService.error({ message: 'Failed!', description: error.data.message });
+      const { errorCode, message, nextActionToken } = error.data;
+
+      if (errorCode === LoginErrorCodes.InactiveUser) {
+        ToastService.information({ message: 'Alert!', description: message });
+
+        dispatch.userStore.setNextActionToken(nextActionToken);
+        await SecureAuthService.updateNextActionToken(nextActionToken);
+
+        NavigationService.navigate(Route.RegisterEmailVerification, formInput.username);
+      } else if (errorCode === LoginErrorCodes.OTPTooManyRequests) {
+        ToastService.information({
+          message: 'Alert!',
+          description: 'The user account is in in-activated status, Please verify the email address first to sign in', //This same message should come from the BE side.
+        });
+
+        NavigationService.navigate(Route.RegisterEmailVerification, formInput.username);
+      } else {
+        ToastService.error({ message: 'Failed!', description: error.data.message });
+      }
     }
   };
 
@@ -71,7 +94,7 @@ export function LoginScreen() {
                   ref={ref}
                   label="Your email"
                   leftIcon={<MailIcon />}
-                  maxLength={256}
+                  maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -94,7 +117,7 @@ export function LoginScreen() {
                   ref={ref}
                   label="Your password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={256}
+                  maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}

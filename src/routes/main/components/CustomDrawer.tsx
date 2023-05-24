@@ -18,7 +18,7 @@ import {
 } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route } from '@sz/constants';
-import { NavigationService, ToastService } from '@sz/services';
+import { NavigationService, SecureAuthService, ToastService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
 
 import { DrawerItem } from './DrawerItem';
@@ -43,10 +43,13 @@ const commonDrawerContents: DrawerContent[] = [
 export function CustomDrawer() {
   const dispatch = useDispatch();
 
-  const Logout = (): void => {
-    dispatch.userStore
-      .logoutUser()
-      .catch((error: any) => ToastService.error({ message: 'Failed!', description: error.data.message }));
+  const logout = async (): Promise<void> => {
+    try {
+      await dispatch.userStore.logoutUser();
+      await SecureAuthService.clearSecureStorage();
+    } catch (error) {
+      ToastService.error({ message: 'Failed!', description: error.data.message });
+    }
   };
 
   return (
@@ -63,9 +66,9 @@ export function CustomDrawer() {
               <CrossIcon />
             </TouchableOpacity>
           </View>
-          {commonDrawerContents.map((content, index) => (
+          {commonDrawerContents.map(content => (
             <DrawerItem
-              key={index}
+              key={content.route}
               title={content.title}
               icon={content.icon}
               onPress={() => {
@@ -75,7 +78,7 @@ export function CustomDrawer() {
             />
           ))}
           {/* NOTE::Edge case for logout */}
-          <DrawerItem title="Logout" icon={<DrawerLogoutIcon />} onPress={Logout} />
+          <DrawerItem title="Logout" icon={<DrawerLogoutIcon />} onPress={logout} />
         </DrawerContentScrollView>
       </BlurView>
     </View>
