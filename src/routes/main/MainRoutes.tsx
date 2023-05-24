@@ -2,7 +2,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
 import { Route } from '@sz/constants';
-import { useSelector } from '@sz/stores';
 
 import { AccountStack } from '../account';
 import { PricePlansStack } from '../pricePlans';
@@ -11,11 +10,8 @@ import { MainDrawerStack } from './MainDrawerRoutes';
 const Stack = createNativeStackNavigator();
 
 export function MainStack() {
-  const initialLogin = useSelector(state => state.persistentUserStore.loginState) === 'initial';
-
   return (
     <Stack.Navigator
-      initialRouteName={initialLogin ? Route.PricePlansStack : Route.MainStack}
       screenOptions={{
         headerShown: false,
         headerBackVisible: false,

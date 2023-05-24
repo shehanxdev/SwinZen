@@ -127,7 +127,7 @@ export const userStore = createModel<RootModel>()({
         dispatch.userStore.setAccessToken(tokens.accessToken);
         dispatch.userStore.setRefreshToken(tokens.refreshToken);
       } catch (_) {
-        dispatch.userStore.logoutUser();
+        await dispatch.userStore.logoutUser();
         await SecureAuthService.clearSecureStorage();
       }
     },

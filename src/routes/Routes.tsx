@@ -51,7 +51,7 @@ export function Routes() {
     }>,
   ) => {
     if (action.type === 'GO_BACK') {
-      NavigationService.navigate(isAuthenticated ? Route.MainDrawerRoutesStack : Route.AuthStack);
+      NavigationService.reset(isAuthenticated ? Route.MainStack : Route.AuthStack);
     }
   };
 
