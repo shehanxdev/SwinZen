@@ -10,15 +10,17 @@ import { BaseLibraryScreen } from '../components';
 import { golfTips, sliderData, toggleSwitchOptions } from './LibraryData';
 import { GolfTipsWrapper, LinksSlider } from './components';
 
+type SwitchValueDataType = 'usingTheApp' | 'aboutSwingZen';
+
 export function LibraryScreen() {
-  const [switchValue, setSwitchValue] = useState('usingTheApp');
+  const [switchValue, setSwitchValue] = useState<SwitchValueDataType>('usingTheApp');
 
   return (
     <BaseLibraryScreen>
       <View style={tw`flex-1 mx-4 mt-6.25`}>
         <ToggleSwitch
           options={toggleSwitchOptions}
-          onChange={value => {
+          onChange={(value: SwitchValueDataType) => {
             setSwitchValue(value);
           }}
         />

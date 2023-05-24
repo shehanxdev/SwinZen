@@ -11,11 +11,12 @@ import {
   TextVariant,
   ToggleSwitchData,
 } from '@sz/constants';
+import { VideoSetupValuesType } from '@sz/models';
 
 import { BaseUploadScreen, SelectableGrid } from '../components';
 
 export function VideoSetupScreen() {
-  const [, setSetupValues] = useState(InitialSetupValues);
+  const [, setSetupValues] = useState<VideoSetupValuesType>(InitialSetupValues);
 
   //TODO:: to be replaced with proper value select handlers
   const getSelectedValue = (key, value) => {
