@@ -37,7 +37,8 @@ export function LoginStack() {
         headerBackTitleVisible: false,
         headerTransparent: true,
         headerBackVisible: false,
-        headerLeft: () => <HeaderBackButton />,
+        headerLeft: HeaderBackButton,
+        animation: 'slide_from_right',
       }}>
       <Stack.Screen name={Route.Login} component={LoginScreen} options={{ headerShown: false }} />
       <Stack.Screen name={Route.ForgotPassword} component={ForgotPasswordScreen} options={{ headerShown: false }} />

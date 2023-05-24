@@ -54,8 +54,6 @@ export const userStore = createModel<RootModel>()({
       if (!IS_JEST_RUNTIME) {
         await SecureAuthService.updateAuthTokens({ accessToken: accessToken, refreshToken: refreshToken });
       }
-
-      dispatch.persistentUserStore.setLoginState('subsequent');
     },
     async logoutUser() {
       dispatch.userStore.setAccessToken(null);
