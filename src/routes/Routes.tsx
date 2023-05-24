@@ -8,11 +8,9 @@ import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 
-import { AccountStack } from './account';
 import { AuthStack } from './auth';
 import { InfoStack } from './info';
 import { MainStack } from './main';
-import { PricePlansStack } from './pricePlans';
 
 const Stack = createNativeStackNavigator();
 
@@ -36,7 +34,7 @@ export function Routes() {
     return route.name;
   }
 
-  const onStateChange = async (navigationState: NavigationState) => {
+  const onStateChange = (navigationState: NavigationState) => {
     const currentRouteName = getActiveRouteName(navigationState);
 
     routeNameRef.current = currentRouteName;
@@ -53,7 +51,7 @@ export function Routes() {
     }>,
   ) => {
     if (action.type === 'GO_BACK') {
-      NavigationService.navigate(isAuthenticated ? Route.MainStack : Route.AuthStack);
+      NavigationService.reset(isAuthenticated ? Route.MainStack : Route.AuthStack);
     }
   };
 
@@ -72,12 +70,11 @@ export function Routes() {
         screenOptions={{
           headerShown: false,
           headerBackVisible: false,
+          animation: 'slide_from_right',
         }}>
         {isAuthenticated ? (
           <Stack.Group>
-            <Stack.Screen name={Route.PricePlansStack} component={PricePlansStack} />
             <Stack.Screen name={Route.MainStack} component={MainStack} />
-            <Stack.Screen name={Route.AccountStack} component={AccountStack} />
           </Stack.Group>
         ) : (
           <Stack.Group>
