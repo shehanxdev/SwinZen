@@ -1,6 +1,6 @@
 import { createModel } from '@rematch/core';
 
-import { IS_JEST_RUNTIME } from '@sz/constants';
+import { IS_JEST_RUNTIME, OtpType } from '@sz/constants';
 import {
   ChangePasswordData,
   EmailVerificationData,
@@ -17,14 +17,13 @@ import { RootModel } from './';
 export interface UserState {
   accessToken: string | null;
   refreshToken: string | null;
-  passwordResetToken: string | null;
-  //TODO::fill other user related state here
+  nextActionToken: string | null;
 }
 
 const initialState: UserState = {
   accessToken: null,
   refreshToken: null,
-  passwordResetToken: null,
+  nextActionToken: null,
 };
 
 export const userStore = createModel<RootModel>()({
@@ -36,11 +35,11 @@ export const userStore = createModel<RootModel>()({
     setRefreshToken(state: UserState, refreshToken: string | null) {
       return { ...state, refreshToken };
     },
-    setPasswordResetToken(state: UserState, passwordResetToken: string) {
-      return { ...state, passwordResetToken };
+    setNextActionToken(state: UserState, nextActionToken: string) {
+      return { ...state, nextActionToken };
     },
-    clearPasswordResetToken(state: UserState) {
-      return { ...state, passwordResetToken: null };
+    clearNextActionToken(state: UserState) {
+      return { ...state, nextActionToken: null };
     },
   },
   effects: dispatch => ({
@@ -55,8 +54,6 @@ export const userStore = createModel<RootModel>()({
       if (!IS_JEST_RUNTIME) {
         await SecureAuthService.updateAuthTokens({ accessToken: accessToken, refreshToken: refreshToken });
       }
-
-      dispatch.persistentUserStore.setLoginState('subsequent');
     },
     async logoutUser() {
       dispatch.userStore.setAccessToken(null);
@@ -65,28 +62,53 @@ export const userStore = createModel<RootModel>()({
       dispatch.persistentUserStore.setIsAuthenticate(false);
     },
     async registerUser(payload: SignupUserData) {
-      await AuthService.registerUser(payload);
+      const { nextActionToken } = await AuthService.registerUser(payload);
 
+      //TODO::check and fix and remove IS_JEST_RUNTIME conditional check
+      if (!IS_JEST_RUNTIME) {
+        await SecureAuthService.updateNextActionToken(nextActionToken);
+      }
+
+      dispatch.userStore.setNextActionToken(nextActionToken);
       dispatch.persistentUserStore.setLoginState('initial');
-      //TODO::save required user data to the store and persistence storage if required
     },
     /*
      * NOTE:These function is being shared between registeration and forget password flows since it's the default BE behaviour
      * api/v1/auth/resend-otp
+     *
+     * TODO::add proper description regarding the next action token logic for the future reference
      */
-    async emailVerification(payload: EmailVerificationData) {
-      const data = await AuthService.emailVerification(payload);
-      dispatch.userStore.setPasswordResetToken(data?.resetPasswordToken);
+    async emailVerification(payload: EmailVerificationData, state) {
+      //current next action token
+      const { nextActionToken } = state.userStore;
+
+      const emailVerificationData = await AuthService.emailVerification(payload, { 'x-auth': nextActionToken });
+
+      //Wo don't have to store new action token provided by the email verification API in forget password flow in secure storage
+      if (payload.otpType === OtpType.FORGOT_PASSWORD)
+        //setting up the new action token provided by the email verification API
+        dispatch.userStore.setNextActionToken(emailVerificationData.nextActionToken);
     },
-    async resendOtp(payload: ResendOtpData) {
-      await AuthService.resendOtp(payload);
+    async resendOtp(payload: ResendOtpData, state) {
+      //current next action token
+      const { nextActionToken } = state.userStore;
+
+      const resentOTPData = await AuthService.resendOtp(payload, { 'x-auth': nextActionToken });
+
+      //setting up the new action token provided by the resend OTP API
+      dispatch.userStore.setNextActionToken(resentOTPData.nextActionToken);
+
+      //Wo don't have to store new action token provided by the resend token API in forget password flow in secure storage
+      if (payload.otpType === OtpType.VERIFICATION)
+        await SecureAuthService.updateNextActionToken(resentOTPData.nextActionToken);
     },
     async forgetPassword(payload: ForgetPasswordData) {
-      await AuthService.forgetPassword(payload);
+      const { nextActionToken } = await AuthService.forgetPassword(payload);
+      dispatch.userStore.setNextActionToken(nextActionToken);
     },
     async resetPassword(payload: ResetPasswordData, state) {
-      const { passwordResetToken } = state.userStore;
-      await AuthService.resetPassword(payload, { 'x-auth': passwordResetToken });
+      const { nextActionToken } = state.userStore;
+      await AuthService.resetPassword(payload, { 'x-auth': nextActionToken });
     },
     async profileChangePassword(payload: ChangePasswordData, state) {
       const { accessToken, refreshToken } = state.userStore;
@@ -105,7 +127,19 @@ export const userStore = createModel<RootModel>()({
         dispatch.userStore.setAccessToken(tokens.accessToken);
         dispatch.userStore.setRefreshToken(tokens.refreshToken);
       } catch (_) {
-        dispatch.userStore.logoutUser();
+        await dispatch.userStore.logoutUser();
+        await SecureAuthService.clearSecureStorage();
+      }
+    },
+
+    async getNextActionFromSecureStorage() {
+      let nextActionToken = null;
+      try {
+        const token = await SecureAuthService.getNextActionToken();
+        dispatch.userStore.setNextActionToken(token);
+        nextActionToken = token;
+      } catch (_) {
+        dispatch.userStore.setNextActionToken(nextActionToken ?? null);
       }
     },
   }),

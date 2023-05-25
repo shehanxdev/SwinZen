@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderTitle should render correctly 1`] = `
+<Text
+  style={
+    [
+      {
+        "color": "#F8F9FA",
+        "lineHeight": 28,
+      },
+      {
+        "fontFamily": "SourceSansPro-SemiBold",
+        "fontSize": 21,
+        "fontWeight": "600",
+        "textAlign": "center",
+      },
+    ]
+  }
+>
+  Title
+</Text>
+`;

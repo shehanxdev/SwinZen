@@ -1,7 +1,6 @@
-import { BottomTabScreenProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { ParamListBase } from '@react-navigation/native';
-import React, { useEffect } from 'react';
-import { Alert, BackHandler, TouchableOpacity, View } from 'react-native';
+import { BottomTabBarProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React from 'react';
+import { Alert, TouchableOpacity, View } from 'react-native';
 
 import { CustomMenuIcon, SwingZenLogoIcon } from '@sz/components';
 import { tw } from '@sz/config';
@@ -18,55 +17,35 @@ const Tab = createBottomTabNavigator();
 // This dummy component is required to prevent breaking the tab bar layout
 const DummyComponent = () => <></>;
 
-export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamListBase>) {
-  //TODO::check any conflicts with the logout bahaviour with this implemenatation
-  useEffect(
-    () =>
-      navigation.addListener('beforeRemove', e => {
-        // Prevent default behavior of leaving the screen
-        e.preventDefault();
+export function MainBottomTabRoutes() {
+  const renderTabBar = (props: BottomTabBarProps) => (
+    <CustomBottomTabBar
+      {...props}
+      onCustomUploadButtonClicked={() => {
+        Alert.alert('Custom bottom tab upload icon clicked.'); //TODO::replace with a relevant callback
+      }}
+    />
+  );
 
-        // Prompt the user before leaving the app
-        //TODO::Replace with a proper alert
-        Alert.alert('Exit SwingZen', 'You sure want to exist?', [
-          {
-            text: 'No',
-            style: 'cancel',
-            onPress: () => {},
-          },
-          {
-            text: 'Yes',
-            style: 'destructive',
-            onPress: () => BackHandler.exitApp(),
-          },
-        ]);
-      }),
-    [navigation],
+  const renderHeaderLeft = () => (
+    <View style={tw`pl-5`}>
+      <SwingZenLogoIcon width={70} height={34} />
+    </View>
+  );
+
+  const renderHeaderRight = () => (
+    <TouchableOpacity onPress={() => NavigationService.openDrawer()} style={tw`pr-5`}>
+      <CustomMenuIcon />
+    </TouchableOpacity>
   );
 
   return (
     <Tab.Navigator
-      tabBar={props => (
-        <CustomBottomTabBar
-          {...props}
-          onCustomUploadButtonClicked={() => {
-            NavigationService.navigate(Route.VideoUploadStack);
-            // Alert.alert('Custom bottom tab upload icon clicked.'); //TODO::replace with a relevant callback
-          }}
-        />
-      )}
+      tabBar={renderTabBar}
       screenOptions={{
         ...commonScreenOptions,
-        headerLeft: () => (
-          <View style={tw`pl-5`}>
-            <SwingZenLogoIcon width={70} height={34} />
-          </View>
-        ),
-        headerRight: () => (
-          <TouchableOpacity onPress={() => NavigationService.openDrawer()} style={tw`pr-5`}>
-            <CustomMenuIcon />
-          </TouchableOpacity>
-        ),
+        headerLeft: renderHeaderLeft,
+        headerRight: renderHeaderRight,
         tabBarShowLabel: false,
       }}>
       <Tab.Screen name={Route.HomeTab} component={HomeScreen} />
