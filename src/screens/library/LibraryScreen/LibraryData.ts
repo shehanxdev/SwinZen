@@ -33,13 +33,13 @@ export const golfTips = [
   {
     id: 2,
     videosCount: 1,
-    label: 'Golf fitness',
+    label: 'Fitness',
     backgroundImage: images.AITools,
   },
   {
     id: 3,
     videosCount: 11,
-    label: 'Fundamentals',
+    label: 'Basic Fundamental',
     backgroundImage: images.AITools,
   },
 ];
