@@ -4,3 +4,5 @@ export interface ContactUsFormValues {
   mobileNumber: string;
   message: string;
 }
+
+export interface ContactUsResponse {}
