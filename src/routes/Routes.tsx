@@ -69,14 +69,13 @@ export function Routes() {
       onUnhandledAction={handleUnhandledAction}
       onStateChange={onStateChange}>
       <Stack.Navigator
-        // initialRouteName={isAuthenticated ? Route.MainStack : Route.AuthStack}
-        initialRouteName={Route.MainStack}
+        initialRouteName={isAuthenticated ? Route.MainStack : Route.AuthStack}
         screenOptions={{
           headerShown: false,
           headerBackVisible: false,
           animation: 'slide_from_right',
         }}>
-        {!isAuthenticated ? (
+        {isAuthenticated ? (
           <Stack.Group>
             <Stack.Screen name={Route.PricePlansStack} component={PricePlansStack} />
             <Stack.Screen name={Route.MainStack} component={MainStack} />

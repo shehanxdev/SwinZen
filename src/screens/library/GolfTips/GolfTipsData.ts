@@ -12,13 +12,13 @@ export const GolfTipsData: GolfTipDataType[] = [
     id: 2,
     videosCount: 1,
     backgroundImage: images.golfFitness,
-    label: 'Fitness',
+    label: 'Golf Fitness',
   },
   {
     id: 3,
     videosCount: 11,
     backgroundImage: images.fundamentals,
-    label: 'Basic Fundamental',
+    label: 'Fundamentals',
   },
   {
     id: 4,
