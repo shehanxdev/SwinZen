@@ -1,37 +1,25 @@
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
-import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
 
-import { MainBottomTabRoutes } from './MainBottomTabRoutes';
-import { CustomDrawer } from './components';
+import { AccountStack } from '../account';
+import { PricePlansStack } from '../pricePlans';
+import { MainDrawerStack } from './MainDrawerRoutes';
 
-export type MainStackParamList = {
-  [Route.MainBottomTabRoutesStack]: {
-    // Can be used for future props
-  };
-};
-
-// TODO:: use/move the drawer at the most suitable place
-const Drawer = createDrawerNavigator<MainStackParamList>();
+const Stack = createNativeStackNavigator();
 
 export function MainStack() {
   return (
-    <Drawer.Navigator
+    <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        drawerType: 'front',
-        drawerStyle: tw`bg-transparent rounded-r-8 border-r border-[#1B5E24]`,
-      }}
-      drawerContent={() => <CustomDrawer />}>
-      <Drawer.Screen
-        name={Route.MainBottomTabRoutesStack}
-        component={MainBottomTabRoutes}
-        options={{
-          drawerItemStyle: { height: 0 },
-        }}
-      />
-    </Drawer.Navigator>
+        headerBackVisible: false,
+        animation: 'slide_from_right',
+      }}>
+      <Stack.Screen name={Route.MainDrawerRoutesStack} component={MainDrawerStack} />
+      <Stack.Screen name={Route.PricePlansStack} component={PricePlansStack} />
+      <Stack.Screen name={Route.AccountStack} component={AccountStack} />
+    </Stack.Navigator>
   );
 }
