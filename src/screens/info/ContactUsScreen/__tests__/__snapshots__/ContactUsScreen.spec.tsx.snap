@@ -253,6 +253,7 @@ exports[`ContactUs Screen should render ContactUsScreen correctly 1`] = `
                               ]
                             }
                             underlineColorAndroid="transparent"
+                            value="John Doe"
                           />
                         </View>
                         <View
@@ -636,7 +637,7 @@ exports[`ContactUs Screen should render ContactUsScreen correctly 1`] = `
                             editable={true}
                             keyboardType="phone-pad"
                             maxFontSizeMultiplier={1.5}
-                            maxLength={14}
+                            maxLength={15}
                             multiline={false}
                             onBlur={[Function]}
                             onChangeText={[Function]}

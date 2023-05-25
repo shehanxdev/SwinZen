@@ -5,7 +5,7 @@ describe('contact us validation schema', () => {
     const validInput = {
       name: 'John',
       username: 'john@example.com',
-      mobileNumber: '+1 123 345 453',
+      mobileNumber: '+1 123 345 4534',
       message: 'Valid test message',
     };
     await expect(contactUsValidationSchema.validate(validInput)).resolves.toBeTruthy();
@@ -133,11 +133,11 @@ describe('contact us validation schema', () => {
 
   it('should should not give an error for valid mobile number input', async () => {
     const validMobileNumberInputs = [
-      '+1 225 555 443',
-      '+1 555 555 555',
-      '+1 123 456 789',
-      '+1 987 654 321',
-      '+1 999 888 777',
+      '+1 225 555 4433',
+      '+1 555 555 5553',
+      '+1 123 456 7893',
+      '+1 987 654 3213',
+      '+1 999 888 7773',
     ];
 
     for (const mobileNumber of validMobileNumberInputs) {
