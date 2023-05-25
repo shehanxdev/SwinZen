@@ -38,7 +38,7 @@ export function NotificationScreen() {
       readStatus={item.isRead}
       handleOnPress={() => {
         if (item) {
-          handleOnPressNotification(item);
+          handleOnPressNotification(item).catch(console.error);
         }
       }}
     />
