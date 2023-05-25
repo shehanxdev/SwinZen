@@ -1,4 +1,4 @@
-import { ApiErrorResponse, ApiResponse, DecodedJWTUserData, UserData, UserResponse } from '@sz/models';
+import { ApiErrorResponse, ApiResponse, DecodedJWTUserData, User, UserData } from '@sz/models';
 import { APIError, HttpServiceInstance, JTWDecodeService } from '@sz/services';
 
 export class UserService {
@@ -7,7 +7,7 @@ export class UserService {
 
     try {
       const userId = JTWDecodeService.decodeToken<DecodedJWTUserData>(token).sub;
-      const response = await httpServiceInstance.get<ApiResponse<UserResponse>, ApiErrorResponse>(`/users/${userId}`);
+      const response = await httpServiceInstance.get<ApiResponse<User>, ApiErrorResponse>(`/users/${userId}`);
 
       if (!response?.data) {
         throw new APIError('UNKNOWN_ERROR');
@@ -25,10 +25,7 @@ export class UserService {
 
     try {
       const userId = JTWDecodeService.decodeToken<DecodedJWTUserData>(token).sub;
-      const response = await httpServiceInstance.patch<ApiResponse<UserResponse>, ApiErrorResponse>(
-        `/users/${userId}`,
-        data,
-      );
+      const response = await httpServiceInstance.patch<ApiResponse<User>, ApiErrorResponse>(`/users/${userId}`, data);
 
       if (!response?.data) {
         throw new APIError('UNKNOWN_ERROR');

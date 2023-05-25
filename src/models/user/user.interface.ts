@@ -6,23 +6,23 @@ export interface UserData {
   gender?: string;
   city?: string;
   deviceId?: string;
-  isActive?: boolean;
+  userStatus?: string;
   fcmTokens?: Array<string>;
 }
 
-export interface UserResponse {
+export interface User {
   id: string;
   name: string;
   email: string;
   username: string;
   fcmTokens: Array<string>;
   retryAttempts: number;
-  profilePicture: string;
-  gender: string;
-  city: string;
-  isActive: boolean;
-  lastLogin: string;
-  deviceId: string;
+  profilePicture: string | null;
+  gender: string | null;
+  city: string | null;
+  userStatus: string;
+  lastLogin: string | null;
+  deviceId: string | null;
   createdAt: string;
   updatedAt: string;
 }

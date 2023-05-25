@@ -40,6 +40,8 @@ export function NotificationScreen() {
     />
   );
 
+  const renderItemSeparator = () => <View style={tw`mx-4 h-0.25 bg-Neutral-Sz600`} />;
+
   return (
     <BaseAccountScreen testID="NotificationScreenTestID" wrapWithScrollView={false}>
       {isLoading ? (
@@ -60,7 +62,7 @@ export function NotificationScreen() {
             stickySectionHeadersEnabled={false}
             sections={getSectionList(results ?? [])}
             keyExtractor={(item, index) => item.id + index}
-            ItemSeparatorComponent={() => <View style={tw`mx-4 h-0.25 bg-Neutral-Sz600`} />}
+            ItemSeparatorComponent={renderItemSeparator}
             renderItem={renderItem}
             renderSectionHeader={({ section: { title } }) => <SectionHeader title={title} />}
           />

@@ -1,4 +1,4 @@
-import { DrawerActions } from '@react-navigation/native';
+import { CommonActions, DrawerActions } from '@react-navigation/native';
 import React from 'react';
 
 import { Route } from '@sz/constants';
@@ -24,6 +24,19 @@ export class NavigationService {
 
   public static closeDrawer() {
     NavigationService.navigationRef.current?.dispatch(DrawerActions.closeDrawer());
+  }
+
+  public static reset(route: Route) {
+    const resetAction = CommonActions.reset({
+      index: 0,
+      routes: [
+        {
+          name: route,
+        },
+      ],
+    });
+
+    NavigationService.navigationRef.current?.dispatch(resetAction);
   }
 
   private static getNavigation(route: Route, params?: any) {

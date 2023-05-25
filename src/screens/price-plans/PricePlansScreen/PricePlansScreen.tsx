@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 
 import { tw } from '@sz/config';
 import { Color, Route, SortDataType } from '@sz/constants';
 import { useFetch } from '@sz/hooks';
 import { NavigationService, PricePlansService } from '@sz/services';
+import { useDispatch } from '@sz/stores';
 
 import { BasePricePlansScreen, PlanSubscriptionCard } from '../components';
 
@@ -12,6 +13,12 @@ const TEST_ID_PREFIX = 'PricePlansScreen';
 
 export function PricePlansScreen() {
   const { data, isLoading } = useFetch(() => PricePlansService.getPricePlans(SortDataType.PRICE));
+
+  const setLoginState = useDispatch().persistentUserStore.setLoginState;
+
+  useEffect(() => {
+    setLoginState('subsequent');
+  }, []);
 
   return (
     <BasePricePlansScreen testID={`${TEST_ID_PREFIX}`}>

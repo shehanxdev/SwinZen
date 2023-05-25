@@ -10,7 +10,9 @@ import { useDispatch, useSelector } from '@sz/stores';
 
 export function App() {
   const dispatch = useDispatch();
-  const isAuthenticated = useSelector(state => state.persistentUserStore.isAuthenticated);
+
+  const isAppReady = useSelector(state => state.appStore.isAppReady);
+
   // Subscribe foreground state messages handler
   useEffect(() => {
     const unsubscribe = messaging().onMessage(async remoteMessage => {
@@ -18,9 +20,7 @@ export function App() {
       console.log('A new FCM message arrived!', JSON.stringify(remoteMessage));
     });
 
-    if (isAuthenticated) {
-      dispatch.userStore.getAuthTokensFromSecureStorage();
-    }
+    dispatch.appStore.initializeApp().catch(console.error);
 
     return unsubscribe;
   }, []);
@@ -29,7 +29,8 @@ export function App() {
     <>
       <StatusBar barStyle="light-content" />
       <View style={tw`flex-1`}>
-        <Routes />
+        {/* TODO: Add common background and loading indicator while the app is initilizing */}
+        {isAppReady ? <Routes /> : null}
         <ToastHost />
       </View>
     </>

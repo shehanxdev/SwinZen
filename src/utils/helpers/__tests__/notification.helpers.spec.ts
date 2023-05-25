@@ -20,7 +20,7 @@ describe('notification helper test cases', () => {
     // avoiding seconds issue, when test cases execution
     mockDate.setSeconds(0);
 
-    it('should return a array with a object, Today as title property and dataArray as the data property', async () => {
+    it('should return a array with a object, Today as title property and dataArray as the data property', () => {
       const dataArray = [
         {
           id: mockId,
@@ -75,7 +75,7 @@ describe('notification helper test cases', () => {
       expect(result.current).toStrictEqual(expectedResult);
     });
 
-    it('should return a array with two objects, Today as title property and dataArray first item as the data property and Yesterday as title property and dataArray second item as the data property', async () => {
+    it('should return a array with two objects, Today as title property and dataArray first item as the data property and Yesterday as title property and dataArray second item as the data property', () => {
       // getting yesterday date
       const mockYesterday = new Date(mockDate);
       mockYesterday.setDate(mockYesterday.getDate() - 1);

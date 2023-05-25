@@ -13,6 +13,7 @@ import {
   UserData,
 } from '@sz/models';
 import { AccountService, AuthService, NotifcationsService, SecureAuthService, UserService } from '@sz/services';
+import { getUserData } from '@sz/utils';
 
 import { RootModel } from './';
 
@@ -60,8 +61,6 @@ export const userStore = createModel<RootModel>()({
       if (!IS_JEST_RUNTIME) {
         await SecureAuthService.updateAuthTokens({ accessToken: accessToken, refreshToken: refreshToken });
       }
-
-      dispatch.persistentUserStore.setLoginState('subsequent');
     },
     async logoutUser() {
       dispatch.userStore.setAccessToken(null);
@@ -128,11 +127,10 @@ export const userStore = createModel<RootModel>()({
         dispatch.userStore.setAccessToken(tokens.accessToken);
         dispatch.userStore.setRefreshToken(tokens.refreshToken);
       } catch (_) {
-        dispatch.userStore.logoutUser();
+        await dispatch.userStore.logoutUser();
         await SecureAuthService.clearSecureStorage();
       }
     },
-
     async getNextActionFromSecureStorage() {
       let nextActionToken = null;
       try {
@@ -145,34 +143,12 @@ export const userStore = createModel<RootModel>()({
     },
     async getUserData(accessToken: string) {
       const data = await UserService.getUserData(accessToken);
-      const modifiedUserData: UserData = {
-        name: data.name,
-        email: data.email,
-        username: data.username,
-        profilePicture: data.profilePicture,
-        gender: data.gender,
-        city: data.city,
-        deviceId: data.deviceId,
-        isActive: data.isActive,
-        fcmTokens: data.fcmTokens,
-      };
-      dispatch.userStore.setUserData(modifiedUserData);
+      dispatch.userStore.setUserData(getUserData(data));
     },
     async patchUserData(payload: UserData, state) {
       const { accessToken } = state.userStore;
       const data = await UserService.patchUserData(payload, accessToken);
-      const modifiedUserData: UserData = {
-        name: data.name,
-        email: data.email,
-        username: data.username,
-        profilePicture: data.profilePicture,
-        gender: data.gender,
-        city: data.city,
-        deviceId: data.deviceId,
-        isActive: data.isActive,
-        fcmTokens: data.fcmTokens,
-      };
-      dispatch.userStore.setUserData(modifiedUserData);
+      dispatch.userStore.setUserData(getUserData(data));
     },
     async patchUserNotification(payload: Notification, state) {
       const { accessToken } = state.userStore;

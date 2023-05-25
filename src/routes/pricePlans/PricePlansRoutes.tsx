@@ -1,11 +1,10 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
-import { Text } from '@sz/components';
-import { Route, TextAlignment, TextVariant } from '@sz/constants';
+import { Route, TextAlignment } from '@sz/constants';
 import { PlanDetailsScreen, PricePlansScreen } from '@sz/screens';
 
-import { HeaderBackButton } from '../components';
+import { HeaderBackButton, HeaderTitle } from '../components';
 
 export type PricePlansStackParamList = {
   [Route.PricePlans]: {
@@ -26,8 +25,9 @@ export function PricePlansStack() {
         headerBackVisible: false,
         headerBackTitleVisible: false,
         headerTransparent: true,
-        headerTitle: ({ children }) => <Text variant={TextVariant.SubTitle2SemiBold}>{children}</Text>,
-        headerLeft: () => <HeaderBackButton />,
+        headerTitle: HeaderTitle,
+        headerLeft: HeaderBackButton,
+        animation: 'slide_from_right',
       }}>
       <Stack.Screen name={Route.PricePlans} component={PricePlansScreen} options={{ title: 'Join us today!' }} />
       <Stack.Screen name={Route.PlanDetails} component={PlanDetailsScreen} options={{ title: '' }} />
