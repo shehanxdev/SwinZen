@@ -36,7 +36,7 @@ export function NotificationScreen() {
       title={item.title}
       message={item.payload}
       readStatus={item.isRead}
-      handleOnPress={() => handleOnPressNotification(item)}
+      handleOnPress={() => handleOnPressNotification(item ?? {})}
     />
   );
 

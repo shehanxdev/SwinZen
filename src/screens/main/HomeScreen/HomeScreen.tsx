@@ -43,9 +43,9 @@ export function HomeScreen() {
 
   // To request notifications permissions
   useEffect(() => {
-    requestNotificationsPermission();
+    requestNotificationsPermission().catch(console.error);
     dispatch.userStore.getUserData(accessToken);
-    registerAppWithFCM();
+    registerAppWithFCM().catch(console.error);
   });
 
   const initialLogin = useSelector(state => state.persistentUserStore.loginState) === 'initial';
