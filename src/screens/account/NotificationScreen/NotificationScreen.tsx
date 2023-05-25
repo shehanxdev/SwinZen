@@ -6,7 +6,7 @@ import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 import { useFetch } from '@sz/hooks';
 import { Notification } from '@sz/models';
-import { NotifcationsService } from '@sz/services';
+import { NotificationsService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { getSectionList } from '@sz/utils';
 
@@ -16,7 +16,7 @@ import { NotificationCard, SectionHeader } from './components';
 export function NotificationScreen() {
   const dispatch = useDispatch();
   const accessToken = useSelector(state => state.userStore.accessToken);
-  const { isLoading, data, refetch } = useFetch(() => NotifcationsService.getUserNotifications({}, accessToken));
+  const { isLoading, data, refetch } = useFetch(() => NotificationsService.getUserNotifications({}, accessToken));
   const unreadCount = data ? data.results.filter(item => item.isRead === false).length : 0;
   const { results } = data || {};
 
@@ -36,7 +36,11 @@ export function NotificationScreen() {
       title={item.title}
       message={item.payload}
       readStatus={item.isRead}
-      handleOnPress={() => handleOnPressNotification(item ?? {})}
+      handleOnPress={() => {
+        if (item) {
+          handleOnPressNotification(item);
+        }
+      }}
     />
   );
 

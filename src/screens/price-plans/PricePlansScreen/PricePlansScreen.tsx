@@ -9,7 +9,7 @@ import { useDispatch } from '@sz/stores';
 
 import { BasePricePlansScreen, PlanSubscriptionCard } from '../components';
 
-const TEST_ID_PREFIX = 'PricePlansScreen';
+const TEST_ID_PREFIX = 'PricePlansScreenTestID';
 
 export function PricePlansScreen() {
   const { data, isLoading } = useFetch(() => PricePlansService.getPricePlans(SortDataType.PRICE));
@@ -29,24 +29,23 @@ export function PricePlansScreen() {
         </View>
       ) : (
         <View style={tw`mt-4 mx-6.25`}>
-          {data &&
-            data.results.map(item => (
-              <View key={item.id} style={tw`my-2`}>
-                <PlanSubscriptionCard
-                  testID={`${TEST_ID_PREFIX}-SubscriptionCard`}
-                  title={item.name}
-                  price={item.price}
-                  frequency={item.frequency}
-                  featureList={item.features}
-                  betterValue={item.banner}
-                  onCardPress={
-                    item.price === 0
-                      ? () => NavigationService.navigate(Route.MainStack)
-                      : () => NavigationService.navigate(Route.PlanDetails, { item })
-                  }
-                />
-              </View>
-            ))}
+          {data?.results.map(item => (
+            <View key={item.id} style={tw`my-2`}>
+              <PlanSubscriptionCard
+                testID={`${TEST_ID_PREFIX}-SubscriptionCard`}
+                title={item.name}
+                price={item.price}
+                frequency={item.frequency}
+                featureList={item.features}
+                betterValue={item.banner}
+                onCardPress={
+                  item.price === 0
+                    ? () => NavigationService.navigate(Route.MainStack)
+                    : () => NavigationService.navigate(Route.PlanDetails, { item })
+                }
+              />
+            </View>
+          ))}
         </View>
       )}
     </BasePricePlansScreen>

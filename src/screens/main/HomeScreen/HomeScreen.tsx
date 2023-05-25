@@ -70,7 +70,7 @@ export function HomeScreen() {
 
   return (
     // TODO::remove this BaseAuthScreen and wrap with relative component
-    <BaseMainScreen>
+    <BaseMainScreen testID="HomeScreenTestD">
       <View style={tw`m-auto`}>
         <Text style={tw`m-10`}>Home Screen</Text>
       </View>

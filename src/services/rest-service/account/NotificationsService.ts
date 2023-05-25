@@ -9,7 +9,7 @@ import {
 } from '@sz/models';
 import { APIError, HttpServiceInstance, JTWDecodeService } from '@sz/services';
 
-export class NotifcationsService {
+export class NotificationsService {
   static async getUserNotifications(data: NotificationsQueryData, token: string) {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 

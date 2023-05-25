@@ -9,10 +9,18 @@ describe('NotificationCard Component', () => {
   const mackTime = new Date();
   const dummtTitle = 'Title One';
   const dummyMessage = 'test message';
+  const mockOnPressFunction = jest.fn();
 
   const getRenderedComponent = () =>
     renderWithProviders(
-      <NotificationCard testID={testID} time={mackTime} readStatus={true} title={dummtTitle} message={dummyMessage} />,
+      <NotificationCard
+        testID={testID}
+        time={mackTime}
+        readStatus={true}
+        title={dummtTitle}
+        message={dummyMessage}
+        handleOnPress={mockOnPressFunction}
+      />,
     );
 
   it(`should render NotificationCard component correctly`, () => {

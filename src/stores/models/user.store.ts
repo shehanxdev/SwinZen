@@ -12,7 +12,7 @@ import {
   SignupUserData,
   UserData,
 } from '@sz/models';
-import { AccountService, AuthService, NotifcationsService, SecureAuthService, UserService } from '@sz/services';
+import { AccountService, AuthService, NotificationsService, SecureAuthService, UserService } from '@sz/services';
 import { getUserData } from '@sz/utils';
 
 import { RootModel } from './';
@@ -152,7 +152,7 @@ export const userStore = createModel<RootModel>()({
     },
     async patchUserNotification(payload: Notification, state) {
       const { accessToken } = state.userStore;
-      await NotifcationsService.patchUserNotification(payload, accessToken);
+      await NotificationsService.patchUserNotification(payload, accessToken);
     },
   }),
 });
