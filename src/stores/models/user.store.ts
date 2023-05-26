@@ -9,6 +9,7 @@ import {
   ResendOtpData,
   ResetPasswordData,
   SignupUserData,
+  UserProfileData,
 } from '@sz/models';
 import { AccountService, AuthService, SecureAuthService } from '@sz/services';
 
@@ -18,12 +19,14 @@ export interface UserState {
   accessToken: string | null;
   refreshToken: string | null;
   nextActionToken: string | null;
+  profileData: UserProfileData | null;
 }
 
 const initialState: UserState = {
   accessToken: null,
   refreshToken: null,
   nextActionToken: null,
+  profileData: null,
 };
 
 export const userStore = createModel<RootModel>()({
@@ -40,6 +43,9 @@ export const userStore = createModel<RootModel>()({
     },
     clearNextActionToken(state: UserState) {
       return { ...state, nextActionToken: null };
+    },
+    setUserData(state: UserState, profileData: UserProfileData) {
+      return { ...state, profileData };
     },
   },
   effects: dispatch => ({
@@ -133,7 +139,6 @@ export const userStore = createModel<RootModel>()({
         await SecureAuthService.clearSecureStorage();
       }
     },
-
     async getNextActionFromSecureStorage() {
       let nextActionToken = null;
       try {
@@ -143,6 +148,29 @@ export const userStore = createModel<RootModel>()({
       } catch (_) {
         dispatch.userStore.setNextActionToken(nextActionToken ?? null);
       }
+    },
+    //NOTE::This is a dummy function to mimic the fetch profile API calls.
+    async fetchUserData() {
+      const dummtUserData: UserProfileData = {
+        email: 'shihara@surge.global  ',
+        name: 'Shihara Dilshan',
+        profileImage: 'https://avatars.githubusercontent.com/u/61949881?v=4',
+        isSubscribed: true,
+        videoUploadData: {
+          videoUploads: 10,
+          swingzenUniveristiy: 80,
+        },
+        chartData: {
+          overall: { passes: 5, fails: 8, label: 'Overall' },
+          setup: { passes: 5, fails: 10, label: 'Setup' },
+          backswing: { passes: 5, fails: 10, label: 'Backswing' },
+          downswing: { passes: 5, fails: 10, label: 'Downswing' },
+        },
+      };
+
+      await new Promise(r => setTimeout(r, 2000));
+
+      dispatch.userStore.setUserData(dummtUserData);
     },
   }),
 });
