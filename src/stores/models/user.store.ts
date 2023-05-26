@@ -6,11 +6,14 @@ import {
   EmailVerificationData,
   ForgetPasswordData,
   LoginUserData,
+  PlanQueryData,
   ResendOtpData,
   ResetPasswordData,
   SignupUserData,
+  Subscription,
+  SubscriptionQueryData,
 } from '@sz/models';
-import { AccountService, AuthService, SecureAuthService } from '@sz/services';
+import { AccountService, AuthService, PricePlansService, SecureAuthService } from '@sz/services';
 
 import { RootModel } from './';
 
@@ -18,12 +21,14 @@ export interface UserState {
   accessToken: string | null;
   refreshToken: string | null;
   nextActionToken: string | null;
+  userPlan: Subscription | null;
 }
 
 const initialState: UserState = {
   accessToken: null,
   refreshToken: null,
   nextActionToken: null,
+  userPlan: null,
 };
 
 export const userStore = createModel<RootModel>()({
@@ -40,6 +45,9 @@ export const userStore = createModel<RootModel>()({
     },
     clearNextActionToken(state: UserState) {
       return { ...state, nextActionToken: null };
+    },
+    setUserPlan(state: UserState, userPlan: Subscription | null) {
+      return { ...state, userPlan };
     },
   },
   effects: dispatch => ({
@@ -131,7 +139,6 @@ export const userStore = createModel<RootModel>()({
         await SecureAuthService.clearSecureStorage();
       }
     },
-
     async getNextActionFromSecureStorage() {
       let nextActionToken = null;
       try {
@@ -141,6 +148,16 @@ export const userStore = createModel<RootModel>()({
       } catch (_) {
         dispatch.userStore.setNextActionToken(nextActionToken ?? null);
       }
+    },
+    async getSubscription(payload: SubscriptionQueryData, state) {
+      const { accessToken } = state.userStore;
+      const data = await PricePlansService.getSubscription(payload, accessToken);
+      dispatch.userStore.setUserPlan(data);
+    },
+    async addSubscription(payload: PlanQueryData, state) {
+      const { accessToken } = state.userStore;
+      const data = await PricePlansService.addSubscription(payload, accessToken);
+      dispatch.userStore.setUserPlan(data);
     },
   }),
 });

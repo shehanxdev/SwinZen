@@ -5,7 +5,8 @@ import { Button, PricePlanFeatureListTickIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route, TextAlignment, TextVariant } from '@sz/constants';
 import { Plan } from '@sz/models';
-import { NavigationService } from '@sz/services';
+import { NavigationService, ToastService } from '@sz/services';
+import { useDispatch } from '@sz/stores';
 
 import { BasePricePlansScreen } from '../components';
 
@@ -13,11 +14,15 @@ const TEST_ID_PREFIX = 'PlanDetailsScreen';
 
 export function PlanDetailsScreen({ route }) {
   const data = route.params.params.item as Plan;
+  const dispatch = useDispatch();
 
-  const onProceed = () => {
-    //TODO:: handle payment proceed and change routes later
-    NavigationService.navigate(Route.MainStack);
-    console.log('Pressed Payment Proceed');
+  const onProceed = (id: string) => {
+    try {
+      dispatch.userStore.addSubscription({ planId: id });
+      NavigationService.navigate(Route.MainStack);
+    } catch (error) {
+      ToastService.error({ message: 'Failed!', description: error.data.message });
+    }
   };
 
   return (
@@ -60,7 +65,7 @@ export function PlanDetailsScreen({ route }) {
             </View>
           </View>
           <View style={tw`mt-16 mb-3`}>
-            <Button onPress={onProceed} title="proceed to pay" testID={`${TEST_ID_PREFIX}-PayButton`} />
+            <Button onPress={() => onProceed(data.id)} title="proceed to pay" testID={`${TEST_ID_PREFIX}-PayButton`} />
           </View>
         </View>
       </View>
