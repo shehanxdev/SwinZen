@@ -36,6 +36,7 @@ import {
   PlayButtonSvg,
   PricePlanFeatureListTick,
   ProfileIconSvg,
+  ProfileImageChangeCameraSvg,
   SecurityIconSvg,
   SettingsMiniSvg,
   SquareTickSvg,
@@ -225,4 +226,9 @@ export function StepsTwoFirstIcon({ color = Color.Neutral.White, width = 358, he
 
 export function StepsTwoSecondIcon({ color = Color.Neutral.White, width = 358, height = 215 }: SvgIconProps) {
   return <StepsTwoSecondSvg width={width} height={height} fill={color} />;
+}
+
+//#3C563E not available within the design system
+export function ProfileImageChangeCameraIcon({ color = '#3C563E' as Color, width = 14, height = 10 }: SvgIconProps) {
+  return <ProfileImageChangeCameraSvg width={width} height={height} fill={color} />;
 }

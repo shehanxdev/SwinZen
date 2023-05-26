@@ -1162,7 +1162,7 @@ exports[`Video Setup Screen Screen should render Video Setup Screen correctly 1`
                 onTouchStart={[Function]}
                 style={
                   {
-                    "backgroundColor": "#1A5C23",
+                    "backgroundColor": "#A2FD2F",
                     "borderColor": "#ffffff00",
                     "borderRadius": 10,
                     "borderStyle": "solid",
