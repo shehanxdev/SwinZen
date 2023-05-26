@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { Alert, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, Alert, TouchableOpacity, View } from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {
   CameraOptions,
@@ -34,7 +34,7 @@ const CAMERA_OPTIONS: CameraOptions = {
   mediaType: 'photo',
   includeBase64: false,
   presentationStyle: 'fullScreen',
-  saveToPhotos: true,
+  saveToPhotos: false,
 };
 const GALLERY_OPTIONS: ImageLibraryOptions = {
   mediaType: 'photo',
@@ -79,7 +79,7 @@ export function ProfileImageUpload() {
         <View style={PROFILE_IMAGE_COMMON_STYLES}>
           {/* TODO::Create a helper function to get the first characters from full name when intergration with the APIs*/}
           {/* TODO::add a proper loading indicator */}
-          <Text variant={TextVariant.SubTitle1}>{loading ? 'loading' : 'MW'}</Text>
+          {loading ? <ActivityIndicator /> : <Text variant={TextVariant.SubTitle1}>{'MW'}</Text>}
         </View>
       ) : (
         <FastImage
@@ -100,14 +100,14 @@ export function ProfileImageUpload() {
           Alert.alert('Choose option', '', [
             {
               text: 'Camera',
-              onPress: async () => {
-                await onButtonPress('capture');
+              onPress: () => {
+                onButtonPress('capture').catch(console.error);
               },
             },
             {
               text: 'Gallery',
-              onPress: async () => {
-                await onButtonPress();
+              onPress: () => {
+                onButtonPress().catch(console.error);
               },
             },
           ]);
