@@ -25,9 +25,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<true/>
+	<string>Upload videos for swing analysis and set profile pictures using your photo library. Your privacy is important to us; we only use photos and videos for these purposes.</string>
     <key>NSCameraUsageDescription</key>
-	<true/>
+	<string>Capture videos and photos for swing analysis using your camera. Your privacy is important to us; we only access the camera for this purpose.</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>

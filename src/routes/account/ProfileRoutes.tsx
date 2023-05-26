@@ -29,6 +29,7 @@ export function ProfileStack() {
         headerBackVisible: false,
         headerTitle: ({ children }) => <Text variant={TextVariant.SubTitle2SemiBold}>{children}</Text>,
         headerLeft: () => <HeaderBackButton />,
+        animation: 'slide_from_right',
       }}>
       <Stack.Screen
         name={Route.ProfileSettings}

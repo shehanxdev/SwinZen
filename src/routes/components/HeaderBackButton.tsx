@@ -8,6 +8,7 @@ import { NavigationService } from '@sz/services';
 export function HeaderBackButton() {
   return (
     <TouchableOpacity
+      testID="HeaderBackButton"
       onPress={() => NavigationService.goBack()}
       /* NOTE:: This padding provides more area for onPress event*/
       style={tw`py-2.5 pr-2.5`}>

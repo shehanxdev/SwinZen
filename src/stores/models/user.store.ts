@@ -54,8 +54,6 @@ export const userStore = createModel<RootModel>()({
       if (!IS_JEST_RUNTIME) {
         await SecureAuthService.updateAuthTokens({ accessToken: accessToken, refreshToken: refreshToken });
       }
-
-      dispatch.persistentUserStore.setLoginState('subsequent');
     },
     async logoutUser() {
       dispatch.userStore.setAccessToken(null);
@@ -122,12 +120,6 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setAccessToken(data.accessToken);
       dispatch.userStore.setRefreshToken(data.refreshToken);
     },
-    async changeProfilePicture(/* PAYLOAD */) {
-      //TODO::Implement
-      await new Promise(resolve => {
-        setTimeout(resolve, 3000);
-      });
-    },
     async getAuthTokensFromSecureStorage() {
       try {
         const tokens = await SecureAuthService.getAuthTokens();
@@ -135,7 +127,7 @@ export const userStore = createModel<RootModel>()({
         dispatch.userStore.setAccessToken(tokens.accessToken);
         dispatch.userStore.setRefreshToken(tokens.refreshToken);
       } catch (_) {
-        dispatch.userStore.logoutUser();
+        await dispatch.userStore.logoutUser();
         await SecureAuthService.clearSecureStorage();
       }
     },
@@ -149,6 +141,12 @@ export const userStore = createModel<RootModel>()({
       } catch (_) {
         dispatch.userStore.setNextActionToken(nextActionToken ?? null);
       }
+    },
+    async changeProfilePicture(/* PAYLOAD */) {
+      //TODO::Implement
+      await new Promise(resolve => {
+        setTimeout(resolve, 3000);
+      });
     },
   }),
 });
