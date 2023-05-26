@@ -24,7 +24,7 @@ export const GolfTipsData: GolfTipDataType[] = [
     id: 4,
     videosCount: 15,
     backgroundImage: images.aroundGreen,
-    label: 'Around green',
+    label: 'Around the green',
   },
   {
     id: 5,
@@ -42,13 +42,13 @@ export const GolfTipsData: GolfTipDataType[] = [
     id: 7,
     videosCount: 3,
     backgroundImage: images.offTheTee,
-    label: 'Off the tee',
+    label: 'Off the Tee',
   },
   {
     id: 8,
     videosCount: 12,
     backgroundImage: images.offTheFairway,
-    label: 'Off the fairway',
+    label: 'Off the Fairway',
   },
   {
     id: 9,
@@ -60,6 +60,6 @@ export const GolfTipsData: GolfTipDataType[] = [
     id: 10,
     videosCount: 14,
     backgroundImage: images.mechanics,
-    label: 'Mechanics',
+    label: 'Swing Mechanics',
   },
 ];

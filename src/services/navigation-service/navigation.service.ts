@@ -1,4 +1,4 @@
-import { DrawerActions } from '@react-navigation/native';
+import { CommonActions, DrawerActions } from '@react-navigation/native';
 import React from 'react';
 
 import { Route } from '@sz/constants';
@@ -24,6 +24,19 @@ export class NavigationService {
 
   public static closeDrawer() {
     NavigationService.navigationRef.current?.dispatch(DrawerActions.closeDrawer());
+  }
+
+  public static reset(route: Route) {
+    const resetAction = CommonActions.reset({
+      index: 0,
+      routes: [
+        {
+          name: route,
+        },
+      ],
+    });
+
+    NavigationService.navigationRef.current?.dispatch(resetAction);
   }
 
   private static getNavigation(route: Route, params?: any) {
@@ -207,142 +220,184 @@ export class NavigationService {
         };
         break;
       case Route.GolfTips:
-        navRoute = Route.LibraryStack;
+        navRoute = Route.InfoStack;
         navParams = {
-          screen: Route.GolfTips,
+          screen: Route.LibraryInfoStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.GolfTips,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
       case Route.UsingTheAppInfoOne:
-        navRoute = Route.LibraryStack;
+        navRoute = Route.InfoStack;
         navParams = {
-          screen: Route.UsingTheAppInfoOne,
+          screen: Route.LibraryInfoStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.UsingTheAppInfoOne,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
       case Route.UsingTheAppInfoTwo:
-        navRoute = Route.LibraryStack;
+        navRoute = Route.InfoStack;
         navParams = {
-          screen: Route.UsingTheAppInfoTwo,
+          screen: Route.LibraryInfoStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.UsingTheAppInfoTwo,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
       case Route.UsingTheAppInfoThree:
-        navRoute = Route.LibraryStack;
+        navRoute = Route.InfoStack;
         navParams = {
-          screen: Route.UsingTheAppInfoThree,
+          screen: Route.LibraryInfoStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.UsingTheAppInfoThree,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
       case Route.UsingTheAppInfoFour:
-        navRoute = Route.LibraryStack;
+        navRoute = Route.InfoStack;
         navParams = {
-          screen: Route.UsingTheAppInfoFour,
+          screen: Route.LibraryInfoStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.UsingTheAppInfoFour,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
       case Route.UsingTheAppInfoFive:
-        navRoute = Route.LibraryStack;
+        navRoute = Route.InfoStack;
         navParams = {
-          screen: Route.UsingTheAppInfoFive,
+          screen: Route.LibraryInfoStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.UsingTheAppInfoFive,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
       case Route.UsingTheAppInfoSix:
-        navRoute = Route.LibraryStack;
+        navRoute = Route.InfoStack;
         navParams = {
-          screen: Route.UsingTheAppInfoSix,
+          screen: Route.LibraryInfoStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.UsingTheAppInfoSix,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
       case Route.UsingTheAppInfoSeven:
-        navRoute = Route.LibraryStack;
+        navRoute = Route.InfoStack;
         navParams = {
-          screen: Route.UsingTheAppInfoSeven,
+          screen: Route.LibraryInfoStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.UsingTheAppInfoSeven,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
       case Route.UsingTheAppInfoEight:
-        navRoute = Route.LibraryStack;
+        navRoute = Route.InfoStack;
         navParams = {
-          screen: Route.UsingTheAppInfoEight,
+          screen: Route.LibraryInfoStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.UsingTheAppInfoEight,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
       case Route.UsingTheAppInfoNine:
-        navRoute = Route.LibraryStack;
+        navRoute = Route.InfoStack;
         navParams = {
-          screen: Route.UsingTheAppInfoNine,
+          screen: Route.LibraryInfoStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.UsingTheAppInfoNine,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
       case Route.UsingTheAppInfoTen:
-        navRoute = Route.LibraryStack;
+        navRoute = Route.InfoStack;
         navParams = {
-          screen: Route.UsingTheAppInfoTen,
+          screen: Route.LibraryInfoStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.UsingTheAppInfoTen,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
       case Route.UsingTheAppInfoEleven:
-        navRoute = Route.LibraryStack;
+        navRoute = Route.InfoStack;
         navParams = {
-          screen: Route.UsingTheAppInfoEleven,
+          screen: Route.LibraryInfoStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.UsingTheAppInfoEleven,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
       case Route.UsingTheAppInfoTwelve:
-        navRoute = Route.LibraryStack;
+        navRoute = Route.InfoStack;
         navParams = {
-          screen: Route.UsingTheAppInfoTwelve,
+          screen: Route.LibraryInfoStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.UsingTheAppInfoTwelve,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
       case Route.UsingTheAppInfoThirteen:
-        navRoute = Route.LibraryStack;
+        navRoute = Route.InfoStack;
         navParams = {
-          screen: Route.UsingTheAppInfoThirteen,
+          screen: Route.LibraryInfoStack,
           params: {
-            screen: route,
-            params: params,
+            screen: Route.UsingTheAppInfoThirteen,
+            params: {
+              screen: route,
+              params: params,
+            },
           },
         };
         break;
