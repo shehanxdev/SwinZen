@@ -43,6 +43,7 @@ export function PricePlansScreen() {
             <View key={item.id} style={tw`my-2`}>
               <PlanSubscriptionCard
                 testID={`${TEST_ID_PREFIX}-SubscriptionCard`}
+                selected={userPlan?.id === item.id}
                 title={item.name}
                 price={item.price}
                 frequency={item.frequency}
