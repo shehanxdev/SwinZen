@@ -20,6 +20,7 @@ export function SignupStack() {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+        animation: 'slide_from_right',
       }}>
       <Stack.Screen name={Route.Signup} component={SignupScreen} />
       <Stack.Screen name={Route.RegisterEmailVerification} component={RegisterEmailVerificationScreen} />

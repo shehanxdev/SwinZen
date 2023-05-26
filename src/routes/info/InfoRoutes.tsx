@@ -1,11 +1,11 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
-import { Text } from '@sz/components';
-import { Route, TextAlignment, TextVariant } from '@sz/constants';
+import { Route, TextAlignment } from '@sz/constants';
 import { AboutUsScreen, ContactUsScreen, FAQScreen, PrivacyPolicyScreen, TermsOfUseScreen } from '@sz/screens';
 
-import { HeaderBackButton } from '../components';
+import { HeaderBackButton, HeaderTitle } from '../components';
+import { LibraryInfoStack } from './LibraryInfoRoutes';
 
 export type InfoStackParamList = {
   [Route.AboutUs]: {
@@ -23,6 +23,9 @@ export type InfoStackParamList = {
   [Route.TermsOfUse]: {
     // Can be used for future props
   };
+  [Route.LibraryInfoStack]: {
+    // Can be used for future props
+  };
 };
 
 const Stack = createNativeStackNavigator<InfoStackParamList>();
@@ -35,14 +38,16 @@ export function InfoStack() {
         headerBackTitleVisible: false,
         headerBackVisible: false,
         headerTransparent: true,
-        headerTitle: ({ children }) => <Text variant={TextVariant.SubTitle2SemiBold}>{children}</Text>,
-        headerLeft: () => <HeaderBackButton />,
+        headerTitle: HeaderTitle,
+        headerLeft: HeaderBackButton,
+        animation: 'slide_from_right',
       }}>
       <Stack.Screen name={Route.AboutUs} component={AboutUsScreen} options={{ title: 'What is SwingZen?' }} />
       <Stack.Screen name={Route.ContactUs} component={ContactUsScreen} options={{ title: 'Contact us' }} />
       <Stack.Screen name={Route.FAQ} component={FAQScreen} options={{ title: 'FAQ' }} />
       <Stack.Screen name={Route.PrivacyPolicy} component={PrivacyPolicyScreen} options={{ title: 'Privacy policy' }} />
       <Stack.Screen name={Route.TermsOfUse} component={TermsOfUseScreen} options={{ title: 'Terms of use' }} />
+      <Stack.Screen name={Route.LibraryInfoStack} component={LibraryInfoStack} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }
