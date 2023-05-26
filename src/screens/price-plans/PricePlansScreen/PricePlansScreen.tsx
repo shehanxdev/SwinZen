@@ -5,7 +5,7 @@ import { tw } from '@sz/config';
 import { Color, Route, SortDataType } from '@sz/constants';
 import { useFetch } from '@sz/hooks';
 import { NavigationService, PricePlansService } from '@sz/services';
-import { useDispatch } from '@sz/stores';
+import { useDispatch, useSelector } from '@sz/stores';
 
 import { BasePricePlansScreen, PlanSubscriptionCard } from '../components';
 
@@ -14,10 +14,20 @@ const TEST_ID_PREFIX = 'PricePlansScreen';
 export function PricePlansScreen() {
   const { data, isLoading } = useFetch(() => PricePlansService.getPricePlans(SortDataType.PRICE));
 
-  const setLoginState = useDispatch().persistentUserStore.setLoginState;
+  const dispatch = useDispatch();
+
+  const setLoginState = dispatch.persistentUserStore.setLoginState;
+  const userPlan = useSelector(state => state.userStore.userPlan);
 
   useEffect(() => {
     setLoginState('subsequent');
+    return () => {
+      // if user press back button and enter the app, user is registering under the free plan
+      if (!userPlan && data) {
+        const freePlan = data?.results.find(item => item.price === 0);
+        dispatch.userStore.addSubscription({ planId: freePlan.id });
+      }
+    };
   }, []);
 
   return (
@@ -39,7 +49,7 @@ export function PricePlansScreen() {
                 featureList={item.features}
                 betterValue={item.banner}
                 onCardPress={
-                  item.frequency
+                  item.price === 0
                     ? () => NavigationService.navigate(Route.PlanDetails, { item })
                     : () => NavigationService.navigate(Route.MainStack)
                 }

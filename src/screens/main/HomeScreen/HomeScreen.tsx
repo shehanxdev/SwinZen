@@ -3,13 +3,15 @@ import { Text, View } from 'react-native';
 
 import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
-import { NavigationService, PermissionService } from '@sz/services';
-import { useSelector } from '@sz/stores';
+import { NavigationService, PermissionService, ToastService } from '@sz/services';
+import { useDispatch, useSelector } from '@sz/stores';
 
 import { BaseMainScreen } from '../components';
 
 export function HomeScreen() {
   const initialLogin = useSelector(state => state.persistentUserStore.loginState) === 'initial';
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     //TODO::add proper error pop up to the user
@@ -19,7 +21,15 @@ export function HomeScreen() {
      * Delaying the invocation of the NavigationService.navigate() function within a setTimeout with a timeout set to 0.
      * This ensures that the Navigation object is fully initialized before invoking the navigation.
      */
-    if (initialLogin) setTimeout(() => NavigationService.navigate(Route.PricePlans), 0);
+    if (initialLogin) {
+      setTimeout(() => NavigationService.navigate(Route.PricePlans), 0);
+    } else {
+      try {
+        dispatch.userStore.getSubscription({});
+      } catch (error) {
+        ToastService.error({ message: 'Failed!', description: error.data.message });
+      }
+    }
   }, []);
 
   return (

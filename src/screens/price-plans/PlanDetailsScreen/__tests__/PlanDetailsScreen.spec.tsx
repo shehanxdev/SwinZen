@@ -1,5 +1,6 @@
-import { render } from '@testing-library/react-native';
 import * as React from 'react';
+
+import { renderWithProviders } from '@sz/utils';
 
 import { PlanDetailsScreen } from '../PlanDetailsScreen';
 
@@ -18,7 +19,7 @@ describe('Plan Details Screen screen', () => {
       },
     },
   };
-  const getRenderedScreen = () => render(<PlanDetailsScreen route={mockRoute} />);
+  const getRenderedScreen = () => renderWithProviders(<PlanDetailsScreen route={mockRoute} />);
 
   it(`should render Plan Details Screen correctly`, async () => {
     const renderer = getRenderedScreen();

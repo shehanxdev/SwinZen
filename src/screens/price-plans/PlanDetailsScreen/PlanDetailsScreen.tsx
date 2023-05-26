@@ -16,9 +16,10 @@ export function PlanDetailsScreen({ route }) {
   const data = route.params.params.item as Plan;
   const dispatch = useDispatch();
 
-  const onProceed = (id: string) => {
+  const onProceed = (data: Plan) => {
     try {
-      dispatch.userStore.addSubscription({ planId: id });
+      dispatch.userStore.addSubscription({ planId: data.id });
+      //TODO:: handle payments for paid plans
       NavigationService.navigate(Route.MainStack);
     } catch (error) {
       ToastService.error({ message: 'Failed!', description: error.data.message });
@@ -65,7 +66,7 @@ export function PlanDetailsScreen({ route }) {
             </View>
           </View>
           <View style={tw`mt-16 mb-3`}>
-            <Button onPress={() => onProceed(data.id)} title="proceed to pay" testID={`${TEST_ID_PREFIX}-PayButton`} />
+            <Button onPress={() => onProceed(data)} title="proceed to pay" testID={`${TEST_ID_PREFIX}-PayButton`} />
           </View>
         </View>
       </View>

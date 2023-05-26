@@ -149,6 +149,12 @@ export const userStore = createModel<RootModel>()({
         dispatch.userStore.setNextActionToken(nextActionToken ?? null);
       }
     },
+    async changeProfilePicture(/* PAYLOAD */) {
+      //TODO::Implement
+      await new Promise(resolve => {
+        setTimeout(resolve, 3000);
+      });
+    },
     async getSubscription(payload: SubscriptionQueryData, state) {
       const { accessToken } = state.userStore;
       const data = await PricePlansService.getSubscription(payload, accessToken);
