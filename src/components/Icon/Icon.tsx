@@ -36,6 +36,7 @@ import {
   PlayButtonSvg,
   PricePlanFeatureListTick,
   ProfileIconSvg,
+  ProfileImageChangeCameraSvg,
   SecurityIconSvg,
   SettingsMiniSvg,
   SquareTickSvg,
@@ -210,4 +211,9 @@ export function MoveRightArrowIcon({ color = Color.Neutral.White, width = 15, he
 
 export function NextIcon({ color = Color.Neutral.Sz100, width = 12, height = 20 }: SvgIconProps) {
   return <NextIconSvg width={width} height={height} fill={color} />;
+}
+
+//#3C563E not available within the design system
+export function ProfileImageChangeCameraIcon({ color = '#3C563E' as Color, width = 14, height = 10 }: SvgIconProps) {
+  return <ProfileImageChangeCameraSvg width={width} height={height} fill={color} />;
 }
