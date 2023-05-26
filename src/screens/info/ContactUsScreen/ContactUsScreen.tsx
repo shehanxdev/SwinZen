@@ -1,42 +1,69 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { View } from 'react-native';
-//import { useSelector } from 'react-redux';
 import { ContactUsFormValues } from 'src/models/info/contactUs.interface';
 
 import { Button, MailIcon, MobileNumberField, ProfileIcon, Text, TextArea, TextField } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, DEFAULT_TEXTFIELD_MAX_LENGTH, TextAlignment, TextVariant } from '@sz/constants';
 import { ContactUsService } from '@sz/services';
-import { contactUsValidationSchema } from '@sz/utils';
+import { useSelector } from '@sz/stores';
+import { contactUsValidationSchema, formatMobileNumber } from '@sz/utils';
 
 import { BaseInfoScreen } from '../components';
 
 export function ContactUsScreen() {
+  const [loading, setLoading] = useState<boolean>(false);
   const {
     control,
     handleSubmit,
     setFocus,
     formState: { isSubmitted },
+    setValue,
   } = useForm<ContactUsFormValues>({ mode: 'onChange', resolver: yupResolver(contactUsValidationSchema) });
-  // const accessToken = useSelector(state => state.userStore.accessToken);
+  const accessToken = useSelector(state => state.userStore.accessToken);
 
-  // const userId = JTWDecodeService.decodeToken(accessToken).sub;
+  useEffect(() => {
+    async function getUserData() {
+      await ContactUsService.getUserData(accessToken)
+        .then(response => {
+          setValue('name', response.data.name ? response.data.name : '');
+          setValue('username', response.data.email ? response.data.email : '');
+        })
+        .catch(error => {
+          //TODO:: implement proper error handling mechanism
+          console.error(error);
+        });
+    }
+    getUserData();
+  }, []);
+
+  const handleResponseAfterSubmission = result => {
+    if (result.statusCode === 201 || 200) {
+      //TODO:: handle successful form submission
+      console.log('message sent successfully');
+      setLoading(false);
+    } else {
+      //TODO:: handle failed submission
+      console.error(result);
+      setLoading(false);
+    }
+  };
 
   const onContactFormValid: SubmitHandler<ContactUsFormValues> = async formInput => {
-    const formatedMobileNumber =
-      formInput.mobileNumber.slice(3, 6) +
-      '-' +
-      formInput.mobileNumber.slice(7, 10) +
-      '-' +
-      formInput.mobileNumber.slice(11, 15);
-    console.log(formatedMobileNumber);
-    const result = await ContactUsService.postMessage('userId', {
+    setLoading(true);
+    const formatedMobileNumber = formatMobileNumber(formInput.mobileNumber);
+    await ContactUsService.postMessage(accessToken, {
       message: formInput.message,
       phoneNumber: formatedMobileNumber,
-    });
-    console.log(result);
+    })
+      .then(response => {
+        handleResponseAfterSubmission(response);
+      })
+      .catch(error => {
+        handleResponseAfterSubmission(error);
+      });
   };
 
   const onContactFromInvalid: SubmitErrorHandler<ContactUsFormValues> = () => {};
@@ -55,14 +82,13 @@ export function ContactUsScreen() {
             <Controller
               control={control}
               name="name"
-              render={({ field: { value = 'John Doe', onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
+              render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
                 <TextField
                   ref={ref}
                   label="Your name"
-                  //NOTE Disabled icon and test color has a low contrast with the background
+                  editable={false}
                   leftIcon={<ProfileIcon />}
                   maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
-                  //TODO:: change
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -85,6 +111,7 @@ export function ContactUsScreen() {
                 <TextField
                   ref={ref}
                   label="Your email"
+                  editable={false}
                   leftIcon={<MailIcon />}
                   maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
                   value={value}
@@ -150,12 +177,7 @@ export function ContactUsScreen() {
           </View>
         </View>
         <View style={tw`mb-4`}>
-          <Button
-            onPress={handleSubmit(onContactFormValid, onContactFromInvalid)} //todo input proper method to handleSubmit
-            title={'submit'}
-            // todo change false to a variable
-            loading={false}
-          />
+          <Button onPress={handleSubmit(onContactFormValid, onContactFromInvalid)} title={'submit'} loading={loading} />
         </View>
       </View>
     </BaseInfoScreen>
