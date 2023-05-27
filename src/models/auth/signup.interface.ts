@@ -1,3 +1,5 @@
+import { User } from '@sz/models';
+
 export interface SignupFormValues {
   name: string;
   username: string;
@@ -16,21 +18,4 @@ export interface SignupUserData {
 export interface SignupResponse {
   user: User;
   nextActionToken: string;
-}
-
-export interface User {
-  id: string;
-  name: string;
-  email: string;
-  username: string;
-  fcmTokens: string[];
-  retryAttempts: number;
-  profilePicture: string | null;
-  gender: string | null;
-  city: string | null;
-  userStatus: string;
-  lastLogin: string | null;
-  deviceId: string | null;
-  createdAt: string;
-  updatedAt: string;
 }
