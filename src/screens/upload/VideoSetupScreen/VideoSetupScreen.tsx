@@ -62,7 +62,7 @@ export function VideoSetupScreen() {
         </View>
         <View style={tw`mb-5 mt-32.25`}>
           {/* TODO:: handle the navigation once the next page is ready */}
-          <Button backgroundColor={Color.Primary.SZ650} textColor={Color.Neutral.Sz100} title="NEXT" />
+          <Button backgroundColor={Color.Primary.Sz650} textColor={Color.Neutral.Sz100} title="NEXT" />
         </View>
       </View>
     </BaseUploadScreen>
