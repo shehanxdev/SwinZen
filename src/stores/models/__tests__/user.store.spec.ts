@@ -121,7 +121,6 @@ describe('Unit testing user store', () => {
   });
 
   it('should set userData when getUserData is called', async () => {
-    const accessToken = 'dummyAccessToken';
     const mockUserResponse = {
       id: faker.string.numeric(),
       name: faker.person.fullName(),
@@ -152,7 +151,7 @@ describe('Unit testing user store', () => {
 
     jest.spyOn(UserService, 'getUserData').mockResolvedValueOnce(mockUserResponse);
 
-    await store.dispatch.userStore.getUserData(accessToken);
+    await store.dispatch.userStore.getUserData();
 
     const state = store.getState();
     expect(state.userStore.userData).toStrictEqual(mockUserData);
