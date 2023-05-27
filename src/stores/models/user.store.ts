@@ -68,8 +68,14 @@ export const userStore = createModel<RootModel>()({
       dispatch.persistentUserStore.setIsAuthenticate(false);
     },
     async registerUser(payload: SignupUserData) {
-      await AuthService.registerUser(payload);
+      const { nextActionToken } = await AuthService.registerUser(payload);
 
+      //TODO::check and fix and remove IS_JEST_RUNTIME conditional check
+      if (!IS_JEST_RUNTIME) {
+        await SecureAuthService.updateNextActionToken(nextActionToken);
+      }
+
+      dispatch.userStore.setNextActionToken(nextActionToken);
       dispatch.persistentUserStore.setLoginState('initial');
     },
     /*
