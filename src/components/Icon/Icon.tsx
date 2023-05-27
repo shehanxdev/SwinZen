@@ -32,8 +32,10 @@ import {
   NotificationTimerSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
+  PauseIconSvg,
   PhoneIconSvg,
   PlayButtonSvg,
+  PlayIconSvg,
   PricePlanFeatureListTick,
   ProfileIconSvg,
   SecurityIconSvg,
@@ -101,6 +103,14 @@ export function UploadIcon({ color = Color.Neutral.Sz100, width = 35, height = 3
 
 export function PlayButtonIcon({ color = Color.Neutral.Sz100, width = 46, height = 46 }: SvgIconProps) {
   return <PlayButtonSvg width={width} height={height} fill={color} />;
+}
+
+export function PlayIcon({ color = Color.Neutral.Sz100, width = 9, height = 9 }: SvgIconProps) {
+  return <PlayIconSvg width={width} height={height} fill={color} />;
+}
+
+export function PauseIcon({ color = Color.Neutral.Sz100, width = 9, height = 9 }: SvgIconProps) {
+  return <PauseIconSvg width={width} height={height} fill={color} />;
 }
 
 export function ErrorIcon({ color = Color.Neutral.Sz100, width = 54, height = 54 }: SvgIconProps) {

@@ -97,6 +97,11 @@ export const AppTextStyles: Record<TextVariant, React.CSSProperties> = {
     fontWeight: FontWeight.SemiBold,
     lineHeight: '24px',
   },
+  [TextVariant.Labels2]: {
+    fontSize: '12px',
+    fontWeight: FontWeight.SemiBold,
+    lineHeight: '15px',
+  },
 
   // Links
   [TextVariant.Links]: {

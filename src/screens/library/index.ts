@@ -1,2 +1,3 @@
 export * from './LibraryScreen';
-export * from './GolfTips';
+export * from './GolfTipsScreen';
+export * from './GolfTipsPlaylistScreen';

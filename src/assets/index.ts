@@ -1,4 +1,5 @@
 export * from './images';
+export * from './graphics';
 
 export { default as AccountLockSvg } from './icons/account/account-lock.svg';
 export { default as ArrowDown } from './icons/faq/arrow-down.svg';
@@ -37,6 +38,8 @@ export { default as NotificationTimerSvg } from './icons/account/notification-ti
 export { default as PasswordHideEyeSvg } from './icons/account/password-hide-eye.svg';
 export { default as PasswordRevealEyeSvg } from './icons/account/password-reveal-eye.svg';
 export { default as PhoneIconSvg } from './icons/other/phone-icon.svg';
+export { default as PlayIconSvg } from './icons/library/play-icon.svg';
+export { default as PauseIconSvg } from './icons/library/pause-icon.svg';
 export { default as PlayButtonSvg } from './icons/main/play-button.svg';
 export { default as PricePlanFeatureListTick } from './icons/price-plan/price-plan-feature-list-tick.svg';
 export { default as ProfileIconSvg } from './icons/account/profile_icon.svg';

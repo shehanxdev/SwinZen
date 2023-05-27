@@ -23,6 +23,7 @@ export enum TextVariant {
 
   // Labels
   Labels = 'Labels',
+  Labels2 = 'Labels2',
 
   // Links
   Links = 'Links',

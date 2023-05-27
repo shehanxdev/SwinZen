@@ -4,6 +4,7 @@ export const images = {
   subscribeCardBackground: require('./subscribeCardBackground.png'),
   videoSetupBackground: require('./videoSetupBackground.png'),
   AITools: require('./AITools.png'),
+  AIToolThumbnail: require('./AIToolThumbnail.png'),
   aroundGreen: require('./aroundGreen.png'),
   fundamentals: require('./fundamentals.png'),
   golfFitness: require('./golfFitness.png'),

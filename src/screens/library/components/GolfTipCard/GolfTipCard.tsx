@@ -3,11 +3,12 @@ import { ImageBackground, Pressable, View } from 'react-native';
 
 import { Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, TextAlignment, TextVariant } from '@sz/constants';
+import { Color, Route, TextAlignment, TextVariant } from '@sz/constants';
+import { NavigationService } from '@sz/services';
 
 export function GolfTipCard({ videosCount, label, backgroundImage }) {
   return (
-    <Pressable onPress={() => console.log(`pressed ${label}`)}>
+    <Pressable onPress={() => NavigationService.navigate(Route.GolfTipsPlaylist, { tipsCategory: label })}>
       <View style={tw`rounded-2.5 h-26.5 w-[106px]`}>
         <ImageBackground
           source={backgroundImage}
