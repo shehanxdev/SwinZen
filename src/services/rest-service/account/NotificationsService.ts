@@ -7,7 +7,9 @@ import {
   NotificationResponse,
   NotificationsQueryData,
 } from '@sz/models';
-import { APIError, HttpServiceInstance, JTWDecodeService } from '@sz/services';
+
+import { APIError, HttpServiceInstance } from '../..//http-service';
+import { JTWDecodeService } from '../../jwt-decode-service';
 
 export class NotificationsService {
   static async getUserNotifications(data: NotificationsQueryData, token: string) {

@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { renderWithProviders } from '@sz/utils';
+import { renderWithProviders } from '@sz/test-utils';
 
-import { NotificationCard } from './../NotificationCard';
+import { NotificationCard } from '../NotificationCard';
 
 describe('NotificationCard Component', () => {
   const testID = 'NotificationCardTestID';

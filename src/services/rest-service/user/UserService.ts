@@ -1,5 +1,7 @@
 import { ApiErrorResponse, ApiResponse, DecodedJWTUserData, User, UserData } from '@sz/models';
-import { APIError, HttpServiceInstance, JTWDecodeService } from '@sz/services';
+
+import { APIError, HttpServiceInstance } from '../..//http-service';
+import { JTWDecodeService } from '../../jwt-decode-service';
 
 export class UserService {
   static async getUserData(token: string) {

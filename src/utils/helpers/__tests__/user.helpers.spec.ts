@@ -2,11 +2,11 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { User, UserData } from '@sz/models';
 
-import { getUserData } from '../user.helpers';
+import { mapUserData } from '../user.helpers';
 
 describe('user helpers test cases', () => {
   describe('getUserData function', () => {
-    const getRenderedMaskedMail = (data: User) => renderHook(() => getUserData(data));
+    const getRenderedMaskedMail = (data: User) => renderHook(() => mapUserData(data));
     const mockDate = new Date('2023-05-25');
 
     it('should return a mapped user data', () => {

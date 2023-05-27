@@ -5,20 +5,23 @@ import { Notification } from '@sz/models';
 
 import { getSectionList } from '../notification.helpers';
 
+const MOCK_DATE = '2023-05-15';
+
 describe('notification helper test cases', () => {
   describe('getSectionList function', () => {
     const getModifiedResult = (dataArray: Notification[]) => renderHook(() => getSectionList(dataArray));
     const mockId = '12345';
     const mockUserId = '12345';
     const mockType = NotificationsType.PUSH_NOTIFICATION;
-    const timeZoneName = new Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const options = { timeZone: timeZoneName };
-    const newDate = new Date();
-    const dateInTimeZone = newDate.toLocaleString('en-US', options);
-    const mockDate = new Date(dateInTimeZone);
+
+    const mockDate = new Date(MOCK_DATE);
 
     // avoiding seconds issue, when test cases execution
     mockDate.setSeconds(0);
+
+    beforeEach(() => {
+      jest.useFakeTimers().setSystemTime(new Date(MOCK_DATE));
+    });
 
     it('should return a array with a object, Today as title property and dataArray as the data property', () => {
       const dataArray = [

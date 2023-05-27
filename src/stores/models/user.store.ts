@@ -13,7 +13,7 @@ import {
   UserData,
 } from '@sz/models';
 import { AccountService, AuthService, NotificationsService, SecureAuthService, UserService } from '@sz/services';
-import { getUserData } from '@sz/utils';
+import { mapUserData } from '@sz/utils';
 
 import { RootModel } from './';
 
@@ -149,14 +149,16 @@ export const userStore = createModel<RootModel>()({
         dispatch.userStore.setNextActionToken(nextActionToken ?? null);
       }
     },
-    async getUserData(accessToken: string) {
-      const data = await UserService.getUserData(accessToken);
-      dispatch.userStore.setUserData(getUserData(data));
+    async getUserData(_: void, state) {
+      const data = await UserService.getUserData(state.userStore.accessToken);
+
+      dispatch.userStore.setUserData(mapUserData(data));
     },
     async patchUserData(payload: UserData, state) {
       const { accessToken } = state.userStore;
       const data = await UserService.patchUserData(payload, accessToken);
-      dispatch.userStore.setUserData(getUserData(data));
+
+      dispatch.userStore.setUserData(mapUserData(data));
     },
     async patchUserNotification(payload: Notification, state) {
       const { accessToken } = state.userStore;

@@ -6,8 +6,8 @@ import { User, UserData } from '@sz/models';
  * @param {User} data - The user response data.
  * @returns {UserData} - The mapped user date.
  */
-export function getUserData(data: User): UserData {
-  const userData: UserData = {
+export function mapUserData(data: User): UserData {
+  return {
     name: data.name,
     email: data.email,
     username: data.username,
@@ -18,5 +18,4 @@ export function getUserData(data: User): UserData {
     userStatus: data.userStatus,
     fcmTokens: data.fcmTokens,
   };
-  return userData;
 }
