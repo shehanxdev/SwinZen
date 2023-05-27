@@ -9,6 +9,7 @@ export interface LoginUserData {
 }
 
 export interface LoginResponse {
+  userId: string;
   accessToken: string;
   expiresIn: number;
   refreshExpiresIn: number;

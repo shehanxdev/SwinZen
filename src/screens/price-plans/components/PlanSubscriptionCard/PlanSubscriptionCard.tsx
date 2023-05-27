@@ -45,7 +45,7 @@ export function PlanSubscriptionCard({
               {`$${price}`}
             </Text>
             <Text variant={TextVariant.Body2Regular} color={selected ? Color.Neutral.Sz600 : Color.Neutral.Sz100}>
-              {frequency ? `/${frequency}` : null}
+              {price === 0 ? null : `/${frequency}`}
             </Text>
           </View>
           <View style={tw`bg-[${Color.Neutral.Sz700}] self-center mt-3.5 h-0.25 w-61`} />

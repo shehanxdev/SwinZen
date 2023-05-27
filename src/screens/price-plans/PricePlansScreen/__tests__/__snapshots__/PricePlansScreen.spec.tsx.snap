@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Notification Screen Screen should render Notification Screen correctly 1`] = `
+exports[`PricePlans Screen screen should render PricePlans Screen correctly 1`] = `
 <View
   collapsable={false}
   pointerEvents="box-none"
@@ -39,7 +39,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
         "position": "relative",
       }
     }
-    testID="NotificationScreenTestID"
+    testID="PricePlansScreenTestID"
   >
     <Image
       resizeMode="cover"
@@ -78,9 +78,31 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
           ]
         }
       >
-        <ActivityIndicator
-          size="large"
-        />
+        <RCTScrollView
+          contentContainerStyle={
+            {
+              "flexGrow": 1,
+            }
+          }
+          keyboardShouldPersistTaps="handled"
+        >
+          <View>
+            <View
+              style={
+                {
+                  "flexBasis": "0%",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                }
+              }
+            >
+              <ActivityIndicator
+                color="#FFFFFF"
+                size="small"
+              />
+            </View>
+          </View>
+        </RCTScrollView>
       </View>
     </RCTSafeAreaView>
   </BVLinearGradient>

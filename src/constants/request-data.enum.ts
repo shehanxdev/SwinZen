@@ -5,3 +5,10 @@ export enum SortDataType {
   CREATED = 'createdAt:asc',
   UPDATED = 'updatedAt:asc',
 }
+
+export enum NotificationsType {
+  EMAIL = 'EMAIL',
+  SMS = 'SMS',
+  PUSH_NOTIFICATION = 'PUSH_NOTIFICATION',
+  IN_APP = 'IN_APP',
+}

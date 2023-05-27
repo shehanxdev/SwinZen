@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 import { RematchStore } from '@rematch/core';
 
 import { LoginUserData, SignupUserData } from '@sz/models';
-import { AuthService, AuthTokens, SecureAuthService } from '@sz/services';
+import { AuthService, AuthTokens, SecureAuthService, UserService } from '@sz/services';
 
 import { RootModel } from '..';
 import { FullModel, initializeStore } from '../..';
@@ -14,11 +14,13 @@ describe('Unit testing user store', () => {
   });
 
   it('should set access token and refresh token when loginUserWithCredentials is called', async () => {
+    const userId = '';
     const accessToken = 'dummyAccessToken';
     const refreshToken = 'dummyRefreshToken';
     const payload: LoginUserData = { username: faker.internet.email(), password: faker.internet.password() };
 
     jest.spyOn(AuthService, 'loginUserWithCredentials').mockResolvedValueOnce({
+      userId,
       accessToken,
       refreshToken,
       expiresIn: 0,
@@ -116,6 +118,91 @@ describe('Unit testing user store', () => {
 
     const state = store.getState();
     expect(state.userStore.nextActionToken).toBe(nextActionToken);
+  });
+
+  it('should set userData when getUserData is called', async () => {
+    const mockUserResponse = {
+      id: faker.string.numeric(),
+      name: faker.person.fullName(),
+      email: faker.internet.email(),
+      username: faker.internet.userName(),
+      fcmTokens: [faker.string.numeric()],
+      retryAttempts: faker.number.int(0),
+      profilePicture: faker.image.avatar(),
+      gender: faker.person.gender(),
+      city: faker.string.sample(),
+      userStatus: faker.string.sample(),
+      lastLogin: faker.date.past().toISOString(),
+      deviceId: faker.string.numeric(),
+      createdAt: faker.date.past().toISOString(),
+      updatedAt: faker.date.past().toISOString(),
+    };
+    const mockUserData = {
+      name: mockUserResponse.name,
+      email: mockUserResponse.email,
+      username: mockUserResponse.username,
+      fcmTokens: mockUserResponse.fcmTokens,
+      profilePicture: mockUserResponse.profilePicture,
+      gender: mockUserResponse.gender,
+      city: mockUserResponse.city,
+      userStatus: mockUserResponse.userStatus,
+      deviceId: mockUserResponse.deviceId,
+    };
+
+    jest.spyOn(UserService, 'getUserData').mockResolvedValueOnce(mockUserResponse);
+
+    await store.dispatch.userStore.getUserData();
+
+    const state = store.getState();
+    expect(state.userStore.userData).toStrictEqual(mockUserData);
+  });
+
+  it('should update userData when patchUserData is called', async () => {
+    const mockUserData = {
+      name: faker.person.fullName(),
+      email: faker.internet.email(),
+      username: faker.internet.userName(),
+      fcmTokens: [faker.string.numeric()],
+      profilePicture: faker.image.avatar(),
+      gender: faker.person.gender(),
+      city: faker.string.sample(),
+      userStatus: faker.string.sample(),
+      deviceId: faker.string.numeric(),
+    };
+    const mockUserResponse = {
+      id: faker.string.numeric(),
+      name: mockUserData.name,
+      email: mockUserData.email,
+      username: mockUserData.username,
+      fcmTokens: mockUserData.fcmTokens,
+      retryAttempts: faker.number.int(0),
+      profilePicture: mockUserData.profilePicture,
+      gender: mockUserData.gender,
+      city: mockUserData.city,
+      userStatus: mockUserData.userStatus,
+      lastLogin: faker.date.past().toISOString(),
+      deviceId: mockUserData.deviceId,
+      createdAt: faker.date.past().toISOString(),
+      updatedAt: faker.date.past().toISOString(),
+    };
+    const updatedUserData = {
+      name: mockUserData.name,
+      email: mockUserData.email,
+      username: mockUserData.username,
+      fcmTokens: mockUserData.fcmTokens,
+      profilePicture: mockUserData.profilePicture,
+      gender: mockUserData.gender,
+      city: mockUserData.city,
+      userStatus: mockUserData.userStatus,
+      deviceId: mockUserData.deviceId,
+    };
+
+    jest.spyOn(UserService, 'patchUserData').mockResolvedValueOnce(mockUserResponse);
+
+    await store.dispatch.userStore.patchUserData(mockUserData);
+
+    const state = store.getState();
+    expect(state.userStore.userData).toStrictEqual(updatedUserData);
   });
 
   //TODO: Add more tests for other effects and reducers
