@@ -11,11 +11,12 @@ export function useFirebaseNotifications() {
   const registerAppWithFCM = async () => {
     try {
       const token = await messaging().getToken();
-      if (token && !user.fcmTokens.includes(token)) {
-        await dispatch.userStore.patchUserData({ fcmTokens: [token] });
+
+      if (token && user && !user.fcmTokens.includes(token)) {
+        await dispatch.userStore.patchUserData({ fcmTokens: [...user.fcmTokens, token] });
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -23,18 +24,25 @@ export function useFirebaseNotifications() {
     try {
       await dispatch.userStore.patchUserData({ fcmTokens: [token] });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
+  // TODO: remove this once getUserData is moved to a proper place
   useEffect(() => {
-    PermissionService.requestNotificationsPermission().catch(console.error);
-    registerAppWithFCM().catch(console.error);
-
-    const unsubscribe = messaging().onTokenRefresh(onFCMTokenUpdate);
-
-    return () => {
-      unsubscribe();
-    };
+    dispatch.userStore.getUserData().catch(console.error);
   }, []);
+
+  useEffect(() => {
+    if (user) {
+      PermissionService.requestNotificationsPermission().catch(console.error);
+      registerAppWithFCM().catch(console.error);
+
+      const unsubscribe = messaging().onTokenRefresh(onFCMTokenUpdate);
+
+      return () => {
+        unsubscribe();
+      };
+    }
+  }, [user]);
 }
