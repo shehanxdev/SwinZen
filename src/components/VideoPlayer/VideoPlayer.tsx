@@ -15,6 +15,7 @@ export function VideoPlayer({ source }) {
   const [progress, setProgress] = useState('00:00');
   const [duration, setDuration] = useState('00:00');
 
+  const dummySource = 'https://www.w3schools.com/html/mov_bbb.mp4';
   const [newFrames, setNewFrames] = useState(null);
   const FRAME_STATUS = Object.freeze({
     LOADING: { name: Symbol('LOADING') },
@@ -36,7 +37,7 @@ export function VideoPlayer({ source }) {
   };
 
   const configureDuration = ({ duration }) => {
-    let localFileName = `${RNFS.CachesDirectoryPath}/${source}.mp4`;
+    let localFileName = `${RNFS.CachesDirectoryPath}/${dummySource}.mp4`;
     const numberOfFrames = Math.ceil(duration);
     const durationInMinsAndSeconds = convertToMinutesAndSeconds(Math.round(duration));
     setDuration(durationInMinsAndSeconds);
@@ -47,7 +48,7 @@ export function VideoPlayer({ source }) {
       }),
     );
 
-    FFmpegWrapper.getFrames(localFileName, source, numberOfFrames, filePath => {
+    FFmpegWrapper.getFrames(localFileName, dummySource, numberOfFrames, filePath => {
       let frames = [];
       for (let i = 0; i < numberOfFrames; i++) {
         frames.push(`${filePath.replace('%4d', String(i + 1).padStart(4, '0'))}.png`);
@@ -62,7 +63,7 @@ export function VideoPlayer({ source }) {
         onLoad={configureDuration}
         onProgress={setCurrentProgress}
         resizeMode={'stretch'}
-        source={source} //TODO:: Find out the issue with using urls as the source
+        source={{ uri: dummySource }} //TODO:: Find out the issue with using urls as the source
         paused={!isPlaying}
         style={tw`flex-1 w-full rounded-t-7.5 relative`}
       />
