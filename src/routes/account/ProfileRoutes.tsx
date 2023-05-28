@@ -1,11 +1,10 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
-import { Text } from '@sz/components';
-import { Route, TextAlignment, TextVariant } from '@sz/constants';
+import { Route, TextAlignment } from '@sz/constants';
 import { ChangePasswordScreen, ProfileSettingsScreen } from '@sz/screens';
 
-import { HeaderBackButton } from '../components';
+import { HeaderBackButton, HeaderTitle } from '../components';
 
 export type ProfileStackParamList = {
   [Route.ProfileSettings]: {
@@ -27,8 +26,8 @@ export function ProfileStack() {
         headerBackTitleVisible: false,
         headerTransparent: true,
         headerBackVisible: false,
-        headerTitle: ({ children }) => <Text variant={TextVariant.SubTitle2SemiBold}>{children}</Text>,
-        headerLeft: () => <HeaderBackButton />,
+        headerTitle: HeaderTitle,
+        headerLeft: HeaderBackButton,
         animation: 'slide_from_right',
       }}>
       <Stack.Screen
