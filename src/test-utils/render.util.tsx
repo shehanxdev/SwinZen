@@ -1,7 +1,6 @@
 import { NavigationContext } from '@react-navigation/native';
 import { render } from '@testing-library/react-native';
-import { ReactNode } from 'react';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Config from 'react-native-config';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { Provider } from 'react-redux';
