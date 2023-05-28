@@ -127,14 +127,6 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setAccessToken(data.accessToken);
       dispatch.userStore.setRefreshToken(data.refreshToken);
     },
-
-    async changeProfilePicture(/* PAYLOAD */) {
-      //TODO::Implement
-      await new Promise(resolve => {
-        setTimeout(resolve, 3000);
-      });
-    },
-
     async getAuthTokensFromSecureStorage() {
       try {
         const tokens = await SecureAuthService.getAuthTokens();
@@ -155,6 +147,12 @@ export const userStore = createModel<RootModel>()({
       } catch (_) {
         dispatch.userStore.setNextActionToken(nextActionToken ?? null);
       }
+    },
+    async changeProfilePicture(/* PAYLOAD */) {
+      //TODO::Implement
+      await new Promise(resolve => {
+        setTimeout(resolve, 3000);
+      });
     },
     async getUserData(_: void, state) {
       const data = await UserService.getUserData(state.userStore.accessToken);
