@@ -6,3 +6,8 @@ export interface ContactUsFormValues {
 }
 
 export interface ContactUsResponse {}
+
+export interface ContactUsPostValues {
+  message: string;
+  phoneNumber: string;
+}

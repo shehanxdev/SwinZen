@@ -156,7 +156,7 @@ exports[`NotificationCard Component should render NotificationCard component cor
           ]
         }
       >
-        in 14 days
+        in 15 days
       </Text>
     </View>
   </View>

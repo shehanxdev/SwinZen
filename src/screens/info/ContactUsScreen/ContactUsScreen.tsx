@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { View } from 'react-native';
 import { ContactUsFormValues } from 'src/models/info/contactUs.interface';
@@ -7,14 +7,12 @@ import { ContactUsFormValues } from 'src/models/info/contactUs.interface';
 import { Button, MailIcon, MobileNumberField, ProfileIcon, Text, TextArea, TextField } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, DEFAULT_TEXTFIELD_MAX_LENGTH, TextAlignment, TextVariant } from '@sz/constants';
-import { ContactUsService } from '@sz/services';
-import { useSelector } from '@sz/stores';
+import { useDispatch, useSelector } from '@sz/stores';
 import { contactUsValidationSchema, formatMobileNumber } from '@sz/utils';
 
 import { BaseInfoScreen } from '../components';
 
 export function ContactUsScreen() {
-  const [loading, setLoading] = useState<boolean>(false);
   const {
     control,
     handleSubmit,
@@ -22,8 +20,9 @@ export function ContactUsScreen() {
     formState: { isSubmitted },
     setValue,
   } = useForm<ContactUsFormValues>({ mode: 'onChange', resolver: yupResolver(contactUsValidationSchema) });
-  const accessToken = useSelector(state => state.userStore.accessToken);
   const userData = useSelector(state => state.userStore.userData);
+  const loading = useSelector(state => state.loading.effects.userStore.postContactUsMessage);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function setUserData() {
@@ -33,31 +32,9 @@ export function ContactUsScreen() {
     setUserData();
   }, [userData]);
 
-  const handleResponseAfterSubmission = result => {
-    if (result.statusCode === 201 || 200) {
-      //TODO:: handle successful form submission
-      console.log('message sent successfully');
-      setLoading(false);
-    } else {
-      //TODO:: handle failed submission
-      console.error(result);
-      setLoading(false);
-    }
-  };
-
   const onContactFormValid: SubmitHandler<ContactUsFormValues> = async formInput => {
-    setLoading(true);
     const formatedMobileNumber = formatMobileNumber(formInput.mobileNumber);
-    await ContactUsService.postMessage(accessToken, {
-      message: formInput.message,
-      phoneNumber: formatedMobileNumber,
-    })
-      .then(response => {
-        handleResponseAfterSubmission(response);
-      })
-      .catch(error => {
-        handleResponseAfterSubmission(error);
-      });
+    await dispatch.userStore.postContactUsMessage({ message: formInput.message, phoneNumber: formatedMobileNumber });
   };
 
   const onContactFromInvalid: SubmitErrorHandler<ContactUsFormValues> = () => {};
