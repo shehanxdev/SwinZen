@@ -15,6 +15,7 @@ import { tw } from '@sz/config';
 import { TextVariant } from '@sz/constants';
 import { ToastService } from '@sz/services';
 import { useSelector } from '@sz/stores';
+import { getIntials } from '@sz/utils';
 
 //Note::below values are in PX
 const PROFILE_IMAGE_DIMENTIONS = {
@@ -48,9 +49,10 @@ type ImagePickType = 'capture' | 'library';
 export function ProfileImageUpload() {
   const [newProfileImageData, setNewProfileImageData] = useState<ImagePickerResponse>(null);
 
-  const loading = useSelector(state => state.loading.effects.userStore.changeProfilePicture);
-
   const dispatch = useDispatch();
+
+  const loading = useSelector(state => state.loading.effects.userStore.changeProfilePicture);
+  const userData = useSelector(state => state.userStore.userData);
 
   const onButtonPress = async (type?: ImagePickType) => {
     let result: ImagePickerResponse;
@@ -72,14 +74,12 @@ export function ProfileImageUpload() {
     setNewProfileImageData(result);
   };
 
-  //TODO::fetch and display user data
   const renderProfileImage = useMemo(
     () =>
       newProfileImageData?.assets === undefined || loading ? (
         <View style={PROFILE_IMAGE_COMMON_STYLES}>
-          {/* TODO::Create a helper function to get the first characters from full name when intergration with the APIs*/}
           {/* TODO::add a proper loading indicator */}
-          {loading ? <ActivityIndicator /> : <Text variant={TextVariant.SubTitle1}>{'MW'}</Text>}
+          {loading ? <ActivityIndicator /> : <Text variant={TextVariant.SubTitle1}>{getIntials(userData?.name)}</Text>}
         </View>
       ) : (
         <FastImage

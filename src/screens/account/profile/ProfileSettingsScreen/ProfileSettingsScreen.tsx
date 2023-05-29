@@ -22,6 +22,9 @@ export function ProfileSettingsScreen() {
           <Text color={Color.Primary.Sz100} variant={TextVariant.SubTitle2SemiBold}>
             {userData?.name}
           </Text>
+          <Text color={Color.Primary.Sz100} variant={TextVariant.Body1SemiBold}>
+            {userData?.city}
+          </Text>
         </View>
         <View style={tw`mb-10.5`}>
           <Button

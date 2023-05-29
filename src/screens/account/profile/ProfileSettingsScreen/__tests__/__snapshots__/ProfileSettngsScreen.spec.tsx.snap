@@ -171,7 +171,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                         ]
                       }
                     >
-                      MW
+                      SZ
                     </Text>
                   </View>
                   <View
@@ -216,6 +216,22 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                         "fontFamily": "SourceSansPro-SemiBold",
                         "fontSize": 21,
                         "fontWeight": "600",
+                        "textAlign": "center",
+                      },
+                    ]
+                  }
+                />
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#F0F7F0",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
                         "textAlign": "center",
                       },
                     ]
