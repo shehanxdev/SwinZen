@@ -1,14 +1,13 @@
 import { BottomTabScreenProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ParamListBase } from '@react-navigation/native';
 import React, { useEffect } from 'react';
-import { Alert, BackHandler, TouchableOpacity, View } from 'react-native';
+import { Alert, BackHandler, View } from 'react-native';
 
-import { CustomMenuIcon, SwingZenLogoIcon } from '@sz/components';
+import { SwingZenLogoIcon } from '@sz/components';
 import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
 import { CustomBottomTabBar } from '@sz/layout';
 import { AnalysisScreen, HomeScreen, LibraryScreen, UploadScreen, VideosScreen } from '@sz/screens';
-import { NavigationService } from '@sz/services';
 
 import { commonScreenOptions } from '../configs';
 
@@ -56,11 +55,6 @@ export function MainBottomTabRoutes({ navigation }: BottomTabScreenProps<ParamLi
           <View style={tw`pl-5`}>
             <SwingZenLogoIcon width={70} height={34} />
           </View>
-        ),
-        headerRight: () => (
-          <TouchableOpacity onPress={() => NavigationService.openDrawer()} style={tw`pr-5`}>
-            <CustomMenuIcon />
-          </TouchableOpacity>
         ),
         tabBarShowLabel: false,
       }}>

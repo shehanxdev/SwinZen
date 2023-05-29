@@ -150,7 +150,7 @@ export const userStore = createModel<RootModel>()({
       }
     },
     //NOTE::This is a dummy function to mimic the fetch profile API calls.
-    async fetchUserData() {
+    async fetchUserProfileData() {
       const dummtUserData: UserProfileData = {
         email: 'shihara@surge.global  ',
         name: 'Shihara Dilshan',
@@ -168,7 +168,7 @@ export const userStore = createModel<RootModel>()({
         },
       };
 
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 500));
 
       dispatch.userStore.setUserData(dummtUserData);
     },
