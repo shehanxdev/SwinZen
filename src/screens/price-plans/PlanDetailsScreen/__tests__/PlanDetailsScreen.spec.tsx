@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { renderWithProviders } from '@sz/utils';
+import { renderWithProviders } from '@sz/test-utils';
 
 import { PlanDetailsScreen } from '../PlanDetailsScreen';
 

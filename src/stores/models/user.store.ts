@@ -6,14 +6,24 @@ import {
   EmailVerificationData,
   ForgetPasswordData,
   LoginUserData,
+  Notification,
   PlanQueryData,
   ResendOtpData,
   ResetPasswordData,
   SignupUserData,
   Subscription,
   SubscriptionQueryData,
+  UserData,
 } from '@sz/models';
-import { AccountService, AuthService, PricePlansService, SecureAuthService } from '@sz/services';
+import {
+  AccountService,
+  AuthService,
+  NotificationsService,
+  PricePlansService,
+  SecureAuthService,
+  UserService,
+} from '@sz/services';
+import { mapUserData } from '@sz/utils';
 
 import { RootModel } from './';
 
@@ -22,6 +32,7 @@ export interface UserState {
   refreshToken: string | null;
   nextActionToken: string | null;
   userPlan: Subscription | null;
+  userData: UserData | null;
 }
 
 const initialState: UserState = {
@@ -29,6 +40,7 @@ const initialState: UserState = {
   refreshToken: null,
   nextActionToken: null,
   userPlan: null,
+  userData: null,
 };
 
 export const userStore = createModel<RootModel>()({
@@ -49,13 +61,15 @@ export const userStore = createModel<RootModel>()({
     setUserPlan(state: UserState, userPlan: Subscription | null) {
       return { ...state, userPlan };
     },
+    setUserData(state: UserState, userData: UserData | null) {
+      return { ...state, userData };
+    },
   },
   effects: dispatch => ({
     async loginUserWithCredentials(payload: LoginUserData) {
       const { accessToken, refreshToken } = await AuthService.loginUserWithCredentials(payload);
       dispatch.userStore.setAccessToken(accessToken);
       dispatch.userStore.setRefreshToken(refreshToken);
-
       dispatch.persistentUserStore.setIsAuthenticate(true);
 
       //TODO::check and fix and remove IS_JEST_RUNTIME conditional check
@@ -66,8 +80,8 @@ export const userStore = createModel<RootModel>()({
     async logoutUser() {
       dispatch.userStore.setAccessToken(null);
       dispatch.userStore.setRefreshToken(null);
-
       dispatch.persistentUserStore.setIsAuthenticate(false);
+      dispatch.userStore.setUserData(null);
     },
     async registerUser(payload: SignupUserData) {
       const { nextActionToken } = await AuthService.registerUser(payload);
@@ -155,6 +169,17 @@ export const userStore = createModel<RootModel>()({
         setTimeout(resolve, 3000);
       });
     },
+    async getUserData(_: void, state) {
+      const data = await UserService.getUserData(state.userStore.accessToken);
+
+      dispatch.userStore.setUserData(mapUserData(data));
+    },
+    async patchUserData(payload: UserData, state) {
+      const { accessToken } = state.userStore;
+      const data = await UserService.patchUserData(payload, accessToken);
+
+      dispatch.userStore.setUserData(mapUserData(data));
+    },
     async getSubscription(payload: SubscriptionQueryData, state) {
       const { accessToken } = state.userStore;
       const data = await PricePlansService.getSubscription(payload, accessToken);
@@ -164,6 +189,10 @@ export const userStore = createModel<RootModel>()({
       const { accessToken } = state.userStore;
       const data = await PricePlansService.addSubscription(payload, accessToken);
       dispatch.userStore.setUserPlan(data);
+    },
+    async patchUserNotification(payload: Notification, state) {
+      const { accessToken } = state.userStore;
+      await NotificationsService.patchUserNotification(payload, accessToken);
     },
   }),
 });

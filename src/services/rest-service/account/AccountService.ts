@@ -8,8 +8,8 @@ import {
   DecodedJWTUserData,
 } from '@sz/models';
 
-import { APIError, HttpServiceInstance } from './../../http-service';
-import { JTWDecodeService } from './../../jwt-decode-service';
+import { APIError, HttpServiceInstance } from '../../http-service';
+import { JTWDecodeService } from '../../jwt-decode-service';
 
 export class AccountService {
   static async profileChangePassword(
