@@ -19,12 +19,18 @@ export function PricePlansScreen() {
   const userPlan = useSelector(state => state.userStore.userPlan);
   const plansData = useSelector(state => state.pricePlansStore.pricePlans);
 
+  const getPlans = async () => {
+    await dispatch.userStore.getSubscription({});
+    dispatch.pricePlansStore.getPricePlans(SortDataType.PRICE);
+  };
+
   useEffect(() => {
     setLoginState('subsequent');
-    dispatch.pricePlansStore.getPricePlans(SortDataType.PRICE);
+    getPlans().catch(console.error);
   }, []);
 
   useEffect(() => {
+    //TODO:: will be removed when SWIN-610 ticket is addressed
     // if there is no user plan selected user automatically registering under free plan
     if (!userPlan && plansData) {
       const freePlan = plansData.find(item => item.price === 0);

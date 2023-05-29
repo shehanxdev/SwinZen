@@ -26,19 +26,3 @@ export interface User {
   createdAt: string;
   updatedAt: string;
 }
-
-export interface PreSignedResponse {
-  url: string;
-  fields: {
-    key: string;
-    fileName: string;
-    bucket: string;
-    'X-Amz-Algorithm': string;
-    'X-Amz-Credential': string;
-    'X-Amz-Date': string;
-    Policy: string;
-    'X-Amz-Signature': string;
-    'Content-Type': string;
-    file: string;
-  };
-}
