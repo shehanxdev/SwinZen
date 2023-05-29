@@ -1,6 +1,8 @@
 import { createModel } from '@rematch/core';
 
+import { SortDataType } from '@sz/constants';
 import { Plan } from '@sz/models';
+import { PricePlansService } from '@sz/services';
 
 import { RootModel } from '.';
 
@@ -21,8 +23,9 @@ export const pricePlansStore = createModel<RootModel>()({
   },
 
   effects: dispatch => ({
-    async savePricePlans(payload: Array<Plan>) {
-      dispatch.pricePlansStore.setPricePlans(payload);
+    async getPricePlans(payload: SortDataType) {
+      const data = await PricePlansService.getPricePlans(payload);
+      dispatch.pricePlansStore.setPricePlans(data.results);
     },
   }),
 });

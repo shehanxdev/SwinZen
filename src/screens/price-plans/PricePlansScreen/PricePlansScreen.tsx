@@ -3,8 +3,7 @@ import { ActivityIndicator, View } from 'react-native';
 
 import { tw } from '@sz/config';
 import { Color, Route, SortDataType } from '@sz/constants';
-import { useFetch } from '@sz/hooks';
-import { NavigationService, PricePlansService, ToastService } from '@sz/services';
+import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 
 import { BasePricePlansScreen, PlanSubscriptionCard } from '../components';
@@ -12,35 +11,32 @@ import { BasePricePlansScreen, PlanSubscriptionCard } from '../components';
 const TEST_ID_PREFIX = 'PricePlansScreenTestID';
 
 export function PricePlansScreen() {
-  const { data, isLoading } = useFetch(() => PricePlansService.getPricePlans(SortDataType.PRICE));
-
   const dispatch = useDispatch();
 
   const setLoginState = dispatch.persistentUserStore.setLoginState;
 
+  const isLoading = useSelector(state => state.loading.effects.pricePlansStore.getPricePlans);
   const userPlan = useSelector(state => state.userStore.userPlan);
+  const plansData = useSelector(state => state.pricePlansStore.pricePlans);
 
   useEffect(() => {
     setLoginState('subsequent');
+    dispatch.pricePlansStore.getPricePlans(SortDataType.PRICE);
   }, []);
 
   useEffect(() => {
-    if (data) {
-      dispatch.pricePlansStore.savePricePlans(data.results);
-
-      // if there is no user plan selected user automatically registering under free plan
-      if (!userPlan) {
-        const freePlan = data.results.find(item => item.price === 0);
-        try {
-          dispatch.userStore.addSubscription({ planId: freePlan.id });
-        } catch (error) {
-          ToastService.error({ message: 'Failed!', description: error.data.message });
-        } finally {
-          dispatch.userStore.getSubscription({});
-        }
+    // if there is no user plan selected user automatically registering under free plan
+    if (!userPlan && plansData) {
+      const freePlan = plansData.find(item => item.price === 0);
+      try {
+        dispatch.userStore.addSubscription({ planId: freePlan.id });
+      } catch (error) {
+        ToastService.error({ message: 'Failed!', description: error.data.message });
+      } finally {
+        dispatch.userStore.getSubscription({});
       }
     }
-  }, [data]);
+  }, [plansData]);
 
   return (
     <BasePricePlansScreen testID={`${TEST_ID_PREFIX}`}>
@@ -51,7 +47,7 @@ export function PricePlansScreen() {
         </View>
       ) : (
         <View style={tw`mt-4 mx-6.25`}>
-          {data?.results.map(item => (
+          {plansData?.map(item => (
             <View key={item.id} style={tw`my-2`}>
               <PlanSubscriptionCard
                 testID={`${TEST_ID_PREFIX}-SubscriptionCard`}
