@@ -3,7 +3,7 @@
  */
 import Config from 'react-native-config';
 
-import { ConfigService, HttpService, HttpServiceInstance } from '@sz/services';
+import { ConfigService, HttpService, HttpServiceInstance, SecureAuthService } from '@sz/services';
 import { initializeStore, store } from '@sz/stores';
 
 ConfigService.setCallback(key => Config[key]);
@@ -18,11 +18,16 @@ const getRefreshToken = () => {
   return store.getState().userStore.refreshToken;
 };
 
-const onTokenUpdate = (accessToken: string, refreshToken: string) => {
+const onTokenUpdate = async (accessToken: string, refreshToken: string) => {
   store.dispatch.userStore.setAccessToken(accessToken);
   store.dispatch.userStore.setRefreshToken(refreshToken);
 
-  //TODO::update auth state in secure storage
+  await SecureAuthService.updateAuthTokens({ accessToken: accessToken, refreshToken: refreshToken });
+};
+
+const onTokenUpdateFailed = async () => {
+  await store.dispatch.userStore.logoutUser();
+  await SecureAuthService.clearSecureStorage();
 };
 
 const httpService = new HttpService(
@@ -30,6 +35,7 @@ const httpService = new HttpService(
   getAccessToken,
   getRefreshToken,
   onTokenUpdate,
+  onTokenUpdateFailed,
 );
 
 HttpServiceInstance.setHttpServiceInstance(httpService);
