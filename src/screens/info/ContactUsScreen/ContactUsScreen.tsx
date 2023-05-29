@@ -23,21 +23,15 @@ export function ContactUsScreen() {
     setValue,
   } = useForm<ContactUsFormValues>({ mode: 'onChange', resolver: yupResolver(contactUsValidationSchema) });
   const accessToken = useSelector(state => state.userStore.accessToken);
+  const userData = useSelector(state => state.userStore.userData);
 
   useEffect(() => {
-    async function getUserData() {
-      await ContactUsService.getUserData(accessToken)
-        .then(response => {
-          setValue('name', response.data.name ? response.data.name : '');
-          setValue('username', response.data.email ? response.data.email : '');
-        })
-        .catch(error => {
-          //TODO:: implement proper error handling mechanism
-          console.error(error);
-        });
+    async function setUserData() {
+      setValue('name', userData?.name ?? '');
+      setValue('username', userData?.username ?? '');
     }
-    getUserData();
-  }, []);
+    setUserData();
+  }, [userData]);
 
   const handleResponseAfterSubmission = result => {
     if (result.statusCode === 201 || 200) {

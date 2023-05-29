@@ -253,6 +253,7 @@ exports[`ContactUs Screen should render ContactUsScreen correctly 1`] = `
                               ]
                             }
                             underlineColorAndroid="transparent"
+                            value=""
                           />
                         </View>
                         <View
@@ -467,6 +468,7 @@ exports[`ContactUs Screen should render ContactUsScreen correctly 1`] = `
                               ]
                             }
                             underlineColorAndroid="transparent"
+                            value=""
                           />
                         </View>
                         <View
