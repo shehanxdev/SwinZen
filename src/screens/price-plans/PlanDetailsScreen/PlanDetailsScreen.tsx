@@ -23,6 +23,8 @@ export function PlanDetailsScreen({ route }) {
       NavigationService.navigate(Route.MainStack);
     } catch (error) {
       ToastService.error({ message: 'Failed!', description: error.data.message });
+    } finally {
+      dispatch.userStore.getSubscription({});
     }
   };
 

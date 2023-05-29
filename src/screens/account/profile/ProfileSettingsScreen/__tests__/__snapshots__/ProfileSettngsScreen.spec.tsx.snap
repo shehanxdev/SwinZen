@@ -220,9 +220,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                       },
                     ]
                   }
-                >
-                  Marshall Williams
-                </Text>
+                />
               </View>
               <View
                 style={
@@ -424,9 +422,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                       },
                     ]
                   }
-                >
-                  Marshall Williams31@gmail.com
-                </Text>
+                />
                 <View
                   style={
                     {
@@ -599,9 +595,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                         },
                       ]
                     }
-                  >
-                    Annual plan
-                  </Text>
+                  />
                   <Text
                     style={
                       [
@@ -618,7 +612,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                       ]
                     }
                   >
-                    $99.99
+                    $undefined
                   </Text>
                 </View>
                 <View
@@ -665,7 +659,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                       ]
                     }
                   >
-                    09.21.2021
+                    29.05.2023
                   </Text>
                 </View>
                 <View
@@ -759,7 +753,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                       ]
                     }
                   >
-                    09.21.2022
+                    29.05.2023
                   </Text>
                 </View>
               </View>

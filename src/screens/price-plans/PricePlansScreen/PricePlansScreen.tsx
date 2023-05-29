@@ -4,7 +4,7 @@ import { ActivityIndicator, View } from 'react-native';
 import { tw } from '@sz/config';
 import { Color, Route, SortDataType } from '@sz/constants';
 import { useFetch } from '@sz/hooks';
-import { NavigationService, PricePlansService } from '@sz/services';
+import { NavigationService, PricePlansService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 
 import { BasePricePlansScreen, PlanSubscriptionCard } from '../components';
@@ -17,18 +17,30 @@ export function PricePlansScreen() {
   const dispatch = useDispatch();
 
   const setLoginState = dispatch.persistentUserStore.setLoginState;
+
   const userPlan = useSelector(state => state.userStore.userPlan);
 
   useEffect(() => {
     setLoginState('subsequent');
-    return () => {
-      // if user press back button and enter the app, user is registering under the free plan
-      if (!userPlan && data) {
-        const freePlan = data?.results.find(item => item.price === 0);
-        dispatch.userStore.addSubscription({ planId: freePlan.id });
-      }
-    };
   }, []);
+
+  useEffect(() => {
+    if (data) {
+      dispatch.pricePlansStore.savePricePlans(data.results);
+
+      // if there is no user plan selected user automatically registering under free plan
+      if (!userPlan) {
+        const freePlan = data.results.find(item => item.price === 0);
+        try {
+          dispatch.userStore.addSubscription({ planId: freePlan.id });
+        } catch (error) {
+          ToastService.error({ message: 'Failed!', description: error.data.message });
+        } finally {
+          dispatch.userStore.getSubscription({});
+        }
+      }
+    }
+  }, [data]);
 
   return (
     <BasePricePlansScreen testID={`${TEST_ID_PREFIX}`}>
@@ -43,7 +55,7 @@ export function PricePlansScreen() {
             <View key={item.id} style={tw`my-2`}>
               <PlanSubscriptionCard
                 testID={`${TEST_ID_PREFIX}-SubscriptionCard`}
-                selected={userPlan?.id === item.id}
+                selected={userPlan?.plan.id === item.id}
                 title={item.name}
                 price={item.price}
                 frequency={item.frequency}
@@ -51,7 +63,7 @@ export function PricePlansScreen() {
                 betterValue={item.banner}
                 onCardPress={
                   item.price === 0
-                    ? () => NavigationService.navigate(Route.MainStack)
+                    ? () => NavigationService.navigate(Route.HomeTab)
                     : () => NavigationService.navigate(Route.PlanDetails, { item })
                 }
               />

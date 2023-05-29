@@ -7,6 +7,7 @@ import {
   PricePlansResponse,
   Subscription,
   SubscriptionQueryData,
+  SubscriptionResponse,
 } from '@sz/models';
 import { APIError, HttpServiceInstance, JTWDecodeService } from '@sz/services';
 
@@ -35,7 +36,7 @@ export class PricePlansService {
 
     try {
       const userId = JTWDecodeService.decodeToken<DecodedJWTUserData>(token).sub;
-      const response = await httpServiceInstance.get<ApiResponse<Subscription>, ApiErrorResponse>(
+      const response = await httpServiceInstance.get<ApiResponse<SubscriptionResponse>, ApiErrorResponse>(
         `/users/${userId}/subscriptions`,
         data,
       );

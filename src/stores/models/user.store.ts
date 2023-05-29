@@ -11,7 +11,7 @@ import {
   ResendOtpData,
   ResetPasswordData,
   SignupUserData,
-  Subscription,
+  SubscribedData,
   SubscriptionQueryData,
   UserData,
 } from '@sz/models';
@@ -31,16 +31,16 @@ export interface UserState {
   accessToken: string | null;
   refreshToken: string | null;
   nextActionToken: string | null;
-  userPlan: Subscription | null;
   userData: UserData | null;
+  userPlan: SubscribedData | null;
 }
 
 const initialState: UserState = {
   accessToken: null,
   refreshToken: null,
   nextActionToken: null,
-  userPlan: null,
   userData: null,
+  userPlan: null,
 };
 
 export const userStore = createModel<RootModel>()({
@@ -58,7 +58,7 @@ export const userStore = createModel<RootModel>()({
     clearNextActionToken(state: UserState) {
       return { ...state, nextActionToken: null };
     },
-    setUserPlan(state: UserState, userPlan: Subscription | null) {
+    setUserPlan(state: UserState, userPlan: SubscribedData | null) {
       return { ...state, userPlan };
     },
     setUserData(state: UserState, userData: UserData | null) {
@@ -183,12 +183,11 @@ export const userStore = createModel<RootModel>()({
     async getSubscription(payload: SubscriptionQueryData, state) {
       const { accessToken } = state.userStore;
       const data = await PricePlansService.getSubscription(payload, accessToken);
-      dispatch.userStore.setUserPlan(data);
+      dispatch.userStore.setUserPlan(data.results[0]);
     },
     async addSubscription(payload: PlanQueryData, state) {
       const { accessToken } = state.userStore;
-      const data = await PricePlansService.addSubscription(payload, accessToken);
-      dispatch.userStore.setUserPlan(data);
+      await PricePlansService.addSubscription(payload, accessToken);
     },
     async patchUserNotification(payload: Notification, state) {
       const { accessToken } = state.userStore;

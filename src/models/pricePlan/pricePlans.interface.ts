@@ -31,6 +31,14 @@ export interface PlanQueryData {
   planId?: string;
 }
 
+export interface SubscriptionResponse {
+  results: Array<SubscribedData>;
+  page: number;
+  limit: number;
+  totalPages: number;
+  totalResults: number;
+}
+
 export interface Subscription {
   id: string;
   planId: string;
@@ -40,4 +48,15 @@ export interface Subscription {
   isActive: true;
   createdAt: string;
   updatedAt: string;
+}
+
+export interface SubscribedData {
+  id: string;
+  userId: string;
+  startDate: string;
+  endDate?: string;
+  isActive: boolean;
+  createdAt: string;
+  updatedAt: string;
+  plan: Plan;
 }
