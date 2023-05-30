@@ -6,12 +6,15 @@ import {
   EmailVerificationData,
   ForgetPasswordData,
   LoginUserData,
+  Notification,
   ResendOtpData,
   ResetPasswordData,
   SignupUserData,
+  UserData,
   UserProfileData,
 } from '@sz/models';
-import { AccountService, AuthService, SecureAuthService } from '@sz/services';
+import { AccountService, AuthService, NotificationsService, SecureAuthService, UserService } from '@sz/services';
+import { mapUserData } from '@sz/utils';
 
 import { RootModel } from './';
 
@@ -19,7 +22,10 @@ export interface UserState {
   accessToken: string | null;
   refreshToken: string | null;
   nextActionToken: string | null;
+
+  //TODO::refactor profileData and userData to have common one
   profileData: UserProfileData | null;
+  userData: UserData | null;
 }
 
 const initialState: UserState = {
@@ -27,6 +33,7 @@ const initialState: UserState = {
   refreshToken: null,
   nextActionToken: null,
   profileData: null,
+  userData: null,
 };
 
 export const userStore = createModel<RootModel>()({
@@ -44,8 +51,11 @@ export const userStore = createModel<RootModel>()({
     clearNextActionToken(state: UserState) {
       return { ...state, nextActionToken: null };
     },
-    setUserData(state: UserState, profileData: UserProfileData) {
+    setUserProfileData(state: UserState, profileData: UserProfileData) {
       return { ...state, profileData };
+    },
+    setUserData(state: UserState, userData: UserData | null) {
+      return { ...state, userData };
     },
   },
   effects: dispatch => ({
@@ -53,21 +63,20 @@ export const userStore = createModel<RootModel>()({
       const { accessToken, refreshToken } = await AuthService.loginUserWithCredentials(payload);
       dispatch.userStore.setAccessToken(accessToken);
       dispatch.userStore.setRefreshToken(refreshToken);
-
       dispatch.persistentUserStore.setIsAuthenticate(true);
 
       //TODO::check and fix and remove IS_JEST_RUNTIME conditional check
       if (!IS_JEST_RUNTIME) {
         await SecureAuthService.updateAuthTokens({ accessToken: accessToken, refreshToken: refreshToken });
       }
-
-      dispatch.persistentUserStore.setLoginState('subsequent');
     },
     async logoutUser() {
       dispatch.userStore.setAccessToken(null);
       dispatch.userStore.setRefreshToken(null);
-
       dispatch.persistentUserStore.setIsAuthenticate(false);
+      dispatch.userStore.setUserData(null);
+
+      await SecureAuthService.clearSecureStorage();
     },
     async registerUser(payload: SignupUserData) {
       const { nextActionToken } = await AuthService.registerUser(payload);
@@ -135,7 +144,7 @@ export const userStore = createModel<RootModel>()({
         dispatch.userStore.setAccessToken(tokens.accessToken);
         dispatch.userStore.setRefreshToken(tokens.refreshToken);
       } catch (_) {
-        dispatch.userStore.logoutUser();
+        await dispatch.userStore.logoutUser();
         await SecureAuthService.clearSecureStorage();
       }
     },
@@ -170,7 +179,28 @@ export const userStore = createModel<RootModel>()({
 
       await new Promise(r => setTimeout(r, 500));
 
-      dispatch.userStore.setUserData(dummtUserData);
+      dispatch.userStore.setUserProfileData(dummtUserData);
+    },
+    async changeProfilePicture(/* PAYLOAD */) {
+      //TODO::Implement
+      await new Promise(resolve => {
+        setTimeout(resolve, 3000);
+      });
+    },
+    async getUserData(_: void, state) {
+      const data = await UserService.getUserData(state.userStore.accessToken);
+
+      dispatch.userStore.setUserData(mapUserData(data));
+    },
+    async patchUserData(payload: UserData, state) {
+      const { accessToken } = state.userStore;
+      const data = await UserService.patchUserData(payload, accessToken);
+
+      dispatch.userStore.setUserData(mapUserData(data));
+    },
+    async patchUserNotification(payload: Notification, state) {
+      const { accessToken } = state.userStore;
+      await NotificationsService.patchUserNotification(payload, accessToken);
     },
   }),
 });

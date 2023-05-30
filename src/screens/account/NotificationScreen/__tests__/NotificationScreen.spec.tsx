@@ -1,5 +1,6 @@
-import { render } from '@testing-library/react-native';
 import * as React from 'react';
+
+import { renderWithProviders } from '@sz/test-utils';
 
 import { NotificationScreen } from '../NotificationScreen';
 
@@ -10,7 +11,7 @@ describe('Notification Screen Screen', () => {
     jest.useFakeTimers().setSystemTime(new Date('2023-05-15'));
   });
 
-  const getRenderedScreen = () => render(<NotificationScreen />);
+  const getRenderedScreen = () => renderWithProviders(<NotificationScreen />);
 
   it(`should render Notification Screen correctly`, () => {
     const renderer = getRenderedScreen();

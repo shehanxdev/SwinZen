@@ -3,7 +3,7 @@
  * the first character and the character before "@" symbol with a mask character (defaults to "*").
  *
  * @param {string} email - The email address to mask.
- * @param {string=} mask - The character to use as the mask (default "*").
+ * @param {string} mask - The character to use as the mask (default "*").
  * @returns {string} The masked email address.
  */
 export function getMaskedMail(email: string, mask: string = '*') {

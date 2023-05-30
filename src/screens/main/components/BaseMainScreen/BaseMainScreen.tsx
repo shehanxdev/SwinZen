@@ -14,7 +14,7 @@ interface BaseMainScreenScreenProps extends Partial<LinearGradientProps> {
 
 export function BaseMainScreen({
   children,
-  colors = [Color.Primary.SZ650, Color.Primary.Sz800, Color.Primary.Sz900],
+  colors = [Color.Primary.Sz650, Color.Primary.Sz800, Color.Primary.Sz900],
   ...otherlinearGradientProps
 }: BaseMainScreenScreenProps) {
   const headerHeight = useHeaderHeight();

@@ -94,6 +94,24 @@ exports[`NotificationCard Component should render NotificationCard component cor
             ]
           }
         >
+          Title One
+        </Text>
+        <Text
+          style={
+            [
+              {
+                "color": "#6C757D",
+                "lineHeight": 24,
+              },
+              {
+                "fontFamily": "SourceSansPro-Regular",
+                "fontSize": 16,
+                "fontWeight": "normal",
+                "textAlign": "auto",
+              },
+            ]
+          }
+        >
           test message
         </Text>
       </View>
@@ -138,7 +156,7 @@ exports[`NotificationCard Component should render NotificationCard component cor
           ]
         }
       >
-        a few seconds ago
+        in 15 days
       </Text>
     </View>
   </View>

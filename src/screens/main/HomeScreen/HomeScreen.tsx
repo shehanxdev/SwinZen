@@ -4,8 +4,8 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import { Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { TextVariant } from '@sz/constants';
-import { PermissionService } from '@sz/services';
+import { Route, TextVariant } from '@sz/constants';
+import { NavigationService, PermissionService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 
 import { BaseMainScreen } from '../components';
@@ -19,6 +19,7 @@ export function HomeScreen() {
 
   const loading = useSelector(state => state.loading.effects.userStore.fetchUserProfileData);
   const userProfileData = useSelector(state => state.userStore.profileData);
+  const initialLogin = useSelector(state => state.persistentUserStore.loginState) === 'initial';
 
   // To request notifications permissions
   useEffect(() => {
@@ -27,6 +28,8 @@ export function HomeScreen() {
 
     //fetch user profile data
     dispatch.userStore.fetchUserProfileData();
+
+    if (initialLogin) setTimeout(() => NavigationService.navigate(Route.PricePlans), 0);
   }, []);
 
   const renderVideoAnalysisData = useMemo(() => {
