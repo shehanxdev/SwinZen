@@ -27,7 +27,6 @@ const onTokenUpdate = async (accessToken: string, refreshToken: string) => {
 
 const onTokenUpdateFailed = async () => {
   await store.dispatch.userStore.logoutUser();
-  await SecureAuthService.clearSecureStorage();
 };
 
 const httpService = new HttpService(

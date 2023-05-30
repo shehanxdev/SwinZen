@@ -4,7 +4,6 @@ import { IS_JEST_RUNTIME } from '@sz/constants';
 import { ApiErrorResponse, RefreshTokenResponse } from '@sz/models';
 
 import { APIError } from './APIError';
-import { HttpServiceInstance } from './HttpServiceInstance';
 
 type HttpVerbs = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 
@@ -89,25 +88,18 @@ export class HttpService {
     }
 
     try {
-      const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
+      const response = await this.postAnonymousWithCustomHeaders<ApiResponse<RefreshTokenResponse>, ApiErrorResponse>(
+        '/auth/refresh-token',
+        { authorization: `Bearer ${this.getRefreshToken()}` },
+        {},
+      );
 
-      try {
-        const response = await httpServiceInstance.postAnonymousWithCustomHeaders<
-          ApiResponse<RefreshTokenResponse>,
-          ApiErrorResponse
-        >('/auth/refresh-token', { authorization: `Bearer ${this.getRefreshToken()}` }, {});
+      const accessToken = response.data.accessToken;
+      const refreshToken = response.data.refreshToken;
 
-        const accessToken = response.data.accessToken;
-        const refreshToken = response.data.refreshToken;
-
-        await this.onTokenUpdate(accessToken, refreshToken);
-      } catch (error) {
-        await this.onTokenUpdateFailed();
-
-        throw new APIError<ApiErrorResponse>('UNKNOWN_ERROR', error.data);
-      }
-    } catch (e) {
-      throw new APIError('INTERNAL_ERROR', 'Refresh Access Token request returned no data');
+      await this.onTokenUpdate(accessToken, refreshToken);
+    } catch (error) {
+      await this.onTokenUpdateFailed();
     }
   };
 
