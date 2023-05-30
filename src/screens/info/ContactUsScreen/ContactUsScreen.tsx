@@ -31,7 +31,6 @@ export function ContactUsScreen() {
     }
     (async () => {
       await setUserData();
-      console.log('awaited');
     })();
   }, [userData]);
 
