@@ -1,14 +1,10 @@
 import { BottomTabBarProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import { Alert, View } from 'react-native';
+import { Alert } from 'react-native';
 
-import { SwingZenLogoIcon } from '@sz/components';
-import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
 import { CustomBottomTabBar } from '@sz/layout';
 import { AnalysisScreen, HomeScreen, LibraryScreen, UploadScreen, VideosScreen } from '@sz/screens';
-
-import { commonScreenOptions } from '../configs';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,19 +18,11 @@ export function MainBottomTabRoutes() {
     />
   );
 
-  const renderHeaderLeft = () => (
-    <View style={tw`pl-5`}>
-      <SwingZenLogoIcon width={70} height={34} />
-    </View>
-  );
-
   return (
     <Tab.Navigator
       tabBar={renderTabBar}
       screenOptions={{
-        ...commonScreenOptions,
-        headerLeft: renderHeaderLeft,
-        tabBarShowLabel: false,
+        headerShown: false,
       }}>
       <Tab.Screen name={Route.HomeTab} component={HomeScreen} />
       <Tab.Screen name={Route.VideosTab} component={VideosScreen} />
@@ -44,3 +32,12 @@ export function MainBottomTabRoutes() {
     </Tab.Navigator>
   );
 }
+
+/*
+
+ const renderHeaderLeft = () => (
+    <View style={tw`pl-5`}>
+      <SwingZenLogoIcon width={70} height={34} />
+    </View>
+  );
+*/

@@ -79,14 +79,9 @@ exports[`Home screen should render Home screen correctly 1`] = `
       >
         <RCTScrollView
           contentContainerStyle={
-            [
-              {
-                "flexGrow": 1,
-              },
-              {
-                "marginTop": 50,
-              },
-            ]
+            {
+              "flexGrow": 1,
+            }
           }
           keyboardShouldPersistTaps="handled"
         >

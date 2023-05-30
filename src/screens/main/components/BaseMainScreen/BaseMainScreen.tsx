@@ -24,13 +24,7 @@ export function BaseMainScreen({
       <Image source={images.grassBackground} style={tw`absolute opacity-10 h-screen w-screen`} resizeMode="cover" />
       <SafeAreaView style={tw`h-full pt-[${headerHeight}px]`}>
         <KeyboardAvoidingView style={tw`flex-1`} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-          <ScrollView
-            contentContainerStyle={[
-              tw`grow`,
-              //NOTE::There is an issue with the headerTransparent option with IOS devices which causes header height to be ingored by the content. This is a tempory workaround to get rid of that.
-              { ...(Platform.OS === 'ios' && { marginTop: headerHeight }) },
-            ]}
-            keyboardShouldPersistTaps="handled">
+          <ScrollView contentContainerStyle={tw`grow`} keyboardShouldPersistTaps="handled">
             {children}
           </ScrollView>
         </KeyboardAvoidingView>
