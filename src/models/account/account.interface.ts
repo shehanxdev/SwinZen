@@ -37,3 +37,7 @@ export interface PreSignedResponse {
     file: string;
   };
 }
+
+export interface ChangeProfilePictureResponse {
+  url: string;
+}

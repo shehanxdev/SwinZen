@@ -152,6 +152,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                         "height": 134,
                         "justifyContent": "center",
                         "width": 134,
+                        "zIndex": 0,
                       }
                     }
                   >
@@ -186,6 +187,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                         "right": 2.75,
                         "top": 2.75,
                         "width": 28,
+                        "zIndex": 20,
                       }
                     }
                   >
@@ -675,7 +677,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                       ]
                     }
                   >
-                    29.05.2023
+                    30.05.2023
                   </Text>
                 </View>
                 <View
@@ -769,7 +771,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                       ]
                     }
                   >
-                    29.05.2023
+                    30.05.2023
                   </Text>
                 </View>
               </View>

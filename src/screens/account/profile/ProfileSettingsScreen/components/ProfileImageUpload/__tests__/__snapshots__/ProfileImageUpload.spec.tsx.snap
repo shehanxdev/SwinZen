@@ -66,6 +66,7 @@ exports[`Profile Image Upload component should render component correctly 1`] = 
             "height": 134,
             "justifyContent": "center",
             "width": 134,
+            "zIndex": 0,
           }
         }
       >
@@ -100,6 +101,7 @@ exports[`Profile Image Upload component should render component correctly 1`] = 
             "right": 2.75,
             "top": 2.75,
             "width": 28,
+            "zIndex": 20,
           }
         }
       >

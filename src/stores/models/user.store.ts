@@ -1,6 +1,6 @@
 import { createModel } from '@rematch/core';
 
-import { IS_JEST_RUNTIME, OtpType } from '@sz/constants';
+import { FilesType, IS_JEST_RUNTIME, OtpType } from '@sz/constants';
 import {
   ChangePasswordData,
   EmailVerificationData,
@@ -8,6 +8,7 @@ import {
   LoginUserData,
   Notification,
   PlanQueryData,
+  PreSignedResponse,
   ResendOtpData,
   ResetPasswordData,
   SignupUserData,
@@ -33,6 +34,8 @@ export interface UserState {
   nextActionToken: string | null;
   userData: UserData | null;
   userPlan: SubscribedData | null;
+  preSignedData: PreSignedResponse | null;
+  userProfilePic: string | null;
 }
 
 const initialState: UserState = {
@@ -41,6 +44,8 @@ const initialState: UserState = {
   nextActionToken: null,
   userData: null,
   userPlan: null,
+  preSignedData: null,
+  userProfilePic: null,
 };
 
 export const userStore = createModel<RootModel>()({
@@ -63,6 +68,12 @@ export const userStore = createModel<RootModel>()({
     },
     setUserData(state: UserState, userData: UserData | null) {
       return { ...state, userData };
+    },
+    setPreSignedData(state: UserState, preSignedData: PreSignedResponse | null) {
+      return { ...state, preSignedData };
+    },
+    setUserProfilePic(state: UserState, userProfilePic: string | null) {
+      return { ...state, userProfilePic };
     },
   },
   effects: dispatch => ({
@@ -163,12 +174,6 @@ export const userStore = createModel<RootModel>()({
         dispatch.userStore.setNextActionToken(nextActionToken ?? null);
       }
     },
-    async changeProfilePicture(/* PAYLOAD */) {
-      //TODO::Implement
-      await new Promise(resolve => {
-        setTimeout(resolve, 3000);
-      });
-    },
     async getUserData(_: void, state) {
       const data = await UserService.getUserData(state.userStore.accessToken);
 
@@ -192,6 +197,19 @@ export const userStore = createModel<RootModel>()({
     async patchUserNotification(payload: Notification, state) {
       const { accessToken } = state.userStore;
       await NotificationsService.patchUserNotification(payload, accessToken);
+    },
+    async getPreSignedData(payload: FilesType, state) {
+      const { accessToken } = state.userStore;
+      const data = await AccountService.getPreSignedData(payload, accessToken);
+      dispatch.userStore.setPreSignedData(data);
+    },
+    async clearPreSignedData() {
+      dispatch.userStore.setPreSignedData(null);
+    },
+    async changeProfilePicture(payload: string, state) {
+      const { accessToken } = state.userStore;
+      const data = await AccountService.changeProfilePicture(payload, accessToken);
+      dispatch.userStore.setUserProfilePic(data.url);
     },
   }),
 });
