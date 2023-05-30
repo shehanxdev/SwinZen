@@ -63,11 +63,7 @@ export function PricePlansScreen() {
                 frequency={item.frequency}
                 featureList={item.features}
                 betterValue={item.banner}
-                onCardPress={
-                  item.price === 0
-                    ? () => NavigationService.navigate(Route.HomeTab)
-                    : () => NavigationService.navigate(Route.PlanDetails, { item })
-                }
+                onCardPress={() => NavigationService.navigate(Route.PlanDetails, { item })}
               />
             </View>
           ))}

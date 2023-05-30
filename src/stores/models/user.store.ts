@@ -93,6 +93,8 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setRefreshToken(null);
       dispatch.persistentUserStore.setIsAuthenticate(false);
       dispatch.userStore.setUserData(null);
+
+      await SecureAuthService.clearSecureStorage();
     },
     async registerUser(payload: SignupUserData) {
       const { nextActionToken } = await AuthService.registerUser(payload);
