@@ -290,7 +290,7 @@ exports[`Plan Details Screen screen should render Plan Details Screen correctly 
                       style={
                         {
                           "backgroundColor": "#A2FD2F",
-                          "borderColor": "#ffffff00",
+                          "borderColor": "#00000000",
                           "borderRadius": 10,
                           "borderStyle": "solid",
                           "borderWidth": 1,

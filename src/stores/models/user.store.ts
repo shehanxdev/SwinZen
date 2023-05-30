@@ -15,6 +15,7 @@ import {
   SubscribedData,
   SubscriptionQueryData,
   UserData,
+  UserProfileData,
 } from '@sz/models';
 import {
   AccountService,
@@ -36,6 +37,8 @@ export interface UserState {
   userPlan: SubscribedData | null;
   preSignedData: PreSignedResponse | null;
   userProfilePic: string | null;
+  //TODO::refactor profileData and userData to have common one
+  profileData: UserProfileData | null;
 }
 
 const initialState: UserState = {
@@ -46,6 +49,7 @@ const initialState: UserState = {
   userPlan: null,
   preSignedData: null,
   userProfilePic: null,
+  profileData: null,
 };
 
 export const userStore = createModel<RootModel>()({
@@ -74,6 +78,9 @@ export const userStore = createModel<RootModel>()({
     },
     setUserProfilePic(state: UserState, userProfilePic: string | null) {
       return { ...state, userProfilePic };
+    },
+    setUserProfileData(state: UserState, profileData: UserProfileData) {
+      return { ...state, profileData };
     },
   },
   effects: dispatch => ({
@@ -212,6 +219,28 @@ export const userStore = createModel<RootModel>()({
       const { accessToken } = state.userStore;
       const data = await AccountService.changeProfilePicture(payload, accessToken);
       dispatch.userStore.setUserProfilePic(data.url);
+    },
+    //NOTE::This is a dummy function to mimic the fetch profile API calls.
+    async fetchUserProfileData() {
+      const dummtUserData: UserProfileData = {
+        email: 'shihara@surge.global  ',
+        name: 'Shihara Dilshan',
+        profileImage: 'https://avatars.githubusercontent.com/u/61949881?v=4',
+        isSubscribed: true,
+        videoUploadData: {
+          videoUploads: 10,
+          swingzenUniveristiy: 80,
+        },
+        chartData: {
+          overall: { passes: 5, fails: 8, label: 'Overall' },
+          setup: { passes: 3, fails: 7, label: 'Setup' },
+          backswing: { passes: 6, fails: 7, label: 'Backswing' },
+          downswing: { passes: 5, fails: 4, label: 'Downswing' },
+        },
+      };
+
+      await new Promise(r => setTimeout(r, 500));
+      dispatch.userStore.setUserProfileData(dummtUserData);
     },
   }),
 });
