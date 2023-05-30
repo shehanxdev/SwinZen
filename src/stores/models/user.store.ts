@@ -11,6 +11,7 @@ import {
   ResetPasswordData,
   SignupUserData,
   UserData,
+  UserProfileData,
 } from '@sz/models';
 import { AccountService, AuthService, NotificationsService, SecureAuthService, UserService } from '@sz/services';
 import { mapUserData } from '@sz/utils';
@@ -21,6 +22,9 @@ export interface UserState {
   accessToken: string | null;
   refreshToken: string | null;
   nextActionToken: string | null;
+
+  //TODO::refactor profileData and userData to have common one
+  profileData: UserProfileData | null;
   userData: UserData | null;
 }
 
@@ -28,6 +32,7 @@ const initialState: UserState = {
   accessToken: null,
   refreshToken: null,
   nextActionToken: null,
+  profileData: null,
   userData: null,
 };
 
@@ -45,6 +50,9 @@ export const userStore = createModel<RootModel>()({
     },
     clearNextActionToken(state: UserState) {
       return { ...state, nextActionToken: null };
+    },
+    setUserProfileData(state: UserState, profileData: UserProfileData) {
+      return { ...state, profileData };
     },
     setUserData(state: UserState, userData: UserData | null) {
       return { ...state, userData };
@@ -149,6 +157,29 @@ export const userStore = createModel<RootModel>()({
       } catch (_) {
         dispatch.userStore.setNextActionToken(nextActionToken ?? null);
       }
+    },
+    //NOTE::This is a dummy function to mimic the fetch profile API calls.
+    async fetchUserProfileData() {
+      const dummtUserData: UserProfileData = {
+        email: 'shihara@surge.global  ',
+        name: 'Shihara Dilshan',
+        profileImage: 'https://avatars.githubusercontent.com/u/61949881?v=4',
+        isSubscribed: true,
+        videoUploadData: {
+          videoUploads: 10,
+          swingzenUniveristiy: 80,
+        },
+        chartData: {
+          overall: { passes: 5, fails: 8, label: 'Overall' },
+          setup: { passes: 3, fails: 7, label: 'Setup' },
+          backswing: { passes: 6, fails: 7, label: 'Backswing' },
+          downswing: { passes: 5, fails: 4, label: 'Downswing' },
+        },
+      };
+
+      await new Promise(r => setTimeout(r, 500));
+
+      dispatch.userStore.setUserProfileData(dummtUserData);
     },
     async changeProfilePicture(/* PAYLOAD */) {
       //TODO::Implement
