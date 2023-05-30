@@ -289,11 +289,11 @@ exports[`BaseResultsSection component should render correctly should render corr
         [
           {
             "color": "#FFFFFF",
-            "lineHeight": 24,
+            "lineHeight": 15,
           },
           {
             "fontFamily": "SourceSansPro-Regular",
-            "fontSize": 15,
+            "fontSize": 12,
             "fontWeight": "600",
             "textAlign": "center",
           },
@@ -595,11 +595,11 @@ exports[`BaseResultsSection component should render correctly should render corr
         [
           {
             "color": "#FFFFFF",
-            "lineHeight": 24,
+            "lineHeight": 15,
           },
           {
             "fontFamily": "SourceSansPro-Regular",
-            "fontSize": 15,
+            "fontSize": 12,
             "fontWeight": "600",
             "textAlign": "center",
           },
@@ -901,11 +901,11 @@ exports[`BaseResultsSection component should render correctly should render corr
         [
           {
             "color": "#FFFFFF",
-            "lineHeight": 24,
+            "lineHeight": 15,
           },
           {
             "fontFamily": "SourceSansPro-Regular",
-            "fontSize": 15,
+            "fontSize": 12,
             "fontWeight": "600",
             "textAlign": "center",
           },
@@ -1207,11 +1207,11 @@ exports[`BaseResultsSection component should render correctly should render corr
         [
           {
             "color": "#FFFFFF",
-            "lineHeight": 24,
+            "lineHeight": 15,
           },
           {
             "fontFamily": "SourceSansPro-Regular",
-            "fontSize": 15,
+            "fontSize": 12,
             "fontWeight": "600",
             "textAlign": "center",
           },

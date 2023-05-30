@@ -23,7 +23,7 @@ export function BaseResultsSection({ passes, fails, label }: BaseResultsSectionP
       <BaseChartBar barValue={fails} chartBarType={'fail'} />
       <View style={tw`absolute top-[-${SECTION_LABEL_TOP_MARGIN}px] inset-x-0`}>
         {/* TODO:: TextVatriant TextVariant.Labels size is too much, this will cause line breaks. Need to reduce the text sizes with a new textVariant or shorter labels*/}
-        <Text variant={TextVariant.Labels} color={Color.Neutral.White}>
+        <Text variant={TextVariant.LabelsAlt} color={Color.Neutral.White}>
           {label}
         </Text>
       </View>

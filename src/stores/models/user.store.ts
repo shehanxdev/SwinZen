@@ -162,9 +162,9 @@ export const userStore = createModel<RootModel>()({
         },
         chartData: {
           overall: { passes: 5, fails: 8, label: 'Overall' },
-          setup: { passes: 5, fails: 10, label: 'Setup' },
-          backswing: { passes: 5, fails: 10, label: 'Backswing' },
-          downswing: { passes: 5, fails: 10, label: 'Downswing' },
+          setup: { passes: 3, fails: 7, label: 'Setup' },
+          backswing: { passes: 6, fails: 7, label: 'Backswing' },
+          downswing: { passes: 5, fails: 4, label: 'Downswing' },
         },
       };
 

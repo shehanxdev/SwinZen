@@ -7,5 +7,5 @@ export interface UserProfileData {
   profileImage: string;
   isSubscribed: boolean;
   videoUploadData: { videoUploads: number; swingzenUniveristiy: number };
-  chartData: DataChartProps;
+  chartData: DataChartProps | null;
 }

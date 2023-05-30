@@ -20,7 +20,7 @@ export function DataChart({ overall, setup, backswing, downswing }: DataChartPro
     ));
   }, [overall, setup, backswing, downswing]);
   return (
-    <View style={tw`flex flex-row h-58.75 justify-between`} testID="DataChartTestID">
+    <View style={tw`flex flex-row h-58.75 justify-between mt-12`} testID="DataChartTestID">
       {renderChartData}
     </View>
   );

@@ -22,7 +22,7 @@ export function BaseMainScreen({
   return (
     <LinearGradient {...otherlinearGradientProps} colors={colors} style={tw`relative flex-1`}>
       <Image source={images.grassBackground} style={tw`absolute opacity-10 h-screen w-screen`} resizeMode="cover" />
-      <SafeAreaView style={tw`absolute h-full pt-[${headerHeight}px]`}>
+      <SafeAreaView style={tw`h-full pt-[${headerHeight}px]`}>
         <KeyboardAvoidingView style={tw`flex-1`} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
           <ScrollView
             contentContainerStyle={[
