@@ -96,8 +96,6 @@ exports[`Plan Details Screen screen should render Plan Details Screen correctly 
                   "flexBasis": "0%",
                   "flexGrow": 1,
                   "flexShrink": 1,
-                  "marginLeft": 20,
-                  "marginRight": 20,
                 }
               }
             >
@@ -156,52 +154,17 @@ exports[`Plan Details Screen screen should render Plan Details Screen correctly 
               <View
                 style={
                   {
-                    "marginTop": 40,
-                  }
-                }
-              >
-                <Text
-                  style={
-                    [
-                      {
-                        "color": "#F8F9FA",
-                        "lineHeight": 24,
-                      },
-                      {
-                        "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "normal",
-                        "textAlign": "center",
-                      },
-                    ]
-                  }
-                >
-                  testLongDescription
-                </Text>
-              </View>
-              <View
-                style={
-                  {
-                    "marginTop": 16,
+                    "alignItems": "flex-start",
                   }
                 }
               >
                 <View
                   style={
                     {
-                      "alignItems": "center",
-                      "flexDirection": "row",
-                      "gap": 8,
-                      "justifyContent": "center",
-                      "marginTop": 8,
+                      "marginTop": 40,
                     }
                   }
                 >
-                  <SvgMock
-                    fill="#A2FD2F"
-                    height={13}
-                    width={13}
-                  />
                   <Text
                     style={
                       [
@@ -211,51 +174,26 @@ exports[`Plan Details Screen screen should render Plan Details Screen correctly 
                         },
                         {
                           "fontFamily": "SourceSansPro-Regular",
-                          "fontSize": 15,
-                          "fontWeight": "600",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
                           "textAlign": "center",
                         },
                       ]
                     }
                   >
-                    testFeatureOne
+                    testLongDescription:
                   </Text>
                 </View>
                 <View
                   style={
                     {
-                      "alignItems": "center",
-                      "flexDirection": "row",
-                      "gap": 8,
-                      "justifyContent": "center",
-                      "marginTop": 8,
+                      "alignItems": "flex-start",
+                      "marginLeft": 24,
+                      "marginRight": 24,
+                      "marginTop": 12,
                     }
                   }
-                >
-                  <SvgMock
-                    fill="#A2FD2F"
-                    height={13}
-                    width={13}
-                  />
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#F8F9FA",
-                          "lineHeight": 24,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-Regular",
-                          "fontSize": 15,
-                          "fontWeight": "600",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    testFeatureTwo
-                  </Text>
-                </View>
+                />
               </View>
             </View>
             <View
@@ -263,6 +201,7 @@ exports[`Plan Details Screen screen should render Plan Details Screen correctly 
                 {
                   "alignItems": "center",
                   "marginBottom": 20,
+                  "marginTop": 72,
                 }
               }
             >
@@ -316,7 +255,7 @@ exports[`Plan Details Screen screen should render Plan Details Screen correctly 
                       ]
                     }
                   >
-                    /testFrequency
+                    / testFrequency
                   </Text>
                 </View>
               </View>
@@ -324,7 +263,7 @@ exports[`Plan Details Screen screen should render Plan Details Screen correctly 
                 style={
                   {
                     "marginBottom": 12,
-                    "marginTop": 64,
+                    "marginTop": 32,
                   }
                 }
               >
