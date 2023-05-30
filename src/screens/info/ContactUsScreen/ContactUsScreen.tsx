@@ -29,9 +29,9 @@ export function ContactUsScreen() {
       setValue('name', userData?.name ?? '');
       setValue('username', userData?.username ?? '');
     }
-    setUserData().then(() => {
-      console.log('user data has been set');
-    });
+    (async () => {
+      await setUserData();
+    })();
   }, [userData]);
 
   const onContactFormValid: SubmitHandler<ContactUsFormValues> = async formInput => {
