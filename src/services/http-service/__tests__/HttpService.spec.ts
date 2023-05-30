@@ -1,7 +1,13 @@
 import { ApisauceInstance } from 'apisauce';
 import MockAdapter from 'axios-mock-adapter';
 
-import { GetAccessTokenCallback, GetRefreshTokenCallback, HttpService, OnTokenUpdateHandler } from '../HttpService';
+import {
+  GetAccessTokenCallback,
+  GetRefreshTokenCallback,
+  HttpService,
+  OnTokenUpdateFailedHandler,
+  OnTokenUpdateHandler,
+} from '../HttpService';
 
 const INITIAL_TOKENS = ['INITIAL_AUTH', 'INITIAL_REFRESH'];
 
@@ -18,16 +24,19 @@ const getHttpService = ({
   getAccessToken,
   getRefreshToken,
   onTokenUpdate,
+  onTokenUpdateFailed,
 }: Partial<{
   getAccessToken: GetAccessTokenCallback;
   getRefreshToken: GetRefreshTokenCallback;
   onTokenUpdate: OnTokenUpdateHandler;
+  onTokenUpdateFailed: OnTokenUpdateFailedHandler;
 }> = {}) => {
   return new HttpService(
     baseUrl,
     getAccessToken || (() => INITIAL_TOKENS[0]),
     getRefreshToken || (() => INITIAL_TOKENS[1]),
     onTokenUpdate || noop,
+    onTokenUpdateFailed || noop,
   ) as unknown as HttpServiceWithPrivates;
 };
 
