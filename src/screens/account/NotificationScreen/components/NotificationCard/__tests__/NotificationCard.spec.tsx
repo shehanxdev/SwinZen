@@ -11,10 +11,6 @@ describe('NotificationCard Component', () => {
   const dummyMessage = 'test message';
   const mockOnPressFunction = jest.fn();
 
-  beforeEach(() => {
-    jest.useFakeTimers().setSystemTime(new Date('2023-05-15'));
-  });
-
   const getRenderedComponent = () =>
     renderWithProviders(
       <NotificationCard

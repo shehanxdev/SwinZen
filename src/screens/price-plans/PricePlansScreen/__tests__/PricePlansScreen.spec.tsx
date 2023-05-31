@@ -15,7 +15,7 @@ describe('PricePlans Screen screen', () => {
     beforeAll(() => {
       const mockURL = 'https://example.com/api';
       const mockFunction = jest.fn();
-      const httpServiceInstance = new HttpService(mockURL, mockFunction, mockFunction, mockFunction);
+      const httpServiceInstance = new HttpService(mockURL, mockFunction, mockFunction, mockFunction, mockFunction);
       HttpServiceInstance.setHttpServiceInstance(httpServiceInstance);
     });
   });
