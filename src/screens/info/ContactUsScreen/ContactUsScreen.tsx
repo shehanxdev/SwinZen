@@ -1,12 +1,13 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { View } from 'react-native';
-import { ContactUsFormValues } from 'src/models/info/contactUs.interface';
 
 import { Button, MailIcon, MobileNumberField, ProfileIcon, Text, TextArea, TextField } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, DEFAULT_TEXTFIELD_MAX_LENGTH, TextAlignment, TextVariant } from '@sz/constants';
+import { Color, DEFAULT_TEXTFIELD_MAX_LENGTH, Route, TextAlignment, TextVariant } from '@sz/constants';
+import { ContactUsFormValues } from '@sz/models';
+import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { contactUsValidationSchema, formatMobileNumber } from '@sz/utils';
 
@@ -17,29 +18,30 @@ export function ContactUsScreen() {
     control,
     handleSubmit,
     setFocus,
-    formState: { isSubmitted },
-    setValue,
+    formState: { isSubmitted, errors },
   } = useForm<ContactUsFormValues>({ mode: 'onChange', resolver: yupResolver(contactUsValidationSchema) });
   const userData = useSelector(state => state.userStore.userData);
   const loading = useSelector(state => state.loading.effects.userStore.postContactUsMessage);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    async function setUserData() {
-      setValue('name', userData?.name ?? '');
-      setValue('username', userData?.username ?? '');
-    }
-    (async () => {
-      await setUserData();
-    })();
-  }, [userData]);
-
   const onContactFormValid: SubmitHandler<ContactUsFormValues> = async formInput => {
-    const formatedMobileNumber = formatMobileNumber(formInput.mobileNumber);
-    await dispatch.userStore.postContactUsMessage({ message: formInput.message, phoneNumber: formatedMobileNumber });
+    try {
+      const formatedMobileNumber = formatMobileNumber(formInput.phoneNumber);
+      await dispatch.userStore.postContactUsMessage({ message: formInput.message, phoneNumber: formatedMobileNumber });
+      ToastService.success({
+        message: 'Success!',
+        description: 'Thank you for contacting SwingZen support. We will get back to you as soon as possible.',
+      });
+      NavigationService.navigate(Route.HomeTab);
+    } catch (error) {
+      ToastService.error({ message: 'Failed!', description: error.data.message });
+    }
   };
 
-  const onContactFromInvalid: SubmitErrorHandler<ContactUsFormValues> = () => {};
+  const onContactFromInvalid: SubmitErrorHandler<ContactUsFormValues> = () => {
+    console.error(errors);
+    //TODO:: handle errors
+  };
 
   return (
     <BaseInfoScreen testID="ContactUsScreenTestID">
@@ -52,60 +54,32 @@ export function ContactUsScreen() {
         </View>
         <View style={tw`mb-21`}>
           <View style={tw`mb-2.5`}>
-            <Controller
-              control={control}
-              name="name"
-              render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
-                <TextField
-                  ref={ref}
-                  label="Your name"
-                  editable={false}
-                  leftIcon={<ProfileIcon />}
-                  maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
-                  value={value}
-                  onChangeText={onChange}
-                  onBlur={onBlur}
-                  helperText={(isTouched || isSubmitted) && error?.message}
-                  helperTextColor={Color.Error.SzMain}
-                  error={(isTouched || isSubmitted) && error !== undefined}
-                  returnKeyType={'next'}
-                  onSubmitEditing={() => {
-                    setFocus('username');
-                  }}
-                />
-              )}
+            <TextField
+              label="Your name"
+              disabled
+              value={userData?.name}
+              leftIcon={<ProfileIcon />}
+              maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
+              helperTextColor={Color.Error.SzMain}
+              returnKeyType={'next'}
+            />
+          </View>
+          <View style={tw`mb-2.5`}>
+            <TextField
+              label="Your email"
+              disabled
+              value={userData?.email}
+              leftIcon={<MailIcon />}
+              maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
+              helperTextColor={Color.Error.SzMain}
+              returnKeyType={'next'}
+              autoCapitalize={'none'}
             />
           </View>
           <View style={tw`mb-2.5`}>
             <Controller
               control={control}
-              name="username"
-              render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
-                <TextField
-                  ref={ref}
-                  label="Your email"
-                  editable={false}
-                  leftIcon={<MailIcon />}
-                  maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
-                  value={value}
-                  onChangeText={onChange}
-                  onBlur={onBlur}
-                  helperText={(isTouched || isSubmitted) && error?.message}
-                  helperTextColor={Color.Error.SzMain}
-                  error={(isTouched || isSubmitted) && error !== undefined}
-                  returnKeyType={'next'}
-                  onSubmitEditing={() => {
-                    setFocus('mobileNumber');
-                  }}
-                  autoCapitalize={'none'}
-                />
-              )}
-            />
-          </View>
-          <View style={tw`mb-2.5`}>
-            <Controller
-              control={control}
-              name="mobileNumber"
+              name="phoneNumber"
               render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
                 <MobileNumberField
                   ref={ref}

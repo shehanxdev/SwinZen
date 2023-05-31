@@ -1,12 +1,16 @@
-import { ApiErrorResponse, ApiResponse, ContactUsPostValues, ContactUsResponse, DecodedJWTUserData } from '@sz/models';
-import { JTWDecodeService } from '@sz/services';
-
+import {
+  ApiErrorResponse,
+  ApiResponse,
+  ContactUsFormValues,
+  ContactUsResponse,
+  DecodedJWTUserData,
+} from '../../../models';
 import { APIError, HttpServiceInstance } from '../../http-service';
+import { JTWDecodeService } from '../../jwt-decode-service';
 
 export class ContactUsService {
-  static async postMessage(payload: ContactUsPostValues, accessToken: string) {
+  static async postMessage(payload: ContactUsFormValues, accessToken: string) {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
-
     const userId = JTWDecodeService.decodeToken<DecodedJWTUserData>(accessToken).sub;
 
     try {
@@ -17,7 +21,6 @@ export class ContactUsService {
       if (!response) {
         throw new APIError('UNKNOWN_ERROR');
       }
-
       return response;
     } catch (error) {
       return error;

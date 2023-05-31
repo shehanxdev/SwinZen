@@ -1,13 +1,6 @@
-export interface ContactUsFormValues {
-  name: string;
-  username: string;
-  mobileNumber: string;
-  message: string;
-}
-
 export interface ContactUsResponse {}
 
-export interface ContactUsPostValues {
+export interface ContactUsFormValues {
   message: string;
   phoneNumber: string;
 }

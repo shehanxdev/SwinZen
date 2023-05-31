@@ -3,7 +3,7 @@ import { createModel } from '@rematch/core';
 import { IS_JEST_RUNTIME, OtpType } from '@sz/constants';
 import {
   ChangePasswordData,
-  ContactUsPostValues,
+  ContactUsFormValues,
   EmailVerificationData,
   ForgetPasswordData,
   LoginUserData,
@@ -178,9 +178,8 @@ export const userStore = createModel<RootModel>()({
       const { accessToken } = state.userStore;
       await NotificationsService.patchUserNotification(payload, accessToken);
     },
-    async postContactUsMessage(payload: ContactUsPostValues, state) {
+    async postContactUsMessage(payload: ContactUsFormValues, state) {
       const { accessToken } = state.userStore;
-
       await ContactUsService.postMessage(payload, accessToken);
     },
   }),
