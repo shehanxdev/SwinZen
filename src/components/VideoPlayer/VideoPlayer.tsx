@@ -158,10 +158,10 @@ export function VideoPlayer({ source }) {
                 {!paused ? <PauseIcon /> : <PlayIcon />}
               </Pressable>
               <View style={tw`pl-1 items-center flex-row`}>
-                <Text variant={TextVariant.Labels2} color={Color.Neutral.Sz100}>
+                <Text variant={TextVariant.LabelsAlt} color={Color.Neutral.Sz100}>
                   {progress} /
                 </Text>
-                <Text variant={TextVariant.Labels2} color={Color.Neutral.Sz500}>
+                <Text variant={TextVariant.LabelsAlt} color={Color.Neutral.Sz500}>
                   {` ${duration}`}
                 </Text>
               </View>

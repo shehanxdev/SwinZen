@@ -31,9 +31,9 @@ export enum Route {
   Signup = 'sign-up',
   SignupStack = 'signup-stack',
   TermsOfUse = 'terms-of-use',
+  VideosTab = 'videos-tab',
   VideoSetup = 'video-setup',
   VideoUploadStack = 'upload-video-stack',
-  VideosTab = 'videos-tab',
   ProfileStack = 'profile-stack',
   ChangePassword = 'change-password',
 }

@@ -423,7 +423,7 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
-exports[`AppText Component should render correctly should render correctly with TextAlignment prop : auto, TextVariant prop : Labels2, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : auto, TextVariant prop : LabelsAlt, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
 <Text
   numberOfLines={2}
   style={
@@ -446,7 +446,7 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
-exports[`AppText Component should render correctly should render correctly with TextAlignment prop : auto, TextVariant prop : Labels2, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : auto, TextVariant prop : LabelsAlt, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
 <Text
   numberOfLines={1}
   style={
@@ -1128,7 +1128,7 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
-exports[`AppText Component should render correctly should render correctly with TextAlignment prop : center, TextVariant prop : Labels2, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : center, TextVariant prop : LabelsAlt, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
 <Text
   numberOfLines={2}
   style={
@@ -1151,7 +1151,7 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
-exports[`AppText Component should render correctly should render correctly with TextAlignment prop : center, TextVariant prop : Labels2, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : center, TextVariant prop : LabelsAlt, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
 <Text
   numberOfLines={1}
   style={
@@ -1833,7 +1833,7 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
-exports[`AppText Component should render correctly should render correctly with TextAlignment prop : justify, TextVariant prop : Labels2, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : justify, TextVariant prop : LabelsAlt, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
 <Text
   numberOfLines={2}
   style={
@@ -1856,7 +1856,7 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
-exports[`AppText Component should render correctly should render correctly with TextAlignment prop : justify, TextVariant prop : Labels2, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : justify, TextVariant prop : LabelsAlt, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
 <Text
   numberOfLines={1}
   style={
@@ -2538,7 +2538,7 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
-exports[`AppText Component should render correctly should render correctly with TextAlignment prop : left, TextVariant prop : Labels2, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : left, TextVariant prop : LabelsAlt, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
 <Text
   numberOfLines={2}
   style={
@@ -2561,7 +2561,7 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
-exports[`AppText Component should render correctly should render correctly with TextAlignment prop : left, TextVariant prop : Labels2, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : left, TextVariant prop : LabelsAlt, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
 <Text
   numberOfLines={1}
   style={
@@ -3243,7 +3243,7 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
-exports[`AppText Component should render correctly should render correctly with TextAlignment prop : right, TextVariant prop : Labels2, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : right, TextVariant prop : LabelsAlt, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
 <Text
   numberOfLines={2}
   style={
@@ -3266,7 +3266,7 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
-exports[`AppText Component should render correctly should render correctly with TextAlignment prop : right, TextVariant prop : Labels2, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : right, TextVariant prop : LabelsAlt, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
 <Text
   numberOfLines={1}
   style={

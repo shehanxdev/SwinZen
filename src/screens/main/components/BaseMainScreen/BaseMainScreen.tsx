@@ -1,19 +1,34 @@
-import React, { PropsWithChildren } from 'react';
-import { ImageBackground, SafeAreaView, ScrollView } from 'react-native';
+import React from 'react';
+import { Image, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import { LinearGradientProps } from 'react-native-linear-gradient';
 
 import { images } from '@sz/assets';
 import { tw } from '@sz/config';
+import { Color } from '@sz/constants';
+import { useHeaderHeight } from '@sz/hooks';
 
-interface BaseMainScreenProps extends PropsWithChildren {
-  testID?: string;
+interface BaseMainScreenScreenProps extends Partial<LinearGradientProps> {
+  children: React.ReactNode;
 }
 
-export function BaseMainScreen({ children, testID }: BaseMainScreenProps) {
+export function BaseMainScreen({
+  children,
+  colors = [Color.Primary.Sz650, Color.Primary.Sz800, Color.Primary.Sz900],
+  ...otherlinearGradientProps
+}: BaseMainScreenScreenProps) {
+  const headerHeight = useHeaderHeight();
+
   return (
-    <ImageBackground testID={testID} style={tw`flex-1`} source={images.gradientBackground}>
-      <SafeAreaView>
-        <ScrollView>{children}</ScrollView>
+    <LinearGradient {...otherlinearGradientProps} colors={colors} style={tw`relative flex-1`}>
+      <Image source={images.grassBackground} style={tw`absolute opacity-10 h-screen w-screen`} resizeMode="cover" />
+      <SafeAreaView style={tw`h-full pt-[${headerHeight}px]`}>
+        <KeyboardAvoidingView style={tw`flex-1`} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+          <ScrollView contentContainerStyle={tw`grow`} keyboardShouldPersistTaps="handled">
+            {children}
+          </ScrollView>
+        </KeyboardAvoidingView>
       </SafeAreaView>
-    </ImageBackground>
+    </LinearGradient>
   );
 }

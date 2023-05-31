@@ -1,5 +1,7 @@
-import { fireEvent, render } from '@testing-library/react-native';
+import { fireEvent } from '@testing-library/react-native';
 import * as React from 'react';
+
+import { renderWithProviders } from '@sz/test-utils';
 
 import { ToggleSwitch } from '../ToggleSwitch';
 
@@ -12,7 +14,8 @@ describe('ToggleSwitch Component', () => {
     { label: 'Option 2', value: 'option2', testID: 'switchSelector' },
   ];
 
-  const getRenderedComponent = () => render(<ToggleSwitch options={options} onChange={onChangeMock} testID={testID} />);
+  const getRenderedComponent = () =>
+    renderWithProviders(<ToggleSwitch options={options} onChange={onChangeMock} testID={testID} />);
   it(`should render ToggleSwitch component correctly`, () => {
     const rendered = getRenderedComponent();
     const renderedTree = rendered.toJSON();

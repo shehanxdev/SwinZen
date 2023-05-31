@@ -6,6 +6,7 @@ import { ContactUsScreen } from '../ContactUsScreen';
 
 describe('ContactUs Screen', () => {
   const testID = 'ContactUsScreenTestID';
+
   const getRenderedScreen = () => renderWithProviders(<ContactUsScreen />);
 
   it(`should render ContactUsScreen correctly`, () => {

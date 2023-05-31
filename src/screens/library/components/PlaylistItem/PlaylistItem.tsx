@@ -30,7 +30,7 @@ export function PlaylistItem({ thumbnail, duration, title, itemNumber, isSelecte
           <View
             style={tw`rounded-lg bg-[#00000087] flex-row gap-1 items-center justify-center w-15 h-4.5 absolute right-2 bottom-2 px-1.75`}>
             <PlayIcon />
-            <Text variant={TextVariant.Labels2}>{duration}</Text>
+            <Text variant={TextVariant.LabelsAlt}>{duration}</Text>
           </View>
         </ImageBackground>
       </View>
