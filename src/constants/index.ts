@@ -9,4 +9,5 @@ export * from './regular-expressions';
 export * from './request-data.enum';
 export * from './runtime-environment';
 export * from './static-info';
+export * from './upload';
 export * from './typography';

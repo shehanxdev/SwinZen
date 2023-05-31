@@ -3,6 +3,7 @@ import { createModel } from '@rematch/core';
 import { FilesType, IS_JEST_RUNTIME, OtpType } from '@sz/constants';
 import {
   ChangePasswordData,
+  ContactUsFormValues,
   EmailVerificationData,
   ForgetPasswordData,
   LoginUserData,
@@ -20,6 +21,7 @@ import {
 import {
   AccountService,
   AuthService,
+  ContactUsService,
   NotificationsService,
   PricePlansService,
   SecureAuthService,
@@ -84,7 +86,6 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setAccessToken(accessToken);
       dispatch.userStore.setRefreshToken(refreshToken);
       dispatch.persistentUserStore.setIsAuthenticate(true);
-
       //TODO::check and fix and remove IS_JEST_RUNTIME conditional check
       if (!IS_JEST_RUNTIME) {
         await SecureAuthService.updateAuthTokens({ accessToken: accessToken, refreshToken: refreshToken });
@@ -213,6 +214,10 @@ export const userStore = createModel<RootModel>()({
       const data = await AccountService.changeProfilePicture(payload, accessToken);
       const userInfo = { ...userData, profilePicture: data.url } as UserData;
       dispatch.userStore.setUserData(userInfo);
+    },
+    async postContactUsMessage(payload: ContactUsFormValues, state) {
+      const { accessToken } = state.userStore;
+      await ContactUsService.postMessage(payload, accessToken);
     },
     //NOTE::This is a dummy function to mimic the fetch profile API calls.
     async fetchUserProfileData() {
