@@ -219,7 +219,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                             },
                             {
                               "backgroundColor": "#16501D",
-                              "borderColor": "#ffffff00",
+                              "borderColor": "#00000000",
                               "borderRadius": 10,
                               "borderWidth": 1,
                             },
@@ -432,7 +432,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                             },
                             {
                               "backgroundColor": "#16501D",
-                              "borderColor": "#ffffff00",
+                              "borderColor": "#00000000",
                               "borderRadius": 10,
                               "borderWidth": 1,
                             },
@@ -646,7 +646,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                             },
                             {
                               "backgroundColor": "#16501D",
-                              "borderColor": "#ffffff00",
+                              "borderColor": "#00000000",
                               "borderRadius": 10,
                               "borderWidth": 1,
                             },
@@ -945,7 +945,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                             },
                             {
                               "backgroundColor": "#16501D",
-                              "borderColor": "#ffffff00",
+                              "borderColor": "#00000000",
                               "borderRadius": 10,
                               "borderWidth": 1,
                             },
@@ -1262,7 +1262,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                             },
                             {
                               "backgroundColor": "#16501D",
-                              "borderColor": "#ffffff00",
+                              "borderColor": "#00000000",
                               "borderRadius": 10,
                               "borderWidth": 1,
                             },
@@ -1453,7 +1453,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                       style={
                         {
                           "backgroundColor": "#A2FD2F",
-                          "borderColor": "#ffffff00",
+                          "borderColor": "#00000000",
                           "borderRadius": 10,
                           "borderStyle": "solid",
                           "borderWidth": 1,
