@@ -1,7 +1,7 @@
 import { fireEvent } from '@testing-library/react-native';
 import * as React from 'react';
 
-import { renderWithProviders } from '@sz/utils';
+import { renderWithProviders } from '@sz/test-utils';
 
 import { SelectableGrid } from '../SelectableGrid';
 

@@ -8,6 +8,7 @@ exports[`DataChart component should render DataChart component correctly 1`] = `
       "flexDirection": "row",
       "height": 235,
       "justifyContent": "space-between",
+      "marginTop": 48,
     }
   }
   testID="DataChartTestID"
@@ -300,11 +301,11 @@ exports[`DataChart component should render DataChart component correctly 1`] = `
           [
             {
               "color": "#FFFFFF",
-              "lineHeight": 24,
+              "lineHeight": 15,
             },
             {
               "fontFamily": "SourceSansPro-Regular",
-              "fontSize": 15,
+              "fontSize": 12,
               "fontWeight": "600",
               "textAlign": "center",
             },
@@ -612,11 +613,11 @@ exports[`DataChart component should render DataChart component correctly 1`] = `
           [
             {
               "color": "#FFFFFF",
-              "lineHeight": 24,
+              "lineHeight": 15,
             },
             {
               "fontFamily": "SourceSansPro-Regular",
-              "fontSize": 15,
+              "fontSize": 12,
               "fontWeight": "600",
               "textAlign": "center",
             },
@@ -924,11 +925,11 @@ exports[`DataChart component should render DataChart component correctly 1`] = `
           [
             {
               "color": "#FFFFFF",
-              "lineHeight": 24,
+              "lineHeight": 15,
             },
             {
               "fontFamily": "SourceSansPro-Regular",
-              "fontSize": 15,
+              "fontSize": 12,
               "fontWeight": "600",
               "textAlign": "center",
             },
@@ -1236,11 +1237,11 @@ exports[`DataChart component should render DataChart component correctly 1`] = `
           [
             {
               "color": "#FFFFFF",
-              "lineHeight": 24,
+              "lineHeight": 15,
             },
             {
               "fontFamily": "SourceSansPro-Regular",
-              "fontSize": 15,
+              "fontSize": 12,
               "fontWeight": "600",
               "textAlign": "center",
             },

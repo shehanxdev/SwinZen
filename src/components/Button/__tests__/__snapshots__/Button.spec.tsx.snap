@@ -15,7 +15,7 @@ exports[`Button Component should render correctly should render correctly with [
     style={
       {
         "backgroundColor": "#8DBE8B",
-        "borderColor": "#ffffff00",
+        "borderColor": "#00000000",
         "borderRadius": 10,
         "borderStyle": "solid",
         "borderWidth": 1,
@@ -311,7 +311,7 @@ exports[`Button Component should render correctly should render correctly with [
     style={
       {
         "backgroundColor": "#C4FE7A",
-        "borderColor": "#ffffff00",
+        "borderColor": "#00000000",
         "borderRadius": 10,
         "borderStyle": "solid",
         "borderWidth": 1,

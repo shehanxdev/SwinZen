@@ -7,25 +7,43 @@ import {
   ClubTypeOptions,
   Color,
   InitialSetupValues,
+  SetupValuesType,
   TextAlignment,
   TextVariant,
   ToggleSwitchData,
+  VideoSetupSwitchType,
 } from '@sz/constants';
 import { VideoSetupValuesType } from '@sz/models';
 
 import { BaseUploadScreen, SelectableGrid } from '../components';
 
 export function VideoSetupScreen() {
-  const [, setSetupValues] = useState<VideoSetupValuesType>(InitialSetupValues);
+  const [setupValues, setSetupValues] = useState<VideoSetupValuesType>(InitialSetupValues);
 
   //TODO:: to be replaced with proper value select handlers
-  const getSelectedValue = (key, value) => {
+  const getSelectedValue = (key: VideoSetupSwitchType, value: string) => {
     setSetupValues(prevValues => {
       return {
         ...prevValues,
         [key]: value,
       };
     });
+  };
+
+  const handleNavigationToInstructionScreens = () => {
+    if (setupValues.videoView === SetupValuesType.DOWN_THE_LINE) {
+      if (setupValues.shootingMethod === SetupValuesType.TRIPOD) {
+        // TODO: Navigate to Down The Line/Tripod Instructions screen
+      } else if (setupValues.shootingMethod === SetupValuesType.HAND_HELD) {
+        // TODO: Navigate to Down The Line/Hand-Held Instructions screen
+      }
+    } else if (setupValues.videoView === SetupValuesType.FACE_ON) {
+      if (setupValues.shootingMethod === SetupValuesType.TRIPOD) {
+        // TODO: Navigate to Face-On/Tripod Instructions screen
+      } else {
+        // TODO: Navigate to Face-On/Hand-Held Instructions screen
+      }
+    }
   };
 
   return (
@@ -37,9 +55,9 @@ export function VideoSetupScreen() {
               Video setup
             </Text>
           </View>
-          {ToggleSwitchData.map((data, index) => {
+          {ToggleSwitchData.map(data => {
             return (
-              <View style={tw`mb-9.25`} key={index}>
+              <View style={tw`mb-9.25`} key={data.key}>
                 <View style={tw`mb-2.25`}>
                   <Text variant={TextVariant.Body2Regular} color={Color.Neutral.White} textAlign={TextAlignment.Left}>
                     {data.label}
@@ -56,13 +74,18 @@ export function VideoSetupScreen() {
           </View>
           <SelectableGrid
             options={ClubTypeOptions}
-            onChange={value => getSelectedValue('clubType', value)}
+            onChange={value => getSelectedValue(VideoSetupSwitchType.CLUB_TYPE, value)}
             testID="SelectableGridTestID"
           />
         </View>
-        <View style={tw`mb-5 mt-32.25`}>
-          {/* TODO:: handle the navigation once the next page is ready */}
-          <Button backgroundColor={Color.Primary.SZ650} textColor={Color.Neutral.Sz100} title="NEXT" />
+        <View style={tw`mb-4 mt-9.25`}>
+          {/* TODO:: handle the navigation once the instruction pages are ready */}
+          <Button
+            backgroundColor={Color.Primary.Sz650}
+            textColor={Color.Neutral.Sz100}
+            title="NEXT"
+            onPress={handleNavigationToInstructionScreens}
+          />
         </View>
       </View>
     </BaseUploadScreen>
