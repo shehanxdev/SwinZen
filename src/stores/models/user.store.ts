@@ -3,6 +3,7 @@ import { createModel } from '@rematch/core';
 import { IS_JEST_RUNTIME, OtpType } from '@sz/constants';
 import {
   ChangePasswordData,
+  ContactUsFormValues,
   EmailVerificationData,
   ForgetPasswordData,
   LoginUserData,
@@ -11,8 +12,16 @@ import {
   ResetPasswordData,
   SignupUserData,
   UserData,
+  UserProfileData,
 } from '@sz/models';
-import { AccountService, AuthService, NotificationsService, SecureAuthService, UserService } from '@sz/services';
+import {
+  AccountService,
+  AuthService,
+  ContactUsService,
+  NotificationsService,
+  SecureAuthService,
+  UserService,
+} from '@sz/services';
 import { mapUserData } from '@sz/utils';
 
 import { RootModel } from './';
@@ -21,6 +30,9 @@ export interface UserState {
   accessToken: string | null;
   refreshToken: string | null;
   nextActionToken: string | null;
+
+  //TODO::refactor profileData and userData to have common one
+  profileData: UserProfileData | null;
   userData: UserData | null;
 }
 
@@ -28,6 +40,7 @@ const initialState: UserState = {
   accessToken: null,
   refreshToken: null,
   nextActionToken: null,
+  profileData: null,
   userData: null,
 };
 
@@ -46,6 +59,9 @@ export const userStore = createModel<RootModel>()({
     clearNextActionToken(state: UserState) {
       return { ...state, nextActionToken: null };
     },
+    setUserProfileData(state: UserState, profileData: UserProfileData) {
+      return { ...state, profileData };
+    },
     setUserData(state: UserState, userData: UserData | null) {
       return { ...state, userData };
     },
@@ -56,7 +72,6 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setAccessToken(accessToken);
       dispatch.userStore.setRefreshToken(refreshToken);
       dispatch.persistentUserStore.setIsAuthenticate(true);
-
       //TODO::check and fix and remove IS_JEST_RUNTIME conditional check
       if (!IS_JEST_RUNTIME) {
         await SecureAuthService.updateAuthTokens({ accessToken: accessToken, refreshToken: refreshToken });
@@ -67,6 +82,8 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setRefreshToken(null);
       dispatch.persistentUserStore.setIsAuthenticate(false);
       dispatch.userStore.setUserData(null);
+
+      await SecureAuthService.clearSecureStorage();
     },
     async registerUser(payload: SignupUserData) {
       const { nextActionToken } = await AuthService.registerUser(payload);
@@ -127,14 +144,6 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setAccessToken(data.accessToken);
       dispatch.userStore.setRefreshToken(data.refreshToken);
     },
-
-    async changeProfilePicture(/* PAYLOAD */) {
-      //TODO::Implement
-      await new Promise(resolve => {
-        setTimeout(resolve, 3000);
-      });
-    },
-
     async getAuthTokensFromSecureStorage() {
       try {
         const tokens = await SecureAuthService.getAuthTokens();
@@ -156,6 +165,35 @@ export const userStore = createModel<RootModel>()({
         dispatch.userStore.setNextActionToken(nextActionToken ?? null);
       }
     },
+    //NOTE::This is a dummy function to mimic the fetch profile API calls.
+    async fetchUserProfileData() {
+      const dummtUserData: UserProfileData = {
+        email: 'shihara@surge.global  ',
+        name: 'Shihara Dilshan',
+        profileImage: 'https://avatars.githubusercontent.com/u/61949881?v=4',
+        isSubscribed: true,
+        videoUploadData: {
+          videoUploads: 10,
+          swingzenUniveristiy: 80,
+        },
+        chartData: {
+          overall: { passes: 5, fails: 8, label: 'Overall' },
+          setup: { passes: 3, fails: 7, label: 'Setup' },
+          backswing: { passes: 6, fails: 7, label: 'Backswing' },
+          downswing: { passes: 5, fails: 4, label: 'Downswing' },
+        },
+      };
+
+      await new Promise(r => setTimeout(r, 500));
+
+      dispatch.userStore.setUserProfileData(dummtUserData);
+    },
+    async changeProfilePicture(/* PAYLOAD */) {
+      //TODO::Implement
+      await new Promise(resolve => {
+        setTimeout(resolve, 3000);
+      });
+    },
     async getUserData(_: void, state) {
       const data = await UserService.getUserData(state.userStore.accessToken);
 
@@ -170,6 +208,10 @@ export const userStore = createModel<RootModel>()({
     async patchUserNotification(payload: Notification, state) {
       const { accessToken } = state.userStore;
       await NotificationsService.patchUserNotification(payload, accessToken);
+    },
+    async postContactUsMessage(payload: ContactUsFormValues, state) {
+      const { accessToken } = state.userStore;
+      await ContactUsService.postMessage(payload, accessToken);
     },
   }),
 });

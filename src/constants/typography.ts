@@ -24,6 +24,10 @@ export enum TextVariant {
   // Labels
   Labels = 'Labels',
 
+  // Labels alt
+  //NOTE::tempory variant for data chart labels
+  LabelsAlt = 'LabelsAlt',
+
   // Links
   Links = 'Links',
 }
