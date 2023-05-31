@@ -36,7 +36,6 @@ export interface UserState {
   userData: UserData | null;
   userPlan: SubscribedData | null;
   preSignedData: PreSignedResponse | null;
-  userProfilePic: string | null;
   //TODO::refactor profileData and userData to have common one
   profileData: UserProfileData | null;
 }
@@ -48,7 +47,6 @@ const initialState: UserState = {
   userData: null,
   userPlan: null,
   preSignedData: null,
-  userProfilePic: null,
   profileData: null,
 };
 
@@ -75,9 +73,6 @@ export const userStore = createModel<RootModel>()({
     },
     setPreSignedData(state: UserState, preSignedData: PreSignedResponse | null) {
       return { ...state, preSignedData };
-    },
-    setUserProfilePic(state: UserState, userProfilePic: string | null) {
-      return { ...state, userProfilePic };
     },
     setUserProfileData(state: UserState, profileData: UserProfileData) {
       return { ...state, profileData };
@@ -185,13 +180,11 @@ export const userStore = createModel<RootModel>()({
     },
     async getUserData(_: void, state) {
       const data = await UserService.getUserData(state.userStore.accessToken);
-
       dispatch.userStore.setUserData(mapUserData(data));
     },
     async patchUserData(payload: UserData, state) {
       const { accessToken } = state.userStore;
       const data = await UserService.patchUserData(payload, accessToken);
-
       dispatch.userStore.setUserData(mapUserData(data));
     },
     async getSubscription(payload: SubscriptionQueryData, state) {
@@ -216,9 +209,10 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setPreSignedData(null);
     },
     async changeProfilePicture(payload: string, state) {
-      const { accessToken } = state.userStore;
+      const { accessToken, userData } = state.userStore;
       const data = await AccountService.changeProfilePicture(payload, accessToken);
-      dispatch.userStore.setUserProfilePic(data.url);
+      const userInfo = { ...userData, profilePicture: data.url } as UserData;
+      dispatch.userStore.setUserData(userInfo);
     },
     //NOTE::This is a dummy function to mimic the fetch profile API calls.
     async fetchUserProfileData() {

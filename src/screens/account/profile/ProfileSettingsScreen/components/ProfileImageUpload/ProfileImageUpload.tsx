@@ -58,7 +58,8 @@ export function ProfileImageUpload() {
 
   const userData = useSelector(state => state.userStore.userData);
   const preSignedData = useSelector(state => state.userStore.preSignedData);
-  const userProfilePic = useSelector(state => state.userStore.userProfilePic);
+
+  const userProfilePic = userData?.profilePicture;
 
   //TODO:: handle custom fetching later
   const uploadMediaToS3 = async (preSignedData: PreSignedResponse) => {
@@ -121,7 +122,7 @@ export function ProfileImageUpload() {
       ToastService.error({ message: 'Failed!', description: newProfileImageData?.errorMessage });
       return;
     }
-    if (result.assets) {
+    if (result?.assets) {
       await dispatch.userStore.getPreSignedData(FilesType.IMAGE);
       setLoading(true);
     }
@@ -166,7 +167,7 @@ export function ProfileImageUpload() {
     <View testID="ProfileImageComponentTestID" style={tw`m-auto`}>
       <TouchableOpacity
         onPress={() => {
-          //TODO::provide a proper choose UI to the end user
+          //TODO:: will be changed after popup common component implemented
           Alert.alert('Choose option', '', [
             {
               text: 'Camera',
