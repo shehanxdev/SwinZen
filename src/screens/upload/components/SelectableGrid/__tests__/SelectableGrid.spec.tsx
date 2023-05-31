@@ -1,7 +1,5 @@
-import { fireEvent } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import * as React from 'react';
-
-import { renderWithProviders } from '@sz/utils';
 
 import { SelectableGrid } from '../SelectableGrid';
 
@@ -15,7 +13,7 @@ describe('SelectableGrid Component', () => {
   ];
 
   const getRenderedComponent = () =>
-    renderWithProviders(<SelectableGrid options={options} onChange={onChangeMock} testID={testID} />);
+    render(<SelectableGrid options={options} onChange={onChangeMock} testID={testID} />);
 
   it(`should render SelectableGrid component correctly`, () => {
     const rendered = getRenderedComponent();

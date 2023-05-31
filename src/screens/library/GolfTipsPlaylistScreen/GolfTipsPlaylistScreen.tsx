@@ -10,7 +10,7 @@ import { golfTipsPlaylistDummyData } from './GolfTipsPlaylistDummyData';
 
 export function GolfTipsPlaylistScreen({ route }) {
   //TODO:: These states can be changed according to the integrations
-  const [playingVideoSource, setPlayingVideoSource] = useState(golfTipsPlaylistDummyData[0].videoSource);
+  const [, setPlayingVideoSource] = useState(golfTipsPlaylistDummyData[0].videoSource);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
   const handleListItemPress = (itemIndex: number) => {
@@ -21,8 +21,8 @@ export function GolfTipsPlaylistScreen({ route }) {
   return (
     <BaseLibraryScreen wrapWithScrollView={false}>
       <View style={tw`flex-1 mx-4 mt-6`}>
-        <View style={tw`h-62.5`}>
-          <VideoPlayer source={playingVideoSource} />
+        <View style={tw``}>
+          <VideoPlayer source="https://www.w3schools.com/html/mov_bbb.mp4" />
         </View>
         <View style={tw`my-6.5`}>
           <Text variant={TextVariant.SubTitle1} color={Color.Neutral.Sz100} textAlign={TextAlignment.Left}>
