@@ -406,6 +406,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                     "paddingTop": 20,
                   }
                 }
+                testID="ProfileInfoCardTestID"
               >
                 <Text
                   style={
@@ -531,6 +532,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                     "paddingTop": 20,
                   }
                 }
+                testID="ProfileInfoCardTestID"
               >
                 <View
                   style={
