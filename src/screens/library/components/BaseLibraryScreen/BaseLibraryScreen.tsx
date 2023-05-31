@@ -1,7 +1,6 @@
 import React from 'react';
 import { Image, SafeAreaView, ScrollView } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
-import { LinearGradientProps } from 'react-native-linear-gradient';
+import LinearGradient, { LinearGradientProps } from 'react-native-linear-gradient';
 
 import { images } from '@sz/assets';
 import { tw } from '@sz/config';
@@ -17,7 +16,7 @@ interface BaseLibraryScreenProps extends Partial<LinearGradientProps> {
 export function BaseLibraryScreen({
   children,
   testID,
-  colors = [Color.Primary.SZ650, Color.Primary.Sz800, Color.Primary.Sz900],
+  colors = [Color.Primary.Sz650, Color.Primary.Sz800, Color.Primary.Sz900],
   wrapWithScrollView = true,
   ...otherlinearGradientProps
 }: BaseLibraryScreenProps) {
