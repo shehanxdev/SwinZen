@@ -3,6 +3,7 @@ import { createModel } from '@rematch/core';
 import { IS_JEST_RUNTIME, OtpType } from '@sz/constants';
 import {
   ChangePasswordData,
+  ContactUsFormValues,
   EmailVerificationData,
   ForgetPasswordData,
   LoginUserData,
@@ -13,7 +14,14 @@ import {
   UserData,
   UserProfileData,
 } from '@sz/models';
-import { AccountService, AuthService, NotificationsService, SecureAuthService, UserService } from '@sz/services';
+import {
+  AccountService,
+  AuthService,
+  ContactUsService,
+  NotificationsService,
+  SecureAuthService,
+  UserService,
+} from '@sz/services';
 import { mapUserData } from '@sz/utils';
 
 import { RootModel } from './';
@@ -64,7 +72,6 @@ export const userStore = createModel<RootModel>()({
       dispatch.userStore.setAccessToken(accessToken);
       dispatch.userStore.setRefreshToken(refreshToken);
       dispatch.persistentUserStore.setIsAuthenticate(true);
-
       //TODO::check and fix and remove IS_JEST_RUNTIME conditional check
       if (!IS_JEST_RUNTIME) {
         await SecureAuthService.updateAuthTokens({ accessToken: accessToken, refreshToken: refreshToken });
@@ -201,6 +208,10 @@ export const userStore = createModel<RootModel>()({
     async patchUserNotification(payload: Notification, state) {
       const { accessToken } = state.userStore;
       await NotificationsService.patchUserNotification(payload, accessToken);
+    },
+    async postContactUsMessage(payload: ContactUsFormValues, state) {
+      const { accessToken } = state.userStore;
+      await ContactUsService.postMessage(payload, accessToken);
     },
   }),
 });
