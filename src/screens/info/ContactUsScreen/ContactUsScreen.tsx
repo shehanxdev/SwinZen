@@ -5,11 +5,11 @@ import { View } from 'react-native';
 
 import { Button, MailIcon, MobileNumberField, ProfileIcon, Text, TextArea, TextField } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, DEFAULT_TEXTFIELD_MAX_LENGTH, Route, TextAlignment, TextVariant } from '@sz/constants';
+import { Color, Route, TextAlignment, TextVariant } from '@sz/constants';
 import { ContactUsFormValues } from '@sz/models';
 import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
-import { contactUsValidationSchema, formatMobileNumber } from '@sz/utils';
+import { contactUsValidationSchema } from '@sz/utils';
 
 import { BaseInfoScreen } from '../components';
 
@@ -26,8 +26,11 @@ export function ContactUsScreen() {
 
   const onContactFormValid: SubmitHandler<ContactUsFormValues> = async formInput => {
     try {
-      const formatedMobileNumber = formInput.phoneNumber ? formatMobileNumber(formInput.phoneNumber) : '';
-      await dispatch.userStore.postContactUsMessage({ message: formInput.message, phoneNumber: formatedMobileNumber });
+      await dispatch.userStore.postContactUsMessage({
+        message: formInput.message,
+        phoneNumber: formInput.phoneNumber ? formInput.phoneNumber : '',
+      });
+      //TODO:: User requirement specifies that the message should have the option for a clickable button which says OK, but currently we do not have any option like that. Replace the toast service once such an option is available
       ToastService.success({
         message: 'Success!',
         description: 'Thank you for contacting SwingZen support. We will get back to you as soon as possible.',
@@ -56,24 +59,19 @@ export function ContactUsScreen() {
           <View style={tw`mb-2.5`}>
             <TextField
               label="Your name"
-              disabled
+              editable={false}
               value={userData?.name}
               leftIcon={<ProfileIcon />}
-              maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
-              helperTextColor={Color.Error.SzMain}
               returnKeyType={'next'}
             />
           </View>
           <View style={tw`mb-2.5`}>
             <TextField
               label="Your email"
-              disabled
+              editable={false}
               value={userData?.email}
               leftIcon={<MailIcon />}
-              maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
-              helperTextColor={Color.Error.SzMain}
               returnKeyType={'next'}
-              autoCapitalize={'none'}
             />
           </View>
           <View style={tw`mb-2.5`}>
@@ -95,7 +93,6 @@ export function ContactUsScreen() {
                   onSubmitEditing={() => {
                     setFocus('message');
                   }}
-                  autoCapitalize={'none'}
                 />
               )}
             />
