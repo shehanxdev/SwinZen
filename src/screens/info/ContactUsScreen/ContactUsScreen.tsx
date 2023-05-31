@@ -26,7 +26,7 @@ export function ContactUsScreen() {
 
   const onContactFormValid: SubmitHandler<ContactUsFormValues> = async formInput => {
     try {
-      const formatedMobileNumber = formatMobileNumber(formInput.phoneNumber);
+      const formatedMobileNumber = formInput.phoneNumber ? formatMobileNumber(formInput.phoneNumber) : '';
       await dispatch.userStore.postContactUsMessage({ message: formInput.message, phoneNumber: formatedMobileNumber });
       ToastService.success({
         message: 'Success!',

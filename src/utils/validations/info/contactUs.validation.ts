@@ -3,7 +3,6 @@ import * as yup from 'yup';
 import { ValidMobileNumberRegex } from '@sz/constants';
 
 export const contactUsFormErrorMessages = {
-  'phoneNumber:required': 'Please enter phone number',
   'phoneNumber:matches': 'Invalid phone number',
 
   'message:required': 'Please enter your Message',
@@ -12,10 +11,7 @@ export const contactUsFormErrorMessages = {
 
 export const contactUsValidationSchema = yup
   .object({
-    phoneNumber: yup
-      .string()
-      .required(contactUsFormErrorMessages['phoneNumber:required'])
-      .matches(ValidMobileNumberRegex, contactUsFormErrorMessages['phoneNumber:matches']),
+    phoneNumber: yup.string().matches(ValidMobileNumberRegex, contactUsFormErrorMessages['phoneNumber:matches']),
     message: yup
       .string()
       .required(contactUsFormErrorMessages['message:required'])
