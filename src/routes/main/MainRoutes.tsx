@@ -2,6 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
 import { Route } from '@sz/constants';
+import { useFirebaseNotifications } from '@sz/hooks';
 
 import { AccountStack } from '../account';
 import { PricePlansStack } from '../pricePlans';
@@ -10,6 +11,8 @@ import { MainDrawerStack } from './MainDrawerRoutes';
 const Stack = createNativeStackNavigator();
 
 export function MainStack() {
+  useFirebaseNotifications();
+
   return (
     <Stack.Navigator
       screenOptions={{

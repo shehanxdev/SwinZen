@@ -12,3 +12,10 @@ export enum SetupValuesType {
   MID_IRON = 'midIron',
   LONG_IRON = 'longIron',
 }
+
+export enum VideoSetupSwitchType {
+  VIDEO_VIEW = 'videoView',
+  DOMINANT_HAND = 'dominantHand',
+  SHOOTING_METHOD = 'shootingMethod',
+  CLUB_TYPE = 'clubType',
+}

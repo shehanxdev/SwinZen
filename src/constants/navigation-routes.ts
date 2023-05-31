@@ -33,6 +33,8 @@ export enum Route {
   VideoSetup = 'video-setup',
   VideoUploadStack = 'upload-video-stack',
   VideosTab = 'videos-tab',
+  VideoSetup = 'video-setup',
+  VideoUploadStack = 'upload-video-stack',
   ProfileStack = 'profile-stack',
   ChangePassword = 'change-password',
 }

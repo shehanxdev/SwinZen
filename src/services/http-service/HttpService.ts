@@ -1,14 +1,16 @@
 import { ApiResponse, ApisauceInstance, create } from 'apisauce';
 
 import { IS_JEST_RUNTIME } from '@sz/constants';
+import { ApiErrorResponse, RefreshTokenResponse } from '@sz/models';
 
 import { APIError } from './APIError';
 
 type HttpVerbs = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 
-export type OnTokenUpdateHandler = (accessToken: string, refreshToken: string) => unknown;
+export type OnTokenUpdateHandler = (accessToken: string, refreshToken: string) => Promise<unknown>;
 export type GetAccessTokenCallback = () => string | null;
 export type GetRefreshTokenCallback = () => string | null;
+export type OnTokenUpdateFailedHandler = () => Promise<unknown>;
 
 export class HttpService {
   // used to handle anonymous API calls
@@ -27,18 +29,21 @@ export class HttpService {
   private getAccessToken: GetAccessTokenCallback;
   private getRefreshToken: GetRefreshTokenCallback;
   private onTokenUpdate: OnTokenUpdateHandler;
+  private onTokenUpdateFailed: OnTokenUpdateFailedHandler;
 
   constructor(
     baseUrl: string,
     getAccessToken: GetAccessTokenCallback,
     getRefreshToken: GetRefreshTokenCallback,
     onTokenUpdate: OnTokenUpdateHandler,
+    onTokenUpdateFailed: OnTokenUpdateFailedHandler,
   ) {
     this.baseUrl = baseUrl;
     this.initializeApiSauce();
     this.getAccessToken = getAccessToken;
     this.getRefreshToken = getRefreshToken;
     this.onTokenUpdate = onTokenUpdate;
+    this.onTokenUpdateFailed = onTokenUpdateFailed;
   }
 
   private initializeApiSauce = () => {
@@ -82,20 +87,20 @@ export class HttpService {
       throw new APIError('INTERNAL_ERROR', 'Refresh token is not available!');
     }
 
-    const response = (await new Promise(r => setTimeout(r, 2000))) as any; //TODO::replace with the actual get tokens API call && add the relevant logic once those APIs are ready
+    try {
+      const response = await this.postAnonymousWithCustomHeaders<ApiResponse<RefreshTokenResponse>, ApiErrorResponse>(
+        '/auth/refresh-token',
+        { authorization: `Bearer ${this.getRefreshToken()}` },
+        {},
+      );
 
-    if (!response!.ok) {
-      throw new APIError(response.problem, response.data);
+      const accessToken = response.data.accessToken;
+      const refreshToken = response.data.refreshToken;
+
+      await this.onTokenUpdate(accessToken, refreshToken);
+    } catch (error) {
+      await this.onTokenUpdateFailed();
     }
-
-    // update both refresh and access token
-    if (!response.data) {
-      throw new APIError('INTERNAL_ERROR', 'Refresh Access Token request returned no data');
-    }
-
-    const accessToken = response.data.access_token;
-    const refreshToken = response.data.refresh_token || currentRefreshToken;
-    this.onTokenUpdate(accessToken, refreshToken);
   };
 
   private fetch = async <T, U = T>(
@@ -149,7 +154,8 @@ export class HttpService {
       });
 
       // handle the potential need to refresh a token
-      if (response.status === 401) {
+      // TODO::status code should be 401 not 403
+      if (response.status === 403) {
         if (this.apiSauceState === 'ready') {
           try {
             this.apiSauceState = 'pending';

@@ -30,6 +30,7 @@ type WithRNTextInputProps = Pick<
   | 'multiline'
   | 'returnKeyType'
   | 'returnKeyLabel'
+  | 'editable'
 >;
 
 export interface TextFieldProps extends WithRNTextInputProps {
