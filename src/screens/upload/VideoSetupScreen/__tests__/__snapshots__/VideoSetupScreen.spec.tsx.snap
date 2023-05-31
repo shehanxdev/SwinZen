@@ -1144,8 +1144,8 @@ exports[`Video Setup Screen Screen should render Video Setup Screen correctly 1`
           <View
             style={
               {
-                "marginBottom": 20,
-                "marginTop": 129,
+                "marginBottom": 16,
+                "marginTop": 37,
               }
             }
           >

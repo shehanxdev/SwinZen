@@ -31,23 +31,18 @@ export function VideoSetupScreen() {
   };
 
   const handleNavigationToInstructionScreens = () => {
-    if (
-      setupValues.videoView === SetupValuesType.DOWN_THE_LINE &&
-      setupValues.shootingMethod === SetupValuesType.TRIPOD
-    ) {
-      //TODO:: navigate to Down The Line/Tripod Instructions screen
-    } else if (
-      setupValues.videoView === SetupValuesType.DOWN_THE_LINE &&
-      setupValues.shootingMethod === SetupValuesType.HAND_HELD
-    ) {
-      //TODO:: navigate to Down The Line/Hand-Held Instructions screen
-    } else if (
-      setupValues.videoView === SetupValuesType.FACE_ON &&
-      setupValues.shootingMethod === SetupValuesType.TRIPOD
-    ) {
-      //TODO:: navigate to Face-On/Tripod Instructions screen
-    } else {
-      //TODO:: navigate to Face-On/Hand-Held Instructions screen
+    if (setupValues.videoView === SetupValuesType.DOWN_THE_LINE) {
+      if (setupValues.shootingMethod === SetupValuesType.TRIPOD) {
+        // TODO: Navigate to Down The Line/Tripod Instructions screen
+      } else if (setupValues.shootingMethod === SetupValuesType.HAND_HELD) {
+        // TODO: Navigate to Down The Line/Hand-Held Instructions screen
+      }
+    } else if (setupValues.videoView === SetupValuesType.FACE_ON) {
+      if (setupValues.shootingMethod === SetupValuesType.TRIPOD) {
+        // TODO: Navigate to Face-On/Tripod Instructions screen
+      } else {
+        // TODO: Navigate to Face-On/Hand-Held Instructions screen
+      }
     }
   };
 
@@ -60,9 +55,9 @@ export function VideoSetupScreen() {
               Video setup
             </Text>
           </View>
-          {ToggleSwitchData.map((data, index) => {
+          {ToggleSwitchData.map(data => {
             return (
-              <View style={tw`mb-9.25`} key={index}>
+              <View style={tw`mb-9.25`} key={data.key}>
                 <View style={tw`mb-2.25`}>
                   <Text variant={TextVariant.Body2Regular} color={Color.Neutral.White} textAlign={TextAlignment.Left}>
                     {data.label}
@@ -83,7 +78,7 @@ export function VideoSetupScreen() {
             testID="SelectableGridTestID"
           />
         </View>
-        <View style={tw`mb-5 mt-32.25`}>
+        <View style={tw`mb-4 mt-9.25`}>
           {/* TODO:: handle the navigation once the instruction pages are ready */}
           <Button
             backgroundColor={Color.Primary.Sz650}
