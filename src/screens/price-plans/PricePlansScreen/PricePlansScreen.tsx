@@ -9,7 +9,7 @@ import { useDispatch } from '@sz/stores';
 
 import { BasePricePlansScreen, PlanSubscriptionCard } from '../components';
 
-const TEST_ID_PREFIX = 'PricePlansScreen';
+const TEST_ID_PREFIX = 'PricePlansScreenTestID';
 
 export function PricePlansScreen() {
   const { data, isLoading } = useFetch(() => PricePlansService.getPricePlans(SortDataType.PRICE));
@@ -38,11 +38,7 @@ export function PricePlansScreen() {
                 frequency={item.frequency}
                 featureList={item.features}
                 betterValue={item.banner}
-                onCardPress={
-                  item.frequency
-                    ? () => NavigationService.navigate(Route.PlanDetails, { item })
-                    : () => NavigationService.navigate(Route.MainStack)
-                }
+                onCardPress={() => NavigationService.navigate(Route.PlanDetails, { item })}
               />
             </View>
           ))}

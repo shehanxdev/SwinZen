@@ -1,15 +1,11 @@
 import { BottomTabBarProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import { Alert, TouchableOpacity, View } from 'react-native';
 
-import { CustomMenuIcon, SwingZenLogoIcon } from '@sz/components';
-import { tw } from '@sz/config';
 import { Route } from '@sz/constants';
 import { CustomBottomTabBar } from '@sz/layout';
 import { AnalysisScreen, HomeScreen, VideosScreen } from '@sz/screens';
 import { NavigationService } from '@sz/services';
 
-import { commonScreenOptions } from '../configs';
 import { LibraryStack } from '../library';
 
 const Tab = createBottomTabNavigator();
@@ -22,31 +18,16 @@ export function MainBottomTabRoutes() {
     <CustomBottomTabBar
       {...props}
       onCustomUploadButtonClicked={() => {
-        Alert.alert('Custom bottom tab upload icon clicked.'); //TODO::replace with a relevant callback
+        NavigationService.navigate(Route.VideoUploadStack);
       }}
     />
-  );
-
-  const renderHeaderLeft = () => (
-    <View style={tw`pl-5`}>
-      <SwingZenLogoIcon width={70} height={34} />
-    </View>
-  );
-
-  const renderHeaderRight = () => (
-    <TouchableOpacity onPress={() => NavigationService.openDrawer()} style={tw`pr-5`}>
-      <CustomMenuIcon />
-    </TouchableOpacity>
   );
 
   return (
     <Tab.Navigator
       tabBar={renderTabBar}
       screenOptions={{
-        ...commonScreenOptions,
-        headerLeft: renderHeaderLeft,
-        headerRight: renderHeaderRight,
-        tabBarShowLabel: false,
+        headerShown: false,
       }}>
       <Tab.Screen name={Route.HomeTab} component={HomeScreen} />
       <Tab.Screen name={Route.VideosTab} component={VideosScreen} />

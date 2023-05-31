@@ -16,6 +16,8 @@ export type VideoUploadStackParamList = {
 const Stack = createNativeStackNavigator<VideoUploadStackParamList>();
 
 export function VideoUploadStack() {
+  const renderHeaderRight = () => <HeaderRightLink text="How to Shoot" />;
+
   return (
     <Stack.Navigator
       initialRouteName={Route.VideoSetup}
@@ -29,7 +31,7 @@ export function VideoUploadStack() {
       <Stack.Screen
         name={Route.VideoSetup}
         component={VideoSetupScreen}
-        options={{ title: '', headerRight: () => <HeaderRightLink /> }}
+        options={{ title: '', headerRight: renderHeaderRight }}
       />
     </Stack.Navigator>
   );

@@ -1,4 +1,6 @@
-import { SetupValuesType } from './video-setup.enum';
+import { ToggleSwitchDataType } from '@sz/models';
+
+import { SetupValuesType, VideoSetupSwitchType } from './video-setup.enum';
 
 export const ClubTypeOptions = [
   { label: 'Driver', value: SetupValuesType.DRIVER },
@@ -16,14 +18,14 @@ export const InitialSetupValues = {
   clubType: SetupValuesType.DRIVER,
 };
 
-export const ToggleSwitchData = [
+export const ToggleSwitchData: ToggleSwitchDataType[] = [
   {
     label: 'Video view',
     options: [
       { label: 'Down the line', value: SetupValuesType.DOWN_THE_LINE },
       { label: 'Face on', value: SetupValuesType.FACE_ON },
     ],
-    key: 'videoView',
+    key: VideoSetupSwitchType.VIDEO_VIEW,
   },
   {
     label: 'Dominant hand',
@@ -31,7 +33,7 @@ export const ToggleSwitchData = [
       { label: 'Right-handed', value: SetupValuesType.RIGHT_HANDED },
       { label: 'Left-handed', value: SetupValuesType.LEFT_HANDED },
     ],
-    key: 'dominantHand',
+    key: VideoSetupSwitchType.DOMINANT_HAND,
   },
   {
     label: 'Shooting method',
@@ -39,6 +41,6 @@ export const ToggleSwitchData = [
       { label: 'Tripod', value: SetupValuesType.TRIPOD },
       { label: 'Hand held', value: SetupValuesType.HAND_HELD },
     ],
-    key: 'shootingMethod',
+    key: VideoSetupSwitchType.SHOOTING_METHOD,
   },
 ];

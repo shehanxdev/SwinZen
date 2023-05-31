@@ -1,1 +1,1 @@
-export * from './VideoUploadRoutes';
+export * from './videoUploadRoutes';

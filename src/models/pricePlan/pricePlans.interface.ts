@@ -14,6 +14,7 @@ export interface Plan {
   frequency?: string;
   price: number;
   currency: string;
+  actions: Array<string>;
   features: Array<string>;
   createdAt: string;
   updatedAt: string;

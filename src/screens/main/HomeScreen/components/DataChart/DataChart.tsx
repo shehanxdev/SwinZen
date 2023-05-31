@@ -2,22 +2,10 @@ import React, { useMemo } from 'react';
 import { View } from 'react-native';
 
 import { tw } from '@sz/config';
+import { DataChartProps } from '@sz/models';
 
 import { BaseResultSectionDivider } from './components/BaseResultSectionDivider';
 import { BaseResultsSection } from './components/BaseResultsSection';
-
-interface BarSectionData {
-  passes: number;
-  fails: number;
-  label: string;
-}
-
-interface DataChartProps {
-  overall: BarSectionData; // aggregates the total data of passes and fails for "Set Up", "Back Swing", and "Down Swing" for that month.
-  setup: BarSectionData; // aggregates the total data of passes and fails for "Set Up "for that month.
-  backswing: BarSectionData; // aggregates the total data of passes and fails for "Back Swing" for that month.
-  downswing: BarSectionData; // aggregates the total data of passes and fails for "Down Swing" for that month.
-}
 
 export function DataChart({ overall, setup, backswing, downswing }: DataChartProps) {
   const renderChartData = useMemo(() => {
@@ -32,7 +20,7 @@ export function DataChart({ overall, setup, backswing, downswing }: DataChartPro
     ));
   }, [overall, setup, backswing, downswing]);
   return (
-    <View style={tw`flex flex-row h-58.75 justify-between`} testID="DataChartTestID">
+    <View style={tw`flex flex-row h-58.75 justify-between mt-12`} testID="DataChartTestID">
       {renderChartData}
     </View>
   );
