@@ -53,48 +53,64 @@ exports[`UTAInfoTen Screen should render UTAInfoTen Screen correctly 1`] = `
       }
     }
   >
-    <RCTScrollView
-      contentContainerStyle={
-        {
-          "flexGrow": 1,
-        }
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "paddingBottom": 0,
+          },
+        ]
       }
-      keyboardShouldPersistTaps="handled"
     >
-      <View>
-        <View
-          style={
-            {
-              "marginLeft": 16,
-              "marginRight": 16,
-              "marginTop": 32,
-            }
+      <RCTScrollView
+        contentContainerStyle={
+          {
+            "flexGrow": 1,
           }
-          testID="UTAInfoTenScreenTestID"
-        >
-          <Text
+        }
+        keyboardShouldPersistTaps="handled"
+      >
+        <View>
+          <View
             style={
-              [
-                {
-                  "color": "#FFFFFF",
-                  "lineHeight": 28,
-                },
-                {
-                  "fontFamily": "SourceSansPro-Regular",
-                  "fontSize": 18,
-                  "fontWeight": "normal",
-                  "textAlign": "auto",
-                },
-              ]
+              {
+                "marginLeft": 16,
+                "marginRight": 16,
+                "marginTop": 32,
+              }
             }
+            testID="UTAInfoTenScreenTestID"
           >
-            SwingZen’s concept of AI Pro instruction is to provide a similar process of instruction that any PGA/LPGA Pro would utilize.
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              SwingZen’s concept of AI Pro instruction is to provide a similar process of instruction that any PGA/LPGA Pro would utilize.
           
 The first step in building a quality swing is to start with your setup. Setup is your swing foundation. Once you get that right you can build off of it. Your AI Pro swing results are listed in priority starting with setup and progressing through the swing. Before you focus on the next thing, master the first priority item and then move on to the next.
-          </Text>
+            </Text>
+          </View>
         </View>
-      </View>
-    </RCTScrollView>
+      </RCTScrollView>
+    </View>
   </RCTSafeAreaView>
 </BVLinearGradient>
 `;

@@ -2,21 +2,28 @@ import React from 'react';
 import { View } from 'react-native';
 
 import { Button, Link, Text } from '@sz/components';
-import { tw } from '@sz/config';
+import { szdayjs, tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
+import { useSelector } from '@sz/stores';
 
 import { BaseAccountScreen } from '../../components';
 import { ProfileImageUpload, ProfileInfoCard } from './components';
 
 export function ProfileSettingsScreen() {
+  const userData = useSelector(state => state.userStore.userData);
+  const userPlan = useSelector(state => state.userStore.userPlan);
+
   return (
     <BaseAccountScreen testID="ProfileSettingsScreenTestID">
       <View style={tw`mt-14.5 mx-4`}>
         <ProfileImageUpload />
         <View style={tw`mt-6 mb-12`}>
           <Text color={Color.Primary.Sz100} variant={TextVariant.SubTitle2SemiBold}>
-            Marshall Williams
+            {userData?.name}
+          </Text>
+          <Text color={Color.Primary.Sz100} variant={TextVariant.Body1SemiBold}>
+            {userData?.city}
           </Text>
         </View>
         <View style={tw`mb-10.5`}>
@@ -32,7 +39,7 @@ export function ProfileSettingsScreen() {
             Email address
           </Text>
           <Text color={Color.Neutral.Sz100} variant={TextVariant.Body2Regular}>
-            Marshall Williams31@gmail.com
+            {userData?.email}
           </Text>
           <View style={tw`flex-row mt-6 justify-between w-full`}>
             <Text color={Color.Neutral.Sz100} variant={TextVariant.Body1SemiBold}>
@@ -67,10 +74,10 @@ export function ProfileSettingsScreen() {
           </View>
           <View style={tw`flex-row justify-between w-full mt-7`}>
             <Text color={Color.Neutral.Sz100} variant={TextVariant.SubTitle2SemiBold}>
-              Annual plan
+              {userPlan?.plan.name}
             </Text>
             <Text color={Color.Neutral.Sz100} variant={TextVariant.Body1SemiBold}>
-              $99.99
+              {'$' + userPlan?.plan.price}
             </Text>
           </View>
           <View style={tw`flex-row justify-between w-full mt-3`}>
@@ -78,7 +85,7 @@ export function ProfileSettingsScreen() {
               Subscription date
             </Text>
             <Text color={Color.Neutral.Sz100} variant={TextVariant.Body2Regular}>
-              09.21.2021
+              {szdayjs(userPlan?.startDate).format('DD.MM.YYYY')}
             </Text>
           </View>
           <View style={tw`flex-row justify-between w-full mt-1`}>
@@ -94,7 +101,7 @@ export function ProfileSettingsScreen() {
               Next payment date
             </Text>
             <Text color={Color.Neutral.Sz100} variant={TextVariant.Body2Regular}>
-              09.21.2022
+              {szdayjs(userPlan?.endDate).format('DD.MM.YYYY')}
             </Text>
           </View>
         </ProfileInfoCard>

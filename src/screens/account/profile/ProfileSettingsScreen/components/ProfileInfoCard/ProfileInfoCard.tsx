@@ -8,5 +8,9 @@ interface ProfileInfoCardnProps {
 }
 
 export function ProfileInfoCard({ children }: ProfileInfoCardnProps) {
-  return <View style={tw`my-1.5 p-5 rounded-2.5 bg-Primary-Sz700 items-start`}>{children}</View>;
+  return (
+    <View testID="ProfileInfoCardTestID" style={tw`my-1.5 p-5 rounded-2.5 bg-Primary-Sz700 items-start`}>
+      {children}
+    </View>
+  );
 }
