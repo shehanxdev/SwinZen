@@ -1,16 +1,14 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 
-import { tw } from '@sz/config';
+import { ScoreType } from '@sz/constants';
 
 import { BaseMainScreen } from '../components';
+import { AnalysisDataCard } from './components';
 
 export function AnalysisScreen() {
   return (
     <BaseMainScreen>
-      <View style={tw`m-auto`}>
-        <Text style={tw`m-10`}>Analysis Screen</Text>
-      </View>
+      <AnalysisDataCard score={15} observation={ScoreType.OVERALL} time={new Date()} />
     </BaseMainScreen>
   );
 }
