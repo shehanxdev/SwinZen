@@ -12,9 +12,10 @@ import { useDispatch } from 'react-redux';
 
 import { ProfileImageChangeCameraIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { TextVariant } from '@sz/constants';
+import { Color, TextVariant } from '@sz/constants';
 import { ToastService } from '@sz/services';
 import { useSelector } from '@sz/stores';
+import { getIntials } from '@sz/utils';
 
 //Note::below values are in PX
 const PROFILE_IMAGE_DIMENTIONS = {
@@ -25,7 +26,10 @@ const CAMERA_ICON_DIMENTIONS = {
   height: 28,
   width: 28,
 };
-const PROFILE_IMAGE_COMMON_STYLES = tw`w-[${PROFILE_IMAGE_DIMENTIONS.width}px] h-[${PROFILE_IMAGE_DIMENTIONS.height}px] rounded-full bg-Primary-Sz650 items-center justify-center border-2 border-Neutral-Sz100`;
+const PROFILE_IMAGE_COMMON_STYLES = tw`w-[${PROFILE_IMAGE_DIMENTIONS.width}px] h-[${PROFILE_IMAGE_DIMENTIONS.height}px] rounded-full bg-Primary-Sz650 items-center justify-center border-2 border-Neutral-Sz100 z-0`;
+const LOADER_STYLES = tw`p-[${PROFILE_IMAGE_DIMENTIONS.width / 2}px] bg-[${
+  Color.Transparency.Sz56
+}]  rounded-full absolute z-10`;
 const CAMERA_ICON_POSITION = {
   top: PROFILE_IMAGE_DIMENTIONS.width / 8 - CAMERA_ICON_DIMENTIONS.height / 2,
   right: PROFILE_IMAGE_DIMENTIONS.width / 8 - CAMERA_ICON_DIMENTIONS.width / 2,
@@ -47,7 +51,8 @@ type ImagePickType = 'capture' | 'library';
 
 export function ProfileImageUpload() {
   const [newProfileImageData, setNewProfileImageData] = useState<ImagePickerResponse>(null);
-
+  const userData = useSelector(state => state.userStore.userData);
+  const userProfilePic = userData?.profilePicture;
   const loading = useSelector(state => state.loading.effects.userStore.changeProfilePicture);
 
   const dispatch = useDispatch();
@@ -60,43 +65,62 @@ export function ProfileImageUpload() {
     } else {
       result = await launchImageLibrary(GALLERY_OPTIONS, setNewProfileImageData);
     }
-
     if (result.didCancel) return;
-
     if (result.errorMessage) {
       ToastService.error({ message: 'Failed!', description: newProfileImageData?.errorMessage });
       return;
     }
-
-    await dispatch.userStore.changeProfilePicture(result);
-    setNewProfileImageData(result);
+    if (result?.assets) {
+      try {
+        await dispatch.userStore.changeProfilePicture(result.assets[0]);
+      } catch {
+        ToastService.error({
+          message: 'Failed!',
+          description: 'An error occurred while attempting to update the profile picture',
+        });
+      }
+    }
   };
 
-  //TODO::fetch and display user data
   const renderProfileImage = useMemo(
     () =>
-      newProfileImageData?.assets === undefined || loading ? (
-        <View style={PROFILE_IMAGE_COMMON_STYLES}>
-          {/* TODO::Create a helper function to get the first characters from full name when intergration with the APIs*/}
+      userProfilePic ? (
+        <>
           {/* TODO::add a proper loading indicator */}
-          {loading ? <ActivityIndicator /> : <Text variant={TextVariant.SubTitle1}>{'MW'}</Text>}
-        </View>
+          {loading && (
+            <View style={LOADER_STYLES}>
+              <ActivityIndicator color={Color.Neutral.White} />
+            </View>
+          )}
+          <FastImage
+            style={PROFILE_IMAGE_COMMON_STYLES}
+            source={{
+              cache: FastImage.cacheControl.immutable,
+              priority: FastImage.priority.high,
+              uri: userProfilePic || newProfileImageData?.assets[0]?.uri,
+            }}
+          />
+        </>
       ) : (
-        <FastImage
-          style={PROFILE_IMAGE_COMMON_STYLES}
-          source={{
-            uri: newProfileImageData?.assets[0]?.uri,
-          }}
-        />
+        <>
+          {loading && (
+            <View style={LOADER_STYLES}>
+              <ActivityIndicator color={Color.Neutral.White} />
+            </View>
+          )}
+          <View style={PROFILE_IMAGE_COMMON_STYLES}>
+            <Text variant={TextVariant.SubTitle1}>{getIntials(userData?.name)}</Text>
+          </View>
+        </>
       ),
-    [newProfileImageData, loading],
+    [newProfileImageData, userProfilePic, loading],
   );
 
   return (
     <View testID="ProfileImageComponentTestID" style={tw`m-auto`}>
       <TouchableOpacity
         onPress={() => {
-          //TODO::provide a proper choose UI to the end user
+          //TODO:: will be changed after popup common component implemented
           Alert.alert('Choose option', '', [
             {
               text: 'Camera',
@@ -114,7 +138,7 @@ export function ProfileImageUpload() {
         }}>
         {renderProfileImage}
         <View
-          style={tw`w-[${CAMERA_ICON_DIMENTIONS.width}px] h-[${CAMERA_ICON_DIMENTIONS.height}px] rounded-full absolute right-[${CAMERA_ICON_POSITION.right}px] top-[${CAMERA_ICON_POSITION.top}px] justify-center items-center bg-Neutral-Sz100`}>
+          style={tw`w-[${CAMERA_ICON_DIMENTIONS.width}px] h-[${CAMERA_ICON_DIMENTIONS.height}px] rounded-full absolute right-[${CAMERA_ICON_POSITION.right}px] top-[${CAMERA_ICON_POSITION.top}px] justify-center items-center bg-Neutral-Sz100 z-20`}>
           <ProfileImageChangeCameraIcon />
         </View>
       </TouchableOpacity>

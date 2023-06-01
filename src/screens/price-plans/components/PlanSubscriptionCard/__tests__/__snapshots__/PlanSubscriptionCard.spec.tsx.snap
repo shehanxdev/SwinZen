@@ -6,7 +6,7 @@ exports[`PlanSubscriptionCard Component should render PlanSubscription Card comp
     {
       "busy": undefined,
       "checked": undefined,
-      "disabled": undefined,
+      "disabled": false,
       "expanded": undefined,
       "selected": undefined,
     }

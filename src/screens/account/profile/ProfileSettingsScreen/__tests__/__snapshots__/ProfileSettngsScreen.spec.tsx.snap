@@ -152,6 +152,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                         "height": 134,
                         "justifyContent": "center",
                         "width": 134,
+                        "zIndex": 0,
                       }
                     }
                   >
@@ -171,7 +172,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                         ]
                       }
                     >
-                      MW
+                      SZ
                     </Text>
                   </View>
                   <View
@@ -186,6 +187,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                         "right": 2.75,
                         "top": 2.75,
                         "width": 28,
+                        "zIndex": 20,
                       }
                     }
                   >
@@ -220,9 +222,23 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                       },
                     ]
                   }
-                >
-                  Marshall Williams
-                </Text>
+                />
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#F0F7F0",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
+                  }
+                />
               </View>
               <View
                 style={
@@ -390,6 +406,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                     "paddingTop": 20,
                   }
                 }
+                testID="ProfileInfoCardTestID"
               >
                 <Text
                   style={
@@ -424,9 +441,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                       },
                     ]
                   }
-                >
-                  Marshall Williams31@gmail.com
-                </Text>
+                />
                 <View
                   style={
                     {
@@ -517,6 +532,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                     "paddingTop": 20,
                   }
                 }
+                testID="ProfileInfoCardTestID"
               >
                 <View
                   style={
@@ -599,9 +615,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                         },
                       ]
                     }
-                  >
-                    Annual plan
-                  </Text>
+                  />
                   <Text
                     style={
                       [
@@ -618,7 +632,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                       ]
                     }
                   >
-                    $99.99
+                    $undefined
                   </Text>
                 </View>
                 <View
@@ -665,7 +679,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                       ]
                     }
                   >
-                    09.21.2021
+                    30.05.2023
                   </Text>
                 </View>
                 <View
@@ -759,7 +773,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                       ]
                     }
                   >
-                    09.21.2022
+                    30.05.2023
                   </Text>
                 </View>
               </View>
