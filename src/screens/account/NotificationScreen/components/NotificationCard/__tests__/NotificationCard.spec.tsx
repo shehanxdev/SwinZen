@@ -6,7 +6,7 @@ import { NotificationCard } from '../NotificationCard';
 
 describe('NotificationCard Component', () => {
   const testID = 'NotificationCardTestID';
-  const mockTime = new Date('2023-05-15');
+  const mockTime = new Date();
   const dummtTitle = 'Title One';
   const dummyMessage = 'test message';
   const mockOnPressFunction = jest.fn();
