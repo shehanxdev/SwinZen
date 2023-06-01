@@ -8,6 +8,10 @@ describe('MonthSelector component', () => {
 
   const getRenderedComponent = () => render(<MonthSelector />);
 
+  beforeEach(() => {
+    jest.useFakeTimers().setSystemTime(new Date('2023-05-30'));
+  });
+
   it(`should render MonthSelector component correctly`, () => {
     const renderer = getRenderedComponent();
     const renderTree = renderer.toJSON();

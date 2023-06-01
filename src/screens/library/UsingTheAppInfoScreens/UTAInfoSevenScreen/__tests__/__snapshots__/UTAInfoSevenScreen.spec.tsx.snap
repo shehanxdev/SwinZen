@@ -53,561 +53,577 @@ exports[`UTAInfoSeven Screen should render UTAInfoSeven Screen correctly 1`] = `
       }
     }
   >
-    <RCTScrollView
-      contentContainerStyle={
-        {
-          "flexGrow": 1,
-        }
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "paddingBottom": 0,
+          },
+        ]
       }
-      keyboardShouldPersistTaps="handled"
     >
-      <View>
-        <View
-          style={
-            {
-              "marginLeft": 16,
-              "marginRight": 16,
-              "marginTop": 32,
-            }
+      <RCTScrollView
+        contentContainerStyle={
+          {
+            "flexGrow": 1,
           }
-          testID="UTAInfoSevenScreenTestID"
-        >
-          <Text
+        }
+        keyboardShouldPersistTaps="handled"
+      >
+        <View>
+          <View
             style={
-              [
-                {
-                  "color": "#FFFFFF",
-                  "lineHeight": 28,
-                },
-                {
-                  "fontFamily": "SourceSansPro-Regular",
-                  "fontSize": 18,
-                  "fontWeight": "normal",
-                  "textAlign": "auto",
-                },
-              ]
+              {
+                "marginLeft": 16,
+                "marginRight": 16,
+                "marginTop": 32,
+              }
             }
+            testID="UTAInfoSevenScreenTestID"
           >
-            What does the orange triangle with an exclamation mark and/or orange overlay on a video mean?
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              What does the orange triangle with an exclamation mark and/or orange overlay on a video mean?
           
 This color code indicates that a video failed to review properly.
           
 Here is a list of all the reasons why a video could have failed to review.
 
-          </Text>
-          <View
-            style={
-              {
-                "flexBasis": "0%",
-                "flexGrow": 1,
-                "flexShrink": 1,
-                "marginLeft": 8,
-              }
-            }
-          >
+            </Text>
             <View
               style={
                 {
-                  "flexDirection": "row",
-                  "gap": 12,
+                  "flexBasis": "0%",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "marginLeft": 8,
                 }
               }
             >
-              <Text
+              <View
                 style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "auto",
-                    },
-                  ]
+                  {
+                    "flexDirection": "row",
+                    "gap": 12,
+                  }
                 }
               >
-                1
-                .
-              </Text>
-              <Text
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  1
+                  .
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  Multiple Persons Detected in the Frame:
+                </Text>
+              </View>
+              <View
                 style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-SemiBold",
-                      "fontSize": 18,
-                      "fontWeight": "bold",
-                      "textAlign": "auto",
-                    },
-                  ]
+                  {
+                    "marginLeft": 24,
+                  }
                 }
               >
-                Multiple Persons Detected in the Frame:
-              </Text>
-            </View>
-            <View
-              style={
-                {
-                  "marginLeft": 24,
-                }
-              }
-            >
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "auto",
-                    },
-                  ]
-                }
-              >
-                Were other golfers or bystanders in the background? Rerecord without anyone in the fore or background but the golfer that needs their swing analyzed.
-                
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  Were other golfers or bystanders in the background? Rerecord without anyone in the fore or background but the golfer that needs their swing analyzed.
+                  
 
-              </Text>
-            </View>
-          </View>
-          <View
-            style={
-              {
-                "flexBasis": "0%",
-                "flexGrow": 1,
-                "flexShrink": 1,
-                "marginLeft": 8,
-              }
-            }
-          >
-            <View
-              style={
-                {
-                  "flexDirection": "row",
-                  "gap": 12,
-                }
-              }
-            >
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "auto",
-                    },
-                  ]
-                }
-              >
-                2
-                .
-              </Text>
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-SemiBold",
-                      "fontSize": 18,
-                      "fontWeight": "bold",
-                      "textAlign": "auto",
-                    },
-                  ]
-                }
-              >
-                Multiple Balls and/or Club Heads Detected:
-              </Text>
+                </Text>
+              </View>
             </View>
             <View
               style={
                 {
-                  "marginLeft": 24,
+                  "flexBasis": "0%",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "marginLeft": 8,
                 }
               }
             >
-              <Text
+              <View
                 style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "auto",
-                    },
-                  ]
+                  {
+                    "flexDirection": "row",
+                    "gap": 12,
+                  }
                 }
               >
-                Were there other balls in the shot or clubs laying around in the shot? Our system is sensitive and will try to pick up other balls or clubs for analysis. Rerecord without other balls or clubs laying around in the shot.
-                
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  2
+                  .
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  Multiple Balls and/or Club Heads Detected:
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "marginLeft": 24,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  Were there other balls in the shot or clubs laying around in the shot? Our system is sensitive and will try to pick up other balls or clubs for analysis. Rerecord without other balls or clubs laying around in the shot.
+                  
 
-              </Text>
-            </View>
-          </View>
-          <View
-            style={
-              {
-                "flexBasis": "0%",
-                "flexGrow": 1,
-                "flexShrink": 1,
-                "marginLeft": 8,
-              }
-            }
-          >
-            <View
-              style={
-                {
-                  "flexDirection": "row",
-                  "gap": 12,
-                }
-              }
-            >
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "auto",
-                    },
-                  ]
-                }
-              >
-                3
-                .
-              </Text>
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-SemiBold",
-                      "fontSize": 18,
-                      "fontWeight": "bold",
-                      "textAlign": "auto",
-                    },
-                  ]
-                }
-              >
-                No Ball and/or Club Head Detected:
-              </Text>
+                </Text>
+              </View>
             </View>
             <View
               style={
                 {
-                  "marginLeft": 24,
+                  "flexBasis": "0%",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "marginLeft": 8,
                 }
               }
             >
-              <Text
+              <View
                 style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "auto",
-                    },
-                  ]
+                  {
+                    "flexDirection": "row",
+                    "gap": 12,
+                  }
                 }
               >
-                It is also possible that no club or ball was detected. This could be due to lighting conditions that our system isn’t able to pick up either the ball or club. Refer to our Lighting Hack for the best results!
-                
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  3
+                  .
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  No Ball and/or Club Head Detected:
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "marginLeft": 24,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  It is also possible that no club or ball was detected. This could be due to lighting conditions that our system isn’t able to pick up either the ball or club. Refer to our Lighting Hack for the best results!
+                  
 
-              </Text>
-            </View>
-          </View>
-          <View
-            style={
-              {
-                "flexBasis": "0%",
-                "flexGrow": 1,
-                "flexShrink": 1,
-                "marginLeft": 8,
-              }
-            }
-          >
-            <View
-              style={
-                {
-                  "flexDirection": "row",
-                  "gap": 12,
-                }
-              }
-            >
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "auto",
-                    },
-                  ]
-                }
-              >
-                4
-                .
-              </Text>
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-SemiBold",
-                      "fontSize": 18,
-                      "fontWeight": "bold",
-                      "textAlign": "auto",
-                    },
-                  ]
-                }
-              >
-                Video Shot is Too Long (manual mode):
-              </Text>
+                </Text>
+              </View>
             </View>
             <View
               style={
                 {
-                  "marginLeft": 24,
+                  "flexBasis": "0%",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "marginLeft": 8,
                 }
               }
             >
-              <Text
+              <View
                 style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "auto",
-                    },
-                  ]
+                  {
+                    "flexDirection": "row",
+                    "gap": 12,
+                  }
                 }
               >
-                Is the video that you submitted too long? If you’re recording yourself and you’ve submitted a video that includes you walking to and from the camera and ball, our system could have kicked it back for being too long. Please refer to our Trim Tip for the best results.
-                
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  4
+                  .
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  Video Shot is Too Long (manual mode):
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "marginLeft": 24,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  Is the video that you submitted too long? If you’re recording yourself and you’ve submitted a video that includes you walking to and from the camera and ball, our system could have kicked it back for being too long. Please refer to our Trim Tip for the best results.
+                  
 
-              </Text>
-            </View>
-          </View>
-          <View
-            style={
-              {
-                "flexBasis": "0%",
-                "flexGrow": 1,
-                "flexShrink": 1,
-                "marginLeft": 8,
-              }
-            }
-          >
-            <View
-              style={
-                {
-                  "flexDirection": "row",
-                  "gap": 12,
-                }
-              }
-            >
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "auto",
-                    },
-                  ]
-                }
-              >
-                5
-                .
-              </Text>
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-SemiBold",
-                      "fontSize": 18,
-                      "fontWeight": "bold",
-                      "textAlign": "auto",
-                    },
-                  ]
-                }
-              >
-                Video Shot in Wrong Speed(manual mode):
-              </Text>
+                </Text>
+              </View>
             </View>
             <View
               style={
                 {
-                  "marginLeft": 24,
+                  "flexBasis": "0%",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "marginLeft": 8,
                 }
               }
             >
-              <Text
+              <View
                 style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "auto",
-                    },
-                  ]
+                  {
+                    "flexDirection": "row",
+                    "gap": 12,
+                  }
                 }
               >
-                Did you forget to change your phone settings? Remember, the success of our app relies on all videos being recorded on your phone in ultra slo-mo. Refer to the Setting Up Your Phone Settings for instructions on how to change your settings.
-                
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  5
+                  .
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  Video Shot in Wrong Speed(manual mode):
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "marginLeft": 24,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  Did you forget to change your phone settings? Remember, the success of our app relies on all videos being recorded on your phone in ultra slo-mo. Refer to the Setting Up Your Phone Settings for instructions on how to change your settings.
+                  
 
-              </Text>
-            </View>
-          </View>
-          <View
-            style={
-              {
-                "flexBasis": "0%",
-                "flexGrow": 1,
-                "flexShrink": 1,
-                "marginLeft": 8,
-              }
-            }
-          >
-            <View
-              style={
-                {
-                  "flexDirection": "row",
-                  "gap": 12,
-                }
-              }
-            >
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "auto",
-                    },
-                  ]
-                }
-              >
-                6
-                .
-              </Text>
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-SemiBold",
-                      "fontSize": 18,
-                      "fontWeight": "bold",
-                      "textAlign": "auto",
-                    },
-                  ]
-                }
-              >
-                Shot too Close or Too Far (manual mode):
-              </Text>
+                </Text>
+              </View>
             </View>
             <View
               style={
                 {
-                  "marginLeft": 24,
+                  "flexBasis": "0%",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
+                  "marginLeft": 8,
                 }
               }
             >
-              <Text
+              <View
                 style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "auto",
-                    },
-                  ]
+                  {
+                    "flexDirection": "row",
+                    "gap": 12,
+                  }
                 }
               >
-                You also could have gotten a failed review because your camera was too close or too far away from the ball when recording your swing. Refer to Shooting Setup for the best results.
-                
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  6
+                  .
+                </Text>
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  Shot too Close or Too Far (manual mode):
+                </Text>
+              </View>
+              <View
+                style={
+                  {
+                    "marginLeft": 24,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-Regular",
+                        "fontSize": 18,
+                        "fontWeight": "normal",
+                        "textAlign": "auto",
+                      },
+                    ]
+                  }
+                >
+                  You also could have gotten a failed review because your camera was too close or too far away from the ball when recording your swing. Refer to Shooting Setup for the best results.
+                  
 
-              </Text>
+                </Text>
+              </View>
             </View>
           </View>
         </View>
-      </View>
-    </RCTScrollView>
+      </RCTScrollView>
+    </View>
   </RCTSafeAreaView>
 </BVLinearGradient>
 `;

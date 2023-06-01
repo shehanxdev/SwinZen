@@ -53,188 +53,204 @@ exports[`ASZInfoSix Screen should render ASZInfoSix Screen correctly 1`] = `
       }
     }
   >
-    <RCTScrollView
-      contentContainerStyle={
-        {
-          "flexGrow": 1,
-        }
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "paddingBottom": 0,
+          },
+        ]
       }
-      keyboardShouldPersistTaps="handled"
     >
-      <View>
-        <View
-          style={
-            {
-              "marginLeft": 16,
-              "marginRight": 16,
-              "marginTop": 32,
-            }
+      <RCTScrollView
+        contentContainerStyle={
+          {
+            "flexGrow": 1,
           }
-          testID="ASZInfoSixScreenTestID"
-        >
-          <View>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-SemiBold",
-                    "fontSize": 18,
-                    "fontWeight": "bold",
-                    "textAlign": "auto",
-                  },
-                ]
+        }
+        keyboardShouldPersistTaps="handled"
+      >
+        <View>
+          <View
+            style={
+              {
+                "marginLeft": 16,
+                "marginRight": 16,
+                "marginTop": 32,
               }
-            >
-              Weight Transfer Reference Lines:
-            </Text>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-Regular",
-                    "fontSize": 18,
-                    "fontWeight": "normal",
-                    "textAlign": "auto",
-                  },
-                ]
-              }
-            >
-              Static blue lines that are set to address ankle positions and head positions. Allows users to see how their weight transfer and head movement is happening throughout the swing.
-              
+            }
+            testID="ASZInfoSixScreenTestID"
+          >
+            <View>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-SemiBold",
+                      "fontSize": 18,
+                      "fontWeight": "bold",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Weight Transfer Reference Lines:
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Static blue lines that are set to address ankle positions and head positions. Allows users to see how their weight transfer and head movement is happening throughout the swing.
+                
 
-            </Text>
-          </View>
-          <View>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-SemiBold",
-                    "fontSize": 18,
-                    "fontWeight": "bold",
-                    "textAlign": "auto",
-                  },
-                ]
-              }
-            >
-              Ball Position Line:
-            </Text>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-Regular",
-                    "fontSize": 18,
-                    "fontWeight": "normal",
-                    "textAlign": "auto",
-                  },
-                ]
-              }
-            >
-              Static line at ball position. Shows ball position at address. The position will vary depending on the position of the camera. This is why your camera position should be directly in front of and square to the golfer.
-              
+              </Text>
+            </View>
+            <View>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-SemiBold",
+                      "fontSize": 18,
+                      "fontWeight": "bold",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Ball Position Line:
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Static line at ball position. Shows ball position at address. The position will vary depending on the position of the camera. This is why your camera position should be directly in front of and square to the golfer.
+                
 
-            </Text>
-          </View>
-          <View>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-SemiBold",
-                    "fontSize": 18,
-                    "fontWeight": "bold",
-                    "textAlign": "auto",
-                  },
-                ]
-              }
-            >
-              Clubhead Tracking:
-            </Text>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-Regular",
-                    "fontSize": 18,
-                    "fontWeight": "normal",
-                    "textAlign": "auto",
-                  },
-                ]
-              }
-            >
-              Shows the club path throughout the swing.
-              
+              </Text>
+            </View>
+            <View>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-SemiBold",
+                      "fontSize": 18,
+                      "fontWeight": "bold",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Clubhead Tracking:
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Shows the club path throughout the swing.
+                
 
-            </Text>
-          </View>
-          <View>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-SemiBold",
-                    "fontSize": 18,
-                    "fontWeight": "bold",
-                    "textAlign": "auto",
-                  },
-                ]
-              }
-            >
-              Head Position:
-            </Text>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-Regular",
-                    "fontSize": 18,
-                    "fontWeight": "normal",
-                    "textAlign": "auto",
-                  },
-                ]
-              }
-            >
-              Dynamic white circle that shows the position of the head throughout the swing.
-              
+              </Text>
+            </View>
+            <View>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-SemiBold",
+                      "fontSize": 18,
+                      "fontWeight": "bold",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Head Position:
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Dynamic white circle that shows the position of the head throughout the swing.
+                
 
-            </Text>
+              </Text>
+            </View>
           </View>
         </View>
-      </View>
-    </RCTScrollView>
+      </RCTScrollView>
+    </View>
   </RCTSafeAreaView>
 </BVLinearGradient>
 `;

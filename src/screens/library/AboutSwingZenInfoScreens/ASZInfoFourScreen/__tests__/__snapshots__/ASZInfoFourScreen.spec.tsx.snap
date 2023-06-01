@@ -53,228 +53,244 @@ exports[`ASZInfoFour Screen should render ASZInfoFour Screen correctly 1`] = `
       }
     }
   >
-    <RCTScrollView
-      contentContainerStyle={
-        {
-          "flexGrow": 1,
-        }
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "paddingBottom": 0,
+          },
+        ]
       }
-      keyboardShouldPersistTaps="handled"
     >
-      <View>
-        <View
-          style={
-            {
-              "marginLeft": 16,
-              "marginRight": 16,
-              "marginTop": 32,
-            }
+      <RCTScrollView
+        contentContainerStyle={
+          {
+            "flexGrow": 1,
           }
-          testID="ASZInfoFourScreenTestID"
-        >
-          <View>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-SemiBold",
-                    "fontSize": 18,
-                    "fontWeight": "bold",
-                    "textAlign": "auto",
-                  },
-                ]
+        }
+        keyboardShouldPersistTaps="handled"
+      >
+        <View>
+          <View
+            style={
+              {
+                "marginLeft": 16,
+                "marginRight": 16,
+                "marginTop": 32,
               }
-            >
-              Swing Plane Line:
-            </Text>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-Regular",
-                    "fontSize": 18,
-                    "fontWeight": "normal",
-                    "textAlign": "auto",
-                  },
-                ]
-              }
-            >
-              Provides a visual reference to your club shaft at ½ backswing and downswing.
-              
+            }
+            testID="ASZInfoFourScreenTestID"
+          >
+            <View>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-SemiBold",
+                      "fontSize": 18,
+                      "fontWeight": "bold",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Swing Plane Line:
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Provides a visual reference to your club shaft at ½ backswing and downswing.
+                
 
-            </Text>
-          </View>
-          <View>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-SemiBold",
-                    "fontSize": 18,
-                    "fontWeight": "bold",
-                    "textAlign": "auto",
-                  },
-                ]
-              }
-            >
-              Spine Angle:
-            </Text>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-Regular",
-                    "fontSize": 18,
-                    "fontWeight": "normal",
-                    "textAlign": "auto",
-                  },
-                ]
-              }
-            >
-              Compares the blue static line that is set at the address to the dynamic white line that moves with your spine as you progress through the swing.
-              
+              </Text>
+            </View>
+            <View>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-SemiBold",
+                      "fontSize": 18,
+                      "fontWeight": "bold",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Spine Angle:
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Compares the blue static line that is set at the address to the dynamic white line that moves with your spine as you progress through the swing.
+                
 
-            </Text>
-          </View>
-          <View>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-SemiBold",
-                    "fontSize": 18,
-                    "fontWeight": "bold",
-                    "textAlign": "auto",
-                  },
-                ]
-              }
-            >
-              Clubhead Tracking:
-            </Text>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-Regular",
-                    "fontSize": 18,
-                    "fontWeight": "normal",
-                    "textAlign": "auto",
-                  },
-                ]
-              }
-            >
-              Shows the club path throughout the swing. Changes colors if your clubhead crosses the target line which causes many problems, such as a slice.
-              
+              </Text>
+            </View>
+            <View>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-SemiBold",
+                      "fontSize": 18,
+                      "fontWeight": "bold",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Clubhead Tracking:
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Shows the club path throughout the swing. Changes colors if your clubhead crosses the target line which causes many problems, such as a slice.
+                
 
-            </Text>
-          </View>
-          <View>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-SemiBold",
-                    "fontSize": 18,
-                    "fontWeight": "bold",
-                    "textAlign": "auto",
-                  },
-                ]
-              }
-            >
-              Target Line:
-            </Text>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-Regular",
-                    "fontSize": 18,
-                    "fontWeight": "normal",
-                    "textAlign": "auto",
-                  },
-                ]
-              }
-            >
-              Provides a visual reference to the target line. This is set by the phone position as it relates to the ball position. This is why being properly positioned when filming is necessary.
-              
+              </Text>
+            </View>
+            <View>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-SemiBold",
+                      "fontSize": 18,
+                      "fontWeight": "bold",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Target Line:
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Provides a visual reference to the target line. This is set by the phone position as it relates to the ball position. This is why being properly positioned when filming is necessary.
+                
 
-            </Text>
-          </View>
-          <View>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-SemiBold",
-                    "fontSize": 18,
-                    "fontWeight": "bold",
-                    "textAlign": "auto",
-                  },
-                ]
-              }
-            >
-              Ball Tracking:
-            </Text>
-            <Text
-              style={
-                [
-                  {
-                    "color": "#FFFFFF",
-                    "lineHeight": 28,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-Regular",
-                    "fontSize": 18,
-                    "fontWeight": "normal",
-                    "textAlign": "auto",
-                  },
-                ]
-              }
-            >
-              Shows ball path as related to the target line.
-              
+              </Text>
+            </View>
+            <View>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-SemiBold",
+                      "fontSize": 18,
+                      "fontWeight": "bold",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Ball Tracking:
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Shows ball path as related to the target line.
+                
 
-            </Text>
+              </Text>
+            </View>
           </View>
         </View>
-      </View>
-    </RCTScrollView>
+      </RCTScrollView>
+    </View>
   </RCTSafeAreaView>
 </BVLinearGradient>
 `;

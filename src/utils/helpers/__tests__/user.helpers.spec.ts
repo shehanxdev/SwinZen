@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { User, UserData } from '@sz/models';
 
-import { mapUserData } from '../user.helpers';
+import { getIntials, mapUserData } from '../user.helpers';
 
 describe('user helpers test cases', () => {
   describe('getUserData function', () => {
@@ -40,6 +40,28 @@ describe('user helpers test cases', () => {
         deviceId: null,
       };
       expect(result.current).toStrictEqual(expectedResult);
+    });
+  });
+
+  describe('getIntials function', () => {
+    const getRenderedGetIntials = (name: string) => renderHook(() => getIntials(name));
+
+    it('should return two capitalised letters string', () => {
+      const name = 'SwingZen Testing';
+      const { result } = getRenderedGetIntials(name);
+      expect(result.current).toStrictEqual('ST');
+    });
+
+    it('should only return two capitalised letters string', () => {
+      const name = 'SwingZen Testing New';
+      const { result } = getRenderedGetIntials(name);
+      expect(result.current).toStrictEqual('ST');
+    });
+
+    it('should return two capitalised letters string of "SZ", if name is null or undefined', () => {
+      const name = null;
+      const { result } = getRenderedGetIntials(name);
+      expect(result.current).toStrictEqual('SZ');
     });
   });
 });

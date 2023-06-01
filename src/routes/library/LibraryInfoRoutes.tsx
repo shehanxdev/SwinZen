@@ -112,7 +112,6 @@ export function LibraryInfoStack() {
         headerLeft: HeaderBackButton,
         animation: 'slide_from_right',
       }}>
-      <Stack.Screen name={Route.GolfTips} component={GolfTipsScreen} options={{ title: 'Golf tips' }} />
       <Stack.Screen
         name={Route.AboutSwignzenInfoEight}
         component={ASZInfoEightScreen}
@@ -153,6 +152,7 @@ export function LibraryInfoStack() {
         component={ASZInfoTwoScreen}
         options={{ title: 'Video capture speed' }}
       />
+      <Stack.Screen name={Route.GolfTips} component={GolfTipsScreen} options={{ title: 'Golf tips' }} />
       <Stack.Screen
         name={Route.UsingTheAppInfoEight}
         component={UTAInfoEightScreen}

@@ -53,52 +53,68 @@ exports[`ASZInfoThree Screen should render ASZInfoThree Screen correctly 1`] = `
       }
     }
   >
-    <RCTScrollView
-      contentContainerStyle={
-        {
-          "flexGrow": 1,
-        }
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "paddingBottom": 0,
+          },
+        ]
       }
-      keyboardShouldPersistTaps="handled"
     >
-      <View>
-        <View
-          style={
-            {
-              "marginLeft": 16,
-              "marginRight": 16,
-              "marginTop": 32,
-            }
+      <RCTScrollView
+        contentContainerStyle={
+          {
+            "flexGrow": 1,
           }
-          testID="ASZInfoThreeScreenTestID"
-        >
-          <Text
+        }
+        keyboardShouldPersistTaps="handled"
+      >
+        <View>
+          <View
             style={
-              [
-                {
-                  "color": "#FFFFFF",
-                  "lineHeight": 28,
-                },
-                {
-                  "fontFamily": "SourceSansPro-Regular",
-                  "fontSize": 18,
-                  "fontWeight": "normal",
-                  "textAlign": "auto",
-                },
-              ]
+              {
+                "marginLeft": 16,
+                "marginRight": 16,
+                "marginTop": 32,
+              }
             }
+            testID="ASZInfoThreeScreenTestID"
           >
-            If you have an iPhone, you have the capabilities to shoot videos at 240fps. All moderately recent versions of the iPhone have this capability, and most newer Android phones have this capability, as well. Over the last few years, Android phone manufacturers have begun providing at least 120fps slow-motion if not 240fps.
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              If you have an iPhone, you have the capabilities to shoot videos at 240fps. All moderately recent versions of the iPhone have this capability, and most newer Android phones have this capability, as well. Over the last few years, Android phone manufacturers have begun providing at least 120fps slow-motion if not 240fps.
           
 If your Android phone doesn’t have the capabilities of shooting video at 240fps but can shoot at 120fps, then all the analytics and tracking will work except for speed calculations.
           
 After downloading SwingZen you should have gotten a notification if you do not have the capabilities described above. If no notification, you’re good to go.
           
 In this situation, you will either need to upgrade your phone or cancel your subscription. We’re so sorry for the inconvenience this may cause some users.
-          </Text>
+            </Text>
+          </View>
         </View>
-      </View>
-    </RCTScrollView>
+      </RCTScrollView>
+    </View>
   </RCTSafeAreaView>
 </BVLinearGradient>
 `;

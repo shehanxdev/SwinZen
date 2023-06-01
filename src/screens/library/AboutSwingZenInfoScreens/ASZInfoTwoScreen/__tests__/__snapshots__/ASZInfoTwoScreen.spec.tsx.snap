@@ -53,50 +53,66 @@ exports[`ASZInfoTwo Screen should render ASZInfoTwo Screen correctly 1`] = `
       }
     }
   >
-    <RCTScrollView
-      contentContainerStyle={
-        {
-          "flexGrow": 1,
-        }
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "paddingBottom": 0,
+          },
+        ]
       }
-      keyboardShouldPersistTaps="handled"
     >
-      <View>
-        <View
-          style={
-            {
-              "marginLeft": 16,
-              "marginRight": 16,
-              "marginTop": 32,
-            }
+      <RCTScrollView
+        contentContainerStyle={
+          {
+            "flexGrow": 1,
           }
-          testID="ASZInfoTwoScreenTestID"
-        >
-          <Text
+        }
+        keyboardShouldPersistTaps="handled"
+      >
+        <View>
+          <View
             style={
-              [
-                {
-                  "color": "#FFFFFF",
-                  "lineHeight": 28,
-                },
-                {
-                  "fontFamily": "SourceSansPro-Regular",
-                  "fontSize": 18,
-                  "fontWeight": "normal",
-                  "textAlign": "auto",
-                },
-              ]
+              {
+                "marginLeft": 16,
+                "marginRight": 16,
+                "marginTop": 32,
+              }
             }
+            testID="ASZInfoTwoScreenTestID"
           >
-            The SwingZen system captures and analyzes videos in 120/240fps. This is up to eight times more frames than other app-based systems!
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              The SwingZen system captures and analyzes videos in 120/240fps. This is up to eight times more frames than other app-based systems!
           
 Recording and analyzing ultra slo-mo videos is a must to be able to provide the detailed and accurate feedback that our app delivers. This includes the swing data such as club and ball speed, along with smash factor and launch angle.
           
 No other AI system in the world delivers these capabilities.
-          </Text>
+            </Text>
+          </View>
         </View>
-      </View>
-    </RCTScrollView>
+      </RCTScrollView>
+    </View>
   </RCTSafeAreaView>
 </BVLinearGradient>
 `;

@@ -5,7 +5,6 @@ import { Route, TextAlignment } from '@sz/constants';
 import { AboutUsScreen, ContactUsScreen, FAQScreen, PrivacyPolicyScreen, TermsOfUseScreen } from '@sz/screens';
 
 import { HeaderBackButton, HeaderTitle } from '../components';
-import { LibraryInfoStack } from './LibraryInfoRoutes';
 
 export type InfoStackParamList = {
   [Route.AboutUs]: {
@@ -21,9 +20,6 @@ export type InfoStackParamList = {
     // Can be used for future props
   };
   [Route.TermsOfUse]: {
-    // Can be used for future props
-  };
-  [Route.LibraryInfoStack]: {
     // Can be used for future props
   };
 };
@@ -47,7 +43,6 @@ export function InfoStack() {
       <Stack.Screen name={Route.FAQ} component={FAQScreen} options={{ title: 'FAQ' }} />
       <Stack.Screen name={Route.PrivacyPolicy} component={PrivacyPolicyScreen} options={{ title: 'Privacy policy' }} />
       <Stack.Screen name={Route.TermsOfUse} component={TermsOfUseScreen} options={{ title: 'Terms of use' }} />
-      <Stack.Screen name={Route.LibraryInfoStack} component={LibraryInfoStack} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }

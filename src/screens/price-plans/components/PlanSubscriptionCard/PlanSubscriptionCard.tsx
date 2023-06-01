@@ -27,7 +27,7 @@ export function PlanSubscriptionCard({
   betterValue = null,
 }: PlanSubscriptionCardProps) {
   return (
-    <TouchableOpacity testID={testID} onPress={onCardPress}>
+    <TouchableOpacity testID={testID} disabled={selected} onPress={onCardPress}>
       <View style={tw`bg-[${Color.Primary.Sz700}]/50 shadow-[${Color.Primary.Sz700}]/20 rounded-2.5 content-center`}>
         {betterValue ? (
           <View style={tw`bg-[${selected ? Color.Neutral.Sz600 : Color.Tertiary.Sz900}] h-6.25 rounded-t-2.5`}>
