@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { ActivityIndicator, Alert, TouchableOpacity, View } from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {
@@ -12,8 +12,7 @@ import { useDispatch } from 'react-redux';
 
 import { ProfileImageChangeCameraIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, FilesType, TextVariant } from '@sz/constants';
-import { PreSignedResponse } from '@sz/models';
+import { Color, TextVariant } from '@sz/constants';
 import { ToastService } from '@sz/services';
 import { useSelector } from '@sz/stores';
 import { getIntials } from '@sz/utils';
@@ -52,62 +51,11 @@ type ImagePickType = 'capture' | 'library';
 
 export function ProfileImageUpload() {
   const [newProfileImageData, setNewProfileImageData] = useState<ImagePickerResponse>(null);
-  const [loading, setLoading] = useState(false);
+  const userData = useSelector(state => state.userStore.userData);
+  const userProfilePic = userData?.profilePicture;
+  const loading = useSelector(state => state.loading.effects.userStore.changeProfilePicture);
 
   const dispatch = useDispatch();
-
-  const userData = useSelector(state => state.userStore.userData);
-  const preSignedData = useSelector(state => state.userStore.preSignedData);
-
-  const userProfilePic = userData?.profilePicture;
-
-  //TODO:: handle custom fetching later
-  const uploadMediaToS3 = async (preSignedData: PreSignedResponse) => {
-    try {
-      const formData = new FormData();
-      const fields = preSignedData.fields;
-
-      const file = {
-        uri: newProfileImageData.assets[0].uri,
-        type: newProfileImageData.assets[0].type,
-        name: newProfileImageData.assets[0].fileName,
-      };
-
-      // To ignore last two items from the object
-      const ignoreLastTwoItems = obj => Object.fromEntries(Object.entries(obj).slice(0, -2));
-
-      Object.entries(ignoreLastTwoItems(fields)).forEach(([key, value]) => {
-        formData.append(key, value);
-      });
-
-      formData.append('Content-Type', newProfileImageData.assets[0].type);
-      formData.append('file', file);
-
-      const response = await fetch(preSignedData.url, {
-        method: 'POST',
-        body: formData,
-      });
-
-      const data = await JSON.parse(JSON.stringify(response));
-      if (data.status) {
-        await dispatch.userStore.changeProfilePicture(preSignedData.fields.key);
-      }
-      dispatch.userStore.clearPreSignedData();
-      setLoading(false);
-    } catch (error) {
-      dispatch.userStore.clearPreSignedData();
-      console.error(error);
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    if (preSignedData) {
-      uploadMediaToS3(preSignedData).catch(console.error);
-    } else {
-      setLoading(false);
-    }
-  }, [preSignedData]);
 
   const onButtonPress = async (type?: ImagePickType) => {
     let result: ImagePickerResponse;
@@ -123,10 +71,15 @@ export function ProfileImageUpload() {
       return;
     }
     if (result?.assets) {
-      await dispatch.userStore.getPreSignedData(FilesType.IMAGE);
-      setLoading(true);
+      try {
+        await dispatch.userStore.changeProfilePicture(result.assets[0]);
+      } catch {
+        ToastService.error({
+          message: 'Failed!',
+          description: 'An error occurred while attempting to update the profile picture',
+        });
+      }
     }
-    setNewProfileImageData(result);
   };
 
   const renderProfileImage = useMemo(

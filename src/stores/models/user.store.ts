@@ -1,4 +1,5 @@
 import { createModel } from '@rematch/core';
+import { Asset } from 'react-native-image-picker';
 
 import { FilesType, IS_JEST_RUNTIME, OtpType } from '@sz/constants';
 import {
@@ -24,6 +25,7 @@ import {
   ContactUsService,
   NotificationsService,
   PricePlansService,
+  S3Service,
   SecureAuthService,
   UserService,
 } from '@sz/services';
@@ -78,6 +80,9 @@ export const userStore = createModel<RootModel>()({
     },
     setUserProfileData(state: UserState, profileData: UserProfileData) {
       return { ...state, profileData };
+    },
+    setProfilePicture(state: UserState, url: string) {
+      return { ...state, userData: { ...state.userData, profilePicture: url } };
     },
   },
   effects: dispatch => ({
@@ -201,19 +206,15 @@ export const userStore = createModel<RootModel>()({
       const { accessToken } = state.userStore;
       await NotificationsService.patchUserNotification(payload, accessToken);
     },
-    async getPreSignedData(payload: FilesType, state) {
+
+    async changeProfilePicture(payload: Asset, state) {
       const { accessToken } = state.userStore;
-      const data = await AccountService.getPreSignedData(payload, accessToken);
-      dispatch.userStore.setPreSignedData(data);
-    },
-    async clearPreSignedData() {
-      dispatch.userStore.setPreSignedData(null);
-    },
-    async changeProfilePicture(payload: string, state) {
-      const { accessToken, userData } = state.userStore;
-      const data = await AccountService.changeProfilePicture(payload, accessToken);
-      const userInfo = { ...userData, profilePicture: data.url } as UserData;
-      dispatch.userStore.setUserData(userInfo);
+      const preSignedData = await AccountService.getPreSignedData(FilesType.IMAGE, accessToken);
+
+      await S3Service.uploadMediaToS3(preSignedData, payload);
+      const data = await AccountService.changeProfilePicture(preSignedData.fields.key, accessToken);
+
+      dispatch.userStore.setProfilePicture(data.url);
     },
     async postContactUsMessage(payload: ContactUsFormValues, state) {
       const { accessToken } = state.userStore;
