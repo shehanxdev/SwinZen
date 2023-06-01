@@ -5,7 +5,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { Link, SwingZenLogoIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
-import { NavigationService, PermissionService, ToastService } from '@sz/services';
+import { NavigationService, PermissionService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 
 import { BaseMainScreen } from '../components';
@@ -26,16 +26,12 @@ export function HomeScreen() {
     PermissionService.requestNotificationsPermission().catch(console.error);
 
     //fetch user profile data
-    dispatch.userStore.fetchUserProfileData();
+    dispatch.userStore.fetchUserProfileData().catch(console.error);
 
     if (initialLogin) {
       setTimeout(() => NavigationService.navigate(Route.PricePlans), 0);
     } else {
-      try {
-        dispatch.userStore.getSubscription({});
-      } catch (error) {
-        ToastService.error({ message: 'Failed!', description: error.data.message });
-      }
+      dispatch.userStore.getSubscription({}).catch(console.error);
     }
   }, []);
 

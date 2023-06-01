@@ -90,12 +90,17 @@ exports[`PricePlans Screen screen should render PricePlans Screen correctly 1`] 
             <View
               style={
                 {
-                  "marginLeft": 25,
-                  "marginRight": 25,
-                  "marginTop": 16,
+                  "flexBasis": "0%",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
                 }
               }
-            />
+            >
+              <ActivityIndicator
+                color="#FFFFFF"
+                size="small"
+              />
+            </View>
           </View>
         </RCTScrollView>
       </View>

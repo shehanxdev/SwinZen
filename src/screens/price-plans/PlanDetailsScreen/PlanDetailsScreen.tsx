@@ -16,15 +16,15 @@ export function PlanDetailsScreen({ route }) {
   const data = route.params.params.item as Plan;
   const dispatch = useDispatch();
 
-  const onProceed = (data: Plan) => {
+  const onProceed = async (data: Plan) => {
     try {
-      dispatch.userStore.addSubscription({ planId: data.id });
+      await dispatch.userStore.addSubscription({ planId: data.id });
       //TODO:: handle payments for paid plans
       NavigationService.navigate(Route.HomeTab);
     } catch (error) {
       ToastService.error({ message: 'Failed!', description: error.data.message });
     } finally {
-      dispatch.userStore.getSubscription({});
+      await dispatch.userStore.getSubscription({});
     }
   };
 
@@ -43,9 +43,9 @@ export function PlanDetailsScreen({ route }) {
               <Text variant={TextVariant.Body2Regular}>{data.description + ':'}</Text>
             </View>
             <View style={tw`mx-6 mt-3 items-start`}>
-              {data.actions?.map((feature, index) => {
+              {data.actions?.map(feature => {
                 return (
-                  <View style={tw`flex-row gap-2 mt-2`} key={`${TEST_ID_PREFIX}-Feature-${index}`}>
+                  <View style={tw`flex-row gap-2 mt-2`} key={`${TEST_ID_PREFIX}-Feature-${feature}`}>
                     <View style={tw`mt-1.5`}>
                       <PricePlanFeatureListTickIcon />
                     </View>

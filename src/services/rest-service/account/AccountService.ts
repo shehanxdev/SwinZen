@@ -10,7 +10,9 @@ import {
   DecodedJWTUserData,
   PreSignedResponse,
 } from '@sz/models';
-import { APIError, HttpServiceInstance, JTWDecodeService } from '@sz/services';
+
+import { APIError, HttpServiceInstance } from '../../http-service';
+import { JTWDecodeService } from '../../jwt-decode-service';
 
 export class AccountService {
   static async profileChangePassword(

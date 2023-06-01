@@ -3,7 +3,8 @@ import { ActivityIndicator, View } from 'react-native';
 
 import { tw } from '@sz/config';
 import { Color, Route, SortDataType } from '@sz/constants';
-import { NavigationService, ToastService } from '@sz/services';
+import { useFetch } from '@sz/hooks';
+import { NavigationService, PricePlansService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 
 import { BasePricePlansScreen, PlanSubscriptionCard } from '../components';
@@ -15,34 +16,14 @@ export function PricePlansScreen() {
 
   const setLoginState = dispatch.persistentUserStore.setLoginState;
 
-  const isLoading = useSelector(state => state.loading.effects.pricePlansStore.getPricePlans);
   const userPlan = useSelector(state => state.userStore.userPlan);
-  const plansData = useSelector(state => state.pricePlansStore.pricePlans);
 
-  const getPlans = async () => {
-    await dispatch.userStore.getSubscription({});
-    dispatch.pricePlansStore.getPricePlans(SortDataType.PRICE);
-  };
+  const { data: plansData, isLoading } = useFetch(() => PricePlansService.getPricePlans(SortDataType.PRICE));
 
   useEffect(() => {
     setLoginState('subsequent');
-    getPlans().catch(console.error);
+    dispatch.userStore.getSubscription({}).catch(console.error);
   }, []);
-
-  useEffect(() => {
-    //TODO:: will be removed when SWIN-610 ticket is addressed
-    // if there is no user plan selected user automatically registering under free plan
-    if (!userPlan && plansData) {
-      const freePlan = plansData.find(item => item.price === 0);
-      try {
-        dispatch.userStore.addSubscription({ planId: freePlan.id });
-      } catch (error) {
-        ToastService.error({ message: 'Failed!', description: error.data.message });
-      } finally {
-        dispatch.userStore.getSubscription({});
-      }
-    }
-  }, [plansData]);
 
   return (
     <BasePricePlansScreen testID={`${TEST_ID_PREFIX}`}>
@@ -53,7 +34,7 @@ export function PricePlansScreen() {
         </View>
       ) : (
         <View style={tw`mt-4 mx-6.25`}>
-          {plansData?.map(item => (
+          {plansData?.results.map(item => (
             <View key={item.id} style={tw`my-2`}>
               <PlanSubscriptionCard
                 testID={`${TEST_ID_PREFIX}-SubscriptionCard`}

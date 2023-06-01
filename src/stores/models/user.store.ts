@@ -10,7 +10,6 @@ import {
   LoginUserData,
   Notification,
   PlanQueryData,
-  PreSignedResponse,
   ResendOtpData,
   ResetPasswordData,
   SignupUserData,
@@ -39,7 +38,6 @@ export interface UserState {
   nextActionToken: string | null;
   userData: UserData | null;
   userPlan: SubscribedData | null;
-  preSignedData: PreSignedResponse | null;
   //TODO::refactor profileData and userData to have common one
   profileData: UserProfileData | null;
 }
@@ -50,7 +48,6 @@ const initialState: UserState = {
   nextActionToken: null,
   userData: null,
   userPlan: null,
-  preSignedData: null,
   profileData: null,
 };
 
@@ -74,9 +71,6 @@ export const userStore = createModel<RootModel>()({
     },
     setUserData(state: UserState, userData: UserData | null) {
       return { ...state, userData };
-    },
-    setPreSignedData(state: UserState, preSignedData: PreSignedResponse | null) {
-      return { ...state, preSignedData };
     },
     setUserProfileData(state: UserState, profileData: UserProfileData) {
       return { ...state, profileData };
