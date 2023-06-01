@@ -78,7 +78,7 @@ exports[`MonthSelector component should render MonthSelector component correctly
       ]
     }
   >
-    May 2023
+    June 2023
   </Text>
   <View
     accessibilityState={

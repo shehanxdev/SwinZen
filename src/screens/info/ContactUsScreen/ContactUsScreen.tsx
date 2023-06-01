@@ -59,7 +59,7 @@ export function ContactUsScreen() {
           <View style={tw`mb-2.5`}>
             <TextField
               label="Your name"
-              editable={false}
+              disabled
               value={userData?.name}
               leftIcon={<ProfileIcon />}
               returnKeyType={'next'}
@@ -68,7 +68,7 @@ export function ContactUsScreen() {
           <View style={tw`mb-2.5`}>
             <TextField
               label="Your email"
-              editable={false}
+              disabled
               value={userData?.email}
               leftIcon={<MailIcon />}
               returnKeyType={'next'}
