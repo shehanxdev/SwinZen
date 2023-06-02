@@ -115,7 +115,7 @@ exports[`AnalysisData Card Component should render AnalysisData Card component c
         ]
       }
     >
-      3 days
+      June
     </Text>
     <Text
       style={

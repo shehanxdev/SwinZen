@@ -19,6 +19,9 @@ export function AnalysisDataCard({
   observation,
   time,
 }: AnalysisDataCardProps) {
+  const currentMonth = szdayjs().get('month');
+  const actualMonth = szdayjs(new Date(time)).get('month');
+
   return (
     <View
       testID={testID}
@@ -26,9 +29,11 @@ export function AnalysisDataCard({
       <View style={tw`flex-row items-center gap-7.5`}>
         {/* design shadow and this implemntation has a different, here can't use arbitary values to shadow, added closest tailwind style */}
         <View
-          style={tw`w-10 h-10 bg-Primary-Sz500 items-center justify-center rounded-full shadow-md shadow-Neutral-Black/25`}>
+          style={tw`w-10 h-10 bg-[${
+            score < 5 ? Color.Secondary.Sz900 : Color.Primary.Sz500
+          }] items-center justify-center rounded-full shadow-md shadow-Neutral-Black/25`}>
           <Text variant={TextVariant.SubTitle2SemiBold} color={Color.Primary.Sz100}>
-            {score}
+            {addPadToNumber(score)}
           </Text>
         </View>
         <Text variant={TextVariant.Body2SemiBold} color={Color.Neutral.White}>
@@ -37,7 +42,7 @@ export function AnalysisDataCard({
       </View>
       <View style={tw`flex-row pl-7.5 items-center gap-2.5 border-l-2 border-Neutral-Sz100`}>
         <Text variant={TextVariant.Body2Regular} color={Color.Primary.Sz200}>
-          {szdayjs(new Date(time)).fromNow(true)}
+          {currentMonth === actualMonth + 1 ? 'last month' : szdayjs(time).format('MMMM')}
         </Text>
         <Text variant={TextVariant.SubTitle1} color={Color.Neutral.White}>
           {addPadToNumber(szdayjs(time).date())}

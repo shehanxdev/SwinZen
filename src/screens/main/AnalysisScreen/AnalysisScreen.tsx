@@ -10,6 +10,7 @@ import { BaseMainScreen, MonthSelector } from '../components';
 import { AnalysisDataCard } from './components';
 
 export function AnalysisScreen() {
+  const timeData = new Date('2023-05-01');
   return (
     <BaseMainScreen testID="AnalysisScreenTestID">
       <View style={tw`flex-1 justify-between`}>
@@ -17,10 +18,10 @@ export function AnalysisScreen() {
           <View style={tw`pt-1 pb-5`}>
             <MonthSelector textColor={Color.Neutral.Sz200} />
           </View>
-          <AnalysisDataCard score={15} observation={ScoreType.OVERALL} time={new Date()} />
-          <AnalysisDataCard score={8} observation={ScoreType.SETUP} time={new Date()} />
-          <AnalysisDataCard score={3} observation={ScoreType.BACKSWING} time={new Date()} />
-          <AnalysisDataCard score={12} observation={ScoreType.DOWNSWING} time={new Date()} />
+          <AnalysisDataCard score={15} observation={ScoreType.OVERALL} time={timeData} />
+          <AnalysisDataCard score={8} observation={ScoreType.SETUP} time={timeData} />
+          <AnalysisDataCard score={3} observation={ScoreType.BACKSWING} time={timeData} />
+          <AnalysisDataCard score={12} observation={ScoreType.DOWNSWING} time={timeData} />
         </View>
       </View>
       <View style={tw`mb-6`}>
