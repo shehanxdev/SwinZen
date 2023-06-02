@@ -12,3 +12,8 @@ export enum NotificationsType {
   PUSH_NOTIFICATION = 'PUSH_NOTIFICATION',
   IN_APP = 'IN_APP',
 }
+
+export enum FilesType {
+  IMAGE = 'image',
+  VIDEO = 'video',
+}

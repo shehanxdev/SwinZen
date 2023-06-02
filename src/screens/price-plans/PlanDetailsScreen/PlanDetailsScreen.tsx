@@ -5,7 +5,8 @@ import { Button, PricePlanFeatureListTickIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route, TextAlignment, TextVariant } from '@sz/constants';
 import { Plan } from '@sz/models';
-import { NavigationService } from '@sz/services';
+import { NavigationService, ToastService } from '@sz/services';
+import { useDispatch } from '@sz/stores';
 
 import { BasePricePlansScreen } from '../components';
 
@@ -13,11 +14,18 @@ const TEST_ID_PREFIX = 'PlanDetailsScreen';
 
 export function PlanDetailsScreen({ route }) {
   const data = route.params.params.item as Plan;
+  const dispatch = useDispatch();
 
-  const onProceed = () => {
-    //TODO:: handle payment proceed and change routes later
-    NavigationService.navigate(Route.HomeTab);
-    console.log('Pressed Payment Proceed');
+  const onProceed = async (data: Plan) => {
+    try {
+      await dispatch.userStore.addSubscription({ planId: data.id });
+      //TODO:: handle payments for paid plans
+      NavigationService.navigate(Route.HomeTab);
+    } catch (error) {
+      ToastService.error({ message: 'Failed!', description: error.data.message });
+    } finally {
+      await dispatch.userStore.getSubscription({});
+    }
   };
 
   return (
@@ -35,9 +43,9 @@ export function PlanDetailsScreen({ route }) {
               <Text variant={TextVariant.Body2Regular}>{data.description + ':'}</Text>
             </View>
             <View style={tw`mx-6 mt-3 items-start`}>
-              {data.actions?.map((feature, index) => {
+              {data.actions?.map(feature => {
                 return (
-                  <View style={tw`flex-row gap-2 mt-2`} key={`${TEST_ID_PREFIX}-Feature-${index}`}>
+                  <View style={tw`flex-row gap-2 mt-2`} key={`${TEST_ID_PREFIX}-Feature-${feature}`}>
                     <View style={tw`mt-1.5`}>
                       <PricePlanFeatureListTickIcon />
                     </View>
@@ -63,7 +71,7 @@ export function PlanDetailsScreen({ route }) {
           </View>
           <View style={tw`mt-8 mb-3`}>
             <Button
-              onPress={onProceed}
+              onPress={() => onProceed(data)}
               title={data.price === 0 ? 'next' : 'proceed to pay'}
               testID={`${TEST_ID_PREFIX}-PayButton`}
             />

@@ -47,7 +47,6 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
     numberOfLines,
     returnKeyType,
     returnKeyLabel,
-    editable = true,
   }: TextFieldProps,
   ref,
 ) {
@@ -149,7 +148,6 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
         }
         returnKeyType={returnKeyType}
         returnKeyLabel={returnKeyLabel}
-        editable={editable}
       />
       {helperText ? helperTextComponent : null}
     </View>

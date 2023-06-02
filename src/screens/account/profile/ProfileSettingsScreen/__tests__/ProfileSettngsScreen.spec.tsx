@@ -9,6 +9,10 @@ describe('Profile Settings Screen Screen', () => {
 
   const getRenderedScreen = () => renderWithProviders(<ProfileSettingsScreen />);
 
+  beforeEach(() => {
+    jest.useFakeTimers().setSystemTime(new Date('2023-05-30'));
+  });
+
   it(`should render Profile Settings Screen correctly`, () => {
     const renderer = getRenderedScreen();
     const renderTree = renderer.toJSON();

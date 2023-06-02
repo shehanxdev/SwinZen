@@ -21,15 +21,18 @@ export function HomeScreen() {
   const userProfileData = useSelector(state => state.userStore.profileData);
   const initialLogin = useSelector(state => state.persistentUserStore.loginState) === 'initial';
 
-  // To request notifications permissions
   useEffect(() => {
     //TODO::add proper error pop up to the user
     PermissionService.requestNotificationsPermission().catch(console.error);
 
     //fetch user profile data
-    dispatch.userStore.fetchUserProfileData();
+    dispatch.userStore.fetchUserProfileData().catch(console.error);
 
-    if (initialLogin) setTimeout(() => NavigationService.navigate(Route.PricePlans), 0);
+    if (initialLogin) {
+      setTimeout(() => NavigationService.navigate(Route.PricePlans), 0);
+    } else {
+      dispatch.userStore.getSubscription({}).catch(console.error);
+    }
   }, []);
 
   const renderVideoAnalysisData = useMemo(() => {

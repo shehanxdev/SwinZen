@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile Info Card component should render component correctly 1`] = `
+<View
+  style={
+    {
+      "alignItems": "flex-start",
+      "backgroundColor": "#16501D",
+      "borderRadius": 10,
+      "marginBottom": 6,
+      "marginTop": 6,
+      "paddingBottom": 20,
+      "paddingLeft": 20,
+      "paddingRight": 20,
+      "paddingTop": 20,
+    }
+  }
+  testID="ProfileInfoCardTestID"
+/>
+`;
