@@ -8,7 +8,7 @@ import { AnalysisDataCard } from './components';
 export function AnalysisScreen() {
   return (
     <BaseMainScreen>
-      <AnalysisDataCard score={15} observation={ScoreType.OVERALL} time={new Date()} />
+      <AnalysisDataCard score={15} observation={ScoreType.OVERALL} time={new Date('2023-05-01')} />
     </BaseMainScreen>
   );
 }
