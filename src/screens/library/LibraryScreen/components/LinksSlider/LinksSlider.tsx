@@ -12,6 +12,8 @@ interface LinksSliderProps {
 }
 
 export function LinksSlider({ sliderData }: LinksSliderProps) {
+  const testID = 'LinksSliderTestID';
+
   const onTopicPress = data => {
     switch (data) {
       case LibrarySliderData.aboutSwingZen[0][0]:
@@ -81,16 +83,16 @@ export function LinksSlider({ sliderData }: LinksSliderProps) {
   };
 
   const slides = useMemo(() => {
-    return sliderData.map((slide, index) => {
+    return sliderData.map(slide => {
       return (
-        <View key={index}>
+        <View key={`${testID}-${slide}`}>
           {slide.map((text, childIndex) => {
             return (
               <View
                 style={tw`justify-between  mx-1 items-center flex-row border-[#ffffff33] ${
                   slide.length - 1 === childIndex ? 'border-b-0' : 'border-b-[1px]'
                 }`}
-                key={childIndex}>
+                key={`${testID}-${slide}-${text}`}>
                 <Pressable style={tw`py-3.25 flex-row justify-between`} onPress={() => onTopicPress(text)}>
                   <Text variant={TextVariant.Body1SemiBold} color={Color.Neutral.White}>
                     {text}
@@ -106,7 +108,7 @@ export function LinksSlider({ sliderData }: LinksSliderProps) {
   }, [sliderData]);
 
   return (
-    <View style={tw`h-80`}>
+    <View testID={testID} style={tw`h-80`}>
       <Swiper activeDotStyle={tw`w-2.5 h-2.5 bg-white`} dotStyle={tw`bg-white opacity-50  w-2.5 h-2.5`}>
         {slides}
       </Swiper>
