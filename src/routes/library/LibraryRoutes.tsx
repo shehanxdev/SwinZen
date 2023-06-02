@@ -1,11 +1,10 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
-import { Text } from '@sz/components';
-import { Route, TextAlignment, TextVariant } from '@sz/constants';
+import { Route, TextAlignment } from '@sz/constants';
 import { GolfTipsScreen, LibraryScreen } from '@sz/screens';
 
-import { HeaderBackButton } from '../components';
+import { HeaderBackButton, HeaderTitle } from '../components';
 
 export type LibraryStackParamList = {
   [Route.LibraryTab]: {
@@ -19,6 +18,8 @@ export type LibraryStackParamList = {
 const Stack = createNativeStackNavigator<LibraryStackParamList>();
 
 export function LibraryStack() {
+  const renderHeaderLeft = () => <HeaderBackButton />;
+
   return (
     <Stack.Navigator
       initialRouteName={Route.LibraryTab}
@@ -27,13 +28,13 @@ export function LibraryStack() {
         headerBackTitleVisible: false,
         headerBackVisible: false,
         headerTransparent: true,
-        headerTitle: ({ children }) => <Text variant={TextVariant.SubTitle2SemiBold}>{children}</Text>,
+        headerTitle: HeaderTitle,
       }}>
       <Stack.Screen name={Route.LibraryTab} component={LibraryScreen} options={{ title: 'SwingZen University' }} />
       <Stack.Screen
         name={Route.GolfTips}
         component={GolfTipsScreen}
-        options={{ title: 'Golf tips', headerLeft: () => <HeaderBackButton /> }}
+        options={{ title: 'Golf tips', headerLeft: renderHeaderLeft }}
       />
     </Stack.Navigator>
   );
