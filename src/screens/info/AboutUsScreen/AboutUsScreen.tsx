@@ -18,8 +18,8 @@ export function AboutUsScreen() {
           range of motion of a golfer’s body, club, and swing dynamics from any smartphone. No expensive doppler or
           sensors needed!
         </Text>
-        {AboutUsPoints.map((data, index) => (
-          <View key={`${TEST_ID_PREFIX}-Point-${index}`} style={tw`flex-row gap-2 mt-4 ml-3`}>
+        {AboutUsPoints.map(data => (
+          <View key={`${TEST_ID_PREFIX}-Point-${data}`} style={tw`flex-row gap-2 mt-4 ml-3`}>
             <Text variant={TextVariant.Body2Regular} textAlign={TextAlignment.Auto}>
               {`\u2022`}
             </Text>

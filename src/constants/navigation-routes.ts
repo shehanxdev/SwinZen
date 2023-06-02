@@ -48,8 +48,6 @@ export enum Route {
   UsingTheAppInfoTwelve = 'using-the-app-info-twelve',
   UsingTheAppInfoTwo = 'using-the-app-info-two',
 
-  VideoSetup = 'video-setup',
-  VideoUploadStack = 'upload-video-stack',
   VideosTab = 'videos-tab',
   VideoSetup = 'video-setup',
   VideoUploadStack = 'upload-video-stack',
