@@ -30,6 +30,7 @@ export { default as DrawerProfileSettingsSvg } from './icons/drawer/profile-icon
 export { default as DrawerTermsSvg } from './icons/drawer/terms-icon.svg';
 
 export { default as ErrorIconSvg } from './icons/main/error.svg';
+export { default as ModalCloseIconSvg } from './icons/other/modal-close.svg';
 export { default as MailIconSvg } from './icons/account/mail_icon.svg';
 export { default as NotificationDotSvg } from './icons/account/notification-dot.svg';
 export { default as NotificationTimerSvg } from './icons/account/notification-timer.svg';

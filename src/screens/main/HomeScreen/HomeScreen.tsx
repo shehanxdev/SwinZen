@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -9,7 +9,7 @@ import { NavigationService, PermissionService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 
 import { BaseMainScreen } from '../components';
-import { MonthSelector, SubscribeCard, VideoUploadCard } from './components';
+import { AnalysisReportModal, MonthSelector, SubscribeCard, VideoUploadCard } from './components';
 import { DataChart } from './components/DataChart/DataChart';
 import { ProfileImageBanner } from './components/ProfileImageBanner';
 import { UploadedVideoCountBanner } from './components/UploadedVideoCountBanner';
@@ -21,6 +21,7 @@ export function HomeScreen() {
   const userProfileData = useSelector(state => state.userStore.profileData);
   const initialLogin = useSelector(state => state.persistentUserStore.loginState) === 'initial';
 
+  const [showModal, setShowModal] = useState(false);
   // To request notifications permissions
   useEffect(() => {
     //TODO::add proper error pop up to the user
@@ -61,6 +62,11 @@ export function HomeScreen() {
     );
   }, [userProfileData]);
 
+  const handelModal = () => {
+    console.log('handelModal trggered showModal', showModal);
+    setShowModal(true);
+  };
+  console.log('home showModal', showModal);
   return (
     <BaseMainScreen>
       {loading ? (
@@ -81,7 +87,8 @@ export function HomeScreen() {
               style={tw`inset-0`}>
               <MonthSelector />
               <Text variant={TextVariant.Links}>
-                {`Learn more about your progress. \nView your `} <Link text={'Instant Analysis Report.'} />
+                {`Learn more about your progress. \nView your `}{' '}
+                <Link text={'Instant Analysis Report.'} onPress={handelModal} />
               </Text>
               {renderUploadedVideoCountData}
             </LinearGradient>
@@ -90,6 +97,7 @@ export function HomeScreen() {
           )}
         </>
       )}
+      <AnalysisReportModal showModal={showModal} handleModalClose={() => setShowModal(false)} />
     </BaseMainScreen>
   );
 }
