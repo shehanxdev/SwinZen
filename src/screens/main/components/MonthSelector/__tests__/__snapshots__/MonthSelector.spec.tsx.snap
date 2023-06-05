@@ -71,14 +71,14 @@ exports[`MonthSelector component should render MonthSelector component correctly
         },
         {
           "fontFamily": "SourceSansPro-SemiBold",
-          "fontSize": 21,
+          "fontSize": 24,
           "fontWeight": "600",
           "textAlign": "center",
         },
       ]
     }
   >
-    June 2023
+    May 2023
   </Text>
   <View
     accessibilityState={
