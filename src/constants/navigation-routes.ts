@@ -2,6 +2,8 @@ export enum Route {
   AboutUs = 'about-us',
   AccountStack = 'account-stack',
   AnalysisTab = 'analysis-tab',
+  AnalysisStack = 'analysis-stack',
+  AnalysisScreen = 'analysis-screen',
   AuthStack = 'auth-stack',
   ContactUs = 'contact-us',
   DummyRoute = 'dummy-route',

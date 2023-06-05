@@ -8,8 +8,8 @@ import { Color, Route, TextVariant } from '@sz/constants';
 import { NavigationService, PermissionService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 
-import { BaseMainScreen } from '../components';
-import { AnalysisReportModal, MonthSelector, SubscribeCard, VideoUploadCard } from './components';
+import { BaseMainScreen, MonthSelector } from '../components';
+import { AnalysisReportModal, SubscribeCard, VideoUploadCard } from './components';
 import { DataChart } from './components/DataChart/DataChart';
 import { ProfileImageBanner } from './components/ProfileImageBanner';
 import { UploadedVideoCountBanner } from './components/UploadedVideoCountBanner';
