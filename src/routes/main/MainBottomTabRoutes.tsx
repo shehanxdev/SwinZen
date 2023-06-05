@@ -37,12 +37,3 @@ export function MainBottomTabRoutes() {
     </Tab.Navigator>
   );
 }
-
-/*
-
- const renderHeaderLeft = () => (
-    <View style={tw`pl-5`}>
-      <SwingZenLogoIcon width={70} height={34} />
-    </View>
-  );
-*/

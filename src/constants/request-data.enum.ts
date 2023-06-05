@@ -17,3 +17,10 @@ export enum FilesType {
   IMAGE = 'image',
   VIDEO = 'video',
 }
+
+export enum ScoreType {
+  OVERALL = 'Overall',
+  SETUP = 'Set up',
+  BACKSWING = 'Back swing',
+  DOWNSWING = 'Down swing',
+}

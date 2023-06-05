@@ -12,7 +12,7 @@ interface GolfTipsWrapperProps {
 
 export function GolfTipsWrapper({ golfTips }: GolfTipsWrapperProps) {
   return (
-    <View style={tw`w-full flex-row flex-wrap justify-between gap-y-9 gap-x-5`}>
+    <View style={tw`w-full flex-row flex-wrap justify-between gap-y-9 gap-x-1`}>
       {golfTips.map(item => {
         return (
           <GolfTipCard

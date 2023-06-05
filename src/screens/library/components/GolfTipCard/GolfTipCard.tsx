@@ -14,7 +14,7 @@ interface GolfTipCardProps {
 
 export function GolfTipCard({ videosCount, label, backgroundImage, onPress }: GolfTipCardProps) {
   return (
-    <Pressable onPress={onPress} style={tw`grow-1 basis-0`}>
+    <Pressable onPress={onPress} style={tw`grow-0 shrink-0 basis-[30%]`}>
       <View style={tw`rounded-2.5 h-26.5`}>
         <ImageBackground
           source={backgroundImage}
