@@ -2,19 +2,19 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
 import { Route, TextAlignment } from '@sz/constants';
-import { LibraryScreen } from '@sz/screens';
+import { AnalysisScreen } from '@sz/screens';
 
 import { HeaderBackButton, HeaderTitle } from '../components';
 
-export type LibraryStackParamList = {
-  [Route.LibraryScreen]: {
+export type AnalysisStackParamList = {
+  [Route.AnalysisScreen]: {
     // Can be used for future props
   };
 };
 
-const Stack = createNativeStackNavigator<LibraryStackParamList>();
+const Stack = createNativeStackNavigator<AnalysisStackParamList>();
 
-export function LibraryStack() {
+export function AnalysisStack() {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -27,9 +27,9 @@ export function LibraryStack() {
         animation: 'slide_from_right',
       }}>
       <Stack.Screen
-        name={Route.LibraryScreen}
-        component={LibraryScreen}
-        options={{ title: 'SwingZen University', headerLeft: null }}
+        name={Route.AnalysisScreen}
+        component={AnalysisScreen}
+        options={{ title: 'Swing analysis report', headerLeft: null }}
       />
     </Stack.Navigator>
   );

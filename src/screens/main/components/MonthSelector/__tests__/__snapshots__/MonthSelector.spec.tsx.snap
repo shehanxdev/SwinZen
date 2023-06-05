@@ -71,7 +71,7 @@ exports[`MonthSelector component should render MonthSelector component correctly
         },
         {
           "fontFamily": "SourceSansPro-SemiBold",
-          "fontSize": 21,
+          "fontSize": 24,
           "fontWeight": "600",
           "textAlign": "center",
         },

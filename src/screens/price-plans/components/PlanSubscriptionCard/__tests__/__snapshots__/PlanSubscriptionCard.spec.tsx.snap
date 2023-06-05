@@ -63,7 +63,7 @@ exports[`PlanSubscriptionCard Component should render PlanSubscription Card comp
             },
             {
               "fontFamily": "SourceSansPro-SemiBold",
-              "fontSize": 21,
+              "fontSize": 24,
               "fontWeight": "600",
               "textAlign": "center",
             },

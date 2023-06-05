@@ -460,10 +460,33 @@ export class NavigationService {
           },
         },
       },
+      [Route.VideosTab]: {
+        navRoute: Route.MainBottomTabRoutesStack,
+        navParams: {
+          screen: Route.VideosTab,
+          params: {
+            screen: route,
+            params: params,
+          },
+        },
+      },
+      [Route.VideoSetup]: {
+        navRoute: Route.MainDrawerRoutesStack,
+        navParams: {
+          screen: Route.MainBottomTabRoutesStack,
+          params: {
+            screen: Route.VideoSetup,
+            params: {
+              screen: route,
+              params: params,
+            },
+          },
+        },
+      },
     };
 
     // Fixing SonarCloud issue with replacing this function instead of switch
-    const getNavigationRoute = (route: Route): NavigationRoute | null => {
+    const getNavigationRoute = (route: Route): NavigationRoute => {
       return {
         route: routeMapping[route].navRoute,
         params: routeMapping[route].navParams,

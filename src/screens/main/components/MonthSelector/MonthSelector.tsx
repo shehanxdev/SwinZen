@@ -10,11 +10,17 @@ import { ArrowContainer } from './components/ArrowContainer';
 
 interface MonthSelectorProps {
   disabled?: boolean; //This prop is use to handle the edge case for free tier users
+  textColor?: Color;
   onNextPreviousIconPress?: () => void; //These callbacks can be use to dispatch actions
   onNextNextIconPress?: () => void;
 }
 
-export function MonthSelector({ disabled = false, onNextPreviousIconPress, onNextNextIconPress }: MonthSelectorProps) {
+export function MonthSelector({
+  disabled = false,
+  textColor = Color.Primary.Sz650,
+  onNextPreviousIconPress,
+  onNextNextIconPress,
+}: MonthSelectorProps) {
   const [visibleMonth, setVisibleMonth] = useState(dayjs());
 
   const onNextPreviousIconPressInternal = () => {
@@ -43,7 +49,7 @@ export function MonthSelector({ disabled = false, onNextPreviousIconPress, onNex
       <ArrowContainer onArrowIconPress={onNextPreviousIconPressInternal} disabled={disabled}>
         <MoveLeftArrowIcon />
       </ArrowContainer>
-      <Text variant={TextVariant.SubTitle2SemiBold} color={disabled ? Color.Neutral.Sz600 : ('#1A5C23' as Color)}>
+      <Text variant={TextVariant.SubTitle2SemiBold} color={disabled ? Color.Neutral.Sz600 : textColor}>
         {renderMonthDate}
       </Text>
       <ArrowContainer onArrowIconPress={onNextMonthIconPressInternal} disabled={isLimitReached || disabled}>
