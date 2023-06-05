@@ -17,7 +17,7 @@ interface MonthSelectorProps {
 
 export function MonthSelector({
   disabled = false,
-  textColor = '#1A5C23' as Color,
+  textColor = Color.Primary.Sz650,
   onNextPreviousIconPress,
   onNextNextIconPress,
 }: MonthSelectorProps) {
