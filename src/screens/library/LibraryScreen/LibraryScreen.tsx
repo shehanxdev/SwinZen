@@ -6,6 +6,7 @@ import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
+import { TabScreenHeader } from '../../components';
 import { BaseMainScreen } from '../../main/components';
 import { GolfTipsWrapper } from '../components';
 import { golfTips, sliderData, toggleSwitchOptions } from './LibraryData';
@@ -18,7 +19,8 @@ export function LibraryScreen() {
 
   return (
     <BaseMainScreen>
-      <View style={tw`flex-1 mx-4 mt-6.25`}>
+      <TabScreenHeader title="SwingZen university" />
+      <View style={tw`flex-1 mx-4 mt-6.25 mb-4`}>
         <ToggleSwitch
           options={toggleSwitchOptions}
           onChange={(value: SwitchValueDataType) => {

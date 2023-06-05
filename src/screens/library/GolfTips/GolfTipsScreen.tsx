@@ -10,7 +10,7 @@ import { GolfTipsData } from './GolfTipsData';
 export function GolfTipsScreen() {
   return (
     <BaseMainScreen>
-      <View style={tw`flex-1 mx-4 mt-6`}>
+      <View style={tw`flex-1 mx-4 mt-6 mb-4`}>
         <GolfTipsWrapper golfTips={GolfTipsData} />
       </View>
     </BaseMainScreen>

@@ -3,10 +3,8 @@ import React from 'react';
 
 import { Route } from '@sz/constants';
 import { CustomBottomTabBar } from '@sz/layout';
-import { AnalysisScreen, HomeScreen, VideosScreen } from '@sz/screens';
+import { AnalysisScreen, HomeScreen, LibraryScreen, VideosScreen } from '@sz/screens';
 import { NavigationService } from '@sz/services';
-
-import { LibraryStack } from '../library';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,7 +31,7 @@ export function MainBottomTabRoutes() {
       {/* A dummy route and a dummy component is used here in order to prevent the tab bar from breaking*/}
       <Tab.Screen name={Route.DummyRoute} component={DummyComponent} />
       <Tab.Screen name={Route.AnalysisTab} component={AnalysisScreen} />
-      <Tab.Screen name={Route.LibraryStack} component={LibraryStack} />
+      <Tab.Screen name={Route.LibraryTab} component={LibraryScreen} />
     </Tab.Navigator>
   );
 }
