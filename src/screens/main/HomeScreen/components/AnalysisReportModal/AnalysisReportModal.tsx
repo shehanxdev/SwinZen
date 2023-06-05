@@ -16,11 +16,11 @@ export function AnalysisReportModal({ showModal, handleModalClose }) {
       onLeftButtonPress={handleModalClose}
       onRightButtonPress={() => {
         handleModalClose();
-        NavigationService.navigate(Route.PricePlans);
+        setTimeout(() => NavigationService.navigate(Route.PricePlans), 200);
       }}>
       <View style={tw`mb-3 px-12.5`}>
         <Text variant={TextVariant.Body1SemiBold} color={Color.Neutral.White}>
-          Bring your swing to the next level with a Pro Upgrade!{' '}
+          Bring your swing to the next level with a Pro Upgrade!
         </Text>
       </View>
       <View style={tw`mb-11 p-[10]`}>

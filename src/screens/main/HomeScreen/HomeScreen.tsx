@@ -90,7 +90,7 @@ export function HomeScreen() {
               style={tw`inset-0`}>
               <MonthSelector />
               <Text variant={TextVariant.Links}>
-                {`Learn more about your progress. \nView your `}{' '}
+                {`Learn more about your progress. \nView your `}
                 <Link text={'Instant Analysis Report.'} onPress={handelModal} />
               </Text>
               {renderUploadedVideoCountData}

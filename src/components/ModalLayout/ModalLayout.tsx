@@ -48,9 +48,9 @@ export function ModalLayout({
           </Pressable>
         )}
         {children}
-        <View style={tw`flex-row justify-between px-3.5`}>
+        <View style={tw`flex-row justify-between px-3.5 gap-2.5`}>
           {!isSingleButton && (
-            <View style={tw`w-41.5}`}>
+            <View style={tw`grow-1 basis-0}`}>
               <Button
                 onPress={onLeftButtonPress}
                 title={leftButtonTitle}
@@ -61,7 +61,7 @@ export function ModalLayout({
             </View>
           )}
 
-          <View style={tw`${isSingleButton ? 'w-full' : 'w-41.5'}`}>
+          <View style={tw`${isSingleButton ? 'w-full' : 'grow-1 basis-0'}`}>
             <Button
               onPress={onRightButtonPress}
               title={rightButtonTitle}
