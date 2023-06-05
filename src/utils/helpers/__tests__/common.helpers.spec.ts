@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { getMaskedMail } from '../common.helpers';
+import { addPadToNumber, getMaskedMail } from '../common.helpers';
 
 describe('common helpers test cases', () => {
   describe('getMaskedMail function', () => {
@@ -26,6 +26,25 @@ describe('common helpers test cases', () => {
       const { result } = getRenderedMaskedMail(email, mask);
 
       expect(result.current).toBe('e#####e@gmail.com');
+    });
+  });
+
+  describe('addPadToNumber function', () => {
+    const getRenderedMaskedMail = (number: number, size?: number) => renderHook(() => addPadToNumber(number, size));
+
+    it('should return a string with leading zero', async () => {
+      const number = 2;
+      const { result } = getRenderedMaskedMail(number);
+
+      expect(result.current).toBe('02');
+    });
+
+    it('should return a string with leading two zeros', async () => {
+      const number = 2;
+      const size = 3;
+      const { result } = getRenderedMaskedMail(number, size);
+
+      expect(result.current).toBe('002');
     });
   });
 });

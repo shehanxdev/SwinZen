@@ -47,7 +47,7 @@ export const AppTextStyles: Record<TextVariant, React.CSSProperties> = {
 
   // SubTitle 2
   [TextVariant.SubTitle2SemiBold]: {
-    fontSize: '21px',
+    fontSize: '24px',
     fontWeight: FontWeight.SemiBold,
     lineHeight: '28px',
   },

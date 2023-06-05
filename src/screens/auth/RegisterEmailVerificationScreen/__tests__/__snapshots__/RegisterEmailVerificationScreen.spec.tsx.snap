@@ -142,7 +142,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                           },
                           {
                             "fontFamily": "SourceSansPro-SemiBold",
-                            "fontSize": 21,
+                            "fontSize": 24,
                             "fontWeight": "600",
                             "textAlign": "center",
                           },
@@ -224,7 +224,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                             },
                             {
                               "fontFamily": "SourceSansPro-SemiBold",
-                              "fontSize": 21,
+                              "fontSize": 24,
                               "fontWeight": "600",
                               "textAlign": "center",
                             },
@@ -271,7 +271,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                             },
                             {
                               "fontFamily": "SourceSansPro-SemiBold",
-                              "fontSize": 21,
+                              "fontSize": 24,
                               "fontWeight": "600",
                               "textAlign": "center",
                             },
@@ -318,7 +318,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                             },
                             {
                               "fontFamily": "SourceSansPro-SemiBold",
-                              "fontSize": 21,
+                              "fontSize": 24,
                               "fontWeight": "600",
                               "textAlign": "center",
                             },
@@ -365,7 +365,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                             },
                             {
                               "fontFamily": "SourceSansPro-SemiBold",
-                              "fontSize": 21,
+                              "fontSize": 24,
                               "fontWeight": "600",
                               "textAlign": "center",
                             },
@@ -412,7 +412,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                             },
                             {
                               "fontFamily": "SourceSansPro-SemiBold",
-                              "fontSize": 21,
+                              "fontSize": 24,
                               "fontWeight": "600",
                               "textAlign": "center",
                             },
@@ -459,7 +459,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                             },
                             {
                               "fontFamily": "SourceSansPro-SemiBold",
-                              "fontSize": 21,
+                              "fontSize": 24,
                               "fontWeight": "600",
                               "textAlign": "center",
                             },

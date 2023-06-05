@@ -216,7 +216,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                       },
                       {
                         "fontFamily": "SourceSansPro-SemiBold",
-                        "fontSize": 21,
+                        "fontSize": 24,
                         "fontWeight": "600",
                         "textAlign": "center",
                       },
@@ -609,7 +609,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                         },
                         {
                           "fontFamily": "SourceSansPro-SemiBold",
-                          "fontSize": 21,
+                          "fontSize": 24,
                           "fontWeight": "600",
                           "textAlign": "center",
                         },

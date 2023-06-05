@@ -90,7 +90,7 @@ exports[`Video Setup Screen Screen should render Video Setup Screen correctly 1`
                       },
                       {
                         "fontFamily": "SourceSansPro-SemiBold",
-                        "fontSize": 21,
+                        "fontSize": 24,
                         "fontWeight": "600",
                         "textAlign": "center",
                       },
