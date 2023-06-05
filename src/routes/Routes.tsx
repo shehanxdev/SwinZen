@@ -11,7 +11,6 @@ import { useDispatch, useSelector } from '@sz/stores';
 import { AuthStack } from './auth';
 import { InfoStack } from './info';
 import { MainStack } from './main';
-import { VideoUploadStack } from './videoUpload';
 
 const Stack = createNativeStackNavigator();
 
@@ -76,7 +75,6 @@ export function Routes() {
         {isAuthenticated ? (
           <Stack.Group>
             <Stack.Screen name={Route.MainStack} component={MainStack} />
-            <Stack.Screen name={Route.VideoUploadStack} component={VideoUploadStack} />
           </Stack.Group>
         ) : (
           <Stack.Group>

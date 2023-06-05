@@ -6,3 +6,4 @@ export * from './Toast';
 export * from './ModalLayout';
 export * from './ToggleSwitch';
 export * from './Typography';
+export * from './ToggleSwitch';
