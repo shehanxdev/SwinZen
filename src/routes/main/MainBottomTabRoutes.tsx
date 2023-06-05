@@ -24,10 +24,19 @@ export function MainBottomTabRoutes() {
     <Tab.Navigator
       tabBar={renderTabBar}
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
+        headerTintColor: '#ffffff',
+        headerTitleAlign: 'center',
+        headerTransparent: true,
       }}>
       <Tab.Screen name={Route.HomeTab} component={HomeScreen} />
-      <Tab.Screen name={Route.VideosTab} component={VideosScreen} />
+      <Tab.Screen
+        options={{
+          title: 'My videos',
+        }}
+        name={Route.VideosTab}
+        component={VideosScreen}
+      />
       {/* A dummy route and a dummy component is used here in order to prevent the tab bar from breaking*/}
       <Tab.Screen name={Route.DummyRoute} component={DummyComponent} />
       <Tab.Screen name={Route.AnalysisTab} component={AnalysisScreen} />
