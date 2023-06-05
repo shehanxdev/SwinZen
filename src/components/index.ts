@@ -5,3 +5,4 @@ export * from './Link';
 export * from './Toast';
 export * from './ToggleSwitch';
 export * from './Typography';
+export * from './ToggleSwitch';
