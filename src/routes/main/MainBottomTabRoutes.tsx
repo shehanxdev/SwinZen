@@ -33,13 +33,7 @@ export function MainBottomTabRoutes() {
       {/* A dummy route and a dummy component is used here in order to prevent the tab bar from breaking*/}
       <Tab.Screen name={Route.DummyRoute} component={DummyComponent} />
       <Tab.Screen name={Route.AnalysisTab} component={AnalysisScreen} />
-      <Tab.Screen
-        name={Route.LibraryStack}
-        component={LibraryStack}
-        options={{
-          headerShown: false,
-        }}
-      />
+      <Tab.Screen name={Route.LibraryStack} component={LibraryStack} />
     </Tab.Navigator>
   );
 }

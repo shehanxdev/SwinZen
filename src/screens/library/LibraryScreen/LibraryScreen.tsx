@@ -6,9 +6,10 @@ import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
-import { BaseLibraryScreen } from '../components';
+import { BaseMainScreen } from '../../main/components';
+import { GolfTipsWrapper } from '../components';
 import { golfTips, sliderData, toggleSwitchOptions } from './LibraryData';
-import { GolfTipsWrapper, LinksSlider } from './components';
+import { LinksSlider } from './components';
 
 type SwitchValueDataType = 'usingTheApp' | 'aboutSwingZen';
 
@@ -16,7 +17,7 @@ export function LibraryScreen() {
   const [switchValue, setSwitchValue] = useState<SwitchValueDataType>('usingTheApp');
 
   return (
-    <BaseLibraryScreen>
+    <BaseMainScreen>
       <View style={tw`flex-1 mx-4 mt-6.25`}>
         <ToggleSwitch
           options={toggleSwitchOptions}
@@ -40,6 +41,6 @@ export function LibraryScreen() {
         </View>
         <GolfTipsWrapper golfTips={golfTips} />
       </View>
-    </BaseLibraryScreen>
+    </BaseMainScreen>
   );
 }

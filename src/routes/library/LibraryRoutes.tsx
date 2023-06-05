@@ -29,6 +29,7 @@ export function LibraryStack() {
         headerBackVisible: false,
         headerTransparent: true,
         headerTitle: HeaderTitle,
+        animation: 'slide_from_right',
       }}>
       <Stack.Screen name={Route.LibraryTab} component={LibraryScreen} options={{ title: 'SwingZen University' }} />
       <Stack.Screen
