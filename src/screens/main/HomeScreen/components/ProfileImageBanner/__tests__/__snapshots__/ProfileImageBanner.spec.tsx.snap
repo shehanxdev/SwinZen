@@ -148,7 +148,7 @@ exports[`ProfileImageBanner component should render ProfileImageBanner component
             },
             {
               "fontFamily": "SourceSansPro-SemiBold",
-              "fontSize": 21,
+              "fontSize": 24,
               "fontWeight": "600",
               "textAlign": "center",
             },
