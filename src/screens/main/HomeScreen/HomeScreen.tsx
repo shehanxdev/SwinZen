@@ -28,9 +28,13 @@ export function HomeScreen() {
     PermissionService.requestNotificationsPermission().catch(console.error);
 
     //fetch user profile data
-    dispatch.userStore.fetchUserProfileData();
+    dispatch.userStore.fetchUserProfileData().catch(console.error);
 
-    if (initialLogin) setTimeout(() => NavigationService.navigate(Route.PricePlans), 0);
+    if (initialLogin) {
+      setTimeout(() => NavigationService.navigate(Route.PricePlans), 0);
+    } else {
+      dispatch.userStore.getSubscription({}).catch(console.error);
+    }
   }, []);
 
   const renderVideoAnalysisData = useMemo(() => {

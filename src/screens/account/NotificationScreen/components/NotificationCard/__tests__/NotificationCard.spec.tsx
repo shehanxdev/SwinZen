@@ -6,20 +6,16 @@ import { NotificationCard } from '../NotificationCard';
 
 describe('NotificationCard Component', () => {
   const testID = 'NotificationCardTestID';
-  const mackTime = new Date();
+  const mockTime = new Date();
   const dummtTitle = 'Title One';
   const dummyMessage = 'test message';
   const mockOnPressFunction = jest.fn();
-
-  beforeEach(() => {
-    jest.useFakeTimers().setSystemTime(new Date('2023-05-15'));
-  });
 
   const getRenderedComponent = () =>
     renderWithProviders(
       <NotificationCard
         testID={testID}
-        time={mackTime}
+        time={mockTime}
         readStatus={true}
         title={dummtTitle}
         message={dummyMessage}

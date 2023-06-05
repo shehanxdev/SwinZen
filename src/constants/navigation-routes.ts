@@ -4,6 +4,7 @@ export enum Route {
   AnalysisTab = 'analysis-tab',
   AuthStack = 'auth-stack',
   ContactUs = 'contact-us',
+  DummyRoute = 'dummy-route',
   FAQ = 'faq',
   Followers = 'followers',
   ForgotPassword = 'forgot-password',
@@ -29,6 +30,8 @@ export enum Route {
   TermsOfUse = 'terms-of-use',
   UploadVideoTab = 'upload-video-tab',
   VideosTab = 'videos-tab',
+  VideoSetup = 'video-setup',
+  VideoUploadStack = 'upload-video-stack',
   ProfileStack = 'profile-stack',
   ChangePassword = 'change-password',
 }

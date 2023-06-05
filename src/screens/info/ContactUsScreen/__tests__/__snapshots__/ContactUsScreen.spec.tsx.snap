@@ -205,17 +205,15 @@ exports[`ContactUs Screen should render ContactUsScreen correctly 1`] = `
                           }
                         >
                           <TextInput
-                            editable={true}
+                            editable={false}
                             maxFontSizeMultiplier={1.5}
-                            maxLength={256}
                             multiline={false}
                             onBlur={[Function]}
                             onChangeText={[Function]}
                             onFocus={[Function]}
-                            onSubmitEditing={[Function]}
-                            placeholderTextColor="#ADB5BD"
+                            placeholderTextColor="#495057"
                             returnKeyType="next"
-                            selectionColor="#6C757D"
+                            selectionColor="rgba(73, 80, 87, 0.54)"
                             style={
                               [
                                 {
@@ -232,7 +230,7 @@ exports[`ContactUs Screen should render ContactUsScreen correctly 1`] = `
                                   "paddingTop": 8,
                                 },
                                 {
-                                  "color": "#DEE2E6",
+                                  "color": "rgba(73, 80, 87, 0.54)",
                                   "fontFamily": "SourceSansPro-Regular",
                                   "fontSize": 16,
                                   "fontVariant": undefined,
@@ -331,7 +329,7 @@ exports[`ContactUs Screen should render ContactUsScreen correctly 1`] = `
                           >
                             <View>
                               <SvgMock
-                                fill="#ADB5BD"
+                                fill="#495057"
                                 height={20}
                                 width={20}
                               />
@@ -418,18 +416,15 @@ exports[`ContactUs Screen should render ContactUsScreen correctly 1`] = `
                           }
                         >
                           <TextInput
-                            autoCapitalize="none"
-                            editable={true}
+                            editable={false}
                             maxFontSizeMultiplier={1.5}
-                            maxLength={256}
                             multiline={false}
                             onBlur={[Function]}
                             onChangeText={[Function]}
                             onFocus={[Function]}
-                            onSubmitEditing={[Function]}
-                            placeholderTextColor="#ADB5BD"
+                            placeholderTextColor="#495057"
                             returnKeyType="next"
-                            selectionColor="#6C757D"
+                            selectionColor="rgba(73, 80, 87, 0.54)"
                             style={
                               [
                                 {
@@ -446,7 +441,7 @@ exports[`ContactUs Screen should render ContactUsScreen correctly 1`] = `
                                   "paddingTop": 8,
                                 },
                                 {
-                                  "color": "#DEE2E6",
+                                  "color": "rgba(73, 80, 87, 0.54)",
                                   "fontFamily": "SourceSansPro-Regular",
                                   "fontSize": 16,
                                   "fontVariant": undefined,
@@ -545,7 +540,7 @@ exports[`ContactUs Screen should render ContactUsScreen correctly 1`] = `
                           >
                             <View>
                               <SvgMock
-                                fill="#ADB5BD"
+                                fill="#495057"
                                 height={20}
                                 width={20}
                               />
@@ -632,11 +627,10 @@ exports[`ContactUs Screen should render ContactUsScreen correctly 1`] = `
                           }
                         >
                           <TextInput
-                            autoCapitalize="none"
                             editable={true}
                             keyboardType="phone-pad"
                             maxFontSizeMultiplier={1.5}
-                            maxLength={14}
+                            maxLength={15}
                             multiline={false}
                             onBlur={[Function]}
                             onChangeText={[Function]}
