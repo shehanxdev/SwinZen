@@ -25,7 +25,6 @@ import {
   DrawerTermsSvg,
   ErrorIconSvg,
   MailIconSvg,
-  ModalCloseIconSvg,
   MoveLeftArrowSvg,
   MoveRightArrowSvg,
   NotificationDotSvg,
@@ -203,10 +202,6 @@ export function SquareTickIcon({ color = Color.Tertiary.Sz900, width = 12, heigh
 
 export function MoveLeftArrowIcon({ color = Color.Neutral.White, width = 15, height = 15 }: SvgIconProps) {
   return <MoveLeftArrowSvg width={width} height={height} fill={color} />;
-}
-
-export function ModalCloseIcon({ color = Color.Neutral.White, width = 15, height = 15 }: SvgIconProps) {
-  return <ModalCloseIconSvg width={width} height={height} fill={color} />;
 }
 
 export function MoveRightArrowIcon({ color = Color.Neutral.White, width = 15, height = 15 }: SvgIconProps) {

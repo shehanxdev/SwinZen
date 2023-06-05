@@ -63,10 +63,9 @@ export function HomeScreen() {
   }, [userProfileData]);
 
   const handelModal = () => {
-    console.log('handelModal trggered showModal', showModal);
     setShowModal(true);
   };
-  console.log('home showModal', showModal);
+
   return (
     <BaseMainScreen>
       {loading ? (
