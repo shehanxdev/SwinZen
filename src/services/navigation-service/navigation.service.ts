@@ -239,6 +239,26 @@ export class NavigationService {
           },
         };
         break;
+      case Route.HowToShoot:
+        navRoute = Route.VideoUploadStack;
+        navParams = {
+          screen: Route.HowToShoot,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+      case Route.PreValidation:
+        navRoute = Route.VideoUploadStack;
+        navParams = {
+          screen: Route.PreValidation,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
     }
 
     return { route: navRoute, params: navParams };
