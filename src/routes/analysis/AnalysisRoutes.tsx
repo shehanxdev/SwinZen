@@ -28,6 +28,7 @@ export function AnalysisStack() {
         headerTransparent: true,
         headerTitle: HeaderTitle,
         headerLeft: HeaderBackButton,
+        animation: 'slide_from_right',
       }}>
       <Stack.Screen
         name={Route.AnalysisScreen}

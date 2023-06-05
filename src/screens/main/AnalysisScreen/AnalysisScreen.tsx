@@ -24,7 +24,7 @@ export function AnalysisScreen() {
           <AnalysisDataCard score={12} observation={ScoreType.DOWNSWING} time={timeData} />
         </View>
       </View>
-      <View style={tw`mb-6`}>
+      <View style={tw`mb-6 mx-4`}>
         <Button onPress={() => NavigationService.navigate(Route.VideosTab)} title={'view all my videos'} />
       </View>
     </BaseMainScreen>

@@ -784,6 +784,8 @@ exports[`Analysis Screen Screen should render Analysis Screen correctly 1`] = `
             style={
               {
                 "marginBottom": 24,
+                "marginLeft": 16,
+                "marginRight": 16,
               }
             }
           >
