@@ -9,5 +9,5 @@ export interface LoadingIndicatorProps {
 }
 
 export function LoadingIndicator({ color = '#7DC32C' as Color, size = 'large' }: LoadingIndicatorProps) {
-  return <RNLoadingIndicator color={color} size={size} />;
+  return <RNLoadingIndicator color={color} size={size} animating={true} />;
 }

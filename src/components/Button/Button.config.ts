@@ -1,1 +1,6 @@
-//TODO::add mappings and size configurations in here, when the design system grows further.
+export const animatedButtonBoundries = {
+  initialWidth: '100%',
+  initialBorderRadius: 10,
+  loadingWidth: '14%', //Magic number which closes value to get a rounded view
+  loadingBorderRadius: 100,
+};

@@ -817,9 +817,28 @@ exports[`Analysis Screen Screen should render Analysis Screen correctly 1`] = `
           >
             <View
               style={
-                {
-                  "flexDirection": "row",
-                }
+                [
+                  {
+                    "backgroundColor": "#A2FD2F",
+                    "borderColor": "#00000000",
+                    "borderRadius": 10,
+                    "borderWidth": 1,
+                    "elevation": 0,
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                    "shadowColor": "#000",
+                    "shadowOffset": {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0,
+                    "shadowRadius": 0,
+                  },
+                  {
+                    "borderRadius": 10,
+                    "width": "100%",
+                  },
+                ]
               }
             >
               <View
@@ -828,22 +847,23 @@ exports[`Analysis Screen Screen should render Analysis Screen correctly 1`] = `
                 onTouchStart={[Function]}
                 style={
                   {
-                    "backgroundColor": "#A2FD2F",
-                    "borderColor": "#00000000",
-                    "borderRadius": 10,
+                    "backgroundColor": "transparent",
+                    "borderColor": "transparent",
+                    "borderRadius": 4,
                     "borderStyle": "solid",
-                    "borderWidth": 1,
+                    "borderWidth": 0,
                     "elevation": 0,
-                    "justifyContent": "center",
+                    "flexBasis": "0%",
+                    "flexGrow": 1,
+                    "flexShrink": 1,
                     "minWidth": "auto",
-                    "shadowColor": "#000",
+                    "shadowColor": "#000000",
                     "shadowOffset": {
                       "height": 0,
                       "width": 0,
                     },
                     "shadowOpacity": 0,
                     "shadowRadius": 0,
-                    "width": "100%",
                   }
                 }
               >
@@ -877,7 +897,7 @@ exports[`Analysis Screen Screen should render Analysis Screen correctly 1`] = `
                         "overflow": "hidden",
                       },
                       {
-                        "borderRadius": 10,
+                        "borderRadius": 4,
                       },
                     ]
                   }

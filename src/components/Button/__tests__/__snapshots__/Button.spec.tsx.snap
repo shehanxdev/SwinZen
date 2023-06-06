@@ -3,9 +3,28 @@
 exports[`Button Component should render correctly should render correctly with [object Object] 1`] = `
 <View
   style={
-    {
-      "flexDirection": "row",
-    }
+    [
+      {
+        "backgroundColor": "#8DBE8B",
+        "borderColor": "#00000000",
+        "borderRadius": 10,
+        "borderWidth": 1,
+        "elevation": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "shadowColor": "#000",
+        "shadowOffset": {
+          "height": 0,
+          "width": 0,
+        },
+        "shadowOpacity": 0,
+        "shadowRadius": 0,
+      },
+      {
+        "borderRadius": 10,
+        "width": "100%",
+      },
+    ]
   }
 >
   <View
@@ -14,22 +33,23 @@ exports[`Button Component should render correctly should render correctly with [
     onTouchStart={[Function]}
     style={
       {
-        "backgroundColor": "#8DBE8B",
-        "borderColor": "#00000000",
-        "borderRadius": 10,
+        "backgroundColor": "transparent",
+        "borderColor": "transparent",
+        "borderRadius": 4,
         "borderStyle": "solid",
-        "borderWidth": 1,
+        "borderWidth": 0,
         "elevation": 0,
-        "justifyContent": "center",
+        "flexBasis": "0%",
+        "flexGrow": 1,
+        "flexShrink": 1,
         "minWidth": "auto",
-        "shadowColor": "#000",
+        "shadowColor": "#000000",
         "shadowOffset": {
           "height": 0,
           "width": 0,
         },
         "shadowOpacity": 0,
         "shadowRadius": 0,
-        "width": "100%",
       }
     }
   >
@@ -63,7 +83,7 @@ exports[`Button Component should render correctly should render correctly with [
             "overflow": "hidden",
           },
           {
-            "borderRadius": 10,
+            "borderRadius": 4,
           },
         ]
       }
@@ -151,9 +171,28 @@ exports[`Button Component should render correctly should render correctly with [
 exports[`Button Component should render correctly should render correctly with [object Object] 2`] = `
 <View
   style={
-    {
-      "flexDirection": "row",
-    }
+    [
+      {
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "#F8F9FA",
+        "borderRadius": 10,
+        "borderWidth": 1,
+        "elevation": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "shadowColor": "#000",
+        "shadowOffset": {
+          "height": 0,
+          "width": 0,
+        },
+        "shadowOpacity": 0,
+        "shadowRadius": 0,
+      },
+      {
+        "borderRadius": 10,
+        "width": "100%",
+      },
+    ]
   }
 >
   <View
@@ -162,22 +201,23 @@ exports[`Button Component should render correctly should render correctly with [
     onTouchStart={[Function]}
     style={
       {
-        "backgroundColor": "#FFFFFF",
-        "borderColor": "#F8F9FA",
-        "borderRadius": 10,
+        "backgroundColor": "transparent",
+        "borderColor": "transparent",
+        "borderRadius": 4,
         "borderStyle": "solid",
-        "borderWidth": 1,
+        "borderWidth": 0,
         "elevation": 0,
-        "justifyContent": "center",
+        "flexBasis": "0%",
+        "flexGrow": 1,
+        "flexShrink": 1,
         "minWidth": "auto",
-        "shadowColor": "#000",
+        "shadowColor": "#000000",
         "shadowOffset": {
           "height": 0,
           "width": 0,
         },
         "shadowOpacity": 0,
         "shadowRadius": 0,
-        "width": "100%",
       }
     }
   >
@@ -211,7 +251,7 @@ exports[`Button Component should render correctly should render correctly with [
             "overflow": "hidden",
           },
           {
-            "borderRadius": 10,
+            "borderRadius": 4,
           },
         ]
       }
@@ -299,9 +339,28 @@ exports[`Button Component should render correctly should render correctly with [
 exports[`Button Component should render correctly should render correctly with [object Object] 3`] = `
 <View
   style={
-    {
-      "flexDirection": "row",
-    }
+    [
+      {
+        "backgroundColor": "#C4FE7A",
+        "borderColor": "#00000000",
+        "borderRadius": 10,
+        "borderWidth": 1,
+        "elevation": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "shadowColor": "#000",
+        "shadowOffset": {
+          "height": 0,
+          "width": 0,
+        },
+        "shadowOpacity": 0,
+        "shadowRadius": 0,
+      },
+      {
+        "borderRadius": 10,
+        "width": "100%",
+      },
+    ]
   }
 >
   <View
@@ -310,22 +369,23 @@ exports[`Button Component should render correctly should render correctly with [
     onTouchStart={[Function]}
     style={
       {
-        "backgroundColor": "#C4FE7A",
-        "borderColor": "#00000000",
-        "borderRadius": 10,
+        "backgroundColor": "transparent",
+        "borderColor": "transparent",
+        "borderRadius": 4,
         "borderStyle": "solid",
-        "borderWidth": 1,
+        "borderWidth": 0,
         "elevation": 0,
-        "justifyContent": "center",
+        "flexBasis": "0%",
+        "flexGrow": 1,
+        "flexShrink": 1,
         "minWidth": "auto",
-        "shadowColor": "#000",
+        "shadowColor": "#000000",
         "shadowOffset": {
           "height": 0,
           "width": 0,
         },
         "shadowOpacity": 0,
         "shadowRadius": 0,
-        "width": "100%",
       }
     }
   >
@@ -359,7 +419,7 @@ exports[`Button Component should render correctly should render correctly with [
             "overflow": "hidden",
           },
           {
-            "borderRadius": 10,
+            "borderRadius": 4,
           },
         ]
       }
