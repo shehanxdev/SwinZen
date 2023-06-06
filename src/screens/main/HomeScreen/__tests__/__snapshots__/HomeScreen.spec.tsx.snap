@@ -86,51 +86,212 @@ exports[`Home screen should render Home screen correctly 1`] = `
           keyboardShouldPersistTaps="handled"
         >
           <View>
-            <Text
+            <View
               style={
-                [
-                  {
-                    "color": "#F8F9FA",
-                    "lineHeight": 48,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-Regular",
-                    "fontSize": 40,
-                    "fontWeight": "normal",
-                    "textAlign": "center",
-                  },
-                ]
+                {
+                  "marginBottom": "auto",
+                  "marginLeft": "auto",
+                  "marginRight": "auto",
+                  "marginTop": "auto",
+                }
               }
             >
-              Loading
-            </Text>
-            <Modal
-              animationType="none"
-              deviceHeight={null}
-              deviceWidth={null}
-              hardwareAccelerated={false}
-              hideModalContentWhileAnimating={false}
-              onBackdropPress={[Function]}
-              onModalHide={[Function]}
-              onModalWillHide={[Function]}
-              onModalWillShow={[Function]}
-              onRequestClose={[Function]}
-              panResponderThreshold={4}
-              scrollHorizontal={false}
-              scrollOffset={0}
-              scrollOffsetMax={0}
-              scrollTo={null}
-              statusBarTranslucent={false}
-              supportedOrientations={
-                [
-                  "portrait",
-                  "landscape",
-                ]
-              }
-              swipeThreshold={100}
-              transparent={true}
-              visible={false}
-            />
+              <View
+                accessibilityRole="progressbar"
+                accessibilityState={
+                  {
+                    "busy": true,
+                  }
+                }
+                accessible={true}
+                style={
+                  [
+                    {
+                      "alignItems": "center",
+                      "justifyContent": "center",
+                    },
+                    undefined,
+                  ]
+                }
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "height": 48,
+                      "opacity": 1,
+                      "width": 48,
+                    }
+                  }
+                >
+                  <View
+                    collapsable={false}
+                    style={
+                      {
+                        "alignItems": "center",
+                        "bottom": 0,
+                        "justifyContent": "center",
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        {
+                          "height": 48,
+                          "transform": [
+                            {
+                              "rotate": "45deg",
+                            },
+                          ],
+                          "width": 48,
+                        }
+                      }
+                    >
+                      <View
+                        collapsable={false}
+                        style={
+                          {
+                            "height": 24,
+                            "overflow": "hidden",
+                            "width": 48,
+                          }
+                        }
+                      >
+                        <View
+                          collapsable={false}
+                          style={
+                            {
+                              "height": 48,
+                              "transform": [
+                                {
+                                  "translateY": 0,
+                                },
+                                {
+                                  "rotate": "-165deg",
+                                },
+                              ],
+                              "width": 48,
+                            }
+                          }
+                        >
+                          <View
+                            collapsable={false}
+                            style={
+                              {
+                                "height": 24,
+                                "overflow": "hidden",
+                                "width": 48,
+                              }
+                            }
+                          >
+                            <View
+                              collapsable={false}
+                              style={
+                                {
+                                  "borderColor": "#7DC32C",
+                                  "borderRadius": 24,
+                                  "borderWidth": 4.8,
+                                  "height": 48,
+                                  "width": 48,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                  <View
+                    collapsable={false}
+                    style={
+                      {
+                        "alignItems": "center",
+                        "bottom": 0,
+                        "justifyContent": "center",
+                        "left": 0,
+                        "position": "absolute",
+                        "right": 0,
+                        "top": 0,
+                      }
+                    }
+                  >
+                    <View
+                      collapsable={false}
+                      style={
+                        {
+                          "height": 48,
+                          "transform": [
+                            {
+                              "rotate": "45deg",
+                            },
+                          ],
+                          "width": 48,
+                        }
+                      }
+                    >
+                      <View
+                        collapsable={false}
+                        style={
+                          {
+                            "height": 24,
+                            "overflow": "hidden",
+                            "top": 24,
+                            "width": 48,
+                          }
+                        }
+                      >
+                        <View
+                          collapsable={false}
+                          style={
+                            {
+                              "height": 48,
+                              "transform": [
+                                {
+                                  "translateY": -24,
+                                },
+                                {
+                                  "rotate": "345deg",
+                                },
+                              ],
+                              "width": 48,
+                            }
+                          }
+                        >
+                          <View
+                            collapsable={false}
+                            style={
+                              {
+                                "height": 24,
+                                "overflow": "hidden",
+                                "width": 48,
+                              }
+                            }
+                          >
+                            <View
+                              collapsable={false}
+                              style={
+                                {
+                                  "borderColor": "#7DC32C",
+                                  "borderRadius": 24,
+                                  "borderWidth": 4.8,
+                                  "height": 48,
+                                  "width": 48,
+                                }
+                              }
+                            />
+                          </View>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </View>
           </View>
         </RCTScrollView>
       </View>
