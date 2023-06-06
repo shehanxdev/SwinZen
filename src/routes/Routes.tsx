@@ -8,12 +8,9 @@ import { Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 
-import { AccountStack } from './account';
 import { AuthStack } from './auth';
 import { InfoStack } from './info';
 import { MainStack } from './main';
-import { PricePlansStack } from './pricePlans';
-import { VideoUploadStack } from './videoUpload';
 
 const Stack = createNativeStackNavigator();
 
@@ -77,10 +74,7 @@ export function Routes() {
         }}>
         {isAuthenticated ? (
           <Stack.Group>
-            <Stack.Screen name={Route.PricePlansStack} component={PricePlansStack} />
             <Stack.Screen name={Route.MainStack} component={MainStack} />
-            <Stack.Screen name={Route.AccountStack} component={AccountStack} />
-            <Stack.Screen name={Route.VideoUploadStack} component={VideoUploadStack} />
           </Stack.Group>
         ) : (
           <Stack.Group>

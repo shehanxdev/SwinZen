@@ -12,3 +12,15 @@ export enum NotificationsType {
   PUSH_NOTIFICATION = 'PUSH_NOTIFICATION',
   IN_APP = 'IN_APP',
 }
+
+export enum FilesType {
+  IMAGE = 'image',
+  VIDEO = 'video',
+}
+
+export enum ScoreType {
+  OVERALL = 'Overall',
+  SETUP = 'Set up',
+  BACKSWING = 'Back swing',
+  DOWNSWING = 'Down swing',
+}

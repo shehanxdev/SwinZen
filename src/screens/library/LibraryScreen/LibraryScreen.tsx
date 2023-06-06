@@ -6,9 +6,11 @@ import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
-import { BaseLibraryScreen } from '../components';
+import { TabScreenHeader } from '../../components';
+import { BaseMainScreen } from '../../main/components';
+import { GolfTipsWrapper } from '../components';
 import { golfTips, sliderData, toggleSwitchOptions } from './LibraryData';
-import { GolfTipsWrapper, LinksSlider } from './components';
+import { LinksSlider } from './components';
 
 type SwitchValueDataType = 'usingTheApp' | 'aboutSwingZen';
 
@@ -16,8 +18,9 @@ export function LibraryScreen() {
   const [switchValue, setSwitchValue] = useState<SwitchValueDataType>('usingTheApp');
 
   return (
-    <BaseLibraryScreen>
-      <View style={tw`flex-1 mx-4 mt-6.25`}>
+    <BaseMainScreen>
+      <TabScreenHeader title="SwingZen university" />
+      <View style={tw`flex-1 mx-4 mt-6.25 mb-4`}>
         <ToggleSwitch
           options={toggleSwitchOptions}
           onChange={(value: SwitchValueDataType) => {
@@ -25,7 +28,8 @@ export function LibraryScreen() {
           }}
         />
         <View style={tw`mt-6.25`}>
-          <LinksSlider sliderData={switchValue === 'usingTheApp' ? sliderData.usingTheApp : sliderData.aboutSwingZen} />
+          {switchValue === 'usingTheApp' ? <LinksSlider sliderData={sliderData.usingTheApp} /> : undefined}
+          {switchValue === 'aboutSwingZen' ? <LinksSlider sliderData={sliderData.aboutSwingZen} /> : undefined}
         </View>
         <View style={tw`flex-row justify-between items-center pb-3`}>
           <Text variant={TextVariant.SubTitle2SemiBold} color={Color.Neutral.Sz100}>
@@ -40,6 +44,6 @@ export function LibraryScreen() {
         </View>
         <GolfTipsWrapper golfTips={golfTips} />
       </View>
-    </BaseLibraryScreen>
+    </BaseMainScreen>
   );
 }

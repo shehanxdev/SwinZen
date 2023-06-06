@@ -1,0 +1,968 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Analysis Screen Screen should render Analysis Screen correctly 1`] = `
+<BVLinearGradient
+  colors={
+    [
+      4279917603,
+      4278984207,
+      4278650631,
+    ]
+  }
+  endPoint={
+    {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    {
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "position": "relative",
+    }
+  }
+  testID="AnalysisScreenTestID"
+>
+  <Image
+    resizeMode="cover"
+    source={
+      {
+        "testUri": "../../../src/assets/images/grassBackground.jpg",
+      }
+    }
+    style={
+      {
+        "opacity": 0.1,
+        "position": "absolute",
+      }
+    }
+  />
+  <RCTSafeAreaView
+    style={
+      {
+        "height": "100%",
+        "paddingTop": 50,
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "paddingBottom": 0,
+          },
+        ]
+      }
+    >
+      <RCTScrollView
+        contentContainerStyle={
+          {
+            "flexGrow": 1,
+          }
+        }
+        keyboardShouldPersistTaps="handled"
+      >
+        <View>
+          <View
+            style={
+              {
+                "paddingTop": 32,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#F8F9FA",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 24,
+                    "fontWeight": "600",
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              Swing analysis report
+            </Text>
+          </View>
+          <View
+            style={
+              {
+                "flexBasis": "0%",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "justifyContent": "space-between",
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "backgroundColor": "#07070775",
+                  "borderRadius": 10,
+                  "marginTop": 52,
+                  "paddingBottom": 13,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "paddingBottom": 20,
+                    "paddingTop": 4,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "display": "flex",
+                      "flexDirection": "row",
+                      "height": 72,
+                      "justifyContent": "space-between",
+                      "paddingLeft": 16,
+                      "paddingRight": 16,
+                    }
+                  }
+                  testID="MonthSelectorComponentTestID"
+                >
+                  <View
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": undefined,
+                        "disabled": false,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#1A5C23",
+                        "borderRadius": 9999,
+                        "height": 30,
+                        "justifyContent": "center",
+                        "opacity": 1,
+                        "width": 30,
+                      }
+                    }
+                    testID="ArrowContainerComponentTestID"
+                  >
+                    <SvgMock
+                      fill="#FFFFFF"
+                      height={15}
+                      width={15}
+                    />
+                  </View>
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#E9ECEF",
+                          "lineHeight": 28,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-SemiBold",
+                          "fontSize": 24,
+                          "fontWeight": "600",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    June 2023
+                  </Text>
+                  <View
+                    accessibilityState={
+                      {
+                        "busy": undefined,
+                        "checked": undefined,
+                        "disabled": true,
+                        "expanded": undefined,
+                        "selected": undefined,
+                      }
+                    }
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#6C757D",
+                        "borderRadius": 9999,
+                        "height": 30,
+                        "justifyContent": "center",
+                        "opacity": 1,
+                        "width": 30,
+                      }
+                    }
+                    testID="ArrowContainerComponentTestID"
+                  >
+                    <SvgMock
+                      fill="#FFFFFF"
+                      height={15}
+                      width={15}
+                    />
+                  </View>
+                </View>
+              </View>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#283E36",
+                    "borderRadius": 10,
+                    "flexDirection": "row",
+                    "height": 64,
+                    "justifyContent": "space-between",
+                    "marginBottom": 7,
+                    "marginLeft": 8,
+                    "marginRight": 8,
+                    "marginTop": 7,
+                    "paddingLeft": 20,
+                    "paddingRight": 20,
+                  }
+                }
+                testID="AnalysisDataCardTestID"
+              >
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "gap": 30,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#45734A",
+                        "borderRadius": 9999,
+                        "elevation": 3,
+                        "height": 40,
+                        "justifyContent": "center",
+                        "shadowColor": "rgba(0, 0, 0, 0.25)",
+                        "shadowOffset": {
+                          "height": 1,
+                          "width": 1,
+                        },
+                        "shadowOpacity": 0.125,
+                        "shadowRadius": 3,
+                        "width": 40,
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        [
+                          {
+                            "color": "#F0F7F0",
+                            "lineHeight": 28,
+                          },
+                          {
+                            "fontFamily": "SourceSansPro-SemiBold",
+                            "fontSize": 24,
+                            "fontWeight": "600",
+                            "textAlign": "center",
+                          },
+                        ]
+                      }
+                    >
+                      15
+                    </Text>
+                  </View>
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#FFFFFF",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-SemiBold",
+                          "fontSize": 16,
+                          "fontWeight": "600",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    Overall
+                  </Text>
+                </View>
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "borderColor": "#F8F9FA",
+                      "borderLeftWidth": 2,
+                      "flexDirection": "row",
+                      "gap": 10,
+                      "paddingLeft": 30,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#C0DBBF",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    last month
+                  </Text>
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#FFFFFF",
+                          "lineHeight": 40,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 28,
+                          "fontWeight": "600",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    01
+                  </Text>
+                </View>
+              </View>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#283E36",
+                    "borderRadius": 10,
+                    "flexDirection": "row",
+                    "height": 64,
+                    "justifyContent": "space-between",
+                    "marginBottom": 7,
+                    "marginLeft": 8,
+                    "marginRight": 8,
+                    "marginTop": 7,
+                    "paddingLeft": 20,
+                    "paddingRight": 20,
+                  }
+                }
+                testID="AnalysisDataCardTestID"
+              >
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "gap": 30,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#45734A",
+                        "borderRadius": 9999,
+                        "elevation": 3,
+                        "height": 40,
+                        "justifyContent": "center",
+                        "shadowColor": "rgba(0, 0, 0, 0.25)",
+                        "shadowOffset": {
+                          "height": 1,
+                          "width": 1,
+                        },
+                        "shadowOpacity": 0.125,
+                        "shadowRadius": 3,
+                        "width": 40,
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        [
+                          {
+                            "color": "#F0F7F0",
+                            "lineHeight": 28,
+                          },
+                          {
+                            "fontFamily": "SourceSansPro-SemiBold",
+                            "fontSize": 24,
+                            "fontWeight": "600",
+                            "textAlign": "center",
+                          },
+                        ]
+                      }
+                    >
+                      08
+                    </Text>
+                  </View>
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#FFFFFF",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-SemiBold",
+                          "fontSize": 16,
+                          "fontWeight": "600",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    Set up
+                  </Text>
+                </View>
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "borderColor": "#F8F9FA",
+                      "borderLeftWidth": 2,
+                      "flexDirection": "row",
+                      "gap": 10,
+                      "paddingLeft": 30,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#C0DBBF",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    last month
+                  </Text>
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#FFFFFF",
+                          "lineHeight": 40,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 28,
+                          "fontWeight": "600",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    01
+                  </Text>
+                </View>
+              </View>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#283E36",
+                    "borderRadius": 10,
+                    "flexDirection": "row",
+                    "height": 64,
+                    "justifyContent": "space-between",
+                    "marginBottom": 7,
+                    "marginLeft": 8,
+                    "marginRight": 8,
+                    "marginTop": 7,
+                    "paddingLeft": 20,
+                    "paddingRight": 20,
+                  }
+                }
+                testID="AnalysisDataCardTestID"
+              >
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "gap": 30,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#F65815",
+                        "borderRadius": 9999,
+                        "elevation": 3,
+                        "height": 40,
+                        "justifyContent": "center",
+                        "shadowColor": "rgba(0, 0, 0, 0.25)",
+                        "shadowOffset": {
+                          "height": 1,
+                          "width": 1,
+                        },
+                        "shadowOpacity": 0.125,
+                        "shadowRadius": 3,
+                        "width": 40,
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        [
+                          {
+                            "color": "#F0F7F0",
+                            "lineHeight": 28,
+                          },
+                          {
+                            "fontFamily": "SourceSansPro-SemiBold",
+                            "fontSize": 24,
+                            "fontWeight": "600",
+                            "textAlign": "center",
+                          },
+                        ]
+                      }
+                    >
+                      03
+                    </Text>
+                  </View>
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#FFFFFF",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-SemiBold",
+                          "fontSize": 16,
+                          "fontWeight": "600",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    Back swing
+                  </Text>
+                </View>
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "borderColor": "#F8F9FA",
+                      "borderLeftWidth": 2,
+                      "flexDirection": "row",
+                      "gap": 10,
+                      "paddingLeft": 30,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#C0DBBF",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    last month
+                  </Text>
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#FFFFFF",
+                          "lineHeight": 40,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 28,
+                          "fontWeight": "600",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    01
+                  </Text>
+                </View>
+              </View>
+              <View
+                style={
+                  {
+                    "alignItems": "center",
+                    "backgroundColor": "#283E36",
+                    "borderRadius": 10,
+                    "flexDirection": "row",
+                    "height": 64,
+                    "justifyContent": "space-between",
+                    "marginBottom": 7,
+                    "marginLeft": 8,
+                    "marginRight": 8,
+                    "marginTop": 7,
+                    "paddingLeft": 20,
+                    "paddingRight": 20,
+                  }
+                }
+                testID="AnalysisDataCardTestID"
+              >
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "gap": 30,
+                    }
+                  }
+                >
+                  <View
+                    style={
+                      {
+                        "alignItems": "center",
+                        "backgroundColor": "#45734A",
+                        "borderRadius": 9999,
+                        "elevation": 3,
+                        "height": 40,
+                        "justifyContent": "center",
+                        "shadowColor": "rgba(0, 0, 0, 0.25)",
+                        "shadowOffset": {
+                          "height": 1,
+                          "width": 1,
+                        },
+                        "shadowOpacity": 0.125,
+                        "shadowRadius": 3,
+                        "width": 40,
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        [
+                          {
+                            "color": "#F0F7F0",
+                            "lineHeight": 28,
+                          },
+                          {
+                            "fontFamily": "SourceSansPro-SemiBold",
+                            "fontSize": 24,
+                            "fontWeight": "600",
+                            "textAlign": "center",
+                          },
+                        ]
+                      }
+                    >
+                      12
+                    </Text>
+                  </View>
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#FFFFFF",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-SemiBold",
+                          "fontSize": 16,
+                          "fontWeight": "600",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    Down swing
+                  </Text>
+                </View>
+                <View
+                  style={
+                    {
+                      "alignItems": "center",
+                      "borderColor": "#F8F9FA",
+                      "borderLeftWidth": 2,
+                      "flexDirection": "row",
+                      "gap": 10,
+                      "paddingLeft": 30,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#C0DBBF",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    last month
+                  </Text>
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#FFFFFF",
+                          "lineHeight": 40,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 28,
+                          "fontWeight": "600",
+                          "textAlign": "center",
+                        },
+                      ]
+                    }
+                  >
+                    01
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              {
+                "marginBottom": 24,
+                "marginLeft": 16,
+                "marginRight": 16,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                collapsable={false}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  {
+                    "backgroundColor": "#A2FD2F",
+                    "borderColor": "#00000000",
+                    "borderRadius": 10,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "elevation": 0,
+                    "justifyContent": "center",
+                    "minWidth": "auto",
+                    "shadowColor": "#000",
+                    "shadowOffset": {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0,
+                    "shadowRadius": 0,
+                    "width": "100%",
+                  }
+                }
+              >
+                <View
+                  accessibilityRole="button"
+                  accessibilityState={
+                    {
+                      "disabled": false,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    [
+                      {
+                        "overflow": "hidden",
+                      },
+                      {
+                        "borderRadius": 10,
+                      },
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      [
+                        {
+                          "alignItems": "center",
+                          "flexDirection": "row",
+                          "justifyContent": "center",
+                        },
+                        {
+                          "height": 48,
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      numberOfLines={1}
+                      selectable={false}
+                      style={
+                        [
+                          {
+                            "color": "#000000",
+                            "fontFamily": "System",
+                            "fontWeight": "400",
+                          },
+                          {
+                            "textAlign": "left",
+                          },
+                          [
+                            {
+                              "letterSpacing": 1,
+                              "marginHorizontal": 16,
+                              "marginVertical": 9,
+                              "textAlign": "center",
+                            },
+                            {
+                              "marginHorizontal": 8,
+                            },
+                            {
+                              "textTransform": "uppercase",
+                            },
+                            {
+                              "color": "#6200ee",
+                              "fontFamily": "System",
+                              "fontWeight": "500",
+                            },
+                            {
+                              "fontFamily": "System",
+                              "fontWeight": "500",
+                            },
+                            undefined,
+                          ],
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#283E36",
+                              "lineHeight": 28,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-SemiBold",
+                              "fontSize": 18,
+                              "fontWeight": "bold",
+                              "textAlign": "center",
+                            },
+                          ]
+                        }
+                      >
+                        view all my videos
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+  </RCTSafeAreaView>
+</BVLinearGradient>
+`;

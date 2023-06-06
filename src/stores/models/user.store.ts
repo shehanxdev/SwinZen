@@ -1,6 +1,7 @@
 import { createModel } from '@rematch/core';
+import { Asset } from 'react-native-image-picker';
 
-import { IS_JEST_RUNTIME, OtpType } from '@sz/constants';
+import { FilesType, IS_JEST_RUNTIME, OtpType } from '@sz/constants';
 import {
   ChangePasswordData,
   ContactUsFormValues,
@@ -8,9 +9,12 @@ import {
   ForgetPasswordData,
   LoginUserData,
   Notification,
+  PlanQueryData,
   ResendOtpData,
   ResetPasswordData,
   SignupUserData,
+  SubscribedData,
+  SubscriptionQueryData,
   UserData,
   UserProfileData,
 } from '@sz/models';
@@ -19,6 +23,8 @@ import {
   AuthService,
   ContactUsService,
   NotificationsService,
+  PricePlansService,
+  S3Service,
   SecureAuthService,
   UserService,
 } from '@sz/services';
@@ -32,8 +38,9 @@ export interface UserState {
   nextActionToken: string | null;
 
   //TODO::refactor profileData and userData to have common one
-  profileData: UserProfileData | null;
   userData: UserData | null;
+  userPlan: SubscribedData | null;
+  profileData: UserProfileData | null;
 }
 
 const initialState: UserState = {
@@ -42,6 +49,7 @@ const initialState: UserState = {
   nextActionToken: null,
   profileData: null,
   userData: null,
+  userPlan: null,
 };
 
 export const userStore = createModel<RootModel>()({
@@ -62,8 +70,14 @@ export const userStore = createModel<RootModel>()({
     setUserProfileData(state: UserState, profileData: UserProfileData) {
       return { ...state, profileData };
     },
+    setUserPlan(state: UserState, userPlan: SubscribedData | null) {
+      return { ...state, userPlan };
+    },
     setUserData(state: UserState, userData: UserData | null) {
       return { ...state, userData };
+    },
+    setProfilePicture(state: UserState, url: string) {
+      return { ...state, userData: { ...state.userData, profilePicture: url } };
     },
   },
   effects: dispatch => ({
@@ -165,6 +179,42 @@ export const userStore = createModel<RootModel>()({
         dispatch.userStore.setNextActionToken(nextActionToken ?? null);
       }
     },
+    async getUserData(_: void, state) {
+      const data = await UserService.getUserData(state.userStore.accessToken);
+      dispatch.userStore.setUserData(mapUserData(data));
+    },
+    async patchUserData(payload: UserData, state) {
+      const { accessToken } = state.userStore;
+      const data = await UserService.patchUserData(payload, accessToken);
+      dispatch.userStore.setUserData(mapUserData(data));
+    },
+    async getSubscription(payload: SubscriptionQueryData, state) {
+      const { accessToken } = state.userStore;
+      const data = await PricePlansService.getSubscription(payload, accessToken);
+      dispatch.userStore.setUserPlan(data.results[0]);
+    },
+    async addSubscription(payload: PlanQueryData, state) {
+      const { accessToken } = state.userStore;
+      await PricePlansService.addSubscription(payload, accessToken);
+    },
+    async patchUserNotification(payload: Notification, state) {
+      const { accessToken } = state.userStore;
+      await NotificationsService.patchUserNotification(payload, accessToken);
+    },
+
+    async changeProfilePicture(payload: Asset, state) {
+      const { accessToken } = state.userStore;
+      const preSignedData = await AccountService.getPreSignedData(FilesType.IMAGE, accessToken);
+
+      await S3Service.uploadMediaToS3(preSignedData, payload);
+      const data = await AccountService.changeProfilePicture(preSignedData.fields.key, accessToken);
+
+      dispatch.userStore.setProfilePicture(data.url);
+    },
+    async postContactUsMessage(payload: ContactUsFormValues, state) {
+      const { accessToken } = state.userStore;
+      await ContactUsService.postMessage(payload, accessToken);
+    },
     //NOTE::This is a dummy function to mimic the fetch profile API calls.
     async fetchUserProfileData() {
       const dummtUserData: UserProfileData = {
@@ -185,33 +235,7 @@ export const userStore = createModel<RootModel>()({
       };
 
       await new Promise(r => setTimeout(r, 500));
-
       dispatch.userStore.setUserProfileData(dummtUserData);
-    },
-    async changeProfilePicture(/* PAYLOAD */) {
-      //TODO::Implement
-      await new Promise(resolve => {
-        setTimeout(resolve, 3000);
-      });
-    },
-    async getUserData(_: void, state) {
-      const data = await UserService.getUserData(state.userStore.accessToken);
-
-      dispatch.userStore.setUserData(mapUserData(data));
-    },
-    async patchUserData(payload: UserData, state) {
-      const { accessToken } = state.userStore;
-      const data = await UserService.patchUserData(payload, accessToken);
-
-      dispatch.userStore.setUserData(mapUserData(data));
-    },
-    async patchUserNotification(payload: Notification, state) {
-      const { accessToken } = state.userStore;
-      await NotificationsService.patchUserNotification(payload, accessToken);
-    },
-    async postContactUsMessage(payload: ContactUsFormValues, state) {
-      const { accessToken } = state.userStore;
-      await ContactUsService.postMessage(payload, accessToken);
     },
   }),
 });
