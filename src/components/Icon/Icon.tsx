@@ -192,8 +192,7 @@ export function PhoneIcon({ color = Color.Neutral.Sz500, width = 18, height = 18
   return <PhoneIconSvg width={width} height={height} fill={color} />;
 }
 
-//#1A5C23 not available within the design system
-export function SettingsMiniIcon({ color = '#1A5C23' as Color, width = 13.5, height = 13 }: SvgIconProps) {
+export function SettingsMiniIcon({ color = Color.Primary.Sz650, width = 13.5, height = 13 }: SvgIconProps) {
   return <SettingsMiniSvg width={width} height={height} fill={color} />;
 }
 

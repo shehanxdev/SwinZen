@@ -5,7 +5,7 @@ import { Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant, UTAInfoEightPoints } from '@sz/constants';
 
-import { BaseLibraryScreen } from '../../components';
+import { BaseMainScreen } from '../../../main/components';
 
 const TEST_ID_PREFIX = 'UTAInfoEightScreenTestID';
 
@@ -32,13 +32,13 @@ export function UTAInfoEightScreen() {
   }, [UTAInfoEightPoints]);
 
   return (
-    <BaseLibraryScreen>
+    <BaseMainScreen>
       <View style={tw`mx-4 mt-8`} testID={TEST_ID_PREFIX}>
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
           {`The key components of your swing analysis are:\n`}
         </Text>
         {renderPoints}
       </View>
-    </BaseLibraryScreen>
+    </BaseMainScreen>
   );
 }

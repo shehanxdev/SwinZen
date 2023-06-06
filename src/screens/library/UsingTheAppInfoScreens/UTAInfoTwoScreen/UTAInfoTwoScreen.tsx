@@ -5,11 +5,11 @@ import { Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
-import { BaseLibraryScreen } from '../../components';
+import { BaseMainScreen } from '../../../main/components';
 
 export function UTAInfoTwoScreen() {
   return (
-    <BaseLibraryScreen>
+    <BaseMainScreen>
       <View style={tw`mx-4 mt-8`} testID="UTAInfoTwoScreenTestID">
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
           {`Our AI programming requires the system to be able to identify and differentiate a golfer, club, and ball from the surrounding environment.
@@ -25,6 +25,6 @@ export function UTAInfoTwoScreen() {
           {`\nYou can similarly shoot indoors, but a major problem with indoor environments can be the lack of space to shoot the proper distance from the ball. Not having the proper distance from the ball cuts off the range of motion of a full swing, which means our system cannot pick up those frames when the ball and club leave the perimeters of the camera shot.`}
         </Text>
       </View>
-    </BaseLibraryScreen>
+    </BaseMainScreen>
   );
 }

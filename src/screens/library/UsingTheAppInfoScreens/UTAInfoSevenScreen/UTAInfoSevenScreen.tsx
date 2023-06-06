@@ -5,7 +5,7 @@ import { Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant, UTAInfoSevenPoints } from '@sz/constants';
 
-import { BaseLibraryScreen } from '../../components';
+import { BaseMainScreen } from '../../../main/components';
 
 const TEST_ID_PREFIX = 'UTAInfoSevenScreenTestID';
 
@@ -32,7 +32,7 @@ export function UTAInfoSevenScreen() {
   }, [UTAInfoSevenPoints]);
 
   return (
-    <BaseLibraryScreen>
+    <BaseMainScreen>
       <View style={tw`mx-4 mt-8`} testID={TEST_ID_PREFIX}>
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
           {`What does the orange triangle with an exclamation mark and/or orange overlay on a video mean?
@@ -41,6 +41,6 @@ export function UTAInfoSevenScreen() {
         </Text>
         {renderPoints}
       </View>
-    </BaseLibraryScreen>
+    </BaseMainScreen>
   );
 }

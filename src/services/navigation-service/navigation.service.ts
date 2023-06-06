@@ -390,9 +390,13 @@ export class NavigationService {
           },
         },
       },
+      [Route.VideoUploadStack]: {
+        navRoute: Route.VideoUploadStack,
+        navParams: params,
+      },
     };
 
-    // Fixing SonarCloud issue with replacing this function instead of switch
+    // Fixing SonarCloud issue with replacing this function instead of switch, maximum cases should be 30 for a switch
     const getNavigationRoute = (route: Route): NavigationRoute => {
       return {
         route: routeMapping[route].navRoute,

@@ -9,6 +9,7 @@ import { NavigationService } from '@sz/services';
 
 interface LinksSliderProps {
   sliderData: string[][];
+  testID?: string;
 }
 
 export function LinksSlider({ sliderData }: LinksSliderProps) {
