@@ -1,0 +1,39 @@
+version: 2.1
+
+orbs:
+  android: circleci/android@2.1.2
+  node: circleci/node@5.0.2
+
+
+
+jobs:
+  android-dev-firebase:
+    docker:
+      - image: cimg/android:2023.06.1-node
+        environment:
+          BUNDLER_VERSION: 2.0.1
+    steps:
+      - checkout:
+      - node/install:
+            install-yarn: true
+            node-version: "16.18.1"
+        - run: yarn
+      - android/decode-keystore:
+          keystore-location: android/app/keystore
+      - android/create-keystore-properties:
+          working-directory: android
+      - android/fastlane-deploy:
+            working-directory: android
+            lane-name: firebase_deploy_dev
+
+workflows:
+  android-firebase-deploy-dev:
+    jobs:
+      - deploy-dev-android:
+          type: approval
+          requires:
+            - node
+
+      - android-dev-firebase:
+          requires:
+            - deploy-dev-android
