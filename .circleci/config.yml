@@ -13,7 +13,7 @@ jobs:
         environment:
           BUNDLER_VERSION: 2.0.1
     steps:
-      - checkout:
+      - checkout
       - node/install:
             install-yarn: true
             node-version: "16.18.1"
