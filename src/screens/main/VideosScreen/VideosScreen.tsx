@@ -1,59 +1,68 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { TouchableWithoutFeedback, View } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
 
-import { Text, ToggleSwitch } from '@sz/components';
+import { ToggleSwitch } from '@sz/components';
 import { tw } from '@sz/config';
-import { TextVariant } from '@sz/constants';
+import { VideoData } from '@sz/models';
 
+import { VideoThumbnailCard } from '../HomeScreen/components';
 import { BaseMainScreen } from '../components';
-import { VideoListComponent } from './components/VideoListComponent';
+import { dummyVideoData } from './dummyVideodata';
 
-const values = {
-  All_videos: 'All videos',
-  Face_view: 'Face view',
-  Down_the_line: 'Down the line',
+const CameraAngles = {
+  All_Videos: 'All Videos',
+  Face_View: 'Face View',
+  Down_The_Line: 'Down The Line',
 };
 
-const options = [
-  { label: 'All videos', value: values.All_videos },
-  { label: 'Face view', value: values.Face_view },
-  { label: 'Down the line', value: values.Down_the_line },
+const tabOptions = [
+  { label: 'All videos', value: CameraAngles.All_Videos },
+  { label: 'Face view', value: CameraAngles.Face_View },
+  { label: 'Down the line', value: CameraAngles.Down_The_Line },
 ];
 
 export function VideosScreen() {
-  const [selctedTab, setSelctedTab] = useState<string>(values.All_videos);
-  const dummyVideoData = {
-    id: 'string',
-    userId: 'string',
-    name: 'string',
-    videoUrl: 'string',
-    videoType: 'string',
-    thumbnailUrl: 'string',
-    grading: 0,
-    createdAt: '2023-06-04T13:22:29.181Z',
+  const [selctedTab, setSelctedTab] = useState<string>(CameraAngles.All_Videos);
+  const [selectedItem, setSelectedItem] = useState<string>();
+
+  const filterVideos = (videos: VideoData[], currentTab: string) => {
+    if (currentTab === CameraAngles.All_Videos) {
+      return videos;
+    } else if (currentTab === CameraAngles.Down_The_Line) {
+      return videos.filter(video => video.videoType === CameraAngles.Down_The_Line);
+    } else if (currentTab === CameraAngles.Face_View) {
+      return videos.filter(video => video.videoType === CameraAngles.Face_View);
+    }
   };
 
+  const renderVideo = ({ item }) => (
+    <TouchableWithoutFeedback
+      onPress={() => {
+        setSelectedItem(item.id);
+      }}>
+      <View style={tw`mb-9`}>
+        <VideoThumbnailCard video={item} />
+      </View>
+    </TouchableWithoutFeedback>
+  );
   return (
-    <BaseMainScreen>
-      <View style={tw`mx-4`}>
+    <BaseMainScreen disableScrollView>
+      <View style={tw`mx-4 mb-24`}>
         <View style={tw`mb-9 mt-4`}>
           <ToggleSwitch
-            options={options}
+            options={tabOptions}
             onChange={value => {
               setSelctedTab(value);
             }}
           />
         </View>
-        {(() => {
-          switch (selctedTab) {
-            case values.All_videos:
-              return <VideoListComponent videos={[dummyVideoData]} />;
-            case values.Face_view:
-              return <Text variant={TextVariant.Body1Regular}>Hi in Face View</Text>;
-            case values.Down_the_line:
-              return <Text variant={TextVariant.Body1Regular}>Hi in Down the line</Text>;
-          }
-        })()}
+        <FlatList
+          data={filterVideos(dummyVideoData, selctedTab)}
+          renderItem={renderVideo}
+          keyExtractor={item => item.id}
+          extraData={selectedItem}
+        />
       </View>
     </BaseMainScreen>
   );

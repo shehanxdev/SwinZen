@@ -9,11 +9,13 @@ import { useHeaderHeight } from '@sz/hooks';
 
 interface BaseMainScreenScreenProps extends Partial<LinearGradientProps> {
   children: React.ReactNode;
+  disableScrollView?: boolean;
 }
 
 export function BaseMainScreen({
   children,
   colors = [Color.Primary.Sz650, Color.Primary.Sz800, Color.Primary.Sz900],
+  disableScrollView = false,
   ...otherlinearGradientProps
 }: BaseMainScreenScreenProps) {
   const headerHeight = useHeaderHeight();
@@ -23,9 +25,13 @@ export function BaseMainScreen({
       <Image source={images.grassBackground} style={tw`absolute opacity-10 h-screen w-screen`} resizeMode="cover" />
       <SafeAreaView style={tw`h-full pt-[${headerHeight}px]`}>
         <KeyboardAvoidingView style={tw`flex-1`} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-          <ScrollView contentContainerStyle={tw`grow`} keyboardShouldPersistTaps="handled">
-            {children}
-          </ScrollView>
+          {disableScrollView ? (
+            children
+          ) : (
+            <ScrollView contentContainerStyle={tw`grow`} keyboardShouldPersistTaps="handled">
+              {children}
+            </ScrollView>
+          )}
         </KeyboardAvoidingView>
       </SafeAreaView>
     </LinearGradient>

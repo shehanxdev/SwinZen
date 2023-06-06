@@ -13,7 +13,9 @@ export interface CircularScoreIndicatorProps {
 export function CircularScoreIndicator({ score, diameter }: CircularScoreIndicatorProps) {
   return (
     <View
-      style={tw`rounded-full bg-[${Color.Primary.Sz700}] w-[${diameter}px] h-[${diameter}px] flex justify-center absolute bottom-0 left-0`}>
+      style={tw`rounded-full bg-[${
+        score > 5 ? Color.Primary.Sz700 : Color.Secondary.Sz900
+      }] w-[${diameter}px] h-[${diameter}px] flex justify-center absolute bottom-0 left-0`}>
       <Text variant={TextVariant.SubTitle2SemiBold}>{score}</Text>
     </View>
   );
