@@ -66,6 +66,7 @@ enum Tertiary {
 enum Transparency {
   Sz100 = `#212529`,
   Sz80 = `#212529cc`,
+  Sz85 = `#212529D9`,
   Sz64 = `#212529a3`,
   Sz56 = `#2125298f`,
   Sz40 = `#21252966`,

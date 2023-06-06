@@ -5,11 +5,11 @@ import { Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
-import { BaseLibraryScreen } from '../../components';
+import { BaseMainScreen } from '../../../main/components';
 
 export function UTAInfoSixScreen() {
   return (
-    <BaseLibraryScreen>
+    <BaseMainScreen>
       <View style={tw`mx-4 mt-8`} testID="UTAInfoSixScreenTestID">
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
           {`Did your video come back as successfully reviewed?
@@ -18,6 +18,6 @@ export function UTAInfoSixScreen() {
           \nSimply tap on the center of the video, and it will take you to the video’s swing feedback report.`}
         </Text>
       </View>
-    </BaseLibraryScreen>
+    </BaseMainScreen>
   );
 }

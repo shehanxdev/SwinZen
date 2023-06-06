@@ -5,7 +5,7 @@ import { Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { AboutSZInfoSixPoints, Color, TextAlignment, TextVariant } from '@sz/constants';
 
-import { BaseLibraryScreen } from '../../components';
+import { BaseMainScreen } from '../../../main/components';
 
 const TEST_ID_PREFIX = 'ASZInfoSixScreenTestID';
 
@@ -25,10 +25,10 @@ export function ASZInfoSixScreen() {
   }, [AboutSZInfoSixPoints]);
 
   return (
-    <BaseLibraryScreen>
+    <BaseMainScreen>
       <View style={tw`mx-4 mt-8`} testID={TEST_ID_PREFIX}>
         {renderPoints}
       </View>
-    </BaseLibraryScreen>
+    </BaseMainScreen>
   );
 }

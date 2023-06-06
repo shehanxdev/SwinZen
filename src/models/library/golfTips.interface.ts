@@ -1,6 +1,8 @@
+import { ImageSourcePropType } from 'react-native';
+
 export interface GolfTipDataType {
   id: number;
   videosCount: number;
-  backgroundImage: string;
+  backgroundImage: ImageSourcePropType;
   label: string;
 }

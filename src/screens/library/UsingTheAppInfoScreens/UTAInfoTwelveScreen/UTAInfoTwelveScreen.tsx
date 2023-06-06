@@ -5,11 +5,11 @@ import { Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
-import { BaseLibraryScreen } from '../../components';
+import { BaseMainScreen } from '../../../main/components';
 
 export function UTAInfoTwelveScreen() {
   return (
-    <BaseLibraryScreen>
+    <BaseMainScreen>
       <View style={tw`mx-4 mt-8`} testID="UTAInfoTwelveScreenTestID">
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
           <Text color={Color.Neutral.White} variant={TextVariant.Body1SemiBold} textAlign={TextAlignment.Auto}>
@@ -31,6 +31,6 @@ export function UTAInfoTwelveScreen() {
           \nSwingZen delivers a comparison screenshot of what a pro’s position looks like at that particular point in the swing.`}
         </Text>
       </View>
-    </BaseLibraryScreen>
+    </BaseMainScreen>
   );
 }

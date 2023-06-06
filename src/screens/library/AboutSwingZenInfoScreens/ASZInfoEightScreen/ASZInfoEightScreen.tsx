@@ -7,7 +7,7 @@ import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
-import { BaseLibraryScreen } from '../../components';
+import { BaseMainScreen } from '../../../main/components';
 
 const TEST_ID_PREFIX = 'ASZInfoEightScreenTestID';
 
@@ -103,7 +103,7 @@ export function ASZInfoEightScreen() {
   }, [count]);
 
   return (
-    <BaseLibraryScreen>
+    <BaseMainScreen>
       <View style={tw`flex-1 justify-between mx-4 mt-8`} testID={TEST_ID_PREFIX}>
         {renderBody}
         <View style={tw`mt-25 mb-3`}>
@@ -120,6 +120,6 @@ export function ASZInfoEightScreen() {
           />
         </View>
       </View>
-    </BaseLibraryScreen>
+    </BaseMainScreen>
   );
 }
