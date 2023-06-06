@@ -1,11 +1,10 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
-import { Text } from '@sz/components';
-import { Route, TextVariant } from '@sz/constants';
+import { Route } from '@sz/constants';
 import { VideoSetupScreen } from '@sz/screens';
 
-import { HeaderBackButton } from '../components';
+import { HeaderBackButton, HeaderTitle } from '../components';
 import { HeaderRightLink } from './components';
 
 export type VideoUploadStackParamList = {
@@ -17,6 +16,8 @@ export type VideoUploadStackParamList = {
 const Stack = createNativeStackNavigator<VideoUploadStackParamList>();
 
 export function VideoUploadStack() {
+  const renderHeaderRight = () => <HeaderRightLink text="How to Shoot" />;
+
   return (
     <Stack.Navigator
       initialRouteName={Route.VideoSetup}
@@ -24,13 +25,13 @@ export function VideoUploadStack() {
         headerBackTitleVisible: false,
         headerBackVisible: false,
         headerTransparent: true,
-        headerTitle: ({ children }) => <Text variant={TextVariant.SubTitle2SemiBold}>{children}</Text>,
-        headerLeft: () => <HeaderBackButton />,
+        headerTitle: HeaderTitle,
+        headerLeft: HeaderBackButton,
       }}>
       <Stack.Screen
         name={Route.VideoSetup}
         component={VideoSetupScreen}
-        options={{ title: '', headerRight: () => <HeaderRightLink text="How to Shoot" /> }}
+        options={{ title: '', headerRight: renderHeaderRight }}
       />
     </Stack.Navigator>
   );
