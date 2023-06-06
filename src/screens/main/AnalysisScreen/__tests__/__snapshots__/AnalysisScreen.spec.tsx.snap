@@ -81,6 +81,32 @@ exports[`Analysis Screen Screen should render Analysis Screen correctly 1`] = `
           <View
             style={
               {
+                "paddingTop": 32,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#F8F9FA",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 24,
+                    "fontWeight": "600",
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              Swing analysis report
+            </Text>
+          </View>
+          <View
+            style={
+              {
                 "flexBasis": "0%",
                 "flexGrow": 1,
                 "flexShrink": 1,
