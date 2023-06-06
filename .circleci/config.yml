@@ -20,6 +20,7 @@ jobs:
           keystore-location: android/app/keystore
       - android/create-keystore-properties:
           working-directory: android
+          release-keystore: android/app/keystore
       - android/fastlane-deploy:
           working-directory: android
           lane-name: firebase_deploy_dev
