@@ -7,6 +7,7 @@ import { tw } from '@sz/config';
 import { CameraAngles } from '@sz/constants';
 import { VideoData } from '@sz/models';
 
+import { TabScreenHeader } from '../../components/TabScreenHeader';
 import { VideoThumbnailCard } from '../HomeScreen/components';
 import { BaseMainScreen } from '../components';
 import { dummyVideoData } from './dummyVideodata';
@@ -43,7 +44,8 @@ export function VideosScreen() {
   );
   return (
     <BaseMainScreen disableScrollView>
-      <View style={tw`mx-4 mb-24`}>
+      <TabScreenHeader title="My videos" />
+      <View style={tw`mx-4 mb-36`}>
         <View style={tw`mb-9 mt-4`}>
           <ToggleSwitch
             options={tabOptions}
