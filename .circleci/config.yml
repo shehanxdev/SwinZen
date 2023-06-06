@@ -29,8 +29,6 @@ workflows:
     jobs:
       - deploy-dev-android:
           type: approval
-          requires:
-            - node
 
       - android-dev-firebase:
           requires:
