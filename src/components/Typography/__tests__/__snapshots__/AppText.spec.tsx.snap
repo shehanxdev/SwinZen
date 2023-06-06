@@ -423,6 +423,53 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : auto, TextVariant prop : LabelsAlt, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
+<Text
+  numberOfLines={2}
+  style={
+    [
+      {
+        "color": "#C0DBBF",
+        "lineHeight": 15,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 12,
+        "fontWeight": "600",
+        "textAlign": "auto",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : auto, TextVariant prop : LabelsAlt, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
+<Text
+  numberOfLines={1}
+  style={
+    [
+      {
+        "color": "#E9ECEF",
+        "lineHeight": 15,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 12,
+        "fontWeight": "600",
+        "textAlign": "auto",
+        "textDecorationLine": "underline",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
 exports[`AppText Component should render correctly should render correctly with TextAlignment prop : auto, TextVariant prop : Links, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
 <Text
   numberOfLines={2}
@@ -622,7 +669,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-SemiBold",
-        "fontSize": 21,
+        "fontSize": 24,
         "fontWeight": "600",
         "textAlign": "auto",
       },
@@ -645,7 +692,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-SemiBold",
-        "fontSize": 21,
+        "fontSize": 24,
         "fontWeight": "600",
         "textAlign": "auto",
         "textDecorationLine": "underline",
@@ -1081,6 +1128,53 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : center, TextVariant prop : LabelsAlt, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
+<Text
+  numberOfLines={2}
+  style={
+    [
+      {
+        "color": "#C0DBBF",
+        "lineHeight": 15,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 12,
+        "fontWeight": "600",
+        "textAlign": "center",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : center, TextVariant prop : LabelsAlt, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
+<Text
+  numberOfLines={1}
+  style={
+    [
+      {
+        "color": "#E9ECEF",
+        "lineHeight": 15,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 12,
+        "fontWeight": "600",
+        "textAlign": "center",
+        "textDecorationLine": "underline",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
 exports[`AppText Component should render correctly should render correctly with TextAlignment prop : center, TextVariant prop : Links, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
 <Text
   numberOfLines={2}
@@ -1280,7 +1374,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-SemiBold",
-        "fontSize": 21,
+        "fontSize": 24,
         "fontWeight": "600",
         "textAlign": "center",
       },
@@ -1303,7 +1397,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-SemiBold",
-        "fontSize": 21,
+        "fontSize": 24,
         "fontWeight": "600",
         "textAlign": "center",
         "textDecorationLine": "underline",
@@ -1739,6 +1833,53 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : justify, TextVariant prop : LabelsAlt, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
+<Text
+  numberOfLines={2}
+  style={
+    [
+      {
+        "color": "#C0DBBF",
+        "lineHeight": 15,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 12,
+        "fontWeight": "600",
+        "textAlign": "justify",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : justify, TextVariant prop : LabelsAlt, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
+<Text
+  numberOfLines={1}
+  style={
+    [
+      {
+        "color": "#E9ECEF",
+        "lineHeight": 15,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 12,
+        "fontWeight": "600",
+        "textAlign": "justify",
+        "textDecorationLine": "underline",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
 exports[`AppText Component should render correctly should render correctly with TextAlignment prop : justify, TextVariant prop : Links, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
 <Text
   numberOfLines={2}
@@ -1938,7 +2079,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-SemiBold",
-        "fontSize": 21,
+        "fontSize": 24,
         "fontWeight": "600",
         "textAlign": "justify",
       },
@@ -1961,7 +2102,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-SemiBold",
-        "fontSize": 21,
+        "fontSize": 24,
         "fontWeight": "600",
         "textAlign": "justify",
         "textDecorationLine": "underline",
@@ -2397,6 +2538,53 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : left, TextVariant prop : LabelsAlt, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
+<Text
+  numberOfLines={2}
+  style={
+    [
+      {
+        "color": "#C0DBBF",
+        "lineHeight": 15,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 12,
+        "fontWeight": "600",
+        "textAlign": "left",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : left, TextVariant prop : LabelsAlt, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
+<Text
+  numberOfLines={1}
+  style={
+    [
+      {
+        "color": "#E9ECEF",
+        "lineHeight": 15,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 12,
+        "fontWeight": "600",
+        "textAlign": "left",
+        "textDecorationLine": "underline",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
 exports[`AppText Component should render correctly should render correctly with TextAlignment prop : left, TextVariant prop : Links, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
 <Text
   numberOfLines={2}
@@ -2596,7 +2784,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-SemiBold",
-        "fontSize": 21,
+        "fontSize": 24,
         "fontWeight": "600",
         "textAlign": "left",
       },
@@ -2619,7 +2807,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-SemiBold",
-        "fontSize": 21,
+        "fontSize": 24,
         "fontWeight": "600",
         "textAlign": "left",
         "textDecorationLine": "underline",
@@ -3055,6 +3243,53 @@ exports[`AppText Component should render correctly should render correctly with 
 </Text>
 `;
 
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : right, TextVariant prop : LabelsAlt, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
+<Text
+  numberOfLines={2}
+  style={
+    [
+      {
+        "color": "#C0DBBF",
+        "lineHeight": 15,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 12,
+        "fontWeight": "600",
+        "textAlign": "right",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
+exports[`AppText Component should render correctly should render correctly with TextAlignment prop : right, TextVariant prop : LabelsAlt, color prop :#E9ECEF, underline prop :1, numberOfLine prop :true 1`] = `
+<Text
+  numberOfLines={1}
+  style={
+    [
+      {
+        "color": "#E9ECEF",
+        "lineHeight": 15,
+      },
+      {
+        "fontFamily": "SourceSansPro-Regular",
+        "fontSize": 12,
+        "fontWeight": "600",
+        "textAlign": "right",
+        "textDecorationLine": "underline",
+      },
+    ]
+  }
+  testID="AppTextTestID"
+>
+  Dummy Text
+</Text>
+`;
+
 exports[`AppText Component should render correctly should render correctly with TextAlignment prop : right, TextVariant prop : Links, color prop :#C0DBBF, underline prop :2, numberOfLine prop :false 1`] = `
 <Text
   numberOfLines={2}
@@ -3254,7 +3489,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-SemiBold",
-        "fontSize": 21,
+        "fontSize": 24,
         "fontWeight": "600",
         "textAlign": "right",
       },
@@ -3277,7 +3512,7 @@ exports[`AppText Component should render correctly should render correctly with 
       },
       {
         "fontFamily": "SourceSansPro-SemiBold",
-        "fontSize": 21,
+        "fontSize": 24,
         "fontWeight": "600",
         "textAlign": "right",
         "textDecorationLine": "underline",

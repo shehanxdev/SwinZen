@@ -1,3 +1,5 @@
+import { SortDataType } from '@sz/constants';
+
 export interface PricePlansResponse {
   limit: number;
   page: number;
@@ -14,7 +16,48 @@ export interface Plan {
   frequency?: string;
   price: number;
   currency: string;
+  actions: Array<string>;
   features: Array<string>;
   createdAt: string;
   updatedAt: string;
+}
+
+export interface SubscriptionQueryData {
+  offset?: number;
+  limit?: number;
+  sortBy?: SortDataType;
+}
+
+export interface PlanQueryData {
+  planId?: string;
+}
+
+export interface SubscriptionResponse {
+  results: Array<SubscribedData>;
+  page: number;
+  limit: number;
+  totalPages: number;
+  totalResults: number;
+}
+
+export interface Subscription {
+  id: string;
+  planId: string;
+  userId: string;
+  startDate: string;
+  endDate: string;
+  isActive: true;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface SubscribedData {
+  id: string;
+  userId: string;
+  startDate: string;
+  endDate?: string;
+  isActive: boolean;
+  createdAt: string;
+  updatedAt: string;
+  plan: Plan;
 }

@@ -1,14 +1,14 @@
 import * as React from 'react';
 
-import { renderWithProviders } from '@sz/utils';
+import { renderWithProviders } from '@sz/test-utils';
 
 import { ResetPasswordScreen } from '../ResetPasswordScreen';
 
 describe('ResetPasswordScreen Screen', () => {
   const testID = 'ResetPasswordScreenTestID';
-  const mockRoute = { params: { params: { email: 'test@gmail.com' } } };
 
-  const getRenderedScreen = () => renderWithProviders(<ResetPasswordScreen route={mockRoute} />);
+  const getRenderedScreen = () => renderWithProviders(<ResetPasswordScreen />);
+
   it(`should render ResetPasswordScreen correctly`, () => {
     const renderer = getRenderedScreen();
     const renderTree = renderer.toJSON();

@@ -47,7 +47,7 @@ export const AppTextStyles: Record<TextVariant, React.CSSProperties> = {
 
   // SubTitle 2
   [TextVariant.SubTitle2SemiBold]: {
-    fontSize: '21px',
+    fontSize: '24px',
     fontWeight: FontWeight.SemiBold,
     lineHeight: '28px',
   },
@@ -96,6 +96,12 @@ export const AppTextStyles: Record<TextVariant, React.CSSProperties> = {
     fontSize: '15px',
     fontWeight: FontWeight.SemiBold,
     lineHeight: '24px',
+  },
+  // Labels alt
+  [TextVariant.LabelsAlt]: {
+    fontSize: '12px',
+    fontWeight: FontWeight.SemiBold,
+    lineHeight: '15px',
   },
 
   // Links

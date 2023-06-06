@@ -9,6 +9,7 @@ describe('FAQ section header', () => {
       question: 'Lorem ipsum dolor sit amet, consectetur',
       answer:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non dolor purus. Nunc semper sapien congue tortor',
+      questionNumber: 1,
     },
   ];
 

@@ -58,14 +58,14 @@ export class AuthService {
     }
   }
 
-  static async emailVerification(data: EmailVerificationData) {
+  static async emailVerification(payload: EmailVerificationData, headers: Pick<BaseRequestHeaders, 'x-auth'>) {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     try {
-      const response = await httpServiceInstance.postAnonymous<
+      const response = await httpServiceInstance.postAnonymousWithCustomHeaders<
         ApiResponse<EmailVerificationResponse>,
         ApiErrorResponse
-      >('/auth/verify-otp', data);
+      >('/auth/verify-otp', { ...headers }, payload);
 
       return response.data;
     } catch (error) {
@@ -73,14 +73,14 @@ export class AuthService {
     }
   }
 
-  static async resendOtp(data: ResendOtpData) {
+  static async resendOtp(payload: ResendOtpData, headers: Pick<BaseRequestHeaders, 'x-auth'>) {
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     try {
-      const response = await httpServiceInstance.postAnonymous<ApiResponse<ResendOtpResponse>, ApiErrorResponse>(
-        '/auth/resend-otp',
-        data,
-      );
+      const response = await httpServiceInstance.postAnonymousWithCustomHeaders<
+        ApiResponse<ResendOtpResponse>,
+        ApiErrorResponse
+      >('/auth/resend-otp', { ...headers }, payload);
 
       return response.data;
     } catch (error) {
@@ -104,11 +104,10 @@ export class AuthService {
   }
 
   static async resetPassword(data: ResetPasswordData, headers: Pick<BaseRequestHeaders, 'x-auth'>) {
-    const { email, password } = data;
+    const { password } = data;
     const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
 
     const payload: ResetPasswordRequestData = {
-      email: email,
       password: password,
     };
 

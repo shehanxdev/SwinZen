@@ -142,7 +142,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                           },
                           {
                             "fontFamily": "SourceSansPro-SemiBold",
-                            "fontSize": 21,
+                            "fontSize": 24,
                             "fontWeight": "600",
                             "textAlign": "center",
                           },
@@ -224,7 +224,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                             },
                             {
                               "fontFamily": "SourceSansPro-SemiBold",
-                              "fontSize": 21,
+                              "fontSize": 24,
                               "fontWeight": "600",
                               "textAlign": "center",
                             },
@@ -271,7 +271,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                             },
                             {
                               "fontFamily": "SourceSansPro-SemiBold",
-                              "fontSize": 21,
+                              "fontSize": 24,
                               "fontWeight": "600",
                               "textAlign": "center",
                             },
@@ -318,7 +318,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                             },
                             {
                               "fontFamily": "SourceSansPro-SemiBold",
-                              "fontSize": 21,
+                              "fontSize": 24,
                               "fontWeight": "600",
                               "textAlign": "center",
                             },
@@ -365,7 +365,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                             },
                             {
                               "fontFamily": "SourceSansPro-SemiBold",
-                              "fontSize": 21,
+                              "fontSize": 24,
                               "fontWeight": "600",
                               "textAlign": "center",
                             },
@@ -412,7 +412,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                             },
                             {
                               "fontFamily": "SourceSansPro-SemiBold",
-                              "fontSize": 21,
+                              "fontSize": 24,
                               "fontWeight": "600",
                               "textAlign": "center",
                             },
@@ -459,7 +459,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                             },
                             {
                               "fontFamily": "SourceSansPro-SemiBold",
-                              "fontSize": 21,
+                              "fontSize": 24,
                               "fontWeight": "600",
                               "textAlign": "center",
                             },
@@ -572,7 +572,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                       style={
                         {
                           "backgroundColor": "#A2FD2F",
-                          "borderColor": "#ffffff00",
+                          "borderColor": "#00000000",
                           "borderRadius": 10,
                           "borderStyle": "solid",
                           "borderWidth": 1,
@@ -662,7 +662,9 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                                   {
                                     "marginHorizontal": 8,
                                   },
-                                  false,
+                                  {
+                                    "textTransform": "uppercase",
+                                  },
                                   {
                                     "color": "#6200ee",
                                     "fontFamily": "SourceSansPro-SemiBold",
@@ -693,7 +695,7 @@ exports[`Register Email Verification Screen should render correctly 1`] = `
                                 ]
                               }
                             >
-                              Verify
+                              verify
                             </Text>
                           </Text>
                         </View>

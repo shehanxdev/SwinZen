@@ -6,4 +6,6 @@ export interface ForgetPasswordData {
   email: string;
 }
 
-export interface ForgetPasswordResponse {}
+export interface ForgetPasswordResponse {
+  nextActionToken: string;
+}

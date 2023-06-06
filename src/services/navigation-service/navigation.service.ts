@@ -1,4 +1,4 @@
-import { DrawerActions } from '@react-navigation/native';
+import { CommonActions, DrawerActions } from '@react-navigation/native';
 import React from 'react';
 
 import { Route } from '@sz/constants';
@@ -6,7 +6,7 @@ import { Route } from '@sz/constants';
 export class NavigationService {
   public static navigationRef: any = React.createRef();
 
-  public static async navigate(requestedRouteName: Route, params?: any) {
+  public static navigate(requestedRouteName: Route, params?: any) {
     let routeName = requestedRouteName;
 
     const navigation = NavigationService.getNavigation(routeName, params);
@@ -26,12 +26,26 @@ export class NavigationService {
     NavigationService.navigationRef.current?.dispatch(DrawerActions.closeDrawer());
   }
 
+  public static reset(route: Route) {
+    const resetAction = CommonActions.reset({
+      index: 0,
+      routes: [
+        {
+          name: route,
+        },
+      ],
+    });
+
+    NavigationService.navigationRef.current?.dispatch(resetAction);
+  }
+
   private static getNavigation(route: Route, params?: any) {
     let navParams = params;
 
     let navRoute = route;
 
     switch (route) {
+      // Auth Routes
       case Route.Login:
         navRoute = Route.AuthStack;
         navParams = {
@@ -110,6 +124,8 @@ export class NavigationService {
           },
         };
         break;
+
+      // Account Routes
       case Route.ProfileSettings:
         navRoute = Route.AccountStack;
         navParams = {
@@ -156,6 +172,8 @@ export class NavigationService {
           },
         };
         break;
+
+      // Info Routes
       case Route.AboutUs:
         navRoute = Route.InfoStack;
         navParams = {
@@ -206,6 +224,8 @@ export class NavigationService {
           },
         };
         break;
+
+      // Price Plans Routes
       case Route.PricePlans:
         navRoute = Route.PricePlansStack;
         navParams = {
@@ -226,6 +246,17 @@ export class NavigationService {
           },
         };
         break;
+
+      // Library Routes
+      case Route.GolfTips:
+        navRoute = Route.LibraryStack;
+        navParams = {
+          screen: Route.GolfTips,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
     }
 
     return { route: navRoute, params: navParams };

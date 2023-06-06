@@ -16,7 +16,7 @@ import {
   TextField,
 } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, Route, TextAlignment, TextVariant } from '@sz/constants';
+import { Color, DEFAULT_TEXTFIELD_MAX_LENGTH, Route, TextAlignment, TextVariant } from '@sz/constants';
 import { SignupFormValues } from '@sz/models';
 import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
@@ -73,7 +73,7 @@ export function SignupScreen() {
                   ref={ref}
                   label="Your name"
                   leftIcon={<ProfileIcon />}
-                  maxLength={256}
+                  maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -95,7 +95,7 @@ export function SignupScreen() {
                   ref={ref}
                   label="Your email"
                   leftIcon={<MailIcon />}
-                  maxLength={256}
+                  maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -118,7 +118,7 @@ export function SignupScreen() {
                   ref={ref}
                   label="Your password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={256}
+                  maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -140,7 +140,7 @@ export function SignupScreen() {
                   ref={ref}
                   label="Please confirm your password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={256}
+                  maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
                   value={value}
                   onChangeText={onChange}
                   onBlur={onBlur}
@@ -192,7 +192,7 @@ export function SignupScreen() {
           <View style={tw`mb-6`}>
             <Button
               onPress={handleSubmit(onSignUpFormValid, onSignUpFormInvalid)}
-              title={'REGISTER'}
+              title={'register'}
               loading={loading}
             />
           </View>

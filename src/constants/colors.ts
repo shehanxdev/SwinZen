@@ -7,7 +7,7 @@ enum Primary {
   Sz800 = `#0C1E0F`,
   Sz700 = `#16501D`,
   Sz600 = `#28642A`,
-  SZ650 = `#1A5C23`,
+  Sz650 = `#1A5C23`,
   Sz500 = `#45734A`,
   Sz400 = `#69AA67`,
   Sz300 = `#8DBE8B`,
@@ -66,6 +66,7 @@ enum Tertiary {
 enum Transparency {
   Sz100 = `#212529`,
   Sz80 = `#212529cc`,
+  Sz85 = `#212529D9`,
   Sz64 = `#212529a3`,
   Sz56 = `#2125298f`,
   Sz40 = `#21252966`,
@@ -73,7 +74,7 @@ enum Transparency {
   Sz16 = `#21252929`,
   Sz8 = `#21252914`,
   Sz4 = `#2125290a`,
-  full = `#ffffff00`, //NOTE:: This is full transpapernt color. Not available under the design system.
+  full = `#00000000`, //NOTE:: This is full transpapernt color. Not available under the design system.
   dark = `#07070775`, //equal to most of the dark transpapernt background within the app
 }
 

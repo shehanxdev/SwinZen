@@ -6,7 +6,7 @@ import { View } from 'react-native';
 import { Button, Link, SwingZenLogoIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { OtpType, Route, TextVariant } from '@sz/constants';
-import { OtpVerficationValue } from '@sz/models';
+import { EmailVerificationData, OtpVerficationValue } from '@sz/models';
 import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { getMaskedMail, otpValidationSchema } from '@sz/utils';
@@ -39,7 +39,7 @@ export function RegisterEmailVerificationScreen({ route }) {
 
   const onResend = async () => {
     try {
-      await dispatch.userStore.resendOtp({ username: username });
+      await dispatch.userStore.resendOtp({ username: username, otpType: OtpType.VERIFICATION });
       ToastService.success({ message: 'Success!', description: 'OTP resent successfully.' });
     } catch (error: any) {
       ToastService.error({ message: 'Failed!', description: error.data.message });
@@ -47,13 +47,18 @@ export function RegisterEmailVerificationScreen({ route }) {
   };
 
   const onVerify = async () => {
-    const otpData = {
-      username: username,
+    const otpData: EmailVerificationData = {
       otpType: OtpType.VERIFICATION,
       otp: getValues('otp'),
     };
+
     try {
       await dispatch.userStore.emailVerification(otpData);
+
+      //TODO::This toast is not avaialbel in the requirements. User should redirect to the price plan screen open successfull verification.
+      //rafactor this once the requirements clarified
+      ToastService.success({ message: 'Success!', description: 'OTP verified successfully.' });
+
       NavigationService.navigate(Route.Login);
     } catch (error: any) {
       ToastService.error({ message: 'Failed!', description: error.data.message });
@@ -94,7 +99,7 @@ export function RegisterEmailVerificationScreen({ route }) {
         </View>
         <View style={tw`items-center mb-5 items-center mx-5 mt-15`}>
           <View style={tw`mb-6`}>
-            <Button onPress={onVerify} title="Verify" loading={loading} />
+            <Button onPress={onVerify} title="verify" loading={loading} />
           </View>
           <Text variant={TextVariant.Body2Regular}>
             By continuing, you agree to our{' '}

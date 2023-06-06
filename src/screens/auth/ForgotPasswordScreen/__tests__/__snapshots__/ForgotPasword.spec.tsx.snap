@@ -132,7 +132,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                           },
                           {
                             "fontFamily": "SourceSansPro-SemiBold",
-                            "fontSize": 21,
+                            "fontSize": 24,
                             "fontWeight": "600",
                             "textAlign": "center",
                           },
@@ -216,7 +216,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                           },
                           {
                             "backgroundColor": "#16501D",
-                            "borderColor": "#ffffff00",
+                            "borderColor": "#00000000",
                             "borderRadius": 10,
                             "borderWidth": 1,
                           },
@@ -407,7 +407,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                       style={
                         {
                           "backgroundColor": "#A2FD2F",
-                          "borderColor": "#ffffff00",
+                          "borderColor": "#00000000",
                           "borderRadius": 10,
                           "borderStyle": "solid",
                           "borderWidth": 1,
@@ -497,7 +497,9 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                                   {
                                     "marginHorizontal": 8,
                                   },
-                                  false,
+                                  {
+                                    "textTransform": "uppercase",
+                                  },
                                   {
                                     "color": "#6200ee",
                                     "fontFamily": "SourceSansPro-SemiBold",
@@ -528,7 +530,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                                 ]
                               }
                             >
-                              RESET PASSWORD
+                              reset password
                             </Text>
                           </Text>
                         </View>

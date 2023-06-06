@@ -5,7 +5,7 @@ import { View } from 'react-native';
 
 import { AccountLockIcon, Button, PasswordField } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color } from '@sz/constants';
+import { Color, DEFAULT_TEXTFIELD_MAX_LENGTH } from '@sz/constants';
 import { ChangePasswordFormValues } from '@sz/models';
 import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
@@ -52,9 +52,9 @@ export function ChangePasswordScreen() {
               render={({ field: { value, onChange, onBlur, ref }, fieldState: { error, isTouched } }) => (
                 <PasswordField
                   ref={ref}
-                  label="current password"
+                  label="Current password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={20}
+                  maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
                   value={value}
                   onChangeText={onChange}
                   onSubmitEditing={() => setFocus('newPassword')}
@@ -76,7 +76,7 @@ export function ChangePasswordScreen() {
                   ref={ref}
                   label="New password"
                   leftIcon={<AccountLockIcon />}
-                  maxLength={20}
+                  maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
                   value={value}
                   onChangeText={onChange}
                   onSubmitEditing={() => setFocus('confirmNewPassword')}
@@ -97,7 +97,7 @@ export function ChangePasswordScreen() {
                 ref={ref}
                 label="Confirm password"
                 leftIcon={<AccountLockIcon />}
-                maxLength={20}
+                maxLength={DEFAULT_TEXTFIELD_MAX_LENGTH}
                 value={value}
                 onChangeText={onChange}
                 onBlur={onBlur}
@@ -112,7 +112,7 @@ export function ChangePasswordScreen() {
         <View style={tw`items-center mt-10 mb-5 mx-5`}>
           <Button
             onPress={handleSubmit(onChangePasswordFormValid, onChangePasswordFormInvalid)}
-            title={'SAVE NEW PASSWORD'}
+            title={'save new password'}
             loading={loading}
           />
         </View>

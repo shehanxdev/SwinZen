@@ -104,8 +104,8 @@ android {
         applicationId "com.sportszoom.swingzen"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 6
-        versionName "0.1.4"
+        versionCode 8
+        versionName "0.1.6"
     }
 
     splits {

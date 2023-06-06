@@ -1,3 +1,4 @@
+import { FilesType } from '@sz/constants';
 import {
   ApiErrorResponse,
   ApiResponse,
@@ -5,11 +6,13 @@ import {
   ChangePasswordData,
   ChangePasswordRequestData,
   ChangePasswordResponse,
+  ChangeProfilePictureResponse,
   DecodedJWTUserData,
+  PreSignedResponse,
 } from '@sz/models';
 
-import { APIError, HttpServiceInstance } from './../../http-service';
-import { JTWDecodeService } from './../../jwt-decode-service';
+import { APIError, HttpServiceInstance } from '../../http-service';
+import { JTWDecodeService } from '../../jwt-decode-service';
 
 export class AccountService {
   static async profileChangePassword(
@@ -30,6 +33,46 @@ export class AccountService {
         ApiResponse<ChangePasswordResponse>,
         ApiErrorResponse
       >('/auth/change-password', { ...headers }, payload);
+
+      return response.data;
+    } catch (error) {
+      throw new APIError<ApiErrorResponse>('CLIENT_ERROR', error.data);
+    }
+  }
+
+  static async getPreSignedData(type: FilesType, token: string) {
+    const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
+
+    try {
+      const userId = JTWDecodeService.decodeToken<DecodedJWTUserData>(token).sub;
+      const response = await httpServiceInstance.post<ApiResponse<PreSignedResponse>, ApiErrorResponse>(
+        `/users/${userId}/pre-signed-urls`,
+        { fileType: type },
+      );
+
+      if (!response?.data) {
+        throw new APIError('UNKNOWN_ERROR');
+      }
+
+      return response.data;
+    } catch (error) {
+      throw new APIError<ApiErrorResponse>('CLIENT_ERROR', error.data);
+    }
+  }
+
+  static async changeProfilePicture(key: string, token: string) {
+    const httpServiceInstance = HttpServiceInstance.getHttpServiceInstance();
+
+    try {
+      const userId = JTWDecodeService.decodeToken<DecodedJWTUserData>(token).sub;
+      const response = await httpServiceInstance.post<ApiResponse<ChangeProfilePictureResponse>, ApiErrorResponse>(
+        `/users/${userId}/profile-image-upload-callback`,
+        { filePath: key },
+      );
+
+      if (!response?.data) {
+        throw new APIError('UNKNOWN_ERROR');
+      }
 
       return response.data;
     } catch (error) {

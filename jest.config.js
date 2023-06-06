@@ -18,6 +18,7 @@ module.exports = {
     '^@sz/services(.*)$': '<rootDir>/src/services$1',
     '^@sz/stores(.*)$': '<rootDir>/src/stores$1',
     '^@sz/utils(.*)$': '<rootDir>/src/utils$1',
+    '^@sz/test-utils(.*)$': '<rootDir>/src/test-utils$1',
     '\\.svg': '<rootDir>/__mocks__/svgMock.js',
   },
   transform: {
@@ -28,4 +29,5 @@ module.exports = {
   transformIgnorePatterns: [
     'node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|rollbar-react-native|@fortawesome|@react-native|@react-navigation|@react-native-firebase/messaging)',
   ],
+  coverageDirectory: 'coverage',
 };

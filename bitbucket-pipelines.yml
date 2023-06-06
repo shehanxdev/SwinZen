@@ -7,20 +7,41 @@ definitions:
   caches:
     sonar: ~/.sonar/cache
   steps:
+    - step: &unit-tests
+        size: 2x
+        name: Run Unit Tests
+        image: node:16
+        script:
+          - yarn
+          - yarn test
+        artifacts:
+          - coverage/**
     - step: &sonar-cloud
+        size: 2x
         name: SonarCloud Scan
         script:
           - pipe: sonarsource/sonarcloud-scan:1.4.0
             variables:
-              EXTRA_ARGS: -Dsonar.sources=src
-              SONAR_SCANNER_OPTS: -Dsonar.javascript.node.maxspace=8192
+              SONAR_SCANNER_OPTS: >
+                -Dsonar.sources=src
+                -Dsonar.exclusions=**/*.spec.ts,**/*.spec.tsx,**/*.spec.tsx.snap
+                -Dsonar.javascript.node.maxspace=4096
+                -Dsonar.javascript.coveragePlugin=jest
+                -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
           - pipe: sonarsource/sonarcloud-quality-gate:0.1.6
+  services:
+    docker:
+      memory: 4048
+
 pipelines:
   pull-requests:
     '**':
+      - step: *unit-tests
       - step: *sonar-cloud
   branches:
     dev:
+      - step: *unit-tests
       - step: *sonar-cloud
     main:
+      - step: *unit-tests
       - step: *sonar-cloud
