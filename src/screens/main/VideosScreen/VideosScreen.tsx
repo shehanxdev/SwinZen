@@ -4,17 +4,12 @@ import { FlatList } from 'react-native-gesture-handler';
 
 import { ToggleSwitch } from '@sz/components';
 import { tw } from '@sz/config';
+import { CameraAngles } from '@sz/constants';
 import { VideoData } from '@sz/models';
 
 import { VideoThumbnailCard } from '../HomeScreen/components';
 import { BaseMainScreen } from '../components';
 import { dummyVideoData } from './dummyVideodata';
-
-const CameraAngles = {
-  All_Videos: 'All Videos',
-  Face_View: 'Face View',
-  Down_The_Line: 'Down The Line',
-};
 
 const tabOptions = [
   { label: 'All videos', value: CameraAngles.All_Videos },

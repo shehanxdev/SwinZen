@@ -12,3 +12,4 @@ export * from './static-info';
 export * from './upload';
 export * from './typography';
 export * from './upload';
+export * from './videos';
