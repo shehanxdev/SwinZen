@@ -62,7 +62,7 @@ exports[`Profile Image Upload component should render component correctly 1`] = 
             "backgroundColor": "#1A5C23",
             "borderColor": "#F8F9FA",
             "borderRadius": 9999,
-            "borderWidth": 2,
+            "borderWidth": 1,
             "height": 134,
             "justifyContent": "center",
             "width": 134,

@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react';
-import { Alert, TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 
 import { Button, CrossIcon, Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
@@ -9,7 +9,7 @@ import { VideoSetupValuesType } from '@sz/models';
 import { NavigationService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 
-import { BaseUploadScreen } from '../components';
+import { BaseUploadScreen, InstructionsSkipModal } from '../components';
 
 const TEST_ID_PREFIX = 'HowToShootScreenTestID';
 
@@ -17,6 +17,7 @@ export function HowToShootScreen({ route }) {
   const data = route.params.params?.setupValues as VideoSetupValuesType;
 
   const [count, setCount] = useState(0);
+  const [showModal, setShowModal] = useState(false);
 
   const navigation = useNavigation();
   const dispatch = useDispatch();
@@ -61,24 +62,10 @@ export function HowToShootScreen({ route }) {
   }, []);
 
   const onSkipPress = () => {
-    //TODO:: will be changed after popup common component implemented
-    Alert.alert(
-      'Always skip instructions?',
-      'If you want to skip the instructions with future uploads, select YES. If you want to keep seeing the instructions with every upload, select NO.',
-      [
-        {
-          text: 'YES',
-          onPress: () => {
-            setCount(0);
-            NavigationService.navigate(Route.PreValidation);
-            setSkippedInstructions(true);
-          },
-        },
-        {
-          text: 'NO',
-        },
-      ],
-    );
+    setCount(0);
+    setShowModal(false);
+    setSkippedInstructions(true);
+    setTimeout(() => NavigationService.navigate(Route.PreValidation), 200);
   };
 
   const StepOneContent = useCallback(() => {
@@ -184,13 +171,18 @@ export function HowToShootScreen({ route }) {
             }}
             title="Next"
           />
-          {(!skippedInstructions || data) && (
+          {!skippedInstructions && data && (
             <View style={tw`my-6`}>
-              <Link text="Always skip instructions" onPress={onSkipPress} />
+              <Link text="Always skip instructions" onPress={() => setShowModal(true)} />
             </View>
           )}
         </View>
       </View>
+      <InstructionsSkipModal
+        showModal={showModal}
+        handleModalClose={() => setShowModal(false)}
+        onSkipped={onSkipPress}
+      />
     </BaseUploadScreen>
   );
 }
