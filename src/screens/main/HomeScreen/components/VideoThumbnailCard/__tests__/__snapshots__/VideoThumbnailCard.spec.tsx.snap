@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home screen should render Home screen correctly 1`] = `
+<View
+  collapsable={false}
+  pointerEvents="box-none"
+  style={
+    {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "position": "relative",
+      }
+    }
+    testID="VideoThumbnailCardTestID"
+  >
+    <View
+      accessibilityIgnoresInvertColors={true}
+      style={
+        {
+          "borderBottomLeftRadius": 20,
+          "borderRadius": 10,
+          "height": 218,
+          "overflow": "hidden",
+        }
+      }
+    >
+      <Image
+        resizeMode="cover"
+        source={
+          {
+            "uri": "https://i.ibb.co/XFvHx8J/Rectangle-132.png",
+          }
+        }
+        style={
+          [
+            {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            {
+              "height": 218,
+              "width": undefined,
+            },
+            undefined,
+          ]
+        }
+      />
+      <BVLinearGradient
+        colors={
+          [
+            16144405,
+            4294334485,
+          ]
+        }
+        endPoint={
+          {
+            "x": 0,
+            "y": 0,
+          }
+        }
+        locations={
+          [
+            0.74,
+            1,
+          ]
+        }
+        startPoint={
+          {
+            "x": 1,
+            "y": 0,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "display": "flex",
+              "height": "100%",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <SvgMock
+            fill="#F8F9FA"
+            height={46}
+            width={46}
+          />
+          <View
+            style={
+              {
+                "backgroundColor": "#F65815",
+                "borderRadius": 9999,
+                "bottom": 0,
+                "display": "flex",
+                "elevation": 3,
+                "height": 40,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "shadowColor": "#000",
+                "shadowOffset": {
+                  "height": 1,
+                  "width": 1,
+                },
+                "shadowOpacity": 0.125,
+                "shadowRadius": 3,
+                "width": 40,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#F8F9FA",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 24,
+                    "fontWeight": "600",
+                    "textAlign": "center",
+                  },
+                ]
+              }
+            >
+              4.7
+            </Text>
+          </View>
+        </View>
+      </BVLinearGradient>
+    </View>
+    <View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "color": "#F65815",
+                "lineHeight": 24,
+              },
+              {
+                "fontFamily": "SourceSansPro-SemiBold",
+                "fontSize": 16,
+                "fontWeight": "600",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          FAIL
+        </Text>
+        <Text
+          style={
+            [
+              {
+                "color": "#F8F9FA",
+                "lineHeight": 24,
+              },
+              {
+                "fontFamily": "SourceSansPro-SemiBold",
+                "fontSize": 16,
+                "fontWeight": "600",
+                "textAlign": "center",
+              },
+            ]
+          }
+        >
+          04 JUN 2023 • Face View
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
