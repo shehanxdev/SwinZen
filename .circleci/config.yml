@@ -23,9 +23,6 @@ jobs:
           command:
             cd android && printf 'releaseKeyAlias=%s\nreleaseKeyPassword=%s\nreleaseKeyStore=android/app/keystore\nreleaseStorePassword=%s' \
             $RELEASE_KEY_ALIAS $RELEASE_KEY_PASSWORD $RELEASE_STORE_PASSWORD > keystore.properties
-      - android/create-keystore-properties:
-          working-directory: android
-          release-keystore: android/app/keystore
       - android/fastlane-deploy:
           working-directory: android
           lane-name: firebase_deploy_dev
