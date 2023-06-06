@@ -20,8 +20,9 @@ jobs:
           keystore-location: android/app/keystore
       - run:
           name: Create keystore.properties
-          command: cd android && printf 'releaseKeyAlias=%s\nreleaseKeyPassword=%s\nreleaseKeyStore=android/app/keystore\nreleaseStorePassword=%s' \
-          $RELEASE_KEY_ALIAS $RELEASE_KEY_PASSWORD $RELEASE_STORE_PASSWORD > keystore.properties
+          command:
+            cd android && printf 'releaseKeyAlias=%s\nreleaseKeyPassword=%s\nreleaseKeyStore=android/app/keystore\nreleaseStorePassword=%s' \
+            $RELEASE_KEY_ALIAS $RELEASE_KEY_PASSWORD $RELEASE_STORE_PASSWORD > keystore.properties
       - android/create-keystore-properties:
           working-directory: android
           release-keystore: android/app/keystore
