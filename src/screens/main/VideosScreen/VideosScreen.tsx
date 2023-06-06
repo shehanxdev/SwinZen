@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TouchableWithoutFeedback, View } from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
+import { FlatList } from 'react-native';
 
 import { ToggleSwitch } from '@sz/components';
 import { tw } from '@sz/config';

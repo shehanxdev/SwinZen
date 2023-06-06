@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home screen should render Home screen correctly 1`] = `
+exports[`Home screen should render VideoThumbnailCard correctly 1`] = `
 <View
   collapsable={false}
   pointerEvents="box-none"

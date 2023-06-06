@@ -17,7 +17,7 @@ describe('Home screen', () => {
   };
   const getRenderedScreen = () => renderWithProviders(<VideoThumbnailCard video={mockVideo} />);
 
-  it(`should render Home screen correctly`, async () => {
+  it(`should render VideoThumbnailCard correctly`, async () => {
     const renderer = getRenderedScreen();
     const renderTree = renderer.toJSON();
     expect(renderTree).toMatchSnapshot();
