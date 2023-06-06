@@ -11,7 +11,7 @@ import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
 import { resetPasswordValidationSchema } from '@sz/utils';
 
-import { BaseAuthScreen } from '../components/BaseAuthScreen';
+import { BaseScreen } from './../../components';
 
 export function ResetPasswordScreen() {
   const {
@@ -40,7 +40,7 @@ export function ResetPasswordScreen() {
     }
   };
   return (
-    <BaseAuthScreen>
+    <BaseScreen>
       <View style={tw`flex-1 justify-between`} testID="ResetPasswordScreenTestID">
         <View style={tw`mx-5 flex-1 content-center`}>
           <View style={tw`items-center`}>
@@ -104,6 +104,6 @@ export function ResetPasswordScreen() {
           </View>
         </View>
       </View>
-    </BaseAuthScreen>
+    </BaseScreen>
   );
 }

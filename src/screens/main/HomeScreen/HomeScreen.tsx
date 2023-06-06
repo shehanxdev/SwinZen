@@ -8,7 +8,8 @@ import { Color, Route, TextVariant } from '@sz/constants';
 import { NavigationService, PermissionService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 
-import { BaseMainScreen, MonthSelector } from '../components';
+import { MonthSelector } from '../components';
+import { BaseScreen } from './../../components';
 import { AnalysisReportModal, SubscribeCard, VideoUploadCard } from './components';
 import { DataChart } from './components/DataChart/DataChart';
 import { ProfileImageBanner } from './components/ProfileImageBanner';
@@ -71,7 +72,7 @@ export function HomeScreen() {
   };
 
   return (
-    <BaseMainScreen isLoading={isLoading}>
+    <BaseScreen isLoading={isLoading}>
       <View style={tw`mx-4 mt-5`}>
         <SwingZenLogoIcon width={70} height={34} />
         <View style={tw`mt-7`}>
@@ -95,6 +96,6 @@ export function HomeScreen() {
         renderUploadedVideoCountData
       )}
       <AnalysisReportModal showModal={showModal} handleModalClose={() => setShowModal(false)} />
-    </BaseMainScreen>
+    </BaseScreen>
   );
 }

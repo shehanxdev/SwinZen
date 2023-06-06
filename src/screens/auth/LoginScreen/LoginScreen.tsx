@@ -21,7 +21,7 @@ import { NavigationService, SecureAuthService, ToastService } from '@sz/services
 import { useDispatch, useSelector } from '@sz/stores';
 import { loginValidationSchema } from '@sz/utils';
 
-import { BaseAuthScreen } from '../components';
+import { BaseScreen } from './../../components';
 
 export function LoginScreen() {
   const {
@@ -72,7 +72,7 @@ export function LoginScreen() {
   };
 
   return (
-    <BaseAuthScreen testID="LoginScreenTestID">
+    <BaseScreen testID="LoginScreenTestID">
       <View style={tw`flex-1 justify-between`}>
         <View style={tw`flex mt-10 mx-5`}>
           <View style={tw`items-center`}>
@@ -153,6 +153,6 @@ export function LoginScreen() {
           </Text>
         </View>
       </View>
-    </BaseAuthScreen>
+    </BaseScreen>
   );
 }

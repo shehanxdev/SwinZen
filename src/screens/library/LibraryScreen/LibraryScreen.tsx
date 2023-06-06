@@ -6,8 +6,7 @@ import { tw } from '@sz/config';
 import { Color, Route, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
-import { TabScreenHeader } from '../../components';
-import { BaseMainScreen } from '../../main/components';
+import { BaseScreen, TabScreenHeader } from '../../components';
 import { GolfTipsWrapper } from '../components';
 import { golfTips, sliderData, toggleSwitchOptions } from './LibraryData';
 import { LinksSlider } from './components';
@@ -18,7 +17,7 @@ export function LibraryScreen() {
   const [switchValue, setSwitchValue] = useState<SwitchValueDataType>('usingTheApp');
 
   return (
-    <BaseMainScreen>
+    <BaseScreen>
       <TabScreenHeader title="SwingZen university" />
       <View style={tw`flex-1 mx-4 mt-6.25 mb-4`}>
         <ToggleSwitch
@@ -44,6 +43,6 @@ export function LibraryScreen() {
         </View>
         <GolfTipsWrapper golfTips={golfTips} />
       </View>
-    </BaseMainScreen>
+    </BaseScreen>
   );
 }

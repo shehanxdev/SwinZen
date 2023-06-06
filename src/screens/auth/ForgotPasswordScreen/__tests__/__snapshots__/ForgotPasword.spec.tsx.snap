@@ -58,7 +58,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
       style={
         {
           "height": "100%",
-          "position": "absolute",
+          "paddingTop": 50,
         }
       }
     >
