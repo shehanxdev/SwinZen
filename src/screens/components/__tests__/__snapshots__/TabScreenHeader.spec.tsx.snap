@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabScreenHeader Should render 1`] = `
+<View
+  collapsable={false}
+  pointerEvents="box-none"
+  style={
+    {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "paddingTop": 32,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#F8F9FA",
+            "lineHeight": 28,
+          },
+          {
+            "fontFamily": "SourceSansPro-SemiBold",
+            "fontSize": 24,
+            "fontWeight": "600",
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Title
+    </Text>
+  </View>
+</View>
+`;
