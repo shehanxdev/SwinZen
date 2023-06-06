@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { ActivityIndicator, Alert, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, TouchableOpacity, View } from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {
   CameraOptions,
@@ -16,6 +16,8 @@ import { Color, TextVariant } from '@sz/constants';
 import { ToastService } from '@sz/services';
 import { useSelector } from '@sz/stores';
 import { getIntials } from '@sz/utils';
+
+import { ImageUplaodModal } from '../ImageUplaodModal';
 
 //Note::below values are in PX
 const PROFILE_IMAGE_DIMENTIONS = {
@@ -51,6 +53,8 @@ type ImagePickType = 'capture' | 'library';
 
 export function ProfileImageUpload() {
   const [newProfileImageData, setNewProfileImageData] = useState<ImagePickerResponse>(null);
+  const [showModal, setShowModal] = useState<boolean>(false);
+
   const userData = useSelector(state => state.userStore.userData);
   const userProfilePic = userData?.profilePicture;
   const loading = useSelector(state => state.loading.effects.userStore.changeProfilePicture);
@@ -118,30 +122,19 @@ export function ProfileImageUpload() {
 
   return (
     <View testID="ProfileImageComponentTestID" style={tw`m-auto`}>
-      <TouchableOpacity
-        onPress={() => {
-          //TODO:: will be changed after popup common component implemented
-          Alert.alert('Choose option', '', [
-            {
-              text: 'Camera',
-              onPress: () => {
-                onButtonPress('capture').catch(console.error);
-              },
-            },
-            {
-              text: 'Gallery',
-              onPress: () => {
-                onButtonPress().catch(console.error);
-              },
-            },
-          ]);
-        }}>
+      <TouchableOpacity onPress={() => setShowModal(true)}>
         {renderProfileImage}
         <View
           style={tw`w-[${CAMERA_ICON_DIMENTIONS.width}px] h-[${CAMERA_ICON_DIMENTIONS.height}px] rounded-full absolute right-[${CAMERA_ICON_POSITION.right}px] top-[${CAMERA_ICON_POSITION.top}px] justify-center items-center bg-Neutral-Sz100 z-20`}>
           <ProfileImageChangeCameraIcon />
         </View>
       </TouchableOpacity>
+      <ImageUplaodModal
+        showModal={showModal}
+        handleCamera={() => onButtonPress('capture').catch(console.error)}
+        handleGallery={onButtonPress}
+        handleModalClose={() => setShowModal(false)}
+      />
     </View>
   );
 }
