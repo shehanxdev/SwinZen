@@ -7,12 +7,13 @@ import { GolfTipDataType } from '@sz/models';
 import { GolfTipCard } from '../GolfTipCard';
 
 interface GolfTipsWrapperProps {
+  testID?: string;
   golfTips: GolfTipDataType[];
 }
 
-export function GolfTipsWrapper({ golfTips }: GolfTipsWrapperProps) {
+export function GolfTipsWrapper({ golfTips, testID }: GolfTipsWrapperProps) {
   return (
-    <View style={tw`w-full flex-row flex-wrap justify-between gap-y-9 gap-x-1`}>
+    <View style={tw`w-full flex-row flex-wrap justify-between gap-y-9 gap-x-1`} testID={testID}>
       {golfTips.map(item => {
         return (
           <GolfTipCard
