@@ -3,8 +3,15 @@ import { ActivityIndicator, Dimensions, Image, Pressable, ScrollView, View } fro
 import Video from 'react-native-video';
 
 import { tw } from '@sz/config';
-import { Color, TextVariant } from '@sz/constants';
-import { DURATION_WINDOW_WIDTH, FRAME_PER_SEC, POPLINE_POSITION, TILE_HEIGHT, TILE_WIDTH } from '@sz/constants';
+import {
+  Color,
+  DURATION_WINDOW_WIDTH,
+  FRAME_PER_SEC,
+  POPLINE_POSITION,
+  TILE_HEIGHT,
+  TILE_WIDTH,
+  TextVariant,
+} from '@sz/constants';
 
 import { ErrorIcon, PauseIcon, PlayIcon } from '../Icon';
 import { Text } from '../Typography';

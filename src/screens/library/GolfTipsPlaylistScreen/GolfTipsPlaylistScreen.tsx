@@ -9,6 +9,8 @@ import { PlaylistItem } from '../components';
 import { BaseScreen } from './../../../screens/components';
 import { golfTipsPlaylistDummyData } from './GolfTipsPlaylistDummyData';
 
+const renderItemSeparatorComponent = () => <View style={tw`h-2`}></View>;
+
 export function GolfTipsPlaylistScreen({ route }) {
   //TODO:: These states can be changed according to the integrations
   const [, setPlayingVideoSource] = useState(golfTipsPlaylistDummyData[0].videoSource);
@@ -37,7 +39,7 @@ export function GolfTipsPlaylistScreen({ route }) {
         </View>
         <FlatList
           data={golfTipsPlaylistDummyData}
-          ItemSeparatorComponent={() => <View style={tw`h-2`}></View>}
+          ItemSeparatorComponent={renderItemSeparatorComponent}
           renderItem={({ item, index }) => (
             <Pressable onPress={() => handleListItemPress(index)}>
               <PlaylistItem
