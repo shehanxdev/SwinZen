@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { View } from 'react-native';
 import { Button as RNPaperButton } from 'react-native-paper';
-import Animated, { useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
+import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 
 import { tw } from '@sz/config';
 import { Color, TextVariant } from '@sz/constants';
@@ -39,11 +39,11 @@ export function Button({
   //handle loading animation when the loading state changes
   useEffect(() => {
     if (loading) {
-      width.value = withSpring(animatedButtonBoundries.loadingWidth);
-      borderRadius.value = withSpring(animatedButtonBoundries.loadingBorderRadius);
+      width.value = withTiming(animatedButtonBoundries.loadingWidth);
+      borderRadius.value = withTiming(animatedButtonBoundries.loadingBorderRadius);
     } else {
       width.value = withTiming(animatedButtonBoundries.initialWidth);
-      borderRadius.value = withSpring(animatedButtonBoundries.initialBorderRadius);
+      borderRadius.value = withTiming(animatedButtonBoundries.initialBorderRadius);
     }
   }, [loading]);
 
@@ -79,7 +79,7 @@ export function Button({
         compact={true}
         uppercase={uppercase}
         disabled={disabled}
-        onPress={onPress}
+        onPress={!disabled && !loading && onPress}
         style={tw`flex-1`}
         contentStyle={tw`h-12`}
         testID={testID}
