@@ -107,6 +107,42 @@ exports[`HowToShoot Screen screen should render HowToShoot Screen correctly 1`] 
                 Have your buddy take 4 paces/12 ft behind the ball pointing towards the target.
 
               </Text>
+              <View
+                style={
+                  [
+                    {
+                      "overflow": "hidden",
+                    },
+                    {
+                      "borderColor": "#FFFFFF",
+                      "borderWidth": 4,
+                      "height": 206,
+                      "width": "100%",
+                    },
+                  ]
+                }
+              >
+                <FastImageView
+                  defaultSource={null}
+                  resizeMode="cover"
+                  source={
+                    {
+                      "cache": "immutable",
+                      "priority": "high",
+                      "uri": "https://video-thumbnails.dev.swingzen.com/Take%20Down%20the%20Line%204%20paces%20Behind%20Ball.gif",
+                    }
+                  }
+                  style={
+                    {
+                      "bottom": 0,
+                      "left": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                />
+              </View>
               <Text
                 style={
                   [
@@ -123,9 +159,46 @@ exports[`HowToShoot Screen screen should render HowToShoot Screen correctly 1`] 
                   ]
                 }
               >
-                Have your buddy hold the phone in portrait mode.
+                
+Have your buddy hold the phone in portrait mode.
 
               </Text>
+              <View
+                style={
+                  [
+                    {
+                      "overflow": "hidden",
+                    },
+                    {
+                      "borderColor": "#FFFFFF",
+                      "borderWidth": 4,
+                      "height": 206,
+                      "width": "100%",
+                    },
+                  ]
+                }
+              >
+                <FastImageView
+                  defaultSource={null}
+                  resizeMode="cover"
+                  source={
+                    {
+                      "cache": "immutable",
+                      "priority": "high",
+                      "uri": "https://video-thumbnails.dev.swingzen.com/Landscape%20and%20Portrait.gif",
+                    }
+                  }
+                  style={
+                    {
+                      "bottom": 0,
+                      "left": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                />
+              </View>
             </View>
             <View
               style={
@@ -311,7 +384,7 @@ exports[`HowToShoot Screen screen should render HowToShoot Screen correctly 1`] 
             </View>
           </View>
           <View
-            testID="PlanSubscriptionCardTestID"
+            testID="InstructionsSkipModalTestID"
           >
             <Modal
               animationType="none"

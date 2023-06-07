@@ -13,7 +13,7 @@ interface InstructionsSkipModalProps {
 }
 
 export function InstructionsSkipModal({
-  testID = 'PlanSubscriptionCardTestID',
+  testID = 'InstructionsSkipModalTestID',
   showModal,
   handleModalClose,
   onSkipped,

@@ -1,10 +1,21 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import { TouchableOpacity, View } from 'react-native';
+import FastImage from 'react-native-fast-image';
 
 import { Button, CrossIcon, Link, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, Route, SetupValuesType, TextAlignment, TextVariant } from '@sz/constants';
+import {
+  Color,
+  DownTheLineGIF,
+  FaceOnGIF,
+  LandscapeGIF,
+  Route,
+  SetupValuesType,
+  TextAlignment,
+  TextVariant,
+  TripodHeightGIF,
+} from '@sz/constants';
 import { VideoSetupValuesType } from '@sz/models';
 import { NavigationService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
@@ -77,12 +88,24 @@ export function HowToShootScreen({ route }) {
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
           {`Take 4 paces/12 ft behind the ball pointing towards the target.\n`}
         </Text>
+        <FastImage
+          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
+          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: DownTheLineGIF }}
+        />
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
-          {`Set your tripod 4-5 feet high.\n`}
+          {`\nSet your tripod 4-5 feet high.\n`}
         </Text>
+        <FastImage
+          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
+          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: TripodHeightGIF }}
+        />
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
-          {`Position your phone in portrait mode.\n`}
+          {`\nPosition your phone in portrait mode.\n`}
         </Text>
+        <FastImage
+          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
+          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: LandscapeGIF }}
+        />
       </View>
     );
   }, []);
@@ -96,9 +119,17 @@ export function HowToShootScreen({ route }) {
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
           {`Have your buddy take 4 paces/12 ft behind the ball pointing towards the target.\n`}
         </Text>
+        <FastImage
+          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
+          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: DownTheLineGIF }}
+        />
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
-          {`Have your buddy hold the phone in portrait mode.\n`}
+          {`\nHave your buddy hold the phone in portrait mode.\n`}
         </Text>
+        <FastImage
+          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
+          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: LandscapeGIF }}
+        />
       </View>
     );
   }, []);
@@ -112,12 +143,24 @@ export function HowToShootScreen({ route }) {
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
           {`Take 3 paces/9 ft from the ball, directly in front of the golfer.\n`}
         </Text>
+        <FastImage
+          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
+          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: FaceOnGIF }}
+        />
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
-          {`Set your tripod 4-5 feet high.\n`}
+          {`\nSet your tripod 4-5 feet high.\n`}
         </Text>
+        <FastImage
+          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
+          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: TripodHeightGIF }}
+        />
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
-          {`Position your phone in landscape mode.\n`}
+          {`\nPosition your phone in landscape mode.\n`}
         </Text>
+        <FastImage
+          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
+          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: LandscapeGIF }}
+        />
       </View>
     );
   }, []);
@@ -131,9 +174,17 @@ export function HowToShootScreen({ route }) {
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
           {`Have your buddy take 3 paces/9 ft from the ball, directly in front of the golfer. \n`}
         </Text>
+        <FastImage
+          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
+          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: FaceOnGIF }}
+        />
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
-          {`Have your buddy take 3 paces/9 ft from the ball, directly in front of the golfer. \n`}
+          {`\nHave your buddy take 3 paces/9 ft from the ball, directly in front of the golfer. \n`}
         </Text>
+        <FastImage
+          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
+          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: LandscapeGIF }}
+        />
       </View>
     );
   }, []);
