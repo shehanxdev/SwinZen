@@ -132,7 +132,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                           },
                           {
                             "fontFamily": "SourceSansPro-SemiBold",
-                            "fontSize": 21,
+                            "fontSize": 24,
                             "fontWeight": "600",
                             "textAlign": "center",
                           },

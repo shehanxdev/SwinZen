@@ -1,7 +1,6 @@
 import React from 'react';
 import { Image, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
-import { LinearGradientProps } from 'react-native-linear-gradient';
+import LinearGradient, { LinearGradientProps } from 'react-native-linear-gradient';
 
 import { images } from '@sz/assets';
 import { tw } from '@sz/config';

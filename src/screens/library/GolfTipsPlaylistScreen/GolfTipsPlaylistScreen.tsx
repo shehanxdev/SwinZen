@@ -5,7 +5,8 @@ import { Text, VideoPlayer } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
-import { BaseLibraryScreen, PlaylistItem } from '../components';
+import { PlaylistItem } from '../components';
+import { BaseScreen } from './../../../screens/components';
 import { golfTipsPlaylistDummyData } from './GolfTipsPlaylistDummyData';
 
 export function GolfTipsPlaylistScreen({ route }) {
@@ -19,7 +20,7 @@ export function GolfTipsPlaylistScreen({ route }) {
   };
 
   return (
-    <BaseLibraryScreen wrapWithScrollView={false}>
+    <BaseScreen wrapWithScrollView={false}>
       <View style={tw`flex-1 mx-4 mt-6`}>
         <View style={tw``}>
           <VideoPlayer source="https://www.w3schools.com/html/mov_bbb.mp4" />
@@ -51,6 +52,6 @@ export function GolfTipsPlaylistScreen({ route }) {
           keyExtractor={item => item.id}
         />
       </View>
-    </BaseLibraryScreen>
+    </BaseScreen>
   );
 }

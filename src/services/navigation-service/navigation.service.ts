@@ -45,6 +45,7 @@ export class NavigationService {
     let navRoute = route;
 
     switch (route) {
+      // Auth Routes
       case Route.Login:
         navRoute = Route.AuthStack;
         navParams = {
@@ -123,6 +124,8 @@ export class NavigationService {
           },
         };
         break;
+
+      // Account Routes
       case Route.ProfileSettings:
         navRoute = Route.AccountStack;
         navParams = {
@@ -169,6 +172,8 @@ export class NavigationService {
           },
         };
         break;
+
+      // Info Routes
       case Route.AboutUs:
         navRoute = Route.InfoStack;
         navParams = {
@@ -219,6 +224,8 @@ export class NavigationService {
           },
         };
         break;
+
+      // Price Plans Routes
       case Route.PricePlans:
         navRoute = Route.PricePlansStack;
         navParams = {
@@ -239,6 +246,20 @@ export class NavigationService {
           },
         };
         break;
+
+      // Library Routes
+      case Route.GolfTips:
+        navRoute = Route.LibraryStack;
+        navParams = {
+          screen: Route.GolfTips,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
+
+      //
     }
 
     return { route: navRoute, params: navParams };

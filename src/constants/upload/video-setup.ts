@@ -1,4 +1,3 @@
-// import { SetupValuesType } from './video-setup.enum';
 import { ToggleSwitchDataType } from '@sz/models';
 
 import { SetupValuesType, VideoSetupSwitchType } from './video-setup.enum';

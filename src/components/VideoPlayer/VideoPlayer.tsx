@@ -44,12 +44,6 @@ export function VideoPlayer({ source }) {
   const getPopLinePlayTime = offset => {
     return (offset + (DURATION_WINDOW_WIDTH * parseFloat(POPLINE_POSITION)) / 100) / (FRAME_PER_SEC * TILE_WIDTH);
   };
-  // const configureDuration = ({ duration }) => {
-  //   let localFileName = `${RNFS.CachesDirectoryPath}/${dummySource}.mp4`;
-  //   const numberOfFrames = Math.ceil(duration);
-  //   const durationInMinsAndSeconds = convertToMinutesAndSeconds(Math.round(duration));
-  //   setDuration(durationInMinsAndSeconds);
-  // }
 
   const generateFrames = (filePath, numberOfFrames) => {
     let frames = [];

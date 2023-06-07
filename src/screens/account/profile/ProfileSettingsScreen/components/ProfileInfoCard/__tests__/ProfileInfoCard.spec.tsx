@@ -1,20 +1,24 @@
 import { render } from '@testing-library/react-native';
 import * as React from 'react';
 
-import { MonthSelector } from '../MonthSelector';
+import { ProfileInfoCard } from '../ProfileInfoCard';
 
-describe('MonthSelector component', () => {
-  const testID = 'MonthSelectorComponentTestID';
+describe('Profile Info Card component', () => {
+  const testID = 'ProfileInfoCardTestID';
+  const getRenderedComponent = () =>
+    render(
+      <ProfileInfoCard>
+        <></>
+      </ProfileInfoCard>,
+    );
 
-  const getRenderedComponent = () => render(<MonthSelector />);
-
-  it(`should render MonthSelector component correctly`, () => {
+  it(`should render component correctly`, () => {
     const renderer = getRenderedComponent();
     const renderTree = renderer.toJSON();
     expect(renderTree).toMatchSnapshot();
   });
 
-  it('should find the MonthSelector component via testID', () => {
+  it('should find the component via testID', () => {
     const { getByTestId } = getRenderedComponent();
     const foundScreen = getByTestId(testID);
     expect(foundScreen).toBeTruthy();

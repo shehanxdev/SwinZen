@@ -19,3 +19,13 @@ export function mapUserData(data: User): UserData {
     fcmTokens: data.fcmTokens,
   };
 }
+
+/**
+ * Returns user's intials letters
+ *
+ * @param {string} name - User's name.
+ * @returns {string} - User's intial letters (only two letters).
+ */
+export function getIntials(name: string): string {
+  return name ? name.match(/\b\w/g).slice(0, 2).join('').toUpperCase() : 'SZ';
+}
