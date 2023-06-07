@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, ImageSourcePropType, Pressable, View } from 'react-native';
+import { ImageBackground, Pressable, View } from 'react-native';
 
 import { Text } from '@sz/components';
 import { tw } from '@sz/config';
@@ -8,16 +8,16 @@ import { Color, TextAlignment, TextVariant } from '@sz/constants';
 interface GolfTipCardProps {
   videosCount: number;
   label: string;
-  backgroundImage: ImageSourcePropType;
+  sourceUri: string;
   onPress: () => void;
 }
 
-export function GolfTipCard({ videosCount, label, backgroundImage, onPress }: GolfTipCardProps) {
+export function GolfTipCard({ videosCount, label, sourceUri, onPress }: GolfTipCardProps) {
   return (
     <Pressable onPress={onPress} style={tw`grow-0 shrink-0 basis-[30%]`}>
       <View style={tw`rounded-2.5 h-26.5`}>
         <ImageBackground
-          source={backgroundImage}
+          source={{ uri: sourceUri }}
           resizeMode="cover"
           style={tw`flex-1 justify-end`}
           imageStyle={tw`rounded-2.5`}>

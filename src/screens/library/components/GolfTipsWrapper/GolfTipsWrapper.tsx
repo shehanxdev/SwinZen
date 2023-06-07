@@ -2,26 +2,26 @@ import React from 'react';
 import { View } from 'react-native';
 
 import { tw } from '@sz/config';
-import { GolfTipDataType } from '@sz/models';
+import { VideoCatData } from '@sz/models';
 
 import { GolfTipCard } from '../GolfTipCard';
 
 interface GolfTipsWrapperProps {
-  golfTips: GolfTipDataType[];
+  golfTips: Array<VideoCatData>;
 }
 
 export function GolfTipsWrapper({ golfTips }: GolfTipsWrapperProps) {
   return (
     <View style={tw`w-full flex-row flex-wrap justify-between gap-y-9 gap-x-1`}>
-      {golfTips.map(item => {
+      {golfTips?.map(item => {
         return (
           <GolfTipCard
-            videosCount={item.videosCount}
-            key={item.id}
-            label={item.label}
-            backgroundImage={item.backgroundImage}
+            key={item.name}
+            videosCount={item.videos?.length}
+            label={item.name}
+            sourceUri={item.thumbnailUrl}
             //TODO:: implement the navigation
-            onPress={() => console.log(`navigate to ${item.label} playlist screen`)}
+            onPress={() => console.log(`navigate to ${item.name} playlist screen`)}
           />
         );
       })}
