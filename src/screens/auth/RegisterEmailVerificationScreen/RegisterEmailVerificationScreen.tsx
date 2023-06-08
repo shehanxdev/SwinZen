@@ -11,8 +11,9 @@ import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { getMaskedMail, otpValidationSchema } from '@sz/utils';
 
-import { BaseAuthScreen, OTPInput } from '../components';
+import { OTPInput } from '../components';
 import { ResendOtpWithTimer } from '../components/ResendOtpWithTimer';
+import { BaseScreen } from './../../components';
 
 export function RegisterEmailVerificationScreen({ route }) {
   const {
@@ -66,7 +67,7 @@ export function RegisterEmailVerificationScreen({ route }) {
   };
 
   return (
-    <BaseAuthScreen>
+    <BaseScreen>
       <View style={tw`flex-1 justify-between`} testID="RegisterEmailVerificationScreenContainerTestID">
         <View style={tw`mt-8.75 mx-4`}>
           <View style={tw`items-center`}>
@@ -119,6 +120,6 @@ export function RegisterEmailVerificationScreen({ route }) {
           </Text>
         </View>
       </View>
-    </BaseAuthScreen>
+    </BaseScreen>
   );
 }

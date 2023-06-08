@@ -324,7 +324,9 @@ Have your buddy hold the phone in portrait mode.
                                 "fontFamily": "SourceSansPro-SemiBold",
                                 "fontWeight": "normal",
                               },
-                              undefined,
+                              {
+                                "color": "#283E36",
+                              },
                             ],
                           ]
                         }

@@ -59,7 +59,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
       style={
         {
           "height": "100%",
-          "position": "absolute",
+          "paddingTop": 50,
         }
       }
     >
@@ -1555,7 +1555,9 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                                     "fontFamily": "SourceSansPro-SemiBold",
                                     "fontWeight": "normal",
                                   },
-                                  undefined,
+                                  {
+                                    "color": "#283E36",
+                                  },
                                 ],
                               ]
                             }

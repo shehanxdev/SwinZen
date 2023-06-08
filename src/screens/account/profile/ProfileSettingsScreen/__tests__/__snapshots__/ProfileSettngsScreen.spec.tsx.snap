@@ -394,7 +394,9 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                                   "fontFamily": "SourceSansPro-SemiBold",
                                   "fontWeight": "normal",
                                 },
-                                undefined,
+                                {
+                                  "color": "#283E36",
+                                },
                               ],
                             ]
                           }

@@ -5,6 +5,7 @@ import { images } from '@sz/assets';
 import { tw } from '@sz/config';
 import { useHeaderHeight } from '@sz/hooks';
 
+//This component is needed since, Upload screen has a different base screen
 export interface BaseUploadScreenProps extends PropsWithChildren {
   testID?: string;
   isSetupScreen?: boolean;

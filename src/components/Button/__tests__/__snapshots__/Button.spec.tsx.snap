@@ -118,7 +118,9 @@ exports[`Button Component should render correctly should render correctly with [
                   "fontFamily": "System",
                   "fontWeight": "500",
                 },
-                undefined,
+                {
+                  "color": "#2125293d",
+                },
               ],
             ]
           }
@@ -266,7 +268,9 @@ exports[`Button Component should render correctly should render correctly with [
                   "fontFamily": "System",
                   "fontWeight": "500",
                 },
-                undefined,
+                {
+                  "color": "#DEE2E6",
+                },
               ],
             ]
           }
@@ -414,7 +418,9 @@ exports[`Button Component should render correctly should render correctly with [
                   "fontFamily": "System",
                   "fontWeight": "500",
                 },
-                undefined,
+                {
+                  "color": "#283E36",
+                },
               ],
             ]
           }
