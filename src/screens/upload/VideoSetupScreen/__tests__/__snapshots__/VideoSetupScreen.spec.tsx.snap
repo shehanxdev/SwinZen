@@ -1265,7 +1265,9 @@ exports[`Video Setup Screen Screen should render Video Setup Screen correctly 1`
                               "fontFamily": "System",
                               "fontWeight": "500",
                             },
-                            undefined,
+                            {
+                              "color": "#F8F9FA",
+                            },
                           ],
                         ]
                       }

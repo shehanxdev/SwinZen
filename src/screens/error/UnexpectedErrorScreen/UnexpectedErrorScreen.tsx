@@ -6,8 +6,7 @@ import { Button, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextVariant } from '@sz/constants';
 
-//TODO::replace with a relevant BaseView
-import { BaseAuthScreen } from './../../../screens/auth/components';
+import { BaseScreen } from './../../components';
 
 interface UnexpectedErrorScreenProps {
   error: Error;
@@ -17,7 +16,7 @@ interface UnexpectedErrorScreenProps {
 export function UnexpectedErrorScreen({ resetError }: UnexpectedErrorScreenProps) {
   return (
     // TODO:::This BaseAuthScreen should be renamed and sharable among the multiple domains without repeating the code. Update here once this done.
-    <BaseAuthScreen>
+    <BaseScreen>
       <View style={tw`flex-1 items-center mx-5 justify-between`}>
         <View style={tw`m-auto`}>
           <View style={tw`mb-6`}>
@@ -44,6 +43,6 @@ export function UnexpectedErrorScreen({ resetError }: UnexpectedErrorScreenProps
           />
         </View>
       </View>
-    </BaseAuthScreen>
+    </BaseScreen>
   );
 }

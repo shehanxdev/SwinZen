@@ -11,7 +11,7 @@ import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { forgotPasswordValidationSchema } from '@sz/utils';
 
-import { BaseAuthScreen } from '../components/BaseAuthScreen';
+import { BaseScreen } from './../../components';
 
 export function ForgotPasswordScreen() {
   const {
@@ -38,7 +38,7 @@ export function ForgotPasswordScreen() {
     }
   };
   return (
-    <BaseAuthScreen>
+    <BaseScreen>
       <View style={tw`flex-1 justify-between`} testID="ForgotPasswordScreenTestID">
         <View style={tw`mx-5 flex-1 content-center`}>
           <View style={tw`items-center`}>
@@ -88,6 +88,6 @@ export function ForgotPasswordScreen() {
           />
         </View>
       </View>
-    </BaseAuthScreen>
+    </BaseScreen>
   );
 }
