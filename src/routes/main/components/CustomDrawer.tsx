@@ -18,7 +18,7 @@ import {
 } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route } from '@sz/constants';
-import { NavigationService, ToastService } from '@sz/services';
+import { NavigationService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
 
 import { DrawerItem } from './DrawerItem';
@@ -45,12 +45,8 @@ export function CustomDrawer() {
   const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
 
-  const handleLogout = async (): Promise<void> => {
-    try {
-      await dispatch.userStore.logoutUser();
-    } catch (error) {
-      ToastService.error({ message: 'Failed!', description: error.data.message });
-    }
+  const handleLogout = () => {
+    dispatch.userStore.logoutUser().catch(console.error);
   };
 
   return (
