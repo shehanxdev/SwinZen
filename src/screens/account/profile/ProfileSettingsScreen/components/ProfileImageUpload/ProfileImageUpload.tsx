@@ -86,6 +86,14 @@ export function ProfileImageUpload() {
     }
   };
 
+  const openCamera = (): void => {
+    onButtonPress('capture').catch(console.error);
+  };
+
+  const openGallery = (): void => {
+    onButtonPress().catch(console.error);
+  };
+
   const renderProfileImage = useMemo(
     () =>
       userProfilePic ? (
@@ -131,8 +139,8 @@ export function ProfileImageUpload() {
       </TouchableOpacity>
       <ImageUplaodModal
         showModal={showModal}
-        handleCamera={() => onButtonPress('capture').catch(console.error)}
-        handleGallery={onButtonPress}
+        handleCamera={openCamera}
+        handleGallery={openGallery}
         handleModalClose={() => setShowModal(false)}
       />
     </View>
