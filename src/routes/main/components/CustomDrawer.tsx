@@ -1,6 +1,6 @@
 import { BlurView } from '@react-native-community/blur';
 import { DrawerContentScrollView } from '@react-navigation/drawer';
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 
 import { SwingZenLogoSvg } from '@sz/assets';
@@ -22,6 +22,7 @@ import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
 
 import { DrawerItem } from './DrawerItem';
+import { LogoutModal } from './LogoutModal';
 
 type DrawerContent = {
   title: string;
@@ -41,9 +42,10 @@ const commonDrawerContents: DrawerContent[] = [
 ];
 
 export function CustomDrawer() {
+  const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
 
-  const logout = async (): Promise<void> => {
+  const handleLogout = async (): Promise<void> => {
     try {
       await dispatch.userStore.logoutUser();
     } catch (error) {
@@ -77,9 +79,10 @@ export function CustomDrawer() {
             />
           ))}
           {/* NOTE::Edge case for logout */}
-          <DrawerItem title="Logout" icon={<DrawerLogoutIcon />} onPress={logout} />
+          <DrawerItem title="Logout" icon={<DrawerLogoutIcon />} onPress={() => setShowModal(true)} />
         </DrawerContentScrollView>
       </BlurView>
+      <LogoutModal showModal={showModal} handleModalClose={() => setShowModal(false)} handleLogout={handleLogout} />
     </View>
   );
 }
