@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { TouchableWithoutFeedback, View } from 'react-native';
-import { FlatList } from 'react-native';
+import { FlatList, TouchableWithoutFeedback, View } from 'react-native';
 
 import { ToggleSwitch } from '@sz/components';
 import { tw } from '@sz/config';
 import { CameraAngles } from '@sz/constants';
-import { VideoData } from '@sz/models';
+import { VideoMetaData } from '@sz/models';
 
 import { TabScreenHeader } from '../../components/TabScreenHeader';
 import { VideoThumbnailCard } from '../HomeScreen/components';
@@ -22,7 +21,7 @@ export function VideosScreen() {
   const [selctedTab, setSelctedTab] = useState<string>(CameraAngles.All_Videos);
   const [selectedItem, setSelectedItem] = useState<string>();
 
-  const filterVideos = (videos: VideoData[], currentTab: string) => {
+  const filterVideos = (videos: VideoMetaData[], currentTab: string) => {
     if (currentTab === CameraAngles.All_Videos) {
       return videos;
     } else if (currentTab === CameraAngles.Down_The_Line) {
@@ -43,7 +42,7 @@ export function VideosScreen() {
     </TouchableWithoutFeedback>
   );
   return (
-    <BaseMainScreen disableScrollView>
+    <BaseMainScreen wrapWithScrollView={false}>
       <TabScreenHeader title="My videos" />
       <View style={tw`mx-4 mb-36`}>
         <View style={tw`mb-9 mt-4`}>

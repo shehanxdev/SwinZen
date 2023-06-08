@@ -1,4 +1,4 @@
-export interface VideoData {
+export interface VideoMetaData {
   id: string;
   userId: string;
   name: string;

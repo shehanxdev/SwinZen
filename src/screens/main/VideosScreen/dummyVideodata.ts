@@ -1,6 +1,6 @@
-import { VideoData } from '@sz/models';
+import { VideoMetaData } from '@sz/models';
 
-export const dummyVideoData: VideoData[] = [
+export const dummyVideoData: VideoMetaData[] = [
   {
     id: 'id',
     userId: 'string',

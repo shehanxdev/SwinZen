@@ -5,13 +5,13 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import { PlayButtonIcon } from '@sz/components';
 import { tw } from '@sz/config';
-import { VideoData } from '@sz/models';
+import { VideoMetaData } from '@sz/models';
 
 import { CircularScoreIndicator } from '../../../components/CircularScoreIndicator';
 import { VideoUploadCardFooter } from '../VideoUploadCard';
 
 export interface VideoThumbnailCardProps {
-  video: VideoData;
+  video: VideoMetaData;
 }
 
 export function VideoThumbnailCard({ video }: VideoThumbnailCardProps) {
