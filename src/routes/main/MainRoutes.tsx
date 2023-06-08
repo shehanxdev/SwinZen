@@ -7,7 +7,7 @@ import { useFirebaseNotifications } from '@sz/hooks';
 import { AccountStack } from '../account';
 import { LibraryStack } from '../library';
 import { PricePlansStack } from '../pricePlans';
-import { VideoUploadStack } from '../videoUpload';
+import { VideoUploadStack } from '../videosUpload';
 import { MainDrawerStack } from './MainDrawerRoutes';
 
 const Stack = createNativeStackNavigator();
