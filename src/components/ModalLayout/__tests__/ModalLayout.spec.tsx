@@ -42,20 +42,21 @@ describe('ModalLayout component', () => {
 
   it('calls `handleModalClose` when close icon is pressed', () => {
     const { getByTestId } = getRenderedComponent();
-    const closeIcon = getByTestId('closeIconTestID');
+    const closeIcon = getByTestId(`${testID}-closeIconTestID`);
     fireEvent.press(closeIcon);
     expect(handleModalCloseMock).toHaveBeenCalledTimes(1);
   });
 
   it('calls `onLeftButtonPress` when left button is pressed', () => {
     const { getByTestId } = getRenderedComponent();
-    const leftButton = getByTestId('leftButtonTestID');
+    const leftButton = getByTestId(`${testID}-leftButtonTestID`);
     fireEvent.press(leftButton);
     expect(onLeftButtonPressMock).toHaveBeenCalledTimes(1);
   });
+
   it('calls `onRightButtonPress` when right button is pressed', () => {
     const { getByTestId } = getRenderedComponent();
-    const rightButton = getByTestId('rightButtonTestID');
+    const rightButton = getByTestId(`${testID}-rightButtonTestID`);
     fireEvent.press(rightButton);
     expect(onRightButtonPressMock).toHaveBeenCalledTimes(1);
   });

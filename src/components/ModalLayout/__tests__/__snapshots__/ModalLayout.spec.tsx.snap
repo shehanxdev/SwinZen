@@ -160,7 +160,7 @@ exports[`ModalLayout component should render ModalLayout component correctly 1`]
               "top": 12,
             }
           }
-          testID="closeIconTestID"
+          testID="ModalLayoutTestID-closeIconTestID"
         >
           <SvgMock
             fill="#DEE2E6"
@@ -254,7 +254,7 @@ exports[`ModalLayout component should render ModalLayout component correctly 1`]
                       },
                     ]
                   }
-                  testID="leftButtonTestID"
+                  testID="ModalLayoutTestID-leftButtonTestID"
                 >
                   <View
                     style={
@@ -408,7 +408,7 @@ exports[`ModalLayout component should render ModalLayout component correctly 1`]
                       },
                     ]
                   }
-                  testID="rightButtonTestID"
+                  testID="ModalLayoutTestID-rightButtonTestID"
                 >
                   <View
                     style={
