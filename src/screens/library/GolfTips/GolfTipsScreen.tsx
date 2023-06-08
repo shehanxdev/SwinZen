@@ -10,7 +10,7 @@ import { BaseMainScreen } from '../../main/components';
 import { GolfTipsWrapper } from '../components';
 
 export function GolfTipsScreen() {
-  const { isLoading, data } = useFetch(() => VideoService.getVideoCategories({ sortBy: SortDataType.UPDATED }));
+  const { isLoading, data } = useFetch(() => VideoService.getVideoCategories({ sortBy: SortDataType.UPDATED_DESCEND }));
 
   return (
     <BaseMainScreen>

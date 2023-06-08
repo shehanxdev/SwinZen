@@ -19,7 +19,7 @@ export function LibraryScreen() {
   const [switchValue, setSwitchValue] = useState<SwitchValueDataType>('usingTheApp');
 
   const { isLoading, data } = useFetch(() =>
-    VideoService.getVideoCategories({ limit: 3, sortBy: SortDataType.UPDATED }),
+    VideoService.getVideoCategories({ limit: 3, sortBy: SortDataType.UPDATED_DESCEND }),
   );
 
   return (
