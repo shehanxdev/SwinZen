@@ -18,7 +18,7 @@ export function LibraryScreen() {
   const [switchValue, setSwitchValue] = useState<SwitchValueDataType>('usingTheApp');
 
   return (
-    <BaseMainScreen>
+    <BaseMainScreen testID="LibraryScreenTestID">
       <TabScreenHeader title="SwingZen university" />
       <View style={tw`flex-1 mx-4 mt-6.25 mb-4`}>
         <ToggleSwitch
