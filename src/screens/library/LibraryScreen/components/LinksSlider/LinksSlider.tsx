@@ -40,7 +40,7 @@ export function LinksSlider({ sliderData, testID }: LinksSliderProps) {
   }, [sliderData]);
 
   return (
-    <View style={tw`h-80`}>
+    <View style={tw`h-80`} testID={testID}>
       <Swiper activeDotStyle={tw`w-2.5 h-2.5 bg-white`} dotStyle={tw`bg-white opacity-50  w-2.5 h-2.5`}>
         {slides}
       </Swiper>
