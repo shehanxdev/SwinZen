@@ -117,8 +117,9 @@ exports[`ModalLayout component should render ModalLayout component correctly 1`]
             "backgroundColor": "#212529D9",
             "borderColor": "#495057",
             "borderRadius": 16,
+            "borderWidth": 1,
             "paddingBottom": 24,
-            "paddingTop": 32,
+            "paddingTop": 24,
             "position": "relative",
           }
         }
