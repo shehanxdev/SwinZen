@@ -41,7 +41,7 @@ export function ModalLayout({
       animationInTiming={200}
       animationOutTiming={100}>
       <View
-        style={tw`rounded-2xl bg-[${Color.Neutral.Sz700}] pt-8 pb-6 bg-[${Color.Transparency.Sz85}] border-[${Color.Neutral.Sz700}] relative`}>
+        style={tw`rounded-2xl pt-6 pb-6 bg-[${Color.Transparency.Sz85}] border border-[${Color.Neutral.Sz700}] relative`}>
         {showCloseIcon && (
           <Pressable style={tw`absolute top-3 right-3 `} onPress={handleModalClose}>
             <CrossIcon width={13} height={13} />
