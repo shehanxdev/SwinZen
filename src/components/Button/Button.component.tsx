@@ -1,14 +1,12 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import * as React from 'react';
+import { useMemo, useState } from 'react';
 import { View } from 'react-native';
 import { Button as RNPaperButton } from 'react-native-paper';
-import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 
 import { tw } from '@sz/config';
 import { Color, TextVariant } from '@sz/constants';
 
-import { LoadingIndicator } from '../LoadingIndicator';
 import { Text } from '../Typography';
-import { animatedButtonBoundries } from './Button.config';
 import { ButtonProps } from './Button.types';
 
 export function Button({
@@ -25,27 +23,10 @@ export function Button({
   disabledBorderColor = Color.Neutral.Sz700,
   disabled = false,
   uppercase = true,
+  fullWidth = true,
   loading = false,
 }: ButtonProps) {
   const [isButtonClicked, setIsButtonClicked] = useState<boolean>(false);
-
-  const width = useSharedValue(animatedButtonBoundries.initialWidth); //Has to go with percentages due to a technical blocker
-  const borderRadius = useSharedValue(animatedButtonBoundries.initialBorderRadius); //px
-
-  const buttonAnimatedStyles = useAnimatedStyle(() => {
-    return { width: width.value, borderRadius: borderRadius.value };
-  });
-
-  //handle loading animation when the loading state changes
-  useEffect(() => {
-    if (loading) {
-      width.value = withTiming(animatedButtonBoundries.loadingWidth);
-      borderRadius.value = withTiming(animatedButtonBoundries.loadingBorderRadius);
-    } else {
-      width.value = withTiming(animatedButtonBoundries.initialWidth);
-      borderRadius.value = withTiming(animatedButtonBoundries.initialBorderRadius);
-    }
-  }, [loading]);
 
   const buttonBackgroundColor = useMemo(() => {
     const buttonBackgroundColor =
@@ -65,22 +46,17 @@ export function Button({
   }, [disabled, disabledBorderColor, isButtonClicked]);
 
   return (
-    <Animated.View
-      style={[
-        tw`flex-row bg-[${buttonBackgroundColor}] rounded-2.5 justify-center shadow-none border border-[${buttonBorderColor}]`,
-        buttonAnimatedStyles,
-      ]}>
-      {loading && (
-        <View style={tw`absolute self-center z-1`}>
-          <LoadingIndicator size="small" color={textColor} />
-        </View>
-      )}
+    <View style={tw`flex-row`}>
       <RNPaperButton
+        labelStyle={{ color: textColor }}
         compact={true}
         uppercase={uppercase}
         disabled={disabled}
         onPress={!disabled && !loading && onPress}
-        style={tw`flex-1`}
+        loading={loading}
+        style={tw`bg-[${buttonBackgroundColor}] rounded-2.5 justify-center shadow-none border border-[${buttonBorderColor}] ${
+          fullWidth ? 'w-full' : undefined
+        }`}
         contentStyle={tw`h-12`}
         testID={testID}
         onTouchStart={() => {
@@ -90,12 +66,10 @@ export function Button({
           setIsButtonClicked(false);
         }}
         onLongPress={onLongPress}>
-        {!loading && (
-          <Text variant={TextVariant.Body1SemiBold} color={disabled ? disabledTextColor : textColor}>
-            {title}
-          </Text>
-        )}
+        <Text variant={TextVariant.Body1SemiBold} color={disabled ? disabledTextColor : textColor}>
+          {title}
+        </Text>
       </RNPaperButton>
-    </Animated.View>
+    </View>
   );
 }

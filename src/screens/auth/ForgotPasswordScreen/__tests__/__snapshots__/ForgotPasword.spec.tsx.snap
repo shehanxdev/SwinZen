@@ -395,28 +395,9 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                 >
                   <View
                     style={
-                      [
-                        {
-                          "backgroundColor": "#A2FD2F",
-                          "borderColor": "#00000000",
-                          "borderRadius": 10,
-                          "borderWidth": 1,
-                          "elevation": 0,
-                          "flexDirection": "row",
-                          "justifyContent": "center",
-                          "shadowColor": "#000",
-                          "shadowOffset": {
-                            "height": 0,
-                            "width": 0,
-                          },
-                          "shadowOpacity": 0,
-                          "shadowRadius": 0,
-                        },
-                        {
-                          "borderRadius": 10,
-                          "width": "100%",
-                        },
-                      ]
+                      {
+                        "flexDirection": "row",
+                      }
                     }
                   >
                     <View
@@ -425,23 +406,22 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                       onTouchStart={[Function]}
                       style={
                         {
-                          "backgroundColor": "transparent",
-                          "borderColor": "transparent",
-                          "borderRadius": 4,
+                          "backgroundColor": "#A2FD2F",
+                          "borderColor": "#00000000",
+                          "borderRadius": 10,
                           "borderStyle": "solid",
-                          "borderWidth": 0,
+                          "borderWidth": 1,
                           "elevation": 0,
-                          "flexBasis": "0%",
-                          "flexGrow": 1,
-                          "flexShrink": 1,
+                          "justifyContent": "center",
                           "minWidth": "auto",
-                          "shadowColor": "#000000",
+                          "shadowColor": "#000",
                           "shadowOffset": {
                             "height": 0,
                             "width": 0,
                           },
                           "shadowOpacity": 0,
                           "shadowRadius": 0,
+                          "width": "100%",
                         }
                       }
                     >
@@ -475,7 +455,7 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                               "overflow": "hidden",
                             },
                             {
-                              "borderRadius": 4,
+                              "borderRadius": 10,
                             },
                           ]
                         }
@@ -529,7 +509,9 @@ exports[`ForgotPasswordScreen Screen should render ForgotPasswordScreen correctl
                                     "fontFamily": "SourceSansPro-SemiBold",
                                     "fontWeight": "normal",
                                   },
-                                  undefined,
+                                  {
+                                    "color": "#283E36",
+                                  },
                                 ],
                               ]
                             }

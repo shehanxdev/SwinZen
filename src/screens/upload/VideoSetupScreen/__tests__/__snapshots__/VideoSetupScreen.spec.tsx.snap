@@ -1151,28 +1151,9 @@ exports[`Video Setup Screen Screen should render Video Setup Screen correctly 1`
           >
             <View
               style={
-                [
-                  {
-                    "backgroundColor": "#1A5C23",
-                    "borderColor": "#00000000",
-                    "borderRadius": 10,
-                    "borderWidth": 1,
-                    "elevation": 0,
-                    "flexDirection": "row",
-                    "justifyContent": "center",
-                    "shadowColor": "#000",
-                    "shadowOffset": {
-                      "height": 0,
-                      "width": 0,
-                    },
-                    "shadowOpacity": 0,
-                    "shadowRadius": 0,
-                  },
-                  {
-                    "borderRadius": 10,
-                    "width": "100%",
-                  },
-                ]
+                {
+                  "flexDirection": "row",
+                }
               }
             >
               <View
@@ -1181,23 +1162,22 @@ exports[`Video Setup Screen Screen should render Video Setup Screen correctly 1`
                 onTouchStart={[Function]}
                 style={
                   {
-                    "backgroundColor": "transparent",
-                    "borderColor": "transparent",
-                    "borderRadius": 4,
+                    "backgroundColor": "#1A5C23",
+                    "borderColor": "#00000000",
+                    "borderRadius": 10,
                     "borderStyle": "solid",
-                    "borderWidth": 0,
+                    "borderWidth": 1,
                     "elevation": 0,
-                    "flexBasis": "0%",
-                    "flexGrow": 1,
-                    "flexShrink": 1,
+                    "justifyContent": "center",
                     "minWidth": "auto",
-                    "shadowColor": "#000000",
+                    "shadowColor": "#000",
                     "shadowOffset": {
                       "height": 0,
                       "width": 0,
                     },
                     "shadowOpacity": 0,
                     "shadowRadius": 0,
+                    "width": "100%",
                   }
                 }
               >
@@ -1231,7 +1211,7 @@ exports[`Video Setup Screen Screen should render Video Setup Screen correctly 1`
                         "overflow": "hidden",
                       },
                       {
-                        "borderRadius": 4,
+                        "borderRadius": 10,
                       },
                     ]
                   }
@@ -1285,7 +1265,9 @@ exports[`Video Setup Screen Screen should render Video Setup Screen correctly 1`
                               "fontFamily": "System",
                               "fontWeight": "500",
                             },
-                            undefined,
+                            {
+                              "color": "#F8F9FA",
+                            },
                           ],
                         ]
                       }
