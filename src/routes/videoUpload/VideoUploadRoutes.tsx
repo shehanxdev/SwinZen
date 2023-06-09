@@ -1,5 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
+import { Platform } from 'react-native';
 
 import { Route } from '@sz/constants';
 import { HowToShootScreen, PreValidationScreen, VideoSetupScreen } from '@sz/screens';
@@ -35,6 +36,7 @@ export function VideoUploadStack() {
         options={{
           headerLeft: renderHeaderTitle,
           title: '',
+          presentation: Platform.OS === 'ios' ? 'modal' : 'containedModal',
         }}
       />
       <Stack.Screen
