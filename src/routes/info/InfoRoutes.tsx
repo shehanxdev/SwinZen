@@ -10,9 +10,6 @@ export type InfoStackParamList = {
   [Route.AboutUs]: {
     // Can be used for future props
   };
-  [Route.ContactUs]: {
-    // Can be used for future props
-  };
   [Route.FAQ]: {
     // Can be used for future props
   };
@@ -20,6 +17,9 @@ export type InfoStackParamList = {
     // Can be used for future props
   };
   [Route.TermsOfUse]: {
+    // Can be used for future props
+  };
+  [Route.ContactUs]: {
     // Can be used for future props
   };
 };
@@ -39,10 +39,10 @@ export function InfoStack() {
         animation: 'slide_from_right',
       }}>
       <Stack.Screen name={Route.AboutUs} component={AboutUsScreen} options={{ title: 'What is SwingZen?' }} />
-      <Stack.Screen name={Route.ContactUs} component={ContactUsScreen} options={{ title: 'Contact us' }} />
       <Stack.Screen name={Route.FAQ} component={FAQScreen} options={{ title: 'FAQ' }} />
       <Stack.Screen name={Route.PrivacyPolicy} component={PrivacyPolicyScreen} options={{ title: 'Privacy policy' }} />
       <Stack.Screen name={Route.TermsOfUse} component={TermsOfUseScreen} options={{ title: 'Terms of use' }} />
+      <Stack.Screen name={Route.ContactUs} component={ContactUsScreen} options={{ title: 'Contact us' }} />
     </Stack.Navigator>
   );
 }
