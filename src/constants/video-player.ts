@@ -1,7 +1,7 @@
-export const FRAME_PER_SEC = 1;
-export const FRAME_WIDTH = 80;
-export const TILE_HEIGHT = 80;
-export const TILE_WIDTH = FRAME_WIDTH / 2;
+export const FRAMES_PER_SECOND = 1;
+export const FRAME_SCALE = 80;
+export const FRAME_HEIGHT = 80;
+export const FRAME_WIDTH = FRAME_SCALE / 2;
 export const DURATION_WINDOW_DURATION = 4;
-export const DURATION_WINDOW_WIDTH = DURATION_WINDOW_DURATION * FRAME_PER_SEC * TILE_WIDTH;
+export const DURATION_WINDOW_WIDTH = DURATION_WINDOW_DURATION * FRAMES_PER_SECOND * FRAME_WIDTH;
 export const POPLINE_POSITION = '50%';

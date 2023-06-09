@@ -28,3 +28,17 @@ export const addPadToNumber = (number: number, size: number = 2): string => {
   }
   return num;
 };
+
+/**
+ * Converts a given seconds to minutes and seconds format => (00:00)
+ *
+ * @param {number} seconds - amount of seconds that needs to be converted
+ * @returns {string} formatted time
+ */
+export const convertToMinutesAndSeconds = (seconds: number) => {
+  let minutes = Math.floor(seconds / 60);
+  let remainingSeconds = seconds % 60;
+  let formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+  let formattedSeconds = remainingSeconds < 10 ? '0' + remainingSeconds : remainingSeconds;
+  return formattedMinutes + ':' + formattedSeconds;
+};

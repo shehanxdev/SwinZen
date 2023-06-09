@@ -6,19 +6,24 @@ import { tw } from '@sz/config';
 import {
   Color,
   DURATION_WINDOW_WIDTH,
-  FRAME_PER_SEC,
+  FRAMES_PER_SECOND,
+  FRAME_HEIGHT,
+  FRAME_WIDTH,
   POPLINE_POSITION,
-  TILE_HEIGHT,
-  TILE_WIDTH,
   TextVariant,
 } from '@sz/constants';
+import { FFmpegService } from '@sz/services';
+import { convertToMinutesAndSeconds } from '@sz/utils';
 
 import { ErrorIcon, PauseIcon, PlayIcon } from '../Icon';
 import { Text } from '../Typography';
-import { FFmpegWrapper } from './FFmpegWrapper';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 const blankSpaceWidth = SCREEN_WIDTH / 2 - DURATION_WINDOW_WIDTH / 2;
+
+const getPopLinePlayTime = offset => {
+  return (offset + (DURATION_WINDOW_WIDTH * parseFloat(POPLINE_POSITION)) / 100) / (FRAMES_PER_SECOND * FRAME_WIDTH);
+};
 
 export function VideoPlayer({ source }) {
   const videoPlayerRef = useRef(null);
@@ -34,22 +39,10 @@ export function VideoPlayer({ source }) {
     READY: { name: Symbol('READY') },
   });
 
-  const convertToMinutesAndSeconds = seconds => {
-    let minutes = Math.floor(seconds / 60);
-    let remainingSeconds = seconds % 60;
-    let formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
-    let formattedSeconds = remainingSeconds < 10 ? '0' + remainingSeconds : remainingSeconds;
-    return formattedMinutes + ':' + formattedSeconds;
-  };
-
   const handleOnProgress = ({ currentTime }) => {
     const currentTimeInSeconds = Math.round(currentTime);
     const currentProgress = convertToMinutesAndSeconds(currentTimeInSeconds);
     setProgress(currentProgress);
-  };
-
-  const getPopLinePlayTime = offset => {
-    return (offset + (DURATION_WINDOW_WIDTH * parseFloat(POPLINE_POSITION)) / 100) / (FRAME_PER_SEC * TILE_WIDTH);
   };
 
   const generateFrames = (filePath, numberOfFrames) => {
@@ -69,11 +62,12 @@ export function VideoPlayer({ source }) {
   const handleOnTouchEnd = () => {
     setPaused(false);
   };
+
   const handleOnTouchStart = () => {
     setPaused(true);
   };
 
-  const handleVideoLoad = ({ duration }) => {
+  const handleVideoLoad = async ({ duration }) => {
     setIsVideoLoading(false);
     let localFileName = `someRandomFileNamee`;
     const numberOfFrames = Math.ceil(duration);
@@ -84,7 +78,7 @@ export function VideoPlayer({ source }) {
       }),
     );
 
-    FFmpegWrapper.getFrames(
+    await FFmpegService.generateFramesFromVideo(
       localFileName,
       source,
       numberOfFrames,
@@ -117,8 +111,8 @@ export function VideoPlayer({ source }) {
             uri: 'file://' + frame,
           }}
           style={{
-            width: TILE_WIDTH,
-            height: TILE_HEIGHT,
+            width: FRAME_WIDTH,
+            height: FRAME_HEIGHT,
           }}
         />
       );

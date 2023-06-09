@@ -259,7 +259,15 @@ export class NavigationService {
         };
         break;
 
-      //
+      case Route.GolfTipsPlaylist:
+        navRoute = Route.LibraryStack;
+        navParams = {
+          screen: Route.GolfTipsPlaylist,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
     }
 
     return { route: navRoute, params: navParams };

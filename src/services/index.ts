@@ -1,4 +1,6 @@
 export * from './config-service';
+export * from './file-service';
+export * from './ffmpeg-service';
 export * from './http-service';
 export * from './jwt-decode-service';
 export * from './linking-service';

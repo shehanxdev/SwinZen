@@ -37,8 +37,8 @@ export interface UserState {
   refreshToken: string | null;
   nextActionToken: string | null;
 
-  //TODO::refactor profileData and userData to have common one
   userData: UserData | null;
+  //TODO::refactor profileData and userData to have common one
   userPlan: SubscribedData | null;
   profileData: UserProfileData | null;
 }
@@ -67,14 +67,14 @@ export const userStore = createModel<RootModel>()({
     clearNextActionToken(state: UserState) {
       return { ...state, nextActionToken: null };
     },
-    setUserProfileData(state: UserState, profileData: UserProfileData) {
-      return { ...state, profileData };
-    },
     setUserPlan(state: UserState, userPlan: SubscribedData | null) {
       return { ...state, userPlan };
     },
     setUserData(state: UserState, userData: UserData | null) {
       return { ...state, userData };
+    },
+    setUserProfileData(state: UserState, profileData: UserProfileData) {
+      return { ...state, profileData };
     },
     setProfilePicture(state: UserState, url: string) {
       return { ...state, userData: { ...state.userData, profilePicture: url } };
