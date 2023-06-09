@@ -10,8 +10,7 @@ exports[`HowToShoot Screen screen should render HowToShoot Screen correctly 1`] 
     }
   }
 >
-  <View
-    accessibilityIgnoresInvertColors={true}
+  <RCTSafeAreaView
     style={
       {
         "backgroundColor": "#212529",
@@ -20,369 +19,342 @@ exports[`HowToShoot Screen screen should render HowToShoot Screen correctly 1`] 
       }
     }
   >
-    <Image
-      style={
-        [
-          {
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
-          },
-          {
-            "height": "100%",
-            "width": undefined,
-          },
-          undefined,
-        ]
-      }
-      testID="HowToShootScreenTestID"
-    />
-    <RCTSafeAreaView
-      style={
+    <RCTScrollView
+      contentContainerStyle={
         {
-          "height": "100%",
-          "paddingTop": 50,
+          "flexGrow": 1,
         }
       }
     >
-      <RCTScrollView
-        contentContainerStyle={
-          {
-            "flexGrow": 1,
+      <View>
+        <View
+          style={
+            {
+              "flexBasis": "0%",
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "justifyContent": "space-between",
+              "marginLeft": 16,
+              "marginRight": 16,
+              "marginTop": 32,
+            }
           }
-        }
-      >
-        <View>
+          testID="HowToShootScreenTestID"
+        >
+          <View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#C0DBBF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Down The Line/Hand-Held Instructions
+
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Have your buddy take 4 paces/12 ft behind the ball pointing towards the target.
+
+            </Text>
+            <View
+              style={
+                [
+                  {
+                    "overflow": "hidden",
+                  },
+                  {
+                    "borderColor": "#FFFFFF",
+                    "borderWidth": 4,
+                    "height": 206,
+                    "width": "100%",
+                  },
+                ]
+              }
+            >
+              <FastImageView
+                defaultSource={null}
+                resizeMode="cover"
+                source={
+                  {
+                    "cache": "immutable",
+                    "priority": "high",
+                    "uri": "https://video-thumbnails.dev.swingzen.com/Take%20Down%20the%20Line%204%20paces%20Behind%20Ball.gif",
+                  }
+                }
+                style={
+                  {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              />
+            </View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              
+Have your buddy hold the phone in portrait mode.
+
+            </Text>
+            <View
+              style={
+                [
+                  {
+                    "overflow": "hidden",
+                  },
+                  {
+                    "borderColor": "#FFFFFF",
+                    "borderWidth": 4,
+                    "height": 206,
+                    "width": "100%",
+                  },
+                ]
+              }
+            >
+              <FastImageView
+                defaultSource={null}
+                resizeMode="cover"
+                source={
+                  {
+                    "cache": "immutable",
+                    "priority": "high",
+                    "uri": "https://video-thumbnails.dev.swingzen.com/Landscape%20and%20Portrait.gif",
+                  }
+                }
+                style={
+                  {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              />
+            </View>
+          </View>
           <View
             style={
               {
-                "flexBasis": "0%",
-                "flexGrow": 1,
-                "flexShrink": 1,
-                "justifyContent": "space-between",
-                "marginLeft": 16,
-                "marginRight": 16,
-                "marginTop": 32,
+                "marginBottom": 12,
+                "marginTop": 100,
               }
             }
           >
-            <View>
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#C0DBBF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-SemiBold",
-                      "fontSize": 18,
-                      "fontWeight": "bold",
-                      "textAlign": "auto",
-                    },
-                  ]
+            <View
+              style={
+                {
+                  "flexDirection": "row",
                 }
-              >
-                Down The Line/Hand-Held Instructions
-
-              </Text>
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "auto",
-                    },
-                  ]
-                }
-              >
-                Have your buddy take 4 paces/12 ft behind the ball pointing towards the target.
-
-              </Text>
+              }
+            >
               <View
+                collapsable={false}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
                 style={
-                  [
-                    {
-                      "overflow": "hidden",
+                  {
+                    "backgroundColor": "#A2FD2F",
+                    "borderColor": "#00000000",
+                    "borderRadius": 10,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "elevation": 0,
+                    "justifyContent": "center",
+                    "minWidth": "auto",
+                    "shadowColor": "#000",
+                    "shadowOffset": {
+                      "height": 0,
+                      "width": 0,
                     },
-                    {
-                      "borderColor": "#FFFFFF",
-                      "borderWidth": 4,
-                      "height": 206,
-                      "width": "100%",
-                    },
-                  ]
+                    "shadowOpacity": 0,
+                    "shadowRadius": 0,
+                    "width": "100%",
+                  }
                 }
               >
-                <FastImageView
-                  defaultSource={null}
-                  resizeMode="cover"
-                  source={
+                <View
+                  accessibilityRole="button"
+                  accessibilityState={
                     {
-                      "cache": "immutable",
-                      "priority": "high",
-                      "uri": "https://video-thumbnails.dev.swingzen.com/Take%20Down%20the%20Line%204%20paces%20Behind%20Ball.gif",
+                      "disabled": false,
                     }
                   }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
                   style={
-                    {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    }
+                    [
+                      {
+                        "overflow": "hidden",
+                      },
+                      {
+                        "borderRadius": 10,
+                      },
+                    ]
                   }
-                />
-              </View>
-              <Text
-                style={
-                  [
-                    {
-                      "color": "#FFFFFF",
-                      "lineHeight": 28,
-                    },
-                    {
-                      "fontFamily": "SourceSansPro-Regular",
-                      "fontSize": 18,
-                      "fontWeight": "normal",
-                      "textAlign": "auto",
-                    },
-                  ]
-                }
-              >
-                
-Have your buddy hold the phone in portrait mode.
-
-              </Text>
-              <View
-                style={
-                  [
-                    {
-                      "overflow": "hidden",
-                    },
-                    {
-                      "borderColor": "#FFFFFF",
-                      "borderWidth": 4,
-                      "height": 206,
-                      "width": "100%",
-                    },
-                  ]
-                }
-              >
-                <FastImageView
-                  defaultSource={null}
-                  resizeMode="cover"
-                  source={
-                    {
-                      "cache": "immutable",
-                      "priority": "high",
-                      "uri": "https://video-thumbnails.dev.swingzen.com/Landscape%20and%20Portrait.gif",
+                >
+                  <View
+                    style={
+                      [
+                        {
+                          "alignItems": "center",
+                          "flexDirection": "row",
+                          "justifyContent": "center",
+                        },
+                        {
+                          "height": 48,
+                        },
+                      ]
                     }
-                  }
-                  style={
-                    {
-                      "bottom": 0,
-                      "left": 0,
-                      "position": "absolute",
-                      "right": 0,
-                      "top": 0,
-                    }
-                  }
-                />
+                  >
+                    <Text
+                      numberOfLines={1}
+                      selectable={false}
+                      style={
+                        [
+                          {
+                            "color": "#000000",
+                            "fontFamily": "SourceSansPro-Regular",
+                            "fontWeight": "normal",
+                          },
+                          {
+                            "textAlign": "left",
+                          },
+                          [
+                            {
+                              "letterSpacing": 1,
+                              "marginHorizontal": 16,
+                              "marginVertical": 9,
+                              "textAlign": "center",
+                            },
+                            {
+                              "marginHorizontal": 8,
+                            },
+                            {
+                              "textTransform": "uppercase",
+                            },
+                            {
+                              "color": "#6200ee",
+                              "fontFamily": "SourceSansPro-SemiBold",
+                              "fontWeight": "normal",
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-SemiBold",
+                              "fontWeight": "normal",
+                            },
+                            {
+                              "color": "#283E36",
+                            },
+                          ],
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#283E36",
+                              "lineHeight": 28,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-SemiBold",
+                              "fontSize": 18,
+                              "fontWeight": "bold",
+                              "textAlign": "center",
+                            },
+                          ]
+                        }
+                      >
+                        Next
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
               </View>
             </View>
             <View
               style={
                 {
-                  "marginBottom": 12,
-                  "marginTop": 100,
+                  "marginBottom": 24,
+                  "marginTop": 24,
                 }
               }
             >
-              <View
+              <Text
+                onPress={[Function]}
                 style={
-                  {
-                    "flexDirection": "row",
-                  }
-                }
-              >
-                <View
-                  collapsable={false}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                  style={
+                  [
                     {
-                      "backgroundColor": "#A2FD2F",
-                      "borderColor": "#00000000",
-                      "borderRadius": 10,
-                      "borderStyle": "solid",
-                      "borderWidth": 1,
-                      "elevation": 0,
-                      "justifyContent": "center",
-                      "minWidth": "auto",
-                      "shadowColor": "#000",
-                      "shadowOffset": {
-                        "height": 0,
-                        "width": 0,
-                      },
-                      "shadowOpacity": 0,
-                      "shadowRadius": 0,
-                      "width": "100%",
-                    }
-                  }
-                >
-                  <View
-                    accessibilityRole="button"
-                    accessibilityState={
-                      {
-                        "disabled": false,
-                      }
-                    }
-                    accessibilityValue={
-                      {
-                        "max": undefined,
-                        "min": undefined,
-                        "now": undefined,
-                        "text": undefined,
-                      }
-                    }
-                    accessible={true}
-                    focusable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
-                    style={
-                      [
-                        {
-                          "overflow": "hidden",
-                        },
-                        {
-                          "borderRadius": 10,
-                        },
-                      ]
-                    }
-                  >
-                    <View
-                      style={
-                        [
-                          {
-                            "alignItems": "center",
-                            "flexDirection": "row",
-                            "justifyContent": "center",
-                          },
-                          {
-                            "height": 48,
-                          },
-                        ]
-                      }
-                    >
-                      <Text
-                        numberOfLines={1}
-                        selectable={false}
-                        style={
-                          [
-                            {
-                              "color": "#000000",
-                              "fontFamily": "SourceSansPro-Regular",
-                              "fontWeight": "normal",
-                            },
-                            {
-                              "textAlign": "left",
-                            },
-                            [
-                              {
-                                "letterSpacing": 1,
-                                "marginHorizontal": 16,
-                                "marginVertical": 9,
-                                "textAlign": "center",
-                              },
-                              {
-                                "marginHorizontal": 8,
-                              },
-                              {
-                                "textTransform": "uppercase",
-                              },
-                              {
-                                "color": "#6200ee",
-                                "fontFamily": "SourceSansPro-SemiBold",
-                                "fontWeight": "normal",
-                              },
-                              {
-                                "fontFamily": "SourceSansPro-SemiBold",
-                                "fontWeight": "normal",
-                              },
-                              {
-                                "color": "#283E36",
-                              },
-                            ],
-                          ]
-                        }
-                      >
-                        <Text
-                          style={
-                            [
-                              {
-                                "color": "#283E36",
-                                "lineHeight": 28,
-                              },
-                              {
-                                "fontFamily": "SourceSansPro-SemiBold",
-                                "fontSize": 18,
-                                "fontWeight": "bold",
-                                "textAlign": "center",
-                              },
-                            ]
-                          }
-                        >
-                          Next
-                        </Text>
-                      </Text>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                style={
-                  {
-                    "marginBottom": 24,
-                    "marginTop": 24,
-                  }
+                      "color": "#A2FD2F",
+                      "lineHeight": 20,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 16,
+                      "fontWeight": "bold",
+                      "textAlign": "center",
+                      "textDecorationLine": "underline",
+                    },
+                  ]
                 }
               >
-                <Text
-                  onPress={[Function]}
-                  style={
-                    [
-                      {
-                        "color": "#A2FD2F",
-                        "lineHeight": 20,
-                      },
-                      {
-                        "fontFamily": "SourceSansPro-Regular",
-                        "fontSize": 16,
-                        "fontWeight": "bold",
-                        "textAlign": "center",
-                        "textDecorationLine": "underline",
-                      },
-                    ]
-                  }
-                >
-                  Always skip instructions
-                </Text>
-              </View>
+                Always skip instructions
+              </Text>
             </View>
           </View>
           <View
@@ -417,8 +389,8 @@ Have your buddy hold the phone in portrait mode.
             />
           </View>
         </View>
-      </RCTScrollView>
-    </RCTSafeAreaView>
-  </View>
+      </View>
+    </RCTScrollView>
+  </RCTSafeAreaView>
 </View>
 `;

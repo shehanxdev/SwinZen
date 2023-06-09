@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { SafeAreaView, ScrollView, TouchableOpacity, View } from 'react-native';
 import FastImage from 'react-native-fast-image';
 
 import { Button, CrossIcon, Link, Text } from '@sz/components';
@@ -16,16 +16,18 @@ import {
   TextVariant,
   TripodHeightGIF,
 } from '@sz/constants';
+import { useHeaderHeight } from '@sz/hooks';
 import { VideoSetupValuesType } from '@sz/models';
 import { NavigationService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 
-import { BaseUploadScreen, InstructionsSkipModal } from '../components';
+import { InstructionsSkipModal } from '../components';
 
 const TEST_ID_PREFIX = 'HowToShootScreenTestID';
 
 export function HowToShootScreen({ route }) {
   const data = route.params.params?.setupValues as VideoSetupValuesType;
+  const headerHeight = useHeaderHeight();
 
   const [count, setCount] = useState(0);
   const [showModal, setShowModal] = useState(false);
@@ -205,35 +207,37 @@ export function HowToShootScreen({ route }) {
   }, [count]);
 
   return (
-    <BaseUploadScreen testID={TEST_ID_PREFIX}>
-      <View style={tw`flex-1 justify-between mx-4 mt-8`}>
-        {renderBody}
-        <View style={tw`mt-25 mb-3`}>
-          <Button
-            onPress={() => {
-              if (count === 3 && !data) {
-                NavigationService.goBack();
-              } else if (data) {
-                setCount(0);
-                NavigationService.navigate(Route.PreValidation);
-              } else {
-                setCount(count + 1);
-              }
-            }}
-            title="Next"
+    <SafeAreaView style={tw`h-full pt-[${headerHeight}px] bg-Neutral-Sz900`}>
+      <ScrollView contentContainerStyle={tw`grow`}>
+        <View testID={TEST_ID_PREFIX} style={tw`flex-1 justify-between mx-4 mt-8`}>
+          {renderBody}
+          <View style={tw`mt-25 mb-3`}>
+            <Button
+              onPress={() => {
+                if (count === 3 && !data) {
+                  NavigationService.goBack();
+                } else if (data) {
+                  setCount(0);
+                  NavigationService.navigate(Route.PreValidation);
+                } else {
+                  setCount(count + 1);
+                }
+              }}
+              title="Next"
+            />
+            {!skippedInstructions && data && (
+              <View style={tw`my-6`}>
+                <Link text="Always skip instructions" onPress={() => setShowModal(true)} />
+              </View>
+            )}
+          </View>
+          <InstructionsSkipModal
+            showModal={showModal}
+            handleModalClose={() => setShowModal(false)}
+            onSkipped={onSkipPress}
           />
-          {!skippedInstructions && data && (
-            <View style={tw`my-6`}>
-              <Link text="Always skip instructions" onPress={() => setShowModal(true)} />
-            </View>
-          )}
         </View>
-      </View>
-      <InstructionsSkipModal
-        showModal={showModal}
-        handleModalClose={() => setShowModal(false)}
-        onSkipped={onSkipPress}
-      />
-    </BaseUploadScreen>
+      </ScrollView>
+    </SafeAreaView>
   );
 }

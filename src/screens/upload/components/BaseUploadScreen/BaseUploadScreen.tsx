@@ -6,7 +6,7 @@ import { tw } from '@sz/config';
 import { useHeaderHeight } from '@sz/hooks';
 
 //This component is needed since, Upload screen has a different base screen
-export interface BaseUploadScreenProps extends PropsWithChildren {
+interface BaseUploadScreenProps extends PropsWithChildren {
   testID?: string;
   isSetupScreen?: boolean;
 }
@@ -17,13 +17,12 @@ export function BaseUploadScreen({
   isSetupScreen = false,
 }: BaseUploadScreenProps) {
   const headerHeight = useHeaderHeight();
-  const backgroundStyle = isSetupScreen ? tw`flex-1` : tw`h-full pt-[${headerHeight}px bg-Neutral-Sz900`;
 
   return (
     <ImageBackground
       testID={testID}
-      style={backgroundStyle}
-      source={isSetupScreen ? images.videoSetupBackground : undefined}>
+      style={tw`flex-1`}
+      source={isSetupScreen ? images.videoSetupBackground : images.gradientBackground}>
       <SafeAreaView style={tw`h-full pt-[${headerHeight}px]`}>
         <ScrollView contentContainerStyle={tw`grow`}>{children}</ScrollView>
       </SafeAreaView>

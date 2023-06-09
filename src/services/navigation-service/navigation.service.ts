@@ -246,16 +246,6 @@ export class NavigationService {
           },
         };
         break;
-      case Route.HowToShoot:
-        navRoute = Route.VideoUploadStack;
-        navParams = {
-          screen: Route.HowToShoot,
-          params: {
-            screen: route,
-            params: params,
-          },
-        };
-        break;
 
       // Library Routes
       case Route.GolfTips:
@@ -270,6 +260,16 @@ export class NavigationService {
         break;
 
       // Video Uplaod Routes
+      case Route.HowToShoot:
+        navRoute = Route.VideoUploadStack;
+        navParams = {
+          screen: Route.HowToShoot,
+          params: {
+            screen: route,
+            params: params,
+          },
+        };
+        break;
       case Route.PreValidation:
         navRoute = Route.VideoUploadStack;
         navParams = {

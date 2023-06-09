@@ -14,13 +14,18 @@ exports[`BaseUploadScreen Component should render BaseUploadScreen component cor
     accessibilityIgnoresInvertColors={true}
     style={
       {
-        "backgroundColor": "#212529",
-        "height": "100%",
-        "paddingTop": 50,
+        "flexBasis": "0%",
+        "flexGrow": 1,
+        "flexShrink": 1,
       }
     }
   >
     <Image
+      source={
+        {
+          "testUri": "../../../src/assets/images/gradientBackground.png",
+        }
+      }
       style={
         [
           {
@@ -31,7 +36,7 @@ exports[`BaseUploadScreen Component should render BaseUploadScreen component cor
             "top": 0,
           },
           {
-            "height": "100%",
+            "height": undefined,
             "width": undefined,
           },
           undefined,

@@ -3,14 +3,14 @@ import { Text, View } from 'react-native';
 
 import { tw } from '@sz/config';
 
-import { BaseUploadScreen } from '../components';
+import { BaseScreen } from '../../components';
 
 export function PreValidationScreen() {
   return (
-    <BaseUploadScreen>
+    <BaseScreen>
       <View style={tw`m-auto`}>
         <Text style={tw`m-10 text-white`}>PreValidation Screen</Text>
       </View>
-    </BaseUploadScreen>
+    </BaseScreen>
   );
 }
