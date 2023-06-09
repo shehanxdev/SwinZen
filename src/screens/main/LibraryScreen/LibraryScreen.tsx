@@ -6,8 +6,8 @@ import { tw } from '@sz/config';
 import { Color, LibrarySliderData, Route, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
+import { BaseScreen } from '../../components';
 import { GolfTipsWrapper } from '../../library/components';
-import { BaseMainScreen } from '../../main/components';
 import { golfTips, toggleSwitchOptions } from './LibraryData';
 import { LinksSlider } from './components';
 
@@ -17,7 +17,7 @@ export function LibraryScreen() {
   const [switchValue, setSwitchValue] = useState<SwitchValueDataType>('usingTheApp');
 
   return (
-    <BaseMainScreen testID="LibraryScreenTestID">
+    <BaseScreen testID="LibraryScreenTestID">
       <View style={tw`flex-1 mx-4 mt-6.25 mb-4`}>
         <ToggleSwitch
           options={toggleSwitchOptions}
@@ -42,6 +42,6 @@ export function LibraryScreen() {
         </View>
         <GolfTipsWrapper golfTips={golfTips} />
       </View>
-    </BaseMainScreen>
+    </BaseScreen>
   );
 }

@@ -8,7 +8,7 @@ import { Plan } from '@sz/models';
 import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
 
-import { BasePricePlansScreen } from '../components';
+import { BaseScreen } from './../../components';
 
 const TEST_ID_PREFIX = 'PlanDetailsScreen';
 
@@ -29,7 +29,7 @@ export function PlanDetailsScreen({ route }) {
   };
 
   return (
-    <BasePricePlansScreen testID={TEST_ID_PREFIX}>
+    <BaseScreen testID={TEST_ID_PREFIX}>
       <View style={tw`flex-1 justify-between mx-4`}>
         <View style={tw`flex-1`}>
           <View style={tw`mt-2`}>
@@ -78,6 +78,6 @@ export function PlanDetailsScreen({ route }) {
           </View>
         </View>
       </View>
-    </BasePricePlansScreen>
+    </BaseScreen>
   );
 }

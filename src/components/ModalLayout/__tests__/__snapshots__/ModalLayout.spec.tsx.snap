@@ -306,7 +306,9 @@ exports[`ModalLayout component should render ModalLayout component correctly 1`]
                               "fontFamily": "SourceSansPro-SemiBold",
                               "fontWeight": "normal",
                             },
-                            undefined,
+                            {
+                              "color": "#A2FD2F",
+                            },
                           ],
                         ]
                       }
@@ -460,7 +462,9 @@ exports[`ModalLayout component should render ModalLayout component correctly 1`]
                               "fontFamily": "SourceSansPro-SemiBold",
                               "fontWeight": "normal",
                             },
-                            undefined,
+                            {
+                              "color": "#000000",
+                            },
                           ],
                         ]
                       }

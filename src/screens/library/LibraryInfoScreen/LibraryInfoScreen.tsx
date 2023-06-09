@@ -6,7 +6,7 @@ import { Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
-import { BaseMainScreen } from '../../main/components';
+import { BaseScreen } from '../../components';
 
 interface Points {
   title: string;
@@ -35,7 +35,7 @@ export function LibraryInfoScreen({ route }) {
   });
 
   return (
-    <BaseMainScreen testID="LibraryInfoScreenTestID">
+    <BaseScreen testID="LibraryInfoScreenTestID">
       <View style={tw`mx-4 mt-8`}>
         {data.content.description.length > 0 && (
           <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
@@ -73,6 +73,6 @@ export function LibraryInfoScreen({ route }) {
             </View>
           ))}
       </View>
-    </BaseMainScreen>
+    </BaseScreen>
   );
 }

@@ -2,50 +2,8 @@
 
 exports[`BaseChartBar component should render correctly should render correctly with {"barValue":2,"chartBarType":"fail"} 1`] = `
 <View
-  animatedStyle={
-    {
-      "value": {},
-    }
-  }
-  collapsable={false}
-  entering={
-    FadeInDown {
-      "build": [Function],
-      "callbackV": undefined,
-      "dampingV": undefined,
-      "delayV": undefined,
-      "durationV": 500,
-      "easingV": undefined,
-      "initialValues": undefined,
-      "massV": undefined,
-      "overshootClampingV": undefined,
-      "randomizeDelay": false,
-      "restDisplacementThresholdV": undefined,
-      "restSpeedThresholdV": undefined,
-      "rotateV": undefined,
-      "stiffnessV": undefined,
-      "type": undefined,
-    }
-  }
-  exiting={
-    FadeOutDown {
-      "build": [Function],
-      "callbackV": undefined,
-      "dampingV": undefined,
-      "delayV": undefined,
-      "durationV": 500,
-      "easingV": undefined,
-      "initialValues": undefined,
-      "massV": undefined,
-      "overshootClampingV": undefined,
-      "randomizeDelay": false,
-      "restDisplacementThresholdV": undefined,
-      "restSpeedThresholdV": undefined,
-      "rotateV": undefined,
-      "stiffnessV": undefined,
-      "type": undefined,
-    }
-  }
+  entering={BaseAnimationMock {}}
+  exiting={BaseAnimationMock {}}
   onLayout={[Function]}
   style={
     {
@@ -133,50 +91,8 @@ exports[`BaseChartBar component should render correctly should render correctly 
 
 exports[`BaseChartBar component should render correctly should render correctly with {"barValue":5,"chartBarType":"pass"} 1`] = `
 <View
-  animatedStyle={
-    {
-      "value": {},
-    }
-  }
-  collapsable={false}
-  entering={
-    FadeInDown {
-      "build": [Function],
-      "callbackV": undefined,
-      "dampingV": undefined,
-      "delayV": undefined,
-      "durationV": 500,
-      "easingV": undefined,
-      "initialValues": undefined,
-      "massV": undefined,
-      "overshootClampingV": undefined,
-      "randomizeDelay": false,
-      "restDisplacementThresholdV": undefined,
-      "restSpeedThresholdV": undefined,
-      "rotateV": undefined,
-      "stiffnessV": undefined,
-      "type": undefined,
-    }
-  }
-  exiting={
-    FadeOutDown {
-      "build": [Function],
-      "callbackV": undefined,
-      "dampingV": undefined,
-      "delayV": undefined,
-      "durationV": 500,
-      "easingV": undefined,
-      "initialValues": undefined,
-      "massV": undefined,
-      "overshootClampingV": undefined,
-      "randomizeDelay": false,
-      "restDisplacementThresholdV": undefined,
-      "restSpeedThresholdV": undefined,
-      "rotateV": undefined,
-      "stiffnessV": undefined,
-      "type": undefined,
-    }
-  }
+  entering={BaseAnimationMock {}}
+  exiting={BaseAnimationMock {}}
   onLayout={[Function]}
   style={
     {
@@ -264,50 +180,8 @@ exports[`BaseChartBar component should render correctly should render correctly 
 
 exports[`BaseChartBar component should render correctly should render correctly with {"barValue":9,"chartBarType":"pass"} 1`] = `
 <View
-  animatedStyle={
-    {
-      "value": {},
-    }
-  }
-  collapsable={false}
-  entering={
-    FadeInDown {
-      "build": [Function],
-      "callbackV": undefined,
-      "dampingV": undefined,
-      "delayV": undefined,
-      "durationV": 500,
-      "easingV": undefined,
-      "initialValues": undefined,
-      "massV": undefined,
-      "overshootClampingV": undefined,
-      "randomizeDelay": false,
-      "restDisplacementThresholdV": undefined,
-      "restSpeedThresholdV": undefined,
-      "rotateV": undefined,
-      "stiffnessV": undefined,
-      "type": undefined,
-    }
-  }
-  exiting={
-    FadeOutDown {
-      "build": [Function],
-      "callbackV": undefined,
-      "dampingV": undefined,
-      "delayV": undefined,
-      "durationV": 500,
-      "easingV": undefined,
-      "initialValues": undefined,
-      "massV": undefined,
-      "overshootClampingV": undefined,
-      "randomizeDelay": false,
-      "restDisplacementThresholdV": undefined,
-      "restSpeedThresholdV": undefined,
-      "rotateV": undefined,
-      "stiffnessV": undefined,
-      "type": undefined,
-    }
-  }
+  entering={BaseAnimationMock {}}
+  exiting={BaseAnimationMock {}}
   onLayout={[Function]}
   style={
     {
