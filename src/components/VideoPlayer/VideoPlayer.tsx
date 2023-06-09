@@ -26,6 +26,7 @@ const getPopLinePlayTime = offset => {
 };
 
 export function VideoPlayer({ source }) {
+  console.log('passed video source', source);
   const videoPlayerRef = useRef(null);
   const [progress, setProgress] = useState('00:00');
   const [duration, setDuration] = useState('00:00');
@@ -48,7 +49,7 @@ export function VideoPlayer({ source }) {
   const generateFrames = (filePath, numberOfFrames) => {
     let frames = [];
     for (let i = 0; i < numberOfFrames; i++) {
-      frames.push(`${filePath.replace('%4d', String(i + 1).padStart(4, '0'))}.png`);
+      frames.push(`${filePath.replace('%4d', String(i + 1).padStart(4, '0'))}`);
     }
     setFrames(frames);
   };
@@ -60,6 +61,7 @@ export function VideoPlayer({ source }) {
   };
 
   const handleOnTouchEnd = () => {
+    console.log('handleOnTouchEnd tiggred');
     setPaused(false);
   };
 
@@ -68,6 +70,7 @@ export function VideoPlayer({ source }) {
   };
 
   const handleVideoLoad = async ({ duration }) => {
+    console.log('video loaded');
     setIsVideoLoading(false);
     let localFileName = `someRandomFileNamee`;
     const numberOfFrames = Math.ceil(duration);

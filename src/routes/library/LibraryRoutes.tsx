@@ -45,7 +45,7 @@ export function LibraryStack() {
         name={Route.GolfTipsPlaylist}
         component={GolfTipsPlaylistScreen}
         //@ts-ignore -- TODO::this will be removed once the issue is figured out
-        options={({ route }) => ({ title: route.params.tipsCategory })}
+        options={({ route }) => ({ title: route.params.params.tipsCategory })}
       />
     </Stack.Navigator>
   );

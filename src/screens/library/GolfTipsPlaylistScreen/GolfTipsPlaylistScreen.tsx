@@ -15,6 +15,7 @@ export function GolfTipsPlaylistScreen({ route }) {
   //TODO:: These states can be changed according to the integrations
   const [, setPlayingVideoSource] = useState(golfTipsPlaylistDummyData[0].videoSource);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const { tipsCategory } = route.params.params;
 
   const handleListItemPress = (itemIndex: number) => {
     setCurrentVideoIndex(itemIndex);
@@ -25,12 +26,13 @@ export function GolfTipsPlaylistScreen({ route }) {
     <BaseScreen wrapWithScrollView={false}>
       <View style={tw`flex-1 mx-4 mt-6`}>
         <View style={tw``}>
-          {/* <VideoPlayer source="https://www.w3schools.com/html/mov_bbb.mp4" /> */}
-          <VideoPlayer source="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" />
+          {/* Uncomment the one with http when testing on Android*/}
+          <VideoPlayer source="https://www.w3schools.com/html/mov_bbb.mp4" />
+          {/* <VideoPlayer source="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" /> */}
         </View>
         <View style={tw`my-6.5`}>
           <Text variant={TextVariant.SubTitle1} color={Color.Neutral.Sz100} textAlign={TextAlignment.Left}>
-            {route.params.tipsCategory}
+            {tipsCategory}
           </Text>
           <View style={tw`mt-1`}>
             <Text variant={TextVariant.Labels} color={Color.Tertiary.Sz900} textAlign={TextAlignment.Left}>
