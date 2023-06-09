@@ -8,6 +8,7 @@ import { NavigationService } from '@sz/services';
 
 const Tab = createBottomTabNavigator();
 
+// This dummy component is required to prevent breaking the tab bar layout
 const DummyComponent = () => <></>;
 
 export function MainBottomTabRoutes() {

@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { LibraryScreen } from '../LibraryScreen';
 
-describe('Library Screen Screen', () => {
+describe('Library Screen', () => {
   const testID = 'LibraryScreenTestID';
 
   const getRenderedScreen = () => render(<LibraryScreen />);

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Library Screen Screen should render Library Screen correctly 1`] = `
+exports[`Library Screen should render Library Screen correctly 1`] = `
 <BVLinearGradient
   colors={
     [
@@ -309,6 +309,7 @@ exports[`Library Screen Screen should render Library Screen correctly 1`] = `
                     "height": 320,
                   }
                 }
+                testID="LinksSliderTestID"
               >
                 <View
                   onLayout={[Function]}

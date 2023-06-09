@@ -12,6 +12,7 @@ jest.mock('@react-navigation/native', () => {
     ...navigation,
     useNavigation: () => ({
       getParent: jest.fn(),
+      setOptions: jest.fn(),
     }),
     useRoute: () => ({}),
   };

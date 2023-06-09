@@ -461,7 +461,7 @@ PODS:
     - react-native-config/App (= 1.4.5)
   - react-native-config/App (1.4.5):
     - React-Core
-  - react-native-image-picker (5.3.1):
+  - react-native-image-picker (5.4.0):
     - React-Core
   - react-native-restart (0.0.27):
     - React-Core
@@ -571,7 +571,7 @@ PODS:
     - FirebaseCoreExtension (= 10.7.0)
     - React-Core
     - RNFBApp
-  - RNGestureHandler (2.10.1):
+  - RNGestureHandler (2.10.2):
     - React-Core
   - RNKeychain (8.1.1):
     - React-Core
@@ -892,7 +892,7 @@ SPEC CHECKSUMS:
   react-native-background-timer: 17ea5e06803401a379ebf1f20505b793ac44d0fe
   react-native-blur: cfdad7b3c01d725ab62a8a729f42ea463998afa2
   react-native-config: 6502b1879f97ed5ac570a029961fc35ea606cd14
-  react-native-image-picker: ec9b713e248760bfa0f879f0715391de4651a7cb
+  react-native-image-picker: 709d04e7df67bd3a90f376c3eedb2e8b8334dd04
   react-native-restart: 7595693413fe3ca15893702f2c8306c62a708162
   react-native-safe-area-context: b8979f5eda6ed5903d4dbc885be3846ea3daa753
   react-native-splash-screen: 4312f786b13a81b5169ef346d76d33bc0c6dc457
@@ -913,7 +913,7 @@ SPEC CHECKSUMS:
   RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
   RNFBApp: d59efa0872fff4e27de03cca3c528c203a436ae5
   RNFBMessaging: 216693dd5ba4f18ba65fb39fc73a44a23c26190f
-  RNGestureHandler: 42ec7c28dd02d540ed6c9159c57a98ff016492dc
+  RNGestureHandler: f75d81410b40aaa99e71ae8f8bb7a88620c95042
   RNKeychain: ff836453cba46938e0e9e4c22e43d43fa2c90333
   RNReanimated: b1220a0e5168745283ff5d53bfc7d2144b2cee1b
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
