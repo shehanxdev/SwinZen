@@ -3,13 +3,15 @@ import { View } from 'react-native';
 
 import { Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { AboutSZInfoSevenPoints, Color, TextAlignment, TextVariant } from '@sz/constants';
+import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
-import { BaseMainScreen } from '../../../main/components';
+import { BaseScreen } from '../../../components';
 
 const TEST_ID_PREFIX = 'ASZInfoSevenScreenTestID';
 
 export function ASZInfoSevenScreen() {
+  const AboutSZInfoSevenPoints = [];
+
   const renderPoints = useMemo(() => {
     return AboutSZInfoSevenPoints.map(data => (
       <View key={`${TEST_ID_PREFIX}-Point-${data.title}`}>
@@ -25,13 +27,13 @@ export function ASZInfoSevenScreen() {
   }, [AboutSZInfoSevenPoints]);
 
   return (
-    <BaseMainScreen>
+    <BaseScreen>
       <View style={tw`mx-4 mt-8`} testID={TEST_ID_PREFIX}>
         <Text color={Color.Neutral.White} variant={TextVariant.Body1SemiBold} textAlign={TextAlignment.Auto}>
           {`Note this is available only with paid subscription.\n`}
         </Text>
         {renderPoints}
       </View>
-    </BaseMainScreen>
+    </BaseScreen>
   );
 }

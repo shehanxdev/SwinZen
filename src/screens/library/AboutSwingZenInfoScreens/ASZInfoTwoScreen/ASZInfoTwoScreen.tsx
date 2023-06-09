@@ -5,11 +5,11 @@ import { Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
-import { BaseMainScreen } from '../../../main/components';
+import { BaseScreen } from '../../../components';
 
 export function ASZInfoTwoScreen() {
   return (
-    <BaseMainScreen>
+    <BaseScreen>
       <View style={tw`mx-4 mt-8`} testID="ASZInfoTwoScreenTestID">
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
           {`The SwingZen system captures and analyzes videos in 120/240fps. This is up to eight times more frames than other app-based systems!
@@ -17,6 +17,6 @@ export function ASZInfoTwoScreen() {
           \nNo other AI system in the world delivers these capabilities.`}
         </Text>
       </View>
-    </BaseMainScreen>
+    </BaseScreen>
   );
 }

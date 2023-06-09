@@ -9,7 +9,7 @@ import { useFetch } from '@sz/hooks';
 import { FaqSection } from '@sz/models';
 import { InfoService } from '@sz/services';
 
-import { BaseInfoScreen } from '../components';
+import { BaseScreen } from './../../components';
 import { FAQSectionContent, FAQSectionHeader } from './components';
 
 export function FAQScreen() {
@@ -53,10 +53,8 @@ export function FAQScreen() {
   }, [isLoading, sortedData, activeSections]);
 
   return (
-    <BaseInfoScreen wrapWithScrollView={false}>
-      <View style={tw`rounded-2.5 m-4 p-4 bg-Transparency-dark`} testID="FAQScreenTestID">
-        {renderFAQ}
-      </View>
-    </BaseInfoScreen>
+    <BaseScreen wrapWithScrollView={false} isLoading={isLoading} testID="FAQScreenTestID">
+      <View style={tw`rounded-2.5 m-4 p-4 bg-Transparency-dark`}>{renderFAQ}</View>
+    </BaseScreen>
   );
 }

@@ -1,0 +1,595 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingIndicator Component should render correctly should render correctly with [object Object] 1`] = `
+<View
+  accessibilityRole="progressbar"
+  accessibilityState={
+    {
+      "busy": true,
+    }
+  }
+  accessible={true}
+  style={
+    [
+      {
+        "alignItems": "center",
+        "justifyContent": "center",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    style={
+      {
+        "height": 24,
+        "opacity": 1,
+        "width": 24,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "height": 24,
+            "transform": [
+              {
+                "rotate": "45deg",
+              },
+            ],
+            "width": 24,
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          style={
+            {
+              "height": 12,
+              "overflow": "hidden",
+              "width": 24,
+            }
+          }
+        >
+          <View
+            collapsable={false}
+            style={
+              {
+                "height": 24,
+                "transform": [
+                  {
+                    "translateY": 0,
+                  },
+                  {
+                    "rotate": "-165deg",
+                  },
+                ],
+                "width": 24,
+              }
+            }
+          >
+            <View
+              collapsable={false}
+              style={
+                {
+                  "height": 12,
+                  "overflow": "hidden",
+                  "width": 24,
+                }
+              }
+            >
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "borderColor": "#8DBE8B",
+                    "borderRadius": 12,
+                    "borderWidth": 2.4,
+                    "height": 24,
+                    "width": 24,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      style={
+        {
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "height": 24,
+            "transform": [
+              {
+                "rotate": "45deg",
+              },
+            ],
+            "width": 24,
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          style={
+            {
+              "height": 12,
+              "overflow": "hidden",
+              "top": 12,
+              "width": 24,
+            }
+          }
+        >
+          <View
+            collapsable={false}
+            style={
+              {
+                "height": 24,
+                "transform": [
+                  {
+                    "translateY": -12,
+                  },
+                  {
+                    "rotate": "345deg",
+                  },
+                ],
+                "width": 24,
+              }
+            }
+          >
+            <View
+              collapsable={false}
+              style={
+                {
+                  "height": 12,
+                  "overflow": "hidden",
+                  "width": 24,
+                }
+              }
+            >
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "borderColor": "#8DBE8B",
+                    "borderRadius": 12,
+                    "borderWidth": 2.4,
+                    "height": 24,
+                    "width": 24,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`LoadingIndicator Component should render correctly should render correctly with [object Object] 2`] = `
+<View
+  accessibilityRole="progressbar"
+  accessibilityState={
+    {
+      "busy": true,
+    }
+  }
+  accessible={true}
+  style={
+    [
+      {
+        "alignItems": "center",
+        "justifyContent": "center",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    style={
+      {
+        "height": 48,
+        "opacity": 1,
+        "width": 48,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "height": 48,
+            "transform": [
+              {
+                "rotate": "45deg",
+              },
+            ],
+            "width": 48,
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          style={
+            {
+              "height": 24,
+              "overflow": "hidden",
+              "width": 48,
+            }
+          }
+        >
+          <View
+            collapsable={false}
+            style={
+              {
+                "height": 48,
+                "transform": [
+                  {
+                    "translateY": 0,
+                  },
+                  {
+                    "rotate": "-165deg",
+                  },
+                ],
+                "width": 48,
+              }
+            }
+          >
+            <View
+              collapsable={false}
+              style={
+                {
+                  "height": 24,
+                  "overflow": "hidden",
+                  "width": 48,
+                }
+              }
+            >
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "borderColor": "#495057",
+                    "borderRadius": 24,
+                    "borderWidth": 4.8,
+                    "height": 48,
+                    "width": 48,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      style={
+        {
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "height": 48,
+            "transform": [
+              {
+                "rotate": "45deg",
+              },
+            ],
+            "width": 48,
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          style={
+            {
+              "height": 24,
+              "overflow": "hidden",
+              "top": 24,
+              "width": 48,
+            }
+          }
+        >
+          <View
+            collapsable={false}
+            style={
+              {
+                "height": 48,
+                "transform": [
+                  {
+                    "translateY": -24,
+                  },
+                  {
+                    "rotate": "345deg",
+                  },
+                ],
+                "width": 48,
+              }
+            }
+          >
+            <View
+              collapsable={false}
+              style={
+                {
+                  "height": 24,
+                  "overflow": "hidden",
+                  "width": 48,
+                }
+              }
+            >
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "borderColor": "#495057",
+                    "borderRadius": 24,
+                    "borderWidth": 4.8,
+                    "height": 48,
+                    "width": 48,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`LoadingIndicator Component should render correctly should render correctly with [object Object] 3`] = `
+<View
+  accessibilityRole="progressbar"
+  accessibilityState={
+    {
+      "busy": true,
+    }
+  }
+  accessible={true}
+  style={
+    [
+      {
+        "alignItems": "center",
+        "justifyContent": "center",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    collapsable={false}
+    style={
+      {
+        "height": 48,
+        "opacity": 1,
+        "width": 48,
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      style={
+        {
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "height": 48,
+            "transform": [
+              {
+                "rotate": "45deg",
+              },
+            ],
+            "width": 48,
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          style={
+            {
+              "height": 24,
+              "overflow": "hidden",
+              "width": 48,
+            }
+          }
+        >
+          <View
+            collapsable={false}
+            style={
+              {
+                "height": 48,
+                "transform": [
+                  {
+                    "translateY": 0,
+                  },
+                  {
+                    "rotate": "-165deg",
+                  },
+                ],
+                "width": 48,
+              }
+            }
+          >
+            <View
+              collapsable={false}
+              style={
+                {
+                  "height": 24,
+                  "overflow": "hidden",
+                  "width": 48,
+                }
+              }
+            >
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "borderColor": "#7DC424",
+                    "borderRadius": 24,
+                    "borderWidth": 4.8,
+                    "height": 48,
+                    "width": 48,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      collapsable={false}
+      style={
+        {
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <View
+        collapsable={false}
+        style={
+          {
+            "height": 48,
+            "transform": [
+              {
+                "rotate": "45deg",
+              },
+            ],
+            "width": 48,
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          style={
+            {
+              "height": 24,
+              "overflow": "hidden",
+              "top": 24,
+              "width": 48,
+            }
+          }
+        >
+          <View
+            collapsable={false}
+            style={
+              {
+                "height": 48,
+                "transform": [
+                  {
+                    "translateY": -24,
+                  },
+                  {
+                    "rotate": "345deg",
+                  },
+                ],
+                "width": 48,
+              }
+            }
+          >
+            <View
+              collapsable={false}
+              style={
+                {
+                  "height": 24,
+                  "overflow": "hidden",
+                  "width": 48,
+                }
+              }
+            >
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "borderColor": "#7DC424",
+                    "borderRadius": 24,
+                    "borderWidth": 4.8,
+                    "height": 48,
+                    "width": 48,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
