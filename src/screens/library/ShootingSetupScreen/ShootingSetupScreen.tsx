@@ -1,10 +1,18 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 import { TouchableOpacity, View } from 'react-native';
+import FastImage from 'react-native-fast-image';
 
-import { BackIcon, Button, StepsOneIcon, StepsTwoFirstIcon, StepsTwoSecondIcon, Text } from '@sz/components';
+import { BackIcon, Button, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, TextAlignment, TextVariant } from '@sz/constants';
+import {
+  Color,
+  DownTheLineImageUrl,
+  FaceOnImageUrl,
+  LandscapeImageUrl,
+  TextAlignment,
+  TextVariant,
+} from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
 import { BaseScreen } from '../../components';
@@ -51,7 +59,14 @@ export function ShootingSetupScreen() {
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
           {`ALWAYS hold your phone in Landscape, NOT in Portrait. We understand that it feels more natural to hold the phone upright, but typically you cannot capture the full range of motion of your swing. Those frames that aren’t caught when the ball and club are outside the camera shot are crucial to getting the best data feedback on your swing.\n`}
         </Text>
-        <StepsOneIcon />
+        <FastImage
+          style={tw`w-full h-48.25 border-8 border-Neutral-White`}
+          source={{
+            cache: FastImage.cacheControl.immutable,
+            priority: FastImage.priority.high,
+            uri: LandscapeImageUrl,
+          }}
+        />
       </View>
     );
   }, []);
@@ -65,11 +80,25 @@ export function ShootingSetupScreen() {
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
           {`When shooting The Down The Line shot, the camera/phone must be held at 4 paces away (12ft/4M) from the ball. Position behind the ball pointing toward the target in the distance with the ball in line.\n`}
         </Text>
-        <StepsTwoFirstIcon />
+        <FastImage
+          style={tw`w-full h-53.75 border-8 border-Neutral-White`}
+          source={{
+            cache: FastImage.cacheControl.immutable,
+            priority: FastImage.priority.high,
+            uri: DownTheLineImageUrl,
+          }}
+        />
         <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
           {`\nIn The Face On perspective, the camera/phone needs to be 4 paces (9ft/3M) from the ball, not the golfer, but centered on the golfer.\n`}
         </Text>
-        <StepsTwoSecondIcon />
+        <FastImage
+          style={tw`w-full h-53.75 border-8 border-Neutral-White`}
+          source={{
+            cache: FastImage.cacheControl.immutable,
+            priority: FastImage.priority.high,
+            uri: FaceOnImageUrl,
+          }}
+        />
       </View>
     );
   }, []);
