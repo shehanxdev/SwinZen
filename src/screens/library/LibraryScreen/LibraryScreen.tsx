@@ -3,12 +3,12 @@ import { View } from 'react-native';
 
 import { Text, ToggleSwitch } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, Route, TextVariant } from '@sz/constants';
+import { Color, LibrarySliderData, Route, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
 import { BaseScreen, TabScreenHeader } from '../../components';
-import { GolfTipsWrapper } from '../components';
-import { golfTips, sliderData, toggleSwitchOptions } from './LibraryData';
+import { GolfTipsWrapper } from '../../library/components';
+import { golfTips, toggleSwitchOptions } from './LibraryData';
 import { LinksSlider } from './components';
 
 type SwitchValueDataType = 'usingTheApp' | 'aboutSwingZen';
@@ -27,8 +27,8 @@ export function LibraryScreen() {
           }}
         />
         <View style={tw`mt-6.25`}>
-          {switchValue === 'usingTheApp' ? <LinksSlider sliderData={sliderData.usingTheApp} /> : undefined}
-          {switchValue === 'aboutSwingZen' ? <LinksSlider sliderData={sliderData.aboutSwingZen} /> : undefined}
+          {switchValue === 'usingTheApp' ? <LinksSlider sliderData={LibrarySliderData.usingTheApp} /> : undefined}
+          {switchValue === 'aboutSwingZen' ? <LinksSlider sliderData={LibrarySliderData.aboutSwingZen} /> : undefined}
         </View>
         <View style={tw`flex-row justify-between items-center pb-3`}>
           <Text variant={TextVariant.SubTitle2SemiBold} color={Color.Neutral.Sz100}>

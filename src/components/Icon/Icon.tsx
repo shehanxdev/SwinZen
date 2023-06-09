@@ -192,8 +192,7 @@ export function PhoneIcon({ color = Color.Neutral.Sz500, width = 18, height = 18
   return <PhoneIconSvg width={width} height={height} fill={color} />;
 }
 
-//#1A5C23 not available within the design system
-export function SettingsMiniIcon({ color = '#1A5C23' as Color, width = 13.5, height = 13 }: SvgIconProps) {
+export function SettingsMiniIcon({ color = Color.Primary.Sz650, width = 13.5, height = 13 }: SvgIconProps) {
   return <SettingsMiniSvg width={width} height={height} fill={color} />;
 }
 
@@ -213,6 +212,7 @@ export function NextIcon({ color = Color.Neutral.Sz100, width = 12, height = 20 
   return <NextIconSvg width={width} height={height} fill={color} />;
 }
 
+//#3C563E not available within the design system
 export function ProfileImageChangeCameraIcon({ color = '#3C563E' as Color, width = 14, height = 10 }: SvgIconProps) {
   return <ProfileImageChangeCameraSvg width={width} height={height} fill={color} />;
 }
