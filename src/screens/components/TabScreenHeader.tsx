@@ -7,6 +7,7 @@ import { TextVariant } from '@sz/constants';
 export interface TabScreenHeaderProps {
   title: string;
 }
+
 export function TabScreenHeader({ title }: TabScreenHeaderProps) {
   return (
     <View style={tw`pt-8`}>
