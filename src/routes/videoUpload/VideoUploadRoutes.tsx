@@ -7,19 +7,7 @@ import { HowToShootScreen, PreValidationScreen, VideoSetupScreen } from '@sz/scr
 import { HeaderBackButton, HeaderTitle } from '../components';
 import { HeaderRightLink } from './components';
 
-export type VideoUploadStackParamList = {
-  [Route.VideoSetup]: {
-    // Can be used for future props
-  };
-  [Route.HowToShoot]: {
-    // Can be used for future props
-  };
-  [Route.PreValidation]: {
-    // Can be used for future props
-  };
-};
-
-const Stack = createNativeStackNavigator<VideoUploadStackParamList>();
+const Stack = createNativeStackNavigator();
 
 export function VideoUploadStack() {
   const renderHeaderRight = () => <HeaderRightLink text="How to Shoot" />;
