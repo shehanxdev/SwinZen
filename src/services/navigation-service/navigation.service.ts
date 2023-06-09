@@ -185,80 +185,10 @@ export class NavigationService {
           },
         },
       },
-      [Route.AboutSwignzenInfoOne]: {
+      [Route.ShootingSetup]: {
         navRoute: Route.LibraryInfoStack,
         navParams: {
-          screen: Route.AboutSwignzenInfoOne,
-          params: {
-            screen: route,
-            params: params,
-          },
-        },
-      },
-      [Route.AboutSwignzenInfoTwo]: {
-        navRoute: Route.LibraryInfoStack,
-        navParams: {
-          screen: Route.AboutSwignzenInfoTwo,
-          params: {
-            screen: route,
-            params: params,
-          },
-        },
-      },
-      [Route.AboutSwignzenInfoThree]: {
-        navRoute: Route.LibraryInfoStack,
-        navParams: {
-          screen: Route.AboutSwignzenInfoThree,
-          params: {
-            screen: route,
-            params: params,
-          },
-        },
-      },
-      [Route.AboutSwignzenInfoFour]: {
-        navRoute: Route.LibraryInfoStack,
-        navParams: {
-          screen: Route.AboutSwignzenInfoFour,
-          params: {
-            screen: route,
-            params: params,
-          },
-        },
-      },
-      [Route.AboutSwignzenInfoFive]: {
-        navRoute: Route.LibraryInfoStack,
-        navParams: {
-          screen: Route.AboutSwignzenInfoFive,
-          params: {
-            screen: route,
-            params: params,
-          },
-        },
-      },
-      [Route.AboutSwignzenInfoSix]: {
-        navRoute: Route.LibraryInfoStack,
-        navParams: {
-          screen: Route.AboutSwignzenInfoSix,
-          params: {
-            screen: route,
-            params: params,
-          },
-        },
-      },
-      [Route.AboutSwignzenInfoSeven]: {
-        navRoute: Route.LibraryInfoStack,
-        navParams: {
-          screen: Route.AboutSwignzenInfoSeven,
-          params: {
-            screen: route,
-            params: params,
-          },
-        },
-      },
-      [Route.AboutSwignzenInfoEight]: {
-        navRoute: Route.LibraryInfoStack,
-        navParams: {
-          screen: Route.AboutSwignzenInfoEight,
+          screen: Route.ShootingSetup,
           params: {
             screen: route,
             params: params,

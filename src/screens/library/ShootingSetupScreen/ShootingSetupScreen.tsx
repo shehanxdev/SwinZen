@@ -7,11 +7,11 @@ import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
-import { BaseScreen } from '../../../components';
+import { BaseScreen } from '../../components';
 
-const TEST_ID_PREFIX = 'ASZInfoEightScreenTestID';
+const TEST_ID_PREFIX = 'ShootingSetupScreenTestID';
 
-export function ASZInfoEightScreen() {
+export function ShootingSetupScreen() {
   const [count, setCount] = useState(0);
 
   const navigation = useNavigation();

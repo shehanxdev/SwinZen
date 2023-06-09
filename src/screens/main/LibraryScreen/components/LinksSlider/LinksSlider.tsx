@@ -4,7 +4,7 @@ import Swiper from 'react-native-swiper';
 
 import { NextIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, LibrarySliderData, Route, TextVariant, UTAInfo } from '@sz/constants';
+import { AboutSZInfo, Color, LibrarySliderData, Route, TextVariant, UTAInfo } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
 interface LinksSliderProps {
@@ -18,28 +18,28 @@ export function LinksSlider({ sliderData }: LinksSliderProps) {
   const onTopicPress = data => {
     switch (data) {
       case LibrarySliderData.aboutSwingZen[0][0]:
-        NavigationService.navigate(Route.AboutSwignzenInfoOne);
+        NavigationService.navigate(Route.LibraryInfo, AboutSZInfo[0]);
         break;
       case LibrarySliderData.aboutSwingZen[0][1]:
-        NavigationService.navigate(Route.AboutSwignzenInfoTwo);
+        NavigationService.navigate(Route.LibraryInfo, AboutSZInfo[1]);
         break;
       case LibrarySliderData.aboutSwingZen[0][2]:
-        NavigationService.navigate(Route.AboutSwignzenInfoThree);
+        NavigationService.navigate(Route.LibraryInfo, AboutSZInfo[2]);
         break;
       case LibrarySliderData.aboutSwingZen[0][3]:
-        NavigationService.navigate(Route.AboutSwignzenInfoFour);
+        NavigationService.navigate(Route.LibraryInfo, AboutSZInfo[3]);
         break;
       case LibrarySliderData.aboutSwingZen[0][4]:
-        NavigationService.navigate(Route.AboutSwignzenInfoFive);
+        NavigationService.navigate(Route.LibraryInfo, AboutSZInfo[4]);
         break;
       case LibrarySliderData.aboutSwingZen[1][0]:
-        NavigationService.navigate(Route.AboutSwignzenInfoSix);
+        NavigationService.navigate(Route.LibraryInfo, AboutSZInfo[5]);
         break;
       case LibrarySliderData.aboutSwingZen[1][1]:
-        NavigationService.navigate(Route.AboutSwignzenInfoSeven);
+        NavigationService.navigate(Route.LibraryInfo, AboutSZInfo[6]);
         break;
       case LibrarySliderData.aboutSwingZen[1][2]:
-        NavigationService.navigate(Route.AboutSwignzenInfoEight);
+        NavigationService.navigate(Route.ShootingSetup);
         break;
       case LibrarySliderData.usingTheApp[0][0]:
         NavigationService.navigate(Route.LibraryInfo, UTAInfo[0]);

@@ -6,13 +6,7 @@ import { LibraryScreen } from '@sz/screens';
 
 import { HeaderBackButton, HeaderTitle } from '../components';
 
-export type LibraryStackParamList = {
-  [Route.LibraryScreen]: {
-    // Can be used for future props
-  };
-};
-
-const Stack = createNativeStackNavigator<LibraryStackParamList>();
+const Stack = createNativeStackNavigator();
 
 export function LibraryStack() {
   return (
