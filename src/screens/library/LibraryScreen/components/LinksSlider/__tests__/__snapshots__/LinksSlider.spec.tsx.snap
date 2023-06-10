@@ -150,6 +150,7 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                       "paddingTop": 13,
                     }
                   }
+                  testID="LinksSliderTestID-slide-2-link 7"
                 >
                   <Text
                     style={
@@ -227,6 +228,7 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                       "paddingTop": 13,
                     }
                   }
+                  testID="LinksSliderTestID-slide-2-link 8"
                 >
                   <Text
                     style={
@@ -304,6 +306,7 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                       "paddingTop": 13,
                     }
                   }
+                  testID="LinksSliderTestID-slide-2-link 9"
                 >
                   <Text
                     style={
@@ -397,6 +400,7 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                       "paddingTop": 13,
                     }
                   }
+                  testID="LinksSliderTestID-slide-0-link 1"
                 >
                   <Text
                     style={
@@ -474,6 +478,7 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                       "paddingTop": 13,
                     }
                   }
+                  testID="LinksSliderTestID-slide-0-link 2"
                 >
                   <Text
                     style={
@@ -551,6 +556,7 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                       "paddingTop": 13,
                     }
                   }
+                  testID="LinksSliderTestID-slide-0-link 3"
                 >
                   <Text
                     style={
@@ -644,6 +650,7 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                       "paddingTop": 13,
                     }
                   }
+                  testID="LinksSliderTestID-slide-1-link 4"
                 >
                   <Text
                     style={
@@ -721,6 +728,7 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                       "paddingTop": 13,
                     }
                   }
+                  testID="LinksSliderTestID-slide-1-link 5"
                 >
                   <Text
                     style={
@@ -798,6 +806,7 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                       "paddingTop": 13,
                     }
                   }
+                  testID="LinksSliderTestID-slide-1-link 6"
                 >
                   <Text
                     style={
@@ -891,6 +900,7 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                       "paddingTop": 13,
                     }
                   }
+                  testID="LinksSliderTestID-slide-2-link 7"
                 >
                   <Text
                     style={
@@ -968,6 +978,7 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                       "paddingTop": 13,
                     }
                   }
+                  testID="LinksSliderTestID-slide-2-link 8"
                 >
                   <Text
                     style={
@@ -1045,6 +1056,7 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                       "paddingTop": 13,
                     }
                   }
+                  testID="LinksSliderTestID-slide-2-link 9"
                 >
                   <Text
                     style={
@@ -1138,6 +1150,7 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                       "paddingTop": 13,
                     }
                   }
+                  testID="LinksSliderTestID-slide-0-link 1"
                 >
                   <Text
                     style={
@@ -1215,6 +1228,7 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                       "paddingTop": 13,
                     }
                   }
+                  testID="LinksSliderTestID-slide-0-link 2"
                 >
                   <Text
                     style={
@@ -1292,6 +1306,7 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                       "paddingTop": 13,
                     }
                   }
+                  testID="LinksSliderTestID-slide-0-link 3"
                 >
                   <Text
                     style={

@@ -1,0 +1,350 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shooting Setup Screen should render Shooting Setup Screen correctly 1`] = `
+<BVLinearGradient
+  colors={
+    [
+      4279917603,
+      4278984207,
+      4278650631,
+    ]
+  }
+  endPoint={
+    {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    {
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "position": "relative",
+    }
+  }
+>
+  <Image
+    resizeMode="cover"
+    source={
+      {
+        "testUri": "../../../src/assets/images/grassBackground.jpg",
+      }
+    }
+    style={
+      {
+        "opacity": 0.1,
+        "position": "absolute",
+      }
+    }
+  />
+  <RCTSafeAreaView
+    style={
+      {
+        "height": "100%",
+        "paddingTop": 50,
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "paddingBottom": 0,
+          },
+        ]
+      }
+    >
+      <RCTScrollView
+        contentContainerStyle={
+          {
+            "flexGrow": 1,
+          }
+        }
+        keyboardShouldPersistTaps="handled"
+      >
+        <View>
+          <View
+            style={
+              {
+                "flexBasis": "0%",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "justifyContent": "space-between",
+                "marginLeft": 16,
+                "marginRight": 16,
+                "marginTop": 32,
+              }
+            }
+            testID="ShootingSetupScreenTestID"
+          >
+            <View>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                 When setting up to shoot a video with a tripod (4-5ft height) or a buddy holding the phone, keep in mind these simple tips.
+
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#C0DBBF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-SemiBold",
+                      "fontSize": 18,
+                      "fontWeight": "bold",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                Tip Number One:
+
+              </Text>
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#FFFFFF",
+                      "lineHeight": 28,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 18,
+                      "fontWeight": "normal",
+                      "textAlign": "auto",
+                    },
+                  ]
+                }
+              >
+                ALWAYS hold your phone in Landscape, NOT in Portrait. We understand that it feels more natural to hold the phone upright, but typically you cannot capture the full range of motion of your swing. Those frames that aren’t caught when the ball and club are outside the camera shot are crucial to getting the best data feedback on your swing.
+
+              </Text>
+              <View
+                style={
+                  [
+                    {
+                      "overflow": "hidden",
+                    },
+                    {
+                      "borderColor": "#FFFFFF",
+                      "borderWidth": 8,
+                      "height": 193,
+                      "width": "100%",
+                    },
+                  ]
+                }
+              >
+                <FastImageView
+                  defaultSource={null}
+                  resizeMode="cover"
+                  source={
+                    {
+                      "cache": "immutable",
+                      "priority": "high",
+                      "uri": "https://video-thumbnails.dev.swingzen.com/landscape.png",
+                    }
+                  }
+                  style={
+                    {
+                      "bottom": 0,
+                      "left": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                />
+              </View>
+            </View>
+            <View
+              style={
+                {
+                  "marginBottom": 12,
+                  "marginTop": 100,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                  }
+                }
+              >
+                <View
+                  collapsable={false}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    {
+                      "backgroundColor": "#A2FD2F",
+                      "borderColor": "#00000000",
+                      "borderRadius": 10,
+                      "borderStyle": "solid",
+                      "borderWidth": 1,
+                      "elevation": 0,
+                      "justifyContent": "center",
+                      "minWidth": "auto",
+                      "shadowColor": "#000",
+                      "shadowOffset": {
+                        "height": 0,
+                        "width": 0,
+                      },
+                      "shadowOpacity": 0,
+                      "shadowRadius": 0,
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <View
+                    accessibilityRole="button"
+                    accessibilityState={
+                      {
+                        "disabled": false,
+                      }
+                    }
+                    accessibilityValue={
+                      {
+                        "max": undefined,
+                        "min": undefined,
+                        "now": undefined,
+                        "text": undefined,
+                      }
+                    }
+                    accessible={true}
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      [
+                        {
+                          "overflow": "hidden",
+                        },
+                        {
+                          "borderRadius": 10,
+                        },
+                      ]
+                    }
+                  >
+                    <View
+                      style={
+                        [
+                          {
+                            "alignItems": "center",
+                            "flexDirection": "row",
+                            "justifyContent": "center",
+                          },
+                          {
+                            "height": 48,
+                          },
+                        ]
+                      }
+                    >
+                      <Text
+                        numberOfLines={1}
+                        selectable={false}
+                        style={
+                          [
+                            {
+                              "color": "#000000",
+                              "fontFamily": "System",
+                              "fontWeight": "400",
+                            },
+                            {
+                              "textAlign": "left",
+                            },
+                            [
+                              {
+                                "letterSpacing": 1,
+                                "marginHorizontal": 16,
+                                "marginVertical": 9,
+                                "textAlign": "center",
+                              },
+                              {
+                                "marginHorizontal": 8,
+                              },
+                              {
+                                "textTransform": "uppercase",
+                              },
+                              {
+                                "color": "#6200ee",
+                                "fontFamily": "System",
+                                "fontWeight": "500",
+                              },
+                              {
+                                "fontFamily": "System",
+                                "fontWeight": "500",
+                              },
+                              {
+                                "color": "#283E36",
+                              },
+                            ],
+                          ]
+                        }
+                      >
+                        <Text
+                          style={
+                            [
+                              {
+                                "color": "#283E36",
+                                "lineHeight": 28,
+                              },
+                              {
+                                "fontFamily": "SourceSansPro-SemiBold",
+                                "fontSize": 18,
+                                "fontWeight": "bold",
+                                "textAlign": "center",
+                              },
+                            ]
+                          }
+                        >
+                          Next
+                        </Text>
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+  </RCTSafeAreaView>
+</BVLinearGradient>
+`;

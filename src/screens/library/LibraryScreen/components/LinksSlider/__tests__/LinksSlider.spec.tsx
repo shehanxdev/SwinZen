@@ -1,8 +1,9 @@
+import { fireEvent } from '@testing-library/react-native';
 import React from 'react';
 
 import { renderWithProviders } from '@sz/test-utils';
 
-import { LinksSlider } from '../LinksSlider';
+import { LinksSlider, LinksSliderProps } from '../LinksSlider';
 
 describe('LinksSlider component', () => {
   const testID = 'LinksSliderTestID';
@@ -13,7 +14,8 @@ describe('LinksSlider component', () => {
     ['link 7', 'link 8', 'link 9'],
   ];
 
-  const getRenderedComponent = () => renderWithProviders(<LinksSlider sliderData={mockSliderData} testID={testID} />);
+  const getRenderedComponent = (props?: Partial<LinksSliderProps>) =>
+    renderWithProviders(<LinksSlider sliderData={mockSliderData} testID={testID} onItemPress={() => {}} {...props} />);
 
   it(`should render LinksSlider component correctly`, () => {
     const rendered = getRenderedComponent();
@@ -25,5 +27,17 @@ describe('LinksSlider component', () => {
     const { getByTestId } = getRenderedComponent();
     const foundLinksSlider = getByTestId(testID);
     expect(foundLinksSlider).toBeTruthy();
+  });
+
+  it(`should call onItemPress with the correct data`, () => {
+    const mockOnPress = jest.fn();
+    const { getAllByTestId } = getRenderedComponent({ onItemPress: mockOnPress });
+
+    const data = mockSliderData[0][1];
+    const item = getAllByTestId(`${testID}-slide-0-${data}`)[0];
+
+    fireEvent.press(item);
+
+    expect(mockOnPress).toBeCalledWith(data);
   });
 });
