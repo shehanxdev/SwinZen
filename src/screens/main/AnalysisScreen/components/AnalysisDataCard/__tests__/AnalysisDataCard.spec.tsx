@@ -9,7 +9,7 @@ describe('AnalysisData Card Component', () => {
   const testID = 'AnalysisDataCardTestID';
   const mockScore = 10;
   const mockObservation = ScoreType.OVERALL;
-  const mockDate = new Date();
+  const mockDate = new Date('2023-05-30');
 
   const getRenderedComponent = () =>
     render(<AnalysisDataCard testID={testID} score={mockScore} observation={mockObservation} time={mockDate} />);

@@ -1,0 +1,1533 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Library Screen Screen should render Library Screen correctly 1`] = `
+<BVLinearGradient
+  colors={
+    [
+      4279917603,
+      4278984207,
+      4278650631,
+    ]
+  }
+  endPoint={
+    {
+      "x": 0.5,
+      "y": 1,
+    }
+  }
+  locations={null}
+  startPoint={
+    {
+      "x": 0.5,
+      "y": 0,
+    }
+  }
+  style={
+    {
+      "flexBasis": "0%",
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "position": "relative",
+    }
+  }
+  testID="GolfTipsScreenTestID"
+>
+  <Image
+    resizeMode="cover"
+    source={
+      {
+        "testUri": "../../../src/assets/images/grassBackground.jpg",
+      }
+    }
+    style={
+      {
+        "opacity": 0.1,
+        "position": "absolute",
+      }
+    }
+  />
+  <RCTSafeAreaView
+    style={
+      {
+        "height": "100%",
+        "paddingTop": 50,
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        [
+          {
+            "flexBasis": "0%",
+            "flexGrow": 1,
+            "flexShrink": 1,
+          },
+          {
+            "paddingBottom": 0,
+          },
+        ]
+      }
+    >
+      <RCTScrollView
+        contentContainerStyle={
+          {
+            "flexGrow": 1,
+          }
+        }
+        keyboardShouldPersistTaps="handled"
+      >
+        <View>
+          <View
+            style={
+              {
+                "flexBasis": "0%",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "marginBottom": 16,
+                "marginLeft": 16,
+                "marginRight": 16,
+                "marginTop": 24,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "columnGap": 4,
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "justifyContent": "space-between",
+                  "rowGap": 36,
+                  "width": "100%",
+                }
+              }
+            >
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "flexShrink": 0,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "borderRadius": 10,
+                      "height": 106,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityIgnoresInvertColors={true}
+                    style={
+                      {
+                        "flexBasis": "0%",
+                        "flexGrow": 1,
+                        "flexShrink": 1,
+                        "justifyContent": "flex-end",
+                      }
+                    }
+                  >
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        {
+                          "testUri": "../../../src/assets/images/golftips/AITools.png",
+                        }
+                      }
+                      style={
+                        [
+                          {
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          {
+                            "borderRadius": 10,
+                          },
+                        ]
+                      }
+                    />
+                    <View
+                      style={
+                        {
+                          "backgroundColor": "#000000B2",
+                          "borderRadius": 10,
+                          "paddingBottom": 14,
+                          "paddingTop": 14,
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#A2FD2F",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-Regular",
+                              "fontSize": 15,
+                              "fontWeight": "600",
+                              "textAlign": "center",
+                            },
+                          ]
+                        }
+                      >
+                        9
+                         Videos
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={
+                    {
+                      "marginTop": 12,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "left",
+                        },
+                      ]
+                    }
+                  >
+                    AI tools
+                  </Text>
+                </View>
+              </View>
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "flexShrink": 0,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "borderRadius": 10,
+                      "height": 106,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityIgnoresInvertColors={true}
+                    style={
+                      {
+                        "flexBasis": "0%",
+                        "flexGrow": 1,
+                        "flexShrink": 1,
+                        "justifyContent": "flex-end",
+                      }
+                    }
+                  >
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        {
+                          "testUri": "../../../src/assets/images/golftips/golfFitness.png",
+                        }
+                      }
+                      style={
+                        [
+                          {
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          {
+                            "borderRadius": 10,
+                          },
+                        ]
+                      }
+                    />
+                    <View
+                      style={
+                        {
+                          "backgroundColor": "#000000B2",
+                          "borderRadius": 10,
+                          "paddingBottom": 14,
+                          "paddingTop": 14,
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#A2FD2F",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-Regular",
+                              "fontSize": 15,
+                              "fontWeight": "600",
+                              "textAlign": "center",
+                            },
+                          ]
+                        }
+                      >
+                        1
+                         Videos
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={
+                    {
+                      "marginTop": 12,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "left",
+                        },
+                      ]
+                    }
+                  >
+                    Golf Fitness
+                  </Text>
+                </View>
+              </View>
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "flexShrink": 0,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "borderRadius": 10,
+                      "height": 106,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityIgnoresInvertColors={true}
+                    style={
+                      {
+                        "flexBasis": "0%",
+                        "flexGrow": 1,
+                        "flexShrink": 1,
+                        "justifyContent": "flex-end",
+                      }
+                    }
+                  >
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        {
+                          "testUri": "../../../src/assets/images/golftips/fundamentals.png",
+                        }
+                      }
+                      style={
+                        [
+                          {
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          {
+                            "borderRadius": 10,
+                          },
+                        ]
+                      }
+                    />
+                    <View
+                      style={
+                        {
+                          "backgroundColor": "#000000B2",
+                          "borderRadius": 10,
+                          "paddingBottom": 14,
+                          "paddingTop": 14,
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#A2FD2F",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-Regular",
+                              "fontSize": 15,
+                              "fontWeight": "600",
+                              "textAlign": "center",
+                            },
+                          ]
+                        }
+                      >
+                        11
+                         Videos
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={
+                    {
+                      "marginTop": 12,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "left",
+                        },
+                      ]
+                    }
+                  >
+                    Fundamentals
+                  </Text>
+                </View>
+              </View>
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "flexShrink": 0,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "borderRadius": 10,
+                      "height": 106,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityIgnoresInvertColors={true}
+                    style={
+                      {
+                        "flexBasis": "0%",
+                        "flexGrow": 1,
+                        "flexShrink": 1,
+                        "justifyContent": "flex-end",
+                      }
+                    }
+                  >
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        {
+                          "testUri": "../../../src/assets/images/golftips/aroundGreen.png",
+                        }
+                      }
+                      style={
+                        [
+                          {
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          {
+                            "borderRadius": 10,
+                          },
+                        ]
+                      }
+                    />
+                    <View
+                      style={
+                        {
+                          "backgroundColor": "#000000B2",
+                          "borderRadius": 10,
+                          "paddingBottom": 14,
+                          "paddingTop": 14,
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#A2FD2F",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-Regular",
+                              "fontSize": 15,
+                              "fontWeight": "600",
+                              "textAlign": "center",
+                            },
+                          ]
+                        }
+                      >
+                        15
+                         Videos
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={
+                    {
+                      "marginTop": 12,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "left",
+                        },
+                      ]
+                    }
+                  >
+                    Around the green
+                  </Text>
+                </View>
+              </View>
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "flexShrink": 0,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "borderRadius": 10,
+                      "height": 106,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityIgnoresInvertColors={true}
+                    style={
+                      {
+                        "flexBasis": "0%",
+                        "flexGrow": 1,
+                        "flexShrink": 1,
+                        "justifyContent": "flex-end",
+                      }
+                    }
+                  >
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        {
+                          "testUri": "../../../src/assets/images/golftips/shortGame.png",
+                        }
+                      }
+                      style={
+                        [
+                          {
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          {
+                            "borderRadius": 10,
+                          },
+                        ]
+                      }
+                    />
+                    <View
+                      style={
+                        {
+                          "backgroundColor": "#000000B2",
+                          "borderRadius": 10,
+                          "paddingBottom": 14,
+                          "paddingTop": 14,
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#A2FD2F",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-Regular",
+                              "fontSize": 15,
+                              "fontWeight": "600",
+                              "textAlign": "center",
+                            },
+                          ]
+                        }
+                      >
+                        1
+                         Videos
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={
+                    {
+                      "marginTop": 12,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "left",
+                        },
+                      ]
+                    }
+                  >
+                    Short game
+                  </Text>
+                </View>
+              </View>
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "flexShrink": 0,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "borderRadius": 10,
+                      "height": 106,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityIgnoresInvertColors={true}
+                    style={
+                      {
+                        "flexBasis": "0%",
+                        "flexGrow": 1,
+                        "flexShrink": 1,
+                        "justifyContent": "flex-end",
+                      }
+                    }
+                  >
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        {
+                          "testUri": "../../../src/assets/images/golftips/mentalGame.png",
+                        }
+                      }
+                      style={
+                        [
+                          {
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          {
+                            "borderRadius": 10,
+                          },
+                        ]
+                      }
+                    />
+                    <View
+                      style={
+                        {
+                          "backgroundColor": "#000000B2",
+                          "borderRadius": 10,
+                          "paddingBottom": 14,
+                          "paddingTop": 14,
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#A2FD2F",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-Regular",
+                              "fontSize": 15,
+                              "fontWeight": "600",
+                              "textAlign": "center",
+                            },
+                          ]
+                        }
+                      >
+                        4
+                         Videos
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={
+                    {
+                      "marginTop": 12,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "left",
+                        },
+                      ]
+                    }
+                  >
+                    Mental game
+                  </Text>
+                </View>
+              </View>
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "flexShrink": 0,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "borderRadius": 10,
+                      "height": 106,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityIgnoresInvertColors={true}
+                    style={
+                      {
+                        "flexBasis": "0%",
+                        "flexGrow": 1,
+                        "flexShrink": 1,
+                        "justifyContent": "flex-end",
+                      }
+                    }
+                  >
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        {
+                          "testUri": "../../../src/assets/images/golftips/offTheTee.png",
+                        }
+                      }
+                      style={
+                        [
+                          {
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          {
+                            "borderRadius": 10,
+                          },
+                        ]
+                      }
+                    />
+                    <View
+                      style={
+                        {
+                          "backgroundColor": "#000000B2",
+                          "borderRadius": 10,
+                          "paddingBottom": 14,
+                          "paddingTop": 14,
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#A2FD2F",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-Regular",
+                              "fontSize": 15,
+                              "fontWeight": "600",
+                              "textAlign": "center",
+                            },
+                          ]
+                        }
+                      >
+                        3
+                         Videos
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={
+                    {
+                      "marginTop": 12,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "left",
+                        },
+                      ]
+                    }
+                  >
+                    Off the Tee
+                  </Text>
+                </View>
+              </View>
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "flexShrink": 0,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "borderRadius": 10,
+                      "height": 106,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityIgnoresInvertColors={true}
+                    style={
+                      {
+                        "flexBasis": "0%",
+                        "flexGrow": 1,
+                        "flexShrink": 1,
+                        "justifyContent": "flex-end",
+                      }
+                    }
+                  >
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        {
+                          "testUri": "../../../src/assets/images/golftips/offTheFairway.png",
+                        }
+                      }
+                      style={
+                        [
+                          {
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          {
+                            "borderRadius": 10,
+                          },
+                        ]
+                      }
+                    />
+                    <View
+                      style={
+                        {
+                          "backgroundColor": "#000000B2",
+                          "borderRadius": 10,
+                          "paddingBottom": 14,
+                          "paddingTop": 14,
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#A2FD2F",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-Regular",
+                              "fontSize": 15,
+                              "fontWeight": "600",
+                              "textAlign": "center",
+                            },
+                          ]
+                        }
+                      >
+                        12
+                         Videos
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={
+                    {
+                      "marginTop": 12,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "left",
+                        },
+                      ]
+                    }
+                  >
+                    Off the Fairway
+                  </Text>
+                </View>
+              </View>
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "flexShrink": 0,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "borderRadius": 10,
+                      "height": 106,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityIgnoresInvertColors={true}
+                    style={
+                      {
+                        "flexBasis": "0%",
+                        "flexGrow": 1,
+                        "flexShrink": 1,
+                        "justifyContent": "flex-end",
+                      }
+                    }
+                  >
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        {
+                          "testUri": "../../../src/assets/images/golftips/onTheGreen.png",
+                        }
+                      }
+                      style={
+                        [
+                          {
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          {
+                            "borderRadius": 10,
+                          },
+                        ]
+                      }
+                    />
+                    <View
+                      style={
+                        {
+                          "backgroundColor": "#000000B2",
+                          "borderRadius": 10,
+                          "paddingBottom": 14,
+                          "paddingTop": 14,
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#A2FD2F",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-Regular",
+                              "fontSize": 15,
+                              "fontWeight": "600",
+                              "textAlign": "center",
+                            },
+                          ]
+                        }
+                      >
+                        12
+                         Videos
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={
+                    {
+                      "marginTop": 12,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "left",
+                        },
+                      ]
+                    }
+                  >
+                    On the green
+                  </Text>
+                </View>
+              </View>
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "flexShrink": 0,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "borderRadius": 10,
+                      "height": 106,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityIgnoresInvertColors={true}
+                    style={
+                      {
+                        "flexBasis": "0%",
+                        "flexGrow": 1,
+                        "flexShrink": 1,
+                        "justifyContent": "flex-end",
+                      }
+                    }
+                  >
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        {
+                          "testUri": "../../../src/assets/images/golftips/mechanics.png",
+                        }
+                      }
+                      style={
+                        [
+                          {
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          {
+                            "borderRadius": 10,
+                          },
+                        ]
+                      }
+                    />
+                    <View
+                      style={
+                        {
+                          "backgroundColor": "#000000B2",
+                          "borderRadius": 10,
+                          "paddingBottom": 14,
+                          "paddingTop": 14,
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#A2FD2F",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-Regular",
+                              "fontSize": 15,
+                              "fontWeight": "600",
+                              "textAlign": "center",
+                            },
+                          ]
+                        }
+                      >
+                        14
+                         Videos
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={
+                    {
+                      "marginTop": 12,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "left",
+                        },
+                      ]
+                    }
+                  >
+                    Swing Mechanics
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+    </View>
+  </RCTSafeAreaView>
+</BVLinearGradient>
+`;

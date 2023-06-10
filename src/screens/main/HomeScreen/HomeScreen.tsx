@@ -8,7 +8,8 @@ import { Color, Route, TextVariant } from '@sz/constants';
 import { NavigationService, PermissionService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 
-import { BaseMainScreen, MonthSelector } from '../components';
+import { MonthSelector } from '../components';
+import { BaseScreen } from './../../components';
 import { AnalysisReportModal, SubscribeCard, VideoUploadCard } from './components';
 import { DataChart } from './components/DataChart/DataChart';
 import { ProfileImageBanner } from './components/ProfileImageBanner';
@@ -17,7 +18,7 @@ import { UploadedVideoCountBanner } from './components/UploadedVideoCountBanner'
 export function HomeScreen() {
   const dispatch = useDispatch();
 
-  const loading = useSelector(state => state.loading.effects.userStore.fetchUserProfileData);
+  const isLoading = useSelector(state => state.loading.effects.userStore.fetchUserProfileData);
   const userProfileData = useSelector(state => state.userStore.profileData);
   const initialLogin = useSelector(state => state.persistentUserStore.loginState) === 'initial';
 
@@ -71,36 +72,30 @@ export function HomeScreen() {
   };
 
   return (
-    <BaseMainScreen>
-      {loading ? (
-        <Text variant={TextVariant.Heading3}>Loading</Text> //TODO::replace with proper loading indicator
+    <BaseScreen isLoading={isLoading}>
+      <View style={tw`mx-4 mt-5`}>
+        <SwingZenLogoIcon width={70} height={34} />
+        <View style={tw`mt-7`}>
+          <ProfileImageBanner />
+        </View>
+        <View style={tw`mt-4.25`}>{renderVideoAnalysisData}</View>
+      </View>
+      {userProfileData?.isSubscribed ? (
+        <LinearGradient
+          colors={[Color.Neutral.Black, Color.Transparency.full, Color.Transparency.full]}
+          locations={[0, 0.2206, 1]}
+          style={tw`inset-0`}>
+          <MonthSelector />
+          <Text variant={TextVariant.Links}>
+            {`Learn more about your progress. \nView your `}
+            <Link text={'Instant Analysis Report.'} onPress={handelModal} />
+          </Text>
+          {renderUploadedVideoCountData}
+        </LinearGradient>
       ) : (
-        <>
-          <View style={tw`mx-4 mt-5`}>
-            <SwingZenLogoIcon width={70} height={34} />
-            <View style={tw`mt-7`}>
-              <ProfileImageBanner />
-            </View>
-            <View style={tw`mt-4.25`}>{renderVideoAnalysisData}</View>
-          </View>
-          {userProfileData?.isSubscribed ? (
-            <LinearGradient
-              colors={[Color.Neutral.Black, Color.Transparency.full, Color.Transparency.full]}
-              locations={[0, 0.2206, 1]}
-              style={tw`inset-0`}>
-              <MonthSelector />
-              <Text variant={TextVariant.Links}>
-                {`Learn more about your progress. \nView your `}
-                <Link text={'Instant Analysis Report.'} onPress={handelModal} />
-              </Text>
-              {renderUploadedVideoCountData}
-            </LinearGradient>
-          ) : (
-            renderUploadedVideoCountData
-          )}
-        </>
+        renderUploadedVideoCountData
       )}
       <AnalysisReportModal showModal={showModal} handleModalClose={() => setShowModal(false)} />
-    </BaseMainScreen>
+    </BaseScreen>
   );
 }

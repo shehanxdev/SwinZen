@@ -931,7 +931,9 @@ exports[`Analysis Screen Screen should render Analysis Screen correctly 1`] = `
                               "fontFamily": "System",
                               "fontWeight": "500",
                             },
-                            undefined,
+                            {
+                              "color": "#283E36",
+                            },
                           ],
                         ]
                       }
