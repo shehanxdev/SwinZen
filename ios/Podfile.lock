@@ -469,6 +469,7 @@ PODS:
   - react-native-config/App (1.4.5):
     - React-Core
   - react-native-image-picker (5.4.0):
+  - react-native-image-picker (5.4.0):
     - React-Core
   - react-native-restart (0.0.27):
     - React-Core
