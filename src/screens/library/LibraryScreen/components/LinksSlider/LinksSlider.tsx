@@ -4,97 +4,30 @@ import Swiper from 'react-native-swiper';
 
 import { NextIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { AboutSZInfo, Color, LibrarySliderData, Route, TextVariant, UTAInfo } from '@sz/constants';
-import { NavigationService } from '@sz/services';
+import { Color, TextVariant } from '@sz/constants';
 
-interface LinksSliderProps {
+export interface LinksSliderProps {
   sliderData: string[][];
+  onItemPress: (item: string) => void;
   testID?: string;
 }
 
-export function LinksSlider({ sliderData }: LinksSliderProps) {
-  const testID = 'LinksSliderTestID';
-
-  const onTopicPress = data => {
-    switch (data) {
-      case LibrarySliderData.aboutSwingZen[0][0]:
-        NavigationService.navigate(Route.LibraryInfo, AboutSZInfo[0]);
-        break;
-      case LibrarySliderData.aboutSwingZen[0][1]:
-        NavigationService.navigate(Route.LibraryInfo, AboutSZInfo[1]);
-        break;
-      case LibrarySliderData.aboutSwingZen[0][2]:
-        NavigationService.navigate(Route.LibraryInfo, AboutSZInfo[2]);
-        break;
-      case LibrarySliderData.aboutSwingZen[0][3]:
-        NavigationService.navigate(Route.LibraryInfo, AboutSZInfo[3]);
-        break;
-      case LibrarySliderData.aboutSwingZen[0][4]:
-        NavigationService.navigate(Route.LibraryInfo, AboutSZInfo[4]);
-        break;
-      case LibrarySliderData.aboutSwingZen[1][0]:
-        NavigationService.navigate(Route.LibraryInfo, AboutSZInfo[5]);
-        break;
-      case LibrarySliderData.aboutSwingZen[1][1]:
-        NavigationService.navigate(Route.LibraryInfo, AboutSZInfo[6]);
-        break;
-      case LibrarySliderData.aboutSwingZen[1][2]:
-        NavigationService.navigate(Route.ShootingSetup);
-        break;
-      case LibrarySliderData.usingTheApp[0][0]:
-        NavigationService.navigate(Route.LibraryInfo, UTAInfo[0]);
-        break;
-      case LibrarySliderData.usingTheApp[0][1]:
-        NavigationService.navigate(Route.LibraryInfo, UTAInfo[1]);
-        break;
-      case LibrarySliderData.usingTheApp[0][2]:
-        NavigationService.navigate(Route.LibraryInfo, UTAInfo[2]);
-        break;
-      case LibrarySliderData.usingTheApp[0][3]:
-        NavigationService.navigate(Route.LibraryInfo, UTAInfo[3]);
-        break;
-      case LibrarySliderData.usingTheApp[0][4]:
-        NavigationService.navigate(Route.LibraryInfo, UTAInfo[4]);
-        break;
-      case LibrarySliderData.usingTheApp[1][0]:
-        NavigationService.navigate(Route.LibraryInfo, UTAInfo[5]);
-        break;
-      case LibrarySliderData.usingTheApp[1][1]:
-        NavigationService.navigate(Route.LibraryInfo, UTAInfo[6]);
-        break;
-      case LibrarySliderData.usingTheApp[1][2]:
-        NavigationService.navigate(Route.LibraryInfo, UTAInfo[7]);
-        break;
-      case LibrarySliderData.usingTheApp[1][3]:
-        NavigationService.navigate(Route.LibraryInfo, UTAInfo[8]);
-        break;
-      case LibrarySliderData.usingTheApp[1][4]:
-        NavigationService.navigate(Route.LibraryInfo, UTAInfo[9]);
-        break;
-      case LibrarySliderData.usingTheApp[2][0]:
-        NavigationService.navigate(Route.LibraryInfo, UTAInfo[10]);
-        break;
-      case LibrarySliderData.usingTheApp[2][1]:
-        NavigationService.navigate(Route.LibraryInfo, UTAInfo[11]);
-        break;
-      case LibrarySliderData.usingTheApp[2][2]:
-        NavigationService.navigate(Route.LibraryInfo, UTAInfo[12]);
-        break;
-    }
-  };
-
+export function LinksSlider({ sliderData, onItemPress, testID = 'LinksSliderTestID' }: LinksSliderProps) {
   const slides = useMemo(() => {
-    return sliderData.map(slide => {
+    return sliderData.map((slide, index) => {
       return (
-        <View key={`${testID}-${slide}`}>
+        <View key={slide.join('')}>
           {slide.map((text, childIndex) => {
             return (
               <View
                 style={tw`justify-between  mx-1 items-center flex-row border-[#ffffff33] ${
-                  slide.length - 1 === childIndex ? 'border-b-0' : 'border-b-[1px]'
+                  slide.length - 1 === childIndex ? 'border-b-0' : 'border-b'
                 }`}
-                key={`${testID}-${slide}-${text}`}>
-                <Pressable style={tw`py-3.25 flex-row justify-between`} onPress={() => onTopicPress(text)}>
+                key={`${slide}-${text}`}>
+                <Pressable
+                  testID={`${testID}-slide-${index}-${text}`}
+                  style={tw`py-3.25 flex-row justify-between`}
+                  onPress={() => onItemPress(text)}>
                   <Text variant={TextVariant.Body1SemiBold} color={Color.Neutral.White}>
                     {text}
                   </Text>
