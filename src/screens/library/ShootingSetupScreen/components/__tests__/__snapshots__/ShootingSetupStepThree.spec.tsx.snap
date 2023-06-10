@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shooting Setup Step One should render Shooting Setup Step Three correctly 1`] = `
+<View>
+  <Text
+    style={
+      [
+        {
+          "color": "#C0DBBF",
+          "lineHeight": 28,
+        },
+        {
+          "fontFamily": "SourceSansPro-SemiBold",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "textAlign": "auto",
+        },
+      ]
+    }
+  >
+    Tip Number Three:
+
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "lineHeight": 28,
+        },
+        {
+          "fontFamily": "SourceSansPro-Regular",
+          "fontSize": 18,
+          "fontWeight": "normal",
+          "textAlign": "auto",
+        },
+      ]
+    }
+  >
+    When shooting your video, you should be able to get the golfer, clubhead, and ball fully in the frame.
+          
+If you lose the clubhead at the top of the swing slightly that is OK. It won’t affect your results.
+          
+The best position for the ball, however, is just above the bottom of the camera frame.
+  </Text>
+</View>
+`;

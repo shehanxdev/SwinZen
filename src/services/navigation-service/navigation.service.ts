@@ -46,6 +46,7 @@ export class NavigationService {
 
   private static getNavigation(route: Route, params?: any) {
     const routeMapping = {
+      // Auth Routes
       [Route.Login]: {
         navRoute: Route.AuthStack,
         navParams: {
@@ -124,6 +125,8 @@ export class NavigationService {
           },
         },
       },
+
+      // Account Routes
       [Route.ProfileSettings]: {
         navRoute: Route.AccountStack,
         navParams: {
@@ -170,10 +173,22 @@ export class NavigationService {
           },
         },
       },
+
+      // Library Info Routes
       [Route.GolfTips]: {
         navRoute: Route.LibraryInfoStack,
         navParams: {
           screen: Route.GolfTips,
+          params: {
+            screen: route,
+            params: params,
+          },
+        },
+      },
+      [Route.ShootingSetup]: {
+        navRoute: Route.LibraryInfoStack,
+        navParams: {
+          screen: Route.ShootingSetup,
           params: {
             screen: route,
             params: params,
@@ -190,6 +205,8 @@ export class NavigationService {
           },
         },
       },
+
+      // Info Routes
       [Route.AboutUs]: {
         navRoute: Route.InfoStack,
         navParams: {
@@ -240,6 +257,8 @@ export class NavigationService {
           },
         },
       },
+
+      // Price Plan Routes
       [Route.PricePlans]: {
         navRoute: Route.PricePlansStack,
         navParams: {
@@ -260,6 +279,8 @@ export class NavigationService {
           },
         },
       },
+
+      // Bottom Tab Routes
       [Route.VideosTab]: {
         navRoute: Route.MainBottomTabRoutesStack,
         navParams: {

@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shooting Setup Step One should render Shooting Setup Step one correctly 1`] = `
+<View>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "lineHeight": 28,
+        },
+        {
+          "fontFamily": "SourceSansPro-Regular",
+          "fontSize": 18,
+          "fontWeight": "normal",
+          "textAlign": "auto",
+        },
+      ]
+    }
+  >
+     When setting up to shoot a video with a tripod (4-5ft height) or a buddy holding the phone, keep in mind these simple tips.
+
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "color": "#C0DBBF",
+          "lineHeight": 28,
+        },
+        {
+          "fontFamily": "SourceSansPro-SemiBold",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "textAlign": "auto",
+        },
+      ]
+    }
+  >
+    Tip Number One:
+
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "lineHeight": 28,
+        },
+        {
+          "fontFamily": "SourceSansPro-Regular",
+          "fontSize": 18,
+          "fontWeight": "normal",
+          "textAlign": "auto",
+        },
+      ]
+    }
+  >
+    ALWAYS hold your phone in Landscape, NOT in Portrait. We understand that it feels more natural to hold the phone upright, but typically you cannot capture the full range of motion of your swing. Those frames that aren’t caught when the ball and club are outside the camera shot are crucial to getting the best data feedback on your swing.
+
+  </Text>
+  <View
+    style={
+      [
+        {
+          "overflow": "hidden",
+        },
+        {
+          "borderColor": "#FFFFFF",
+          "borderWidth": 8,
+          "height": 193,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <FastImageView
+      defaultSource={null}
+      resizeMode="cover"
+      source={
+        {
+          "cache": "immutable",
+          "priority": "high",
+          "uri": "https://video-thumbnails.dev.swingzen.com/landscape.png",
+        }
+      }
+      style={
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+  </View>
+</View>
+`;
