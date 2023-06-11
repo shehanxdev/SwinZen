@@ -36,19 +36,9 @@ jobs:
 workflows:
   android-firebase-deploy-dev:
     jobs:
-      - deploy-dev-android:
+      - android-dev-firebase:
           filters:
             tags:
               only: /^\d+\.\d+\.\d+$/
             branches:
               ignore: /.*/
-          type: approval
-
-      - android-dev-firebase:
-          requires:
-            - deploy-dev-android
-
-      - deploy-prod-android:
-          requires:
-            - android-dev-firebase
-          type: approval
