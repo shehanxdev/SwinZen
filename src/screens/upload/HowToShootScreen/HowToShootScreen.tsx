@@ -1,27 +1,16 @@
-import { useNavigation } from '@react-navigation/native';
-import React, { useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react';
-import { SafeAreaView, ScrollView, TouchableOpacity, View } from 'react-native';
-import FastImage from 'react-native-fast-image';
+import React, { useEffect, useMemo, useState } from 'react';
+import { SafeAreaView, ScrollView, View } from 'react-native';
 
-import { Button, CrossIcon, Link, Text } from '@sz/components';
+import { Button, Link } from '@sz/components';
 import { tw } from '@sz/config';
-import {
-  Color,
-  DownTheLineGIF,
-  FaceOnGIF,
-  LandscapeGIF,
-  Route,
-  SetupValuesType,
-  TextAlignment,
-  TextVariant,
-  TripodHeightGIF,
-} from '@sz/constants';
+import { Route, SetupValuesType } from '@sz/constants';
 import { useHeaderHeight } from '@sz/hooks';
 import { VideoSetupValuesType } from '@sz/models';
 import { NavigationService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 
 import { InstructionsSkipModal } from '../components';
+import { HowToShootStepFour, HowToShootStepOne, HowToShootStepThree, HowToShootStepTwo } from './components';
 
 const TEST_ID_PREFIX = 'HowToShootScreenTestID';
 
@@ -32,31 +21,10 @@ export function HowToShootScreen({ route }) {
   const [count, setCount] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
-  const navigation = useNavigation();
   const dispatch = useDispatch();
 
   const setSkippedInstructions = dispatch.persistentUserStore.setSkippedInstructions;
   const skippedInstructions = useSelector(state => state.persistentUserStore.skippedInstructions);
-
-  const renderHeader = () => {
-    return (
-      <TouchableOpacity
-        onPress={() => {
-          setCount(0);
-          NavigationService.goBack();
-        }}
-        style={tw`py-2.5 pr-2.5`}>
-        <CrossIcon />
-      </TouchableOpacity>
-    );
-  };
-
-  // custom action for navigation header back button
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerRight: renderHeader,
-    });
-  });
 
   useEffect(() => {
     if (data) {
@@ -72,6 +40,7 @@ export function HowToShootScreen({ route }) {
         }
       }
     }
+    return () => setCount(0);
   }, []);
 
   const onSkipPress = () => {
@@ -81,126 +50,16 @@ export function HowToShootScreen({ route }) {
     setTimeout(() => NavigationService.navigate(Route.PreValidation), 200);
   };
 
-  const StepOneContent = useCallback(() => {
-    return (
-      <View>
-        <Text color={Color.Primary.Sz200} variant={TextVariant.Body1SemiBold} textAlign={TextAlignment.Auto}>
-          {`Down The Line/Tripod Instructions\n`}
-        </Text>
-        <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
-          {`Take 4 paces/12 ft behind the ball pointing towards the target.\n`}
-        </Text>
-        <FastImage
-          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
-          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: DownTheLineGIF }}
-        />
-        <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
-          {`\nSet your tripod 4-5 feet high.\n`}
-        </Text>
-        <FastImage
-          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
-          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: TripodHeightGIF }}
-        />
-        <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
-          {`\nPosition your phone in portrait mode.\n`}
-        </Text>
-        <FastImage
-          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
-          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: LandscapeGIF }}
-        />
-      </View>
-    );
-  }, []);
-
-  const StepTwoContent = useCallback(() => {
-    return (
-      <View>
-        <Text color={Color.Primary.Sz200} variant={TextVariant.Body1SemiBold} textAlign={TextAlignment.Auto}>
-          {`Down The Line/Hand-Held Instructions\n`}
-        </Text>
-        <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
-          {`Have your buddy take 4 paces/12 ft behind the ball pointing towards the target.\n`}
-        </Text>
-        <FastImage
-          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
-          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: DownTheLineGIF }}
-        />
-        <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
-          {`\nHave your buddy hold the phone in portrait mode.\n`}
-        </Text>
-        <FastImage
-          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
-          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: LandscapeGIF }}
-        />
-      </View>
-    );
-  }, []);
-
-  const StepThreeContent = useCallback(() => {
-    return (
-      <View>
-        <Text color={Color.Primary.Sz200} variant={TextVariant.Body1SemiBold} textAlign={TextAlignment.Auto}>
-          {`Face-On/Tripod Instructions\n`}
-        </Text>
-        <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
-          {`Take 3 paces/9 ft from the ball, directly in front of the golfer.\n`}
-        </Text>
-        <FastImage
-          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
-          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: FaceOnGIF }}
-        />
-        <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
-          {`\nSet your tripod 4-5 feet high.\n`}
-        </Text>
-        <FastImage
-          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
-          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: TripodHeightGIF }}
-        />
-        <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
-          {`\nPosition your phone in landscape mode.\n`}
-        </Text>
-        <FastImage
-          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
-          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: LandscapeGIF }}
-        />
-      </View>
-    );
-  }, []);
-
-  const StepFourContent = useCallback(() => {
-    return (
-      <View>
-        <Text color={Color.Primary.Sz200} variant={TextVariant.Body1SemiBold} textAlign={TextAlignment.Auto}>
-          {`Face-On/Hand-Held Instructions\n`}
-        </Text>
-        <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
-          {`Have your buddy take 3 paces/9 ft from the ball, directly in front of the golfer. \n`}
-        </Text>
-        <FastImage
-          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
-          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: FaceOnGIF }}
-        />
-        <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
-          {`\nHave your buddy take 3 paces/9 ft from the ball, directly in front of the golfer. \n`}
-        </Text>
-        <FastImage
-          style={tw`w-full h-51.5 border-4 border-Neutral-White`}
-          source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: LandscapeGIF }}
-        />
-      </View>
-    );
-  }, []);
-
   const renderBody = useMemo(() => {
     switch (count) {
       case 0:
-        return <StepOneContent />;
+        return <HowToShootStepOne />;
       case 1:
-        return <StepTwoContent />;
+        return <HowToShootStepTwo />;
       case 2:
-        return <StepThreeContent />;
+        return <HowToShootStepThree />;
       case 3:
-        return <StepFourContent />;
+        return <HowToShootStepFour />;
       default:
         return null;
     }

@@ -1,17 +1,18 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
+import { Platform } from 'react-native';
 
 import { Route } from '@sz/constants';
 import { HowToShootScreen, PreValidationScreen, VideoSetupScreen } from '@sz/screens';
 
 import { HeaderBackButton, HeaderTitle } from '../components';
-import { HeaderRightLink } from './components';
+import { HeaderRightCloseButton, HeaderRightLink } from './components';
 
 const Stack = createNativeStackNavigator();
 
 export function VideoUploadStack() {
-  const renderHeaderRight = () => <HeaderRightLink text="How to Shoot" />;
-  const renderHeaderTitle = () => <HeaderTitle>Shooting instructions</HeaderTitle>;
+  const renderHowToShootLink = () => <HeaderRightLink text="How to Shoot" />;
+  const renderShootingInstructionsTitle = () => <HeaderTitle>Shooting instructions</HeaderTitle>;
 
   return (
     <Stack.Navigator
@@ -27,14 +28,16 @@ export function VideoUploadStack() {
       <Stack.Screen
         name={Route.VideoSetup}
         component={VideoSetupScreen}
-        options={{ title: '', headerRight: renderHeaderRight }}
+        options={{ title: '', headerRight: renderHowToShootLink }}
       />
       <Stack.Screen
         name={Route.HowToShoot}
         component={HowToShootScreen}
         options={{
-          headerLeft: renderHeaderTitle,
           title: '',
+          headerLeft: renderShootingInstructionsTitle,
+          headerRight: HeaderRightCloseButton,
+          presentation: Platform.OS === 'ios' ? 'modal' : 'containedModal',
         }}
       />
       <Stack.Screen

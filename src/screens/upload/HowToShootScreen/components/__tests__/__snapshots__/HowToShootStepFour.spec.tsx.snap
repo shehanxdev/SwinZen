@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`How to shoot step four Should render How to shoot step four correctly 1`] = `
+<View>
+  <Text
+    style={
+      [
+        {
+          "color": "#C0DBBF",
+          "lineHeight": 28,
+        },
+        {
+          "fontFamily": "SourceSansPro-SemiBold",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "textAlign": "auto",
+        },
+      ]
+    }
+  >
+    Face-On/Hand-Held Instructions
+
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "lineHeight": 28,
+        },
+        {
+          "fontFamily": "SourceSansPro-Regular",
+          "fontSize": 18,
+          "fontWeight": "normal",
+          "textAlign": "auto",
+        },
+      ]
+    }
+  >
+    Have your buddy take 3 paces/9 ft from the ball, directly in front of the golfer. 
+
+  </Text>
+  <View
+    style={
+      [
+        {
+          "overflow": "hidden",
+        },
+        {
+          "borderColor": "#FFFFFF",
+          "borderWidth": 4,
+          "height": 206,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <FastImageView
+      defaultSource={null}
+      resizeMode="cover"
+      source={
+        {
+          "cache": "immutable",
+          "priority": "high",
+          "uri": "https://video-thumbnails.dev.swingzen.com/Take%20Face%20On%203%20Paces%20from%20Ball%202.gif",
+        }
+      }
+      style={
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+  </View>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "lineHeight": 28,
+        },
+        {
+          "fontFamily": "SourceSansPro-Regular",
+          "fontSize": 18,
+          "fontWeight": "normal",
+          "textAlign": "auto",
+        },
+      ]
+    }
+  >
+    
+Have your buddy take 3 paces/9 ft from the ball, directly in front of the golfer. 
+
+  </Text>
+  <View
+    style={
+      [
+        {
+          "overflow": "hidden",
+        },
+        {
+          "borderColor": "#FFFFFF",
+          "borderWidth": 4,
+          "height": 206,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <FastImageView
+      defaultSource={null}
+      resizeMode="cover"
+      source={
+        {
+          "cache": "immutable",
+          "priority": "high",
+          "uri": "https://video-thumbnails.dev.swingzen.com/Landscape%20and%20Portrait.gif",
+        }
+      }
+      style={
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+  </View>
+</View>
+`;
