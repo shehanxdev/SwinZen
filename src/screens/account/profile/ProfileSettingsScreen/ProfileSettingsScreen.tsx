@@ -7,15 +7,17 @@ import { Color, Route, TextVariant } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 import { useSelector } from '@sz/stores';
 
-import { BaseAccountScreen } from '../../components';
+import { BaseScreen } from './../../../components';
 import { ProfileImageUpload, ProfileInfoCard } from './components';
 
 export function ProfileSettingsScreen() {
   const userData = useSelector(state => state.userStore.userData);
   const userPlan = useSelector(state => state.userStore.userPlan);
 
+  //TODO::add loading state
+
   return (
-    <BaseAccountScreen testID="ProfileSettingsScreenTestID">
+    <BaseScreen testID="ProfileSettingsScreenTestID">
       <View style={tw`mt-14.5 mx-4`}>
         <ProfileImageUpload />
         <View style={tw`mt-6 mb-12`}>
@@ -106,6 +108,6 @@ export function ProfileSettingsScreen() {
           </View>
         </ProfileInfoCard>
       </View>
-    </BaseAccountScreen>
+    </BaseScreen>
   );
 }

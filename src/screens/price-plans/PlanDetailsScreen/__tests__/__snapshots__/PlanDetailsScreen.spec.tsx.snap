@@ -393,7 +393,9 @@ exports[`Plan Details Screen screen should render Plan Details Screen correctly 
                                     "fontFamily": "SourceSansPro-SemiBold",
                                     "fontWeight": "normal",
                                   },
-                                  undefined,
+                                  {
+                                    "color": "#283E36",
+                                  },
                                 ],
                               ]
                             }

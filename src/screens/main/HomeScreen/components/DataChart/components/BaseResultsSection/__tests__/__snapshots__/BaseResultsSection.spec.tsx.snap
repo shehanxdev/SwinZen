@@ -11,50 +11,8 @@ exports[`BaseResultsSection component should render correctly should render corr
   }
 >
   <View
-    animatedStyle={
-      {
-        "value": {},
-      }
-    }
-    collapsable={false}
-    entering={
-      FadeInDown {
-        "build": [Function],
-        "callbackV": undefined,
-        "dampingV": undefined,
-        "delayV": undefined,
-        "durationV": 500,
-        "easingV": undefined,
-        "initialValues": undefined,
-        "massV": undefined,
-        "overshootClampingV": undefined,
-        "randomizeDelay": false,
-        "restDisplacementThresholdV": undefined,
-        "restSpeedThresholdV": undefined,
-        "rotateV": undefined,
-        "stiffnessV": undefined,
-        "type": undefined,
-      }
-    }
-    exiting={
-      FadeOutDown {
-        "build": [Function],
-        "callbackV": undefined,
-        "dampingV": undefined,
-        "delayV": undefined,
-        "durationV": 500,
-        "easingV": undefined,
-        "initialValues": undefined,
-        "massV": undefined,
-        "overshootClampingV": undefined,
-        "randomizeDelay": false,
-        "restDisplacementThresholdV": undefined,
-        "restSpeedThresholdV": undefined,
-        "rotateV": undefined,
-        "stiffnessV": undefined,
-        "type": undefined,
-      }
-    }
+    entering={BaseAnimationMock {}}
+    exiting={BaseAnimationMock {}}
     onLayout={[Function]}
     style={
       {
@@ -139,50 +97,8 @@ exports[`BaseResultsSection component should render correctly should render corr
     </View>
   </View>
   <View
-    animatedStyle={
-      {
-        "value": {},
-      }
-    }
-    collapsable={false}
-    entering={
-      FadeInDown {
-        "build": [Function],
-        "callbackV": undefined,
-        "dampingV": undefined,
-        "delayV": undefined,
-        "durationV": 500,
-        "easingV": undefined,
-        "initialValues": undefined,
-        "massV": undefined,
-        "overshootClampingV": undefined,
-        "randomizeDelay": false,
-        "restDisplacementThresholdV": undefined,
-        "restSpeedThresholdV": undefined,
-        "rotateV": undefined,
-        "stiffnessV": undefined,
-        "type": undefined,
-      }
-    }
-    exiting={
-      FadeOutDown {
-        "build": [Function],
-        "callbackV": undefined,
-        "dampingV": undefined,
-        "delayV": undefined,
-        "durationV": 500,
-        "easingV": undefined,
-        "initialValues": undefined,
-        "massV": undefined,
-        "overshootClampingV": undefined,
-        "randomizeDelay": false,
-        "restDisplacementThresholdV": undefined,
-        "restSpeedThresholdV": undefined,
-        "rotateV": undefined,
-        "stiffnessV": undefined,
-        "type": undefined,
-      }
-    }
+    entering={BaseAnimationMock {}}
+    exiting={BaseAnimationMock {}}
     onLayout={[Function]}
     style={
       {
@@ -317,50 +233,8 @@ exports[`BaseResultsSection component should render correctly should render corr
   }
 >
   <View
-    animatedStyle={
-      {
-        "value": {},
-      }
-    }
-    collapsable={false}
-    entering={
-      FadeInDown {
-        "build": [Function],
-        "callbackV": undefined,
-        "dampingV": undefined,
-        "delayV": undefined,
-        "durationV": 500,
-        "easingV": undefined,
-        "initialValues": undefined,
-        "massV": undefined,
-        "overshootClampingV": undefined,
-        "randomizeDelay": false,
-        "restDisplacementThresholdV": undefined,
-        "restSpeedThresholdV": undefined,
-        "rotateV": undefined,
-        "stiffnessV": undefined,
-        "type": undefined,
-      }
-    }
-    exiting={
-      FadeOutDown {
-        "build": [Function],
-        "callbackV": undefined,
-        "dampingV": undefined,
-        "delayV": undefined,
-        "durationV": 500,
-        "easingV": undefined,
-        "initialValues": undefined,
-        "massV": undefined,
-        "overshootClampingV": undefined,
-        "randomizeDelay": false,
-        "restDisplacementThresholdV": undefined,
-        "restSpeedThresholdV": undefined,
-        "rotateV": undefined,
-        "stiffnessV": undefined,
-        "type": undefined,
-      }
-    }
+    entering={BaseAnimationMock {}}
+    exiting={BaseAnimationMock {}}
     onLayout={[Function]}
     style={
       {
@@ -445,50 +319,8 @@ exports[`BaseResultsSection component should render correctly should render corr
     </View>
   </View>
   <View
-    animatedStyle={
-      {
-        "value": {},
-      }
-    }
-    collapsable={false}
-    entering={
-      FadeInDown {
-        "build": [Function],
-        "callbackV": undefined,
-        "dampingV": undefined,
-        "delayV": undefined,
-        "durationV": 500,
-        "easingV": undefined,
-        "initialValues": undefined,
-        "massV": undefined,
-        "overshootClampingV": undefined,
-        "randomizeDelay": false,
-        "restDisplacementThresholdV": undefined,
-        "restSpeedThresholdV": undefined,
-        "rotateV": undefined,
-        "stiffnessV": undefined,
-        "type": undefined,
-      }
-    }
-    exiting={
-      FadeOutDown {
-        "build": [Function],
-        "callbackV": undefined,
-        "dampingV": undefined,
-        "delayV": undefined,
-        "durationV": 500,
-        "easingV": undefined,
-        "initialValues": undefined,
-        "massV": undefined,
-        "overshootClampingV": undefined,
-        "randomizeDelay": false,
-        "restDisplacementThresholdV": undefined,
-        "restSpeedThresholdV": undefined,
-        "rotateV": undefined,
-        "stiffnessV": undefined,
-        "type": undefined,
-      }
-    }
+    entering={BaseAnimationMock {}}
+    exiting={BaseAnimationMock {}}
     onLayout={[Function]}
     style={
       {
@@ -623,50 +455,8 @@ exports[`BaseResultsSection component should render correctly should render corr
   }
 >
   <View
-    animatedStyle={
-      {
-        "value": {},
-      }
-    }
-    collapsable={false}
-    entering={
-      FadeInDown {
-        "build": [Function],
-        "callbackV": undefined,
-        "dampingV": undefined,
-        "delayV": undefined,
-        "durationV": 500,
-        "easingV": undefined,
-        "initialValues": undefined,
-        "massV": undefined,
-        "overshootClampingV": undefined,
-        "randomizeDelay": false,
-        "restDisplacementThresholdV": undefined,
-        "restSpeedThresholdV": undefined,
-        "rotateV": undefined,
-        "stiffnessV": undefined,
-        "type": undefined,
-      }
-    }
-    exiting={
-      FadeOutDown {
-        "build": [Function],
-        "callbackV": undefined,
-        "dampingV": undefined,
-        "delayV": undefined,
-        "durationV": 500,
-        "easingV": undefined,
-        "initialValues": undefined,
-        "massV": undefined,
-        "overshootClampingV": undefined,
-        "randomizeDelay": false,
-        "restDisplacementThresholdV": undefined,
-        "restSpeedThresholdV": undefined,
-        "rotateV": undefined,
-        "stiffnessV": undefined,
-        "type": undefined,
-      }
-    }
+    entering={BaseAnimationMock {}}
+    exiting={BaseAnimationMock {}}
     onLayout={[Function]}
     style={
       {
@@ -751,50 +541,8 @@ exports[`BaseResultsSection component should render correctly should render corr
     </View>
   </View>
   <View
-    animatedStyle={
-      {
-        "value": {},
-      }
-    }
-    collapsable={false}
-    entering={
-      FadeInDown {
-        "build": [Function],
-        "callbackV": undefined,
-        "dampingV": undefined,
-        "delayV": undefined,
-        "durationV": 500,
-        "easingV": undefined,
-        "initialValues": undefined,
-        "massV": undefined,
-        "overshootClampingV": undefined,
-        "randomizeDelay": false,
-        "restDisplacementThresholdV": undefined,
-        "restSpeedThresholdV": undefined,
-        "rotateV": undefined,
-        "stiffnessV": undefined,
-        "type": undefined,
-      }
-    }
-    exiting={
-      FadeOutDown {
-        "build": [Function],
-        "callbackV": undefined,
-        "dampingV": undefined,
-        "delayV": undefined,
-        "durationV": 500,
-        "easingV": undefined,
-        "initialValues": undefined,
-        "massV": undefined,
-        "overshootClampingV": undefined,
-        "randomizeDelay": false,
-        "restDisplacementThresholdV": undefined,
-        "restSpeedThresholdV": undefined,
-        "rotateV": undefined,
-        "stiffnessV": undefined,
-        "type": undefined,
-      }
-    }
+    entering={BaseAnimationMock {}}
+    exiting={BaseAnimationMock {}}
     onLayout={[Function]}
     style={
       {
@@ -929,50 +677,8 @@ exports[`BaseResultsSection component should render correctly should render corr
   }
 >
   <View
-    animatedStyle={
-      {
-        "value": {},
-      }
-    }
-    collapsable={false}
-    entering={
-      FadeInDown {
-        "build": [Function],
-        "callbackV": undefined,
-        "dampingV": undefined,
-        "delayV": undefined,
-        "durationV": 500,
-        "easingV": undefined,
-        "initialValues": undefined,
-        "massV": undefined,
-        "overshootClampingV": undefined,
-        "randomizeDelay": false,
-        "restDisplacementThresholdV": undefined,
-        "restSpeedThresholdV": undefined,
-        "rotateV": undefined,
-        "stiffnessV": undefined,
-        "type": undefined,
-      }
-    }
-    exiting={
-      FadeOutDown {
-        "build": [Function],
-        "callbackV": undefined,
-        "dampingV": undefined,
-        "delayV": undefined,
-        "durationV": 500,
-        "easingV": undefined,
-        "initialValues": undefined,
-        "massV": undefined,
-        "overshootClampingV": undefined,
-        "randomizeDelay": false,
-        "restDisplacementThresholdV": undefined,
-        "restSpeedThresholdV": undefined,
-        "rotateV": undefined,
-        "stiffnessV": undefined,
-        "type": undefined,
-      }
-    }
+    entering={BaseAnimationMock {}}
+    exiting={BaseAnimationMock {}}
     onLayout={[Function]}
     style={
       {
@@ -1057,50 +763,8 @@ exports[`BaseResultsSection component should render correctly should render corr
     </View>
   </View>
   <View
-    animatedStyle={
-      {
-        "value": {},
-      }
-    }
-    collapsable={false}
-    entering={
-      FadeInDown {
-        "build": [Function],
-        "callbackV": undefined,
-        "dampingV": undefined,
-        "delayV": undefined,
-        "durationV": 500,
-        "easingV": undefined,
-        "initialValues": undefined,
-        "massV": undefined,
-        "overshootClampingV": undefined,
-        "randomizeDelay": false,
-        "restDisplacementThresholdV": undefined,
-        "restSpeedThresholdV": undefined,
-        "rotateV": undefined,
-        "stiffnessV": undefined,
-        "type": undefined,
-      }
-    }
-    exiting={
-      FadeOutDown {
-        "build": [Function],
-        "callbackV": undefined,
-        "dampingV": undefined,
-        "delayV": undefined,
-        "durationV": 500,
-        "easingV": undefined,
-        "initialValues": undefined,
-        "massV": undefined,
-        "overshootClampingV": undefined,
-        "randomizeDelay": false,
-        "restDisplacementThresholdV": undefined,
-        "restSpeedThresholdV": undefined,
-        "rotateV": undefined,
-        "stiffnessV": undefined,
-        "type": undefined,
-      }
-    }
+    entering={BaseAnimationMock {}}
+    exiting={BaseAnimationMock {}}
     onLayout={[Function]}
     style={
       {
