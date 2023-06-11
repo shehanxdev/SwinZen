@@ -20,9 +20,12 @@ jobs:
           keystore-location: android/app/keystore
       - run:
           name: Create keystore.properties
-          command:
-            cd android && printf 'keyAlias=%s\nkeyPassword=%s\nstoreFile=android/app/keystore\nstorePassword=%s' \
+          command: cd android && printf 'keyAlias=%s\nkeyPassword=%s\nstoreFile=keystore\nstorePassword=%s' \
             $RELEASE_KEY_ALIAS $RELEASE_KEY_PASSWORD $RELEASE_STORE_PASSWORD > keystore.properties
+      - run:
+          name: Create fastlane env
+          command: cd android/fastlane && printf 'FIREBASE_TOKEN=%s\nFIREBASE_APP_ID=%s\nFIREBASE_TESTERS_GROUP=%s' \
+            $FIREBASE_TOKEN $FIREBASE_APP_ID $FIREBASE_TESTERS_GROUP > .env
       - android/fastlane-deploy:
           working-directory: android
           lane-name: firebase_deploy_dev
