@@ -9,7 +9,8 @@
     "start": "react-native start",
     "test": "jest --coverage",
     "prepare": "husky install",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "fastlane:android:dev": "cd android && bundle exec fastlane android firebase_deploy_dev"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.0.0",

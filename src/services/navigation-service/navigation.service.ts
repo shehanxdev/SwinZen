@@ -185,6 +185,16 @@ export class NavigationService {
           },
         },
       },
+      [Route.ShootingSetup]: {
+        navRoute: Route.LibraryInfoStack,
+        navParams: {
+          screen: Route.ShootingSetup,
+          params: {
+            screen: route,
+            params: params,
+          },
+        },
+      },
       [Route.LibraryInfo]: {
         navRoute: Route.LibraryInfoStack,
         navParams: {

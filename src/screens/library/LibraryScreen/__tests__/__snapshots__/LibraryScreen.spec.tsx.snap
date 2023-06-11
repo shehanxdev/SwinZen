@@ -443,6 +443,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-2-Pass/Fail"
                             >
                               <Text
                                 style={
@@ -520,6 +521,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-2-AI-Pro Tips"
                             >
                               <Text
                                 style={
@@ -597,6 +599,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-2-Swing Analysis Report"
                             >
                               <Text
                                 style={
@@ -690,6 +693,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-0-How to use the app"
                             >
                               <Text
                                 style={
@@ -767,6 +771,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-0-Shooting environment"
                             >
                               <Text
                                 style={
@@ -844,6 +849,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-0-Shooting hacks"
                             >
                               <Text
                                 style={
@@ -921,6 +927,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-0-Uploading a video"
                             >
                               <Text
                                 style={
@@ -998,6 +1005,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-0-Video processing time"
                             >
                               <Text
                                 style={
@@ -1091,6 +1099,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-1-Successful Reviews"
                             >
                               <Text
                                 style={
@@ -1168,6 +1177,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-1-Failed Reviews"
                             >
                               <Text
                                 style={
@@ -1245,6 +1255,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-1-Swing Analysis Results"
                             >
                               <Text
                                 style={
@@ -1322,6 +1333,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-1-Swing Data"
                             >
                               <Text
                                 style={
@@ -1399,6 +1411,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-1-Swing Priority List"
                             >
                               <Text
                                 style={
@@ -1492,6 +1505,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-2-Pass/Fail"
                             >
                               <Text
                                 style={
@@ -1569,6 +1583,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-2-AI-Pro Tips"
                             >
                               <Text
                                 style={
@@ -1646,6 +1661,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-2-Swing Analysis Report"
                             >
                               <Text
                                 style={
@@ -1739,6 +1755,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-0-How to use the app"
                             >
                               <Text
                                 style={
@@ -1816,6 +1833,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-0-Shooting environment"
                             >
                               <Text
                                 style={
@@ -1893,6 +1911,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-0-Shooting hacks"
                             >
                               <Text
                                 style={
@@ -1970,6 +1989,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-0-Uploading a video"
                             >
                               <Text
                                 style={
@@ -2047,6 +2067,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   "paddingTop": 13,
                                 }
                               }
+                              testID="LinksSliderTestID-slide-0-Video processing time"
                             >
                               <Text
                                 style={

@@ -2,20 +2,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
 import { Route, TextAlignment } from '@sz/constants';
-import { GolfTipsScreen, LibraryInfoScreen } from '@sz/screens';
+import { GolfTipsScreen, LibraryInfoScreen, ShootingSetupScreen } from '@sz/screens';
 
 import { HeaderBackButton, HeaderTitle } from '../components';
 
-export type LibraryInfoStackParamList = {
-  [Route.GolfTips]: {
-    // Can be used for future props
-  };
-  [Route.LibraryInfo]: {
-    // Can be used for future props
-  };
-};
-
-const Stack = createNativeStackNavigator<LibraryInfoStackParamList>();
+const Stack = createNativeStackNavigator();
 
 export function LibraryInfoStack() {
   return (
@@ -31,6 +22,7 @@ export function LibraryInfoStack() {
       }}>
       <Stack.Screen name={Route.GolfTips} component={GolfTipsScreen} options={{ title: 'Golf tips' }} />
       <Stack.Screen name={Route.LibraryInfo} component={LibraryInfoScreen} options={{ title: '' }} />
+      <Stack.Screen name={Route.ShootingSetup} component={ShootingSetupScreen} options={{ title: 'Shooting setup' }} />
     </Stack.Navigator>
   );
 }

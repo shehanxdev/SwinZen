@@ -7,5 +7,9 @@ export const FaceOnGIF = 'https://video-thumbnails.dev.swingzen.com/Take%20Face%
 export const LandscapeGIF = 'https://video-thumbnails.dev.swingzen.com/Landscape%20and%20Portrait.gif';
 export const TripodHeightGIF = 'https://video-thumbnails.dev.swingzen.com/Tripod%20Height%203.gif';
 
+export const LandscapeImageUrl = 'https://video-thumbnails.dev.swingzen.com/landscape.png';
+export const DownTheLineImageUrl = 'https://video-thumbnails.dev.swingzen.com/downtheline.png';
+export const FaceOnImageUrl = 'https://video-thumbnails.dev.swingzen.com/faceon.png';
+
 // static measurements
 export const headerTopMargin = 20; // this margin is only applicable into android when we are using custom header
