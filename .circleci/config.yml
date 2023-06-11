@@ -27,7 +27,7 @@ jobs:
           command: cd android/fastlane && printf 'FIREBASE_TOKEN=%s\nFIREBASE_APP_ID=%s\nFIREBASE_TESTERS_GROUP=%s' \
             $FIREBASE_TOKEN $FIREBASE_APP_ID $FIREBASE_TESTERS_GROUP > .env
       - run:
-         name: Create Application env
+          name: Create Application env
           command: printf 'BASE_URL=%s' $BASE_URL_DEV > .env
       - android/fastlane-deploy:
           working-directory: android
