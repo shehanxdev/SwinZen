@@ -24,6 +24,10 @@ const getPopLinePlayTime = offset => {
   return (offset + (DURATION_WINDOW_WIDTH * parseFloat(POPLINE_POSITION)) / 100) / (FRAMES_PER_SECOND * FRAME_WIDTH);
 };
 
+const getOffSetFromPopLinePlayTime = playtime => {
+  return playtime * (FRAMES_PER_SECOND * FRAME_WIDTH) - (DURATION_WINDOW_WIDTH * parseFloat(POPLINE_POSITION)) / 1000;
+};
+
 const convertToMinutesAndSeconds = (seconds: number) => {
   let minutes = Math.floor(seconds / 60);
   let remainingSeconds = seconds % 60;
@@ -50,13 +54,22 @@ export function VideoPlayer({ source }) {
 
   const handleOnProgress = ({ currentTime }) => {
     const currentTimeInSeconds = Math.round(currentTime);
+
+    if (!paused) {
+      const xOffset = getOffSetFromPopLinePlayTime(currentTime + 1);
+
+      setTimeout(() => {
+        scrollViewRef.current.scrollTo({ x: xOffset, animated: true });
+      }, 100);
+    }
+
     const currentProgress = convertToMinutesAndSeconds(currentTimeInSeconds);
     setProgress(currentProgress);
   };
 
   const generateFrames = (filePath, numberOfFrames) => {
     let frames = [];
-    for (let i = 0; i < numberOfFrames; i++) {
+    for (let i = 1; i < numberOfFrames; i++) {
       frames.push(`${filePath.replace('%4d', String(i + 1).padStart(4, '0'))}`);
     }
     setFrames(frames);
@@ -64,17 +77,14 @@ export function VideoPlayer({ source }) {
 
   const handleOnScroll = ({ nativeEvent }) => {
     const playbackTime = getPopLinePlayTime(nativeEvent.contentOffset.x);
-    //@ts-ignore
-    videoPlayerRef.current?.seek(playbackTime);
-  };
-
-  const handleAutoScrollToEnd = () => {
-    scrollViewRef.current.scrollToEnd({ animated: true });
+    if (paused) {
+      videoPlayerRef.current?.seek(playbackTime);
+      //@ts-ignore
+    }
   };
 
   const handleOnTouchEnd = () => {
     setPaused(false);
-    handleAutoScrollToEnd();
   };
 
   const handleOnTouchStart = () => {
@@ -194,6 +204,7 @@ export function VideoPlayer({ source }) {
             onTouchEnd={handleOnTouchEnd}
             style={tw`w-full`}
             alwaysBounceHorizontal={false}
+            bounces={false}
             scrollEventThrottle={1}>
             <View style={tw`w-[${blankSpaceWidth}px] bg-black`} />
             {frames.map((frame, index) => renderFrame(frame, index))}
