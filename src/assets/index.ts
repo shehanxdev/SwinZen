@@ -1,5 +1,4 @@
 export * from './images';
-export * from './graphics';
 
 export { default as AccountLockSvg } from './icons/account/account-lock.svg';
 export { default as ArrowDown } from './icons/faq/arrow-down.svg';

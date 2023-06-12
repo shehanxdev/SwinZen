@@ -20,14 +20,7 @@ jest.mock('@react-navigation/native', () => {
 
 jest.mock('react-native-fs', () => {
   return {
-    MainBundlePath: jest.fn(),
     CachesDirectoryPath: jest.fn(),
-    DocumentDirectoryPath: jest.fn(),
-    ExternalDirectoryPath: jest.fn(),
-    ExternalStorageDirectoryPath: jest.fn(),
-    TemporaryDirectoryPath: jest.fn(),
-    LibraryDirectoryPath: jest.fn(),
-    PicturesDirectoryPath: jest.fn(),
   };
 });
 

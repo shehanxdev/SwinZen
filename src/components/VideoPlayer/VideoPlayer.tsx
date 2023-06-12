@@ -13,7 +13,6 @@ import {
   TextVariant,
 } from '@sz/constants';
 import { FFmpegService } from '@sz/services';
-import { convertToMinutesAndSeconds } from '@sz/utils';
 
 import { ErrorIcon, PauseIcon, PlayIcon } from '../Icon';
 import { Text } from '../Typography';
@@ -25,20 +24,29 @@ const getPopLinePlayTime = offset => {
   return (offset + (DURATION_WINDOW_WIDTH * parseFloat(POPLINE_POSITION)) / 100) / (FRAMES_PER_SECOND * FRAME_WIDTH);
 };
 
+const convertToMinutesAndSeconds = (seconds: number) => {
+  let minutes = Math.floor(seconds / 60);
+  let remainingSeconds = seconds % 60;
+  let formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+  let formattedSeconds = remainingSeconds < 10 ? '0' + remainingSeconds : remainingSeconds;
+  return formattedMinutes + ':' + formattedSeconds;
+};
+
+const FRAME_STATUS = Object.freeze({
+  LOADING: { name: Symbol('LOADING') },
+  READY: { name: Symbol('READY') },
+});
+
 export function VideoPlayer({ source }) {
-  console.log('passed video source', source);
   const videoPlayerRef = useRef(null);
+  const scrollViewRef = useRef(null);
+
   const [progress, setProgress] = useState('00:00');
   const [duration, setDuration] = useState('00:00');
   const [paused, setPaused] = useState(true);
   const [isVideoLoading, setIsVideoLoading] = useState(true);
   const [frames, setFrames] = useState(null);
   const [failedToGenerateFrames, setFailedToGenerateFrames] = useState(false);
-
-  const FRAME_STATUS = Object.freeze({
-    LOADING: { name: Symbol('LOADING') },
-    READY: { name: Symbol('READY') },
-  });
 
   const handleOnProgress = ({ currentTime }) => {
     const currentTimeInSeconds = Math.round(currentTime);
@@ -60,9 +68,13 @@ export function VideoPlayer({ source }) {
     videoPlayerRef.current?.seek(playbackTime);
   };
 
+  const handleAutoScrollToEnd = () => {
+    scrollViewRef.current.scrollToEnd({ animated: true });
+  };
+
   const handleOnTouchEnd = () => {
-    console.log('handleOnTouchEnd tiggred');
     setPaused(false);
+    handleAutoScrollToEnd();
   };
 
   const handleOnTouchStart = () => {
@@ -70,7 +82,6 @@ export function VideoPlayer({ source }) {
   };
 
   const handleVideoLoad = async ({ duration }) => {
-    console.log('video loaded');
     setIsVideoLoading(false);
     let localFileName = `someRandomFileNamee`;
     const numberOfFrames = Math.ceil(duration);
@@ -175,6 +186,7 @@ export function VideoPlayer({ source }) {
             </View>
           )}
           <ScrollView
+            ref={scrollViewRef}
             showsHorizontalScrollIndicator={false}
             horizontal={true}
             onScroll={handleOnScroll}
