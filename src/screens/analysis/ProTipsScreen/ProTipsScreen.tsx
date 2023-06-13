@@ -20,14 +20,25 @@ export function ProTipsScreen({ route }) {
     });
   });
 
+  const getTipTypeDescription = (tipType: TipType): string => {
+    switch (tipType) {
+      case 'pga-pro-tips':
+        return type === ScoreType.SETUP
+          ? 'Take a look at how a PGA Pro would fix this swing fault'
+          : 'Take a quick look on how to fix this swing fault.';
+      case 'ai-pro-tips':
+        return "Here's an AI Pro Tip on how to improve your swing!";
+      case 'side-by-side':
+        return 'Compare your swing to a pro’s!';
+    }
+  };
+
   return (
     <BaseAnalysisScreen>
       <View style={tw`flex-1 justify-between`}>
         <View style={tw`mx-4 mb-5`}>
           <Text variant={TextVariant.Body2Regular} color={Color.Neutral.Sz400} textAlign={TextAlignment.Left}>
-            {type === ScoreType.SETUP
-              ? 'Take a look at how a PGA Pro would fix this swing fault'
-              : 'Take a quick look on how to fix this swing fault.'}
+            {getTipTypeDescription(tipType)}
           </Text>
         </View>
         <View style={tw`flex-1 mb--4 bg-white`} />
