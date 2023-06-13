@@ -1,6 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { Platform } from 'react-native';
 
 import { Route } from '@sz/constants';
 import { HowToShootScreen, PreValidationScreen, VideoSetupScreen } from '@sz/screens';
@@ -37,7 +36,13 @@ export function VideoUploadStack() {
           title: '',
           headerLeft: renderShootingInstructionsTitle,
           headerRight: HeaderRightCloseButton,
-          presentation: Platform.OS === 'ios' ? 'modal' : 'containedModal',
+          /**
+           * NOTE:
+           * presentation: 'modal' is only supported in android as of now
+           * slide_from_bottom is added to get the modal behaviour in android
+           */
+          presentation: 'modal',
+          animation: 'slide_from_bottom',
         }}
       />
       <Stack.Screen

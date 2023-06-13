@@ -77,7 +77,8 @@ export function HowToShootScreen({ route }) {
                   NavigationService.goBack();
                 } else if (data) {
                   setCount(0);
-                  NavigationService.navigate(Route.PreValidation);
+                  NavigationService.goBack();
+                  setTimeout(() => NavigationService.navigate(Route.PreValidation), 500);
                 } else {
                   setCount(count + 1);
                 }
