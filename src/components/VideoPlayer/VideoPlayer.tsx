@@ -57,10 +57,7 @@ export function VideoPlayer({ source }) {
 
     if (!paused) {
       const xOffset = getOffSetFromPopLinePlayTime(currentTime + 1);
-
-      setTimeout(() => {
-        scrollViewRef.current.scrollTo({ x: xOffset, animated: true });
-      }, 100);
+      scrollViewRef.current.scrollTo({ x: xOffset, animated: true });
     }
 
     const currentProgress = convertToMinutesAndSeconds(currentTimeInSeconds);
@@ -69,7 +66,7 @@ export function VideoPlayer({ source }) {
 
   const generateFrames = (filePath, numberOfFrames) => {
     let frames = [];
-    for (let i = 1; i < numberOfFrames; i++) {
+    for (let i = 0; i < numberOfFrames - 1; i++) {
       frames.push(`${filePath.replace('%4d', String(i + 1).padStart(4, '0'))}`);
     }
     setFrames(frames);
@@ -79,7 +76,6 @@ export function VideoPlayer({ source }) {
     const playbackTime = getPopLinePlayTime(nativeEvent.contentOffset.x);
     if (paused) {
       videoPlayerRef.current?.seek(playbackTime);
-      //@ts-ignore
     }
   };
 
@@ -172,27 +168,27 @@ export function VideoPlayer({ source }) {
         />
         {!isVideoLoading && (
           <View style={tw`absolute bottom-4 flex-row justify-center w-full `}>
-            <View style={tw`py-0.5 px-1.75 flex-row items-center w-23 bg-[#00000087] rounded-lg mx-0`}>
-              <Pressable onPress={() => setPaused(prevState => !prevState)}>
+            <Pressable onPress={() => setPaused(prevState => !prevState)}>
+              <View style={tw`py-0.5 px-1.75 flex-row items-center w-23 bg-[#00000087] rounded-lg mx-0`}>
                 {!paused ? <PauseIcon /> : <PlayIcon />}
-              </Pressable>
-              <View style={tw`pl-1 items-center flex-row`}>
-                <Text variant={TextVariant.LabelsAlt} color={Color.Neutral.Sz100}>
-                  {progress} /
-                </Text>
-                <Text variant={TextVariant.LabelsAlt} color={Color.Neutral.Sz500}>
-                  {` ${duration}`}
-                </Text>
+                <View style={tw`pl-1 items-center flex-row`}>
+                  <Text variant={TextVariant.LabelsAlt} color={Color.Neutral.Sz100}>
+                    {progress} /
+                  </Text>
+                  <Text variant={TextVariant.LabelsAlt} color={Color.Neutral.Sz500}>
+                    {` ${duration}`}
+                  </Text>
+                </View>
               </View>
-            </View>
+            </Pressable>
           </View>
         )}
       </View>
       {frames && !failedToGenerateFrames && (
-        <View style={tw`w-full h-20 justify-center z-10`}>
+        <View style={tw`w-full h-15 justify-center`}>
           {!frames.some(frame => frame.status === FRAME_STATUS.LOADING.name.description) && (
-            <View style={tw`absolute self-center z-6.5 w-1.25 h-25 pt-3`}>
-              <View style={tw`w-0.75 rounded-sm h-20 bg-[${Color.Neutral.Sz100}]`} />
+            <View style={tw`absolute self-center z-1 w-1.25 h-15`}>
+              <View style={tw`w-0.75 rounded-sm h-15 bg-[${Color.Neutral.Sz100}]`} />
             </View>
           )}
           <ScrollView
