@@ -4,7 +4,8 @@ import React from 'react';
 import { Route, TextAlignment } from '@sz/constants';
 import { AIProTipsScreen, PGAProTipsScreen, SideBySideScreen } from '@sz/screens';
 
-import { HeaderBackButton, HeaderTitle } from '../components';
+import { HeaderRightCloseButton } from '../components';
+import { RightHeaderTitle } from './components';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,13 +17,14 @@ export function AnalysisStack() {
         headerBackTitleVisible: false,
         headerBackVisible: false,
         headerTransparent: true,
-        headerTitle: HeaderTitle,
-        headerLeft: HeaderBackButton,
+        headerTitle: RightHeaderTitle,
+        headerLeft: null,
+        headerRight: HeaderRightCloseButton,
         animation: 'slide_from_right',
       }}>
-      <Stack.Screen name={Route.PGAProTips} component={PGAProTipsScreen} options={{ title: '' }} />
-      <Stack.Screen name={Route.AIProTips} component={AIProTipsScreen} options={{ title: '' }} />
-      <Stack.Screen name={Route.SideBySide} component={SideBySideScreen} options={{ title: '' }} />
+      <Stack.Screen name={Route.PGAProTips} component={PGAProTipsScreen} />
+      <Stack.Screen name={Route.AIProTips} component={AIProTipsScreen} />
+      <Stack.Screen name={Route.SideBySide} component={SideBySideScreen} />
     </Stack.Navigator>
   );
 }

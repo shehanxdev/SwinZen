@@ -27,7 +27,11 @@ export function AnalysisDataCard({
     <Pressable
       testID={testID}
       style={tw`flex-row h-16 mx-2 my-1.75 px-5 bg-Neutral-Sz1000 rounded-2.5 items-center justify-between`}
-      onPress={() => NavigationService.navigate(Route.PGAProTips)}>
+      onPress={() => {
+        if (observation !== ScoreType.OVERALL) {
+          NavigationService.navigate(Route.PGAProTips, { type: observation });
+        }
+      }}>
       <View style={tw`flex-row items-center gap-7.5`}>
         {/* design shadow and this implemntation has a different, here can't use arbitary values to shadow, added closest tailwind style */}
         <View

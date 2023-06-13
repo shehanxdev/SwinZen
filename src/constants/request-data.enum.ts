@@ -20,7 +20,7 @@ export enum FilesType {
 
 export enum ScoreType {
   OVERALL = 'Overall',
-  SETUP = 'Set up',
-  BACKSWING = 'Back swing',
-  DOWNSWING = 'Down swing',
+  SETUP = 'Setup',
+  BACKSWING = 'Backswing',
+  DOWNSWING = 'Downswing',
 }
