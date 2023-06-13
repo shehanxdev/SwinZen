@@ -1,9 +1,10 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Pressable, View } from 'react-native';
 
 import { Text } from '@sz/components';
 import { szdayjs, tw } from '@sz/config';
-import { Color, ScoreType, TextVariant } from '@sz/constants';
+import { Color, Route, ScoreType, TextVariant } from '@sz/constants';
+import { NavigationService } from '@sz/services';
 import { addPadToNumber } from '@sz/utils';
 
 export interface AnalysisDataCardProps {
@@ -23,9 +24,10 @@ export function AnalysisDataCard({
   const actualMonth = szdayjs(new Date(time)).get('month');
 
   return (
-    <View
+    <Pressable
       testID={testID}
-      style={tw`flex-row h-16 mx-2 my-1.75 px-5 bg-Neutral-Sz1000 rounded-2.5 items-center justify-between`}>
+      style={tw`flex-row h-16 mx-2 my-1.75 px-5 bg-Neutral-Sz1000 rounded-2.5 items-center justify-between`}
+      onPress={() => NavigationService.navigate(Route.PGAProTips)}>
       <View style={tw`flex-row items-center gap-7.5`}>
         {/* design shadow and this implemntation has a different, here can't use arbitary values to shadow, added closest tailwind style */}
         <View
@@ -48,6 +50,6 @@ export function AnalysisDataCard({
           {addPadToNumber(szdayjs(time).date())}
         </Text>
       </View>
-    </View>
+    </Pressable>
   );
 }

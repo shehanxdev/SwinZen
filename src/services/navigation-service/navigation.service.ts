@@ -174,6 +174,38 @@ export class NavigationService {
         },
       },
 
+      // Analysis Routes
+      [Route.PGAProTips]: {
+        navRoute: Route.AnalysisStack,
+        navParams: {
+          screen: Route.PGAProTips,
+          params: {
+            screen: route,
+            params: params,
+          },
+        },
+      },
+      [Route.AIProTips]: {
+        navRoute: Route.AnalysisStack,
+        navParams: {
+          screen: Route.AIProTips,
+          params: {
+            screen: route,
+            params: params,
+          },
+        },
+      },
+      [Route.SideBySide]: {
+        navRoute: Route.AnalysisStack,
+        navParams: {
+          screen: Route.SideBySide,
+          params: {
+            screen: route,
+            params: params,
+          },
+        },
+      },
+
       // Library Info Routes
       [Route.GolfTips]: {
         navRoute: Route.LibraryInfoStack,
