@@ -28,7 +28,7 @@ const CAMERA_ICON_DIMENTIONS = {
   height: 28,
   width: 28,
 };
-const PROFILE_IMAGE_COMMON_STYLES = tw`w-[${PROFILE_IMAGE_DIMENTIONS.width}px] h-[${PROFILE_IMAGE_DIMENTIONS.height}px] rounded-full bg-Primary-Sz650 items-center justify-center border border-Neutral-Sz100 z-0`;
+const PROFILE_IMAGE_COMMON_STYLES = tw`w-[${PROFILE_IMAGE_DIMENTIONS.width}px] h-[${PROFILE_IMAGE_DIMENTIONS.height}px] rounded-full bg-Primary-Sz650 items-center justify-center border-2 border-Neutral-Sz100 z-0`;
 const LOADER_STYLES = tw`p-[${PROFILE_IMAGE_DIMENTIONS.width / 2}px] bg-[${
   Color.Transparency.Sz56
 }]  rounded-full absolute z-10`;

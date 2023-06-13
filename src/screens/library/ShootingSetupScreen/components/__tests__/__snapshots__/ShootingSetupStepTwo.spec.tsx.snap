@@ -62,7 +62,7 @@ exports[`Shooting Setup Step Two should render Shooting Setup Step Two correctly
         {
           "cache": "immutable",
           "priority": "high",
-          "uri": "https://video-thumbnails.dev.swingzen.com/downtheline.png",
+          "uri": "https://thumbnails.dev.swingzen.com/video-thumbs/downtheline.png",
         }
       }
       style={
@@ -118,7 +118,7 @@ In The Face On perspective, the camera/phone needs to be 4 paces (9ft/3M) from t
         {
           "cache": "immutable",
           "priority": "high",
-          "uri": "https://video-thumbnails.dev.swingzen.com/faceon.png",
+          "uri": "https://thumbnails.dev.swingzen.com/video-thumbs/faceon.png",
         }
       }
       style={

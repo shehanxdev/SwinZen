@@ -62,7 +62,7 @@ exports[`How to shoot step two Should render How to shoot step two correctly 1`]
         {
           "cache": "immutable",
           "priority": "high",
-          "uri": "https://video-thumbnails.dev.swingzen.com/Take%20Down%20the%20Line%204%20paces%20Behind%20Ball.gif",
+          "uri": "https://thumbnails.dev.swingzen.com/gifs/downtheline.gif",
         }
       }
       style={
@@ -118,7 +118,7 @@ Have your buddy hold the phone in portrait mode.
         {
           "cache": "immutable",
           "priority": "high",
-          "uri": "https://video-thumbnails.dev.swingzen.com/Landscape%20and%20Portrait.gif",
+          "uri": "https://thumbnails.dev.swingzen.com/gifs/Landscape.gif",
         }
       }
       style={
