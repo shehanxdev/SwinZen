@@ -148,7 +148,7 @@ exports[`Profile Settings Screen Screen should render Profile Settings Screen co
                         "backgroundColor": "#1A5C23",
                         "borderColor": "#F8F9FA",
                         "borderRadius": 9999,
-                        "borderWidth": 1,
+                        "borderWidth": 2,
                         "height": 134,
                         "justifyContent": "center",
                         "width": 134,
