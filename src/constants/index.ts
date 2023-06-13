@@ -1,4 +1,5 @@
 export * from './static-content';
+export * from './analysis';
 export * from './auth';
 export * from './colors';
 export * from './error';

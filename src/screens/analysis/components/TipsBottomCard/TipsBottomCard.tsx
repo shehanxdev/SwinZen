@@ -3,12 +3,11 @@ import { View } from 'react-native';
 
 import { Button, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, Route, ScoreType, TextAlignment, TextVariant } from '@sz/constants';
-import { NavigationService } from '@sz/services';
+import { Color, ScoreType, TextAlignment, TextVariant, TipType } from '@sz/constants';
 
-export function TipsBottomCard({ type, route }) {
-  const getTypeDescription = (type: ScoreType): string => {
-    switch (type) {
+export function TipsBottomCard({ scoreType, tipType, onSetTipType }) {
+  const getTypeDescription = (scoreType: ScoreType): string => {
+    switch (scoreType) {
       case 'Setup':
         return 'Shoulder tilt is too flat. Bring your lead shoulder up a bit more at address position.';
       case 'Backswing':
@@ -18,34 +17,34 @@ export function TipsBottomCard({ type, route }) {
     }
   };
 
-  const getRouteData = (route: Route) => {
-    switch (route) {
+  const getRouteData = (tipType: TipType) => {
+    switch (tipType) {
       case 'pga-pro-tips':
         return {
           title: 'PGA Pro Tip',
-          description: getTypeDescription(type),
+          description: getTypeDescription(scoreType),
           leftButtonTitle: 'AI pro tips',
           rightButtonTitle: 'Side-by-side',
-          onLeftButtonPress: () => NavigationService.navigate(Route.AIProTips),
-          onRightButtonPress: () => NavigationService.navigate(Route.SideBySide),
+          onLeftButtonPress: () => onSetTipType(TipType.AI_PRO_TIPS),
+          onRightButtonPress: () => onSetTipType(TipType.SIDE_BY_SIDE),
         };
       case 'ai-pro-tips':
         return {
           title: 'AI Pro Tip',
-          description: getTypeDescription(type),
-          leftButtonTitle: 'AI pro tips',
+          description: getTypeDescription(scoreType),
+          leftButtonTitle: 'PGA pro tip',
           rightButtonTitle: 'Side-by-side',
-          onLeftButtonPress: () => NavigationService.navigate(Route.AIProTips),
-          onRightButtonPress: () => NavigationService.navigate(Route.SideBySide),
+          onLeftButtonPress: () => onSetTipType(TipType.PGA_PRO_TIPS),
+          onRightButtonPress: () => onSetTipType(TipType.SIDE_BY_SIDE),
         };
       case 'side-by-side':
         return {
           title: 'Side-By-Side',
-          description: getTypeDescription(type),
-          leftButtonTitle: 'AI pro tips',
-          rightButtonTitle: 'Side-by-side',
-          onLeftButtonPress: () => NavigationService.navigate(Route.AIProTips),
-          onRightButtonPress: () => NavigationService.navigate(Route.SideBySide),
+          description: getTypeDescription(scoreType),
+          leftButtonTitle: 'PGA pro rip',
+          rightButtonTitle: 'AI pro tips',
+          onLeftButtonPress: () => onSetTipType(TipType.PGA_PRO_TIPS),
+          onRightButtonPress: () => onSetTipType(TipType.AI_PRO_TIPS),
         };
     }
   };
@@ -54,31 +53,31 @@ export function TipsBottomCard({ type, route }) {
     <View style={tw`pb-8.5 pt-8 px-2 rounded-t-2xl bg-Neutral-Sz900`}>
       <View style={tw`mx-4`}>
         <Text variant={TextVariant.SubTitle2SemiBold} color={Color.Neutral.Sz400} textAlign={TextAlignment.Left}>
-          {getRouteData(route).title}
+          {getRouteData(tipType).title}
         </Text>
         <View style={tw`mt-3 mb-5`}>
           <Text variant={TextVariant.Body2Regular} color={Color.Neutral.Sz400} textAlign={TextAlignment.Left}>
-            {getRouteData(route).description}
+            {getRouteData(tipType).description}
           </Text>
         </View>
       </View>
       <View style={tw`flex-row justify-between px-3.5 gap-2.5`}>
         <View style={tw`grow-1 basis-0`}>
           <Button
-            title={getRouteData(route).leftButtonTitle}
+            title={getRouteData(tipType).leftButtonTitle}
             textColor={Color.Neutral.Black}
             backgroundColor={Color.Tertiary.Sz900}
             borderColor={Color.Tertiary.Sz900}
-            onPress={getRouteData(route).onLeftButtonPress}
+            onPress={getRouteData(tipType).onLeftButtonPress}
           />
         </View>
         <View style={tw`grow-1 basis-0`}>
           <Button
-            title={getRouteData(route).rightButtonTitle}
+            title={getRouteData(tipType).rightButtonTitle}
             textColor={Color.Tertiary.Sz900}
             backgroundColor={Color.Transparency.full}
             borderColor={Color.Primary.Sz650}
-            onPress={getRouteData(route).onRightButtonPress}
+            onPress={getRouteData(tipType).onRightButtonPress}
           />
         </View>
       </View>

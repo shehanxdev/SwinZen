@@ -1,14 +1,15 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { View } from 'react-native';
 
 import { Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, Route, ScoreType, TextAlignment, TextVariant } from '@sz/constants';
+import { Color, ScoreType, TextAlignment, TextVariant, TipType } from '@sz/constants';
 
 import { BaseAnalysisScreen, TipsBottomCard } from '../components';
 
-export function PGAProTipsScreen({ route }) {
+export function ProTipsScreen({ route }) {
+  const [tipType, setTipType] = useState<TipType>(TipType.PGA_PRO_TIPS);
   const { type } = route.params.params;
 
   const navigation = useNavigation();
@@ -30,7 +31,7 @@ export function PGAProTipsScreen({ route }) {
           </Text>
         </View>
         <View style={tw`flex-1 mb--4 bg-white`} />
-        <TipsBottomCard type={type} route={Route.PGAProTips} />
+        <TipsBottomCard scoreType={type} tipType={tipType} onSetTipType={(item: TipType) => setTipType(item)} />
       </View>
     </BaseAnalysisScreen>
   );

@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
 import { Route, TextAlignment } from '@sz/constants';
-import { AIProTipsScreen, PGAProTipsScreen, SideBySideScreen } from '@sz/screens';
+import { ProTipsScreen } from '@sz/screens';
 
 import { HeaderRightCloseButton } from '../components';
 import { RightHeaderTitle } from './components';
@@ -22,9 +22,7 @@ export function AnalysisStack() {
         headerRight: HeaderRightCloseButton,
         animation: 'slide_from_right',
       }}>
-      <Stack.Screen name={Route.PGAProTips} component={PGAProTipsScreen} />
-      <Stack.Screen name={Route.AIProTips} component={AIProTipsScreen} />
-      <Stack.Screen name={Route.SideBySide} component={SideBySideScreen} />
+      <Stack.Screen name={Route.ProTips} component={ProTipsScreen} />
     </Stack.Navigator>
   );
 }

@@ -29,7 +29,7 @@ export function AnalysisDataCard({
       style={tw`flex-row h-16 mx-2 my-1.75 px-5 bg-Neutral-Sz1000 rounded-2.5 items-center justify-between`}
       onPress={() => {
         if (observation !== ScoreType.OVERALL) {
-          NavigationService.navigate(Route.PGAProTips, { type: observation });
+          NavigationService.navigate(Route.ProTips, { type: observation });
         }
       }}>
       <View style={tw`flex-row items-center gap-7.5`}>

@@ -175,30 +175,10 @@ export class NavigationService {
       },
 
       // Analysis Routes
-      [Route.PGAProTips]: {
+      [Route.ProTips]: {
         navRoute: Route.AnalysisStack,
         navParams: {
-          screen: Route.PGAProTips,
-          params: {
-            screen: route,
-            params: params,
-          },
-        },
-      },
-      [Route.AIProTips]: {
-        navRoute: Route.AnalysisStack,
-        navParams: {
-          screen: Route.AIProTips,
-          params: {
-            screen: route,
-            params: params,
-          },
-        },
-      },
-      [Route.SideBySide]: {
-        navRoute: Route.AnalysisStack,
-        navParams: {
-          screen: Route.SideBySide,
+          screen: Route.ProTips,
           params: {
             screen: route,
             params: params,
