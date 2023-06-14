@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { ActivityIndicator, Dimensions, Image, Pressable, ScrollView, View } from 'react-native';
+import { Dimensions, Image, Pressable, ScrollView, View } from 'react-native';
 import Video from 'react-native-video';
 
 import { tw } from '@sz/config';
@@ -15,6 +15,7 @@ import {
 import { FFmpegService } from '@sz/services';
 
 import { ErrorIcon, PauseIcon, PlayIcon } from '../Icon';
+import { LoadingIndicator } from '../LoadingIndicator';
 import { Text } from '../Typography';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
@@ -58,9 +59,7 @@ export function VideoPlayer({ source }) {
     if (!paused) {
       const xOffset = getOffSetFromPopLinePlayTime(currentTime + 1);
 
-      setTimeout(() => {
-        scrollViewRef.current.scrollTo({ x: xOffset, animated: true });
-      }, 100);
+      scrollViewRef.current.scrollTo({ x: xOffset, animated: true });
     }
 
     const currentProgress = convertToMinutesAndSeconds(currentTimeInSeconds);
@@ -69,7 +68,7 @@ export function VideoPlayer({ source }) {
 
   const generateFrames = (filePath, numberOfFrames) => {
     let frames = [];
-    for (let i = 1; i < numberOfFrames; i++) {
+    for (let i = 0; i < numberOfFrames - 1; i++) {
       frames.push(`${filePath.replace('%4d', String(i + 1).padStart(4, '0'))}`);
     }
     setFrames(frames);
@@ -77,9 +76,10 @@ export function VideoPlayer({ source }) {
 
   const handleOnScroll = ({ nativeEvent }) => {
     const playbackTime = getPopLinePlayTime(nativeEvent.contentOffset.x);
+    console.log('playbackTime', playbackTime);
+
     if (paused) {
       videoPlayerRef.current?.seek(playbackTime);
-      //@ts-ignore
     }
   };
 
@@ -121,10 +121,12 @@ export function VideoPlayer({ source }) {
   };
 
   const renderFrame = (frame, index) => {
+    console.log('frame', frame);
     if (frame.status === FRAME_STATUS.LOADING.name.description) {
       return (
         <View style={tw`w-10 h-10 justify-center`} key={index}>
-          <ActivityIndicator size="small" color={Color.Tertiary.Sz900} />
+          {/* <ActivityIndicator size="small" color={Color.Tertiary.Sz900} /> */}
+          <LoadingIndicator size="small" color={Color.Tertiary.Sz900} />
         </View>
       );
     } else {
@@ -158,12 +160,13 @@ export function VideoPlayer({ source }) {
       <View style={tw`h-62.5 relative`}>
         {isVideoLoading && (
           <View style={tw`flex-row justify-center items-center absolute inset-0 z-2`}>
-            <ActivityIndicator size="large" color={Color.Tertiary.Sz900} />
+            <LoadingIndicator size="large" color={Color.Tertiary.Sz900} />
           </View>
         )}
         <Video
           ref={videoPlayerRef}
           onLoad={handleVideoLoad}
+          auto
           onProgress={handleOnProgress}
           resizeMode={'cover'}
           source={{ uri: source }}
@@ -172,10 +175,10 @@ export function VideoPlayer({ source }) {
         />
         {!isVideoLoading && (
           <View style={tw`absolute bottom-4 flex-row justify-center w-full `}>
-            <View style={tw`py-0.5 px-1.75 flex-row items-center w-23 bg-[#00000087] rounded-lg mx-0`}>
-              <Pressable onPress={() => setPaused(prevState => !prevState)}>
-                {!paused ? <PauseIcon /> : <PlayIcon />}
-              </Pressable>
+            <Pressable
+              onPress={() => setPaused(prevState => !prevState)}
+              style={tw`py-0.5 px-1.75 flex-row items-center w-23 bg-[#00000087] rounded-lg mx-0`}>
+              <View>{!paused ? <PauseIcon /> : <PlayIcon />}</View>
               <View style={tw`pl-1 items-center flex-row`}>
                 <Text variant={TextVariant.LabelsAlt} color={Color.Neutral.Sz100}>
                   {progress} /
@@ -184,7 +187,7 @@ export function VideoPlayer({ source }) {
                   {` ${duration}`}
                 </Text>
               </View>
-            </View>
+            </Pressable>
           </View>
         )}
       </View>

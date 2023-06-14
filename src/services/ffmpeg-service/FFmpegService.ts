@@ -12,7 +12,22 @@ export abstract class FFmpegService {
     successCallback: (outputImagePath: string) => void,
     errorCallback: () => void,
   ): Promise<void> {
-    let outputImagePath = `${FileSystemService.CachesDirectoryPath}/${localFileName}_%4d.png`;
+    console.log('FileSystemService.CachesDirectoryPath', FileSystemService.CachesDirectoryPath);
+
+    const oldFramesCacheDirectory = `${FileSystemService.CachesDirectoryPath}/timeline_frame_cache`;
+
+    const directoryExists = await FileSystemService.checkDirectoryExistence(oldFramesCacheDirectory);
+
+    console.log('directoryExists', directoryExists);
+
+    if (directoryExists) {
+      await FileSystemService.deleteFileFromCachesDirectory(oldFramesCacheDirectory);
+      console.log('oldFramesCacheDirectory deleted');
+    }
+
+    const createdDirectoryPath = await FileSystemService.createDirectoryInCaches('timeline_frame_cache');
+
+    let outputImagePath = `${createdDirectoryPath}/${localFileName}_%4d.png`;
     const ffmpegCommand = `-ss 0 -i ${videoURI} -vf "fps=${FRAMES_PER_SECOND}/1:round=up,scale=${FRAME_SCALE}:-2" -vframes ${frameNumber} ${outputImagePath}`;
 
     try {

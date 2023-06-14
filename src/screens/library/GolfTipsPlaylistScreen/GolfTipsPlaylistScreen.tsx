@@ -26,9 +26,14 @@ export function GolfTipsPlaylistScreen({ route }) {
     <BaseScreen wrapWithScrollView={false}>
       <View style={tw`flex-1 mx-4 mt-6`}>
         <View style={tw``}>
-          {/* Uncomment the one with http when testing on Android*/}
-          <VideoPlayer source="https://www.w3schools.com/html/mov_bbb.mp4" />
-          {/* <VideoPlayer source="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" /> */}
+          {/* 
+          Source URLS for testing 
+
+          IOS - https://www.w3schools.com/html/mov_bbb.mp4
+          Android - http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4
+          video with 10mins duration - https://storage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4 
+        */}
+          <VideoPlayer source="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" />
         </View>
         <View style={tw`my-6.5`}>
           <Text variant={TextVariant.SubTitle1} color={Color.Neutral.Sz100} textAlign={TextAlignment.Left}>
