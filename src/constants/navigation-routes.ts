@@ -1,7 +1,6 @@
 export enum Route {
   AboutUs = 'about-us',
   AccountStack = 'account-stack',
-  AIProTips = 'ai-pro-tips',
   AnalysisTab = 'analysis-tab',
   AnalysisScreen = 'analysis-screen',
   AnalysisStack = 'analysis-stack',
@@ -36,7 +35,6 @@ export enum Route {
   ResetPassword = 'reset-password',
   ResetPasswordEmailVerification = 'reset-password-email-verification',
   ShootingSetup = 'shooting-setup',
-  SideBySide = 'side-by-side',
   Signup = 'sign-up',
   SignupStack = 'signup-stack',
   TermsOfUse = 'terms-of-use',
