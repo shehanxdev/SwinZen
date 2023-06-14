@@ -761,7 +761,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "marginRight": 4,
                               }
                             }
-                            testID="LinksSliderTestID-slide-0-Shooting environment"
+                            testID="LinksSliderTestID-slide-0-Shooting environments"
                           >
                             <View
                               style={
@@ -789,7 +789,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   ]
                                 }
                               >
-                                Shooting environment
+                                Shooting environments
                               </Text>
                             </View>
                             <SvgMock
@@ -1823,7 +1823,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "marginRight": 4,
                               }
                             }
-                            testID="LinksSliderTestID-slide-0-Shooting environment"
+                            testID="LinksSliderTestID-slide-0-Shooting environments"
                           >
                             <View
                               style={
@@ -1851,7 +1851,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                   ]
                                 }
                               >
-                                Shooting environment
+                                Shooting environments
                               </Text>
                             </View>
                             <SvgMock
