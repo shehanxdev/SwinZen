@@ -62,7 +62,7 @@ exports[`How to shoot step four Should render How to shoot step four correctly 1
         {
           "cache": "immutable",
           "priority": "high",
-          "uri": "https://thumbnails.dev.swingzen.com/gifs/faceon.gif",
+          "uri": "https://files.dev.swingzen.com/gifs/faceon.gif",
         }
       }
       style={
@@ -118,7 +118,7 @@ Have your buddy take 3 paces/9 ft from the ball, directly in front of the golfer
         {
           "cache": "immutable",
           "priority": "high",
-          "uri": "https://thumbnails.dev.swingzen.com/gifs/Landscape.gif",
+          "uri": "https://files.dev.swingzen.com/gifs/Landscape.gif",
         }
       }
       style={

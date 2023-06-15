@@ -171,7 +171,7 @@ exports[`Shooting Setup Screen should render Shooting Setup Screen correctly 1`]
                     {
                       "cache": "immutable",
                       "priority": "high",
-                      "uri": "https://thumbnails.dev.swingzen.com/video-thumbs/landscape.png",
+                      "uri": "https://files.dev.swingzen.com/video-thumbs/landscape.png",
                     }
                   }
                   style={

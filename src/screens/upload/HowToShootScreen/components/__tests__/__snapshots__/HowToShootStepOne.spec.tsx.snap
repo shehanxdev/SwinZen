@@ -62,7 +62,7 @@ exports[`How to shoot step one Should render How to shoot step one correctly 1`]
         {
           "cache": "immutable",
           "priority": "high",
-          "uri": "https://thumbnails.dev.swingzen.com/gifs/downtheline.gif",
+          "uri": "https://files.dev.swingzen.com/gifs/downtheline.gif",
         }
       }
       style={
@@ -118,7 +118,7 @@ Set your tripod 4-5 feet high.
         {
           "cache": "immutable",
           "priority": "high",
-          "uri": "https://thumbnails.dev.swingzen.com/gifs/tripodheight.gif",
+          "uri": "https://files.dev.swingzen.com/gifs/tripodheight.gif",
         }
       }
       style={
@@ -174,7 +174,7 @@ Position your phone in portrait mode.
         {
           "cache": "immutable",
           "priority": "high",
-          "uri": "https://thumbnails.dev.swingzen.com/gifs/Landscape.gif",
+          "uri": "https://files.dev.swingzen.com/gifs/Landscape.gif",
         }
       }
       style={

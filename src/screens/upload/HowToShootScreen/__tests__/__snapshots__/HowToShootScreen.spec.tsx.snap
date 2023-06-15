@@ -102,7 +102,7 @@ exports[`HowToShoot Screen screen should render HowToShoot Screen correctly 1`] 
                   {
                     "cache": "immutable",
                     "priority": "high",
-                    "uri": "https://thumbnails.dev.swingzen.com/gifs/downtheline.gif",
+                    "uri": "https://files.dev.swingzen.com/gifs/downtheline.gif",
                   }
                 }
                 style={
@@ -158,7 +158,7 @@ Have your buddy hold the phone in portrait mode.
                   {
                     "cache": "immutable",
                     "priority": "high",
-                    "uri": "https://thumbnails.dev.swingzen.com/gifs/Landscape.gif",
+                    "uri": "https://files.dev.swingzen.com/gifs/Landscape.gif",
                   }
                 }
                 style={

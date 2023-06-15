@@ -62,7 +62,7 @@ exports[`How to shoot step three Should render How to shoot step three correctly
         {
           "cache": "immutable",
           "priority": "high",
-          "uri": "https://thumbnails.dev.swingzen.com/gifs/faceon.gif",
+          "uri": "https://files.dev.swingzen.com/gifs/faceon.gif",
         }
       }
       style={
@@ -118,7 +118,7 @@ Set your tripod 4-5 feet high.
         {
           "cache": "immutable",
           "priority": "high",
-          "uri": "https://thumbnails.dev.swingzen.com/gifs/tripodheight.gif",
+          "uri": "https://files.dev.swingzen.com/gifs/tripodheight.gif",
         }
       }
       style={
@@ -174,7 +174,7 @@ Position your phone in landscape mode.
         {
           "cache": "immutable",
           "priority": "high",
-          "uri": "https://thumbnails.dev.swingzen.com/gifs/Landscape.gif",
+          "uri": "https://files.dev.swingzen.com/gifs/Landscape.gif",
         }
       }
       style={
