@@ -1,0 +1,369 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Video upload failed card component should render video upload failed card component correctly with props 1`] = `
+<View
+  collapsable={false}
+  pointerEvents="box-none"
+  style={
+    {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "borderRadius": 10,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "borderColor": "rgba(246, 88, 21, 0.57)",
+          "borderRadius": 10,
+          "borderWidth": 1,
+          "flexBasis": "0%",
+          "flexGrow": 1,
+          "flexShrink": 1,
+          "overflow": "hidden",
+        }
+      }
+    >
+      <BVLinearGradient
+        colors={
+          [
+            16144405,
+            4294334485,
+          ]
+        }
+        endPoint={
+          {
+            "x": 0.5,
+            "y": 1,
+          }
+        }
+        locations={
+          [
+            0,
+            0.5433,
+          ]
+        }
+        startPoint={
+          {
+            "x": 0.5,
+            "y": 0,
+          }
+        }
+        style={
+          {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "flexBasis": "0%",
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "gap": 1,
+              "height": 192,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <SvgMock
+            fill="#F65815"
+            height={54}
+            width={54}
+          />
+          <Text
+            style={
+              [
+                {
+                  "color": "#F8F9FA",
+                  "lineHeight": 24,
+                },
+                {
+                  "fontFamily": "SourceSansPro-Regular",
+                  "fontSize": 16,
+                  "fontWeight": "normal",
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            Video analysis failed!
+          </Text>
+          <View
+            style={
+              {
+                "marginTop": 4,
+              }
+            }
+          >
+            <Text
+              onPress={[Function]}
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 20,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "textAlign": "center",
+                    "textDecorationLine": "underline",
+                  },
+                ]
+              }
+            >
+              Find out why
+            </Text>
+          </View>
+        </View>
+      </BVLinearGradient>
+    </View>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "width": "100%",
+        }
+      }
+      testID="VideoUploadErrorCardFooterTestId"
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#F65815",
+              "lineHeight": 24,
+            },
+            {
+              "fontFamily": "SourceSansPro-SemiBold",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        ALL FAILED REVIEWS
+      </Text>
+      <Text
+        style={
+          [
+            {
+              "color": "#F8F9FA",
+              "lineHeight": 24,
+            },
+            {
+              "fontFamily": "SourceSansPro-SemiBold",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        04 JUN 2023 • All videos
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`Video upload failed card component should render video upload failed card component correctly without any props 1`] = `
+<View
+  collapsable={false}
+  pointerEvents="box-none"
+  style={
+    {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "borderRadius": 10,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "borderColor": "rgba(246, 88, 21, 0.57)",
+          "borderRadius": 10,
+          "borderWidth": 1,
+          "flexBasis": "0%",
+          "flexGrow": 1,
+          "flexShrink": 1,
+          "overflow": "hidden",
+        }
+      }
+    >
+      <BVLinearGradient
+        colors={
+          [
+            16144405,
+            4294334485,
+          ]
+        }
+        endPoint={
+          {
+            "x": 0.5,
+            "y": 1,
+          }
+        }
+        locations={
+          [
+            0,
+            0.5433,
+          ]
+        }
+        startPoint={
+          {
+            "x": 0.5,
+            "y": 0,
+          }
+        }
+        style={
+          {
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "flexBasis": "0%",
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "gap": 1,
+              "height": 192,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <SvgMock
+            fill="#F65815"
+            height={54}
+            width={54}
+          />
+          <Text
+            style={
+              [
+                {
+                  "color": "#F8F9FA",
+                  "lineHeight": 24,
+                },
+                {
+                  "fontFamily": "SourceSansPro-Regular",
+                  "fontSize": 16,
+                  "fontWeight": "normal",
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            Video analysis failed!
+          </Text>
+          <View
+            style={
+              {
+                "marginTop": 4,
+              }
+            }
+          >
+            <Text
+              onPress={[Function]}
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 20,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 16,
+                    "fontWeight": "bold",
+                    "textAlign": "center",
+                    "textDecorationLine": "underline",
+                  },
+                ]
+              }
+            >
+              Find out why
+            </Text>
+          </View>
+        </View>
+      </BVLinearGradient>
+    </View>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "width": "100%",
+        }
+      }
+      testID="VideoUploadErrorCardFooterTestId"
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#F65815",
+              "lineHeight": 24,
+            },
+            {
+              "fontFamily": "SourceSansPro-SemiBold",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        ALL FAILED REVIEWS
+      </Text>
+      <Text
+        style={
+          [
+            {
+              "color": "#F8F9FA",
+              "lineHeight": 24,
+            },
+            {
+              "fontFamily": "SourceSansPro-SemiBold",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        15 JUN 2023 • undefined
+      </Text>
+    </View>
+  </View>
+</View>
+`;

@@ -40,7 +40,7 @@ export function VideoUploadErrorCard({
         </LinearGradient>
       </View>
       {showFooterAndTextLink && (
-        <View style={tw`flex-row items-center  justify-between w-full`}>
+        <View testID="VideoUploadErrorCardFooterTestId" style={tw`flex-row items-center  justify-between w-full`}>
           <Text variant={TextVariant.Body2SemiBold} color={Color.Secondary.Sz900}>
             ALL FAILED REVIEWS
           </Text>
