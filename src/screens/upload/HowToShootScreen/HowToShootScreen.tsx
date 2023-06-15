@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { SafeAreaView, ScrollView, View } from 'react-native';
 
 import { Button, Link } from '@sz/components';
@@ -17,6 +17,8 @@ const TEST_ID_PREFIX = 'HowToShootScreenTestID';
 export function HowToShootScreen({ route }) {
   const data = route.params.params?.setupValues as VideoSetupValuesType;
   const headerHeight = useHeaderHeight();
+
+  const scrollRef = useRef<ScrollView>();
 
   const [count, setCount] = useState(0);
   const [showModal, setShowModal] = useState(false);
@@ -67,7 +69,7 @@ export function HowToShootScreen({ route }) {
 
   return (
     <SafeAreaView style={tw`h-full pt-[${headerHeight}px] bg-Neutral-Sz900`}>
-      <ScrollView contentContainerStyle={tw`grow`}>
+      <ScrollView contentContainerStyle={tw`grow`} ref={scrollRef}>
         <View testID={TEST_ID_PREFIX} style={tw`flex-1 justify-between mx-4 mt-8`}>
           {renderBody}
           <View style={tw`mt-25 mb-3`}>
@@ -80,6 +82,10 @@ export function HowToShootScreen({ route }) {
                   NavigationService.goBack();
                   setTimeout(() => NavigationService.navigate(Route.PreValidation), 500);
                 } else {
+                  scrollRef.current?.scrollTo({
+                    y: 0,
+                    animated: true,
+                  });
                   setCount(count + 1);
                 }
               }}

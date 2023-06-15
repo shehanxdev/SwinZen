@@ -46,12 +46,16 @@ exports[`How to shoot step three Should render How to shoot step three correctly
         {
           "overflow": "hidden",
         },
-        {
-          "borderColor": "#FFFFFF",
-          "borderWidth": 4,
-          "height": 206,
-          "width": 358,
-        },
+        [
+          {
+            "borderColor": "#FFFFFF",
+            "borderWidth": 4,
+            "width": "100%",
+          },
+          {
+            "aspectRatio": 1.7378640776699028,
+          },
+        ],
       ]
     }
   >
@@ -102,12 +106,16 @@ Set your tripod 4-5 feet high.
         {
           "overflow": "hidden",
         },
-        {
-          "borderColor": "#FFFFFF",
-          "borderWidth": 4,
-          "height": 206,
-          "width": 358,
-        },
+        [
+          {
+            "borderColor": "#FFFFFF",
+            "borderWidth": 4,
+            "width": "100%",
+          },
+          {
+            "aspectRatio": 1.7378640776699028,
+          },
+        ],
       ]
     }
   >
@@ -158,12 +166,16 @@ Position your phone in landscape mode.
         {
           "overflow": "hidden",
         },
-        {
-          "borderColor": "#FFFFFF",
-          "borderWidth": 4,
-          "height": 206,
-          "width": 358,
-        },
+        [
+          {
+            "borderColor": "#FFFFFF",
+            "borderWidth": 4,
+            "width": "100%",
+          },
+          {
+            "aspectRatio": 1.7378640776699028,
+          },
+        ],
       ]
     }
   >

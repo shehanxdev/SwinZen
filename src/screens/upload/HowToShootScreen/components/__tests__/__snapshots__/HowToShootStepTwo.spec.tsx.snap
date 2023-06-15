@@ -46,12 +46,16 @@ exports[`How to shoot step two Should render How to shoot step two correctly 1`]
         {
           "overflow": "hidden",
         },
-        {
-          "borderColor": "#FFFFFF",
-          "borderWidth": 4,
-          "height": 206,
-          "width": 358,
-        },
+        [
+          {
+            "borderColor": "#FFFFFF",
+            "borderWidth": 4,
+            "width": "100%",
+          },
+          {
+            "aspectRatio": 1.7378640776699028,
+          },
+        ],
       ]
     }
   >
@@ -102,12 +106,16 @@ Have your buddy hold the phone in portrait mode.
         {
           "overflow": "hidden",
         },
-        {
-          "borderColor": "#FFFFFF",
-          "borderWidth": 4,
-          "height": 206,
-          "width": 358,
-        },
+        [
+          {
+            "borderColor": "#FFFFFF",
+            "borderWidth": 4,
+            "width": "100%",
+          },
+          {
+            "aspectRatio": 1.7378640776699028,
+          },
+        ],
       ]
     }
   >
