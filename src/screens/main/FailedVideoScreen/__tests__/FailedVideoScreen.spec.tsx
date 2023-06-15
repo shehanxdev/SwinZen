@@ -14,7 +14,7 @@ describe('Failed Video Screen', () => {
   });
   it('should find failed video screen screen via TestId', () => {
     const { getByTestId } = getRenderedScreen();
-    const results = getByTestId('FailedVideoScreenTestId');
-    expect(results).toBeTruthy();
+    const FoundFaildedVideoScreen = getByTestId('FailedVideoScreenTestId');
+    expect(FoundFaildedVideoScreen).toBeTruthy();
   });
 });
