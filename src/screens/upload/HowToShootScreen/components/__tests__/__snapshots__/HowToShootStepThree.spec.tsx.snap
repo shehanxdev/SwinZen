@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Shooting Setup Step Two should render Shooting Setup Step Two correctly 1`] = `
+exports[`How to shoot step three Should render How to shoot step three correctly 1`] = `
 <View>
   <Text
     style={
@@ -18,7 +18,7 @@ exports[`Shooting Setup Step Two should render Shooting Setup Step Two correctly
       ]
     }
   >
-    Tip Number Two:
+    Face-On/Tripod Instructions
 
   </Text>
   <Text
@@ -37,7 +37,7 @@ exports[`Shooting Setup Step Two should render Shooting Setup Step Two correctly
       ]
     }
   >
-    When shooting The Down The Line shot, the camera/phone must be held at 4 paces away (12ft/4M) from the ball. Position behind the ball pointing toward the target in the distance with the ball in line.
+    Take 3 paces/9 ft from the ball, directly in front of the golfer.
 
   </Text>
   <View
@@ -46,12 +46,16 @@ exports[`Shooting Setup Step Two should render Shooting Setup Step Two correctly
         {
           "overflow": "hidden",
         },
-        {
-          "borderColor": "#FFFFFF",
-          "borderWidth": 8,
-          "height": 215,
-          "width": "100%",
-        },
+        [
+          {
+            "borderColor": "#FFFFFF",
+            "borderWidth": 4,
+            "width": "100%",
+          },
+          {
+            "aspectRatio": 1.7378640776699028,
+          },
+        ],
       ]
     }
   >
@@ -62,7 +66,7 @@ exports[`Shooting Setup Step Two should render Shooting Setup Step Two correctly
         {
           "cache": "immutable",
           "priority": "high",
-          "uri": "https://files.dev.swingzen.com/video-thumbs/downtheline.png",
+          "uri": "https://files.dev.swingzen.com/gifs/faceon.gif",
         }
       }
       style={
@@ -93,7 +97,7 @@ exports[`Shooting Setup Step Two should render Shooting Setup Step Two correctly
     }
   >
     
-In The Face On perspective, the camera/phone needs to be 4 paces (9ft/3M) from the ball, not the golfer, but centered on the golfer.
+Set your tripod 4-5 feet high.
 
   </Text>
   <View
@@ -102,12 +106,16 @@ In The Face On perspective, the camera/phone needs to be 4 paces (9ft/3M) from t
         {
           "overflow": "hidden",
         },
-        {
-          "borderColor": "#FFFFFF",
-          "borderWidth": 8,
-          "height": 215,
-          "width": "100%",
-        },
+        [
+          {
+            "borderColor": "#FFFFFF",
+            "borderWidth": 4,
+            "width": "100%",
+          },
+          {
+            "aspectRatio": 1.7378640776699028,
+          },
+        ],
       ]
     }
   >
@@ -118,7 +126,67 @@ In The Face On perspective, the camera/phone needs to be 4 paces (9ft/3M) from t
         {
           "cache": "immutable",
           "priority": "high",
-          "uri": "https://files.dev.swingzen.com/video-thumbs/faceon.png",
+          "uri": "https://files.dev.swingzen.com/gifs/tripodheight.gif",
+        }
+      }
+      style={
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+  </View>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "lineHeight": 28,
+        },
+        {
+          "fontFamily": "SourceSansPro-Regular",
+          "fontSize": 18,
+          "fontWeight": "normal",
+          "textAlign": "auto",
+        },
+      ]
+    }
+  >
+    
+Position your phone in landscape mode.
+
+  </Text>
+  <View
+    style={
+      [
+        {
+          "overflow": "hidden",
+        },
+        [
+          {
+            "borderColor": "#FFFFFF",
+            "borderWidth": 4,
+            "width": "100%",
+          },
+          {
+            "aspectRatio": 1.7378640776699028,
+          },
+        ],
+      ]
+    }
+  >
+    <FastImageView
+      defaultSource={null}
+      resizeMode="cover"
+      source={
+        {
+          "cache": "immutable",
+          "priority": "high",
+          "uri": "https://files.dev.swingzen.com/gifs/Landscape.gif",
         }
       }
       style={

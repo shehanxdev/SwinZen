@@ -1,0 +1,404 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HowToShoot Screen screen should render HowToShoot Screen correctly 1`] = `
+<View
+  collapsable={false}
+  pointerEvents="box-none"
+  style={
+    {
+      "flex": 1,
+    }
+  }
+>
+  <RCTSafeAreaView
+    style={
+      {
+        "backgroundColor": "#212529",
+        "height": "100%",
+        "paddingTop": 50,
+      }
+    }
+  >
+    <RCTScrollView
+      contentContainerStyle={
+        {
+          "flexGrow": 1,
+        }
+      }
+    >
+      <View>
+        <View
+          style={
+            {
+              "flexBasis": "0%",
+              "flexGrow": 1,
+              "flexShrink": 1,
+              "justifyContent": "space-between",
+              "marginLeft": 16,
+              "marginRight": 16,
+              "marginTop": 32,
+            }
+          }
+          testID="HowToShootScreenTestID"
+        >
+          <View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#C0DBBF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Down The Line/Hand-Held Instructions
+
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              Have your buddy take 4 paces/12 ft behind the ball pointing towards the target.
+
+            </Text>
+            <View
+              style={
+                [
+                  {
+                    "overflow": "hidden",
+                  },
+                  [
+                    {
+                      "borderColor": "#FFFFFF",
+                      "borderWidth": 4,
+                      "width": "100%",
+                    },
+                    {
+                      "aspectRatio": 1.7378640776699028,
+                    },
+                  ],
+                ]
+              }
+            >
+              <FastImageView
+                defaultSource={null}
+                resizeMode="cover"
+                source={
+                  {
+                    "cache": "immutable",
+                    "priority": "high",
+                    "uri": "https://files.dev.swingzen.com/gifs/downtheline.gif",
+                  }
+                }
+                style={
+                  {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              />
+            </View>
+            <Text
+              style={
+                [
+                  {
+                    "color": "#FFFFFF",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 18,
+                    "fontWeight": "normal",
+                    "textAlign": "auto",
+                  },
+                ]
+              }
+            >
+              
+Have your buddy hold the phone in portrait mode.
+
+            </Text>
+            <View
+              style={
+                [
+                  {
+                    "overflow": "hidden",
+                  },
+                  [
+                    {
+                      "borderColor": "#FFFFFF",
+                      "borderWidth": 4,
+                      "width": "100%",
+                    },
+                    {
+                      "aspectRatio": 1.7378640776699028,
+                    },
+                  ],
+                ]
+              }
+            >
+              <FastImageView
+                defaultSource={null}
+                resizeMode="cover"
+                source={
+                  {
+                    "cache": "immutable",
+                    "priority": "high",
+                    "uri": "https://files.dev.swingzen.com/gifs/Landscape.gif",
+                  }
+                }
+                style={
+                  {
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            style={
+              {
+                "marginBottom": 12,
+                "marginTop": 100,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                collapsable={false}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  {
+                    "backgroundColor": "#A2FD2F",
+                    "borderColor": "#00000000",
+                    "borderRadius": 10,
+                    "borderStyle": "solid",
+                    "borderWidth": 1,
+                    "elevation": 0,
+                    "justifyContent": "center",
+                    "minWidth": "auto",
+                    "shadowColor": "#000",
+                    "shadowOffset": {
+                      "height": 0,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0,
+                    "shadowRadius": 0,
+                    "width": "100%",
+                  }
+                }
+              >
+                <View
+                  accessibilityRole="button"
+                  accessibilityState={
+                    {
+                      "disabled": false,
+                    }
+                  }
+                  accessibilityValue={
+                    {
+                      "max": undefined,
+                      "min": undefined,
+                      "now": undefined,
+                      "text": undefined,
+                    }
+                  }
+                  accessible={true}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    [
+                      {
+                        "overflow": "hidden",
+                      },
+                      {
+                        "borderRadius": 10,
+                      },
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      [
+                        {
+                          "alignItems": "center",
+                          "flexDirection": "row",
+                          "justifyContent": "center",
+                        },
+                        {
+                          "height": 48,
+                        },
+                      ]
+                    }
+                  >
+                    <Text
+                      numberOfLines={1}
+                      selectable={false}
+                      style={
+                        [
+                          {
+                            "color": "#000000",
+                            "fontFamily": "SourceSansPro-Regular",
+                            "fontWeight": "normal",
+                          },
+                          {
+                            "textAlign": "left",
+                          },
+                          [
+                            {
+                              "letterSpacing": 1,
+                              "marginHorizontal": 16,
+                              "marginVertical": 9,
+                              "textAlign": "center",
+                            },
+                            {
+                              "marginHorizontal": 8,
+                            },
+                            {
+                              "textTransform": "uppercase",
+                            },
+                            {
+                              "color": "#6200ee",
+                              "fontFamily": "SourceSansPro-SemiBold",
+                              "fontWeight": "normal",
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-SemiBold",
+                              "fontWeight": "normal",
+                            },
+                            {
+                              "color": "#283E36",
+                            },
+                          ],
+                        ]
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#283E36",
+                              "lineHeight": 28,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-SemiBold",
+                              "fontSize": 18,
+                              "fontWeight": "bold",
+                              "textAlign": "center",
+                            },
+                          ]
+                        }
+                      >
+                        Next
+                      </Text>
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+            <View
+              style={
+                {
+                  "marginBottom": 24,
+                  "marginTop": 24,
+                }
+              }
+            >
+              <Text
+                onPress={[Function]}
+                style={
+                  [
+                    {
+                      "color": "#A2FD2F",
+                      "lineHeight": 20,
+                    },
+                    {
+                      "fontFamily": "SourceSansPro-Regular",
+                      "fontSize": 16,
+                      "fontWeight": "bold",
+                      "textAlign": "center",
+                      "textDecorationLine": "underline",
+                    },
+                  ]
+                }
+              >
+                Always skip instructions
+              </Text>
+            </View>
+          </View>
+          <View
+            testID="InstructionsSkipModalTestID"
+          >
+            <Modal
+              animationType="none"
+              deviceHeight={null}
+              deviceWidth={null}
+              hardwareAccelerated={false}
+              hideModalContentWhileAnimating={false}
+              onBackdropPress={[Function]}
+              onModalHide={[Function]}
+              onModalWillHide={[Function]}
+              onModalWillShow={[Function]}
+              onRequestClose={[Function]}
+              panResponderThreshold={4}
+              scrollHorizontal={false}
+              scrollOffset={0}
+              scrollOffsetMax={0}
+              scrollTo={null}
+              statusBarTranslucent={false}
+              supportedOrientations={
+                [
+                  "portrait",
+                  "landscape",
+                ]
+              }
+              swipeThreshold={100}
+              transparent={true}
+              visible={false}
+            />
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </RCTSafeAreaView>
+</View>
+`;

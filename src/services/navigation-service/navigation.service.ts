@@ -292,6 +292,28 @@ export class NavigationService {
         },
       },
 
+      // Video Upload Routes
+      [Route.HowToShoot]: {
+        navRoute: Route.VideoUploadStack,
+        navParams: {
+          screen: Route.HowToShoot,
+          params: {
+            screen: route,
+            params: params,
+          },
+        },
+      },
+      [Route.PreValidation]: {
+        navRoute: Route.VideoUploadStack,
+        navParams: {
+          screen: Route.PreValidation,
+          params: {
+            screen: route,
+            params: params,
+          },
+        },
+      },
+
       // Bottom Tab Routes
       [Route.VideosTab]: {
         navRoute: Route.MainBottomTabRoutesStack,
