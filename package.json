@@ -11,7 +11,7 @@
     "prepare": "husky install",
     "postinstall": "patch-package",
     "typecheck": "tsc --noEmit"
-  },
+  }, 
   "dependencies": {
     "@hookform/resolvers": "^3.0.0",
     "@react-native-community/blur": "^4.3.0",
