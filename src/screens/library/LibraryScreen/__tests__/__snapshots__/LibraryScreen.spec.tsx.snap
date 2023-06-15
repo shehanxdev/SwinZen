@@ -431,39 +431,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-2-Pass/Fail"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Pass/Fail
-                              </Text>
-                            </View>
+                              Pass/Fail
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -509,39 +500,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-2-AI-Pro Tips"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                AI-Pro Tips
-                              </Text>
-                            </View>
+                              AI-Pro Tips
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -587,39 +569,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-2-Swing Analysis Report"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Swing Analysis Report
-                              </Text>
-                            </View>
+                              Swing Analysis Report
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -681,39 +654,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-0-How to use the app"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                How to use the app
-                              </Text>
-                            </View>
+                              How to use the app
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -759,39 +723,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-0-Shooting environments"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Shooting environments
-                              </Text>
-                            </View>
+                              Shooting environments
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -837,39 +792,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-0-Shooting hacks"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Shooting hacks
-                              </Text>
-                            </View>
+                              Shooting hacks
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -915,39 +861,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-0-Uploading a video"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Uploading a video
-                              </Text>
-                            </View>
+                              Uploading a video
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -993,39 +930,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-0-Video processing time"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Video processing time
-                              </Text>
-                            </View>
+                              Video processing time
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1087,39 +1015,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-1-Successful Reviews"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Successful Reviews
-                              </Text>
-                            </View>
+                              Successful Reviews
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1165,39 +1084,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-1-Failed Reviews"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Failed Reviews
-                              </Text>
-                            </View>
+                              Failed Reviews
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1243,39 +1153,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-1-Swing Analysis Results"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Swing Analysis Results
-                              </Text>
-                            </View>
+                              Swing Analysis Results
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1321,39 +1222,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-1-Swing Data"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Swing Data
-                              </Text>
-                            </View>
+                              Swing Data
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1399,39 +1291,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-1-Swing Priority List"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Swing Priority List
-                              </Text>
-                            </View>
+                              Swing Priority List
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1493,39 +1376,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-2-Pass/Fail"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Pass/Fail
-                              </Text>
-                            </View>
+                              Pass/Fail
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1571,39 +1445,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-2-AI-Pro Tips"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                AI-Pro Tips
-                              </Text>
-                            </View>
+                              AI-Pro Tips
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1649,39 +1514,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-2-Swing Analysis Report"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Swing Analysis Report
-                              </Text>
-                            </View>
+                              Swing Analysis Report
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1743,39 +1599,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-0-How to use the app"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                How to use the app
-                              </Text>
-                            </View>
+                              How to use the app
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1821,39 +1668,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-0-Shooting environments"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Shooting environments
-                              </Text>
-                            </View>
+                              Shooting environments
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1899,39 +1737,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-0-Shooting hacks"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Shooting hacks
-                              </Text>
-                            </View>
+                              Shooting hacks
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1977,39 +1806,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-0-Uploading a video"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Uploading a video
-                              </Text>
-                            </View>
+                              Uploading a video
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -2055,39 +1875,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
                             testID="LinksSliderTestID-slide-0-Video processing time"
                           >
-                            <View
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Video processing time
-                              </Text>
-                            </View>
+                              Video processing time
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}

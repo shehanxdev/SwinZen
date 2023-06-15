@@ -18,7 +18,7 @@ export function ShootingSetupStepOne() {
         {`ALWAYS hold your phone in Landscape, NOT in Portrait. We understand that it feels more natural to hold the phone upright, but typically you cannot capture the full range of motion of your swing. Those frames that aren’t caught when the ball and club are outside the camera shot are crucial to getting the best data feedback on your swing.\n`}
       </Text>
       <FastImage
-        style={tw`w-full h-48.25 border-8 border-Neutral-White`}
+        style={[tw`w-full border-8 border-Neutral-White`, { aspectRatio: 358 / 193 }]}
         source={{
           cache: FastImage.cacheControl.immutable,
           priority: FastImage.priority.high,

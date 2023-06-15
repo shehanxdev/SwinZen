@@ -138,39 +138,30 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                     "justifyContent": "space-between",
                     "marginLeft": 4,
                     "marginRight": 4,
+                    "paddingBottom": 13,
+                    "paddingTop": 13,
                   }
                 }
                 testID="LinksSliderTestID-slide-2-link 7"
               >
-                <View
+                <Text
                   style={
-                    {
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "paddingBottom": 13,
-                      "paddingTop": 13,
-                    }
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
                   }
                 >
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#FFFFFF",
-                          "lineHeight": 28,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-SemiBold",
-                          "fontSize": 18,
-                          "fontWeight": "bold",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    link 7
-                  </Text>
-                </View>
+                  link 7
+                </Text>
                 <SvgMock
                   fill="#F8F9FA"
                   height={20}
@@ -216,39 +207,30 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                     "justifyContent": "space-between",
                     "marginLeft": 4,
                     "marginRight": 4,
+                    "paddingBottom": 13,
+                    "paddingTop": 13,
                   }
                 }
                 testID="LinksSliderTestID-slide-2-link 8"
               >
-                <View
+                <Text
                   style={
-                    {
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "paddingBottom": 13,
-                      "paddingTop": 13,
-                    }
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
                   }
                 >
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#FFFFFF",
-                          "lineHeight": 28,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-SemiBold",
-                          "fontSize": 18,
-                          "fontWeight": "bold",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    link 8
-                  </Text>
-                </View>
+                  link 8
+                </Text>
                 <SvgMock
                   fill="#F8F9FA"
                   height={20}
@@ -294,39 +276,30 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                     "justifyContent": "space-between",
                     "marginLeft": 4,
                     "marginRight": 4,
+                    "paddingBottom": 13,
+                    "paddingTop": 13,
                   }
                 }
                 testID="LinksSliderTestID-slide-2-link 9"
               >
-                <View
+                <Text
                   style={
-                    {
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "paddingBottom": 13,
-                      "paddingTop": 13,
-                    }
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
                   }
                 >
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#FFFFFF",
-                          "lineHeight": 28,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-SemiBold",
-                          "fontSize": 18,
-                          "fontWeight": "bold",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    link 9
-                  </Text>
-                </View>
+                  link 9
+                </Text>
                 <SvgMock
                   fill="#F8F9FA"
                   height={20}
@@ -388,39 +361,30 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                     "justifyContent": "space-between",
                     "marginLeft": 4,
                     "marginRight": 4,
+                    "paddingBottom": 13,
+                    "paddingTop": 13,
                   }
                 }
                 testID="LinksSliderTestID-slide-0-link 1"
               >
-                <View
+                <Text
                   style={
-                    {
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "paddingBottom": 13,
-                      "paddingTop": 13,
-                    }
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
                   }
                 >
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#FFFFFF",
-                          "lineHeight": 28,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-SemiBold",
-                          "fontSize": 18,
-                          "fontWeight": "bold",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    link 1
-                  </Text>
-                </View>
+                  link 1
+                </Text>
                 <SvgMock
                   fill="#F8F9FA"
                   height={20}
@@ -466,39 +430,30 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                     "justifyContent": "space-between",
                     "marginLeft": 4,
                     "marginRight": 4,
+                    "paddingBottom": 13,
+                    "paddingTop": 13,
                   }
                 }
                 testID="LinksSliderTestID-slide-0-link 2"
               >
-                <View
+                <Text
                   style={
-                    {
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "paddingBottom": 13,
-                      "paddingTop": 13,
-                    }
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
                   }
                 >
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#FFFFFF",
-                          "lineHeight": 28,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-SemiBold",
-                          "fontSize": 18,
-                          "fontWeight": "bold",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    link 2
-                  </Text>
-                </View>
+                  link 2
+                </Text>
                 <SvgMock
                   fill="#F8F9FA"
                   height={20}
@@ -544,39 +499,30 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                     "justifyContent": "space-between",
                     "marginLeft": 4,
                     "marginRight": 4,
+                    "paddingBottom": 13,
+                    "paddingTop": 13,
                   }
                 }
                 testID="LinksSliderTestID-slide-0-link 3"
               >
-                <View
+                <Text
                   style={
-                    {
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "paddingBottom": 13,
-                      "paddingTop": 13,
-                    }
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
                   }
                 >
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#FFFFFF",
-                          "lineHeight": 28,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-SemiBold",
-                          "fontSize": 18,
-                          "fontWeight": "bold",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    link 3
-                  </Text>
-                </View>
+                  link 3
+                </Text>
                 <SvgMock
                   fill="#F8F9FA"
                   height={20}
@@ -638,39 +584,30 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                     "justifyContent": "space-between",
                     "marginLeft": 4,
                     "marginRight": 4,
+                    "paddingBottom": 13,
+                    "paddingTop": 13,
                   }
                 }
                 testID="LinksSliderTestID-slide-1-link 4"
               >
-                <View
+                <Text
                   style={
-                    {
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "paddingBottom": 13,
-                      "paddingTop": 13,
-                    }
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
                   }
                 >
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#FFFFFF",
-                          "lineHeight": 28,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-SemiBold",
-                          "fontSize": 18,
-                          "fontWeight": "bold",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    link 4
-                  </Text>
-                </View>
+                  link 4
+                </Text>
                 <SvgMock
                   fill="#F8F9FA"
                   height={20}
@@ -716,39 +653,30 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                     "justifyContent": "space-between",
                     "marginLeft": 4,
                     "marginRight": 4,
+                    "paddingBottom": 13,
+                    "paddingTop": 13,
                   }
                 }
                 testID="LinksSliderTestID-slide-1-link 5"
               >
-                <View
+                <Text
                   style={
-                    {
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "paddingBottom": 13,
-                      "paddingTop": 13,
-                    }
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
                   }
                 >
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#FFFFFF",
-                          "lineHeight": 28,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-SemiBold",
-                          "fontSize": 18,
-                          "fontWeight": "bold",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    link 5
-                  </Text>
-                </View>
+                  link 5
+                </Text>
                 <SvgMock
                   fill="#F8F9FA"
                   height={20}
@@ -794,39 +722,30 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                     "justifyContent": "space-between",
                     "marginLeft": 4,
                     "marginRight": 4,
+                    "paddingBottom": 13,
+                    "paddingTop": 13,
                   }
                 }
                 testID="LinksSliderTestID-slide-1-link 6"
               >
-                <View
+                <Text
                   style={
-                    {
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "paddingBottom": 13,
-                      "paddingTop": 13,
-                    }
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
                   }
                 >
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#FFFFFF",
-                          "lineHeight": 28,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-SemiBold",
-                          "fontSize": 18,
-                          "fontWeight": "bold",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    link 6
-                  </Text>
-                </View>
+                  link 6
+                </Text>
                 <SvgMock
                   fill="#F8F9FA"
                   height={20}
@@ -888,39 +807,30 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                     "justifyContent": "space-between",
                     "marginLeft": 4,
                     "marginRight": 4,
+                    "paddingBottom": 13,
+                    "paddingTop": 13,
                   }
                 }
                 testID="LinksSliderTestID-slide-2-link 7"
               >
-                <View
+                <Text
                   style={
-                    {
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "paddingBottom": 13,
-                      "paddingTop": 13,
-                    }
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
                   }
                 >
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#FFFFFF",
-                          "lineHeight": 28,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-SemiBold",
-                          "fontSize": 18,
-                          "fontWeight": "bold",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    link 7
-                  </Text>
-                </View>
+                  link 7
+                </Text>
                 <SvgMock
                   fill="#F8F9FA"
                   height={20}
@@ -966,39 +876,30 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                     "justifyContent": "space-between",
                     "marginLeft": 4,
                     "marginRight": 4,
+                    "paddingBottom": 13,
+                    "paddingTop": 13,
                   }
                 }
                 testID="LinksSliderTestID-slide-2-link 8"
               >
-                <View
+                <Text
                   style={
-                    {
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "paddingBottom": 13,
-                      "paddingTop": 13,
-                    }
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
                   }
                 >
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#FFFFFF",
-                          "lineHeight": 28,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-SemiBold",
-                          "fontSize": 18,
-                          "fontWeight": "bold",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    link 8
-                  </Text>
-                </View>
+                  link 8
+                </Text>
                 <SvgMock
                   fill="#F8F9FA"
                   height={20}
@@ -1044,39 +945,30 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                     "justifyContent": "space-between",
                     "marginLeft": 4,
                     "marginRight": 4,
+                    "paddingBottom": 13,
+                    "paddingTop": 13,
                   }
                 }
                 testID="LinksSliderTestID-slide-2-link 9"
               >
-                <View
+                <Text
                   style={
-                    {
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "paddingBottom": 13,
-                      "paddingTop": 13,
-                    }
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
                   }
                 >
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#FFFFFF",
-                          "lineHeight": 28,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-SemiBold",
-                          "fontSize": 18,
-                          "fontWeight": "bold",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    link 9
-                  </Text>
-                </View>
+                  link 9
+                </Text>
                 <SvgMock
                   fill="#F8F9FA"
                   height={20}
@@ -1138,39 +1030,30 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                     "justifyContent": "space-between",
                     "marginLeft": 4,
                     "marginRight": 4,
+                    "paddingBottom": 13,
+                    "paddingTop": 13,
                   }
                 }
                 testID="LinksSliderTestID-slide-0-link 1"
               >
-                <View
+                <Text
                   style={
-                    {
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "paddingBottom": 13,
-                      "paddingTop": 13,
-                    }
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
                   }
                 >
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#FFFFFF",
-                          "lineHeight": 28,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-SemiBold",
-                          "fontSize": 18,
-                          "fontWeight": "bold",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    link 1
-                  </Text>
-                </View>
+                  link 1
+                </Text>
                 <SvgMock
                   fill="#F8F9FA"
                   height={20}
@@ -1216,39 +1099,30 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                     "justifyContent": "space-between",
                     "marginLeft": 4,
                     "marginRight": 4,
+                    "paddingBottom": 13,
+                    "paddingTop": 13,
                   }
                 }
                 testID="LinksSliderTestID-slide-0-link 2"
               >
-                <View
+                <Text
                   style={
-                    {
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "paddingBottom": 13,
-                      "paddingTop": 13,
-                    }
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
                   }
                 >
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#FFFFFF",
-                          "lineHeight": 28,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-SemiBold",
-                          "fontSize": 18,
-                          "fontWeight": "bold",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    link 2
-                  </Text>
-                </View>
+                  link 2
+                </Text>
                 <SvgMock
                   fill="#F8F9FA"
                   height={20}
@@ -1294,39 +1168,30 @@ exports[`LinksSlider component should render LinksSlider component correctly 1`]
                     "justifyContent": "space-between",
                     "marginLeft": 4,
                     "marginRight": 4,
+                    "paddingBottom": 13,
+                    "paddingTop": 13,
                   }
                 }
                 testID="LinksSliderTestID-slide-0-link 3"
               >
-                <View
+                <Text
                   style={
-                    {
-                      "flexDirection": "row",
-                      "justifyContent": "space-between",
-                      "paddingBottom": 13,
-                      "paddingTop": 13,
-                    }
+                    [
+                      {
+                        "color": "#FFFFFF",
+                        "lineHeight": 28,
+                      },
+                      {
+                        "fontFamily": "SourceSansPro-SemiBold",
+                        "fontSize": 18,
+                        "fontWeight": "bold",
+                        "textAlign": "center",
+                      },
+                    ]
                   }
                 >
-                  <Text
-                    style={
-                      [
-                        {
-                          "color": "#FFFFFF",
-                          "lineHeight": 28,
-                        },
-                        {
-                          "fontFamily": "SourceSansPro-SemiBold",
-                          "fontSize": 18,
-                          "fontWeight": "bold",
-                          "textAlign": "center",
-                        },
-                      ]
-                    }
-                  >
-                    link 3
-                  </Text>
-                </View>
+                  link 3
+                </Text>
                 <SvgMock
                   fill="#F8F9FA"
                   height={20}

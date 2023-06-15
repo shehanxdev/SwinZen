@@ -21,16 +21,16 @@ export function LinksSlider({ sliderData, onItemPress, testID = 'LinksSliderTest
             return (
               <Pressable
                 testID={`${testID}-slide-${index}-${text}`}
-                style={tw`justify-between  mx-1 items-center flex-row border-[#ffffff33] ${
+                style={tw`justify-between py-3.25  mx-1 items-center flex-row border-[#ffffff33] ${
                   slide.length - 1 === childIndex ? 'border-b-0' : 'border-b'
                 }`}
                 key={`${slide}-${text}`}
                 onPress={() => onItemPress(text)}>
-                <View style={tw`py-3.25 flex-row justify-between`}>
-                  <Text variant={TextVariant.Body1SemiBold} color={Color.Neutral.White}>
-                    {text}
-                  </Text>
-                </View>
+                {/* <View style={tw`py-3.25 flex-row justify-between`}> */}
+                <Text variant={TextVariant.Body1SemiBold} color={Color.Neutral.White}>
+                  {text}
+                </Text>
+                {/* </View> */}
                 <NextIcon />
               </Pressable>
             );

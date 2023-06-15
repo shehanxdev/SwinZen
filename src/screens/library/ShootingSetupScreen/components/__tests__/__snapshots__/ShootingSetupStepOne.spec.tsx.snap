@@ -65,12 +65,16 @@ exports[`Shooting Setup Step One should render Shooting Setup Step one correctly
         {
           "overflow": "hidden",
         },
-        {
-          "borderColor": "#FFFFFF",
-          "borderWidth": 8,
-          "height": 193,
-          "width": "100%",
-        },
+        [
+          {
+            "borderColor": "#FFFFFF",
+            "borderWidth": 8,
+            "width": "100%",
+          },
+          {
+            "aspectRatio": 1.854922279792746,
+          },
+        ],
       ]
     }
   >
