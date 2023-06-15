@@ -35,19 +35,6 @@ export function ProTipsScreen({ route }) {
     swiperRef.current.scrollTo(0);
   }, [tipType]);
 
-  const getTipTypeDescription = (tipType: TipType): string => {
-    switch (tipType) {
-      case 'pga-pro-tips':
-        return checkpoint === Checkpoint.SETUP
-          ? 'Take a look at how a PGA Pro would fix this swing fault'
-          : 'Take a quick look on how to fix this swing fault.';
-      case 'ai-pro-tips':
-        return "Here's an AI Pro Tip on how to improve your swing!";
-      case 'side-by-side':
-        return 'Compare your swing to a pro’s!';
-    }
-  };
-
   const imageSlides = useMemo(() => {
     return DummyImageUrls.map(slide => {
       return (
@@ -104,14 +91,20 @@ export function ProTipsScreen({ route }) {
     );
   }, [DummyImageUrls]);
 
-  const getMediaContent = (tipType: TipType) => {
+  const getTipTypeData = (tipType: TipType) => {
     switch (tipType) {
       case 'pga-pro-tips':
-        return videoSlides;
+        return {
+          title:
+            checkpoint === Checkpoint.SETUP
+              ? 'Take a look at how a PGA Pro would fix this swing fault'
+              : 'Take a quick look on how to fix this swing fault.',
+          content: videoSlides,
+        };
       case 'ai-pro-tips':
-        return imageSlides;
+        return { title: "Here's an AI Pro Tip on how to improve your swing!", content: imageSlides };
       case 'side-by-side':
-        return sideBySideView;
+        return { title: 'Compare your swing to a pro’s!', content: sideBySideView };
     }
   };
 
@@ -120,7 +113,7 @@ export function ProTipsScreen({ route }) {
       <View style={tw`flex-1 justify-between`}>
         <View style={tw`mx-4 mb-5`}>
           <Text variant={TextVariant.Body2Regular} color={Color.Neutral.Sz400} textAlign={TextAlignment.Left}>
-            {getTipTypeDescription(tipType)}
+            {getTipTypeData(tipType).title}
           </Text>
         </View>
         <View style={tw`mb--4 w-full h-[${mediaPaneHeight}px]`}>
@@ -134,7 +127,7 @@ export function ProTipsScreen({ route }) {
             scrollEventThrottle={0}
             prevButton={<SliderLeftIcon />}
             nextButton={<SliderRightIcon />}>
-            {getMediaContent(tipType)}
+            {getTipTypeData(tipType).content}
           </Swiper>
         </View>
         <TipsBottomCard
