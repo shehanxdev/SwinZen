@@ -81,7 +81,7 @@ exports[`Shooting Setup Step One should render Shooting Setup Step one correctly
         {
           "cache": "immutable",
           "priority": "high",
-          "uri": "https://video-thumbnails.dev.swingzen.com/landscape.png",
+          "uri": "https://files.dev.swingzen.com/video-thumbs/landscape.png",
         }
       }
       style={

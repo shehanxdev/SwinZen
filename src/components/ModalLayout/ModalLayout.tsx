@@ -34,7 +34,6 @@ export function ModalLayout({
   onRightButtonPress,
 }: ModalLayoutProps) {
   return (
-    // Default backdrop color is used
     <Modal
       testID={testID}
       isVisible={showModal}

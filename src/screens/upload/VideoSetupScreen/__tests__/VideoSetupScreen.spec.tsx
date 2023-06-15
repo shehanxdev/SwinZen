@@ -1,12 +1,13 @@
-import { render } from '@testing-library/react-native';
 import * as React from 'react';
+
+import { renderWithProviders } from '@sz/test-utils';
 
 import { VideoSetupScreen } from '../VideoSetupScreen';
 
 describe('Video Setup Screen Screen', () => {
   const testID = 'VideoSetupScreenTestID';
 
-  const getRenderedScreen = () => render(<VideoSetupScreen />);
+  const getRenderedScreen = () => renderWithProviders(<VideoSetupScreen />);
 
   it(`should render Video Setup Screen correctly`, () => {
     const renderer = getRenderedScreen();
