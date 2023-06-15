@@ -15,7 +15,7 @@ export function ShootingSetupStepTwo() {
         {`When shooting The Down The Line shot, the camera/phone must be held at 4 paces away (12ft/4M) from the ball. Position behind the ball pointing toward the target in the distance with the ball in line.\n`}
       </Text>
       <FastImage
-        style={tw`w-full h-53.75 border-8 border-Neutral-White`}
+        style={[tw`w-full border-8 border-Neutral-White`, { aspectRatio: 358 / 215 }]}
         source={{
           cache: FastImage.cacheControl.immutable,
           priority: FastImage.priority.high,
@@ -26,7 +26,7 @@ export function ShootingSetupStepTwo() {
         {`\nIn The Face On perspective, the camera/phone needs to be 4 paces (9ft/3M) from the ball, not the golfer, but centered on the golfer.\n`}
       </Text>
       <FastImage
-        style={tw`w-full h-53.75 border-8 border-Neutral-White`}
+        style={[tw`w-full border-8 border-Neutral-White`, { aspectRatio: 358 / 215 }]}
         source={{
           cache: FastImage.cacheControl.immutable,
           priority: FastImage.priority.high,
