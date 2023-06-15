@@ -12,7 +12,7 @@ import { dummyvideoUploadFailedReasons as videoAnalysisFailedReasons } from './d
 export function FailedVideoScreen() {
   return (
     <BaseScreen>
-      <View style={tw`mx-4 mt-5`}>
+      <View testID="FailedVideoScreenTestId" style={tw`mx-4 mt-5`}>
         <VideoUploadErrorCard showFooterAndTextLink={false} />
         <View style={tw`mt-8`}>
           <Text variant={TextVariant.Body1Regular} textAlign={TextAlignment.Left}>
