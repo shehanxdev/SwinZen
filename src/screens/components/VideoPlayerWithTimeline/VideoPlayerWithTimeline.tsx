@@ -4,26 +4,28 @@ import Video, { OnProgressData } from 'react-native-video';
 
 import { ErrorIcon, LoadingIndicator, PauseIcon, PlayIcon, ReplayIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import {
-  Color,
-  DURATION_WINDOW_WIDTH,
-  FRAMES_PER_SECOND,
-  FRAME_HEIGHT,
-  FRAME_WIDTH,
-  POPLINE_POSITION,
-  TextVariant,
-} from '@sz/constants';
+import { Color, TextVariant, videoPlayerWithTimelineConfigs } from '@sz/constants';
 import { FFmpegService } from '@sz/services';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
-const BLANK_SPACE_WIDTH = SCREEN_WIDTH / 2 - DURATION_WINDOW_WIDTH / 2;
+const BLANK_SPACE_WIDTH = SCREEN_WIDTH / 2 - videoPlayerWithTimelineConfigs.durationWindowWidth / 2;
 
 const getPopLinePlayTime = (offset: number) => {
-  return (offset + (DURATION_WINDOW_WIDTH * parseFloat(POPLINE_POSITION)) / 100) / (FRAMES_PER_SECOND * FRAME_WIDTH);
+  return (
+    (offset +
+      (videoPlayerWithTimelineConfigs.durationWindowWidth *
+        parseFloat(videoPlayerWithTimelineConfigs.poplinePosition)) /
+        100) /
+    (videoPlayerWithTimelineConfigs.framesPerSecond * videoPlayerWithTimelineConfigs.frameWidth)
+  );
 };
 
 const getOffSetFromPopLinePlayTime = (playtime: number) => {
-  return playtime * (FRAMES_PER_SECOND * FRAME_WIDTH) - (DURATION_WINDOW_WIDTH * parseFloat(POPLINE_POSITION)) / 1000;
+  return (
+    playtime * (videoPlayerWithTimelineConfigs.framesPerSecond * videoPlayerWithTimelineConfigs.frameWidth) -
+    (videoPlayerWithTimelineConfigs.durationWindowWidth * parseFloat(videoPlayerWithTimelineConfigs.poplinePosition)) /
+      1000
+  );
 };
 
 const convertToMinutesAndSeconds = (seconds: number) => {
@@ -42,7 +44,7 @@ const FRAME_STATUS = Object.freeze({
 const renderFrame = (frame, index: number) => {
   if (frame.status === FRAME_STATUS.LOADING.name.description) {
     return (
-      <View style={tw`w-10 h-10 justify-center`} key={index}>
+      <View style={tw`w-10 h-10 justify-center m-auto`} key={index}>
         <LoadingIndicator size="small" color={Color.Tertiary.Sz900} />
       </View>
     );
@@ -54,8 +56,8 @@ const renderFrame = (frame, index: number) => {
           uri: 'file://' + frame,
         }}
         style={{
-          width: FRAME_WIDTH,
-          height: FRAME_HEIGHT,
+          width: videoPlayerWithTimelineConfigs.frameWidth,
+          height: videoPlayerWithTimelineConfigs.frameHeight,
         }}
       />
     );
@@ -164,6 +166,12 @@ export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps
     setIsVideoRepeating(false);
   };
 
+  const renderControllerIcon = () => {
+    if (isVideoEnded) return <ReplayIcon />;
+    else if (paused) return <PlayIcon />;
+    else return <PauseIcon />;
+  };
+
   const renderFrameGenerationError = () => {
     return (
       <View style={tw`justify-center items-center`}>
@@ -186,7 +194,6 @@ export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps
           ref={videoPlayerRef}
           onLoad={handleVideoLoad}
           onEnd={handleVideoEnding}
-          // repeat={isVideoRepeating}
           onProgress={handleOnProgress}
           resizeMode={'cover'}
           source={{ uri: source }}
@@ -197,7 +204,7 @@ export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps
           <View style={tw`absolute bottom-4 flex-row justify-center w-full `}>
             <Pressable onPress={handelControllerPress}>
               <View style={tw`py-0.5 px-1.75 flex-row items-center w-23 bg-[#00000087] rounded-lg mx-0`}>
-                {isVideoEnded ? <ReplayIcon /> : !paused ? <PauseIcon /> : <PlayIcon />}
+                {renderControllerIcon()}
                 <View style={tw`pl-1 items-center flex-row`}>
                   <Text variant={TextVariant.LabelsAlt} color={Color.Neutral.Sz100}>
                     {progress} /

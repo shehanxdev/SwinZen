@@ -1,6 +1,6 @@
 import { FFmpegKit, ReturnCode } from 'ffmpeg-kit-react-native';
 
-import { FRAMES_PER_SECOND, FRAME_SCALE } from '@sz/constants';
+import { videoPlayerWithTimelineConfigs } from '@sz/constants';
 
 import { FileSystemService } from '../file-service/FileSystemService';
 
@@ -23,7 +23,7 @@ export abstract class FFmpegService {
     const createdDirectoryPath = await FileSystemService.createDirectoryInCaches('timeline_frame_cache');
 
     let outputImagePath = `${createdDirectoryPath}/${localFileName}_%4d.png`;
-    const ffmpegCommand = `-ss 0 -i ${videoURI} -vf "fps=${FRAMES_PER_SECOND}/1:round=up,scale=${FRAME_SCALE}:-2" -vframes ${frameNumber} ${outputImagePath}`;
+    const ffmpegCommand = `-ss 0 -i ${videoURI} -vf "fps=${videoPlayerWithTimelineConfigs.framesPerSecond}/1:round=up,scale=${videoPlayerWithTimelineConfigs.frameScale}:-2" -vframes ${frameNumber} ${outputImagePath}`;
 
     try {
       const handleSession = async session => {

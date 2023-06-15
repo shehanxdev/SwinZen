@@ -1,7 +1,0 @@
-export const FRAMES_PER_SECOND = 1;
-export const FRAME_SCALE = 80;
-export const FRAME_HEIGHT = 60;
-export const FRAME_WIDTH = 69;
-export const DURATION_WINDOW_DURATION = 0.5;
-export const DURATION_WINDOW_WIDTH = DURATION_WINDOW_DURATION * FRAMES_PER_SECOND * FRAME_WIDTH;
-export const POPLINE_POSITION = '50%';
