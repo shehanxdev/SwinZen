@@ -12,22 +12,22 @@ import { BaseScreen } from './../../components';
 import { dummyVideoData } from './dummyVideodata';
 
 const tabOptions = [
-  { label: 'All videos', value: CameraAngles.All_Videos },
-  { label: 'Face view', value: CameraAngles.Face_View },
-  { label: 'Down the line', value: CameraAngles.Down_The_Line },
+  { label: 'All videos', value: CameraAngles.AllVideos },
+  { label: 'Face view', value: CameraAngles.FaceView },
+  { label: 'Down the line', value: CameraAngles.DownTheLine },
 ];
 
 export function VideosScreen() {
-  const [selctedTab, setSelctedTab] = useState<string>(CameraAngles.All_Videos);
+  const [selctedTab, setSelctedTab] = useState<string>(CameraAngles.AllVideos);
   const [selectedItem, setSelectedItem] = useState<string>();
 
   const filterVideos = (videos: VideoMetaData[], currentTab: string) => {
-    if (currentTab === CameraAngles.All_Videos) {
+    if (currentTab === CameraAngles.AllVideos) {
       return videos;
-    } else if (currentTab === CameraAngles.Down_The_Line) {
-      return videos.filter(video => video.videoType === CameraAngles.Down_The_Line);
-    } else if (currentTab === CameraAngles.Face_View) {
-      return videos.filter(video => video.videoType === CameraAngles.Face_View);
+    } else if (currentTab === CameraAngles.DownTheLine) {
+      return videos.filter(video => video.videoType === CameraAngles.DownTheLine);
+    } else if (currentTab === CameraAngles.FaceView) {
+      return videos.filter(video => video.videoType === CameraAngles.FaceView);
     }
   };
 

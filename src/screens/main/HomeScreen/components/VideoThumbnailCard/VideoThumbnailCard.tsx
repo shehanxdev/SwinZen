@@ -26,7 +26,7 @@ export function VideoThumbnailCard({ video }: VideoThumbnailCardProps) {
   return (
     <View testID="VideoThumbnailCardTestID" style={tw`relative`}>
       <ImageBackground
-        style={tw`h-54.5 rounded-2.5 rounded-bl-[20px] overflow-hidden`}
+        style={tw`h-54.5 rounded-2.5 rounded-bl-5 overflow-hidden`}
         source={{ uri: 'https://i.ibb.co/XFvHx8J/Rectangle-132.png' }}
         resizeMode="cover">
         <LinearGradient
