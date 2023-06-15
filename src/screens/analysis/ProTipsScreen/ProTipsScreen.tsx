@@ -10,7 +10,7 @@ import { tw } from '@sz/config';
 import { Checkpoint, Color, ProTipsInfo, TextAlignment, TextVariant, TipType } from '@sz/constants';
 
 import { BaseAnalysisScreen, TipsBottomCard } from '../components';
-import { DummyImageUrls, DummyVideoUrls } from './dummyMedia';
+import { DummyMedia } from './dummyMedia';
 
 export function ProTipsScreen({ route }) {
   const [tipType, setTipType] = useState(TipType.PGA_PRO_TIPS);
@@ -36,30 +36,30 @@ export function ProTipsScreen({ route }) {
   }, [tipType]);
 
   const imageSlides = useMemo(() => {
-    return DummyImageUrls.map(slide => {
+    return DummyMedia.map(slide => {
       return (
         /**
          * NOTE:
          * Pinchable is used to zoom images by pinching
          */
         <Pinchable key={slide}>
-          <Image style={tw`w-full h-full`} source={{ uri: slide }} resizeMode="cover" />
+          <Image style={tw`w-full h-full`} source={{ uri: slide.thumbnail }} resizeMode="cover" />
         </Pinchable>
       );
     });
-  }, [DummyImageUrls]);
+  }, [DummyMedia]);
 
   const videoSlides = useMemo(() => {
-    return DummyVideoUrls.map((slide, index) => {
+    return DummyMedia.map((slide, index) => {
       const isPlaying = index === currentVideo;
       return (
-        <View key={slide} style={tw`w-full h-[${mediaPaneHeight}px]`}>
+        <View key={slide.thumbnail} style={tw`w-full h-[${mediaPaneHeight}px]`}>
           {isPlaying ? (
             <Pressable onPress={() => setCurrentVideo(null)}>
               <Video
                 ignoreSilentSwitch="obey"
                 style={tw`w-full h-[${mediaPaneHeight}px] absolute bg-Neutral-Black`}
-                source={{ uri: slide }}
+                source={{ uri: slide.video }}
                 resizeMode="cover"
                 onEnd={() => setCurrentVideo(null)}
               />
@@ -69,8 +69,10 @@ export function ProTipsScreen({ route }) {
               <Video
                 paused={true}
                 style={tw`w-full h-[${mediaPaneHeight}px] absolute bg-Neutral-Black`}
-                source={{ uri: slide }}
+                source={{ uri: slide.video }}
                 resizeMode="cover"
+                poster={slide.thumbnail}
+                posterResizeMode="cover"
               />
               <Pressable style={tw`m-auto`} onPress={() => setCurrentVideo(index)}>
                 <VideoPlayIcon />
@@ -80,17 +82,25 @@ export function ProTipsScreen({ route }) {
         </View>
       );
     });
-  }, [DummyVideoUrls, currentVideo]);
+  }, [DummyMedia, currentVideo]);
 
   const sideBySideView = useMemo(() => {
     return (
       <>
-        <Image style={tw`w-full h-${mediaPaneHeight / 2}px`} source={{ uri: DummyImageUrls[0] }} resizeMode="cover" />
+        <Image
+          style={tw`w-full h-${mediaPaneHeight / 2}px`}
+          source={{ uri: DummyMedia[0].thumbnail }}
+          resizeMode="cover"
+        />
         <View style={tw`w-full h-1 bg-Neutral-Sz900`} />
-        <Image style={tw`w-full h-${mediaPaneHeight / 2}px`} source={{ uri: DummyImageUrls[1] }} resizeMode="cover" />
+        <Image
+          style={tw`w-full h-${mediaPaneHeight / 2}px`}
+          source={{ uri: DummyMedia[1].thumbnail }}
+          resizeMode="cover"
+        />
       </>
     );
-  }, [DummyImageUrls]);
+  }, [DummyMedia]);
 
   const getTipTypeData = (tipType: TipType) => {
     switch (tipType) {
