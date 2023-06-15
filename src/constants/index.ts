@@ -12,3 +12,4 @@ export * from './runtime-environment';
 export * from './static-info';
 export * from './typography';
 export * from './upload';
+export * from './videos';

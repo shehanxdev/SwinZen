@@ -54,7 +54,7 @@ export const AboutSZInfo = [
   {
     headerTitle: 'Down the line AI Pro',
     content: {
-      description: '',
+      description: 'Note this is available only with paid subscription.\n',
       points: [
         {
           title: 'Setup/Back Knee Angle:',
