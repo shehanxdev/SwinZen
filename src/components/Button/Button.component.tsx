@@ -48,11 +48,12 @@ export function Button({
   return (
     <View style={tw`flex-row`}>
       <RNPaperButton
+        labelStyle={{ color: textColor }}
         compact={true}
         uppercase={uppercase}
         disabled={disabled}
-        onPress={onPress}
-        loading={loading} //TODO::Replace with the correct loading indicator
+        onPress={!disabled && !loading && onPress}
+        loading={loading}
         style={tw`bg-[${buttonBackgroundColor}] rounded-2.5 justify-center shadow-none border border-[${buttonBorderColor}] ${
           fullWidth ? 'w-full' : undefined
         }`}
