@@ -12,8 +12,8 @@ import { useDispatch, useSelector } from '@sz/stores';
 import { getMaskedMail, otpValidationSchema } from '@sz/utils';
 
 import { OTPInput } from '../components';
-import { BaseAuthScreen } from '../components/BaseAuthScreen';
 import { ResendOtpWithTimer } from '../components/ResendOtpWithTimer';
+import { BaseScreen } from './../../components';
 
 export function ResetPasswordEmailVerificationScreen({ route }) {
   const {
@@ -63,7 +63,7 @@ export function ResetPasswordEmailVerificationScreen({ route }) {
   };
 
   return (
-    <BaseAuthScreen>
+    <BaseScreen>
       <View style={tw`flex-1`} testID="ResetPasswordEmailVerificationScreenContainerTestID">
         <View style={tw`mx-4 flex-1`}>
           <View style={tw`items-center`}>
@@ -98,6 +98,6 @@ export function ResetPasswordEmailVerificationScreen({ route }) {
           </View>
         </View>
       </View>
-    </BaseAuthScreen>
+    </BaseScreen>
   );
 }

@@ -1,0 +1,21 @@
+fastlane_require 'dotenv'
+
+before_all do
+  Dotenv.overload('.env')
+end
+
+default_platform(:android)
+
+platform :android do
+  desc "Firebase App Distribution - Dev"
+  lane :firebase_deploy_dev do
+    gradle(task: 'clean assembleRelease', project_dir: './', print_command: false)
+
+    firebase_app_distribution(
+      app: ENV["FIREBASE_APP_ID"],
+      groups: ENV["FIREBASE_TESTERS_GROUP"],
+      firebase_cli_token: ENV["FIREBASE_TOKEN"],
+      release_notes: "Sample release note"
+    )
+  end
+end

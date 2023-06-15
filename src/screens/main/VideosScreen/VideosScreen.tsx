@@ -8,7 +8,7 @@ import { VideoMetaData } from '@sz/models';
 
 import { TabScreenHeader } from '../../components/TabScreenHeader';
 import { VideoThumbnailCard } from '../HomeScreen/components';
-import { BaseMainScreen } from '../components';
+import { BaseScreen } from './../../components';
 import { dummyVideoData } from './dummyVideodata';
 
 const tabOptions = [
@@ -42,7 +42,7 @@ export function VideosScreen() {
     </TouchableWithoutFeedback>
   );
   return (
-    <BaseMainScreen wrapWithScrollView={false}>
+    <BaseScreen wrapWithScrollView={false}>
       <TabScreenHeader title="My videos" />
       <View style={tw`mx-4 mb-36`}>
         <View style={tw`mb-9 mt-4`}>
@@ -60,6 +60,6 @@ export function VideosScreen() {
           extraData={selectedItem}
         />
       </View>
-    </BaseMainScreen>
+    </BaseScreen>
   );
 }
