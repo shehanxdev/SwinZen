@@ -26,11 +26,9 @@ export function LinksSlider({ sliderData, onItemPress, testID = 'LinksSliderTest
                 }`}
                 key={`${slide}-${text}`}
                 onPress={() => onItemPress(text)}>
-                {/* <View style={tw`py-3.25 flex-row justify-between`}> */}
                 <Text variant={TextVariant.Body1SemiBold} color={Color.Neutral.White}>
                   {text}
                 </Text>
-                {/* </View> */}
                 <NextIcon />
               </Pressable>
             );
