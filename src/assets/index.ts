@@ -46,3 +46,6 @@ export { default as UploadSvg } from './icons/main/document-upload.svg';
 export { default as PhoneSvg } from './icons/contact-us/phone-icon.svg';
 export { default as SquareTickSvg } from './icons/main/square-tick.svg';
 export { default as ProfileImageChangeCameraSvg } from './icons/account/change-profile-image-camera.svg';
+export { default as FailCheckpointCrossSvg } from './icons/video-analysis/fail-checkpoint-cross.svg';
+export { default as PassCheckpointCrossSvg } from './icons/video-analysis/pass-checkpoint-mark.svg';
+export { default as PassStarCircleSvg } from './icons/video-analysis/pass-star-circle.svg';
