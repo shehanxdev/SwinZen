@@ -57,6 +57,7 @@ export function ProTipsScreen({ route }) {
           {isPlaying ? (
             <Pressable onPress={() => setCurrentVideo(null)}>
               <Video
+                ignoreSilentSwitch="obey"
                 style={tw`w-full h-[${mediaPaneHeight}px] absolute bg-Neutral-Black`}
                 source={{ uri: slide }}
                 resizeMode="cover"
