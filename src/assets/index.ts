@@ -42,6 +42,7 @@ export { default as PauseIconSvg } from './icons/library/pause-icon.svg';
 export { default as PlayButtonSvg } from './icons/main/play-button.svg';
 export { default as PricePlanFeatureListTick } from './icons/price-plan/price-plan-feature-list-tick.svg';
 export { default as ProfileIconSvg } from './icons/account/profile_icon.svg';
+export { default as ReplayIconSvg } from './icons/library/replay-icon.svg';
 export { default as SecurityIconSvg } from './icons/account/security_icon.svg';
 export { default as SwingZenLogoSvg } from './logo/swingzen-logo.svg';
 export { default as UploadSvg } from './icons/main/document-upload.svg';

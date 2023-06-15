@@ -39,6 +39,7 @@ import {
   PricePlanFeatureListTick,
   ProfileIconSvg,
   ProfileImageChangeCameraSvg,
+  ReplayIconSvg,
   SecurityIconSvg,
   SettingsMiniSvg,
   SquareTickSvg,
@@ -196,6 +197,10 @@ export function SecurityIcon({ color = Color.Neutral.Sz500, width = 20, height =
 
 export function SwingZenLogoIcon({ color, width = 108, height = 55 }: SvgIconProps) {
   return <SwingZenLogoSvg width={width} height={height} fill={color} />;
+}
+
+export function ReplayIcon({ color = Color.Neutral.Sz100, width = 11, height = 11 }: SvgIconProps) {
+  return <ReplayIconSvg width={width} height={height} fill={color} />;
 }
 
 export function PhoneIcon({ color = Color.Neutral.Sz500, width = 18, height = 18 }: SvgIconProps) {
