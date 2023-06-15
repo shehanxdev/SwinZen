@@ -1,10 +1,9 @@
-import dayjs from 'dayjs';
 import React from 'react';
 import { ImageBackground, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import { PlayButtonIcon } from '@sz/components';
-import { tw } from '@sz/config';
+import { szdayjs, tw } from '@sz/config';
 import { VideoMetaData } from '@sz/models';
 
 import { CircularScoreIndicator } from '../../../components/CircularScoreIndicator';
@@ -37,14 +36,14 @@ export function VideoThumbnailCard({ video }: VideoThumbnailCardProps) {
           end={gradientConfig.end}>
           <View style={tw`h-full flex justify-center items-center`}>
             <PlayButtonIcon />
-            <CircularScoreIndicator score={video.grading} diameter={40} />
+            <CircularScoreIndicator score={video.grading} size={'small'} />
           </View>
         </LinearGradient>
       </ImageBackground>
 
       <VideoUploadCardFooter
         isError={video.grading < 5}
-        date={dayjs(video.createdAt).format('DD MMM YYYY').toUpperCase()}
+        date={szdayjs(video.createdAt).format('DD MMM YYYY').toUpperCase()}
         cameraAngle={video.videoType}
         results={video.grading > 5 ? 'pass' : 'fail'}
       />
