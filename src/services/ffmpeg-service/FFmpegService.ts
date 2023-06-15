@@ -5,6 +5,8 @@ import { videoPlayerWithTimelineConfigs } from '@sz/constants';
 import { FileSystemService } from '../file-service/FileSystemService';
 
 export abstract class FFmpegService {
+  private static frameCacheDirectry = 'timeline_frame_cache';
+
   static async generateFramesFromVideo(
     localFileName: string,
     videoURI: string,
@@ -12,7 +14,7 @@ export abstract class FFmpegService {
     successCallback: (outputImagePath: string) => void,
     errorCallback: () => void,
   ): Promise<void> {
-    const oldFramesCacheDirectory = `${FileSystemService.CachesDirectoryPath}/timeline_frame_cache`;
+    const oldFramesCacheDirectory = `${FileSystemService.CachesDirectoryPath}/${FFmpegService.frameCacheDirectry}`;
 
     const directoryExists = await FileSystemService.checkDirectoryExistence(oldFramesCacheDirectory);
 
@@ -20,7 +22,7 @@ export abstract class FFmpegService {
       await FileSystemService.deleteFileFromCachesDirectory(oldFramesCacheDirectory);
     }
 
-    const createdDirectoryPath = await FileSystemService.createDirectoryInCaches('timeline_frame_cache');
+    const createdDirectoryPath = await FileSystemService.createDirectoryInCaches(FFmpegService.frameCacheDirectry);
 
     let outputImagePath = `${createdDirectoryPath}/${localFileName}_%4d.png`;
     const ffmpegCommand = `-ss 0 -i ${videoURI} -vf "fps=${videoPlayerWithTimelineConfigs.framesPerSecond}/1:round=up,scale=${videoPlayerWithTimelineConfigs.frameScale}:-2" -vframes ${frameNumber} ${outputImagePath}`;

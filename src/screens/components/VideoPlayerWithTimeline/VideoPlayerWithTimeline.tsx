@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react';
-import { Dimensions, Image, NativeScrollEvent, NativeSyntheticEvent, Pressable, ScrollView, View } from 'react-native';
+import { Dimensions, NativeScrollEvent, NativeSyntheticEvent, Pressable, ScrollView, View } from 'react-native';
+//TODO::create a common image component wrapper using react-native-fast-image
+import FastImage from 'react-native-fast-image';
 import Video, { OnProgressData } from 'react-native-video';
 
 import { ErrorIcon, LoadingIndicator, PauseIcon, PlayIcon, ReplayIcon, Text } from '@sz/components';
@@ -50,10 +52,14 @@ const renderFrame = (frame, index: number) => {
     );
   } else {
     return (
-      <Image
+      // There is a known issue with the RN Image component, that cannot control cache options in Android.
+      // This is a tempory workaround to get rid of the caching issue
+      // TODO::create a common image component wrapper using react-native-fast-image
+      <FastImage
         key={index}
         source={{
           uri: 'file://' + frame,
+          cache: 'web',
         }}
         style={{
           width: videoPlayerWithTimelineConfigs.frameWidth,
