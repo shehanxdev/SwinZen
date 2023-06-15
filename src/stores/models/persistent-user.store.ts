@@ -6,12 +6,14 @@ type LoginState = 'initial' | 'subsequent';
 
 interface PersistentUserState {
   isAuthenticated: boolean;
-  loginState: LoginState; //this state can be use to identify user's login status('initial login' or 'subsequent login')
+  loginState: LoginState; // this state can be used to identify user's login status('initial login' or 'subsequent login')
+  skippedInstructions: boolean; // this state can be used to indentify user want to skip video shoot instructions or not
 }
 
 const initialPersistentUserState: PersistentUserState = {
   isAuthenticated: false,
   loginState: 'initial',
+  skippedInstructions: false,
 };
 
 export const persistentUserStore = createModel<RootModel>()({
@@ -27,6 +29,12 @@ export const persistentUserStore = createModel<RootModel>()({
       return {
         ...state,
         loginState: payload,
+      };
+    },
+    setSkippedInstructions(state: PersistentUserState, payload: boolean) {
+      return {
+        ...state,
+        skippedInstructions: payload,
       };
     },
   },
