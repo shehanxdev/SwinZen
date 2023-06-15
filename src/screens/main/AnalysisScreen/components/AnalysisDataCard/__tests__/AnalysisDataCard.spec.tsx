@@ -1,14 +1,14 @@
 import { render } from '@testing-library/react-native';
 import * as React from 'react';
 
-import { ScoreType } from '@sz/constants';
+import { Checkpoint } from '@sz/constants';
 
 import { AnalysisDataCard } from './../AnalysisDataCard';
 
 describe('AnalysisData Card Component', () => {
   const testID = 'AnalysisDataCardTestID';
   const mockScore = 10;
-  const mockObservation = ScoreType.OVERALL;
+  const mockObservation = Checkpoint.OVERALL;
   const mockDate = new Date('2023-05-30');
 
   const getRenderedComponent = () =>

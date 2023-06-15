@@ -3,14 +3,14 @@ import { Pressable, View } from 'react-native';
 
 import { Text } from '@sz/components';
 import { szdayjs, tw } from '@sz/config';
-import { Color, Route, ScoreType, TextVariant } from '@sz/constants';
+import { Checkpoint, Color, Route, SubCheckpoint, TextVariant, VideoType } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 import { addPadToNumber } from '@sz/utils';
 
 export interface AnalysisDataCardProps {
   testID?: string;
   score: number;
-  observation: ScoreType;
+  observation: Checkpoint;
   time: Date;
 }
 
@@ -28,8 +28,13 @@ export function AnalysisDataCard({
       testID={testID}
       style={tw`flex-row h-16 mx-2 my-1.75 px-5 bg-Neutral-Sz1000 rounded-2.5 items-center justify-between`}
       onPress={() => {
-        if (observation !== ScoreType.OVERALL) {
-          NavigationService.navigate(Route.ProTips, { type: observation });
+        if (observation !== Checkpoint.OVERALL) {
+          // TODO:: Add this navigation into relavant swing analysis data screen
+          NavigationService.navigate(Route.ProTips, {
+            checkpoint: observation,
+            videoType: VideoType.DOWNTHELINE,
+            subCheckpoint: SubCheckpoint.BACK_KNEE_ANGLE,
+          });
         }
       }}>
       <View style={tw`flex-row items-center gap-7.5`}>

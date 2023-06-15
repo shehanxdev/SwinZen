@@ -7,7 +7,7 @@ import Video from 'react-native-video';
 
 import { SliderLeftIcon, SliderRightIcon, Text, VideoPlayIcon } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, ScoreType, TextAlignment, TextVariant, TipType } from '@sz/constants';
+import { Checkpoint, Color, ProTipsInfo, TextAlignment, TextVariant, TipType } from '@sz/constants';
 
 import { BaseAnalysisScreen, TipsBottomCard } from '../components';
 import { DummyImageUrls, DummyVideoUrls } from './dummyMedia';
@@ -16,16 +16,17 @@ export function ProTipsScreen({ route }) {
   const [tipType, setTipType] = useState(TipType.PGA_PRO_TIPS);
   const [currentVideo, setCurrentVideo] = useState(null);
 
-  const { type } = route.params.params;
+  const { videoType, checkpoint, subCheckpoint } = route.params.params;
 
   const screenHeight = Dimensions.get('window').height;
+  const mediaPaneHeight = screenHeight * 0.55; // Need to give specific height for the swiper and also into media container
 
   const swiperRef = useRef(null);
   const navigation = useNavigation();
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: type,
+      title: checkpoint,
     });
   });
 
@@ -37,7 +38,7 @@ export function ProTipsScreen({ route }) {
   const getTipTypeDescription = (tipType: TipType): string => {
     switch (tipType) {
       case 'pga-pro-tips':
-        return type === ScoreType.SETUP
+        return checkpoint === Checkpoint.SETUP
           ? 'Take a look at how a PGA Pro would fix this swing fault'
           : 'Take a quick look on how to fix this swing fault.';
       case 'ai-pro-tips':
@@ -65,11 +66,11 @@ export function ProTipsScreen({ route }) {
     return DummyVideoUrls.map((slide, index) => {
       const isPlaying = index === currentVideo;
       return (
-        <View key={slide} style={tw`w-full h-[${screenHeight * 0.54}px]`}>
+        <View key={slide} style={tw`w-full h-[${mediaPaneHeight}px]`}>
           {isPlaying ? (
             <Pressable onPress={() => setCurrentVideo(null)}>
               <Video
-                style={tw`w-full h-[${screenHeight * 0.54}px] absolute bg-Neutral-Black`}
+                style={tw`w-full h-[${mediaPaneHeight}px] absolute bg-Neutral-Black`}
                 source={{ uri: slide }}
                 resizeMode="cover"
                 onEnd={() => setCurrentVideo(null)}
@@ -79,7 +80,7 @@ export function ProTipsScreen({ route }) {
             <>
               <Video
                 paused={true}
-                style={tw`w-full h-[${screenHeight * 0.54}px] absolute bg-Neutral-Black`}
+                style={tw`w-full h-[${mediaPaneHeight}px] absolute bg-Neutral-Black`}
                 source={{ uri: slide }}
                 resizeMode="cover"
               />
@@ -103,33 +104,39 @@ export function ProTipsScreen({ route }) {
         </View>
         <View style={tw`mb--4`}>
           {tipType === 'side-by-side' ? (
-            <>
+            <View style={tw`w-full h-[${mediaPaneHeight}px]`}>
               <Image
-                style={tw`w-full h-${screenHeight * 0.27}px`}
+                style={tw`w-full h-${mediaPaneHeight / 2}px`}
                 source={{ uri: DummyImageUrls[0] }}
                 resizeMode="cover"
               />
               <View style={tw`w-full h-1 bg-Neutral-Sz900`} />
               <Image
-                style={tw`w-full h-${screenHeight * 0.27}px`}
+                style={tw`w-full h-${mediaPaneHeight / 2}px`}
                 source={{ uri: DummyImageUrls[1] }}
                 resizeMode="cover"
               />
-            </>
+            </View>
           ) : (
             <Swiper
               ref={swiperRef}
               showsButtons
               showsPagination={false}
               loop={false}
-              height={screenHeight * 0.54}
+              height={mediaPaneHeight}
+              onScroll={() => setCurrentVideo(null)}
+              scrollEventThrottle={0}
               prevButton={<SliderLeftIcon />}
               nextButton={<SliderRightIcon />}>
               {tipType === 'ai-pro-tips' ? imageSlides : videoSlides}
             </Swiper>
           )}
         </View>
-        <TipsBottomCard scoreType={type} tipType={tipType} onSetTipType={(item: TipType) => setTipType(item)} />
+        <TipsBottomCard
+          description={ProTipsInfo[videoType][checkpoint][subCheckpoint]}
+          tipType={tipType}
+          onSetTipType={(item: TipType) => setTipType(item)}
+        />
       </View>
     </BaseAnalysisScreen>
   );
