@@ -90,7 +90,7 @@ exports[`HowToShoot Screen screen should render HowToShoot Screen correctly 1`] 
                     "borderColor": "#FFFFFF",
                     "borderWidth": 4,
                     "height": 206,
-                    "width": "100%",
+                    "width": 358,
                   },
                 ]
               }
@@ -146,7 +146,7 @@ Have your buddy hold the phone in portrait mode.
                     "borderColor": "#FFFFFF",
                     "borderWidth": 4,
                     "height": 206,
-                    "width": "100%",
+                    "width": 358,
                   },
                 ]
               }

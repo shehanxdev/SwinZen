@@ -15,14 +15,14 @@ export function HowToShootStepTwo() {
         {`Have your buddy take 4 paces/12 ft behind the ball pointing towards the target.\n`}
       </Text>
       <FastImage
-        style={tw`w-full h-51.5 border-4 border-Neutral-White`}
+        style={tw`w-89.5 h-51.5 border-4 border-Neutral-White`}
         source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: DownTheLineGIF }}
       />
       <Text color={Color.Neutral.White} variant={TextVariant.Body1Regular} textAlign={TextAlignment.Auto}>
         {`\nHave your buddy hold the phone in portrait mode.\n`}
       </Text>
       <FastImage
-        style={tw`w-full h-51.5 border-4 border-Neutral-White`}
+        style={tw`w-89.5 h-51.5 border-4 border-Neutral-White`}
         source={{ cache: FastImage.cacheControl.immutable, priority: FastImage.priority.high, uri: LandscapeGIF }}
       />
     </View>

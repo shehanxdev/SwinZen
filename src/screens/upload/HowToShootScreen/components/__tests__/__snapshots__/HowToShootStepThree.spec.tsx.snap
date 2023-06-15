@@ -50,7 +50,7 @@ exports[`How to shoot step three Should render How to shoot step three correctly
           "borderColor": "#FFFFFF",
           "borderWidth": 4,
           "height": 206,
-          "width": "100%",
+          "width": 358,
         },
       ]
     }
@@ -106,7 +106,7 @@ Set your tripod 4-5 feet high.
           "borderColor": "#FFFFFF",
           "borderWidth": 4,
           "height": 206,
-          "width": "100%",
+          "width": 358,
         },
       ]
     }
@@ -162,7 +162,7 @@ Position your phone in landscape mode.
           "borderColor": "#FFFFFF",
           "borderWidth": 4,
           "height": 206,
-          "width": "100%",
+          "width": 358,
         },
       ]
     }
