@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { Dimensions, Image, Pressable, ScrollView, View } from 'react-native';
-import Video from 'react-native-video';
+import { Dimensions, Image, NativeScrollEvent, NativeSyntheticEvent, Pressable, ScrollView, View } from 'react-native';
+import Video, { OnProgressData } from 'react-native-video';
 
+import { ErrorIcon, LoadingIndicator, PauseIcon, PlayIcon, ReplayIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import {
   Color,
@@ -14,18 +15,14 @@ import {
 } from '@sz/constants';
 import { FFmpegService } from '@sz/services';
 
-import { ErrorIcon, PauseIcon, PlayIcon, ReplayIcon } from '../Icon';
-import { LoadingIndicator } from '../LoadingIndicator';
-import { Text } from '../Typography';
-
 const SCREEN_WIDTH = Dimensions.get('screen').width;
-const blankSpaceWidth = SCREEN_WIDTH / 2 - DURATION_WINDOW_WIDTH / 2;
+const BLANK_SPACE_WIDTH = SCREEN_WIDTH / 2 - DURATION_WINDOW_WIDTH / 2;
 
-const getPopLinePlayTime = offset => {
+const getPopLinePlayTime = (offset: number) => {
   return (offset + (DURATION_WINDOW_WIDTH * parseFloat(POPLINE_POSITION)) / 100) / (FRAMES_PER_SECOND * FRAME_WIDTH);
 };
 
-const getOffSetFromPopLinePlayTime = playtime => {
+const getOffSetFromPopLinePlayTime = (playtime: number) => {
   return playtime * (FRAMES_PER_SECOND * FRAME_WIDTH) - (DURATION_WINDOW_WIDTH * parseFloat(POPLINE_POSITION)) / 1000;
 };
 
@@ -42,8 +39,34 @@ const FRAME_STATUS = Object.freeze({
   READY: { name: Symbol('READY') },
 });
 
-export function VideoPlayer({ source }) {
-  // console.log('vide')
+const renderFrame = (frame, index: number) => {
+  if (frame.status === FRAME_STATUS.LOADING.name.description) {
+    return (
+      <View style={tw`w-10 h-10 justify-center`} key={index}>
+        <LoadingIndicator size="small" color={Color.Tertiary.Sz900} />
+      </View>
+    );
+  } else {
+    return (
+      <Image
+        key={index}
+        source={{
+          uri: 'file://' + frame,
+        }}
+        style={{
+          width: FRAME_WIDTH,
+          height: FRAME_HEIGHT,
+        }}
+      />
+    );
+  }
+};
+
+interface VideoPlayerWithTimelineProps {
+  source: string;
+}
+
+export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps) {
   const videoPlayerRef = useRef(null);
   const scrollViewRef = useRef(null);
 
@@ -56,16 +79,12 @@ export function VideoPlayer({ source }) {
   const [frames, setFrames] = useState(null);
   const [failedToGenerateFrames, setFailedToGenerateFrames] = useState(false);
 
-  const handleOnProgress = ({ currentTime }) => {
+  const handleOnProgress = (data: OnProgressData) => {
+    const currentTime = data.currentTime;
     const currentTimeInSeconds = Math.round(currentTime);
 
     if (!paused) {
-      // const xOffset = getOffSetFromPopLinePlayTime(currentTime + 1);
       const xOffset = getOffSetFromPopLinePlayTime(currentTime);
-      console.log('paused is false xoffset is', xOffset);
-
-      const poplinePlaytimeByXOffset = getPopLinePlayTime(xOffset);
-      console.log('poplinePlaytimeByXOffset', poplinePlaytimeByXOffset);
       scrollViewRef.current.scrollTo({ x: xOffset, animated: true });
     }
 
@@ -73,7 +92,7 @@ export function VideoPlayer({ source }) {
     setProgress(currentProgress);
   };
 
-  const generateFrames = (filePath, numberOfFrames) => {
+  const generateFrames = (filePath: string, numberOfFrames: number) => {
     let frames = [];
     for (let i = 0; i < numberOfFrames - 1; i++) {
       frames.push(`${filePath.replace('%4d', String(i + 1).padStart(4, '0'))}`);
@@ -81,11 +100,10 @@ export function VideoPlayer({ source }) {
     setFrames(frames);
   };
 
-  const handleTimelineScroll = ({ nativeEvent }) => {
-    const playbackTime = getPopLinePlayTime(nativeEvent.contentOffset.x);
+  const handleTimelineScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const playbackTime = getPopLinePlayTime(event.nativeEvent.contentOffset.x);
 
     if (paused) {
-      console.log('paused is true video will seek to', playbackTime);
       videoPlayerRef.current?.seek(playbackTime);
     }
   };
@@ -103,7 +121,6 @@ export function VideoPlayer({ source }) {
   };
 
   const handleOnTouchEnd = () => {
-    console.log('handleOnTouchEnd pause is false');
     setIsVideoEnded(false);
     setPaused(false);
   };
@@ -115,7 +132,7 @@ export function VideoPlayer({ source }) {
 
   const handleVideoLoad = async ({ duration }) => {
     setIsVideoLoading(false);
-    let localFileName = `someRandomFileNamee`; //TODO:: replace with something meaningful
+    let localFileName = `someRandomFileNamee`;
     const numberOfFrames = Math.ceil(duration);
 
     setFrames(
@@ -145,33 +162,6 @@ export function VideoPlayer({ source }) {
   const handleVideoEnding = () => {
     setIsVideoEnded(true);
     setIsVideoRepeating(false);
-  };
-
-  const renderFrame = (frame, index) => {
-    const currentDate = new Date();
-    const currentTimestamp = currentDate.getTime();
-    console.log('frame', 'file://' + frame + '?' + currentTimestamp);
-
-    if (frame.status === FRAME_STATUS.LOADING.name.description) {
-      return (
-        <View style={tw`w-10 h-10 justify-center`} key={index}>
-          <LoadingIndicator size="small" color={Color.Tertiary.Sz900} />
-        </View>
-      );
-    } else {
-      return (
-        <Image
-          key={index}
-          source={{
-            uri: 'file://' + frame + '?' + currentTimestamp,
-          }}
-          style={{
-            width: FRAME_WIDTH,
-            height: FRAME_HEIGHT,
-          }}
-        />
-      );
-    }
   };
 
   const renderFrameGenerationError = () => {
@@ -239,9 +229,9 @@ export function VideoPlayer({ source }) {
             alwaysBounceHorizontal={false}
             bounces={false}
             scrollEventThrottle={1}>
-            <View style={tw`w-[${blankSpaceWidth}px] bg-black`} />
+            <View style={tw`w-[${BLANK_SPACE_WIDTH}px] bg-black`} />
             {frames && frames.map((frame, index) => renderFrame(frame, index))}
-            <View style={tw`w-[${blankSpaceWidth}px] bg-black`} />
+            <View style={tw`w-[${BLANK_SPACE_WIDTH}px] bg-black`} />
           </ScrollView>
         </View>
       )}
