@@ -94,6 +94,27 @@ export function ProTipsScreen({ route }) {
     });
   }, [DummyVideoUrls, currentVideo]);
 
+  const sideBySideView = useMemo(() => {
+    return (
+      <>
+        <Image style={tw`w-full h-${mediaPaneHeight / 2}px`} source={{ uri: DummyImageUrls[0] }} resizeMode="cover" />
+        <View style={tw`w-full h-1 bg-Neutral-Sz900`} />
+        <Image style={tw`w-full h-${mediaPaneHeight / 2}px`} source={{ uri: DummyImageUrls[1] }} resizeMode="cover" />
+      </>
+    );
+  }, [DummyImageUrls]);
+
+  const getMediaContent = (tipType: TipType) => {
+    switch (tipType) {
+      case 'pga-pro-tips':
+        return videoSlides;
+      case 'ai-pro-tips':
+        return imageSlides;
+      case 'side-by-side':
+        return sideBySideView;
+    }
+  };
+
   return (
     <BaseAnalysisScreen>
       <View style={tw`flex-1 justify-between`}>
@@ -102,35 +123,19 @@ export function ProTipsScreen({ route }) {
             {getTipTypeDescription(tipType)}
           </Text>
         </View>
-        <View style={tw`mb--4`}>
-          {tipType === 'side-by-side' ? (
-            <View style={tw`w-full h-[${mediaPaneHeight}px]`}>
-              <Image
-                style={tw`w-full h-${mediaPaneHeight / 2}px`}
-                source={{ uri: DummyImageUrls[0] }}
-                resizeMode="cover"
-              />
-              <View style={tw`w-full h-1 bg-Neutral-Sz900`} />
-              <Image
-                style={tw`w-full h-${mediaPaneHeight / 2}px`}
-                source={{ uri: DummyImageUrls[1] }}
-                resizeMode="cover"
-              />
-            </View>
-          ) : (
-            <Swiper
-              ref={swiperRef}
-              showsButtons
-              showsPagination={false}
-              loop={false}
-              height={mediaPaneHeight}
-              onScroll={() => setCurrentVideo(null)}
-              scrollEventThrottle={0}
-              prevButton={<SliderLeftIcon />}
-              nextButton={<SliderRightIcon />}>
-              {tipType === 'ai-pro-tips' ? imageSlides : videoSlides}
-            </Swiper>
-          )}
+        <View style={tw`mb--4 w-full h-[${mediaPaneHeight}px]`}>
+          <Swiper
+            ref={swiperRef}
+            showsButtons={tipType !== 'side-by-side'}
+            showsPagination={false}
+            loop={false}
+            height={mediaPaneHeight}
+            onScroll={() => setCurrentVideo(null)}
+            scrollEventThrottle={0}
+            prevButton={<SliderLeftIcon />}
+            nextButton={<SliderRightIcon />}>
+            {getMediaContent(tipType)}
+          </Swiper>
         </View>
         <TipsBottomCard
           description={ProTipsInfo[videoType][checkpoint][subCheckpoint]}
