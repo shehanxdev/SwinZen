@@ -22,7 +22,7 @@ import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { signupValidationSchema } from '@sz/utils';
 
-import { BaseAuthScreen } from '../components';
+import { BaseScreen } from './../../components';
 
 export function SignupScreen() {
   const {
@@ -51,7 +51,7 @@ export function SignupScreen() {
   };
 
   return (
-    <BaseAuthScreen testID="SignupScreenTestID">
+    <BaseScreen testID="SignupScreenTestID">
       <View style={tw`flex-1 justify-between`}>
         <View style={tw`flex mt-10 mx-5`}>
           <View style={tw`items-center`}>
@@ -208,6 +208,6 @@ export function SignupScreen() {
           </Text>
         </View>
       </View>
-    </BaseAuthScreen>
+    </BaseScreen>
   );
 }

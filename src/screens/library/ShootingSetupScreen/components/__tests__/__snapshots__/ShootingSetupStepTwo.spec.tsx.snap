@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Shooting Setup Step Two should render Shooting Setup Step Two correctly 1`] = `
+<View>
+  <Text
+    style={
+      [
+        {
+          "color": "#C0DBBF",
+          "lineHeight": 28,
+        },
+        {
+          "fontFamily": "SourceSansPro-SemiBold",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "textAlign": "auto",
+        },
+      ]
+    }
+  >
+    Tip Number Two:
+
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "lineHeight": 28,
+        },
+        {
+          "fontFamily": "SourceSansPro-Regular",
+          "fontSize": 18,
+          "fontWeight": "normal",
+          "textAlign": "auto",
+        },
+      ]
+    }
+  >
+    When shooting The Down The Line shot, the camera/phone must be held at 4 paces away (12ft/4M) from the ball. Position behind the ball pointing toward the target in the distance with the ball in line.
+
+  </Text>
+  <View
+    style={
+      [
+        {
+          "overflow": "hidden",
+        },
+        {
+          "borderColor": "#FFFFFF",
+          "borderWidth": 8,
+          "height": 215,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <FastImageView
+      defaultSource={null}
+      resizeMode="cover"
+      source={
+        {
+          "cache": "immutable",
+          "priority": "high",
+          "uri": "https://files.dev.swingzen.com/video-thumbs/downtheline.png",
+        }
+      }
+      style={
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+  </View>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "lineHeight": 28,
+        },
+        {
+          "fontFamily": "SourceSansPro-Regular",
+          "fontSize": 18,
+          "fontWeight": "normal",
+          "textAlign": "auto",
+        },
+      ]
+    }
+  >
+    
+In The Face On perspective, the camera/phone needs to be 4 paces (9ft/3M) from the ball, not the golfer, but centered on the golfer.
+
+  </Text>
+  <View
+    style={
+      [
+        {
+          "overflow": "hidden",
+        },
+        {
+          "borderColor": "#FFFFFF",
+          "borderWidth": 8,
+          "height": 215,
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <FastImageView
+      defaultSource={null}
+      resizeMode="cover"
+      source={
+        {
+          "cache": "immutable",
+          "priority": "high",
+          "uri": "https://files.dev.swingzen.com/video-thumbs/faceon.png",
+        }
+      }
+      style={
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+  </View>
+</View>
+`;

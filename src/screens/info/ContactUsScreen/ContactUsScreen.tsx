@@ -11,7 +11,7 @@ import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { contactUsValidationSchema } from '@sz/utils';
 
-import { BaseInfoScreen } from '../components';
+import { BaseScreen } from './../../components';
 
 export function ContactUsScreen() {
   const {
@@ -47,7 +47,7 @@ export function ContactUsScreen() {
   };
 
   return (
-    <BaseInfoScreen testID="ContactUsScreenTestID">
+    <BaseScreen testID="ContactUsScreenTestID">
       <View style={tw`px-4`}>
         <View style={tw` my-8`}>
           <Text textAlign={TextAlignment.Left} variant={TextVariant.Body1Regular}>
@@ -124,6 +124,6 @@ export function ContactUsScreen() {
           <Button onPress={handleSubmit(onContactFormValid, onContactFromInvalid)} title={'submit'} loading={loading} />
         </View>
       </View>
-    </BaseInfoScreen>
+    </BaseScreen>
   );
 }

@@ -69,3 +69,5 @@ yarn-error.log
 android/keystore.properties
 
 coverage/
+
+android/fastlane/.env

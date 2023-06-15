@@ -11,7 +11,7 @@ import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch, useSelector } from '@sz/stores';
 import { changePasswordValidationSchema } from '@sz/utils';
 
-import { BaseAccountScreen } from '../../components';
+import { BaseScreen } from './../../../components';
 
 export function ChangePasswordScreen() {
   const {
@@ -42,7 +42,7 @@ export function ChangePasswordScreen() {
   };
 
   return (
-    <BaseAccountScreen testID="ChangePasswordScreenTestID">
+    <BaseScreen testID="ChangePasswordScreenTestID">
       <View style={tw`flex-1 justify-between`}>
         <View style={tw`flex-1 mx-5 mt-16`}>
           <View style={tw`mb-4`}>
@@ -117,6 +117,6 @@ export function ChangePasswordScreen() {
           />
         </View>
       </View>
-    </BaseAccountScreen>
+    </BaseScreen>
   );
 }

@@ -6,15 +6,16 @@ import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
 interface GolfTipCardProps {
+  testID?: string;
   videosCount: number;
   label: string;
   sourceUri: string;
   onPress: () => void;
 }
 
-export function GolfTipCard({ videosCount, label, sourceUri, onPress }: GolfTipCardProps) {
+export function GolfTipCard({ testID, videosCount, label, sourceUri, onPress }: GolfTipCardProps) {
   return (
-    <Pressable onPress={onPress} style={tw`grow-0 shrink-0 basis-[30%]`}>
+    <Pressable onPress={onPress} style={tw`grow-0 shrink-0 basis-[30%]`} testID={testID}>
       <View style={tw`rounded-2.5 h-26.5`}>
         <ImageBackground
           source={{ uri: sourceUri }}

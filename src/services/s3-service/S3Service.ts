@@ -26,7 +26,9 @@ export class S3Service {
     formData.append('Content-Type', mediaFile.type);
     formData.append('file', file);
 
-    const response = await httpServiceInstance.getApiSauceInstance().post(preSignedData.url, formData);
+    const response = await httpServiceInstance
+      .getApiSauceInstance()
+      .post(preSignedData.url, formData, { headers: { 'content-type': 'multipart/form-data' } });
 
     if (!response.ok) {
       throw new APIError('UNKNOWN_ERROR');
