@@ -1,5 +1,13 @@
 import React, { useRef, useState } from 'react';
-import { Dimensions, NativeScrollEvent, NativeSyntheticEvent, Pressable, ScrollView, View } from 'react-native';
+import {
+  Dimensions,
+  NativeScrollEvent,
+  NativeSyntheticEvent,
+  Platform,
+  Pressable,
+  ScrollView,
+  View,
+} from 'react-native';
 //TODO::create a common image component wrapper using react-native-fast-image
 import FastImage from 'react-native-fast-image';
 import Video, { OnProgressData } from 'react-native-video';
@@ -93,7 +101,11 @@ export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps
 
     if (!paused) {
       const xOffset = getOffSetFromPopLinePlayTime(currentTime);
-      scrollViewRef.current.scrollTo({ x: xOffset, animated: true });
+      /**
+       * Note: setting animated: false for iOS because UI gets unresponsive while the video is playing
+       * TODO: https://surgeglobal.atlassian.net/browse/SWIN-748
+       */
+      scrollViewRef.current.scrollTo({ x: xOffset, animated: Platform.OS === 'android' });
     }
 
     const currentProgress = convertToMinutesAndSeconds(currentTimeInSeconds);
