@@ -2118,7 +2118,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                       resizeMode="cover"
                       source={
                         {
-                          "testUri": "../../../src/assets/images/AITools.png",
+                          "testUri": "../../../src/assets/images/golftips/AITools.png",
                         }
                       }
                       style={
@@ -2260,7 +2260,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                       resizeMode="cover"
                       source={
                         {
-                          "testUri": "../../../src/assets/images/AITools.png",
+                          "testUri": "../../../src/assets/images/golftips/AITools.png",
                         }
                       }
                       style={
@@ -2402,7 +2402,7 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                       resizeMode="cover"
                       source={
                         {
-                          "testUri": "../../../src/assets/images/AITools.png",
+                          "testUri": "../../../src/assets/images/golftips/AITools.png",
                         }
                       }
                       style={
