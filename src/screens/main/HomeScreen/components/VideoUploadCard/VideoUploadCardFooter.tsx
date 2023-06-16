@@ -16,7 +16,7 @@ export function VideoUploadCardFooter({ isError, results, date, cameraAngle }: V
   return (
     <View>
       <View style={tw`flex-row items-center  justify-between w-full`}>
-        <Text variant={TextVariant.Body2SemiBold} color={isError && Color.Secondary.Sz900}>
+        <Text variant={TextVariant.Body2SemiBold} color={isError ? Color.Secondary.Sz900 : Color.Tertiary.Sz900}>
           {results.toUpperCase()}
         </Text>
         <Text variant={TextVariant.Body2SemiBold}>{`${date} • ${cameraAngle}`}</Text>

@@ -6,3 +6,4 @@ export * from './info';
 export * from './upload';
 export * from './pricePlan';
 export * from './user';
+export * from './video';

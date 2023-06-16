@@ -46,12 +46,16 @@ exports[`Shooting Setup Step Two should render Shooting Setup Step Two correctly
         {
           "overflow": "hidden",
         },
-        {
-          "borderColor": "#FFFFFF",
-          "borderWidth": 8,
-          "height": 215,
-          "width": "100%",
-        },
+        [
+          {
+            "borderColor": "#FFFFFF",
+            "borderWidth": 8,
+            "width": "100%",
+          },
+          {
+            "aspectRatio": 1.6651162790697673,
+          },
+        ],
       ]
     }
   >
@@ -102,12 +106,16 @@ In The Face On perspective, the camera/phone needs to be 4 paces (9ft/3M) from t
         {
           "overflow": "hidden",
         },
-        {
-          "borderColor": "#FFFFFF",
-          "borderWidth": 8,
-          "height": 215,
-          "width": "100%",
-        },
+        [
+          {
+            "borderColor": "#FFFFFF",
+            "borderWidth": 8,
+            "width": "100%",
+          },
+          {
+            "aspectRatio": 1.6651162790697673,
+          },
+        ],
       ]
     }
   >

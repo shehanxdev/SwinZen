@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useLayoutEffect, useMemo, useState } from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import React, { useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { ScrollView, TouchableOpacity, View } from 'react-native';
 
 import { BackIcon, Button } from '@sz/components';
 import { tw } from '@sz/config';
@@ -13,6 +13,8 @@ const TEST_ID_PREFIX = 'ShootingSetupScreenTestID';
 
 export function ShootingSetupScreen() {
   const [count, setCount] = useState(0);
+
+  const scrollRef = useRef<ScrollView>();
 
   const navigation = useNavigation();
 
@@ -53,7 +55,7 @@ export function ShootingSetupScreen() {
   }, [count]);
 
   return (
-    <BaseScreen>
+    <BaseScreen scrollRef={scrollRef}>
       <View style={tw`flex-1 justify-between mx-4 mt-8`} testID={TEST_ID_PREFIX}>
         {renderBody}
         <View style={tw`mt-25 mb-3`}>
@@ -63,6 +65,7 @@ export function ShootingSetupScreen() {
                 setCount(0);
                 NavigationService.goBack();
               } else {
+                scrollRef.current.scrollTo({ y: 0, animated: true });
                 setCount(count + 1);
               }
             }}
