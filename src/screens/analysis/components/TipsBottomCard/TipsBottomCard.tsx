@@ -20,7 +20,12 @@ interface TipDataProps {
   onRightButtonPress: () => void;
 }
 
-export function TipsBottomCard({ description, tipType, onSetTipType }: TipsBottomCardProps) {
+export function TipsBottomCard({
+  testID = 'TipsBottomCardTestID',
+  description,
+  tipType,
+  onSetTipType,
+}: TipsBottomCardProps) {
   const getTipsData = (tipType: TipType): TipDataProps => {
     switch (tipType) {
       case 'pga-pro-tips':
@@ -51,7 +56,7 @@ export function TipsBottomCard({ description, tipType, onSetTipType }: TipsBotto
   };
 
   return (
-    <View style={tw`pb-8.5 pt-8 px-2 rounded-t-2xl bg-Neutral-Sz900`}>
+    <View testID={testID} style={tw`pb-8.5 pt-8 px-2 rounded-t-2xl bg-Neutral-Sz900`}>
       <View style={tw`mx-4`}>
         <Text variant={TextVariant.SubTitle2SemiBold} color={Color.Neutral.Sz400} textAlign={TextAlignment.Left}>
           {getTipsData(tipType).title}

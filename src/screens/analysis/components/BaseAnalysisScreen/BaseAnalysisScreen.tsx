@@ -9,7 +9,7 @@ export function BaseAnalysisScreen({ children }) {
   const headerHeight = useHeaderHeight();
 
   return (
-    <SafeAreaView style={tw`h-full pt-[${headerHeight}px] bg-Neutral-Sz900`}>
+    <SafeAreaView testID="BaseAnalysisScreenTestID" style={tw`h-full pt-[${headerHeight}px] bg-Neutral-Sz900`}>
       <ScrollView contentContainerStyle={tw`grow`}>{children}</ScrollView>
     </SafeAreaView>
   );
