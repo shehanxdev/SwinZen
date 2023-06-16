@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Ref } from 'react';
 import { Image, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, View } from 'react-native';
 import LinearGradient, { LinearGradientProps } from 'react-native-linear-gradient';
 
@@ -12,6 +12,7 @@ export interface BaseScreenProps extends Partial<LinearGradientProps> {
   children: React.ReactNode;
   wrapWithScrollView?: boolean;
   isLoading?: boolean; //Use this prop to activate the full screen loading effect
+  scrollRef?: Ref<ScrollView>;
 }
 
 export function BaseScreen({
@@ -19,12 +20,13 @@ export function BaseScreen({
   colors = [Color.Primary.Sz650, Color.Primary.Sz800, Color.Primary.Sz900],
   wrapWithScrollView = true,
   isLoading,
+  scrollRef,
   ...otherlinearGradientProps
 }: BaseScreenProps) {
   const headerHeight = useHeaderHeight();
 
   const renderChildren = wrapWithScrollView ? (
-    <ScrollView contentContainerStyle={tw`grow`} keyboardShouldPersistTaps="handled">
+    <ScrollView contentContainerStyle={tw`grow`} keyboardShouldPersistTaps="handled" ref={scrollRef}>
       {children}
     </ScrollView>
   ) : (

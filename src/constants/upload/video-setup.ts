@@ -44,3 +44,5 @@ export const ToggleSwitchData: ToggleSwitchDataType[] = [
     key: VideoSetupSwitchType.SHOOTING_METHOD,
   },
 ];
+
+export const HOW_TO_SHOOT_GIF_ASPECT_RATIO = 358 / 206;

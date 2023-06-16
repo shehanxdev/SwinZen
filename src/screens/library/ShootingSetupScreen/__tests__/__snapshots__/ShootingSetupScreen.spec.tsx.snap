@@ -155,12 +155,16 @@ exports[`Shooting Setup Screen should render Shooting Setup Screen correctly 1`]
                     {
                       "overflow": "hidden",
                     },
-                    {
-                      "borderColor": "#FFFFFF",
-                      "borderWidth": 8,
-                      "height": 193,
-                      "width": "100%",
-                    },
+                    [
+                      {
+                        "borderColor": "#FFFFFF",
+                        "borderWidth": 8,
+                        "width": "100%",
+                      },
+                      {
+                        "aspectRatio": 1.854922279792746,
+                      },
+                    ],
                   ]
                 }
               >
@@ -171,7 +175,7 @@ exports[`Shooting Setup Screen should render Shooting Setup Screen correctly 1`]
                     {
                       "cache": "immutable",
                       "priority": "high",
-                      "uri": "https://video-thumbnails.dev.swingzen.com/landscape.png",
+                      "uri": "https://files.dev.swingzen.com/video-thumbs/landscape.png",
                     }
                   }
                   style={

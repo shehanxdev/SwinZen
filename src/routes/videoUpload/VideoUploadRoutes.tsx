@@ -2,22 +2,17 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
 import { Route } from '@sz/constants';
-import { VideoSetupScreen } from '@sz/screens';
+import { HowToShootScreen, PreValidationScreen, VideoSetupScreen } from '@sz/screens';
 
 import { HeaderBackButton, HeaderTitle } from '../components';
-import { HeaderRightLink } from './components';
+import { HeaderRightCloseButton, HeaderRightLink } from './components';
 
-export type VideoUploadStackParamList = {
-  [Route.VideoSetup]: {
-    // Can be used for future props
-  };
-};
-
-const renderHeaderRight = () => <HeaderRightLink text="How to Shoot" />;
-
-const Stack = createNativeStackNavigator<VideoUploadStackParamList>();
+const Stack = createNativeStackNavigator();
 
 export function VideoUploadStack() {
+  const renderHowToShootLink = () => <HeaderRightLink text="How to Shoot" />;
+  const renderShootingInstructionsTitle = () => <HeaderTitle>Shooting instructions</HeaderTitle>;
+
   return (
     <Stack.Navigator
       initialRouteName={Route.VideoSetup}
@@ -32,7 +27,30 @@ export function VideoUploadStack() {
       <Stack.Screen
         name={Route.VideoSetup}
         component={VideoSetupScreen}
-        options={{ title: '', headerRight: renderHeaderRight }}
+        options={{ title: '', headerRight: renderHowToShootLink }}
+      />
+      <Stack.Screen
+        name={Route.HowToShoot}
+        component={HowToShootScreen}
+        options={{
+          title: '',
+          headerLeft: renderShootingInstructionsTitle,
+          headerRight: HeaderRightCloseButton,
+          /**
+           * NOTE:
+           * presentation: 'modal' is only supported in android as of now
+           * slide_from_bottom is added to get the modal behaviour in android
+           */
+          presentation: 'modal',
+          animation: 'slide_from_bottom',
+        }}
+      />
+      <Stack.Screen
+        name={Route.PreValidation}
+        component={PreValidationScreen}
+        options={{
+          title: 'PreValidation',
+        }}
       />
     </Stack.Navigator>
   );
