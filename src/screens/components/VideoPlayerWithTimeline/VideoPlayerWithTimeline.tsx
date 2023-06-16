@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Dimensions, NativeScrollEvent, NativeSyntheticEvent, Pressable, ScrollView, View } from 'react-native';
 //TODO::create a common image component wrapper using react-native-fast-image
 import FastImage from 'react-native-fast-image';
-import Video, { OnProgressData } from 'react-native-video';
+import Video, { OnLoadData, OnProgressData } from 'react-native-video';
 
 import { ErrorIcon, LoadingIndicator, PauseIcon, PlayIcon, ReplayIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
@@ -70,6 +70,16 @@ const renderFrame = (frame, index: number) => {
   }
 };
 
+const renderFrameGenerationError = () => {
+  return (
+    <View style={tw`justify-center items-center`}>
+      <ErrorIcon />
+      <Text variant={TextVariant.Body2Regular}>Something went wrong while generating frames !</Text>
+      <Text variant={TextVariant.Body2Regular}>Please try again</Text>
+    </View>
+  );
+};
+
 interface VideoPlayerWithTimelineProps {
   source: string;
 }
@@ -78,10 +88,9 @@ export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps
   const videoPlayerRef = useRef(null);
   const scrollViewRef = useRef(null);
 
-  const [progress, setProgress] = useState('00:00');
-  const [duration, setDuration] = useState('00:00');
+  const [progress, setProgress] = useState(videoPlayerWithTimelineConfigs.startPosition);
+  const [duration, setDuration] = useState(videoPlayerWithTimelineConfigs.startPosition);
   const [isVideoEnded, setIsVideoEnded] = useState(false);
-  const [, setIsVideoRepeating] = useState(false);
   const [paused, setPaused] = useState(true);
   const [isVideoLoading, setIsVideoLoading] = useState(true);
   const [frames, setFrames] = useState(null);
@@ -119,7 +128,7 @@ export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps
   const handelControllerPress = () => {
     if (isVideoEnded) {
       setIsVideoEnded(false);
-      setProgress('00:00');
+      setProgress(videoPlayerWithTimelineConfigs.startPosition);
       scrollViewRef.current.scrollTo({ x: 0.25, animated: true });
       videoPlayerRef.current.seek(0);
       setPaused(false);
@@ -138,10 +147,10 @@ export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps
     setPaused(true);
   };
 
-  const handleVideoLoad = async ({ duration }) => {
+  const handleVideoLoad = async (data: OnLoadData) => {
     setIsVideoLoading(false);
     let localFileName = `someRandomFileNamee`;
-    const numberOfFrames = Math.ceil(duration);
+    const numberOfFrames = Math.ceil(data.duration);
 
     setFrames(
       Array(numberOfFrames).fill({
@@ -157,7 +166,7 @@ export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps
       () => setFailedToGenerateFrames(true),
     );
 
-    const durationInMinsAndSeconds = convertToMinutesAndSeconds(Math.round(duration));
+    const durationInMinsAndSeconds = convertToMinutesAndSeconds(Math.round(data.duration));
     setDuration(durationInMinsAndSeconds);
 
     setFrames(
@@ -169,23 +178,12 @@ export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps
 
   const handleVideoEnding = () => {
     setIsVideoEnded(true);
-    setIsVideoRepeating(false);
   };
 
   const renderControllerIcon = () => {
     if (isVideoEnded) return <ReplayIcon />;
     else if (paused) return <PlayIcon />;
     else return <PauseIcon />;
-  };
-
-  const renderFrameGenerationError = () => {
-    return (
-      <View style={tw`justify-center items-center`}>
-        <ErrorIcon width={50} height={50} />
-        <Text variant={TextVariant.Body2Regular}>Something went wrong while generating frames !</Text>
-        <Text variant={TextVariant.Body2Regular}>Please try again</Text>
-      </View>
-    );
   };
 
   return (
@@ -228,7 +226,7 @@ export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps
         <View style={tw`w-full h-15 justify-center`}>
           {!frames.some(frame => frame.status === FRAME_STATUS.LOADING.name.description) && (
             <View style={tw`absolute self-center z-1 w-1.25 h-15`}>
-              <View style={tw`w-0.75 rounded-sm h-15 bg-[${Color.Neutral.Sz100}]`} />
+              <View style={tw`w-0.75 rounded-sm h-15 bg-Neutral-Sz100`} />
             </View>
           )}
           <ScrollView
@@ -242,9 +240,9 @@ export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps
             alwaysBounceHorizontal={false}
             bounces={false}
             scrollEventThrottle={1}>
-            <View style={tw`w-[${BLANK_SPACE_WIDTH}px] bg-black`} />
+            <View style={tw`w-[${BLANK_SPACE_WIDTH}px] bg-Neutral-Black`} />
             {frames && frames.map((frame, index) => renderFrame(frame, index))}
-            <View style={tw`w-[${BLANK_SPACE_WIDTH}px] bg-black`} />
+            <View style={tw`w-[${BLANK_SPACE_WIDTH}px] bg-Neutral-Black`} />
           </ScrollView>
         </View>
       )}
