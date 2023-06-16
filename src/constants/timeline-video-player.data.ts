@@ -5,6 +5,7 @@ const FRAME_WIDTH = 69;
 const DURATION_WINDOW_DURATION = 0.5;
 const DURATION_WINDOW_WIDTH = DURATION_WINDOW_DURATION * FRAMES_PER_SECOND * FRAME_WIDTH;
 const POPLINE_POSITION = '50%';
+const START_POSITION = '00:00';
 
 export const videoPlayerWithTimelineConfigs = {
   framesPerSecond: FRAMES_PER_SECOND,
@@ -14,4 +15,5 @@ export const videoPlayerWithTimelineConfigs = {
   durationWindowDuration: DURATION_WINDOW_DURATION,
   durationWindowWidth: DURATION_WINDOW_WIDTH,
   poplinePosition: POPLINE_POSITION,
+  startPosition: START_POSITION,
 };
