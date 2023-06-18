@@ -144,23 +144,34 @@ export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps
       scrollViewRef.current.scrollTo({ x: 0.25, animated: true });
       videoPlayerRef.current.seek(0);
       setPaused(false);
+      if (Platform.OS === 'android') {
+        //NOTE:: To prevent the timeline from scrolling until it reaches the starting position
+        setTimeout(() => {
+          videoPlayerRef.current.setNativeProps({ paused: false });
+        }, 500);
+      }
     } else {
       setPaused(prevState => !prevState);
     }
   };
 
-  const handleOnTouchEnd = () => {
+  const handleOnScrollEndDrag = () => {
     setIsVideoEnded(false);
     setPaused(false);
   };
 
-  const handleOnTouchStart = () => {
+  const handleOnScrollBeginDrag = () => {
     setIsVideoEnded(false);
     setPaused(true);
   };
 
   const handleVideoLoad = async (data: OnLoadData) => {
     setIsVideoLoading(false);
+
+    if (Platform.OS === 'android') {
+      videoPlayerRef.current.seek(0);
+    }
+
     let localFileName = `someRandomFileNamee`;
     const numberOfFrames = Math.ceil(data.duration);
 
@@ -246,8 +257,8 @@ export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps
             showsHorizontalScrollIndicator={false}
             horizontal={true}
             onScroll={handleTimelineScroll}
-            onTouchStart={handleOnTouchStart}
-            onTouchEnd={handleOnTouchEnd}
+            onScrollBeginDrag={handleOnScrollBeginDrag}
+            onScrollEndDrag={handleOnScrollEndDrag}
             style={tw`w-full`}
             alwaysBounceHorizontal={false}
             bounces={false}
