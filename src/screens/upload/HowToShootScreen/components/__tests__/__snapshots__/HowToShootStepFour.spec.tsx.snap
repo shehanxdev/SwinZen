@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`How to shoot step four Should render How to shoot step four correctly 1`] = `
+<View>
+  <Text
+    style={
+      [
+        {
+          "color": "#C0DBBF",
+          "lineHeight": 28,
+        },
+        {
+          "fontFamily": "SourceSansPro-SemiBold",
+          "fontSize": 18,
+          "fontWeight": "bold",
+          "textAlign": "auto",
+        },
+      ]
+    }
+  >
+    Face-On/Hand-Held Instructions
+
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "lineHeight": 28,
+        },
+        {
+          "fontFamily": "SourceSansPro-Regular",
+          "fontSize": 18,
+          "fontWeight": "normal",
+          "textAlign": "auto",
+        },
+      ]
+    }
+  >
+    Have your buddy take 3 paces/9 ft from the ball, directly in front of the golfer. 
+
+  </Text>
+  <View
+    style={
+      [
+        {
+          "overflow": "hidden",
+        },
+        [
+          {
+            "borderColor": "#FFFFFF",
+            "borderWidth": 4,
+            "width": "100%",
+          },
+          {
+            "aspectRatio": 1.7378640776699028,
+          },
+        ],
+      ]
+    }
+  >
+    <FastImageView
+      defaultSource={null}
+      resizeMode="cover"
+      source={
+        {
+          "cache": "immutable",
+          "priority": "high",
+          "uri": "https://files.dev.swingzen.com/gifs/faceon.gif",
+        }
+      }
+      style={
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+  </View>
+  <Text
+    style={
+      [
+        {
+          "color": "#FFFFFF",
+          "lineHeight": 28,
+        },
+        {
+          "fontFamily": "SourceSansPro-Regular",
+          "fontSize": 18,
+          "fontWeight": "normal",
+          "textAlign": "auto",
+        },
+      ]
+    }
+  >
+    
+Have your buddy take 3 paces/9 ft from the ball, directly in front of the golfer. 
+
+  </Text>
+  <View
+    style={
+      [
+        {
+          "overflow": "hidden",
+        },
+        [
+          {
+            "borderColor": "#FFFFFF",
+            "borderWidth": 4,
+            "width": "100%",
+          },
+          {
+            "aspectRatio": 1.7378640776699028,
+          },
+        ],
+      ]
+    }
+  >
+    <FastImageView
+      defaultSource={null}
+      resizeMode="cover"
+      source={
+        {
+          "cache": "immutable",
+          "priority": "high",
+          "uri": "https://files.dev.swingzen.com/gifs/Landscape.gif",
+        }
+      }
+      style={
+        {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+  </View>
+</View>
+`;

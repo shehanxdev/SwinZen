@@ -185,6 +185,16 @@ export class NavigationService {
           },
         },
       },
+      [Route.GolfTipsPlaylist]: {
+        navRoute: Route.LibraryInfoStack,
+        navParams: {
+          screen: Route.GolfTipsPlaylist,
+          params: {
+            screen: route,
+            params: params,
+          },
+        },
+      },
       [Route.ShootingSetup]: {
         navRoute: Route.LibraryInfoStack,
         navParams: {
@@ -273,6 +283,28 @@ export class NavigationService {
         navRoute: Route.PricePlansStack,
         navParams: {
           screen: Route.PlanDetails,
+          params: {
+            screen: route,
+            params: params,
+          },
+        },
+      },
+
+      // Video Upload Routes
+      [Route.HowToShoot]: {
+        navRoute: Route.VideoUploadStack,
+        navParams: {
+          screen: Route.HowToShoot,
+          params: {
+            screen: route,
+            params: params,
+          },
+        },
+      },
+      [Route.PreValidation]: {
+        navRoute: Route.VideoUploadStack,
+        navParams: {
+          screen: Route.PreValidation,
           params: {
             screen: route,
             params: params,

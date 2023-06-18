@@ -35,11 +35,14 @@ import {
   PassStarCircleSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
+  PauseIconSvg,
   PhoneIconSvg,
   PlayButtonSvg,
+  PlayIconSvg,
   PricePlanFeatureListTick,
   ProfileIconSvg,
   ProfileImageChangeCameraSvg,
+  ReplayIconSvg,
   SecurityIconSvg,
   SettingsMiniSvg,
   SquareTickSvg,
@@ -105,6 +108,14 @@ export function UploadIcon({ color = Color.Neutral.Sz100, width = 35, height = 3
 
 export function PlayButtonIcon({ color = Color.Neutral.Sz100, width = 46, height = 46 }: SvgIconProps) {
   return <PlayButtonSvg width={width} height={height} fill={color} />;
+}
+
+export function PlayIcon({ color = Color.Neutral.Sz100, width = 9, height = 9 }: SvgIconProps) {
+  return <PlayIconSvg width={width} height={height} fill={color} />;
+}
+
+export function PauseIcon({ color = Color.Neutral.Sz100, width = 9, height = 9 }: SvgIconProps) {
+  return <PauseIconSvg width={width} height={height} fill={color} />;
 }
 
 export function ErrorIcon({ color = Color.Neutral.Sz100, width = 54, height = 54 }: SvgIconProps) {
@@ -189,6 +200,10 @@ export function SecurityIcon({ color = Color.Neutral.Sz500, width = 20, height =
 
 export function SwingZenLogoIcon({ color, width = 108, height = 55 }: SvgIconProps) {
   return <SwingZenLogoSvg width={width} height={height} fill={color} />;
+}
+
+export function ReplayIcon({ color = Color.Neutral.Sz100, width = 11, height = 11 }: SvgIconProps) {
+  return <ReplayIconSvg width={width} height={height} fill={color} />;
 }
 
 export function PhoneIcon({ color = Color.Neutral.Sz500, width = 18, height = 18 }: SvgIconProps) {

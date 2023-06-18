@@ -84,7 +84,7 @@ exports[`GolfTipsWrapper component should render GolfTipsWrapper component corre
             resizeMode="cover"
             source={
               {
-                "testUri": "../../../src/assets/images/AITools.png",
+                "testUri": "../../../src/assets/images/golftips/AITools.png",
               }
             }
             style={
@@ -226,7 +226,7 @@ exports[`GolfTipsWrapper component should render GolfTipsWrapper component corre
             resizeMode="cover"
             source={
               {
-                "testUri": "../../../src/assets/images/golfFitness.png",
+                "testUri": "../../../src/assets/images/golftips/golfFitness.png",
               }
             }
             style={
@@ -368,7 +368,7 @@ exports[`GolfTipsWrapper component should render GolfTipsWrapper component corre
             resizeMode="cover"
             source={
               {
-                "testUri": "../../../src/assets/images/fundamentals.png",
+                "testUri": "../../../src/assets/images/golftips/fundamentals.png",
               }
             }
             style={
@@ -510,7 +510,7 @@ exports[`GolfTipsWrapper component should render GolfTipsWrapper component corre
             resizeMode="cover"
             source={
               {
-                "testUri": "../../../src/assets/images/aroundGreen.png",
+                "testUri": "../../../src/assets/images/golftips/aroundGreen.png",
               }
             }
             style={
@@ -652,7 +652,7 @@ exports[`GolfTipsWrapper component should render GolfTipsWrapper component corre
             resizeMode="cover"
             source={
               {
-                "testUri": "../../../src/assets/images/shortGame.png",
+                "testUri": "../../../src/assets/images/golftips/shortGame.png",
               }
             }
             style={
@@ -794,7 +794,7 @@ exports[`GolfTipsWrapper component should render GolfTipsWrapper component corre
             resizeMode="cover"
             source={
               {
-                "testUri": "../../../src/assets/images/mentalGame.png",
+                "testUri": "../../../src/assets/images/golftips/mentalGame.png",
               }
             }
             style={
@@ -936,7 +936,7 @@ exports[`GolfTipsWrapper component should render GolfTipsWrapper component corre
             resizeMode="cover"
             source={
               {
-                "testUri": "../../../src/assets/images/offTheTee.png",
+                "testUri": "../../../src/assets/images/golftips/offTheTee.png",
               }
             }
             style={
@@ -1078,7 +1078,7 @@ exports[`GolfTipsWrapper component should render GolfTipsWrapper component corre
             resizeMode="cover"
             source={
               {
-                "testUri": "../../../src/assets/images/offTheFairway.png",
+                "testUri": "../../../src/assets/images/golftips/offTheFairway.png",
               }
             }
             style={
@@ -1220,7 +1220,7 @@ exports[`GolfTipsWrapper component should render GolfTipsWrapper component corre
             resizeMode="cover"
             source={
               {
-                "testUri": "../../../src/assets/images/onTheGreen.png",
+                "testUri": "../../../src/assets/images/golftips/onTheGreen.png",
               }
             }
             style={
@@ -1362,7 +1362,7 @@ exports[`GolfTipsWrapper component should render GolfTipsWrapper component corre
             resizeMode="cover"
             source={
               {
-                "testUri": "../../../src/assets/images/mechanics.png",
+                "testUri": "../../../src/assets/images/golftips/mechanics.png",
               }
             }
             style={

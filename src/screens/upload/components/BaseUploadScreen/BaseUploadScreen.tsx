@@ -6,12 +6,16 @@ import { tw } from '@sz/config';
 import { useHeaderHeight } from '@sz/hooks';
 
 //This component is needed since, Upload screen has a different base screen
-interface BaseUploadScreenProps extends PropsWithChildren {
+export interface BaseUploadScreenProps extends PropsWithChildren {
   testID?: string;
   isSetupScreen?: boolean;
 }
 
-export function BaseUploadScreen({ children, testID, isSetupScreen = false }: BaseUploadScreenProps) {
+export function BaseUploadScreen({
+  children,
+  testID = 'BaseUploadScreenTestID',
+  isSetupScreen = false,
+}: BaseUploadScreenProps) {
   const headerHeight = useHeaderHeight();
 
   return (
