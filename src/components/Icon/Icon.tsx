@@ -32,11 +32,14 @@ import {
   NotificationTimerSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
+  PauseIconSvg,
   PhoneIconSvg,
   PlayButtonSvg,
+  PlayIconSvg,
   PricePlanFeatureListTick,
   ProfileIconSvg,
   ProfileImageChangeCameraSvg,
+  ReplayIconSvg,
   SecurityIconSvg,
   SettingsMiniSvg,
   SliderLeftSvg,
@@ -171,12 +174,20 @@ export function PasswordRevealIcon({ color = Color.Neutral.Sz500, width = 20, he
   return <PasswordRevealEyeSvg width={width} height={height} fill={color} />;
 }
 
+export function PauseIcon({ color = Color.Neutral.Sz100, width = 9, height = 9 }: SvgIconProps) {
+  return <PauseIconSvg width={width} height={height} fill={color} />;
+}
+
 export function PhoneIcon({ color = Color.Neutral.Sz500, width = 18, height = 18 }: SvgIconProps) {
   return <PhoneIconSvg width={width} height={height} fill={color} />;
 }
 
 export function PlayButtonIcon({ color = Color.Neutral.Sz100, width = 46, height = 46 }: SvgIconProps) {
   return <PlayButtonSvg width={width} height={height} fill={color} />;
+}
+
+export function PlayIcon({ color = Color.Neutral.Sz100, width = 9, height = 9 }: SvgIconProps) {
+  return <PlayIconSvg width={width} height={height} fill={color} />;
 }
 
 export function PricePlanFeatureListTickIcon({ color = Color.Tertiary.Sz900, width = 13, height = 13 }: SvgIconProps) {
@@ -190,6 +201,10 @@ export function ProfileIcon({ color = Color.Neutral.Sz500, width = 20, height = 
 //#3C563E not available within the design system
 export function ProfileImageChangeCameraIcon({ color = '#3C563E' as Color, width = 14, height = 10 }: SvgIconProps) {
   return <ProfileImageChangeCameraSvg width={width} height={height} fill={color} />;
+}
+
+export function ReplayIcon({ color = Color.Neutral.Sz100, width = 11, height = 11 }: SvgIconProps) {
+  return <ReplayIconSvg width={width} height={height} fill={color} />;
 }
 
 export function RightArrowIcon({ color = Color.Neutral.Sz100, width = 7.75, height = 14 }: SvgIconProps) {

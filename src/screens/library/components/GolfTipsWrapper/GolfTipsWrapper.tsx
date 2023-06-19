@@ -2,7 +2,9 @@ import React from 'react';
 import { View } from 'react-native';
 
 import { tw } from '@sz/config';
+import { Route } from '@sz/constants';
 import { GolfTipDataType } from '@sz/models';
+import { NavigationService } from '@sz/services';
 
 import { GolfTipCard } from '../GolfTipCard';
 
@@ -22,7 +24,7 @@ export function GolfTipsWrapper({ golfTips, testID }: GolfTipsWrapperProps) {
             label={item.label}
             backgroundImage={item.backgroundImage}
             //TODO:: implement the navigation
-            onPress={() => console.log(`navigate to ${item.label} playlist screen`)}
+            onPress={() => NavigationService.navigate(Route.GolfTipsPlaylist, { tipsCategory: item.label })}
           />
         );
       })}

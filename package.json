@@ -10,7 +10,8 @@
     "test": "jest --coverage",
     "prepare": "husky install",
     "typecheck": "tsc --noEmit",
-    "fastlane:android:dev": "cd android && bundle exec fastlane android firebase_deploy_dev"
+    "fastlane:android:dev": "cd android && bundle exec fastlane android firebase_deploy_dev",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.0.0",
@@ -28,11 +29,14 @@
     "@rematch/loading": "^2.1.2",
     "@rematch/persist": "^2.1.2",
     "@testing-library/react-native": "^11.5.4",
+    "@types/react-native-video": "^5.0.14",
     "apisauce": "^3.0.0",
     "babel-plugin-module-resolver": "^5.0.0",
     "dayjs": "^1.11.7",
+    "ffmpeg-kit-react-native": "^5.1.0",
     "jwt-decode": "^3.1.2",
     "metro-config": "^0.76.0",
+    "patch-package": "^7.0.0",
     "react": "18.2.0",
     "react-hook-form": "^7.43.7",
     "react-native": "0.71.8",
@@ -43,6 +47,7 @@
     "react-native-error-boundary": "^1.2.3",
     "react-native-fast-image": "^8.6.3",
     "react-native-flash-message": "^0.4.1",
+    "react-native-fs": "^2.20.0",
     "react-native-gesture-handler": "^2.9.0",
     "react-native-image-picker": "^5.3.1",
     "react-native-keychain": "^8.1.1",
