@@ -19,21 +19,18 @@ export function LinksSlider({ sliderData, onItemPress, testID = 'LinksSliderTest
         <View key={slide.join('')}>
           {slide.map((text, childIndex) => {
             return (
-              <View
-                style={tw`justify-between  mx-1 items-center flex-row border-[#ffffff33] ${
+              <Pressable
+                testID={`${testID}-slide-${index}-${text}`}
+                style={tw`justify-between py-3.25  mx-1 items-center flex-row border-[#ffffff33] ${
                   slide.length - 1 === childIndex ? 'border-b-0' : 'border-b'
                 }`}
-                key={`${slide}-${text}`}>
-                <Pressable
-                  testID={`${testID}-slide-${index}-${text}`}
-                  style={tw`py-3.25 flex-row justify-between`}
-                  onPress={() => onItemPress(text)}>
-                  <Text variant={TextVariant.Body1SemiBold} color={Color.Neutral.White}>
-                    {text}
-                  </Text>
-                </Pressable>
+                key={`${slide}-${text}`}
+                onPress={() => onItemPress(text)}>
+                <Text variant={TextVariant.Body1SemiBold} color={Color.Neutral.White}>
+                  {text}
+                </Text>
                 <NextIcon />
-              </View>
+              </Pressable>
             );
           })}
         </View>

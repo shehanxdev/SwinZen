@@ -72,7 +72,7 @@ exports[`GolfTipCard component should render GolfTipCard component correctly 1`]
           resizeMode="cover"
           source={
             {
-              "uri": undefined,
+              "testUri": "../../../src/assets/images/AITools.png",
             }
           }
           style={

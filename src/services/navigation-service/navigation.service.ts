@@ -185,6 +185,16 @@ export class NavigationService {
           },
         },
       },
+      [Route.GolfTipsPlaylist]: {
+        navRoute: Route.LibraryInfoStack,
+        navParams: {
+          screen: Route.GolfTipsPlaylist,
+          params: {
+            screen: route,
+            params: params,
+          },
+        },
+      },
       [Route.ShootingSetup]: {
         navRoute: Route.LibraryInfoStack,
         navParams: {

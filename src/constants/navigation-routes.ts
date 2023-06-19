@@ -29,6 +29,7 @@ export enum Route {
   PricePlans = 'price-plans',
   PricePlansStack = 'price-plans-stack',
   PrivacyPolicy = 'privacy-policy',
+  GolfTipsPlaylist = 'golf-tips-play-list',
   ProfileSettings = 'profile-settings',
   ProfileStack = 'profile-stack',
   RegisterEmailVerification = 'register-email-verification',

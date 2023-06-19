@@ -393,6 +393,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                       >
                         <View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -402,68 +431,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-2-Pass/Fail"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-2-Pass/Fail"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Pass/Fail
-                              </Text>
-                            </View>
+                              Pass/Fail
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -471,6 +462,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                             />
                           </View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -480,68 +500,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-2-AI-Pro Tips"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-2-AI-Pro Tips"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                AI-Pro Tips
-                              </Text>
-                            </View>
+                              AI-Pro Tips
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -549,6 +531,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                             />
                           </View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -558,68 +569,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-2-Swing Analysis Report"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-2-Swing Analysis Report"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Swing Analysis Report
-                              </Text>
-                            </View>
+                              Swing Analysis Report
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -643,6 +616,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                       >
                         <View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -652,68 +654,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-0-How to use the app"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-0-How to use the app"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                How to use the app
-                              </Text>
-                            </View>
+                              How to use the app
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -721,6 +685,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                             />
                           </View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -730,68 +723,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-0-Shooting environments"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-0-Shooting environment"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Shooting environment
-                              </Text>
-                            </View>
+                              Shooting environments
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -799,6 +754,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                             />
                           </View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -808,68 +792,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-0-Shooting hacks"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-0-Shooting hacks"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Shooting hacks
-                              </Text>
-                            </View>
+                              Shooting hacks
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -877,6 +823,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                             />
                           </View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -886,68 +861,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-0-Uploading a video"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-0-Uploading a video"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Uploading a video
-                              </Text>
-                            </View>
+                              Uploading a video
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -955,6 +892,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                             />
                           </View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -964,68 +930,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-0-Video processing time"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-0-Video processing time"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Video processing time
-                              </Text>
-                            </View>
+                              Video processing time
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1049,6 +977,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                       >
                         <View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -1058,68 +1015,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-1-Successful Reviews"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-1-Successful Reviews"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Successful Reviews
-                              </Text>
-                            </View>
+                              Successful Reviews
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1127,6 +1046,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                             />
                           </View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -1136,68 +1084,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-1-Failed Reviews"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-1-Failed Reviews"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Failed Reviews
-                              </Text>
-                            </View>
+                              Failed Reviews
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1205,6 +1115,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                             />
                           </View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -1214,68 +1153,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-1-Swing Analysis Results"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-1-Swing Analysis Results"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Swing Analysis Results
-                              </Text>
-                            </View>
+                              Swing Analysis Results
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1283,6 +1184,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                             />
                           </View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -1292,68 +1222,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-1-Swing Data"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-1-Swing Data"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Swing Data
-                              </Text>
-                            </View>
+                              Swing Data
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1361,6 +1253,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                             />
                           </View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -1370,68 +1291,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-1-Swing Priority List"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-1-Swing Priority List"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Swing Priority List
-                              </Text>
-                            </View>
+                              Swing Priority List
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1455,6 +1338,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                       >
                         <View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -1464,68 +1376,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-2-Pass/Fail"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-2-Pass/Fail"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Pass/Fail
-                              </Text>
-                            </View>
+                              Pass/Fail
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1533,6 +1407,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                             />
                           </View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -1542,68 +1445,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-2-AI-Pro Tips"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-2-AI-Pro Tips"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                AI-Pro Tips
-                              </Text>
-                            </View>
+                              AI-Pro Tips
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1611,6 +1476,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                             />
                           </View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -1620,68 +1514,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-2-Swing Analysis Report"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-2-Swing Analysis Report"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Swing Analysis Report
-                              </Text>
-                            </View>
+                              Swing Analysis Report
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1705,6 +1561,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                       >
                         <View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -1714,68 +1599,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-0-How to use the app"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-0-How to use the app"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                How to use the app
-                              </Text>
-                            </View>
+                              How to use the app
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1783,6 +1630,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                             />
                           </View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -1792,68 +1668,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-0-Shooting environments"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-0-Shooting environment"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Shooting environment
-                              </Text>
-                            </View>
+                              Shooting environments
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1861,6 +1699,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                             />
                           </View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -1870,68 +1737,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-0-Shooting hacks"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-0-Shooting hacks"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Shooting hacks
-                              </Text>
-                            </View>
+                              Shooting hacks
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -1939,6 +1768,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                             />
                           </View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -1948,68 +1806,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-0-Uploading a video"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-0-Uploading a video"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Uploading a video
-                              </Text>
-                            </View>
+                              Uploading a video
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -2017,6 +1837,35 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                             />
                           </View>
                           <View
+                            accessibilityState={
+                              {
+                                "busy": undefined,
+                                "checked": undefined,
+                                "disabled": undefined,
+                                "expanded": undefined,
+                                "selected": undefined,
+                              }
+                            }
+                            accessibilityValue={
+                              {
+                                "max": undefined,
+                                "min": undefined,
+                                "now": undefined,
+                                "text": undefined,
+                              }
+                            }
+                            accessible={true}
+                            collapsable={false}
+                            focusable={true}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onResponderGrant={[Function]}
+                            onResponderMove={[Function]}
+                            onResponderRelease={[Function]}
+                            onResponderTerminate={[Function]}
+                            onResponderTerminationRequest={[Function]}
+                            onStartShouldSetResponder={[Function]}
                             style={
                               {
                                 "alignItems": "center",
@@ -2026,68 +1875,30 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                                 "justifyContent": "space-between",
                                 "marginLeft": 4,
                                 "marginRight": 4,
+                                "paddingBottom": 13,
+                                "paddingTop": 13,
                               }
                             }
+                            testID="LinksSliderTestID-slide-0-Video processing time"
                           >
-                            <View
-                              accessibilityState={
-                                {
-                                  "busy": undefined,
-                                  "checked": undefined,
-                                  "disabled": undefined,
-                                  "expanded": undefined,
-                                  "selected": undefined,
-                                }
-                              }
-                              accessibilityValue={
-                                {
-                                  "max": undefined,
-                                  "min": undefined,
-                                  "now": undefined,
-                                  "text": undefined,
-                                }
-                              }
-                              accessible={true}
-                              collapsable={false}
-                              focusable={true}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onResponderGrant={[Function]}
-                              onResponderMove={[Function]}
-                              onResponderRelease={[Function]}
-                              onResponderTerminate={[Function]}
-                              onResponderTerminationRequest={[Function]}
-                              onStartShouldSetResponder={[Function]}
+                            <Text
                               style={
-                                {
-                                  "flexDirection": "row",
-                                  "justifyContent": "space-between",
-                                  "paddingBottom": 13,
-                                  "paddingTop": 13,
-                                }
+                                [
+                                  {
+                                    "color": "#FFFFFF",
+                                    "lineHeight": 28,
+                                  },
+                                  {
+                                    "fontFamily": "SourceSansPro-SemiBold",
+                                    "fontSize": 18,
+                                    "fontWeight": "bold",
+                                    "textAlign": "center",
+                                  },
+                                ]
                               }
-                              testID="LinksSliderTestID-slide-0-Video processing time"
                             >
-                              <Text
-                                style={
-                                  [
-                                    {
-                                      "color": "#FFFFFF",
-                                      "lineHeight": 28,
-                                    },
-                                    {
-                                      "fontFamily": "SourceSansPro-SemiBold",
-                                      "fontSize": 18,
-                                      "fontWeight": "bold",
-                                      "textAlign": "center",
-                                    },
-                                  ]
-                                }
-                              >
-                                Video processing time
-                              </Text>
-                            </View>
+                              Video processing time
+                            </Text>
                             <SvgMock
                               fill="#F8F9FA"
                               height={20}
@@ -2234,10 +2045,445 @@ exports[`Library Screen should render Library Screen correctly 1`] = `
                 See All
               </Text>
             </View>
-            <ActivityIndicator
-              color="#FFFFFF"
-              size="small"
-            />
+            <View
+              style={
+                {
+                  "columnGap": 4,
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "justifyContent": "space-between",
+                  "rowGap": 36,
+                  "width": "100%",
+                }
+              }
+            >
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "flexShrink": 0,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "borderRadius": 10,
+                      "height": 106,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityIgnoresInvertColors={true}
+                    style={
+                      {
+                        "flexBasis": "0%",
+                        "flexGrow": 1,
+                        "flexShrink": 1,
+                        "justifyContent": "flex-end",
+                      }
+                    }
+                  >
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        {
+                          "testUri": "../../../src/assets/images/AITools.png",
+                        }
+                      }
+                      style={
+                        [
+                          {
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          {
+                            "borderRadius": 10,
+                          },
+                        ]
+                      }
+                    />
+                    <View
+                      style={
+                        {
+                          "backgroundColor": "#000000B2",
+                          "borderRadius": 10,
+                          "paddingBottom": 14,
+                          "paddingTop": 14,
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#A2FD2F",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-Regular",
+                              "fontSize": 15,
+                              "fontWeight": "600",
+                              "textAlign": "center",
+                            },
+                          ]
+                        }
+                      >
+                        9
+                         Videos
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={
+                    {
+                      "marginTop": 12,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "left",
+                        },
+                      ]
+                    }
+                  >
+                    AI tools
+                  </Text>
+                </View>
+              </View>
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "flexShrink": 0,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "borderRadius": 10,
+                      "height": 106,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityIgnoresInvertColors={true}
+                    style={
+                      {
+                        "flexBasis": "0%",
+                        "flexGrow": 1,
+                        "flexShrink": 1,
+                        "justifyContent": "flex-end",
+                      }
+                    }
+                  >
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        {
+                          "testUri": "../../../src/assets/images/AITools.png",
+                        }
+                      }
+                      style={
+                        [
+                          {
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          {
+                            "borderRadius": 10,
+                          },
+                        ]
+                      }
+                    />
+                    <View
+                      style={
+                        {
+                          "backgroundColor": "#000000B2",
+                          "borderRadius": 10,
+                          "paddingBottom": 14,
+                          "paddingTop": 14,
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#A2FD2F",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-Regular",
+                              "fontSize": 15,
+                              "fontWeight": "600",
+                              "textAlign": "center",
+                            },
+                          ]
+                        }
+                      >
+                        1
+                         Videos
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={
+                    {
+                      "marginTop": 12,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "left",
+                        },
+                      ]
+                    }
+                  >
+                    Golf Fitness
+                  </Text>
+                </View>
+              </View>
+              <View
+                accessibilityState={
+                  {
+                    "busy": undefined,
+                    "checked": undefined,
+                    "disabled": undefined,
+                    "expanded": undefined,
+                    "selected": undefined,
+                  }
+                }
+                accessibilityValue={
+                  {
+                    "max": undefined,
+                    "min": undefined,
+                    "now": undefined,
+                    "text": undefined,
+                  }
+                }
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  {
+                    "flexBasis": "30%",
+                    "flexGrow": 0,
+                    "flexShrink": 0,
+                  }
+                }
+              >
+                <View
+                  style={
+                    {
+                      "borderRadius": 10,
+                      "height": 106,
+                    }
+                  }
+                >
+                  <View
+                    accessibilityIgnoresInvertColors={true}
+                    style={
+                      {
+                        "flexBasis": "0%",
+                        "flexGrow": 1,
+                        "flexShrink": 1,
+                        "justifyContent": "flex-end",
+                      }
+                    }
+                  >
+                    <Image
+                      resizeMode="cover"
+                      source={
+                        {
+                          "testUri": "../../../src/assets/images/AITools.png",
+                        }
+                      }
+                      style={
+                        [
+                          {
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                          },
+                          {
+                            "height": undefined,
+                            "width": undefined,
+                          },
+                          {
+                            "borderRadius": 10,
+                          },
+                        ]
+                      }
+                    />
+                    <View
+                      style={
+                        {
+                          "backgroundColor": "#000000B2",
+                          "borderRadius": 10,
+                          "paddingBottom": 14,
+                          "paddingTop": 14,
+                        }
+                      }
+                    >
+                      <Text
+                        style={
+                          [
+                            {
+                              "color": "#A2FD2F",
+                              "lineHeight": 24,
+                            },
+                            {
+                              "fontFamily": "SourceSansPro-Regular",
+                              "fontSize": 15,
+                              "fontWeight": "600",
+                              "textAlign": "center",
+                            },
+                          ]
+                        }
+                      >
+                        11
+                         Videos
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View
+                  style={
+                    {
+                      "marginTop": 12,
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      [
+                        {
+                          "color": "#F8F9FA",
+                          "lineHeight": 24,
+                        },
+                        {
+                          "fontFamily": "SourceSansPro-Regular",
+                          "fontSize": 16,
+                          "fontWeight": "normal",
+                          "textAlign": "left",
+                        },
+                      ]
+                    }
+                  >
+                    Fundamental
+                  </Text>
+                </View>
+              </View>
+            </View>
           </View>
         </View>
       </RCTScrollView>
