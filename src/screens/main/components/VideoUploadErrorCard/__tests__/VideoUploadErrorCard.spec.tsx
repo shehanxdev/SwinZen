@@ -13,14 +13,13 @@ describe('Video upload failed card component', () => {
         cameraAngle={mockProps.cameraAngle}
       />,
     );
-  it(`should render video upload failed card component correctly without any props`, async () => {
-    const renderer = getRenderedScreen({});
+  it(`should render video upload failed card component correctly when showFooterAndTextLink prop is false`, async () => {
+    const renderer = getRenderedScreen({ showFooterAndTextLink: false });
     const renderTree = renderer.toJSON();
     expect(renderTree).toMatchSnapshot();
   });
-  it(`should render video upload failed card component correctly with props`, async () => {
+  it(`should render video upload failed card component correctly when showFooterAndTextLink prop is not set which defaults to true`, async () => {
     const renderer = getRenderedScreen({
-      showFooterAndTextLink: true,
       dateUploaded: '2023-06-04T13:22:29.181Z',
       cameraAngle: 'All videos',
     });
