@@ -18,6 +18,12 @@ jest.mock('@react-navigation/native', () => {
   };
 });
 
+jest.mock('react-native-fs', () => {
+  return {
+    CachesDirectoryPath: jest.fn(),
+  };
+});
+
 //TODO: check crash issue on Testflight release
 jest.mock('react-native-reanimated', () => {
   const Reanimated = require('react-native-reanimated/mock');

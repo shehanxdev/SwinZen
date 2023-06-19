@@ -6,10 +6,10 @@ import { CustomBottomTabBar } from '@sz/layout';
 import { AnalysisScreen, HomeScreen, LibraryScreen, VideosScreen } from '@sz/screens';
 import { NavigationService } from '@sz/services';
 
-const Tab = createBottomTabNavigator();
-
 // This dummy component is required to prevent breaking the tab bar layout
 const DummyComponent = () => <></>;
+
+const Tab = createBottomTabNavigator();
 
 export function MainBottomTabRoutes() {
   const renderTabBar = (props: BottomTabBarProps) => (
