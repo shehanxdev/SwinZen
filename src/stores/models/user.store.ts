@@ -36,9 +36,10 @@ export interface UserState {
   accessToken: string | null;
   refreshToken: string | null;
   nextActionToken: string | null;
+
   userData: UserData | null;
-  userPlan: SubscribedData | null;
   //TODO::refactor profileData and userData to have common one
+  userPlan: SubscribedData | null;
   profileData: UserProfileData | null;
 }
 
@@ -46,9 +47,9 @@ const initialState: UserState = {
   accessToken: null,
   refreshToken: null,
   nextActionToken: null,
+  profileData: null,
   userData: null,
   userPlan: null,
-  profileData: null,
 };
 
 export const userStore = createModel<RootModel>()({

@@ -32,6 +32,8 @@ target 'SwingZen' do
   pod 'GoogleUtilities', :modular_headers => true
   $RNFirebaseAsStaticFramework = true
 
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
+
   use_react_native!(
     :path => config[:reactNativePath],
     # Hermes is now enabled by default. Disable by setting this flag to false.
