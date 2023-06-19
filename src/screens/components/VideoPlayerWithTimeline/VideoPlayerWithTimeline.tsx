@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 //TODO::create a common image component wrapper using react-native-fast-image
 import FastImage from 'react-native-fast-image';
+import LinearGradient from 'react-native-linear-gradient';
 import Video, { OnLoadData, OnProgressData } from 'react-native-video';
 
 import { ErrorIcon, LoadingIndicator, PauseIcon, PlayIcon, ReplayIcon, Text } from '@sz/components';
@@ -90,9 +91,11 @@ const renderFrameGenerationError = () => {
 
 interface VideoPlayerWithTimelineProps {
   source: string;
+  score?: number;
+  viewType?: string;
 }
 
-export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps) {
+export function VideoPlayerWithTimeline({ source, score = 0, viewType = '' }: VideoPlayerWithTimelineProps) {
   const videoPlayerRef = useRef(null);
   const scrollViewRef = useRef(null);
 
@@ -209,6 +212,21 @@ export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps
     else return <PauseIcon />;
   };
 
+  const gradientConfig = {
+    colors:
+      score < 4
+        ? ['#F6581500', '#F65815']
+        : score > 4.1 && score < 7
+        ? ['#FDDC2F00', '#F1D33178', '#E1C42C']
+        : ['#A2FD2F00', '#A2FD2F50', '#45FD2F'],
+    locations: score > 4 ? [0.7279, 0.9051, 1] : [0.74, 1],
+    start: { x: 1, y: 0 },
+    end: { x: 0, y: 0 },
+  };
+
+  const scoreCircleBackgroundColor =
+    score < 4 ? Color.Secondary.Sz900 : score > 4.1 && score < 7 ? Color.Tertiary.Sz750 : Color.Primary.Sz700;
+
   return (
     <View style={tw`rounded-t-7.5 w-full`}>
       <View style={tw`h-62.5 relative`}>
@@ -216,6 +234,29 @@ export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps
           <View style={tw`flex-row justify-center items-center absolute inset-0 z-2`}>
             <LoadingIndicator size="large" color={Color.Tertiary.Sz900} />
           </View>
+        )}
+        {!isVideoLoading && viewType && (
+          <>
+            <View style={tw`absolute z-5 w-15 h-15 rounded-7.5 bg-[${scoreCircleBackgroundColor}] justify-center`}>
+              <Text
+                variant={TextVariant.Heading3}
+                color={score > 4.1 && score < 7 ? Color.Neutral.Sz1000 : Color.Neutral.White}>
+                {score}
+              </Text>
+            </View>
+            <View style={tw`bg-[${Color.Neutral.Black}] justify-center absolute right-0 z-1 px-7 py-.75 rounded-2.5`}>
+              <Text variant={TextVariant.LabelsAlt} color={Color.Neutral.White}>
+                {viewType.toLocaleUpperCase()}
+              </Text>
+            </View>
+            <LinearGradient
+              colors={gradientConfig.colors}
+              locations={gradientConfig.locations}
+              start={gradientConfig.start}
+              end={gradientConfig.end}
+              style={tw`flex-1 absolute inset-0 z-4 rounded-t-7.5`}
+            />
+          </>
         )}
         <Video
           ref={videoPlayerRef}
@@ -225,8 +266,9 @@ export function VideoPlayerWithTimeline({ source }: VideoPlayerWithTimelineProps
           resizeMode={'cover'}
           source={{ uri: source }}
           paused={paused}
-          style={tw`flex-1 w-full rounded-t-7.5 relative`}
+          style={tw`flex-1 w-full relative ${score ? 'rounded-t-2.5' : 'rounded-t-7.5'}`}
         />
+
         {!isVideoLoading && (
           <View style={tw`absolute bottom-4 flex-row justify-center w-full `}>
             <Pressable onPress={handelControllerPress}>
