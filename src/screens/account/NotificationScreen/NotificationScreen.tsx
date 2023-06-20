@@ -1,7 +1,7 @@
 import React from 'react';
-import { SectionList, View } from 'react-native';
+import { RefreshControl, SectionList, View } from 'react-native';
 
-import { Text } from '@sz/components';
+import { LoadingIndicator, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 import { useFetch } from '@sz/hooks';
@@ -51,7 +51,7 @@ export function NotificationScreen() {
   const renderItemSeparator = () => <View style={tw`mx-4 h-0.25 bg-Neutral-Sz600`} />;
 
   return (
-    <BaseScreen testID="NotificationScreenTestID" wrapWithScrollView={false} isLoading={isLoading}>
+    <BaseScreen testID="NotificationScreenTestID" wrapWithScrollView={false}>
       <View style={tw`mt-3 mx-5`}>
         <Text variant={TextVariant.Body2SemiBold} textAlign={TextAlignment.Auto}>
           You have
@@ -71,6 +71,10 @@ export function NotificationScreen() {
         progressViewOffset={100}
         onRefresh={onRefresh}
         refreshing={isLoading}
+        refreshControl={
+          <RefreshControl refreshing={isLoading} onRefresh={onRefresh} tintColor={Color.Transparency.full} />
+        }
+        ListFooterComponent={isLoading && <LoadingIndicator />}
       />
     </BaseScreen>
   );
