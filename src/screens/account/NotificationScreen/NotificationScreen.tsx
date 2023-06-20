@@ -20,6 +20,10 @@ export function NotificationScreen() {
   const unreadCount = data ? data.results.filter(item => item.isRead === false).length : 0;
   const { results } = data || {};
 
+  const onRefresh = () => {
+    refetch().catch(console.error);
+  };
+
   // handle notification read status and refetchng notifications
   const handleOnPressNotification = async (item: Notification) => {
     // change notification read status
@@ -27,7 +31,7 @@ export function NotificationScreen() {
     await dispatch.userStore.patchUserNotification(NotificationData);
 
     // refetching updated notifications data
-    refetch();
+    onRefresh();
   };
 
   const renderItem = ({ item }) => (
@@ -64,6 +68,9 @@ export function NotificationScreen() {
         ItemSeparatorComponent={renderItemSeparator}
         renderItem={renderItem}
         renderSectionHeader={({ section: { title } }) => <SectionHeader title={title} />}
+        progressViewOffset={100}
+        onRefresh={onRefresh}
+        refreshing={isLoading}
       />
     </BaseScreen>
   );
