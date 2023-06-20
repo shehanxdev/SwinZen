@@ -7,22 +7,23 @@ import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
 interface GolfTipCardProps {
   testID?: string;
+  disabled?: boolean;
   videosCount: number;
   label: string;
   sourceUri: string;
   onPress: () => void;
 }
 
-export function GolfTipCard({ testID, videosCount, label, sourceUri, onPress }: GolfTipCardProps) {
+export function GolfTipCard({ testID, disabled = false, videosCount, label, sourceUri, onPress }: GolfTipCardProps) {
   return (
-    <Pressable onPress={onPress} style={tw`grow-0 shrink-0 basis-[30%]`} testID={testID}>
+    <Pressable testID={testID} style={tw`grow-0 shrink-0 basis-[30%]`} disabled={disabled} onPress={onPress}>
       <View style={tw`rounded-2.5 h-26.5`}>
         <ImageBackground
           source={{ uri: sourceUri }}
           resizeMode="cover"
-          style={tw`flex-1 justify-end`}
+          style={tw`flex-1 justify-end rounded-2.5 bg-Neutral-Sz600`} // TODO:: need a default color when video category has no thumbnail
           imageStyle={tw`rounded-2.5`}>
-          <View style={tw`bg-[#000000B2] rounded rounded-2.5 py-3.5 `}>
+          <View style={tw`bg-[#000000B2] rounded-2.5 py-3.5 `}>
             <Text variant={TextVariant.Labels} color={Color.Tertiary.Sz900}>
               {videosCount} Videos
             </Text>

@@ -2,7 +2,7 @@ import React from 'react';
 import { ActivityIndicator, View } from 'react-native';
 
 import { tw } from '@sz/config';
-import { Color, SortDataType } from '@sz/constants';
+import { Color, SortDataType, SubscriptionType } from '@sz/constants';
 import { useFetch } from '@sz/hooks';
 import { VideoService } from '@sz/services';
 
@@ -10,10 +10,16 @@ import { GolfTipsWrapper } from '../components';
 import { BaseScreen } from './../../components';
 
 export function GolfTipsScreen() {
-  const { isLoading, data } = useFetch(() => VideoService.getVideoCategories({ sortBy: SortDataType.UPDATED_DESCEND }));
+  const getVideoCategoriesParams = {
+    offset: 1, // TODO:: offset is not optional for the moment
+    limit: 100, // TODO:: limit is not optional for the moment
+    sortBy: SortDataType.UPDATED_DESCEND,
+    subscriptionType: SubscriptionType.PAID,
+  };
+  const { isLoading, data } = useFetch(() => VideoService.getVideoCategories(getVideoCategoriesParams));
 
   return (
-    <BaseScreen testID="GolfTipsScreenTestID">
+    <BaseScreen testID="GolfTipsScreenTestID" isLoading={isLoading}>
       {isLoading ? (
         <View style={tw`flex-1`}>
           <ActivityIndicator size="small" color={Color.Neutral.White} />

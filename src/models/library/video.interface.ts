@@ -4,6 +4,8 @@ export interface VideoCatQueryData {
   offset?: number;
   limit?: number;
   sortBy?: SortDataType;
+  name?: string;
+  subscriptionType?: SubscriptionType;
 }
 
 export interface VideoCatResponse {
@@ -15,6 +17,7 @@ export interface VideoCatResponse {
 }
 
 export interface VideoCatData {
+  id: string;
   name: string;
   subscriptionType: SubscriptionType;
   thumbnailUrl: string;
@@ -31,8 +34,8 @@ export interface VideoData {
   videoUrl: string;
   thumbnailUrl: string;
   status: VideoStatusType;
-  failureReasons: Array<string>;
+  failureReasons?: Array<string>;
   createdAt: string;
   updatedAt: string;
-  deletedAt: string | null;
+  deletedAt?: string | null;
 }
