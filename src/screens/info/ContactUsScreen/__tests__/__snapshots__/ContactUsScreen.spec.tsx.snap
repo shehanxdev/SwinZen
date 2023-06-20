@@ -852,6 +852,7 @@ exports[`ContactUs Screen should render ContactUsScreen correctly 1`] = `
                             onChangeText={[Function]}
                             onFocus={[Function]}
                             onSubmitEditing={[Function]}
+                            placeholder="Type your message here..."
                             placeholderTextColor="#ADB5BD"
                             returnKeyType="next"
                             selectionColor="#6C757D"
