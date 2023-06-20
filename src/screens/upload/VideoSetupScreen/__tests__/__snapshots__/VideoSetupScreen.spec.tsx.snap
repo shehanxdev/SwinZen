@@ -762,7 +762,7 @@ exports[`Video Setup Screen Screen should render Video Setup Screen correctly 1`
                     ]
                   }
                 >
-                  Shooting method
+                  Club type
                 </Text>
               </View>
               <View
