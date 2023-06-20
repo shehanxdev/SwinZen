@@ -105,6 +105,7 @@ export function ContactUsScreen() {
                 <TextArea
                   ref={ref}
                   label="Message"
+                  placeholder="Type your message here..."
                   maxLength={200}
                   value={value}
                   onChangeText={onChange}
