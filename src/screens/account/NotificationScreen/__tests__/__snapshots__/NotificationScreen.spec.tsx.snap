@@ -81,98 +81,53 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
         <View
           style={
             {
-              "marginLeft": 20,
-              "marginRight": 20,
-              "marginTop": 12,
+              "marginBottom": "auto",
+              "marginLeft": "auto",
+              "marginRight": "auto",
+              "marginTop": "auto",
             }
           }
         >
-          <Text
+          <View
+            accessibilityRole="progressbar"
+            accessibilityState={
+              {
+                "busy": true,
+              }
+            }
+            accessible={true}
             style={
               [
                 {
-                  "color": "#F8F9FA",
-                  "lineHeight": 24,
+                  "alignItems": "center",
+                  "justifyContent": "center",
                 },
-                {
-                  "fontFamily": "SourceSansPro-SemiBold",
-                  "fontSize": 16,
-                  "fontWeight": "600",
-                  "textAlign": "auto",
-                },
+                undefined,
               ]
             }
           >
-            You have
-            <Text
+            <View
+              collapsable={false}
               style={
-                [
-                  {
-                    "color": "#A2FD2F",
-                    "lineHeight": 24,
-                  },
-                  {
-                    "fontFamily": "SourceSansPro-SemiBold",
-                    "fontSize": 16,
-                    "fontWeight": "600",
-                    "textAlign": "center",
-                  },
-                ]
+                {
+                  "height": 48,
+                  "opacity": 1,
+                  "width": 48,
+                }
               }
             >
-               0 new 
-            </Text>
-            notifications today!
-          </Text>
-        </View>
-        <RCTScrollView
-          ListFooterComponent={<LoadingIndicator />}
-          data={[]}
-          getItem={[Function]}
-          getItemCount={[Function]}
-          keyExtractor={[Function]}
-          onContentSizeChange={[Function]}
-          onLayout={[Function]}
-          onMomentumScrollBegin={[Function]}
-          onMomentumScrollEnd={[Function]}
-          onRefresh={[Function]}
-          onScroll={[Function]}
-          onScrollBeginDrag={[Function]}
-          onScrollEndDrag={[Function]}
-          progressViewOffset={100}
-          refreshControl={
-            <RefreshControlMock
-              onRefresh={[Function]}
-              refreshing={true}
-              tintColor="#00000000"
-            />
-          }
-          refreshing={true}
-          renderItem={[Function]}
-          scrollEventThrottle={50}
-          stickyHeaderIndices={[]}
-        >
-          <RCTRefreshControl />
-          <View>
-            <View
-              onLayout={[Function]}
-            >
               <View
-                accessibilityRole="progressbar"
-                accessibilityState={
-                  {
-                    "busy": true,
-                  }
-                }
-                accessible={true}
+                collapsable={false}
                 style={
-                  [
-                    {
-                      "alignItems": "center",
-                      "justifyContent": "center",
-                    },
-                    undefined,
-                  ]
+                  {
+                    "alignItems": "center",
+                    "bottom": 0,
+                    "justifyContent": "center",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
                 }
               >
                 <View
@@ -180,7 +135,11 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                   style={
                     {
                       "height": 48,
-                      "opacity": 1,
+                      "transform": [
+                        {
+                          "rotate": "45deg",
+                        },
+                      ],
                       "width": 48,
                     }
                   }
@@ -189,13 +148,9 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                     collapsable={false}
                     style={
                       {
-                        "alignItems": "center",
-                        "bottom": 0,
-                        "justifyContent": "center",
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
+                        "height": 24,
+                        "overflow": "hidden",
+                        "width": 48,
                       }
                     }
                   >
@@ -206,7 +161,10 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                           "height": 48,
                           "transform": [
                             {
-                              "rotate": "45deg",
+                              "translateY": 0,
+                            },
+                            {
+                              "rotate": "-165deg",
                             },
                           ],
                           "width": 48,
@@ -227,57 +185,55 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                           collapsable={false}
                           style={
                             {
+                              "borderColor": "#7DC32C",
+                              "borderRadius": 24,
+                              "borderWidth": 4.8,
                               "height": 48,
-                              "transform": [
-                                {
-                                  "translateY": 0,
-                                },
-                                {
-                                  "rotate": "-165deg",
-                                },
-                              ],
                               "width": 48,
                             }
                           }
-                        >
-                          <View
-                            collapsable={false}
-                            style={
-                              {
-                                "height": 24,
-                                "overflow": "hidden",
-                                "width": 48,
-                              }
-                            }
-                          >
-                            <View
-                              collapsable={false}
-                              style={
-                                {
-                                  "borderColor": "#7DC32C",
-                                  "borderRadius": 24,
-                                  "borderWidth": 4.8,
-                                  "height": 48,
-                                  "width": 48,
-                                }
-                              }
-                            />
-                          </View>
-                        </View>
+                        />
                       </View>
                     </View>
                   </View>
+                </View>
+              </View>
+              <View
+                collapsable={false}
+                style={
+                  {
+                    "alignItems": "center",
+                    "bottom": 0,
+                    "justifyContent": "center",
+                    "left": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <View
+                  collapsable={false}
+                  style={
+                    {
+                      "height": 48,
+                      "transform": [
+                        {
+                          "rotate": "45deg",
+                        },
+                      ],
+                      "width": 48,
+                    }
+                  }
+                >
                   <View
                     collapsable={false}
                     style={
                       {
-                        "alignItems": "center",
-                        "bottom": 0,
-                        "justifyContent": "center",
-                        "left": 0,
-                        "position": "absolute",
-                        "right": 0,
-                        "top": 0,
+                        "height": 24,
+                        "overflow": "hidden",
+                        "top": 24,
+                        "width": 48,
                       }
                     }
                   >
@@ -288,7 +244,10 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                           "height": 48,
                           "transform": [
                             {
-                              "rotate": "45deg",
+                              "translateY": -24,
+                            },
+                            {
+                              "rotate": "345deg",
                             },
                           ],
                           "width": 48,
@@ -301,7 +260,6 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                           {
                             "height": 24,
                             "overflow": "hidden",
-                            "top": 24,
                             "width": 48,
                           }
                         }
@@ -310,43 +268,14 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
                           collapsable={false}
                           style={
                             {
+                              "borderColor": "#7DC32C",
+                              "borderRadius": 24,
+                              "borderWidth": 4.8,
                               "height": 48,
-                              "transform": [
-                                {
-                                  "translateY": -24,
-                                },
-                                {
-                                  "rotate": "345deg",
-                                },
-                              ],
                               "width": 48,
                             }
                           }
-                        >
-                          <View
-                            collapsable={false}
-                            style={
-                              {
-                                "height": 24,
-                                "overflow": "hidden",
-                                "width": 48,
-                              }
-                            }
-                          >
-                            <View
-                              collapsable={false}
-                              style={
-                                {
-                                  "borderColor": "#7DC32C",
-                                  "borderRadius": 24,
-                                  "borderWidth": 4.8,
-                                  "height": 48,
-                                  "width": 48,
-                                }
-                              }
-                            />
-                          </View>
-                        </View>
+                        />
                       </View>
                     </View>
                   </View>
@@ -354,7 +283,7 @@ exports[`Notification Screen Screen should render Notification Screen correctly 
               </View>
             </View>
           </View>
-        </RCTScrollView>
+        </View>
       </View>
     </RCTSafeAreaView>
   </BVLinearGradient>

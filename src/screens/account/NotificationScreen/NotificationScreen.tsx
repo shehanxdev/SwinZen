@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { RefreshControl, SectionList, View } from 'react-native';
 
-import { LoadingIndicator, Text } from '@sz/components';
+import { Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 import { useFetch } from '@sz/hooks';
@@ -14,14 +14,22 @@ import { BaseScreen } from './../../components';
 import { NotificationCard, SectionHeader } from './components';
 
 export function NotificationScreen() {
+  const [refreshing, setRefreshing] = useState(false);
   const dispatch = useDispatch();
   const accessToken = useSelector(state => state.userStore.accessToken);
   const { isLoading, data, refetch } = useFetch(() => NotificationsService.getUserNotifications({}, accessToken));
   const unreadCount = data ? data.results.filter(item => item.isRead === false).length : 0;
   const { results } = data || {};
 
-  const onRefresh = () => {
-    refetch().catch(console.error);
+  const onRefresh = async () => {
+    try {
+      setRefreshing(true);
+      await refetch();
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setRefreshing(false);
+    }
   };
 
   // handle notification read status and refetchng notifications
@@ -31,7 +39,7 @@ export function NotificationScreen() {
     await dispatch.userStore.patchUserNotification(NotificationData);
 
     // refetching updated notifications data
-    onRefresh();
+    onRefresh().catch(console.error);
   };
 
   const renderItem = ({ item }) => (
@@ -51,7 +59,7 @@ export function NotificationScreen() {
   const renderItemSeparator = () => <View style={tw`mx-4 h-0.25 bg-Neutral-Sz600`} />;
 
   return (
-    <BaseScreen testID="NotificationScreenTestID" wrapWithScrollView={false}>
+    <BaseScreen testID="NotificationScreenTestID" wrapWithScrollView={false} isLoading={isLoading && !refreshing}>
       <View style={tw`mt-3 mx-5`}>
         <Text variant={TextVariant.Body2SemiBold} textAlign={TextAlignment.Auto}>
           You have
@@ -69,12 +77,15 @@ export function NotificationScreen() {
         renderItem={renderItem}
         renderSectionHeader={({ section: { title } }) => <SectionHeader title={title} />}
         progressViewOffset={100}
-        onRefresh={onRefresh}
-        refreshing={isLoading}
         refreshControl={
-          <RefreshControl refreshing={isLoading} onRefresh={onRefresh} tintColor={Color.Transparency.full} />
+          <RefreshControl
+            colors={['#7DC32C']} // LoadingIndicator component color
+            refreshing={isLoading}
+            onRefresh={onRefresh}
+            tintColor={Color.Neutral.White}
+            titleColor={Color.Neutral.White}
+          />
         }
-        ListFooterComponent={isLoading && <LoadingIndicator />}
       />
     </BaseScreen>
   );
