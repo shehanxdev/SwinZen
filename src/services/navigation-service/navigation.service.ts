@@ -1,4 +1,4 @@
-import { CommonActions, DrawerActions } from '@react-navigation/native';
+import { CommonActions, DrawerActions, StackActions } from '@react-navigation/native';
 import React from 'react';
 
 import { Route } from '@sz/constants';
@@ -29,6 +29,10 @@ export class NavigationService {
 
   public static closeDrawer() {
     NavigationService.navigationRef.current?.dispatch(DrawerActions.closeDrawer());
+  }
+
+  public static replace(route: Route) {
+    NavigationService.navigationRef.current?.dispatch(StackActions.replace(route));
   }
 
   public static reset(route: Route) {
