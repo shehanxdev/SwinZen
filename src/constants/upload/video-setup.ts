@@ -6,9 +6,9 @@ export const ClubTypeOptions = [
   { label: 'Driver', value: SetupValuesType.DRIVER },
   { label: 'Wood', value: SetupValuesType.WOOD },
   { label: 'Hybrid', value: 'hybrid' },
-  { label: 'Short iron', value: 'shortIron' },
-  { label: 'Mid iron', value: 'midIron' },
-  { label: 'Long iron', value: 'longIron' },
+  { label: 'Short-iron', value: 'shortIron' },
+  { label: 'Mid-iron', value: 'midIron' },
+  { label: 'Long-iron', value: 'longIron' },
 ];
 
 export const InitialSetupValues = {
@@ -39,7 +39,7 @@ export const ToggleSwitchData: ToggleSwitchDataType[] = [
     label: 'Shooting method',
     options: [
       { label: 'Tripod', value: SetupValuesType.TRIPOD },
-      { label: 'Hand held', value: SetupValuesType.HAND_HELD },
+      { label: 'Handheld', value: SetupValuesType.HAND_HELD },
     ],
     key: VideoSetupSwitchType.SHOOTING_METHOD,
   },

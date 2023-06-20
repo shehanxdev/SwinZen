@@ -41,7 +41,7 @@ export function RegisterEmailVerificationScreen({ route }) {
   const onResend = async () => {
     try {
       await dispatch.userStore.resendOtp({ username: username, otpType: OtpType.VERIFICATION });
-      ToastService.success({ message: 'Success!', description: 'OTP resent successfully.' });
+      ToastService.success({ message: 'Success!', description: 'OTP resent successful!' });
     } catch (error: any) {
       ToastService.error({ message: 'Failed!', description: error.data.message });
     }
@@ -58,7 +58,7 @@ export function RegisterEmailVerificationScreen({ route }) {
 
       //TODO::This toast is not avaialbel in the requirements. User should redirect to the price plan screen open successfull verification.
       //rafactor this once the requirements clarified
-      ToastService.success({ message: 'Success!', description: 'OTP verified successfully.' });
+      ToastService.success({ message: 'Success!', description: 'OTP verified successful!' });
 
       NavigationService.navigate(Route.Login);
     } catch (error: any) {
