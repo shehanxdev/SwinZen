@@ -3,7 +3,7 @@ import React from 'react';
 import { Controller, SubmitErrorHandler, SubmitHandler, useForm } from 'react-hook-form';
 import { View } from 'react-native';
 
-import { AccountLockIcon, Button, PasswordField, Text } from '@sz/components';
+import { AccountLockIcon, Button, Link, PasswordField, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, DEFAULT_TEXTFIELD_MAX_LENGTH, Route, TextVariant } from '@sz/constants';
 import { ResetPasswordFormValues } from '@sz/models';
@@ -33,7 +33,7 @@ export function ResetPasswordScreen() {
         password: formInput.password,
       });
 
-      ToastService.success({ message: 'Success!', description: 'Password reset successfullly.' });
+      ToastService.success({ message: 'Success!', description: 'Password reset successful!' });
       NavigationService.navigate(Route.Login);
     } catch (error: any) {
       ToastService.error({ message: 'Failed!', description: error.data.message });
@@ -96,12 +96,18 @@ export function ResetPasswordScreen() {
           />
         </View>
         <View style={tw`items-center mb-5 mx-5`}>
-          <View style={tw`mb-3`}>
+          <View style={tw`mb-6`}>
             <Button
               onPress={handleSubmit(onResetPasswordFormValid, onResetPasswordFormInvalid)}
               title="save new password"
             />
           </View>
+          <Link
+            text="Back to login"
+            onPress={() => {
+              NavigationService.navigate(Route.Login);
+            }}
+          />
         </View>
       </View>
     </BaseScreen>

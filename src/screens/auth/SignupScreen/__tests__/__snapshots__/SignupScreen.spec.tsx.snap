@@ -1291,9 +1291,9 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                             onBlur={[Function]}
                             onChangeText={[Function]}
                             onFocus={[Function]}
-                            placeholderTextColor="#495057"
+                            placeholderTextColor="#6C757D"
                             returnKeyType="done"
-                            selectionColor="rgba(73, 80, 87, 0.54)"
+                            selectionColor="rgba(108, 117, 125, 0.54)"
                             style={
                               [
                                 {
@@ -1310,7 +1310,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                                   "paddingTop": 8,
                                 },
                                 {
-                                  "color": "rgba(73, 80, 87, 0.54)",
+                                  "color": "rgba(108, 117, 125, 0.54)",
                                   "fontFamily": "SourceSansPro-Regular",
                                   "fontSize": 16,
                                   "fontVariant": undefined,
@@ -1409,7 +1409,7 @@ exports[`Signup Screen should render SignupScreen correctly 1`] = `
                           >
                             <View>
                               <SvgMock
-                                fill="#495057"
+                                fill="#6C757D"
                                 height={20}
                                 width={20}
                               />

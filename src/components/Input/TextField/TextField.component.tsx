@@ -28,7 +28,7 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
     secureTextEntry,
     testID,
     textColor = Color.Neutral.Sz300,
-    disabledColor = Color.Neutral.Sz700,
+    disabledColor = Color.Neutral.Sz600,
     blurOnSubmit,
     onSubmitEditing,
     activeOutlineColor = Color.Neutral.Sz600,
@@ -119,9 +119,9 @@ export const TextField = forwardRef<RNTextInput, TextFieldProps>(function AppTex
           colors: {
             primary: Color.Primary.Sz800,
             placeholder: Color.Neutral.Sz500, //Figma does not specify this value. Update accordinly
-            text: disabled ? Color.Neutral.Sz700 : textColor,
+            text: disabled ? disabledColor : textColor,
             background: backgroundColor,
-            disabled: Color.Neutral.Sz700,
+            disabled: disabledColor,
           },
           roundness: 10,
           fonts: {
