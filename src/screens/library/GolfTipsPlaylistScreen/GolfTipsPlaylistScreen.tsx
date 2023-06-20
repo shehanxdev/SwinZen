@@ -7,20 +7,20 @@ import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
 import { PlaylistItem } from '../components';
 import { BaseScreen, VideoPlayerWithTimeline } from './../../../screens/components';
-import { golfTipsPlaylistDummyData } from './GolfTipsPlaylistDummyData';
 
 export function GolfTipsPlaylistScreen({ route }) {
+  const tipsPlayList = [];
   //TODO:: These states can be changed according to the integrations
-  const [, setPlayingVideoSource] = useState(golfTipsPlaylistDummyData[0].videoSource);
+  const [, setPlayingVideoSource] = useState(tipsPlayList[0]?.videoSource);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const { tipsCategory } = route.params.params;
 
   const handleListItemPress = (itemIndex: number) => {
     setCurrentVideoIndex(itemIndex);
-    setPlayingVideoSource(golfTipsPlaylistDummyData[itemIndex].videoSource);
+    setPlayingVideoSource(tipsPlayList[itemIndex].videoSource);
   };
 
-  const renderPlaylist = golfTipsPlaylistDummyData.map((item, index) => {
+  const renderPlaylist = tipsPlayList?.map((item, index) => {
     return (
       <Pressable onPress={() => handleListItemPress(index)} key={item.id} style={tw`mb-2`}>
         <PlaylistItem
@@ -55,7 +55,7 @@ export function GolfTipsPlaylistScreen({ route }) {
           </Text>
           <View style={tw`mt-1`}>
             <Text variant={TextVariant.Labels} color={Color.Tertiary.Sz900} textAlign={TextAlignment.Left}>
-              {`Video - ${currentVideoIndex + 1} / ${golfTipsPlaylistDummyData.length}`}
+              {`Video - ${currentVideoIndex + 1} / ${tipsPlayList.length}`}
             </Text>
           </View>
         </View>

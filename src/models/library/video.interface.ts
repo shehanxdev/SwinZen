@@ -4,8 +4,6 @@ export interface VideoCatQueryData {
   offset?: number;
   limit?: number;
   sortBy?: SortDataType;
-  dateFrom?: string;
-  dateTo?: string;
 }
 
 export interface VideoCatResponse {
