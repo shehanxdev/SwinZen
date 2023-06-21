@@ -1,0 +1,277 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SwingDataExpandButton component should render SwingDataExpandButton component correctly 1`] = `
+<View
+  style={
+    {
+      "height": "auto",
+      "marginBottom": 8,
+      "paddingTop": 40,
+      "position": "relative",
+    }
+  }
+  testID="SwingDataExpandButtonTestID"
+>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "backgroundColor": "#1A5C23",
+        "borderRadius": 10,
+        "left": 0,
+        "paddingBottom": 10,
+        "paddingTop": 10,
+        "position": "absolute",
+        "right": 0,
+        "zIndex": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "color": "#FFFFFF",
+            "lineHeight": 24,
+          },
+          {
+            "fontFamily": "SourceSansPro-SemiBold",
+            "fontSize": 16,
+            "fontWeight": "600",
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Swing data +
+    </Text>
+  </View>
+  <View
+    collapsable={false}
+    pointerEvents="none"
+    style={
+      {
+        "height": 0,
+        "overflow": "hidden",
+      }
+    }
+  >
+    <View
+      collapsable={false}
+      forwardedRef={[Function]}
+      onLayout={[Function]}
+      style={
+        {
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": -8,
+        }
+      }
+    >
+      <BVLinearGradient
+        colors={
+          [
+            4279917603,
+            4279652381,
+            4279652381,
+            4278857487,
+          ]
+        }
+        endPoint={
+          {
+            "x": 0,
+            "y": 0,
+          }
+        }
+        locations={
+          [
+            0.2,
+            0.7375,
+            0.7375,
+            0.241,
+          ]
+        }
+        startPoint={
+          {
+            "x": 0,
+            "y": 1.4,
+          }
+        }
+        style={
+          {
+            "borderRadius": 10,
+            "paddingBottom": 7,
+            "paddingTop": 25,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "gap": 15,
+              "justifyContent": "center",
+              "marginBottom": 2,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "flexBasis": "0%",
+                "flexGrow": 1,
+                "flexShrink": 1,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#F8F9FA",
+                    "lineHeight": 24,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 16,
+                    "fontWeight": "normal",
+                    "textAlign": "right",
+                  },
+                ]
+              }
+            >
+              Label 1
+            </Text>
+          </View>
+          <View
+            style={
+              {
+                "flexBasis": "0%",
+                "flexGrow": 1,
+                "flexShrink": 1,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#F8F9FA",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "left",
+                  },
+                ]
+              }
+            >
+              Value 1
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "gap": 15,
+              "justifyContent": "center",
+              "marginBottom": 2,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "flexBasis": "0%",
+                "flexGrow": 1,
+                "flexShrink": 1,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#F8F9FA",
+                    "lineHeight": 24,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-Regular",
+                    "fontSize": 16,
+                    "fontWeight": "normal",
+                    "textAlign": "right",
+                  },
+                ]
+              }
+            >
+              Label 2
+            </Text>
+          </View>
+          <View
+            style={
+              {
+                "flexBasis": "0%",
+                "flexGrow": 1,
+                "flexShrink": 1,
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "color": "#F8F9FA",
+                    "lineHeight": 28,
+                  },
+                  {
+                    "fontFamily": "SourceSansPro-SemiBold",
+                    "fontSize": 18,
+                    "fontWeight": "bold",
+                    "textAlign": "left",
+                  },
+                ]
+              }
+            >
+              Value 2
+            </Text>
+          </View>
+        </View>
+      </BVLinearGradient>
+    </View>
+  </View>
+</View>
+`;

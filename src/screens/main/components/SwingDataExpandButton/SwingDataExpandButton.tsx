@@ -7,7 +7,12 @@ import { Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextAlignment, TextVariant } from '@sz/constants';
 
-export function SwingDataExpandButton() {
+interface SwingDataExpandButtonProps {
+  swingData: { label: string; value: string }[];
+  testID?: string;
+}
+
+export function SwingDataExpandButton({ swingData, testID }: SwingDataExpandButtonProps) {
   const [isExpanded, setIsExpanded] = useState(true);
 
   const gradientConfig = {
@@ -17,26 +22,8 @@ export function SwingDataExpandButton() {
     end: { x: 0, y: 0 },
   };
 
-  const swingData = [
-    {
-      label: 'Club speed',
-      value: '95',
-    },
-    {
-      label: 'Ball speed',
-      value: '123.5',
-    },
-    {
-      label: 'Smash',
-      value: '1.3',
-    },
-    {
-      label: 'Launch',
-      value: 'ND',
-    },
-  ];
   return (
-    <View style={tw`relative h-auto pt-10 mb-2`}>
+    <View style={tw`relative h-auto pt-10 mb-2`} testID={testID}>
       <Pressable
         style={tw`py-2.5 bg-[${Color.Primary.Sz650}] rounded-2.5 absolute z-1 right-0 left-0`}
         onPress={() => setIsExpanded(prevState => !prevState)}>
