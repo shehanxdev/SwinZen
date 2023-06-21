@@ -7,11 +7,13 @@ import { RootModel } from '.';
 interface AppState {
   currentRoute?: Route;
   isAppReady: boolean;
+  isUpgradeModalVisible: boolean;
 }
 
 const initialAppState: AppState = {
   currentRoute: Route.AuthStack,
   isAppReady: false,
+  isUpgradeModalVisible: false,
 };
 
 export const appStore = createModel<RootModel>()({
@@ -22,6 +24,9 @@ export const appStore = createModel<RootModel>()({
     },
     setIsAppReady(state: AppState, payload: boolean) {
       return { ...state, isAppReady: payload };
+    },
+    setUpgradeModalVisible(state: AppState, payload: boolean) {
+      return { ...state, isUpgradeModalVisible: payload };
     },
   },
 

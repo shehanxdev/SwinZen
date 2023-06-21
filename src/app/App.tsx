@@ -6,6 +6,7 @@ import 'react-native-gesture-handler';
 import { ToastHost } from '@sz/components';
 import { tw } from '@sz/config';
 import { Routes } from '@sz/routes';
+import { UpgradeToProModal } from '@sz/screens';
 import { useDispatch, useSelector } from '@sz/stores';
 
 export function App() {
@@ -32,6 +33,7 @@ export function App() {
         {/* TODO: Add common background and loading indicator while the app is initilizing */}
         {isAppReady ? <Routes /> : null}
         <ToastHost />
+        <UpgradeToProModal />
       </View>
     </>
   );
