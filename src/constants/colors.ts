@@ -53,6 +53,7 @@ enum Tertiary {
   Sz1000 = `#7DC424`,
   Sz900 = `#A2FD2F`,
   Sz800 = `#B5FD59`,
+  Sz750 = `#E1C42C`, //NOTE:: Not available in the design system. Change accordingly
   Sz700 = `#C4FE7A`,
   Sz600 = `#CBFE8A`,
   Sz500 = `#DAFEAC`,
