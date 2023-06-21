@@ -61,7 +61,7 @@ export function PricePlansScreen() {
   }, []);
 
   useEffect(() => {
-    //This function will return all In App Purchases ubscriptions configured in play console and appstoreconnect
+    //This function will return all in App Purchases ubscriptions configured in play console and appstoreconnect
     //These subscription should be mapped along side the subscriptions received from the BE in order to create the final subscription list
     const getInAppPurchaseSubscriptions = async () => {
       try {
