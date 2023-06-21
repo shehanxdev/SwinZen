@@ -15,7 +15,7 @@ import Video, { OnLoadData, OnProgressData } from 'react-native-video';
 
 import { ErrorIcon, LoadingIndicator, PauseIcon, PlayIcon, ReplayIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, TextVariant, videoPlayerWithTimelineConfigs } from '@sz/constants';
+import { Color, TextVariant, VideoViewType, videoPlayerWithTimelineConfigs } from '@sz/constants';
 import { FFmpegService } from '@sz/services';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
@@ -92,7 +92,7 @@ const renderFrameGenerationError = () => {
 interface VideoPlayerWithTimelineProps {
   source: string;
   score?: number;
-  viewType?: 'faceOn' | 'downTheLine';
+  viewType?: VideoViewType;
   showGradient?: boolean;
 }
 
@@ -283,7 +283,7 @@ export function VideoPlayerWithTimeline({ source, score, viewType, showGradient 
             <LoadingIndicator size="large" color={Color.Tertiary.Sz900} />
           </View>
         )}
-        {!isVideoLoading && viewType ? (
+        {!isVideoLoading ? (
           <>
             {renderScoreAndViewType}
             {showGradient && renderGradient}
@@ -297,7 +297,7 @@ export function VideoPlayerWithTimeline({ source, score, viewType, showGradient 
           resizeMode={'cover'}
           source={{ uri: source }}
           paused={paused}
-          style={tw`flex-1 w-full relative ${score ? 'rounded-t-2.5' : 'rounded-t-7.5'}`}
+          style={tw`flex-1 w-full relative ${viewType ? 'rounded-tr-2.5 rounded-tl-7.5' : 'rounded-t-7.5'}`}
         />
 
         {!isVideoLoading && (
