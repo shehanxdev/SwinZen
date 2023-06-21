@@ -57,7 +57,7 @@ export function VideoSetupScreen() {
           })}
           <View style={tw`mb-2.25`}>
             <Text variant={TextVariant.Body2Regular} color={Color.Neutral.White} textAlign={TextAlignment.Left}>
-              Shooting method
+              Club type
             </Text>
           </View>
           <SelectableGrid
