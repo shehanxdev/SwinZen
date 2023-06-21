@@ -11,7 +11,7 @@ import {
 import { tw } from '@sz/config';
 import { TextVariant } from '@sz/constants';
 
-interface CheckpointAnalysisResultProps {
+export interface CheckpointAnalysisResultProps {
   overallStatus: 'pass' | 'fail';
   checkPoint: string;
   subCheckpoint: string;
@@ -31,6 +31,7 @@ export function CheckpointAnalysisResult({
 
   return (
     <Pressable
+      testID="CheckpointAnalysisResultTestID"
       style={tw`flex flex-row justify-between items-center h-8.5 w-full`}
       onPress={() => {
         if (overallStatus !== 'pass') {
