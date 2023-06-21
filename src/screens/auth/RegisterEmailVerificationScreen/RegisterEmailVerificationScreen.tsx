@@ -41,7 +41,7 @@ export function RegisterEmailVerificationScreen({ route }) {
   const onResend = async () => {
     try {
       await dispatch.userStore.resendOtp({ username: username, otpType: OtpType.VERIFICATION });
-      ToastService.success({ message: 'Success!', description: 'OTP resent successfully.' });
+      ToastService.success({ message: 'Success!', description: 'OTP resent successful!' });
     } catch (error: any) {
       ToastService.error({ message: 'Failed!', description: error.data.message });
     }
@@ -58,12 +58,16 @@ export function RegisterEmailVerificationScreen({ route }) {
 
       //TODO::This toast is not avaialbel in the requirements. User should redirect to the price plan screen open successfull verification.
       //rafactor this once the requirements clarified
-      ToastService.success({ message: 'Success!', description: 'OTP verified successfully.' });
+      ToastService.success({ message: 'Success!', description: 'OTP verified successful!' });
 
       NavigationService.navigate(Route.Login);
     } catch (error: any) {
-      ToastService.error({ message: 'Failed!', description: error.data.message });
+      ToastService.error({ message: 'Failed!', description: error.data.message[1] });
     }
+  };
+
+  const onVerifyInvalid = () => {
+    ToastService.error({ message: 'Failed!', description: errors.otp.message });
   };
 
   return (
@@ -100,7 +104,7 @@ export function RegisterEmailVerificationScreen({ route }) {
         </View>
         <View style={tw`items-center mb-5 items-center mx-5 mt-15`}>
           <View style={tw`mb-6`}>
-            <Button onPress={onVerify} title="verify" loading={loading} />
+            <Button onPress={handleSubmit(onVerify, onVerifyInvalid)} title="verify" loading={loading} />
           </View>
           <Text variant={TextVariant.Body2Regular}>
             By continuing, you agree to our{' '}
