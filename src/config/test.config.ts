@@ -78,3 +78,13 @@ jest.mock('react-native-keychain', () => {
     resetGenericPassword: jest.fn(),
   };
 });
+
+jest.mock('react-native-iap', () => {
+  return {
+    initConnection: jest.fn(() => Promise.resolve(true)),
+    endConnection: jest.fn(() => Promise.resolve(true)),
+    getInstallSource: jest.fn(),
+    purchaseUpdatedListener: jest.fn(),
+    purchaseErrorListener: jest.fn(),
+  };
+});

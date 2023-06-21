@@ -1,10 +1,19 @@
-import React from 'react';
-import { View } from 'react-native';
+import React, { useEffect } from 'react';
+import { EmitterSubscription, View } from 'react-native';
+import {
+  ProductPurchase,
+  PurchaseError,
+  SubscriptionPurchase,
+  finishTransaction,
+  purchaseErrorListener,
+  purchaseUpdatedListener,
+  requestSubscription,
+} from 'react-native-iap';
 
 import { Button, PricePlanFeatureListTickIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route, TextAlignment, TextVariant } from '@sz/constants';
-import { Plan } from '@sz/models';
+import { FinalPlanData } from '@sz/models';
 import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
 
@@ -13,20 +22,54 @@ import { BaseScreen } from './../../components';
 const TEST_ID_PREFIX = 'PlanDetailsScreen';
 
 export function PlanDetailsScreen({ route }) {
-  const data = route.params.params.item as Plan;
+  const data = route.params.params.item as FinalPlanData;
   const dispatch = useDispatch();
 
-  const onProceed = async (data: Plan) => {
+  const onProceed = async (data: FinalPlanData) => {
     try {
-      await dispatch.userStore.addSubscription({ planId: data.id });
-      //TODO:: handle payments for paid plans
-      NavigationService.navigate(Route.HomeTab);
+      if (data.productId === '') {
+        await dispatch.userStore.addSubscription({ planId: data.id });
+        NavigationService.navigate(Route.HomeTab);
+      } else {
+        await requestSubscription({ sku: data.productId });
+      }
     } catch (error) {
-      ToastService.error({ message: 'Failed!', description: error.data.message });
-    } finally {
-      await dispatch.userStore.getSubscription({});
+      ToastService.error({
+        message: 'Failed!',
+        description: error?.data?.message ?? 'Something went wrong during the purchase!',
+      });
     }
   };
+
+  useEffect(() => {
+    const unsubscribePurchaseEvent: EmitterSubscription = purchaseUpdatedListener(
+      async (purchase: ProductPurchase | SubscriptionPurchase) => {
+        const receipt = purchase.transactionReceipt
+          ? purchase.transactionReceipt
+          : (purchase as unknown as { originalJson: string }).originalJson;
+
+        if (receipt) {
+          try {
+            //TODO::need to validate this receipt before proceed
+            await finishTransaction({ purchase });
+            NavigationService.navigate(Route.HomeTab);
+          } catch (error) {
+            ToastService.error({ message: 'Failed!', description: 'Something went wrong during the purchase!' }); //TODO::add a proper message
+          }
+        }
+      },
+    );
+
+    return unsubscribePurchaseEvent?.remove();
+  }, []);
+
+  useEffect(() => {
+    const unsubscribePurchaseFailEvent: EmitterSubscription = purchaseErrorListener((error: PurchaseError) => {
+      ToastService.error({ message: 'Failed!', description: error.message });
+    });
+
+    return unsubscribePurchaseFailEvent?.remove();
+  }, []);
 
   return (
     <BaseScreen testID={TEST_ID_PREFIX}>
