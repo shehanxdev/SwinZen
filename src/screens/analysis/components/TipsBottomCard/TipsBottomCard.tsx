@@ -26,7 +26,7 @@ export function TipsBottomCard({ description, tipType, onSetTipType }: TipsBotto
       case 'pga-pro-tips':
         return {
           title: 'PGA Pro Tip',
-          leftButtonTitle: 'AI pro tips',
+          leftButtonTitle: 'AI pro tip',
           rightButtonTitle: 'Side-by-side',
           onLeftButtonPress: () => onSetTipType(TipType.AI_PRO_TIPS),
           onRightButtonPress: () => onSetTipType(TipType.SIDE_BY_SIDE),
@@ -42,8 +42,8 @@ export function TipsBottomCard({ description, tipType, onSetTipType }: TipsBotto
       case 'side-by-side':
         return {
           title: 'Side-By-Side',
-          leftButtonTitle: 'PGA pro rip',
-          rightButtonTitle: 'AI pro tips',
+          leftButtonTitle: 'PGA pro tip',
+          rightButtonTitle: 'AI pro tip',
           onLeftButtonPress: () => onSetTipType(TipType.PGA_PRO_TIPS),
           onRightButtonPress: () => onSetTipType(TipType.AI_PRO_TIPS),
         };

@@ -1,5 +1,4 @@
-import { useNavigation } from '@react-navigation/native';
-import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Dimensions, Image, Pressable, View } from 'react-native';
 import Pinchable from 'react-native-pinchable';
 import Swiper from 'react-native-swiper';
@@ -22,13 +21,6 @@ export function ProTipsScreen({ route }) {
   const mediaPaneHeight = screenHeight * 0.55; // Need to give specific height for the swiper and also into media container
 
   const swiperRef = useRef(null);
-  const navigation = useNavigation();
-
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      title: checkpoint,
-    });
-  });
 
   useEffect(() => {
     // Reset swiper index when tipType is changing
