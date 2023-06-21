@@ -6,6 +6,7 @@ export * from './data-time';
 export * from './library';
 export * from './login-error-codes';
 export * from './navigation-routes';
+export * from './pricePlan';
 export * from './regular-expressions';
 export * from './request-data.enum';
 export * from './runtime-environment';

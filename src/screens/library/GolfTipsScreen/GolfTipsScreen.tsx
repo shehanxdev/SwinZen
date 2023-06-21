@@ -1,8 +1,8 @@
 import React from 'react';
-import { ActivityIndicator, View } from 'react-native';
+import { View } from 'react-native';
 
 import { tw } from '@sz/config';
-import { Color, SortDataType, SubscriptionType } from '@sz/constants';
+import { SortDataType, SubscriptionType } from '@sz/constants';
 import { useFetch } from '@sz/hooks';
 import { VideoService } from '@sz/services';
 
@@ -20,15 +20,9 @@ export function GolfTipsScreen() {
 
   return (
     <BaseScreen testID="GolfTipsScreenTestID" isLoading={isLoading}>
-      {isLoading ? (
-        <View style={tw`flex-1`}>
-          <ActivityIndicator size="small" color={Color.Neutral.White} />
-        </View>
-      ) : (
-        <View style={tw`flex-1 mx-4 mt-6 mb-4`}>
-          <GolfTipsWrapper golfTips={data?.results} />
-        </View>
-      )}
+      <View style={tw`flex-1 mx-4 mt-6 mb-4`}>
+        <GolfTipsWrapper golfTips={data?.results} />
+      </View>
     </BaseScreen>
   );
 }
