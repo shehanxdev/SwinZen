@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import {
   Dimensions,
   NativeScrollEvent,
@@ -92,10 +92,11 @@ const renderFrameGenerationError = () => {
 interface VideoPlayerWithTimelineProps {
   source: string;
   score?: number;
-  viewType?: string;
+  viewType?: 'faceOn' | 'downTheLine';
+  showGradient?: boolean;
 }
 
-export function VideoPlayerWithTimeline({ source, score = 0, viewType = '' }: VideoPlayerWithTimelineProps) {
+export function VideoPlayerWithTimeline({ source, score, viewType, showGradient }: VideoPlayerWithTimelineProps) {
   const videoPlayerRef = useRef(null);
   const scrollViewRef = useRef(null);
 
@@ -212,20 +213,67 @@ export function VideoPlayerWithTimeline({ source, score = 0, viewType = '' }: Vi
     else return <PauseIcon />;
   };
 
-  const gradientConfig = {
-    colors:
-      score < 4
-        ? ['#F6581500', '#F65815']
-        : score > 4.1 && score < 7
-        ? ['#FDDC2F00', '#F1D33178', '#E1C42C']
-        : ['#A2FD2F00', '#A2FD2F50', '#45FD2F'],
-    locations: score > 4 ? [0.7279, 0.9051, 1] : [0.74, 1],
-    start: { x: 1, y: 0 },
-    end: { x: 0, y: 0 },
-  };
+  const renderGradient = useMemo(() => {
+    const getColors = () => {
+      if (score < 4) {
+        return ['#F6581500', '#F65815'];
+      } else if (score > 4.1 && score < 7) {
+        return ['#FDDC2F00', '#F1D33178', '#E1C42C'];
+      } else {
+        return ['#A2FD2F00', '#A2FD2F50', '#45FD2F'];
+      }
+    };
 
-  const scoreCircleBackgroundColor =
-    score < 4 ? Color.Secondary.Sz900 : score > 4.1 && score < 7 ? Color.Tertiary.Sz750 : Color.Primary.Sz700;
+    const gradientConfig = {
+      colors: getColors(),
+      locations: score > 4 ? [0.7279, 0.9051, 1] : [0.74, 1],
+      start: { x: 1, y: 0 },
+      end: { x: 0, y: 0 },
+    };
+
+    return (
+      <LinearGradient
+        colors={gradientConfig.colors}
+        locations={gradientConfig.locations}
+        start={gradientConfig.start}
+        end={gradientConfig.end}
+        style={tw`flex-1 absolute inset-0 z-4 rounded-t-7.5`}
+      />
+    );
+  }, [score]);
+
+  const scoreCircleBackgroundColor = useMemo(() => {
+    if (score < 4) {
+      return Color.Secondary.Sz900;
+    } else if (score > 4.1 && score < 7) {
+      return Color.Tertiary.Sz750;
+    } else {
+      return Color.Primary.Sz700;
+    }
+  }, [score]);
+
+  const renderScoreAndViewType = useMemo(() => {
+    return (
+      <>
+        {score !== undefined && (
+          <View style={tw`absolute z-5 w-15 h-15 rounded-7.5 bg-[${scoreCircleBackgroundColor}] justify-center`}>
+            <Text
+              variant={TextVariant.Heading3}
+              color={score > 4.1 && score < 7 ? Color.Neutral.Sz1000 : Color.Neutral.White}>
+              {score}
+            </Text>
+          </View>
+        )}
+        {viewType !== undefined && (
+          <View style={tw`bg-[${Color.Neutral.Black}] justify-center absolute right-0 z-1 px-7 py-.75 rounded-2.5`}>
+            <Text variant={TextVariant.LabelsAlt} color={Color.Neutral.White}>
+              {viewType.toLocaleUpperCase()}
+            </Text>
+          </View>
+        )}
+      </>
+    );
+  }, [score, viewType]);
 
   return (
     <View style={tw`rounded-t-7.5 w-full`}>
@@ -235,29 +283,12 @@ export function VideoPlayerWithTimeline({ source, score = 0, viewType = '' }: Vi
             <LoadingIndicator size="large" color={Color.Tertiary.Sz900} />
           </View>
         )}
-        {!isVideoLoading && viewType && (
+        {!isVideoLoading && viewType ? (
           <>
-            <View style={tw`absolute z-5 w-15 h-15 rounded-7.5 bg-[${scoreCircleBackgroundColor}] justify-center`}>
-              <Text
-                variant={TextVariant.Heading3}
-                color={score > 4.1 && score < 7 ? Color.Neutral.Sz1000 : Color.Neutral.White}>
-                {score}
-              </Text>
-            </View>
-            <View style={tw`bg-[${Color.Neutral.Black}] justify-center absolute right-0 z-1 px-7 py-.75 rounded-2.5`}>
-              <Text variant={TextVariant.LabelsAlt} color={Color.Neutral.White}>
-                {viewType.toLocaleUpperCase()}
-              </Text>
-            </View>
-            <LinearGradient
-              colors={gradientConfig.colors}
-              locations={gradientConfig.locations}
-              start={gradientConfig.start}
-              end={gradientConfig.end}
-              style={tw`flex-1 absolute inset-0 z-4 rounded-t-7.5`}
-            />
+            {renderScoreAndViewType}
+            {showGradient && renderGradient}
           </>
-        )}
+        ) : null}
         <Video
           ref={videoPlayerRef}
           onLoad={handleVideoLoad}
@@ -306,7 +337,7 @@ export function VideoPlayerWithTimeline({ source, score = 0, viewType = '' }: Vi
             bounces={false}
             scrollEventThrottle={1}>
             <View style={tw`w-[${BLANK_SPACE_WIDTH}px] bg-Neutral-Black`} />
-            {frames && frames.map((frame, index) => renderFrame(frame, index))}
+            {frames?.map((frame, index) => renderFrame(frame, index))}
             <View style={tw`w-[${BLANK_SPACE_WIDTH}px] bg-Neutral-Black`} />
           </ScrollView>
         </View>
