@@ -217,7 +217,7 @@ export function VideoPlayerWithTimeline({ source, score, viewType, showGradient 
     const getColors = () => {
       if (score <= 4) {
         return ['#F6581500', '#F65815'];
-      } else if (score > 4.1 && score < 7) {
+      } else if (score > 4 && score < 7) {
         return ['#FDDC2F00', '#F1D33178', '#E1C42C'];
       } else {
         return ['#A2FD2F00', '#A2FD2F50', '#45FD2F'];
