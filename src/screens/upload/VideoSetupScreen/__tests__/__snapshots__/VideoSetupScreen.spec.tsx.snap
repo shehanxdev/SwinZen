@@ -731,7 +731,7 @@ exports[`Video Setup Screen Screen should render Video Setup Screen correctly 1`
                               ]
                             }
                           >
-                            Hand held
+                            Handheld
                           </Text>
                         </View>
                       </View>
@@ -762,7 +762,7 @@ exports[`Video Setup Screen Screen should render Video Setup Screen correctly 1`
                     ]
                   }
                 >
-                  Shooting method
+                  Club type
                 </Text>
               </View>
               <View
@@ -1021,7 +1021,7 @@ exports[`Video Setup Screen Screen should render Video Setup Screen correctly 1`
                       ]
                     }
                   >
-                    Short iron
+                    Short-iron
                   </Text>
                 </View>
                 <View
@@ -1083,7 +1083,7 @@ exports[`Video Setup Screen Screen should render Video Setup Screen correctly 1`
                       ]
                     }
                   >
-                    Mid iron
+                    Mid-iron
                   </Text>
                 </View>
                 <View
@@ -1145,7 +1145,7 @@ exports[`Video Setup Screen Screen should render Video Setup Screen correctly 1`
                       ]
                     }
                   >
-                    Long iron
+                    Long-iron
                   </Text>
                 </View>
               </View>
