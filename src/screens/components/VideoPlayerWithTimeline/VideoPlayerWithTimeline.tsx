@@ -215,7 +215,7 @@ export function VideoPlayerWithTimeline({ source, score, viewType, showGradient 
 
   const renderGradient = useMemo(() => {
     const getColors = () => {
-      if (score < 4) {
+      if (score <= 4) {
         return ['#F6581500', '#F65815'];
       } else if (score > 4.1 && score < 7) {
         return ['#FDDC2F00', '#F1D33178', '#E1C42C'];
@@ -243,7 +243,7 @@ export function VideoPlayerWithTimeline({ source, score, viewType, showGradient 
   }, [score]);
 
   const scoreCircleBackgroundColor = useMemo(() => {
-    if (score < 4) {
+    if (score <= 4) {
       return Color.Secondary.Sz900;
     } else if (score > 4.1 && score < 7) {
       return Color.Tertiary.Sz750;
