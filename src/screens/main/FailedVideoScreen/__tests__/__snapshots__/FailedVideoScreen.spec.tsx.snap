@@ -232,9 +232,9 @@ exports[`Failed Video Screen should render failed screen ui screen correctly 1`]
                         "lineHeight": 28,
                       },
                       {
-                        "fontFamily": "SourceSansPro-Regular",
+                        "fontFamily": "SourceSansPro-SemiBold",
                         "fontSize": 18,
-                        "fontWeight": "normal",
+                        "fontWeight": "bold",
                         "textAlign": "left",
                       },
                     ]
@@ -246,7 +246,7 @@ exports[`Failed Video Screen should render failed screen ui screen correctly 1`]
                   style={
                     {
                       "marginLeft": 36,
-                      "marginRight": 42,
+                      "marginRight": 36,
                       "marginTop": 10,
                     }
                   }

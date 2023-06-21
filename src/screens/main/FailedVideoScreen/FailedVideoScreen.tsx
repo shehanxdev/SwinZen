@@ -15,10 +15,10 @@ export function FailedVideoScreen() {
       <View testID="FailedVideoScreenTestId" style={tw`mx-4 mt-5`}>
         <VideoUploadErrorCard showFooterAndTextLink={false} />
         <View style={tw`mt-8`}>
-          <Text variant={TextVariant.Body1Regular} textAlign={TextAlignment.Left}>
+          <Text variant={TextVariant.Body1SemiBold} textAlign={TextAlignment.Left}>
             Here's why your video has failed
           </Text>
-          <View style={tw`ml-9 mr-10.5 mt-2.5`}>
+          <View style={tw`mx-9 mt-2.5`}>
             {videoAnalysisFailedReasons.map((reason, key) => {
               return (
                 <Text
