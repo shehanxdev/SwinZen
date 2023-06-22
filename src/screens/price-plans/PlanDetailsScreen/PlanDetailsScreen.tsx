@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-import { EmitterSubscription, View } from 'react-native';
+import { EmitterSubscription, Platform, View } from 'react-native';
 import {
-  ProductPurchase,
   PurchaseError,
   SubscriptionPurchase,
   finishTransaction,
@@ -52,7 +51,7 @@ export function PlanDetailsScreen({ route }) {
 
   useEffect(() => {
     const unsubscribePurchaseEvent: EmitterSubscription = purchaseUpdatedListener(
-      async (purchase: ProductPurchase | SubscriptionPurchase) => {
+      async (purchase: SubscriptionPurchase) => {
         const receipt = purchase.transactionReceipt
           ? purchase.transactionReceipt
           : (purchase as unknown as { originalJson: string }).originalJson;
@@ -60,8 +59,15 @@ export function PlanDetailsScreen({ route }) {
         if (receipt) {
           try {
             //TODO::need to validate this receipt before proceed
-            await finishTransaction({ purchase });
+
+            await finishTransaction({
+              purchase: purchase,
+              isConsumable: false,
+              ...(Platform.OS === 'android' && { developerPayloadAndroid: purchase.developerPayloadAndroid }),
+            });
+
             //TODO::persist the payment status.
+
             //TODO::handle worst case scenarios(app crashes, internet connection lost)
             NavigationService.navigate(Route.HomeTab);
           } catch (error) {
