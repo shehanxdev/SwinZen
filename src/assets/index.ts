@@ -27,12 +27,15 @@ export { default as DrawerProfileSettingsSvg } from './icons/drawer/profile-icon
 export { default as DrawerTermsSvg } from './icons/drawer/terms-icon.svg';
 
 export { default as ErrorIconSvg } from './icons/main/error.svg';
+export { default as FailCheckpointCrossSvg } from './icons/video-analysis/fail-checkpoint-cross.svg';
 export { default as MailIconSvg } from './icons/account/mail_icon.svg';
 export { default as MoveLeftArrowSvg } from './icons/main/move-left-arrow.svg';
 export { default as MoveRightArrowSvg } from './icons/main/move-right-arrow.svg';
 export { default as NextIconSvg } from './icons/main/next-icon.svg';
 export { default as NotificationDotSvg } from './icons/account/notification-dot.svg';
 export { default as NotificationTimerSvg } from './icons/account/notification-timer.svg';
+export { default as PassCheckpointCrossSvg } from './icons/video-analysis/pass-checkpoint-mark.svg';
+export { default as PassStarCircleSvg } from './icons/video-analysis/pass-star-circle.svg';
 export { default as PasswordHideEyeSvg } from './icons/account/password-hide-eye.svg';
 export { default as PasswordRevealEyeSvg } from './icons/account/password-reveal-eye.svg';
 export { default as PauseIconSvg } from './icons/library/pause-icon.svg';

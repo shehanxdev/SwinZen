@@ -24,12 +24,15 @@ import {
   DrawerProfileSettingsSvg,
   DrawerTermsSvg,
   ErrorIconSvg,
+  FailCheckpointCrossSvg,
   MailIconSvg,
   MoveLeftArrowSvg,
   MoveRightArrowSvg,
   NextIconSvg,
   NotificationDotSvg,
   NotificationTimerSvg,
+  PassCheckpointCrossSvg,
+  PassStarCircleSvg,
   PasswordHideEyeSvg,
   PasswordRevealEyeSvg,
   PauseIconSvg,
@@ -246,4 +249,17 @@ export function UploadIcon({ color = Color.Neutral.Sz100, width = 35, height = 3
 //#FFFFFF80 not available within the design system
 export function VideoPlayIcon({ color = '#FFFFFF80' as Color, width = 64, height = 64 }: SvgIconProps) {
   return <VideoPlaySvg width={width} height={height} fill={color} />;
+}
+
+export function FailCheckpointCrossIcon({ color = Color.Secondary.Sz900, width = 34, height = 34 }: SvgIconProps) {
+  return <FailCheckpointCrossSvg width={width} height={height} fill={color} />;
+}
+
+//#1A5B23 not available within the design system
+export function PassCheckpointCrossIcon({ color = '#1A5B23' as Color, width = 34, height = 34 }: SvgIconProps) {
+  return <PassCheckpointCrossSvg width={width} height={height} fill={color} />;
+}
+
+export function PassStarCircleIcon({ color = Color.Primary.Sz700, width = 20, height = 20 }: SvgIconProps) {
+  return <PassStarCircleSvg width={width} height={height} fill={color} />;
 }
