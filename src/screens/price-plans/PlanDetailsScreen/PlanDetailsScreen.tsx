@@ -26,18 +26,27 @@ export function PlanDetailsScreen({ route }) {
   const dispatch = useDispatch();
 
   const onProceed = async (data: FinalPlanData) => {
-    try {
-      if (data.productId === '') {
+    //Free user plan
+    if (data.productId === '') {
+      try {
         await dispatch.userStore.addSubscription({ planId: data.id });
         NavigationService.navigate(Route.HomeTab);
-      } else {
-        await requestSubscription({ sku: data.productId });
+      } catch (error) {
+        ToastService.error({
+          message: 'Failed!',
+          description: error.data.message,
+        });
       }
-    } catch (error) {
-      ToastService.error({
-        message: 'Failed!',
-        description: error?.data?.message ?? 'Something went wrong during the purchase!',
-      });
+      //paid user plans
+    } else {
+      try {
+        await requestSubscription({ sku: data.productId });
+      } catch (error) {
+        ToastService.information({
+          message: 'Alert!',
+          description: 'Could not complete the payment!',
+        });
+      }
     }
   };
 
@@ -52,6 +61,8 @@ export function PlanDetailsScreen({ route }) {
           try {
             //TODO::need to validate this receipt before proceed
             await finishTransaction({ purchase });
+            //TODO::persist the payment status.
+            //TODO::handle worst case scenarios(app crashes, internet connection lost)
             NavigationService.navigate(Route.HomeTab);
           } catch (error) {
             ToastService.error({ message: 'Failed!', description: 'Something went wrong during the purchase!' }); //TODO::add a proper message

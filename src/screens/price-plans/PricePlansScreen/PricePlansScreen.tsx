@@ -77,7 +77,6 @@ export function PricePlansScreen() {
         const mappedSubscriptionData = mapSubscriptionData(plansData.results, subscriptions);
         setFinalSubscriptionData(mappedSubscriptionData);
       } catch (e) {
-        console.log(e);
         ToastService.error({ message: 'Error!', description: 'Some went wrong!' });
       }
     };
