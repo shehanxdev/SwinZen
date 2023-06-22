@@ -88,3 +88,5 @@ jest.mock('react-native-iap', () => {
     purchaseErrorListener: jest.fn(),
   };
 });
+
+jest.mock('react-native-video', () => 'Video');

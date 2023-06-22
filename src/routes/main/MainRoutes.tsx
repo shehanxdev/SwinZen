@@ -5,6 +5,7 @@ import { Route } from '@sz/constants';
 import { useFirebaseNotifications } from '@sz/hooks';
 
 import { AccountStack } from '../account';
+import { AnalysisStack } from '../analysis';
 import { PricePlansStack } from '../pricePlans';
 import { VideoUploadStack } from '../videoUpload';
 import { LibraryInfoStack } from './../library';
@@ -27,6 +28,7 @@ export function MainStack() {
       <Stack.Screen name={Route.VideoUploadStack} component={VideoUploadStack} />
       <Stack.Screen name={Route.AccountStack} component={AccountStack} />
       <Stack.Screen name={Route.LibraryInfoStack} component={LibraryInfoStack} options={{ headerShown: false }} />
+      <Stack.Screen name={Route.AnalysisStack} component={AnalysisStack} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }
