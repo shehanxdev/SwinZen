@@ -60,15 +60,24 @@ export function PlanDetailsScreen({ route }) {
           try {
             //TODO::need to validate this receipt before proceed
 
+            //TODO::persist the payment status.
+
+            //TODO::handle worst case scenarios(app crashes, internet connection lost)
+
+            /*
+             * NOTE::Call this after persistiong the purchased state to the BE.
+             * Finish Transaction (both platforms)
+             * This function will Tells StoreKit that you have delivered the purchase to the user and StoreKit can now let go of the transaction in IOS.
+             * it will consume purchase for consumables and acknowledge purchase for non-consumables in Android
+             * this will return PurchaseResult in Android and true in IOS
+             * This is step will always resolve without having any issues.
+             */
             await finishTransaction({
               purchase: purchase,
               isConsumable: false,
               ...(Platform.OS === 'android' && { developerPayloadAndroid: purchase.developerPayloadAndroid }),
             });
 
-            //TODO::persist the payment status.
-
-            //TODO::handle worst case scenarios(app crashes, internet connection lost)
             NavigationService.navigate(Route.HomeTab);
           } catch (error) {
             ToastService.error({ message: 'Failed!', description: 'Something went wrong during the purchase!' }); //TODO::add a proper message
@@ -77,15 +86,14 @@ export function PlanDetailsScreen({ route }) {
       },
     );
 
-    return unsubscribePurchaseEvent?.remove();
-  }, []);
-
-  useEffect(() => {
-    const unsubscribePurchaseFailEvent: EmitterSubscription = purchaseErrorListener((error: PurchaseError) => {
+    const unsubscribePurchaseFailedEvent: EmitterSubscription = purchaseErrorListener((error: PurchaseError) => {
       ToastService.error({ message: 'Failed!', description: error.message });
     });
 
-    return unsubscribePurchaseFailEvent?.remove();
+    return () => {
+      unsubscribePurchaseFailedEvent?.remove();
+      unsubscribePurchaseEvent?.remove();
+    };
   }, []);
 
   return (
