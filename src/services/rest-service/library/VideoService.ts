@@ -16,7 +16,7 @@ export class VideoService {
         throw new APIError('UNKNOWN_ERROR');
       }
 
-      return response.data;
+      return response.data.results;
     } catch (error) {
       console.error('Error response', error, JSON.stringify(error));
       throw new APIError('CLIENT_ERROR');

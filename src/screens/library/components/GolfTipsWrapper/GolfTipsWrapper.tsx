@@ -22,7 +22,7 @@ export function GolfTipsWrapper({ golfTips, testID }: GolfTipsWrapperProps) {
       {golfTips?.map(item => {
         return (
           <GolfTipCard
-            key={item.name}
+            key={item.id}
             disabled={userPlan?.plan.price === 0} // TODO:: here we can add alert to inform user about paid plans, only paid uses can redirected to the video player screen
             videosCount={item.videos?.length}
             label={item.name}

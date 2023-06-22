@@ -26,7 +26,7 @@ type SwitchValueDataType = 'usingTheApp' | 'aboutSwingZen';
 export function LibraryScreen() {
   const [switchValue, setSwitchValue] = useState<SwitchValueDataType>('usingTheApp');
   const getVideoCategoriesParams = {
-    offset: 1, // TODO:: offset is not optional for the moment
+    offset: 1,
     limit: 3,
     sortBy: SortDataType.UPDATED_DESCEND,
     subscriptionType: SubscriptionType.PAID,
@@ -85,7 +85,7 @@ export function LibraryScreen() {
             See All
           </Text>
         </View>
-        <GolfTipsWrapper golfTips={data?.results} />
+        <GolfTipsWrapper golfTips={data} />
       </View>
     </BaseScreen>
   );

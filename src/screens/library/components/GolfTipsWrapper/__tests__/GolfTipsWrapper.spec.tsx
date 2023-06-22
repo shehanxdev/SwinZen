@@ -1,3 +1,5 @@
+import { faker } from '@faker-js/faker';
+
 import { SubscriptionType } from '@sz/constants';
 import { renderWithProviders } from '@sz/test-utils';
 
@@ -7,6 +9,7 @@ describe('GolfTipsWrapper component', () => {
   const testID = 'GolfTipsWrapperTestID';
   const mockData = [
     {
+      id: faker.string.uuid(),
       name: 'dummyName',
       subscriptionType: SubscriptionType.FREE,
       thumbnailUrl: 'https://example.com/profile.jpg',

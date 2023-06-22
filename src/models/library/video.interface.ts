@@ -1,8 +1,8 @@
 import { SortDataType, SubscriptionType, VideoStatusType, VideoType } from '@sz/constants';
 
-export interface VideoCatQueryData {
-  offset?: number;
-  limit?: number;
+import { PaginatedQuery } from '../base';
+
+export interface VideoCatQueryData extends PaginatedQuery {
   sortBy?: SortDataType;
   name?: string;
   subscriptionType?: SubscriptionType;
