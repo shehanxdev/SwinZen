@@ -27,7 +27,6 @@ export function LibraryInfoScreen({ route }) {
 
   const navigation = useNavigation();
 
-  // custom action for navigation header back button
   useLayoutEffect(() => {
     navigation.setOptions({
       title: data.headerTitle,
