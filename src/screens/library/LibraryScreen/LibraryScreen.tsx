@@ -3,21 +3,39 @@ import { View } from 'react-native';
 
 import { Text, ToggleSwitch } from '@sz/components';
 import { tw } from '@sz/config';
-import { AboutSZInfo, Color, LibrarySliderData, Route, TextVariant, UTAInfo } from '@sz/constants';
-import { NavigationService } from '@sz/services';
+import {
+  AboutSZInfo,
+  Color,
+  LibrarySliderData,
+  Route,
+  SortDataType,
+  SubscriptionType,
+  TextVariant,
+  UTAInfo,
+} from '@sz/constants';
+import { useFetch } from '@sz/hooks';
+import { NavigationService, VideoService } from '@sz/services';
 
 import { BaseScreen, TabScreenHeader } from '../../components';
-import { GolfTipsWrapper } from '../../library/components';
-import { golfTips, toggleSwitchOptions } from './LibraryData';
+import { GolfTipsWrapper } from '../components';
+import { toggleSwitchOptions } from './LibraryData';
 import { LinksSlider } from './components';
 
 type SwitchValueDataType = 'usingTheApp' | 'aboutSwingZen';
 
 export function LibraryScreen() {
   const [switchValue, setSwitchValue] = useState<SwitchValueDataType>('usingTheApp');
+  const getVideoCategoriesParams = {
+    offset: 1,
+    limit: 3,
+    sortBy: SortDataType.UPDATED_DESCEND,
+    subscriptionType: SubscriptionType.PAID,
+  };
+
+  const { isLoading, data } = useFetch(() => VideoService.getVideoCategories(getVideoCategoriesParams));
 
   return (
-    <BaseScreen testID="LibraryScreenTestID">
+    <BaseScreen testID="LibraryScreenTestID" isLoading={isLoading}>
       <TabScreenHeader title="SwingZen university" />
       <View style={tw`flex-1 mx-4 mt-6.25 mb-4`}>
         <ToggleSwitch
@@ -67,7 +85,7 @@ export function LibraryScreen() {
             See All
           </Text>
         </View>
-        <GolfTipsWrapper golfTips={golfTips} />
+        <GolfTipsWrapper golfTips={data} />
       </View>
     </BaseScreen>
   );

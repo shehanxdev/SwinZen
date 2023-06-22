@@ -15,7 +15,7 @@ exports[`GolfTipCard component should render GolfTipCard component correctly 1`]
       {
         "busy": undefined,
         "checked": undefined,
-        "disabled": undefined,
+        "disabled": false,
         "expanded": undefined,
         "selected": undefined,
       }
@@ -61,6 +61,8 @@ exports[`GolfTipCard component should render GolfTipCard component correctly 1`]
         accessibilityIgnoresInvertColors={true}
         style={
           {
+            "backgroundColor": "#6C757D",
+            "borderRadius": 10,
             "flexBasis": "0%",
             "flexGrow": 1,
             "flexShrink": 1,
@@ -72,7 +74,7 @@ exports[`GolfTipCard component should render GolfTipCard component correctly 1`]
           resizeMode="cover"
           source={
             {
-              "testUri": "../../../src/assets/images/golftips/AITools.png",
+              "uri": "",
             }
           }
           style={

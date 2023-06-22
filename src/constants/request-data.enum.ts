@@ -4,6 +4,7 @@ export enum SortDataType {
   DESCRIPTION = 'description:asc',
   CREATED = 'createdAt:asc',
   UPDATED = 'updatedAt:asc',
+  UPDATED_DESCEND = 'updatedAt:desc',
 }
 
 // TODO:: Add these two enums into relavant files

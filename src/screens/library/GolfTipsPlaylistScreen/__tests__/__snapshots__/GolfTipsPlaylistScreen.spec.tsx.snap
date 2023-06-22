@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Golf tips Screen should render Golf tips Screen correctly 1`] = `
+exports[`GolfTips Playlist Screen should render GolfTips Playlist Screen correctly 1`] = `
 <View
   collapsable={false}
   pointerEvents="box-none"
@@ -39,7 +39,7 @@ exports[`Golf tips Screen should render Golf tips Screen correctly 1`] = `
         "position": "relative",
       }
     }
-    testID="GolfTipsScreenTestID"
+    testID="GolfTipsPlaylistScreenTestID"
   >
     <Image
       resizeMode="cover"

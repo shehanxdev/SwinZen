@@ -4,11 +4,6 @@ export enum TipType {
   SIDE_BY_SIDE = 'side-by-side',
 }
 
-export enum VideoType {
-  DOWNTHELINE = 'DownTheLine',
-  FACEON = 'FaceOn',
-}
-
 export enum Checkpoint {
   OVERALL = 'Overall',
   SETUP = 'Setup',

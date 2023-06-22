@@ -1,4 +1,5 @@
-import { Checkpoint, SubCheckpoint, VideoType } from './analysis.enum';
+import { VideoType } from '../main/common.enum';
+import { Checkpoint, SubCheckpoint } from './analysis.enum';
 
 export const ProTipsInfo = {
   [VideoType.DOWNTHELINE]: {

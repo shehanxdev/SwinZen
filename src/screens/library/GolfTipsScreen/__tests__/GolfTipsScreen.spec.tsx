@@ -1,14 +1,15 @@
-import { render } from '@testing-library/react-native';
 import * as React from 'react';
+
+import { renderWithProviders } from '@sz/test-utils';
 
 import { GolfTipsScreen } from '../GolfTipsScreen';
 
-describe('Library Screen Screen', () => {
+describe('Golf tips Screen', () => {
   const testID = 'GolfTipsScreenTestID';
 
-  const getRenderedScreen = () => render(<GolfTipsScreen />);
+  const getRenderedScreen = () => renderWithProviders(<GolfTipsScreen />);
 
-  it(`should render Library Screen correctly`, () => {
+  it(`should render Golf tips Screen correctly`, () => {
     const renderer = getRenderedScreen();
     const renderTree = renderer.toJSON();
     expect(renderTree).toMatchSnapshot();
