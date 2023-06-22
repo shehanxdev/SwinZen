@@ -40,7 +40,7 @@ describe('ProTips Screen', () => {
     const { getByText } = renderWithProviders(<ProTipsScreen route={mockRoute} />);
 
     // Simulate selecting different tip types
-    fireEvent.press(getByText('AI pro tips'));
+    fireEvent.press(getByText('AI pro tip'));
     // Assert that the description and content update correctly based on the selected tip type
     expect(getByText("Here's an AI Pro Tip on how to improve your swing!")).toBeTruthy();
 
