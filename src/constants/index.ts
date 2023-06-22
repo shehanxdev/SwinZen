@@ -3,6 +3,7 @@ export * from './analysis';
 export * from './auth';
 export * from './colors';
 export * from './error';
+export * from './inAppPurchases';
 export * from './data-time';
 export * from './library';
 export * from './login-error-codes';

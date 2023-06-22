@@ -61,3 +61,7 @@ export interface SubscribedData {
   updatedAt: string;
   plan: Plan;
 }
+
+export interface FinalPlanData extends Plan {
+  productId: string; //productID configured on play console and app store connect. Not works on Amazon related stores.
+}
