@@ -6,6 +6,7 @@ export * from './error';
 export * from './data-time';
 export * from './library';
 export * from './login-error-codes';
+export * from './main';
 export * from './navigation-routes';
 export * from './pricePlan';
 export * from './regular-expressions';
