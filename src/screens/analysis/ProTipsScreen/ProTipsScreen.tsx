@@ -11,6 +11,8 @@ import { Checkpoint, Color, ProTipsInfo, TextAlignment, TextVariant, TipType } f
 import { BaseAnalysisScreen, TipsBottomCard } from '../components';
 import { DummyMedia } from './dummyMedia';
 
+const TEST_ID_PREFIX = 'ProTipsScreenTestID';
+
 export function ProTipsScreen({ route }) {
   const [tipType, setTipType] = useState(TipType.PGA_PRO_TIPS);
   const [currentVideo, setCurrentVideo] = useState(null);
@@ -45,7 +47,7 @@ export function ProTipsScreen({ route }) {
     return DummyMedia.map((slide, index) => {
       const isPlaying = index === currentVideo;
       return (
-        <View key={slide.thumbnail} style={tw`w-full h-[${mediaPaneHeight}px]`}>
+        <View testID={`${TEST_ID_PREFIX}-video`} key={slide.thumbnail} style={tw`w-full h-[${mediaPaneHeight}px]`}>
           {isPlaying ? (
             <Pressable onPress={() => setCurrentVideo(null)}>
               <Video
@@ -113,7 +115,7 @@ export function ProTipsScreen({ route }) {
 
   return (
     <BaseAnalysisScreen>
-      <View style={tw`flex-1 justify-between`}>
+      <View testID={`${TEST_ID_PREFIX}`} style={tw`flex-1 justify-between`}>
         <View style={tw`mx-4 mb-5`}>
           <Text variant={TextVariant.Body2Regular} color={Color.Neutral.Sz400} textAlign={TextAlignment.Left}>
             {getTipTypeData(tipType).title}
@@ -121,6 +123,7 @@ export function ProTipsScreen({ route }) {
         </View>
         <View style={tw`mb--4 w-full h-[${mediaPaneHeight}px]`}>
           <Swiper
+            testID={`${TEST_ID_PREFIX}-swiper`}
             ref={swiperRef}
             showsButtons={tipType !== 'side-by-side'}
             showsPagination={false}

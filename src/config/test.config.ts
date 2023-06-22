@@ -78,3 +78,5 @@ jest.mock('react-native-keychain', () => {
     resetGenericPassword: jest.fn(),
   };
 });
+
+jest.mock('react-native-video', () => 'Video');
