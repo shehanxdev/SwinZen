@@ -178,6 +178,18 @@ export class NavigationService {
         },
       },
 
+      // Analysis Routes
+      [Route.ProTips]: {
+        navRoute: Route.AnalysisStack,
+        navParams: {
+          screen: Route.ProTips,
+          params: {
+            screen: route,
+            params: params,
+          },
+        },
+      },
+
       // Library Info Routes
       [Route.GolfTips]: {
         navRoute: Route.LibraryInfoStack,
