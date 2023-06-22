@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckpointAnalysisResult should render correctly 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "row",
+      "height": 34,
+      "justifyContent": "space-between",
+      "width": "100%",
+    }
+  }
+  testID="CheckpointAnalysisResultTestID"
+>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "row",
+        "height": "100%",
+      }
+    }
+  >
+    <SvgMock
+      fill="#F65815"
+      height={34}
+      width={34}
+    />
+    <View
+      style={
+        {
+          "marginLeft": 37,
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#F8F9FA",
+              "lineHeight": 24,
+            },
+            {
+              "fontFamily": "SourceSansPro-SemiBold",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        Checkpoint
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "backgroundColor": "#070707",
+          "borderRadius": 10,
+          "height": 34,
+          "justifyContent": "center",
+          "marginRight": 20,
+          "paddingLeft": 10,
+          "paddingRight": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "color": "#F8F9FA",
+              "lineHeight": 24,
+            },
+            {
+              "fontFamily": "SourceSansPro-Regular",
+              "fontSize": 15,
+              "fontWeight": "600",
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        Sub Checkpoint
+      </Text>
+    </View>
+    <SvgMock
+      fill="#FFFFFF"
+      height={15}
+      width={15}
+    />
+  </View>
+</View>
+`;
