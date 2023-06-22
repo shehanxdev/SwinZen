@@ -819,7 +819,7 @@ exports[`ProTips Screen should render ProTips Screen correctly 1`] = `
                               ]
                             }
                           >
-                            AI pro tips
+                            AI pro tip
                           </Text>
                         </Text>
                       </View>

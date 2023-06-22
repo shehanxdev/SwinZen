@@ -236,7 +236,7 @@ exports[`TipsBottomCard component should render TipsBottomCard component correct
                       ]
                     }
                   >
-                    AI pro tips
+                    AI pro tip
                   </Text>
                 </Text>
               </View>
