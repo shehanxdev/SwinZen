@@ -1,12 +1,13 @@
-import { render } from '@testing-library/react-native';
 import * as React from 'react';
+
+import { renderWithProviders } from '@sz/test-utils';
 
 import { LibraryScreen } from '../LibraryScreen';
 
 describe('Library Screen', () => {
   const testID = 'LibraryScreenTestID';
 
-  const getRenderedScreen = () => render(<LibraryScreen />);
+  const getRenderedScreen = () => renderWithProviders(<LibraryScreen />);
 
   it(`should render Library Screen correctly`, () => {
     const renderer = getRenderedScreen();

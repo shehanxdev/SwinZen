@@ -1,10 +1,18 @@
-import React from 'react';
-import { View } from 'react-native';
+import React, { useEffect } from 'react';
+import { EmitterSubscription, Platform, View } from 'react-native';
+import {
+  PurchaseError,
+  SubscriptionPurchase,
+  finishTransaction,
+  purchaseErrorListener,
+  purchaseUpdatedListener,
+  requestSubscription,
+} from 'react-native-iap';
 
 import { Button, PricePlanFeatureListTickIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, Route, TextAlignment, TextVariant } from '@sz/constants';
-import { Plan } from '@sz/models';
+import { FinalPlanData } from '@sz/models';
 import { NavigationService, ToastService } from '@sz/services';
 import { useDispatch } from '@sz/stores';
 
@@ -13,20 +21,80 @@ import { BaseScreen } from './../../components';
 const TEST_ID_PREFIX = 'PlanDetailsScreen';
 
 export function PlanDetailsScreen({ route }) {
-  const data = route.params.params.item as Plan;
+  const data = route.params.params.item as FinalPlanData;
   const dispatch = useDispatch();
 
-  const onProceed = async (data: Plan) => {
-    try {
-      await dispatch.userStore.addSubscription({ planId: data.id });
-      //TODO:: handle payments for paid plans
-      NavigationService.navigate(Route.HomeTab);
-    } catch (error) {
-      ToastService.error({ message: 'Failed!', description: error.data.message });
-    } finally {
-      await dispatch.userStore.getSubscription({});
+  const onProceed = async (data: FinalPlanData) => {
+    //Free user plan
+    if (data.productId === '') {
+      try {
+        await dispatch.userStore.addSubscription({ planId: data.id });
+        NavigationService.navigate(Route.HomeTab);
+      } catch (error) {
+        ToastService.error({
+          message: 'Failed!',
+          description: error.data.message,
+        });
+      }
+      //paid user plans
+    } else {
+      try {
+        await requestSubscription({ sku: data.productId });
+      } catch (error) {
+        ToastService.information({
+          message: 'Alert!',
+          description: 'Could not complete the payment!',
+        });
+      }
     }
   };
+
+  useEffect(() => {
+    const unsubscribePurchaseEvent: EmitterSubscription = purchaseUpdatedListener(
+      async (purchase: SubscriptionPurchase) => {
+        const receipt = purchase.transactionReceipt
+          ? purchase.transactionReceipt
+          : (purchase as unknown as { originalJson: string }).originalJson;
+
+        if (receipt) {
+          try {
+            //TODO::need to validate this receipt before proceed
+
+            //TODO::persist the payment status.
+
+            //TODO::handle worst case scenarios(app crashes, internet connection lost)
+
+            /*
+             * NOTE::Call this after persistiong the purchased state to the BE.
+             * Finish Transaction (both platforms)
+             * This function will Tells StoreKit that you have delivered the purchase to the user and StoreKit can now let go of the transaction in IOS.
+             * it will consume purchase for consumables and acknowledge purchase for non-consumables in Android
+             * this will return PurchaseResult in Android and true in IOS
+             * This is step will always resolve without having any issues.
+             */
+            await finishTransaction({
+              purchase: purchase,
+              isConsumable: false,
+              ...(Platform.OS === 'android' && { developerPayloadAndroid: purchase.developerPayloadAndroid }),
+            });
+
+            NavigationService.navigate(Route.HomeTab);
+          } catch (error) {
+            ToastService.error({ message: 'Failed!', description: 'Something went wrong during the purchase!' }); //TODO::add a proper message
+          }
+        }
+      },
+    );
+
+    const unsubscribePurchaseFailedEvent: EmitterSubscription = purchaseErrorListener((error: PurchaseError) => {
+      ToastService.error({ message: 'Failed!', description: error.message });
+    });
+
+    return () => {
+      unsubscribePurchaseFailedEvent?.remove();
+      unsubscribePurchaseEvent?.remove();
+    };
+  }, []);
 
   return (
     <BaseScreen testID={TEST_ID_PREFIX}>

@@ -20,7 +20,7 @@ describe('GolfTipCard component', () => {
         testID={testID}
         onPress={onPressHandlerMock}
         videosCount={mockData.videosCount}
-        backgroundImage={mockData.backgroundImage}
+        sourceUri=""
         label={mockData.label}
       />,
     );

@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { View } from 'react-native';
+import { endConnection } from 'react-native-iap';
 import LinearGradient from 'react-native-linear-gradient';
 
 import { Link, SwingZenLogoIcon, Text } from '@sz/components';
@@ -25,6 +26,9 @@ export function HomeScreen() {
   const [showModal, setShowModal] = useState(false);
   // To request notifications permissions
   useEffect(() => {
+    //Disconnects from iap native SDK
+    endConnection().catch(console.error);
+
     //TODO::add proper error pop up to the user
     PermissionService.requestNotificationsPermission().catch(console.error);
 
