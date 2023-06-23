@@ -104,7 +104,31 @@ exports[`Failed Video Screen should render failed screen ui screen correctly 1`]
                   }
                 }
               >
-                <View
+                <BVLinearGradient
+                  colors={
+                    [
+                      1475762197,
+                      3220592661,
+                    ]
+                  }
+                  endPoint={
+                    {
+                      "x": 0.5,
+                      "y": 1,
+                    }
+                  }
+                  locations={
+                    [
+                      0,
+                      1,
+                    ]
+                  }
+                  startPoint={
+                    {
+                      "x": 0.5,
+                      "y": 0,
+                    }
+                  }
                   style={
                     {
                       "borderColor": "rgba(246, 88, 21, 0.57)",
@@ -113,109 +137,74 @@ exports[`Failed Video Screen should render failed screen ui screen correctly 1`]
                       "flexBasis": "0%",
                       "flexGrow": 1,
                       "flexShrink": 1,
+                      "height": 192,
                       "overflow": "hidden",
                     }
                   }
                 >
-                  <BVLinearGradient
-                    colors={
-                      [
-                        16144405,
-                        4294334485,
-                      ]
-                    }
-                    endPoint={
-                      {
-                        "x": 0.5,
-                        "y": 1,
-                      }
-                    }
-                    locations={
-                      [
-                        0,
-                        0.5433,
-                      ]
-                    }
-                    startPoint={
-                      {
-                        "x": 0.5,
-                        "y": 0,
-                      }
-                    }
+                  <View
                     style={
                       {
-                        "bottom": 0,
-                        "left": 0,
-                        "right": 0,
-                        "top": 0,
+                        "alignItems": "center",
+                        "flexBasis": "0%",
+                        "flexGrow": 1,
+                        "flexShrink": 1,
+                        "gap": 1,
+                        "justifyContent": "center",
                       }
                     }
                   >
+                    <SvgMock
+                      fill="#F65815"
+                      height={54}
+                      width={54}
+                    />
+                    <Text
+                      style={
+                        [
+                          {
+                            "color": "#F8F9FA",
+                            "lineHeight": 24,
+                          },
+                          {
+                            "fontFamily": "SourceSansPro-Regular",
+                            "fontSize": 16,
+                            "fontWeight": "normal",
+                            "textAlign": "center",
+                          },
+                        ]
+                      }
+                    >
+                      Video analysis failed!
+                    </Text>
                     <View
                       style={
                         {
-                          "alignItems": "center",
-                          "flexBasis": "0%",
-                          "flexGrow": 1,
-                          "flexShrink": 1,
-                          "gap": 1,
-                          "height": 192,
-                          "justifyContent": "center",
+                          "marginTop": 4,
                         }
                       }
                     >
-                      <SvgMock
-                        fill="#F65815"
-                        height={54}
-                        width={54}
-                      />
                       <Text
+                        onPress={[Function]}
                         style={
                           [
                             {
-                              "color": "#F8F9FA",
-                              "lineHeight": 24,
+                              "color": "#FFFFFF",
+                              "lineHeight": 20,
                             },
                             {
                               "fontFamily": "SourceSansPro-Regular",
                               "fontSize": 16,
-                              "fontWeight": "normal",
+                              "fontWeight": "bold",
                               "textAlign": "center",
+                              "textDecorationLine": "underline",
                             },
                           ]
                         }
-                      >
-                        Video analysis failed!
-                      </Text>
-                      <View
-                        style={
-                          {
-                            "marginTop": 4,
-                          }
-                        }
-                      >
-                        <Text
-                          onPress={[Function]}
-                          style={
-                            [
-                              {
-                                "color": "#FFFFFF",
-                                "lineHeight": 20,
-                              },
-                              {
-                                "fontFamily": "SourceSansPro-Regular",
-                                "fontSize": 16,
-                                "fontWeight": "bold",
-                                "textAlign": "center",
-                                "textDecorationLine": "underline",
-                              },
-                            ]
-                          }
-                        />
-                      </View>
+                      />
                     </View>
-                  </BVLinearGradient>
-                </View>
+                  </View>
+                </BVLinearGradient>
               </View>
               <View
                 style={

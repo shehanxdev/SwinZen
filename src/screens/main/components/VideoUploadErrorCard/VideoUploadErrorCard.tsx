@@ -19,26 +19,25 @@ export function VideoUploadErrorCard({
 }: VideoUploadErrorCardProps) {
   return (
     <View style={tw`rounded-2.5 overflow-hidden`}>
-      <View
-        style={tw`flex-1 rounded-2.5 overflow-hidden border 
-          border-Secondary-Sz900/57
-        `}>
-        {/* NOTE:: consider adding makeTransparent method to the color constant */}
-        <LinearGradient colors={['#F6581500', Color.Secondary.Sz900]} locations={[0, 0.5433]} style={tw`inset-0`}>
-          <View style={tw`items-center justify-center flex-1 gap-0.25 h-48`}>
-            <ErrorIcon color={Color.Secondary.Sz900} />
-            <Text variant={TextVariant.Body2Regular}>Video analysis failed!</Text>
-            <View style={tw`mt-1`}>
-              <Link
-                textColor={Color.Neutral.White}
-                text={showFooterAndTextLink ? 'Find out why' : ''}
-                onPress={() => {}}
-                underline
-              />
-            </View>
+      {/* NOTE:: consider adding makeTransparent method to the color constant */}
+      <LinearGradient
+        style={tw`h-48 flex-1 rounded-2.5 overflow-hidden border 
+          border-Secondary-Sz900/57 `}
+        colors={['#F6581557', '#F65815BF']}
+        locations={[0, 1]}>
+        <View style={tw`items-center justify-center flex-1 gap-0.25`}>
+          <ErrorIcon color={Color.Secondary.Sz900} />
+          <Text variant={TextVariant.Body2Regular}>Video analysis failed!</Text>
+          <View style={tw`mt-1`}>
+            <Link
+              textColor={Color.Neutral.White}
+              text={showFooterAndTextLink ? 'Find out why' : ''}
+              onPress={() => {}}
+              underline
+            />
           </View>
-        </LinearGradient>
-      </View>
+        </View>
+      </LinearGradient>
       {showFooterAndTextLink && (
         <View testID="VideoUploadErrorCardFooterTestId" style={tw`flex-row items-center  justify-between w-full`}>
           <Text variant={TextVariant.Body2SemiBold} color={Color.Secondary.Sz900}>
