@@ -9,7 +9,7 @@ export function usePaid() {
    * @returns the action passed as a parameter if the user is a paid user, if not returns the function to show the upgrade modal
    */
   const restrictPaidAction = (action: () => void) => {
-    if (!isPaid) {
+    if (isPaid) {
       return action;
     } else {
       return () => dispatch.appStore.setUpgradeModalVisible(true);
