@@ -19,12 +19,12 @@ export function FailedVideoScreen() {
             Here's why your video has failed
           </Text>
           <View style={tw`mx-9 mt-2.5`}>
-            {videoAnalysisFailedReasons.map((reason, key) => {
+            {videoAnalysisFailedReasons.map(reason => {
               return (
                 <Text
-                  key={key}
+                  key={reason.id}
                   variant={TextVariant.Body2Regular}
-                  textAlign={TextAlignment.Left}>{`\u2022 ${reason}`}</Text>
+                  textAlign={TextAlignment.Left}>{`\u2022 ${reason.message}`}</Text>
               );
             })}
           </View>
