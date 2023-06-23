@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { ActivityIndicator, TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {
   CameraOptions,
@@ -10,7 +10,7 @@ import {
 } from 'react-native-image-picker';
 import { useDispatch } from 'react-redux';
 
-import { ProfileImageChangeCameraIcon, Text } from '@sz/components';
+import { LoadingIndicator, ProfileImageChangeCameraIcon, Text } from '@sz/components';
 import { tw } from '@sz/config';
 import { Color, TextVariant } from '@sz/constants';
 import { ToastService } from '@sz/services';
@@ -77,6 +77,10 @@ export function ProfileImageUpload() {
     if (result?.assets) {
       try {
         await dispatch.userStore.changeProfilePicture(result.assets[0]);
+        ToastService.success({
+          message: 'Success!',
+          description: 'Your profile picture has been successfully updated',
+        });
       } catch {
         ToastService.error({
           message: 'Failed!',
@@ -101,7 +105,7 @@ export function ProfileImageUpload() {
           {/* TODO::add a proper loading indicator */}
           {loading && (
             <View style={LOADER_STYLES}>
-              <ActivityIndicator color={Color.Neutral.White} />
+              <LoadingIndicator />
             </View>
           )}
           <FastImage
@@ -117,7 +121,7 @@ export function ProfileImageUpload() {
         <>
           {loading && (
             <View style={LOADER_STYLES}>
-              <ActivityIndicator color={Color.Neutral.White} />
+              <LoadingIndicator />
             </View>
           )}
           <View style={PROFILE_IMAGE_COMMON_STYLES}>
