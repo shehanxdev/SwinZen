@@ -40,6 +40,10 @@ export function ModalLayout({
       onBackButtonPress={handleModalClose}
       animationIn="fadeIn"
       animationOut="fadeOut"
+      /**
+       * Note: this fixes the flicker issue when closing the modal
+       */
+      backdropTransitionOutTiming={0}
       animationInTiming={200}
       animationOutTiming={100}>
       <View

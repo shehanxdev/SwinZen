@@ -1,6 +1,7 @@
 export * from './account';
 export * from './analysis';
 export * from './auth';
+export * from './components';
 export * from './error';
 export * from './info';
 export * from './library';
