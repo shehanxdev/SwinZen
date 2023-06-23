@@ -14,6 +14,7 @@ exports[`Video upload failed card component should render video upload failed ca
     style={
       {
         "borderRadius": 10,
+        "height": 192,
         "overflow": "hidden",
       }
     }
@@ -45,13 +46,12 @@ exports[`Video upload failed card component should render video upload failed ca
       }
       style={
         {
-          "borderColor": "rgba(246, 88, 21, 0.57)",
+          "borderColor": "rgba(246, 88, 21, 0.34)",
           "borderRadius": 10,
           "borderWidth": 1,
           "flexBasis": "0%",
           "flexGrow": 1,
           "flexShrink": 1,
-          "height": 192,
           "overflow": "hidden",
         }
       }
@@ -137,6 +137,7 @@ exports[`Video upload failed card component should render video upload failed ca
     style={
       {
         "borderRadius": 10,
+        "height": 192,
         "overflow": "hidden",
       }
     }
@@ -168,13 +169,12 @@ exports[`Video upload failed card component should render video upload failed ca
       }
       style={
         {
-          "borderColor": "rgba(246, 88, 21, 0.57)",
+          "borderColor": "rgba(246, 88, 21, 0.34)",
           "borderRadius": 10,
           "borderWidth": 1,
           "flexBasis": "0%",
           "flexGrow": 1,
           "flexShrink": 1,
-          "height": 192,
           "overflow": "hidden",
         }
       }

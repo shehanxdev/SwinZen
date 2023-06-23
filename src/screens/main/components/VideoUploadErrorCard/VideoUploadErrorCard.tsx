@@ -18,11 +18,11 @@ export function VideoUploadErrorCard({
   cameraAngle,
 }: VideoUploadErrorCardProps) {
   return (
-    <View style={tw`rounded-2.5 overflow-hidden`}>
+    <View style={tw`rounded-2.5 overflow-hidden h-48 `}>
       {/* NOTE:: consider adding makeTransparent method to the color constant */}
       <LinearGradient
-        style={tw`h-48 flex-1 rounded-2.5 overflow-hidden border 
-          border-Secondary-Sz900/57 `}
+        style={tw`flex-1 rounded-2.5 overflow-hidden border 
+          border-Secondary-Sz900/34 `}
         colors={['#F6581557', '#F65815BF']}
         locations={[0, 1]}>
         <View style={tw`items-center justify-center flex-1 gap-0.25`}>
