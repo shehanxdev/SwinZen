@@ -1,12 +1,25 @@
+import { faker } from '@faker-js/faker';
+
+import { SubscriptionType } from '@sz/constants';
 import { renderWithProviders } from '@sz/test-utils';
 
-import { GolfTipsData } from '../../../GolfTipsScreen/GolfTipsData';
 import { GolfTipsWrapper } from '../GolfTipsWrapper';
 
 describe('GolfTipsWrapper component', () => {
   const testID = 'GolfTipsWrapperTestID';
+  const mockData = [
+    {
+      id: faker.string.uuid(),
+      name: 'dummyName',
+      subscriptionType: SubscriptionType.FREE,
+      thumbnailUrl: 'https://example.com/profile.jpg',
+      videos: [],
+      createdAt: '2023-05-19T08:00:00Z',
+      updatedAt: '2023-05-20T12:00:00Z',
+    },
+  ];
 
-  const getRenderedComponent = () => renderWithProviders(<GolfTipsWrapper golfTips={GolfTipsData} testID={testID} />);
+  const getRenderedComponent = () => renderWithProviders(<GolfTipsWrapper golfTips={mockData} testID={testID} />);
 
   it(`should render GolfTipsWrapper component correctly`, () => {
     const rendered = getRenderedComponent();

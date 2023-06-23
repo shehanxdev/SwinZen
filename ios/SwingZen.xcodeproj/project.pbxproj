@@ -19,6 +19,7 @@
 		6F029EBCB7E94A3C854256A8 /* SourceSansPro-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E5BE55E20244551BDC618D8 /* SourceSansPro-ExtraLightItalic.ttf */; };
 		7F262DDA0A1D4F69B441DA88 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6CC17271622B465EA4EBEBF2 /* SourceSansPro-Regular.ttf */; };
 		878345DA890D7A943D28B310 /* libPods-SwingZen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C40142319FE50662228D27C /* libPods-SwingZen.a */; };
+		9707AA1B2A43053300816425 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9707AA1A2A43053300816425 /* StoreKit.framework */; };
 		97F724052A00D50100800E2E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97F724042A00D50100800E2E /* GoogleService-Info.plist */; };
 		99C67DDF185F427687006FE6 /* SourceSansPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B14C768AC224E76B3B68E52 /* SourceSansPro-Italic.ttf */; };
 		A1EA688EEC654E9AA5F0D2A4 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4441DDEE7D7745168485D583 /* SourceSansPro-Bold.ttf */; };
@@ -61,6 +62,7 @@
 		6F4109F03662D3A5DC8B72CD /* Pods-SwingZen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwingZen.release.xcconfig"; path = "Target Support Files/Pods-SwingZen/Pods-SwingZen.release.xcconfig"; sourceTree = "<group>"; };
 		7FB21FACECCF43CAB3CDD482 /* SourceSansPro-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-BoldItalic.ttf"; path = "../src/assets/fonts/SourceSansPro-BoldItalic.ttf"; sourceTree = "<group>"; };
 		8C5E3FF9FA21480C844DF025 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Light.ttf"; path = "../src/assets/fonts/SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
+		9707AA1A2A43053300816425 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		97B507382A00DB2600E8EEFC /* SwingZen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = SwingZen.entitlements; path = SwingZen/SwingZen.entitlements; sourceTree = "<group>"; };
 		97F724042A00D50100800E2E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "SwingZen/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A40A5A2FC5BE418DA12AB750 /* SourceSansPro-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-SemiBoldItalic.ttf"; path = "../src/assets/fonts/SourceSansPro-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				878345DA890D7A943D28B310 /* libPods-SwingZen.a in Frameworks */,
+				9707AA1B2A43053300816425 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +131,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9707AA1A2A43053300816425 /* StoreKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				6C40142319FE50662228D27C /* libPods-SwingZen.a */,
 				C731147C8AACC242390175AC /* libPods-SwingZen-SwingZenTests.a */,

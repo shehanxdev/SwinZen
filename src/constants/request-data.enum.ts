@@ -4,8 +4,10 @@ export enum SortDataType {
   DESCRIPTION = 'description:asc',
   CREATED = 'createdAt:asc',
   UPDATED = 'updatedAt:asc',
+  UPDATED_DESCEND = 'updatedAt:desc',
 }
 
+// TODO:: Add these two enums into relavant files
 export enum NotificationsType {
   EMAIL = 'EMAIL',
   SMS = 'SMS',
@@ -16,11 +18,4 @@ export enum NotificationsType {
 export enum FilesType {
   IMAGE = 'image',
   VIDEO = 'video',
-}
-
-export enum ScoreType {
-  OVERALL = 'Overall',
-  SETUP = 'Set up',
-  BACKSWING = 'Back swing',
-  DOWNSWING = 'Down swing',
 }

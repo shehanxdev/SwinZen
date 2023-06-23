@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 import { Button } from '@sz/components';
 import { tw } from '@sz/config';
-import { Color, Route, ScoreType } from '@sz/constants';
+import { Checkpoint, Color, Route } from '@sz/constants';
 import { NavigationService } from '@sz/services';
 
 import { BaseScreen, TabScreenHeader } from '../../components';
@@ -20,10 +20,10 @@ export function AnalysisScreen() {
           <View style={tw`pt-1 pb-5`}>
             <MonthSelector textColor={Color.Neutral.Sz200} />
           </View>
-          <AnalysisDataCard score={15} observation={ScoreType.OVERALL} time={timeData} />
-          <AnalysisDataCard score={8} observation={ScoreType.SETUP} time={timeData} />
-          <AnalysisDataCard score={3} observation={ScoreType.BACKSWING} time={timeData} />
-          <AnalysisDataCard score={12} observation={ScoreType.DOWNSWING} time={timeData} />
+          <AnalysisDataCard score={15} observation={Checkpoint.OVERALL} time={timeData} />
+          <AnalysisDataCard score={8} observation={Checkpoint.SETUP} time={timeData} />
+          <AnalysisDataCard score={3} observation={Checkpoint.BACKSWING} time={timeData} />
+          <AnalysisDataCard score={12} observation={Checkpoint.DOWNSWING} time={timeData} />
         </View>
       </View>
       <View style={tw`mb-6 mx-4`}>
